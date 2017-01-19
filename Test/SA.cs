@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using SFML.Graphics;
 using SFML.Window;
+using System.Drawing;
 
 namespace Test
 {
     class SA : Game
     {
         Dictionary<SFML.Window.Keyboard.Key, bool[]> keys = new Dictionary<SFML.Window.Keyboard.Key, bool[]>();
+        Font font;
+        Text text;
+
         public SA() : base(800, 600, "Say Again?", Color.Magenta)
         {
             window.KeyPressed += onKeyPressed;
@@ -33,14 +38,22 @@ namespace Test
             }
         }
 
+
+
         protected override void LoadContent()
         {
-            
+            FileStream fStream = new FileStream("../../Fonts/Adore64.ttf", FileMode.Open);
+            font = new Font(fStream);
+            Console.WriteLine("LoadContent");
+
         }
 
         protected override void Initialize()
         {
-            
+            text = new Text("jill and eric", font, 24);
+            text.Color = Color.Black;
+            Console.WriteLine("Initialize");
+
         }
 
         protected override void Update()
@@ -50,6 +63,7 @@ namespace Test
 
         protected override void Draw()
         {
+            window.Draw(text);
             
         }
     }
