@@ -30,3 +30,17 @@ F:\Say Again\Test\Test\bin\Debug\OpenTK.dll
 F:\Say Again\Test\Test\bin\Debug\Test.exe
 F:\Say Again\Test\Test\bin\Debug\Test.pdb
 F:\Say Again\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\Mikey\Documents\SayAgain\Test\bin\Debug\Test.exe.config
+C:\Users\Mikey\Documents\SayAgain\Test\obj\Debug\Test.exe
+C:\Users\Mikey\Documents\SayAgain\Test\obj\Debug\Test.pdb
+C:\Users\Mikey\Documents\SayAgain\Test\bin\Debug\csfml-audio-2.dll
+C:\Users\Mikey\Documents\SayAgain\Test\bin\Debug\csfml-graphics-2.dll
+C:\Users\Mikey\Documents\SayAgain\Test\bin\Debug\csfml-system-2.dll
+C:\Users\Mikey\Documents\SayAgain\Test\bin\Debug\csfml-window-2.dll
+C:\Users\Mikey\Documents\SayAgain\Test\bin\Debug\libsndfile-1.dll
+C:\Users\Mikey\Documents\SayAgain\Test\bin\Debug\openal32.dll
+C:\Users\Mikey\Documents\SayAgain\Test\bin\Debug\OpenTK.Compatibility.dll
+C:\Users\Mikey\Documents\SayAgain\Test\bin\Debug\OpenTK.dll
+C:\Users\Mikey\Documents\SayAgain\Test\bin\Debug\Test.exe
+C:\Users\Mikey\Documents\SayAgain\Test\bin\Debug\Test.pdb
+C:\Users\Mikey\Documents\SayAgain\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache

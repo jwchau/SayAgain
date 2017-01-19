@@ -10,11 +10,17 @@ namespace Test
 {
     class SA : Game
     {
+
         Dictionary<SFML.Window.Keyboard.Key, bool[]> keys = new Dictionary<SFML.Window.Keyboard.Key, bool[]>();
+        Font testFont;
+        Text testText;
+
         public SA() : base(800, 600, "Say Again?", Color.Magenta)
         {
+
             window.KeyPressed += onKeyPressed;
             window.KeyReleased += onKeyReleased;
+
         }
 
         private void onKeyReleased(object sender, KeyEventArgs e)
@@ -35,6 +41,8 @@ namespace Test
 
         protected override void LoadContent()
         {
+            testFont = new Font("Content/ARCADECLASSIC.ttf");
+            testText = new Text("TESTING", testFont);
             
         }
 
@@ -50,7 +58,7 @@ namespace Test
 
         protected override void Draw()
         {
-            
+            window.Draw(testText);
         }
     }
 }
