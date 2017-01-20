@@ -10,11 +10,19 @@ using System.Drawing;
 
 namespace Test
 {
+
+    class FontObjects
+    {
+        public static Font Adore64 = new Font(new FileStream("../../Fonts/Adore64.ttf", FileMode.Open));
+    }
+
+
     class SA : Game
     {
         Dictionary<SFML.Window.Keyboard.Key, bool[]> keys = new Dictionary<SFML.Window.Keyboard.Key, bool[]>();
         Font font;
         Text text;
+        
 
         public SA() : base(800, 600, "Say Again?", Color.Magenta)
         {
@@ -29,6 +37,10 @@ namespace Test
 
         private void onKeyPressed(object sender, KeyEventArgs e)
         {
+            if (e.Code == Keyboard.Key.Space)
+            {
+                text.Position = new SFML.System.Vector2f(400, 300);
+            }
             if (!keys.ContainsKey(e.Code))
             {
                 keys.Add(e.Code, new bool[] { true, e.Shift, e.Control, e.Alt });
@@ -42,15 +54,14 @@ namespace Test
 
         protected override void LoadContent()
         {
-            FileStream fStream = new FileStream("../../Fonts/Adore64.ttf", FileMode.Open);
-            font = new Font(fStream);
+           
             Console.WriteLine("LoadContent");
 
         }
 
         protected override void Initialize()
         {
-            text = new Text("jill and eric", font, 24);
+            text = new Text("say again by team babble fish", FontObjects.Adore64, 24);
             text.Color = Color.Black;
             Console.WriteLine("Initialize");
 
