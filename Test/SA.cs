@@ -25,6 +25,14 @@ namespace Test
         Text name;
         RectangleShape dialogueBox;
         RectangleShape nameBox;
+        static Color color = Color.Black;
+        static Vector2f dialogueBoxSize = new Vector2f(700, 150);
+        static Vector2f nameBoxSize = new Vector2f(150, 50);
+        static Vector2f dialogueBoxPos = new Vector2f(50, 50);
+        static Vector2f nameBoxPos = new Vector2f(90, 15);
+        static Vector2f dialogueTextPos = new Vector2f(dialogueBoxPos.X, dialogueBoxPos.Y);
+        static Vector2f nameTextPos = new Vector2f(nameBoxPos.X, nameBoxPos.Y);
+
         Boolean started = false;
         int printTime;
 
@@ -73,16 +81,16 @@ namespace Test
         protected override void Initialize()
         {
             name = new Text("Alex", FontObjects.Adore64, 24);
-            name.Position = new Vector2f(90, 15);
-            name.Color = Color.Black;
-            nameBox = new RectangleShape(new Vector2f(150, 50));
+            name.Position = nameTextPos;
+            name.Color = color;
+            nameBox = new RectangleShape(nameBoxSize);
             nameBox.OutlineThickness = 3;
-            nameBox.OutlineColor = Color.Black;
-            nameBox.Position = new Vector2f(90, 15);
-            dialogueBox = new RectangleShape(new Vector2f(700, 150));
-            dialogueBox.Position = new Vector2f(50, 50);
+            nameBox.OutlineColor = color;
+            nameBox.Position = nameBoxPos;
+            dialogueBox = new RectangleShape(dialogueBoxSize);
+            dialogueBox.Position = dialogueBoxPos;
             dialogueBox.OutlineThickness = 3;
-            dialogueBox.OutlineColor = Color.Black; 
+            dialogueBox.OutlineColor = color; 
             Console.WriteLine("Initialize");
             string line = "say again by team babble fish";
 
@@ -105,8 +113,8 @@ namespace Test
                 started = true;
                 int i = 0;
                 dialogue = new Text("", FontObjects.Adore64, 24);
-                dialogue.Position = new Vector2f(50, 100);
-                dialogue.Color = Color.Black;
+                dialogue.Position = dialogueTextPos;
+                dialogue.Color = color;
                 while (i < chatter.Length)
                 {
                     dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, chatter[i++]));
