@@ -24,7 +24,7 @@ namespace Test
         Text text;
         Text dialogue;
         Boolean started = false;
-        float speed = 0.035f;
+        int printTime;
 
 
         public SA() : base(800, 600, "Say Again?", Color.Magenta)
@@ -40,10 +40,16 @@ namespace Test
 
         private void onKeyPressed(object sender, KeyEventArgs e)
         {
-            if (e.Code == Keyboard.Key.Space)
+            if (e.Code == Keyboard.Key.M)
             {
                 text.Position = new SFML.System.Vector2f(400, 300);
             }
+
+            if (e.Code == Keyboard.Key.Space)
+            {
+                printTime = 0;
+            }
+
             if (!keys.ContainsKey(e.Code))
             {
                 keys.Add(e.Code, new bool[] { true, e.Shift, e.Control, e.Alt });
@@ -66,24 +72,26 @@ namespace Test
         {
 
 
-            text = new Text("say again by team babble fish", FontObjects.Adore64, 24);
+            text = new Text("test test", FontObjects.Adore64, 24);
 
             text.Color = Color.Black;
             Console.WriteLine("Initialize");
-            string line = "chatter";
+            string line = "say again by team babble fish";
 
-            Task.Run(async () => {
-                await animateText(line);
+            Task.Run(async () => { //Task.Run puts on separate thread
+                printTime = 100;
+                await animateText(line); //await pauses thread until animateText() is completed
             });
         }
 
 
 
 
-
-        async Task animateText(string chatter)
+        //async means this function can run separate from main app.
+        //operate in own time and thread
+        async Task animateText(string chatter) 
         {
-
+            
             if (!started)
             {
                 started = true;
@@ -92,7 +100,7 @@ namespace Test
                 while (i < chatter.Length)
                 {
                     dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, chatter[i++]));
-                    await Task.Delay(1000);
+                    await Task.Delay(printTime); //equivalent of putting thread to sleep
                 }
                 started = false;
             }
