@@ -22,34 +22,19 @@ namespace Test
         bool MouseRelease = false;
         bool MouseMove = false;
 
-        public void SetMouseInput(int x, int y) {
+        public void SetMousePos(int x, int y) {
             MouseX = x;
             MouseY = y;
         }
 
-        public int GetMX()
+        public int[] GetMousePos()
         {
-            return MouseX;
+            return new int[] { MouseX, MouseY };
         }
 
-        public int GetMY()
+        public void SetMouseDown(bool value)
         {
-            return MouseY;
-        }
-
-        public void SetMouseDown(bool Mouse)
-        {
-            MouseDown = Mouse;
-        }
-
-        public void SetMouseRelease(bool Mouse)
-        {
-            MouseRelease = Mouse;
-        }
-
-        public void SetMouseMove(bool Mouse)
-        {
-            MouseMove = Mouse;
+            MouseDown = value;
         }
 
         public bool GetMouseDown()
@@ -57,14 +42,29 @@ namespace Test
             return MouseDown;
         }
 
+        public void SetMouseRelease(bool value)
+        {
+            MouseRelease = value;
+        }
+
         public bool GetMouseRelease()
         {
             return MouseRelease;
         }
 
+        public void SetMouseMove(bool value)
+        {
+            MouseMove = value;
+        }
+
         public bool GetMouseMove()
         {
             return MouseMove;
+        }
+
+        public void printMouseStuff()
+        {
+            Console.WriteLine(MouseDown + ", " + MouseMove + ", " + MouseRelease);
         }
 
         public bool CheckCollision(FloatRect bounds)
