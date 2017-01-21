@@ -22,6 +22,7 @@ namespace Test
         Dictionary<SFML.Window.Keyboard.Key, bool[]> keys = new Dictionary<SFML.Window.Keyboard.Key, bool[]>();
         Font font;
         Text text;
+        Text dialogue;
         Boolean started = false;
         float speed = 0.035f;
 
@@ -70,28 +71,36 @@ namespace Test
             text.Color = Color.Black;
             Console.WriteLine("Initialize");
             string line = "chatter";
-            StartCoroutine(animateText(line));
-  
+
+            Task.Run(() => {
+                animateText(line);
+            });
         }
 
 
-        public IEnumerator animateText(string chatter)
+
+
+
+        async Task animateText(string chatter)
         {
+
             if (!started)
             {
                 started = true;
                 int i = 0;
-                Text dialogue = new Text("", FontObjects.Adore64, 24);
-                String dialogueText = dialogue.DisplayedString;
-                while (i < dialogueText.Length)
+                dialogue = new Text("", FontObjects.Adore64, 24);
+                while (i < chatter.Length)
                 {
-                    dialogueText = (string.Concat(dialogueText,chatter[i++]));
-                    window.Draw(dialogue);
-                    yield return new WaitForSecondsRealtime(speed);
+                    dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, chatter[i++]));
+                    await Task.Delay(1000);
                 }
                 started = false;
             }
+            // Do asynchronous work.
+            
         }
+
+
 
         protected override void Update()
         {
@@ -100,8 +109,9 @@ namespace Test
 
         protected override void Draw()
         {
-            //window.Draw(text);
-            
+            window.Draw(text);
+            window.Draw(dialogue);
+
         }
     }
 }
