@@ -22,7 +22,9 @@ namespace Test
         Dictionary<SFML.Window.Keyboard.Key, bool[]> keys = new Dictionary<SFML.Window.Keyboard.Key, bool[]>();
         Font font;
         Text text;
-        
+        Boolean started = false;
+        float speed = 0.035f;
+
 
         public SA() : base(800, 600, "Say Again?", Color.Magenta)
         {
@@ -61,10 +63,34 @@ namespace Test
 
         protected override void Initialize()
         {
+
+
             text = new Text("say again by team babble fish", FontObjects.Adore64, 24);
+
             text.Color = Color.Black;
             Console.WriteLine("Initialize");
+            string line = "chatter";
+            StartCoroutine(animateText(line));
+  
+        }
 
+
+        public IEnumerator animateText(string chatter)
+        {
+            if (!started)
+            {
+                started = true;
+                int i = 0;
+                Text dialogue = new Text("", FontObjects.Adore64, 24);
+                String dialogueText = dialogue.DisplayedString;
+                while (i < dialogueText.Length)
+                {
+                    dialogueText = (string.Concat(dialogueText,chatter[i++]));
+                    window.Draw(dialogue);
+                    yield return new WaitForSecondsRealtime(speed);
+                }
+                started = false;
+            }
         }
 
         protected override void Update()
@@ -74,7 +100,7 @@ namespace Test
 
         protected override void Draw()
         {
-            window.Draw(text);
+            //window.Draw(text);
             
         }
     }
