@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using SFML.Graphics;
 using SFML.Window;
+using SFML.System;
 using System.Drawing;
 
 namespace Test
@@ -20,9 +21,10 @@ namespace Test
     class SA : Game
     {
         Dictionary<SFML.Window.Keyboard.Key, bool[]> keys = new Dictionary<SFML.Window.Keyboard.Key, bool[]>();
-        Font font;
-        Text text;
         Text dialogue;
+        Text name;
+        RectangleShape dialogueBox;
+        RectangleShape nameBox;
         Boolean started = false;
         int printTime;
 
@@ -42,7 +44,7 @@ namespace Test
         {
             if (e.Code == Keyboard.Key.M)
             {
-                text.Position = new SFML.System.Vector2f(400, 300);
+                
             }
 
             if (e.Code == Keyboard.Key.Space)
@@ -70,11 +72,17 @@ namespace Test
 
         protected override void Initialize()
         {
-
-
-            text = new Text("test test", FontObjects.Adore64, 24);
-
-            text.Color = Color.Black;
+            name = new Text("Alex", FontObjects.Adore64, 24);
+            name.Position = new Vector2f(90, 15);
+            name.Color = Color.Black;
+            nameBox = new RectangleShape(new Vector2f(150, 50));
+            nameBox.OutlineThickness = 3;
+            nameBox.OutlineColor = Color.Black;
+            nameBox.Position = new Vector2f(90, 15);
+            dialogueBox = new RectangleShape(new Vector2f(700, 150));
+            dialogueBox.Position = new Vector2f(50, 50);
+            dialogueBox.OutlineThickness = 3;
+            dialogueBox.OutlineColor = Color.Black; 
             Console.WriteLine("Initialize");
             string line = "say again by team babble fish";
 
@@ -97,6 +105,8 @@ namespace Test
                 started = true;
                 int i = 0;
                 dialogue = new Text("", FontObjects.Adore64, 24);
+                dialogue.Position = new Vector2f(50, 100);
+                dialogue.Color = Color.Black;
                 while (i < chatter.Length)
                 {
                     dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, chatter[i++]));
@@ -117,8 +127,12 @@ namespace Test
 
         protected override void Draw()
         {
-            window.Draw(text);
+
+            window.Draw(dialogueBox);
             window.Draw(dialogue);
+            window.Draw(nameBox);
+            window.Draw(name);
+
 
         }
     }
