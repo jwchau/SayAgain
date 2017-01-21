@@ -72,8 +72,8 @@ namespace Test
             Console.WriteLine("Initialize");
             string line = "chatter";
 
-            Task.Run(() => {
-                animateText(line);
+            Task.Run(async () => {
+                await animateText(line);
             });
         }
 
