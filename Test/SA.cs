@@ -32,6 +32,7 @@ namespace Test
         static Vector2f nameBoxPos = new Vector2f(90, 15);
         static Vector2f dialogueTextPos = new Vector2f(dialogueBoxPos.X, dialogueBoxPos.Y);
         static Vector2f nameTextPos = new Vector2f(nameBoxPos.X, nameBoxPos.Y);
+        Textbox kitty;
 
         Boolean started = false;
         int printTime;
@@ -80,6 +81,8 @@ namespace Test
 
         protected override void Initialize()
         {
+            kitty = new Textbox(100, 100, 5, 5, "kitty kat", Color.Black);
+
             name = new Text("Alex", FontObjects.Adore64, 24);
             name.Position = nameTextPos;
             name.Color = color;
@@ -140,7 +143,7 @@ namespace Test
             window.Draw(dialogue);
             window.Draw(nameBox);
             window.Draw(name);
-
+            window.Draw(kitty);
 
         }
     }
