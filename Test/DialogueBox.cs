@@ -12,21 +12,22 @@ using System.Drawing;
 
 namespace Test
 {
-    class Textbox: Drawable
+    class DialogueBox: Drawable
     {
         public float w, h, x, y;
         public string content;
         public Color c;
-        public Dialogue line;
-        private string v5;
+        //public Dialogue line;
         public RectangleShape box;
+        public RectangleShape nameBox;
         public void Draw(RenderTarget target, RenderStates states) {
             target.Draw(box);
-            target.Draw(line);
+            target.Draw(nameBox);
+            //target.Draw(line);
             
         }
         
-        public Textbox(float w, float h, float x, float y, string content, Color c)
+        public DialogueBox(float w, float h, float x, float y, string content, Color c)
         {
             this.w = w;
             this.h = h;
@@ -39,9 +40,15 @@ namespace Test
             box.Position = new Vector2f(x, y);
             box.OutlineThickness = 3;
             box.OutlineColor = c;
-            line = new Dialogue(x, y, content, c);
 
-            
+            nameBox = new RectangleShape(new Vector2f(w-500, h-100));
+            nameBox.Position = new Vector2f(x+40, y-35);
+            nameBox.OutlineThickness = 3;
+            nameBox.OutlineColor = c;
+
+            //line = new Dialogue(x, y, content, c);
+            //name = new Text(content, FontObjects.Adore64, 24);
+
         }
 
     }

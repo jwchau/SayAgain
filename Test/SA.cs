@@ -23,17 +23,9 @@ namespace Test
         Dictionary<SFML.Window.Keyboard.Key, bool[]> keys = new Dictionary<SFML.Window.Keyboard.Key, bool[]>();
         Text dialogue;
         Text name;
-        RectangleShape dialogueBox;
-        RectangleShape nameBox;
         static Color color = Color.Black;
-        static Vector2f dialogueBoxSize = new Vector2f(700, 150);
-        static Vector2f nameBoxSize = new Vector2f(150, 50);
-        static Vector2f dialogueBoxPos = new Vector2f(50, 50);
-        static Vector2f nameBoxPos = new Vector2f(90, 15);
-        static Vector2f dialogueTextPos = new Vector2f(dialogueBoxPos.X, dialogueBoxPos.Y);
-        static Vector2f nameTextPos = new Vector2f(nameBoxPos.X, nameBoxPos.Y);
-        Textbox kitty;
-
+        DialogueBox dialogueBox;
+        Boolean init;
         Boolean started = false;
         int printTime;
 
@@ -51,9 +43,22 @@ namespace Test
 
         private void onKeyPressed(object sender, KeyEventArgs e)
         {
+            init = true;
             if (e.Code == Keyboard.Key.M)
             {
-                
+                dialogueBox = new DialogueBox(700, 150, 50, 50, "kitty kat", Color.Black);
+
+                name = new Text("Alex", FontObjects.Adore64, 24);
+                name.Position = new Vector2f(dialogueBox.x + 40, dialogueBox.y - 35);
+                name.Color = color;
+
+                Console.WriteLine("Initialize");
+                string line = "say again by team babble fish";
+
+                Task.Run(async () => { //Task.Run puts on separate thread
+                    printTime = 100;
+                    await animateText(line); //await pauses thread until animateText() is completed
+                });
             }
 
             if (e.Code == Keyboard.Key.Space)
@@ -81,26 +86,19 @@ namespace Test
 
         protected override void Initialize()
         {
-            kitty = new Textbox(100, 100, 5, 5, "kitty kat", Color.Black);
+            /*dialogueBox = new DialogueBox(700, 150, 50, 50, "kitty kat", Color.Black);
 
             name = new Text("Alex", FontObjects.Adore64, 24);
-            name.Position = nameTextPos;
+            name.Position = new Vector2f(dialogueBox.x + 40, dialogueBox.y - 35);
             name.Color = color;
-            nameBox = new RectangleShape(nameBoxSize);
-            nameBox.OutlineThickness = 3;
-            nameBox.OutlineColor = color;
-            nameBox.Position = nameBoxPos;
-            dialogueBox = new RectangleShape(dialogueBoxSize);
-            dialogueBox.Position = dialogueBoxPos;
-            dialogueBox.OutlineThickness = 3;
-            dialogueBox.OutlineColor = color; 
+
             Console.WriteLine("Initialize");
             string line = "say again by team babble fish";
 
             Task.Run(async () => { //Task.Run puts on separate thread
                 printTime = 100;
                 await animateText(line); //await pauses thread until animateText() is completed
-            });
+            });*/
         }
 
 
@@ -116,7 +114,7 @@ namespace Test
                 started = true;
                 int i = 0;
                 dialogue = new Text("", FontObjects.Adore64, 24);
-                dialogue.Position = dialogueTextPos;
+                dialogue.Position = new Vector2f(50, 50);
                 dialogue.Color = color;
                 while (i < chatter.Length)
                 {
@@ -138,12 +136,13 @@ namespace Test
 
         protected override void Draw()
         {
-
-            window.Draw(dialogueBox);
-            window.Draw(dialogue);
-            window.Draw(nameBox);
-            window.Draw(name);
-            window.Draw(kitty);
+            if (init)
+            {
+                window.Draw(dialogueBox);
+                window.Draw(dialogue);
+                window.Draw(name);
+            }
+            
 
         }
     }
