@@ -21,6 +21,7 @@ namespace Test
     class SA : Game
     {
         Dictionary<SFML.Window.Keyboard.Key, bool[]> keys = new Dictionary<SFML.Window.Keyboard.Key, bool[]>();
+        Text instruction;
         Text dialogue;
         Text name;
         static Color color = Color.Black;
@@ -49,7 +50,7 @@ namespace Test
                 dialogueBox = new DialogueBox(700, 150, 50, 50, "kitty kat", Color.Black);
 
                 name = new Text("Alex", FontObjects.Adore64, 24);
-                name.Position = new Vector2f(dialogueBox.x + 40, dialogueBox.y - 35);
+                name.Position = new Vector2f(dialogueBox.x + 40, dialogueBox.y - 25);
                 name.Color = color;
 
                 Console.WriteLine("Initialize");
@@ -86,19 +87,9 @@ namespace Test
 
         protected override void Initialize()
         {
-            /*dialogueBox = new DialogueBox(700, 150, 50, 50, "kitty kat", Color.Black);
 
-            name = new Text("Alex", FontObjects.Adore64, 24);
-            name.Position = new Vector2f(dialogueBox.x + 40, dialogueBox.y - 35);
-            name.Color = color;
-
-            Console.WriteLine("Initialize");
-            string line = "say again by team babble fish";
-
-            Task.Run(async () => { //Task.Run puts on separate thread
-                printTime = 100;
-                await animateText(line); //await pauses thread until animateText() is completed
-            });*/
+            instruction = new Text("press m for dialogue \n"+
+                "press space to speed up", FontObjects.Adore64, 24);
         }
 
 
@@ -114,7 +105,7 @@ namespace Test
                 started = true;
                 int i = 0;
                 dialogue = new Text("", FontObjects.Adore64, 24);
-                dialogue.Position = new Vector2f(50, 50);
+                dialogue.Position = new Vector2f(50, 70);
                 dialogue.Color = color;
                 while (i < chatter.Length)
                 {
@@ -136,6 +127,7 @@ namespace Test
 
         protected override void Draw()
         {
+            window.Draw(instruction);
             if (init)
             {
                 window.Draw(dialogueBox);
