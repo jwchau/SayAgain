@@ -1,2 +1,3 @@
-Test/bin/*
-Test/obj/*
+Test\bin\*
+Test\obj\*
+.vs\*
