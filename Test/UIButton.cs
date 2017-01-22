@@ -13,7 +13,7 @@ namespace Test
         //constructor
         public UIButton(float size, float x, float y, string content) {
 
-            buttonTextFont = new Font("Content/Adore64.ttf");
+            buttonTextFont = new Font("Content/ARCADECLASSIC.ttf");
             buttonText = new Text(content, buttonTextFont);
             buttonText.Position = new SFML.System.Vector2f(x, y);
 
