@@ -16,7 +16,7 @@ namespace Test
         List<UIButton> buttons = new List<UIButton>();
 
         UITextBox TextBox = new UITextBox(800, 100, 0, 500, "HELLO WORLD!");
-        UISpeechBox SpeechBox = new UISpeechBox(700, 150, 50, 50, "Say Again by team babble fish", "Alex");
+        //UISpeechBox SpeechBox = new UISpeechBox(700, 150, 50, 50, "Say Again by team babble fish", "Alex");
 
         InputManager ManagerOfInput = new InputManager();
 
