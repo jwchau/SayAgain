@@ -63,6 +63,8 @@
     <Compile Include="SA.cs" />
     <Compile Include="UIElement.cs" />
     <Compile Include="UIManager.cs" />
+    <Compile Include="UISpeechBox.cs" />
+    <Compile Include="UITextBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

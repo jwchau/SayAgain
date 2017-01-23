@@ -11,8 +11,10 @@ namespace Test
     class UIButton:UIElement
     {
         //constructor
-        public UIButton(float size, float x, float y, string content) {
+        public UIButton(float size, float x, float y, string content,string newDialogue) {
 
+            this.x = x;
+            this.y = y;
             buttonTextFont = new Font("Content/ARCADECLASSIC.ttf");
             buttonText = new Text(content, buttonTextFont);
             buttonText.Position = new SFML.System.Vector2f(x, y);
@@ -22,12 +24,15 @@ namespace Test
             rect.FillColor = Color.Black;
             Color myColor = new Color(177, 177, 177);
             rect.FillColor = myColor;
+            this.newDialogue = newDialogue;
         }
 
         //fields
+        float x, y;
         Font buttonTextFont;
         Text buttonText;
         RectangleShape rect;
+        string newDialogue;
         bool selected = false;
         int mouseOffsetX = 0;
         int mouseOffsetY = 0;
@@ -40,6 +45,22 @@ namespace Test
             return rect;
         }
 
+        public float getX() {
+            return x;
+        }
+
+        public float getY() {
+            return y;
+        }
+
+        public void setX(float newX) {
+            x = newX;
+        }
+
+        public void setY(float newY)
+        {
+            y = newY;
+        }
         public Text getUIButtonText()
         {
             return buttonText;
@@ -76,6 +97,10 @@ namespace Test
             return false;
         }
 
+        public void snapBack() {
+            rect.Position = new SFML.System.Vector2f(x, y);
+            buttonText.Position = new SFML.System.Vector2f(x, y);
+        }
         public void translate(int x, int y)
         {
             var bounds = getRectBounds();
@@ -102,6 +127,10 @@ namespace Test
             rect.Position = new SFML.System.Vector2f(newXPos, newYPos);
             buttonText.Position = new SFML.System.Vector2f(newXPos, newYPos);
 
+        }
+
+        public string getNewDialogue() {
+            return newDialogue;
         }
     }
 }

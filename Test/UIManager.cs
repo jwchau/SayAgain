@@ -14,7 +14,7 @@ namespace Test
     class UIManager: UIElement
     {
         public UIManager() {
-
+            
         }
 
     }
