@@ -16,7 +16,7 @@ namespace Test
             this.size = size;
             this.x = x;
             this.y = y;
-            buttonTextFont = new Font("Content/ARCADECLASSIC.ttf");
+            buttonTextFont = FontObjects.Adore64;
             buttonText = new Text(content, buttonTextFont);
             buttonText.Position = new SFML.System.Vector2f(x, y);
 
