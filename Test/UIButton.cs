@@ -13,13 +13,14 @@ namespace Test
         //constructor
         public UIButton(float size, float x, float y, string content,string newDialogue) {
 
+            this.size = size;
             this.x = x;
             this.y = y;
             buttonTextFont = new Font("Content/ARCADECLASSIC.ttf");
             buttonText = new Text(content, buttonTextFont);
             buttonText.Position = new SFML.System.Vector2f(x, y);
 
-            rect = new RectangleShape(new SFML.System.Vector2f(size, size));
+            rect = new RectangleShape(new SFML.System.Vector2f(content.Length*18, 40));
             rect.Position = new SFML.System.Vector2f(x, y);
             rect.FillColor = Color.Black;
             Color myColor = new Color(177, 177, 177);
@@ -28,7 +29,6 @@ namespace Test
         }
 
         //fields
-        float x, y;
         Font buttonTextFont;
         Text buttonText;
         RectangleShape rect;
@@ -38,7 +38,7 @@ namespace Test
         int mouseOffsetY = 0;
 
         //methods
-        String eventHandler;
+        //String eventHandler;
 
         public RectangleShape getUIButtonRect()
         {

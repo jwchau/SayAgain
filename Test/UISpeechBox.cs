@@ -58,7 +58,7 @@ namespace Test
         RectangleShape SpeechBox;
         RectangleShape NameBox;
         Text UINameBoxText;
-        bool started = false;
-        int printTime = 0;
+        //bool started = false;
+        //int printTime = 0;
     }
 }
