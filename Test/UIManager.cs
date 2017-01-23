@@ -13,9 +13,21 @@ namespace Test
 {
     class UIManager: UIElement
     {
+        //constructor
         public UIManager() {
             
         }
 
+        //fields
+        List<UIButton> buttons = new List<UIButton>();
+
+        //methods
+        public List<UIButton> getButtons() {
+            return buttons;
+        }
+
+        public void addButton(UIButton b) {
+            buttons.Add(b);
+        }
     }
 }

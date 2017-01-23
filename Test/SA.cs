@@ -22,15 +22,13 @@ namespace Test
     {
 
         Dictionary<SFML.Window.Keyboard.Key, bool[]> keys = new Dictionary<SFML.Window.Keyboard.Key, bool[]>();
-<<<<<<< HEAD
 
-        List<UIButton> buttons = new List<UIButton>();
+        UIManager ui_man = new UIManager();
 
         UITextBox TextBox = new UITextBox(800, 100, 0, 500, "HELLO WORLD!");
         //UISpeechBox SpeechBox = new UISpeechBox(700, 150, 50, 50, "Say Again by team babble fish", "Alex");
 
         InputManager ManagerOfInput = new InputManager();
-=======
         Text dialogue;
         Text name;
         static Color color = Color.Black;
@@ -39,7 +37,6 @@ namespace Test
         Boolean started = false;
         int printTime;
 
->>>>>>> origin/jill
 
         public SA() : base(800, 600, "Say Again?", Color.Magenta)
         {
@@ -68,6 +65,7 @@ namespace Test
             ManagerOfInput.SetMouseDown(false);
             ManagerOfInput.SetMouseRelease(true);
 
+            var buttons = ui_man.getButtons();
             for (var i = 0; i < buttons.Count; i++)
             {
                 if (buttons[i].GetSelected())
@@ -98,6 +96,7 @@ namespace Test
 
         private void onMouseButtonPressed(object sender, MouseButtonEventArgs e)
         {
+            var buttons = ui_man.getButtons();
             for(var i = 0; i < buttons.Count; i++)
             {
                 if (buttons[i].Contains(e.X, e.Y))
@@ -138,6 +137,8 @@ namespace Test
                 });
             }
 
+           
+           
             if (e.Code == Keyboard.Key.Space)
             {
                 printTime = 0;
@@ -156,16 +157,13 @@ namespace Test
 
         protected override void LoadContent()
         {
-<<<<<<< HEAD
             //intialize AI dialogue box
 
             //initialize list of buttons
-            buttons.Add(new UIButton(80, 100, 40, "SUH DUDE","I AM DIALOGUE 1"));
-            buttons.Add(new UIButton(40, 20, 80, "woah","I AM DIALOGUE 2"));
-=======
-           
-            Console.WriteLine("LoadContent");
->>>>>>> origin/jill
+            ui_man.addButton(new UIButton(80, 100, 40, "SUH DUDE","I AM DIALOGUE 1"));
+            ui_man.addButton(new UIButton(40, 20, 80, "woah","I AM DIALOGUE 2"));
+            //Console.WriteLine("LoadContent");
+
 
         }
 
@@ -216,9 +214,11 @@ namespace Test
 
         protected override void Update()
         {
+            
             if (ManagerOfInput.GetMouseDown())
             {
                 var MouseCoord = ManagerOfInput.GetMousePos();
+                var buttons = ui_man.getButtons();
                 for (var i = 0; i < buttons.Count; i++)
                 {
                     if (buttons[i].GetSelected())
@@ -243,29 +243,27 @@ namespace Test
 
         protected override void Draw()
         {
-<<<<<<< HEAD
             window.Draw(TextBox.getBox());
             window.Draw(TextBox.getBoxText());
 
-           // window.Draw(SpeechBox.getNameBox());
-           // window.Draw(SpeechBox.getNameBoxText());
-          //  window.Draw(SpeechBox.getSpeechBox());
-          //  window.Draw(SpeechBox.getSpeechBoxText());
+            // window.Draw(SpeechBox.getNameBox());
+            // window.Draw(SpeechBox.getNameBoxText());
+            //  window.Draw(SpeechBox.getSpeechBox());
+            //  window.Draw(SpeechBox.getSpeechBoxText());
 
+            var buttons = ui_man.getButtons();
             for (var i = 0; i < buttons.Count; i++)
             {
                 window.Draw(buttons[i].getUIButtonRect());
                 window.Draw(buttons[i].getUIButtonText());
             }
-=======
+
             if (init)
             {
                 window.Draw(dialogueBox);
                 window.Draw(dialogue);
                 window.Draw(name);
             }
-            
->>>>>>> origin/jill
 
         }
     }
