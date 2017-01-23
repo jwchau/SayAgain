@@ -153,3 +153,5 @@ E:\College\Senior\SayAgain\Test\bin\Debug\openal32.dll
 E:\College\Senior\SayAgain\Test\bin\Debug\Test.exe
 E:\College\Senior\SayAgain\Test\bin\Debug\Test.pdb
 E:\College\Senior\SayAgain\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\jwchau\Desktop\SayAgain\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\jwchau\Desktop\SayAgain\Test\obj\Debug\Test.csproj.GenerateResource.Cache
