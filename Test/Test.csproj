@@ -34,16 +34,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="sfmlnet-audio-2">
-      <HintPath>..\..\..\Documents\SFML.Net-2.2\lib\sfmlnet-audio-2.dll</HintPath>
+      <HintPath>..\..\SFML.Net-2.2\lib\sfmlnet-audio-2.dll</HintPath>
     </Reference>
     <Reference Include="sfmlnet-graphics-2">
-      <HintPath>..\..\..\Documents\SFML.Net-2.2\lib\sfmlnet-graphics-2.dll</HintPath>
+      <HintPath>..\..\SFML.Net-2.2\lib\sfmlnet-graphics-2.dll</HintPath>
     </Reference>
     <Reference Include="sfmlnet-system-2">
-      <HintPath>..\..\..\Documents\SFML.Net-2.2\lib\sfmlnet-system-2.dll</HintPath>
+      <HintPath>..\..\SFML.Net-2.2\lib\sfmlnet-system-2.dll</HintPath>
     </Reference>
     <Reference Include="sfmlnet-window-2">
-      <HintPath>..\..\..\Documents\SFML.Net-2.2\lib\sfmlnet-window-2.dll</HintPath>
+      <HintPath>..\..\SFML.Net-2.2\lib\sfmlnet-window-2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -55,6 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InputManager.cs" />
+    <Compile Include="UIButton.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,6 +66,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SA.cs" />
+    <Compile Include="UIElement.cs" />
+    <Compile Include="UIManager.cs" />
+    <Compile Include="UISpeechBox.cs" />
+    <Compile Include="UITextBox.cs" />
     <Compile Include="DialogueBox.cs" />
   </ItemGroup>
   <ItemGroup>
