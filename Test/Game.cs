@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 using SFML.Window;
 using SFML.Graphics;
 
+
 namespace Test
 {
     abstract class Game
     {
         protected RenderWindow window;
         protected Color clearColor;
+       
+
 
         public Game(uint width, uint height, string title, Color clearColor)
         {
@@ -41,7 +44,6 @@ namespace Test
 
         protected abstract void LoadContent();
         protected abstract void Initialize();
-
         protected abstract void Update();
         protected abstract void Draw();
 
