@@ -12,12 +12,17 @@ namespace Test
     class UIElement
     {
         //constructor
-        public UIElement() {}
+        public UIElement() {
+            this.size = 0;
+            this.x = 0;
+            this.y = 0;
+        }
 
         //fields
         protected float size;
         protected float x;
         protected float y;
+
 
         //methods
         void Draw(){ }

@@ -77,7 +77,7 @@ namespace Test
                     //first check top left of textbox
                     if (selectedBounds.Top + selectedBounds.Height >= boxBounds.Top)
                     {
-                        Console.WriteLine("YO");
+                        //Console.WriteLine("YO");
                         TextBox.getBoxText().DisplayedString = buttons[i].getNewDialogue();
                         buttons.RemoveAt(i);
                         TextBox.setBoxColor(Color.Black); //to make sure it overwrites the hover color
