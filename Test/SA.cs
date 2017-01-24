@@ -134,7 +134,10 @@ namespace Test
                 name.Color = color;
 
                 Console.WriteLine("Initialize");
-                string line = "say again by team babble fish young savage why u trappin so hard? why u got a 12 car garage. y u pullin all these rappers cards";
+                string line = "so much dope that it broke the scale " +
+                    "they say crack kills, but my crack sells " +
+                    "my brother in the kitchen and he wrappin a bale " +
+                    "louis v my bag and louis v on my belt";
 
                 Task.Run(async () => { //Task.Run puts on separate thread
                     printTime = 100;
@@ -197,18 +200,19 @@ namespace Test
                 started = true;
                 int i = 0;
                 dialogue = new Text("", FontObjects.Adore64, 20);
-                dialogue.Position = new Vector2f(dialogueBox.x+15, dialogueBox.y + 20);
+                dialogue.Position = new Vector2f(dialogueBox.x+25, dialogueBox.y + 20);
                 dialogue.Color = color;
-                uint maxw = (uint)dialogueBox.w - 50;
+                uint maxw = (uint)dialogueBox.w - 150;
                 uint curw = 0;
                 while (i < chatter.Length)
                 {
                     
-                    //augment dialogue by 1 char
+
                     dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, chatter[i++]));
                     curw += dialogue.CharacterSize;
+                   
 
-                    if (curw > maxw/* && chatter[i].Equals(" ")*/)
+                    if (curw > maxw && Char.IsWhiteSpace(chatter[i - 1]))
                     {
                   
                         dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, "\n"));
