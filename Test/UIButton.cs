@@ -8,24 +8,24 @@ using SFML.Graphics;
 
 namespace Test
 {
-    class UIButton:UIElement
+    class UIButton : UIElement
     {
         //constructor
-        public UIButton(float size, float x, float y, string content,string newDialogue) {
+        public UIButton(float x, float y, string content,string newDialogue) {
 
-            this.size = size;
             this.x = x;
             this.y = y;
             buttonTextFont = FontObjects.Adore64;
             buttonText = new Text(content, buttonTextFont);
             buttonText.Position = new SFML.System.Vector2f(x, y);
 
-            rect = new RectangleShape(new SFML.System.Vector2f(content.Length*18, 40));
+            rect = new RectangleShape(new SFML.System.Vector2f(buttonText.GetGlobalBounds().Width+7, buttonText.GetGlobalBounds().Height+10));
             rect.Position = new SFML.System.Vector2f(x, y);
             rect.FillColor = Color.Black;
             Color myColor = new Color(177, 177, 177);
             rect.FillColor = myColor;
             this.newDialogue = newDialogue;
+            Console.WriteLine(buttonText.GetGlobalBounds());
         }
 
         //fields
@@ -53,7 +53,8 @@ namespace Test
             return y;
         }
 
-        public void setX(float newX) {
+        public void setX(float newX)
+        {
             x = newX;
         }
 
@@ -110,7 +111,7 @@ namespace Test
             {
                 newXPos = 0;
             }
-            else if (x - mouseOffsetX + (int)bounds.Height > 800)
+            else if (x - mouseOffsetX + (int)bounds.Width > 800)
             {
                 newXPos = 800 - (int)bounds.Width;
             }
@@ -119,7 +120,7 @@ namespace Test
             {
                 newYPos = 0;
             }
-            else if (y - mouseOffsetY + (int)bounds.Width > 600)
+            else if (y - mouseOffsetY + (int)bounds.Height > 600)
             {
                 newYPos = 600 - (int)bounds.Height;
             }

@@ -90,10 +90,6 @@ namespace Test
                 }
             }
 
-           
-
-
-         
         }
 
         private void onMouseButtonPressed(object sender, MouseButtonEventArgs e)
@@ -162,8 +158,8 @@ namespace Test
             //intialize AI dialogue box
 
             //initialize list of buttons
-            ui_man.addButton(new UIButton(80, 100, 40, "SUH DUDE","I AM DIALOGUE 1"));
-            ui_man.addButton(new UIButton(40, 20, 80, "woah","I AM DIALOGUE 2"));
+            ui_man.addButton(new UIButton(100, 40, "SUH DUDE","I AM DIALOGUE 1"));
+            ui_man.addButton(new UIButton(20, 80, "woah","I AM DIALOGUE 2"));
             //Console.WriteLine("LoadContent");
 
 
