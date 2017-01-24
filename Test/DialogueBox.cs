@@ -26,6 +26,10 @@ namespace Test
             //target.Draw(line);
             
         }
+        public FloatRect GetGlobalBounds()
+        {
+            return box.GetGlobalBounds();
+        }
         
         public DialogueBox(float w, float h, float x, float y, string content, Color c)
         {

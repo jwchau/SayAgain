@@ -9,6 +9,8 @@ using SFML.Window;
 using SFML.System;
 using System.Drawing;
 
+
+
 namespace Test
 {
 
@@ -131,16 +133,20 @@ namespace Test
                 name.Color = color;
 
                 Console.WriteLine("Initialize");
-                string line = "say again by team babble fish";
+                string line = "say again by team babble fish young savage why u trappin so hard? why u got a 12 car garage. y u pullin all these rappers cards";
 
                 Task.Run(async () => { //Task.Run puts on separate thread
                     printTime = 100;
                     await animateText(line); //await pauses thread until animateText() is completed
                 });
+                
+                
+
+
             }
 
-           
-           
+
+
             if (e.Code == Keyboard.Key.Space)
             {
                 printTime = 0;
@@ -186,14 +192,32 @@ namespace Test
             
             if (!started)
             {
+                
                 started = true;
                 int i = 0;
-                dialogue = new Text("", FontObjects.Adore64, 24);
-                dialogue.Position = new Vector2f(50, 70);
+                dialogue = new Text("", FontObjects.Adore64, 20);
+                dialogue.Position = new Vector2f(100, 70);
                 dialogue.Color = color;
+                float maxw = dialogueBox.w - 100;
+                float curw = 0;
                 while (i < chatter.Length)
                 {
+                    
+                    //augment dialogue by 1 char
                     dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, chatter[i++]));
+
+                    Console.WriteLine("\n *********** max wid " + maxw);
+                    Console.WriteLine("\n line " + dialogue.GetGlobalBounds().Width);
+                    Console.WriteLine(dialogue.DisplayedString);
+                    curw += 20;
+
+                    if (curw > maxw/* && chatter[i].Equals(" ")*/)
+                    {
+                  
+                        dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, "\n"));
+                        Console.WriteLine("line break");
+                        curw = 0;
+                    }
                     await Task.Delay(printTime); //equivalent of putting thread to sleep
                 }
                 started = false;
