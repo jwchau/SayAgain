@@ -174,3 +174,5 @@ C:\Users\misimpso\Desktop\SayAgain-master\SayAgain-master\Test\obj\Debug\Test.cs
 C:\Users\Mikey\Desktop\SayAgain-master (2)\SayAgain-master\SayAgain-master\Test\bin\Debug\Test.exe.config
 C:\Users\Mikey\Desktop\SayAgain-master (2)\SayAgain-master\SayAgain-master\Test\obj\Debug\Test.exe
 C:\Users\Mikey\Desktop\SayAgain-master (2)\SayAgain-master\SayAgain-master\Test\obj\Debug\Test.pdb
+C:\Users\Mikey\Documents\SayAgain\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\Mikey\Documents\SayAgain\Test\obj\Debug\Test.csproj.GenerateResource.Cache
