@@ -11,6 +11,7 @@ using System.Drawing;
 
 
 
+
 namespace Test
 {
 
@@ -196,20 +197,16 @@ namespace Test
                 started = true;
                 int i = 0;
                 dialogue = new Text("", FontObjects.Adore64, 20);
-                dialogue.Position = new Vector2f(100, 70);
+                dialogue.Position = new Vector2f(dialogueBox.x+15, dialogueBox.y + 20);
                 dialogue.Color = color;
-                float maxw = dialogueBox.w - 100;
-                float curw = 0;
+                uint maxw = (uint)dialogueBox.w - 50;
+                uint curw = 0;
                 while (i < chatter.Length)
                 {
                     
                     //augment dialogue by 1 char
                     dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, chatter[i++]));
-
-                    Console.WriteLine("\n *********** max wid " + maxw);
-                    Console.WriteLine("\n line " + dialogue.GetGlobalBounds().Width);
-                    Console.WriteLine(dialogue.DisplayedString);
-                    curw += 20;
+                    curw += dialogue.CharacterSize;
 
                     if (curw > maxw/* && chatter[i].Equals(" ")*/)
                     {
