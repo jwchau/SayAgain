@@ -14,7 +14,7 @@ namespace Test
 {
     class DialogueBox: Drawable
     {
-        public float w, h, x, y;
+        public float w, h, x, y, x2, y2;
         public string content;
         public Color c;
         //public Dialogue line;
@@ -33,10 +33,13 @@ namespace Test
         
         public DialogueBox(float w, float h, float x, float y, string content, Color c)
         {
+
             this.w = w;
             this.h = h;
             this.x = x;
             this.y = y;
+            this.x2 = x + 40;
+            this.y2 = y - 35;
             this.c = c;
             this.content = content;
             
@@ -45,8 +48,8 @@ namespace Test
             box.OutlineThickness = 3;
             box.OutlineColor = c;
 
-            nameBox = new RectangleShape(new Vector2f(w-500, h-100));
-            nameBox.Position = new Vector2f(x+40, y-35);
+            nameBox = new RectangleShape(new Vector2f(w-600, h-100));
+            nameBox.Position = new Vector2f(x2, y2);
             nameBox.OutlineThickness = 3;
             nameBox.OutlineColor = c;
 

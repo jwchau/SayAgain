@@ -130,14 +130,17 @@ namespace Test
                 dialogueBox = new DialogueBox(700, 150, 50, 50, "kitty kat", Color.Black);
 
                 name = new Text("Alex", FontObjects.Adore64, 24);
-                name.Position = new Vector2f(dialogueBox.x + 40, dialogueBox.y - 25);
+                name.Position = new Vector2f(dialogueBox.x2, dialogueBox.y2 + 10);
                 name.Color = color;
 
                 Console.WriteLine("Initialize");
                 string line = "so much dope that it broke the scale " +
                     "they say crack kills, but my crack sells " +
                     "my brother in the kitchen and he wrappin a bale " +
-                    "louis v my bag and louis v on my belt";
+                    "louis v my bag and louis v on my belt " +
+                    "oh my god thats my baby caroline u divine " +
+                    "killaa west side ~ bad thing bad bad bad thing";
+                
 
                 Task.Run(async () => { //Task.Run puts on separate thread
                     printTime = 100;
@@ -204,6 +207,8 @@ namespace Test
                 dialogue.Color = color;
                 uint maxw = (uint)dialogueBox.w - 150;
                 uint curw = 0;
+                float maxh = dialogueBox.h;
+                float curh = 0;
                 while (i < chatter.Length)
                 {
                     
@@ -219,6 +224,13 @@ namespace Test
                         Console.WriteLine("line break");
                         curw = 0;
                     }
+
+                    curh = dialogue.GetGlobalBounds().Height;
+                    if (curh > maxh)
+                    {
+                        Console.WriteLine("too tall");
+                    }
+                    
                     await Task.Delay(printTime); //equivalent of putting thread to sleep
                 }
                 started = false;
