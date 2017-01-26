@@ -26,16 +26,13 @@ namespace Test
 
         Dictionary<SFML.Window.Keyboard.Key, bool[]> keys = new Dictionary<SFML.Window.Keyboard.Key, bool[]>();
 
-        Text instruction;
 
         UIManager ui_man = new UIManager();
 
         UITextBox TextBox = new UITextBox(800, 100, 0, 500, "HELLO WORLD!");
-        //UISpeechBox SpeechBox = new UISpeechBox(700, 150, 50, 50, "Say Again by team babble fish", "Alex");
 
         InputManager ManagerOfInput = new InputManager();
-        Text dialogue;
-        Text name;
+        Text name, dialogue;
         static Color color = Color.Black;
         DialogueBox dialogueBox;
         Boolean init;
@@ -139,28 +136,12 @@ namespace Test
             }
             if (e.Code == Keyboard.Key.M)
             {
-                dialogueBox = new DialogueBox(700, 150, 50, 50, "kitty kat", Color.Black);
-
-                name = new Text("Alex", FontObjects.Adore64, 24);
-                name.Position = new Vector2f(dialogueBox.x2, dialogueBox.y2 + 10);
-                name.Color = color;
-                dialogue = new Text("", FontObjects.Adore64, 20);
-                dialogue.Position = new Vector2f(dialogueBox.x + 25, dialogueBox.y + 20);
-                dialogue.Color = color;
-
-                Console.WriteLine("Initialize");
-                string line = "so much dope that it broke the scale " +
-                    "they say crack kills, but my crack sells " +
-                    "my brother in the kitchen and he wrappin a bale " +
-                    "louis v my bag and louis v on my belt " +
-                    "oh my god thats my baby caroline u divine " +
-                    "killaa west side ~ bad thing bad bad bad thing";
-
-
-                Task.Run(async () => { //Task.Run puts on separate thread
-                    printTime = 100;
-                    await animateText(line); //await pauses thread until animateText() is completed
-                });
+                renderDialogue("so much dope that it broke the scale " +
+                "they say crack kills, but my crack sells " +
+                "my brother in the kitchen and he wrappin a bale " +
+                "louis v my bag and louis v on my belt " +
+                "oh my god thats my baby caroline u divine " +
+                "she my trap queen she my trap queen", "Mom");
             }
 
 
@@ -180,10 +161,32 @@ namespace Test
         }
 
 
+        public void renderDialogue(String s, String speaker)
+        {
+            //dialogueBox.RenderName(speaker);
+            name = new Text(speaker, FontObjects.Adore64, 24);
+            name.Position = new Vector2f(dialogueBox.OffsetX2, dialogueBox.OffsetY2);
+            name.Color = color;
 
+            //dialogueBox.RenderDialogue(s);
+            
+            dialogue = new Text("", FontObjects.Adore64, 20);
+            dialogue.Position = new Vector2f(dialogueBox.OffsetX, dialogueBox.OffsetY);
+            dialogue.Color = color;
+
+            Text tmp = new Text(s, FontObjects.Adore64, 24);
+
+
+            Task.Run(async () => { //Task.Run puts on separate thread
+                printTime = 100;
+                await animateText(tmp); //await pauses thread until animateText() is completed
+            });
+
+
+        }
         protected override void LoadContent()
         {
-            //intialize AI dialogue box
+            
 
             //initialize list of buttons
             ui_man.addButton(new UIButton(80, 100, 40, "SUH DUDE","I AM DIALOGUE 1"));
@@ -195,11 +198,14 @@ namespace Test
 
         protected override void Initialize()
         {
+
             //the view of the whole game
             gameView = window.GetView();
             //the view port is the whole window
             gameView.Viewport = new FloatRect(0, 0, 1, 1);
             window.SetView(gameView);
+
+            dialogueBox = new DialogueBox();
 
         }
         
@@ -208,7 +214,7 @@ namespace Test
 
         //async means this function can run separate from main app.
         //operate in own time and thread
-        async Task animateText(string chatter) 
+        async Task animateText(Text line) 
         {
             
 
@@ -222,37 +228,41 @@ namespace Test
                 int i = 0;
 
 
-
                 
-                //window.Draw(new Text("scrollview text", FontObjects.Adore64, 24));
                 uint maxw = (uint)dialogueBox.w - 150;
                 uint curw = 0;
                 float maxh = dialogueBox.h;
                 float curh = 0;
-                while (i < chatter.Length)
+                FloatRect tmp = new FloatRect(
+                                line.GetGlobalBounds().Left,
+                                line.GetGlobalBounds().Top,
+                                maxw,
+                                line.GetGlobalBounds().Height);
+                Console.WriteLine(tmp);
+
+                while (i < line.DisplayedString.Length)
                 {
                     
                     if (flag)
                     {
+                        Console.WriteLine(line.GetGlobalBounds());
                         
                         //what i want to view(dialogue text)
-                        //scrollview = new View (dialogueBox.GetGlobalBounds());
-                        scrollview = new View(dialogueBox.GetGlobalBounds());
+                        //scrollview = new View(tmp);
                         //where i want to view it (inside dialogueBox)
-                        scrollview.Viewport = new FloatRect(0f, 0f, 1f, .2f/*dialogueBox.x2,
-                        dialogueBox.y2 + 10, dialogueBox.w, dialogueBox.h*/);
+                        //scrollview.Viewport = new FloatRect(0,0,1,0.3f);
 
                         Console.WriteLine(flag);
-                        window.SetView(scrollview);
+                        //window.SetView(scrollview);
                         flag = false;
 
                     }
-                    Console.WriteLine(dialogue.GetGlobalBounds());
-                    dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, chatter[i++]));
+                    
+                    dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, line.DisplayedString[i++]));
                     curw += dialogue.CharacterSize;
                    
 
-                    if (curw > maxw && Char.IsWhiteSpace(chatter[i - 1]))
+                    if (curw > maxw && Char.IsWhiteSpace(line.DisplayedString[i - 1]))
                     {
                   
                         dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, "\n"));
@@ -310,11 +320,6 @@ namespace Test
             
             window.Draw(TextBox.getBox());
             window.Draw(TextBox.getBoxText());
-
-            // window.Draw(SpeechBox.getNameBox());
-            // window.Draw(SpeechBox.getNameBoxText());
-            //  window.Draw(SpeechBox.getSpeechBox());
-            //  window.Draw(SpeechBox.getSpeechBoxText());
 
             var buttons = ui_man.getButtons();
             for (var i = 0; i < buttons.Count; i++)
