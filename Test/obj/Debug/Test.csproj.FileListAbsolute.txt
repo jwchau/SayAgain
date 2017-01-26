@@ -176,3 +176,21 @@ C:\Users\Mikey\Desktop\SayAgain-master (2)\SayAgain-master\SayAgain-master\Test\
 C:\Users\Mikey\Desktop\SayAgain-master (2)\SayAgain-master\SayAgain-master\Test\obj\Debug\Test.pdb
 C:\Users\Mikey\Documents\SayAgain\Test\obj\Debug\Test.Properties.Resources.resources
 C:\Users\Mikey\Documents\SayAgain\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\bin\Debug\Test.exe.config
+C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\obj\Debug\Test.exe
+C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\obj\Debug\Test.pdb
+C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\bin\Debug\OpenTK.Compatibility.dll
+C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\bin\Debug\OpenTK.dll
+C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\bin\Debug\csfml-audio-2.dll
+C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\bin\Debug\csfml-graphics-2.dll
+C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\bin\Debug\csfml-system-2.dll
+C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\bin\Debug\csfml-window-2.dll
+C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\bin\Debug\libsndfile-1.dll
+C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\bin\Debug\openal32.dll
+C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\bin\Debug\Test.exe
+C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\bin\Debug\Test.pdb
+C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\bin\Debug\Newtonsoft.Json.dll
+C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\bin\Debug\Newtonsoft.Json.xml

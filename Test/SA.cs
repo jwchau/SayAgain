@@ -14,7 +14,7 @@ namespace Test
 
     class FontObjects
     {
-        public static Font Adore64 = new Font(new FileStream("Content/Fonts/Adore64.ttf", FileMode.Open));
+        public static Font Adore64 = new Font(new FileStream(@"C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\Fonts/Adore64.ttf", FileMode.Open));
     }
 
 

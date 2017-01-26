@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="sfmlnet-audio-2">
       <HintPath>..\..\SFML.Net-2.2\lib\sfmlnet-audio-2.dll</HintPath>
     </Reference>
@@ -57,9 +61,14 @@
   <ItemGroup>
     <Compile Include="AlexState.cs" />
     <Compile Include="CharacterClass.cs" />
+    <Compile Include="DialogParsing.cs" />
     <Compile Include="DadState.cs" />
+    <Compile Include="GameState.cs" />
     <Compile Include="InputManager.cs" />
+    <Compile Include="MenuButton.cs" />
     <Compile Include="MomState.cs" />
+    <Compile Include="PauseMenu.cs" />
+    <Compile Include="StartMenu.cs" />
     <Compile Include="UIButton.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Program.cs" />
@@ -79,6 +88,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Fonts\Adore64.ttf" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="csfml-audio-2.dll">

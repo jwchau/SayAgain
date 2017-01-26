@@ -1,3 +1,5 @@
 Test/bin/*
 Test/obj/*
+Test/packages.config
 .vs/
+packages/*

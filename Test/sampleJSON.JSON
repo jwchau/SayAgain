@@ -1,0 +1,18 @@
+{"Dialogues" :[
+{
+	"content": "I am dissapointed",
+	"memory": ["School","Divorce"],
+	"FNC" : 1
+},
+{
+	"content": "I have become God",
+	"memory": ["Worship"],
+	"FNC" : 50
+},
+{
+	"content": "suh bro",
+	"memory": [],
+	"FNC" : 5
+}
+]
+}
