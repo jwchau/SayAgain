@@ -9,7 +9,7 @@ using SFML.Graphics;
 //
 namespace Test
 {
-    class UIElement
+    class UIElement:Drawable
     {
         //constructor
         public UIElement() {
@@ -27,7 +27,10 @@ namespace Test
 
 
         //methods
-        void Draw(){ }
+        public virtual void Draw(RenderTarget target, RenderStates states)
+        {
+            //target.Draw();
+        }
 
     }
 }

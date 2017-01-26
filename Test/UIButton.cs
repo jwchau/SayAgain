@@ -25,7 +25,6 @@ namespace Test
             Color myColor = new Color(177, 177, 177);
             rect.FillColor = myColor;
             this.newDialogue = newDialogue;
-            Console.WriteLine(buttonText.GetGlobalBounds());
         }
 
         //fields

@@ -19,7 +19,7 @@ namespace Test
         }
 
         //fields
-        List<UIButton> buttons = new List<UIButton>();
+        List<UIButton> buttons = new List<UIButton>(); //our tone buttons
 
         //methods
         public List<UIButton> getButtons() {

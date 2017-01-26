@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Test
 {
-    class DadState : CharacterClass
+    class DadState : PersonState
     {
         public DadState(double mood, double volatility)
         {

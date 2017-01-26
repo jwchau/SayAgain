@@ -174,3 +174,37 @@ C:\Users\misimpso\Desktop\SayAgain-master\SayAgain-master\Test\obj\Debug\Test.cs
 C:\Users\Mikey\Desktop\SayAgain-master (2)\SayAgain-master\SayAgain-master\Test\bin\Debug\Test.exe.config
 C:\Users\Mikey\Desktop\SayAgain-master (2)\SayAgain-master\SayAgain-master\Test\obj\Debug\Test.exe
 C:\Users\Mikey\Desktop\SayAgain-master (2)\SayAgain-master\SayAgain-master\Test\obj\Debug\Test.pdb
+C:\Users\Mikey\Documents\SayAgain\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\Mikey\Documents\SayAgain\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+C:\Users\rnakarmi\Desktop\SayAgain-master\Test\bin\Debug\Test.exe.config
+C:\Users\rnakarmi\Desktop\SayAgain-master\Test\obj\Debug\Test.exe
+C:\Users\rnakarmi\Desktop\SayAgain-master\Test\obj\Debug\Test.pdb
+C:\Users\rnakarmi\Desktop\SayAgain-master\Test\bin\Debug\csfml-audio-2.dll
+C:\Users\rnakarmi\Desktop\SayAgain-master\Test\bin\Debug\csfml-graphics-2.dll
+C:\Users\rnakarmi\Desktop\SayAgain-master\Test\bin\Debug\csfml-system-2.dll
+C:\Users\rnakarmi\Desktop\SayAgain-master\Test\bin\Debug\csfml-window-2.dll
+C:\Users\rnakarmi\Desktop\SayAgain-master\Test\bin\Debug\libsndfile-1.dll
+C:\Users\rnakarmi\Desktop\SayAgain-master\Test\bin\Debug\openal32.dll
+C:\Users\rnakarmi\Desktop\SayAgain-master\Test\bin\Debug\OpenTK.Compatibility.dll
+C:\Users\rnakarmi\Desktop\SayAgain-master\Test\bin\Debug\OpenTK.dll
+C:\Users\rnakarmi\Desktop\SayAgain-master\Test\bin\Debug\Test.exe
+C:\Users\rnakarmi\Desktop\SayAgain-master\Test\bin\Debug\Test.pdb
+C:\Users\rnakarmi\Desktop\SayAgain-master\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\rnakarmi\Desktop\SayAgain-master\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+C:\Users\rnakarmi\Desktop\SayAgain-master\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+G:\Current\Test\bin\Debug\Test.exe.config
+G:\Current\Test\obj\Debug\Test.exe
+G:\Current\Test\obj\Debug\Test.pdb
+G:\Current\Test\bin\Debug\csfml-audio-2.dll
+G:\Current\Test\bin\Debug\csfml-graphics-2.dll
+G:\Current\Test\bin\Debug\csfml-system-2.dll
+G:\Current\Test\bin\Debug\csfml-window-2.dll
+G:\Current\Test\bin\Debug\libsndfile-1.dll
+G:\Current\Test\bin\Debug\openal32.dll
+G:\Current\Test\bin\Debug\OpenTK.Compatibility.dll
+G:\Current\Test\bin\Debug\OpenTK.dll
+G:\Current\Test\bin\Debug\Test.exe
+G:\Current\Test\bin\Debug\Test.pdb
+G:\Current\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+G:\Current\Test\obj\Debug\Test.Properties.Resources.resources
+G:\Current\Test\obj\Debug\Test.csproj.GenerateResource.Cache
