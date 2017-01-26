@@ -132,7 +132,8 @@ namespace Test
                 if (scrollview != null)
                 {
                     Console.WriteLine("press n ");
-
+                    scrollview.Zoom(0.5f);
+                    scrollview.Center = new Vector2f(200, 200);
                     scrollview.Move(new Vector2f(100, 100));
                 }
             }
@@ -143,6 +144,9 @@ namespace Test
                 name = new Text("Alex", FontObjects.Adore64, 24);
                 name.Position = new Vector2f(dialogueBox.x2, dialogueBox.y2 + 10);
                 name.Color = color;
+                dialogue = new Text("", FontObjects.Adore64, 20);
+                dialogue.Position = new Vector2f(dialogueBox.x + 25, dialogueBox.y + 20);
+                dialogue.Color = color;
 
                 Console.WriteLine("Initialize");
                 string line = "so much dope that it broke the scale " +
@@ -216,24 +220,10 @@ namespace Test
             
                 started = true;
                 int i = 0;
-                dialogue = new Text("", FontObjects.Adore64, 20);
-                dialogue.Position = new Vector2f(dialogueBox.x+25, dialogueBox.y + 20);
-                dialogue.Color = color;
-                //what i want to view(dialogue text)
-                //scrollview = new View (dialogueBox.GetGlobalBounds());
-                //where i want to view it (inside dialogueBox)
-                //scrollview.Viewport = new FloatRect(0f, 0f, 1f,.1f/*dialogueBox.x2,
-                  //  dialogueBox.y2 + 10, dialogueBox.w, dialogueBox.h*/);
 
-                //scrollview.Center = new Vector2f(200,200);
 
-                if (flag)
-                {
-                    Console.WriteLine(flag);
-                    //window.SetView(scrollview);
-                    flag = false;
 
-                }
+                
                 //window.Draw(new Text("scrollview text", FontObjects.Adore64, 24));
                 uint maxw = (uint)dialogueBox.w - 150;
                 uint curw = 0;
@@ -242,7 +232,22 @@ namespace Test
                 while (i < chatter.Length)
                 {
                     
+                    if (flag)
+                    {
+                        
+                        //what i want to view(dialogue text)
+                        //scrollview = new View (dialogueBox.GetGlobalBounds());
+                        scrollview = new View(dialogueBox.GetGlobalBounds());
+                        //where i want to view it (inside dialogueBox)
+                        scrollview.Viewport = new FloatRect(0f, 0f, 1f, .2f/*dialogueBox.x2,
+                        dialogueBox.y2 + 10, dialogueBox.w, dialogueBox.h*/);
 
+                        Console.WriteLine(flag);
+                        window.SetView(scrollview);
+                        flag = false;
+
+                    }
+                    Console.WriteLine(dialogue.GetGlobalBounds());
                     dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, chatter[i++]));
                     curw += dialogue.CharacterSize;
                    
