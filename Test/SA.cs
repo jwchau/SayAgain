@@ -141,7 +141,7 @@ namespace Test
                 "my brother in the kitchen and he wrappin a bale " +
                 "louis v my bag and louis v on my belt " +
                 "oh my god thats my baby caroline u divine " +
-                "she my trap queen she my trap queen", "Mom");
+                "she my trap queen she my trap queen", "Alex");
             }
 
 
@@ -161,24 +161,15 @@ namespace Test
         }
 
 
-        public void renderDialogue(String s, String speaker)
-        {
-            //dialogueBox.RenderName(speaker);
-            name = new Text(speaker, FontObjects.Adore64, 24);
-            name.Position = new Vector2f(dialogueBox.OffsetX2, dialogueBox.OffsetY2);
-            name.Color = color;
-
-            //dialogueBox.RenderDialogue(s);
-            
-            dialogue = new Text("", FontObjects.Adore64, 20);
-            dialogue.Position = new Vector2f(dialogueBox.OffsetX, dialogueBox.OffsetY);
-            dialogue.Color = color;
-
+        public void renderDialogue(String s, String speaker) { 
+        
+            name = dialogueBox.BufferName(speaker);
+            dialogue = dialogueBox.BufferDialogue("");
             Text tmp = new Text(s, FontObjects.Adore64, 24);
 
 
             Task.Run(async () => { //Task.Run puts on separate thread
-                printTime = 100;
+                printTime = 60;
                 await animateText(tmp); //await pauses thread until animateText() is completed
             });
 
@@ -204,7 +195,6 @@ namespace Test
             //the view port is the whole window
             gameView.Viewport = new FloatRect(0, 0, 1, 1);
             window.SetView(gameView);
-
             dialogueBox = new DialogueBox();
 
         }

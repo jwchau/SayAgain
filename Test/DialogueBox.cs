@@ -32,19 +32,22 @@ namespace Test
             return box.GetGlobalBounds();
         }
 
-        /*
-        public void RenderName(String speaker) {
+        
+        public Text BufferName(String speaker) {
             Text name = new Text(speaker, FontObjects.Adore64, 24);
             name.Position = new Vector2f(OffsetX2, OffsetY2);
             name.Color = c;
+            return name;
         }
-        public void RenderDialogue(String s) {
+
+        public Text BufferDialogue(String s) {
             Text dialogue = new Text(s, FontObjects.Adore64, 24);
             dialogue.Position = new Vector2f(OffsetX, OffsetY);
             dialogue.Color = c;
+            return dialogue;
         }
 
-    */
+    
 
     public DialogueBox()
         {
