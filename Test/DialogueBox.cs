@@ -20,6 +20,7 @@ namespace Test
         //public Dialogue line;
         public RectangleShape box;
         public RectangleShape nameBox;
+        
         public void Draw(RenderTarget target, RenderStates states) {
             target.Draw(box);
             target.Draw(nameBox);
@@ -33,7 +34,7 @@ namespace Test
         
         public DialogueBox(float w, float h, float x, float y, string content, Color c)
         {
-
+            
             this.w = w;
             this.h = h;
             this.x = x;
@@ -47,7 +48,7 @@ namespace Test
             box.Position = new Vector2f(x, y);
             box.OutlineThickness = 3;
             box.OutlineColor = c;
-
+            
             nameBox = new RectangleShape(new Vector2f(w-600, h-100));
             nameBox.Position = new Vector2f(x2, y2);
             nameBox.OutlineThickness = 3;
@@ -59,7 +60,7 @@ namespace Test
         }
 
     }
-
+    
     class Dialogue: Drawable
     {
         public float x, y;

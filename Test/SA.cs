@@ -41,7 +41,7 @@ namespace Test
         Boolean init;
         Boolean started = false;
         int printTime;
-
+        public View gameView, scrollview;
 
         public SA() : base(800, 600, "Say Again?", Color.Magenta)
         {
@@ -51,6 +51,8 @@ namespace Test
             window.MouseButtonPressed += onMouseButtonPressed;
             window.MouseButtonReleased += onMouseButtonReleased;
             window.MouseMoved += onMouseMoved;
+
+
 
         }
 
@@ -125,6 +127,15 @@ namespace Test
         private void onKeyPressed(object sender, KeyEventArgs e)
         {
             init = true;
+            if (e.Code == Keyboard.Key.N)
+            {
+                if (scrollview != null)
+                {
+                    Console.WriteLine("press n ");
+
+                    scrollview.Move(new Vector2f(100, 100));
+                }
+            }
             if (e.Code == Keyboard.Key.M)
             {
                 dialogueBox = new DialogueBox(700, 150, 50, 50, "kitty kat", Color.Black);
@@ -140,16 +151,12 @@ namespace Test
                     "louis v my bag and louis v on my belt " +
                     "oh my god thats my baby caroline u divine " +
                     "killaa west side ~ bad thing bad bad bad thing";
-                
+
 
                 Task.Run(async () => { //Task.Run puts on separate thread
                     printTime = 100;
                     await animateText(line); //await pauses thread until animateText() is completed
                 });
-                
-                
-
-
             }
 
 
@@ -184,11 +191,14 @@ namespace Test
 
         protected override void Initialize()
         {
+            //the view of the whole game
+            gameView = window.GetView();
+            //the view port is the whole window
+            gameView.Viewport = new FloatRect(0, 0, 1, 1);
+            window.SetView(gameView);
 
-            instruction = new Text("press m for dialogue \n"+
-                "press space to speed up", FontObjects.Adore64, 24);
         }
-
+        
 
 
 
@@ -197,14 +207,34 @@ namespace Test
         async Task animateText(string chatter) 
         {
             
+
+
             if (!started)
             {
+                bool flag = true;
                 
+            
                 started = true;
                 int i = 0;
                 dialogue = new Text("", FontObjects.Adore64, 20);
                 dialogue.Position = new Vector2f(dialogueBox.x+25, dialogueBox.y + 20);
                 dialogue.Color = color;
+                //what i want to view(dialogue text)
+                //scrollview = new View (dialogueBox.GetGlobalBounds());
+                //where i want to view it (inside dialogueBox)
+                //scrollview.Viewport = new FloatRect(0f, 0f, 1f,.1f/*dialogueBox.x2,
+                  //  dialogueBox.y2 + 10, dialogueBox.w, dialogueBox.h*/);
+
+                //scrollview.Center = new Vector2f(200,200);
+
+                if (flag)
+                {
+                    Console.WriteLine(flag);
+                    //window.SetView(scrollview);
+                    flag = false;
+
+                }
+                //window.Draw(new Text("scrollview text", FontObjects.Adore64, 24));
                 uint maxw = (uint)dialogueBox.w - 150;
                 uint curw = 0;
                 float maxh = dialogueBox.h;
@@ -272,7 +302,7 @@ namespace Test
 
         protected override void Draw()
         {
-            window.Draw(instruction);
+            
             window.Draw(TextBox.getBox());
             window.Draw(TextBox.getBoxText());
 
