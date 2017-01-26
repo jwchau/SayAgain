@@ -38,7 +38,7 @@ namespace Test
         Boolean init;
         Boolean started = false;
         int printTime;
-        public View gameView, scrollview;
+        public View fullScreenView, scrollview;
 
         public SA() : base(800, 600, "Say Again?", Color.Magenta)
         {
@@ -191,80 +191,65 @@ namespace Test
         {
 
             //the view of the whole game
-            gameView = window.GetView();
+            fullScreenView = window.DefaultView;
             //the view port is the whole window
-            gameView.Viewport = new FloatRect(0, 0, 1, 1);
-            window.SetView(gameView);
-            dialogueBox = new DialogueBox();
+            fullScreenView.Viewport = new FloatRect(0, 0, 1, 1);
+            window.SetView(fullScreenView);
+            dialogueBox = new DialogueBox(0,0,710,150);
+            scrollview = new View(dialogueBox.GetGlobalBounds());
+            //where i want to view it (inside dialogueBox)
+            scrollview.Viewport = new FloatRect(0f, 0.3f, 0.8f, 0.3f);
 
         }
         
-
-
-
         //async means this function can run separate from main app.
         //operate in own time and thread
-        async Task animateText(Text line) 
+        async Task animateText(Text line)
         {
-            
-
 
             if (!started)
             {
                 bool flag = true;
-                
-            
+
+
                 started = true;
                 int i = 0;
-
-
                 
-                uint maxw = (uint)dialogueBox.w - 150;
-                uint curw = 0;
+                float maxw = dialogueBox.w;
                 float maxh = dialogueBox.h;
-                float curh = 0;
-                FloatRect tmp = new FloatRect(
-                                line.GetGlobalBounds().Left,
-                                line.GetGlobalBounds().Top,
-                                maxw,
-                                line.GetGlobalBounds().Height);
-                Console.WriteLine(tmp);
+ 
+               // Console.WriteLine(tmp);
+
+                // split dialogue into words
+                String[] s = line.DisplayedString.Split(' ');
+                line.DisplayedString = "";
+                float currentLineWidth = 0;
+                foreach (String word in s)
+                {
+                    Text t = new Text(word + " ", FontObjects.Adore64, 24);
+                    float wordSizeWithSpace = t.GetGlobalBounds().Width;
+                    if (currentLineWidth + wordSizeWithSpace > maxw)
+                    {
+                        line.DisplayedString += "\n";
+                        currentLineWidth = 0;
+                    }
+                    line.DisplayedString += (t.DisplayedString);
+                    currentLineWidth += wordSizeWithSpace;
+                }
 
                 while (i < line.DisplayedString.Length)
                 {
-                    
-                    if (flag)
-                    {
-                        Console.WriteLine(line.GetGlobalBounds());
-                        
-                        //what i want to view(dialogue text)
-                        //scrollview = new View(tmp);
-                        //where i want to view it (inside dialogueBox)
-                        //scrollview.Viewport = new FloatRect(0,0,1,0.3f);
 
-                        Console.WriteLine(flag);
-                        //window.SetView(scrollview);
-                        flag = false;
-
-                    }
-                    
                     dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, line.DisplayedString[i++]));
-                    curw += dialogue.CharacterSize;
-                   
 
-                    if (curw > maxw && Char.IsWhiteSpace(line.DisplayedString[i - 1]))
+
+                    /*if (curw > maxw && Char.IsWhiteSpace(line.DisplayedString[i - 1]))
                     {
-                  
+                        
                         dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, "\n"));
                         Console.WriteLine("line break");
                         curw = 0;
-                    }
-
-                    curh = dialogue.GetGlobalBounds().Height;
-                    if (curh > maxh)
-                    {
-                        Console.WriteLine("too tall");
-                    }
+                    }*/
                     
                     await Task.Delay(printTime); //equivalent of putting thread to sleep
                 }
@@ -273,8 +258,6 @@ namespace Test
             // Do asynchronous work.
             
         }
-
-
 
         protected override void Update()
         {
@@ -307,7 +290,7 @@ namespace Test
 
         protected override void Draw()
         {
-            
+            window.SetView(fullScreenView);
             window.Draw(TextBox.getBox());
             window.Draw(TextBox.getBoxText());
 
@@ -320,6 +303,7 @@ namespace Test
 
             if (init)
             {
+                window.SetView(scrollview);
                 window.Draw(dialogueBox);
                 window.Draw(dialogue);
                 window.Draw(name);
