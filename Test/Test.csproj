@@ -68,6 +68,7 @@
     <Compile Include="MenuButton.cs" />
     <Compile Include="MomState.cs" />
     <Compile Include="PauseMenu.cs" />
+    <Compile Include="Selector.cs" />
     <Compile Include="StartMenu.cs" />
     <Compile Include="UIButton.cs" />
     <Compile Include="Game.cs" />
@@ -89,6 +90,7 @@
     <None Include="App.config" />
     <None Include="Fonts\Adore64.ttf" />
     <None Include="packages.config" />
+    <None Include="sampleJSON.JSON" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="csfml-audio-2.dll">

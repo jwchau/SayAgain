@@ -10,11 +10,19 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            DialogParsing r = new DialogParsing(@"C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\sampleJSON.json");
+            string[] currentMadeMemories = { "Worship" };
+            int FNC = 50;
 
-            Console.WriteLine(r.r.Dialogues[0].content);
-            Console.WriteLine(r.r.Dialogues[1].content);
-            Console.WriteLine(r.r.Dialogues[2].content);
+            DialogParsing r = new DialogParsing(@"C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\sampleJSON.json");
+            Selector s = new Selector();
+
+            string response = s.ChooseDialog(FNC, r, currentMadeMemories);
+
+            Console.WriteLine("response = " + response);
+
+            //Console.WriteLine(r.r.Dialogues[0].memory.ElementAt(1));
+            //Console.WriteLine(r.r.Dialogues[1].content);
+            //Console.WriteLine(r.r.Dialogues[2].content);
 
             SA myGame = new SA();
             myGame.Run();

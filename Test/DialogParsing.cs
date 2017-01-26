@@ -21,15 +21,16 @@ namespace Test
         public DialogParsing(string file)
         {
             filename = file;
-            if (filename != "") MakeParse();
+            MakeParse();
         }
         public DialogParsing() { }
+        ~DialogParsing() { }
     }
 
     public class DialogueObj
     {
         public string content { get; set; }
-        public List<object> memory { get; set; }
+        public List<string> memory { get; set; }
         public int FNC { get; set; }
     }
 
