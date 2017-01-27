@@ -36,7 +36,6 @@ namespace Test
         static Color color = Color.Black;
         DialogueBox dialogueBox;
         Boolean init;
-        Boolean started = false;
         int printTime;
         public View fullScreenView, scrollview;
 
@@ -168,9 +167,10 @@ namespace Test
             Text tmp = new Text(s, FontObjects.Adore64, 24);
 
 
+            Text[] arr = createStrings(tmp);
             Task.Run(async () => { //Task.Run puts on separate thread
                 printTime = 60;
-                await animateText(tmp); //await pauses thread until animateText() is completed
+                await animateText(arr[0]); //await pauses thread until animateText() is completed
             });
 
 
@@ -201,60 +201,56 @@ namespace Test
             scrollview.Viewport = new FloatRect(0f, 0.3f, 0.8f, 0.3f);
 
         }
-        
+
+        public Text[] createStrings(Text line)
+        {
+            float maxw = dialogueBox.w;
+            float maxh = dialogueBox.GetMaxTextHeight();
+            List<Text> list = new List<Text>();
+            // Console.WriteLine(tmp);
+
+            // split dialogue into words
+            String[] s = line.DisplayedString.Split(' ');
+            line.DisplayedString = "";
+            float currentLineWidth = 0;
+            foreach (String word in s)
+            {
+                Text t = new Text(word + " ", FontObjects.Adore64, 24);
+                float wordSizeWithSpace = t.GetGlobalBounds().Width;
+                if (currentLineWidth + wordSizeWithSpace > maxw)
+                {
+                    
+                    line.DisplayedString += "\n";
+                    currentLineWidth = 0;
+                    if (line.GetGlobalBounds().Height > maxh)
+                    {
+                        list.Add(line);
+                        line = new Text("", FontObjects.Adore64, 24);
+                    }
+                }
+
+                line.DisplayedString += (t.DisplayedString);
+                currentLineWidth += wordSizeWithSpace;
+            }
+            return list.ToArray();
+            /*
+            Task.Run(async () => { //Task.Run puts on separate thread
+                printTime = 60;
+                await animateText(line); //await pauses thread until animateText() is completed
+            });*/
+        }
+
         //async means this function can run separate from main app.
         //operate in own time and thread
         async Task animateText(Text line)
         {
-
-            if (!started)
+            int i = 0;
+            while (i < line.DisplayedString.Length)
             {
-                bool flag = true;
-
-
-                started = true;
-                int i = 0;
-                
-                float maxw = dialogueBox.w;
-                float maxh = dialogueBox.h;
- 
-               // Console.WriteLine(tmp);
-
-                // split dialogue into words
-                String[] s = line.DisplayedString.Split(' ');
-                line.DisplayedString = "";
-                float currentLineWidth = 0;
-                foreach (String word in s)
-                {
-                    Text t = new Text(word + " ", FontObjects.Adore64, 24);
-                    float wordSizeWithSpace = t.GetGlobalBounds().Width;
-                    if (currentLineWidth + wordSizeWithSpace > maxw)
-                    {
-                        line.DisplayedString += "\n";
-                        currentLineWidth = 0;
-                    }
-                    line.DisplayedString += (t.DisplayedString);
-                    currentLineWidth += wordSizeWithSpace;
-                }
-
-                while (i < line.DisplayedString.Length)
-                {
-
-                    dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, line.DisplayedString[i++]));
-
-
-                    /*if (curw > maxw && Char.IsWhiteSpace(line.DisplayedString[i - 1]))
-                    {
-                        
-                        dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, "\n"));
-                        Console.WriteLine("line break");
-                        curw = 0;
-                    }*/
-                    
-                    await Task.Delay(printTime); //equivalent of putting thread to sleep
-                }
-                started = false;
+                dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, line.DisplayedString[i++]));
+                await Task.Delay(printTime); //equivalent of putting thread to sleep
             }
+             
             // Do asynchronous work.
             
         }

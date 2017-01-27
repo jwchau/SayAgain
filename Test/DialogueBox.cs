@@ -40,6 +40,10 @@ namespace Test
             return box.GetGlobalBounds();
         }
 
+        public float GetMaxTextHeight()
+        {
+            return box.GetGlobalBounds().Height - 20;
+        }
         
         public Text BufferName(String speaker) {
             Text name = new Text(speaker, FontObjects.Adore64, 24);
