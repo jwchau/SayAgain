@@ -20,11 +20,20 @@ namespace Test
         public RectangleShape box;
         public RectangleShape nameBox;
 
+
         public void Draw(RenderTarget target, RenderStates states) {
             target.Draw(box);
             target.Draw(nameBox);
             //target.Draw(line);
 
+        }
+        public FloatRect GetBounds()
+        {
+            FloatRect f = new FloatRect(box.GetGlobalBounds().Left,
+                nameBox.GetGlobalBounds().Top,
+                box.GetGlobalBounds().Width,
+                (box.GetGlobalBounds().Top + box.GetGlobalBounds().Height) - nameBox.GetGlobalBounds().Top);
+            return f;
         }
         public FloatRect GetGlobalBounds()
         {
@@ -34,14 +43,14 @@ namespace Test
         
         public Text BufferName(String speaker) {
             Text name = new Text(speaker, FontObjects.Adore64, 24);
-            name.Position = new Vector2f(this.x + 45, this.y - 25);
+            name.Position = new Vector2f(nameBox.Position.X, nameBox.Position.Y + 15);
             name.Color = Color.Black;
             return name;
         }
 
         public Text BufferDialogue(String s) {
             Text dialogue = new Text(s, FontObjects.Adore64, 24);
-            dialogue.Position = new Vector2f(this.x, this.y + 20);
+            dialogue.Position = new Vector2f(box.Position.X, box.Position.Y + 20);
             dialogue.Color = Color.Black;
             return dialogue;
         }
@@ -55,12 +64,12 @@ namespace Test
             this.h = height;
 
             box = new RectangleShape(new Vector2f(this.w, this.h));
-            box.Position = new Vector2f(this.x, this.y);
+            box.Position = new Vector2f(this.x - 40, this.y + 35);
             box.OutlineThickness = 3;
             box.OutlineColor = Color.Black;
 
             nameBox = new RectangleShape(new Vector2f(this.w - 600, this.h - 100));
-            nameBox.Position = new Vector2f(this.x + 40, this.y - 35);
+            nameBox.Position = new Vector2f(this.x, this.y);
             nameBox.OutlineThickness = 3;
             nameBox.OutlineColor = Color.Black;
         }

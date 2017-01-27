@@ -196,7 +196,7 @@ namespace Test
             fullScreenView.Viewport = new FloatRect(0, 0, 1, 1);
             window.SetView(fullScreenView);
             dialogueBox = new DialogueBox(0,0,710,150);
-            scrollview = new View(dialogueBox.GetGlobalBounds());
+            scrollview = new View(dialogueBox.GetBounds());
             //where i want to view it (inside dialogueBox)
             scrollview.Viewport = new FloatRect(0f, 0.3f, 0.8f, 0.3f);
 
