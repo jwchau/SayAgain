@@ -35,7 +35,9 @@ namespace Test
         Text name, dialogue;
         static Color color = Color.Black;
         DialogueBox dialogueBox;
+        Text[] arr;
         Boolean init;
+        int elementIndex = 0;
         int printTime;
         public View fullScreenView, scrollview;
 
@@ -125,16 +127,22 @@ namespace Test
             init = true;
             if (e.Code == Keyboard.Key.N)
             {
-                if (scrollview != null)
+                if (elementIndex < arr.Length)
                 {
-                    Console.WriteLine("press n ");
-                    scrollview.Zoom(0.5f);
-                    scrollview.Center = new Vector2f(200, 200);
-                    scrollview.Move(new Vector2f(100, 100));
+                    if (currentTask == null || currentTask.IsCompleted)
+                    {
+                        elementIndex += 1;
+                        currentTask = Task.Run(async () =>
+                        { //Task.Run puts on separate thread
+                            printTime = 60;
+                            await animateText(arr[elementIndex]); //await pauses thread until animateText() is completed
+                        });
+                    }
                 }
             }
             if (e.Code == Keyboard.Key.M)
             {
+                elementIndex = 0;
                 renderDialogue("so much dope that it broke the scale " +
                 "they say crack kills, but my crack sells " +
                 "my brother in the kitchen and he wrappin a bale " +
@@ -159,19 +167,23 @@ namespace Test
             }
         }
 
+        Task currentTask;
 
         public void renderDialogue(String s, String speaker) { 
         
-            name = dialogueBox.BufferName(speaker);
-            dialogue = dialogueBox.BufferDialogue("");
-            Text tmp = new Text(s, FontObjects.Adore64, 24);
+            if (currentTask == null || currentTask.IsCompleted)
+            {
+                name = dialogueBox.BufferName(speaker);
+                dialogue = dialogueBox.BufferDialogue("");
+                Text tmp = new Text(s, FontObjects.Adore64, 24);
 
-
-            Text[] arr = createStrings(tmp);
-            Task.Run(async () => { //Task.Run puts on separate thread
-                printTime = 60;
-                await animateText(arr[0]); //await pauses thread until animateText() is completed
-            });
+                arr = createStrings(tmp);
+                currentTask = Task.Run(async () =>
+                { //Task.Run puts on separate thread
+                    printTime = 60;
+                    await animateText(arr[elementIndex]); //await pauses thread until animateText() is completed
+                });
+            }
 
 
         }
@@ -198,7 +210,7 @@ namespace Test
             dialogueBox = new DialogueBox(0,0,710,150);
             scrollview = new View(dialogueBox.GetBounds());
             //where i want to view it (inside dialogueBox)
-            scrollview.Viewport = new FloatRect(0f, 0.3f, 0.8f, 0.3f);
+            scrollview.Viewport = new FloatRect(0.1f, 0.05f, 0.8f, 0.3f);
 
         }
 
@@ -232,6 +244,13 @@ namespace Test
                 line.DisplayedString += (t.DisplayedString);
                 currentLineWidth += wordSizeWithSpace;
             }
+
+            // Add the last one
+            if (line.DisplayedString != "")
+            {
+                list.Add(line);
+            }
+
             return list.ToArray();
             /*
             Task.Run(async () => { //Task.Run puts on separate thread
@@ -245,6 +264,7 @@ namespace Test
         async Task animateText(Text line)
         {
             int i = 0;
+            dialogue.DisplayedString = "";
             while (i < line.DisplayedString.Length)
             {
                 dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, line.DisplayedString[i++]));
