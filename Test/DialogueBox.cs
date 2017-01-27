@@ -146,7 +146,7 @@ namespace Test
         
         public Text BufferName(String speaker) {
             Text name = new Text(speaker, FontObjects.Adore64, 24);
-            name.Position = new Vector2f(nameBox.Position.X, nameBox.Position.Y + 15);
+            name.Position = new Vector2f(nameBox.Position.X+5, nameBox.Position.Y + 12);
             name.Color = Color.Black;
             return name;
         }

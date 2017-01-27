@@ -188,7 +188,7 @@ namespace Test
             dialogueBox = new DialogueBox(0,0,710,150);
             scrollview = new View(dialogueBox.GetBounds());
             //where i want to view it (inside dialogueBox)
-            scrollview.Viewport = new FloatRect(0.1f, 0.05f, 0.8f, 0.3f);
+            scrollview.Viewport = new FloatRect(0.15f, 0.03f, 0.7f, 0.28f)/*(0.1f, 0.05f, 0.8f, 0.3f)*/;
 
         }
 
