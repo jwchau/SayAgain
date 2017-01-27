@@ -143,12 +143,20 @@ namespace Test
             if (e.Code == Keyboard.Key.M)
             {
                 elementIndex = 0;
-                renderDialogue("so much dope that it broke the scale " +
-                "they say crack kills, but my crack sells " +
-                "my brother in the kitchen and he wrappin a bale " +
-                "louis v my bag and louis v on my belt " +
-                "oh my god thats my baby caroline u divine " +
-                "she my trap queen she my trap queen", "Alex");
+                renderDialogue("I took my love, I took it down "+
+                    "Climbed a mountain and I turned around " +
+                    "And I saw my reflection in the snow covered hills " +
+                    "'Til the landslide brought it down " +
+                    "Oh, mirror in the sky " +
+                    "What is love? " +
+                    "Can the child within my heart rise above? " +
+                    "Can I sail through the changin' ocean tides? " +
+                    "Can I handle the seasons of my life? " +
+                    "Well, I've been afraid of changin' " +
+                    "'Cause I've built my life around you " +
+                    "But time makes you bolder " +
+                    "Even children get older " +
+                    "And I'm getting older, too", "Alex");
             }
 
 
