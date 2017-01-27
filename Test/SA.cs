@@ -127,23 +127,12 @@ namespace Test
             init = true;
             if (e.Code == Keyboard.Key.N)
             {
-                if (elementIndex < arr.Length)
-                {
-                    if (currentTask == null || currentTask.IsCompleted)
-                    {
-                        elementIndex += 1;
-                        currentTask = Task.Run(async () =>
-                        { //Task.Run puts on separate thread
-                            printTime = 60;
-                            await animateText(arr[elementIndex]); //await pauses thread until animateText() is completed
-                        });
-                    }
-                }
+                dialogueBox.getNext();
             }
             if (e.Code == Keyboard.Key.M)
             {
-                elementIndex = 0;
-                renderDialogue("I took my love, I took it down "+
+                dialogueBox.setElementIndex(0);
+                dialogueBox.renderDialogue("I took my love, I took it down "+
                     "Climbed a mountain and I turned around " +
                     "And I saw my reflection in the snow covered hills " +
                     "'Til the landslide brought it down " +
@@ -163,7 +152,7 @@ namespace Test
 
             if (e.Code == Keyboard.Key.Space)
             {
-                printTime = 0;
+                dialogueBox.printTime = 0;
             }
 
             if (!keys.ContainsKey(e.Code))
@@ -175,26 +164,7 @@ namespace Test
             }
         }
 
-        Task currentTask;
 
-        public void renderDialogue(String s, String speaker) { 
-        
-            if (currentTask == null || currentTask.IsCompleted)
-            {
-                name = dialogueBox.BufferName(speaker);
-                dialogue = dialogueBox.BufferDialogue("");
-                Text tmp = new Text(s, FontObjects.Adore64, 24);
-
-                arr = createStrings(tmp);
-                currentTask = Task.Run(async () =>
-                { //Task.Run puts on separate thread
-                    printTime = 60;
-                    await animateText(arr[elementIndex]); //await pauses thread until animateText() is completed
-                });
-            }
-
-
-        }
         protected override void LoadContent()
         {
             
@@ -222,66 +192,8 @@ namespace Test
 
         }
 
-        public Text[] createStrings(Text line)
-        {
-            float maxw = dialogueBox.w;
-            float maxh = dialogueBox.GetMaxTextHeight();
-            List<Text> list = new List<Text>();
-            // Console.WriteLine(tmp);
 
-            // split dialogue into words
-            String[] s = line.DisplayedString.Split(' ');
-            line.DisplayedString = "";
-            float currentLineWidth = 0;
-            foreach (String word in s)
-            {
-                Text t = new Text(word + " ", FontObjects.Adore64, 24);
-                float wordSizeWithSpace = t.GetGlobalBounds().Width;
-                if (currentLineWidth + wordSizeWithSpace > maxw)
-                {
-                    
-                    line.DisplayedString += "\n";
-                    currentLineWidth = 0;
-                    if (line.GetGlobalBounds().Height > maxh)
-                    {
-                        list.Add(line);
-                        line = new Text("", FontObjects.Adore64, 24);
-                    }
-                }
 
-                line.DisplayedString += (t.DisplayedString);
-                currentLineWidth += wordSizeWithSpace;
-            }
-
-            // Add the last one
-            if (line.DisplayedString != "")
-            {
-                list.Add(line);
-            }
-
-            return list.ToArray();
-            /*
-            Task.Run(async () => { //Task.Run puts on separate thread
-                printTime = 60;
-                await animateText(line); //await pauses thread until animateText() is completed
-            });*/
-        }
-
-        //async means this function can run separate from main app.
-        //operate in own time and thread
-        async Task animateText(Text line)
-        {
-            int i = 0;
-            dialogue.DisplayedString = "";
-            while (i < line.DisplayedString.Length)
-            {
-                dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, line.DisplayedString[i++]));
-                await Task.Delay(printTime); //equivalent of putting thread to sleep
-            }
-             
-            // Do asynchronous work.
-            
-        }
 
         protected override void Update()
         {
@@ -329,8 +241,8 @@ namespace Test
             {
                 window.SetView(scrollview);
                 window.Draw(dialogueBox);
-                window.Draw(dialogue);
-                window.Draw(name);
+                window.Draw(dialogueBox.dialogue);
+                window.Draw(dialogueBox.name);
             }
 
         }
