@@ -8,19 +8,18 @@ using SFML.Graphics;
 
 namespace Test
 {
-    class UIButton:UIElement
+    class UIButton : UIElement
     {
         //constructor
-        public UIButton(float size, float x, float y, string content,string newDialogue) {
+        public UIButton(float x, float y, string content,string newDialogue) {
 
-            this.size = size;
             this.x = x;
             this.y = y;
             buttonTextFont = FontObjects.Adore64;
             buttonText = new Text(content, buttonTextFont);
             buttonText.Position = new SFML.System.Vector2f(x, y);
 
-            rect = new RectangleShape(new SFML.System.Vector2f(content.Length*18, 40));
+            rect = new RectangleShape(new SFML.System.Vector2f(buttonText.GetGlobalBounds().Width+7, buttonText.GetGlobalBounds().Height+10));
             rect.Position = new SFML.System.Vector2f(x, y);
             rect.FillColor = Color.Black;
             Color myColor = new Color(177, 177, 177);
@@ -29,6 +28,9 @@ namespace Test
         }
 
         //fields
+        static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
+        static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+
         Font buttonTextFont;
         Text buttonText;
         RectangleShape rect;
@@ -53,7 +55,8 @@ namespace Test
             return y;
         }
 
-        public void setX(float newX) {
+        public void setX(float newX)
+        {
             x = newX;
         }
 
@@ -110,18 +113,18 @@ namespace Test
             {
                 newXPos = 0;
             }
-            else if (x - mouseOffsetX + (int)bounds.Height > 800)
+            else if (x - mouseOffsetX + (int)bounds.Width > SCREEN_WIDTH)
             {
-                newXPos = 800 - (int)bounds.Width;
+                newXPos = (int)SCREEN_WIDTH - (int)bounds.Width;
             }
 
             if (y - mouseOffsetY < 0)
             {
                 newYPos = 0;
             }
-            else if (y - mouseOffsetY + (int)bounds.Width > 600)
+            else if (y - mouseOffsetY + (int)bounds.Height > (int)SCREEN_HEIGHT)
             {
-                newYPos = 600 - (int)bounds.Height;
+                newYPos = (int)SCREEN_HEIGHT - (int)bounds.Height;
             }
 
             rect.Position = new SFML.System.Vector2f(newXPos, newYPos);

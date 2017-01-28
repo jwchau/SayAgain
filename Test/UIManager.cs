@@ -11,15 +11,15 @@ using SFML.System;
 //holds UI elements such as buttons, input fields, TextBoxes, etc
 namespace Test
 {
-    class UIManager: UIElement
+    class UIManager
     {
         //constructor
         public UIManager() {
             
         }
 
-        //fields
-        List<UIButton> buttons = new List<UIButton>();
+
+        List<UIButton> buttons = new List<UIButton>(); //our tone buttons
 
         //methods
         public List<UIButton> getButtons() {

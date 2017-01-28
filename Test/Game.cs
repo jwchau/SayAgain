@@ -13,8 +13,8 @@ namespace Test
     {
         protected RenderWindow window;
         protected Color clearColor;
-       
 
+        protected GameState State = new GameState();
 
         public Game(uint width, uint height, string title, Color clearColor)
         {
@@ -35,8 +35,7 @@ namespace Test
             {
                 window.DispatchEvents();
                 Update();
-
-                window.Clear(clearColor);
+                
                 Draw();
                 window.Display();
             }

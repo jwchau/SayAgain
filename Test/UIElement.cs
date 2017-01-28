@@ -9,10 +9,11 @@ using SFML.Graphics;
 //
 namespace Test
 {
-    class UIElement
+    class UIElement:Drawable
     {
         //constructor
         public UIElement() {
+
             this.size = 0;
             this.x = 0;
             this.y = 0;
@@ -22,10 +23,15 @@ namespace Test
         protected float size;
         protected float x;
         protected float y;
+        protected string type;
+
 
 
         //methods
-        void Draw(){ }
+        public virtual void Draw(RenderTarget target, RenderStates states)
+        {
+            //target.Draw();
+        }
 
     }
 }

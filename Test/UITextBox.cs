@@ -12,7 +12,8 @@ namespace Test
     class UITextBox //The box where the dialogue will appear, not clickable or draggable
     {
         public UITextBox(float width, float height, float x, float y, string dialogue) {
-            UITextBoxFont = new Font("Content/ARCADECLASSIC.ttf");
+
+            UITextBoxFont = FontObjects.Adore64;
             UITextBoxText = new Text(dialogue, UITextBoxFont);
             UITextBoxText.Position = new Vector2f(x, y);
             box = new RectangleShape(new Vector2f(width, height));
