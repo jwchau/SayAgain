@@ -51,7 +51,7 @@ namespace Test
                 }
             }
 
-            //checks for NFC requirements for whats left
+            //checks for FNC requirements for whats left
             for (int i = 0; i < possibleChoices.Count; i++)
             {
                 if (FNC == 0)
@@ -78,6 +78,12 @@ namespace Test
                         if (i > 0) i--;
                     }
                 }
+            }
+
+            Console.WriteLine("number of possible choices = " + possibleChoices.Count);
+            for (int i = 0; i < possibleChoices.Count; i++)
+            {
+                Console.WriteLine("One response = " + possibleChoices.ElementAt(i).Value);
             }
 
 

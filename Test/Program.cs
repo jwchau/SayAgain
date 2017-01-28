@@ -10,7 +10,7 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            string[] currentMadeMemories = { "Worship" };
+            string[] currentMadeMemories = { "School", "Divorce", "Worship" };
             int FNC = 50;
 
             DialogParsing r = new DialogParsing(@"C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\sampleJSON.json");
@@ -18,7 +18,7 @@ namespace Test
 
             string response = s.ChooseDialog(FNC, r, currentMadeMemories);
 
-            Console.WriteLine("response = " + response);
+            //Console.WriteLine("response = " + response);
 
             //Console.WriteLine(r.r.Dialogues[0].memory.ElementAt(1));
             //Console.WriteLine(r.r.Dialogues[1].content);

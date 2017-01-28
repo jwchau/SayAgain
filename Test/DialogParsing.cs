@@ -32,6 +32,8 @@ namespace Test
         public string content { get; set; }
         public List<string> memory { get; set; }
         public int FNC { get; set; }
+        public string speaker { get; set; }
+        public List<string> target { get; set; }
     }
 
     public class RootObject
