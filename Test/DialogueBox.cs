@@ -22,17 +22,36 @@ namespace Test
         Task currentTask;
         Text[] arr;
         public int printTime;
+        public bool active = true;
         int elementIndex = 0;
-        
 
-        public void setElementIndex (int i)
+        public void setPrintTime(int i)
         {
-            elementIndex = i;
+            printTime = i;
         }
+        public int getElementIndex()
+        {
+            return elementIndex;
+        }
+            
+        public int getArrLength()
+        {
+            return arr.Length;
+        }
+
+
+        public void checkEnd()
+        {
+            if (getElementIndex() == getArrLength())
+            {
+               active = false;
+            }
+        }
+
         public void getNext()
         {
             if (elementIndex < arr.Length)
-                {
+            {
                 if (currentTask == null || currentTask.IsCompleted)
                 {
                     elementIndex += 1;
@@ -42,11 +61,18 @@ namespace Test
                         await animateText(arr[elementIndex]); //await pauses thread until animateText() is completed
                     });
                 }
-            }
+            } /*else
+            {
+                if (getElementIndex() == getArrLength())
+                {
+                    active = false;
+                }
+            }*/
         }
         public void renderDialogue(String s, String speaker)
         {
-            setElementIndex(0);
+            active = true;
+            elementIndex = 0;
             if (currentTask == null || currentTask.IsCompleted)
             {
                 name = BufferName(speaker);
@@ -66,10 +92,9 @@ namespace Test
 
         public Text[] createStrings(Text line)
         {
-            float maxw = w;
+            float maxw = w - 26;
             float maxh = GetMaxTextHeight();
             List<Text> list = new List<Text>();
-            // Console.WriteLine(tmp);
 
             // split dialogue into words
             String[] s = line.DisplayedString.Split(' ');
@@ -99,7 +124,13 @@ namespace Test
             if (line.DisplayedString != "")
             {
                 list.Add(line);
+
             }
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.WriteLine(list[i]);
+            }
+            
             return list.ToArray();
 
         }
@@ -120,18 +151,18 @@ namespace Test
 
         }
 
-        public void Draw(RenderTarget target, RenderStates states) {
+        public void Draw(RenderTarget target, RenderStates states)
+        {
             target.Draw(box);
             target.Draw(nameBox);
-            //target.Draw(line);
 
         }
         public FloatRect GetBounds()
         {
-            FloatRect f = new FloatRect(box.GetGlobalBounds().Left,
-                nameBox.GetGlobalBounds().Top,
-                box.GetGlobalBounds().Width,
-                (box.GetGlobalBounds().Top + box.GetGlobalBounds().Height) - nameBox.GetGlobalBounds().Top);
+            FloatRect f = new FloatRect(box.GetGlobalBounds().Left - 20,
+                nameBox.GetGlobalBounds().Top - 20,
+                box.GetGlobalBounds().Width + 20,
+                (box.GetGlobalBounds().Top + box.GetGlobalBounds().Height + 20) - nameBox.GetGlobalBounds().Top);
             return f;
         }
         public FloatRect GetGlobalBounds()
@@ -143,22 +174,25 @@ namespace Test
         {
             return box.GetGlobalBounds().Height - 20;
         }
-        
-        public Text BufferName(String speaker) {
-            Text name = new Text(speaker, FontObjects.Adore64, 24);
-            name.Position = new Vector2f(nameBox.Position.X+5, nameBox.Position.Y + 12);
+
+        public Text BufferName(String speaker)
+        {
+
+            Text name = new Text(speaker.ToUpper(), FontObjects.Adore64, 24);
+            name.Position = new Vector2f(nameBox.Position.X + 17, nameBox.Position.Y + 12);
             name.Color = Color.Black;
             return name;
         }
 
-        public Text BufferDialogue(String s) {
+        public Text BufferDialogue(String s)
+        {
             Text dialogue = new Text(s, FontObjects.Adore64, 24);
-            dialogue.Position = new Vector2f(box.Position.X, box.Position.Y + 20);
+            dialogue.Position = new Vector2f(box.Position.X + 13, box.Position.Y + 20);
             dialogue.Color = Color.Black;
             return dialogue;
         }
 
-    
+
         public DialogueBox(float x, float y, float width, float height)
         {
             this.x = x;
@@ -171,59 +205,16 @@ namespace Test
             box.OutlineThickness = 3;
             box.OutlineColor = Color.Black;
 
-            nameBox = new RectangleShape(new Vector2f(this.w - 600, this.h - 100));
+            nameBox = new RectangleShape(new Vector2f(this.w - 575, this.h - 100));
             nameBox.Position = new Vector2f(this.x, this.y);
             nameBox.OutlineThickness = 3;
             nameBox.OutlineColor = Color.Black;
         }
+
+
+
+
+    }
     
-    /*public DialogueBox()
-        {
-            this.w = 710;
-            this.h = 150;
-            this.x = 0;
-            this.y = 0;
-            this.c = Color.Black;
 
-            
-            box = new RectangleShape(new Vector2f(w, h));
-            box.Position = new Vector2f(x, y);
-            box.OutlineThickness = 3;
-            box.OutlineColor = c;
-            
-            nameBox = new RectangleShape(new Vector2f(w-600, h-100));
-            nameBox.Position = new Vector2f(this.x + 40, this.y - 35);
-            nameBox.OutlineThickness = 3;
-            nameBox.OutlineColor = c;
-
-            //line = new Dialogue(x, y, content, c);
-            //name = new Text(content, FontObjects.Adore64, 24);
-
-        }*/
-
-
-
-}
-    
-/*    class Dialogue: Drawable
-    {
-        public float x, y;
-        public string content;
-        public Color Color;
-        public Text dialogueText;
-        public void Draw(RenderTarget target, RenderStates states) {
-            target.Draw(dialogueText);
-        }
-
-        public Dialogue(float x, float y, string content, Color c)
-        {
-            this.x = x;
-            this.y = y;
-            this.content = content;
-            this.Color = c;
-            dialogueText = new Text(content, FontObjects.Adore64, 24);
-            dialogueText.Color = Color;
-            dialogueText.Position = new Vector2f(x, y);
-       
-    } }*/
 }

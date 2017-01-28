@@ -32,13 +32,9 @@ namespace Test
         UITextBox TextBox = new UITextBox(800, 100, 0, 500, "HELLO WORLD!");
 
         InputManager ManagerOfInput = new InputManager();
-        Text name, dialogue;
         static Color color = Color.Black;
         DialogueBox dialogueBox;
-        Text[] arr;
         Boolean init;
-        int elementIndex = 0;
-        int printTime;
         public View fullScreenView, scrollview;
 
         public SA() : base(800, 600, "Say Again?", Color.Magenta)
@@ -128,10 +124,15 @@ namespace Test
             if (e.Code == Keyboard.Key.N)
             {
                 dialogueBox.getNext();
+                dialogueBox.checkEnd();
+                /*if (dialogueBox.getElementIndex() == dialogueBox.getArrLength())
+                {
+                    dialogueBox.active = false;
+                }*/
             }
             if (e.Code == Keyboard.Key.M)
             {
-                dialogueBox.setElementIndex(0);
+
                 dialogueBox.renderDialogue("I took my love, I took it down "+
                     "Climbed a mountain and I turned around " +
                     "And I saw my reflection in the snow covered hills " +
@@ -152,7 +153,7 @@ namespace Test
 
             if (e.Code == Keyboard.Key.Space)
             {
-                dialogueBox.printTime = 0;
+                dialogueBox.setPrintTime(0);
             }
 
             if (!keys.ContainsKey(e.Code))
@@ -188,8 +189,8 @@ namespace Test
             dialogueBox = new DialogueBox(0,0,710,150);
             scrollview = new View(dialogueBox.GetBounds());
             //where i want to view it (inside dialogueBox)
-            scrollview.Viewport = new FloatRect(0.15f, 0.03f, 0.7f, 0.28f)/*(0.1f, 0.05f, 0.8f, 0.3f)*/;
-
+            scrollview.Viewport = new FloatRect(0.165f, 0f, 0.65f, 0.27f)/*(0.1f, 0.05f, 0.8f, 0.3f)*/;
+            
         }
 
 
@@ -237,7 +238,7 @@ namespace Test
                 window.Draw(buttons[i].getUIButtonText());
             }
 
-            if (init)
+            if (init && dialogueBox.active)
             {
                 window.SetView(scrollview);
                 window.Draw(dialogueBox);
