@@ -14,8 +14,8 @@ namespace Test
 
     class FontObjects
     {
-/*        public static Font Adore64 = new Font(new FileStream("../../Fonts/Adore64.ttf", FileMode.Open));*/
-        public static Font Adore64 = new Font(new FileStream("Content/Fonts/Adore64.ttf", FileMode.Open));
+          public static Font Adore64 = new Font(new FileStream("../../Fonts/Adore64.ttf", FileMode.Open));
+//        public static Font Adore64 = new Font(new FileStream("Content/Fonts/Adore64.ttf", FileMode.Open));
     }
 
 
