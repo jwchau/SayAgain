@@ -13,7 +13,8 @@ namespace Test
             bool memoryCheck;
             int counter;
             //checks for memory requirements first (ones with no memorys are also added)
-            Dictionary<int, string> possibleChoices = new Dictionary<int, string>();
+            //Dictionary<int, string> possibleChoices = new Dictionary<int, string>();
+            List<DialogueObj> possibleChoices = new List<DialogueObj>();
             //iterates through the json list
             for (int i = 0; i < r.r.Dialogues.Count; i++)
             {
@@ -46,8 +47,9 @@ namespace Test
                 //if present, add to list
                 if (memoryCheck)
                 {
-                    possibleChoices.Add(r.r.Dialogues.ElementAt(i).FNC,
-                                  r.r.Dialogues.ElementAt(i).content);
+                    possibleChoices.Add(new DialogueObj(r.r.Dialogues.ElementAt(i).content,
+                        r.r.Dialogues.ElementAt(i).memory, r.r.Dialogues.ElementAt(i).FNC,
+                        r.r.Dialogues.ElementAt(i).speaker, r.r.Dialogues.ElementAt(i).target));
                 }
             }
 
@@ -56,26 +58,26 @@ namespace Test
             {
                 if (FNC == 0)
                 {
-                    if (possibleChoices.ElementAt(i).Key != 0)
+                    if (possibleChoices.ElementAt(i).FNC != 0)
                     {
-                        possibleChoices.Remove(possibleChoices.ElementAt(i).Key);
+                        possibleChoices.Remove(possibleChoices.ElementAt(i));
                         i--;
                     }
                 }
                 if (FNC > 0)
                 {
-                    if (possibleChoices.ElementAt(i).Key > FNC || possibleChoices.ElementAt(i).Key < 0)
+                    if (possibleChoices.ElementAt(i).FNC > FNC || possibleChoices.ElementAt(i).FNC < 0)
                     {
-                        possibleChoices.Remove(possibleChoices.ElementAt(i).Key);
+                        possibleChoices.Remove(possibleChoices.ElementAt(i));
                         i--;
                     }
                 }
                 if (FNC < 0)
                 {
 
-                    if (possibleChoices.ElementAt(i).Key < FNC || possibleChoices.ElementAt(i).Key > 0)
+                    if (possibleChoices.ElementAt(i).FNC < FNC || possibleChoices.ElementAt(i).FNC > 0)
                     {
-                        possibleChoices.Remove(possibleChoices.ElementAt(i).Key);
+                        possibleChoices.Remove(possibleChoices.ElementAt(i));
                         i--;
                     }
                 }
@@ -85,7 +87,7 @@ namespace Test
             Console.WriteLine("number of possible choices = " + possibleChoices.Count);
             for (int i = 0; i < possibleChoices.Count; i++)
             {
-                Console.WriteLine("One response = " + possibleChoices.ElementAt(i).Value);
+                Console.WriteLine("One response = " + possibleChoices.ElementAt(i).content);
             }
 
 
@@ -96,11 +98,11 @@ namespace Test
 
             if (possibleChoices.Count == 1)
             {
-                response = possibleChoices.ElementAt(0).Value;
+                response = possibleChoices.ElementAt(0).content;
             }
             else
             {
-                response = possibleChoices.ElementAt(randomNumber).Value;
+                response = possibleChoices.ElementAt(randomNumber).content;
             }
 
             return response;
@@ -112,7 +114,7 @@ namespace Test
         //Console.WriteLine("number of possible choices = " + possibleChoices.Count);
         //for (int i = 0; i < possibleChoices.Count; i++)
         //{
-        //    Console.WriteLine("One response = " + possibleChoices.ElementAt(i).Value);
+        //    Console.WriteLine("One response = " + possibleChoices.ElementAt(i).content);
         //}
     }
 }

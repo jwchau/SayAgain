@@ -34,6 +34,14 @@ namespace Test
         public int FNC { get; set; }
         public string speaker { get; set; }
         public List<string> target { get; set; }
+
+        public DialogueObj(string newContent, List<string> newMemory, int newFNC, string newSpeaker, List<string> newTarget)
+        {
+            content = newContent; memory = newMemory; FNC = newFNC; speaker = newSpeaker; target = newTarget;
+        }
+
+        public DialogueObj() { }
+        ~DialogueObj() { }
     }
 
     public class RootObject
