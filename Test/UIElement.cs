@@ -13,7 +13,7 @@ namespace Test
     {
         //constructor
         public UIElement() {
-            
+
             this.size = 0;
             this.x = 0;
             this.y = 0;

@@ -18,7 +18,7 @@ namespace Test
             
         }
 
-        //fields
+
         List<UIButton> buttons = new List<UIButton>(); //our tone buttons
 
         //methods

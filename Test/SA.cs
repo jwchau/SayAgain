@@ -14,7 +14,9 @@ namespace Test
 
     class FontObjects
     {
-        public static Font Adore64 = new Font(new FileStream("Content/Fonts/Adore64.ttf", FileMode.Open));
+
+          public static Font Adore64 = new Font(new FileStream("../../Fonts/Adore64.ttf", FileMode.Open));
+//        public static Font Adore64 = new Font(new FileStream("Content/Fonts/Adore64.ttf", FileMode.Open));
     }
 
 
@@ -25,24 +27,38 @@ namespace Test
 
         Dictionary<SFML.Window.Keyboard.Key, bool[]> keys = new Dictionary<SFML.Window.Keyboard.Key, bool[]>();
 
-        Text instruction;
+
+        UITextBox TextBox = new UITextBox(800, 100, 0, 500, "HELLO WORLD!");
+
+
+        InputManager ManagerOfInput = new InputManager();
+        static Color color = Color.Black;
+        DialogueBox dialogueBox;
+        Boolean init;
+
+        public View fullScreenView, scrollview;
+
 
         UIManager ui_man = new UIManager();
         StartMenu startMenu;
         StartMenu settingsMenu;
 
-        UITextBox TextBox = new UITextBox(SCREEN_WIDTH, SCREEN_HEIGHT/5, 0, SCREEN_HEIGHT - SCREEN_HEIGHT / 5, "HELLO WORLD!");
+        //UITextBox TextBox = new UITextBox(SCREEN_WIDTH, SCREEN_HEIGHT/5, 0, SCREEN_HEIGHT - SCREEN_HEIGHT / 5, "HELLO WORLD!");
         //UISpeechBox SpeechBox = new UISpeechBox(700, 150, 50, 50, "Say Again by team babble fish", "Alex");
 
-        InputManager ManagerOfInput = new InputManager();
-        Text dialogue;
-        Text name;
-        static Color color = Color.Black;
-        DialogueBox dialogueBox;
-        Boolean init;
-        Boolean started = false;
-        int printTime;
-        bool pause = false;
+
+
+        AlexState Alex = new AlexState(4.0,6.9);
+
+
+        double[] nums = { -1, 2, 3, 4,
+                            1, 2, 3, 4,
+                            1, 2, 3, 4
+                            };
+
+        ToneEffects tfx = new ToneEffects();
+        ContextFilter cf;
+        Relationships rs = new Relationships();
 
 
         public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?", Color.Magenta)
@@ -53,6 +69,8 @@ namespace Test
             window.MouseButtonPressed += onMouseButtonPressed;
             window.MouseButtonReleased += onMouseButtonReleased;
             window.MouseMoved += onMouseMoved;
+
+
 
         }
 
@@ -77,6 +95,7 @@ namespace Test
             ManagerOfInput.SetMouseRelease(true);
 
             var buttons = ui_man.getButtons();
+
             if (State.GetState() == "game")
             {
                 for (var i = 0; i < buttons.Count; i++)
@@ -88,6 +107,12 @@ namespace Test
                         //first check top left of textbox
                         if (selectedBounds.Top + selectedBounds.Height >= boxBounds.Top)
                         {
+
+                            //CHECK MATRIX BS
+                            double[,] final = tfx.MatrixMult(tfx, cf);
+                            Console.WriteLine(final[2, 3]);
+
+
                             //Console.WriteLine("YO");
                             TextBox.getBoxText().DisplayedString = buttons[i].getNewDialogue();
                             //buttons.RemoveAt(i);
@@ -115,15 +140,18 @@ namespace Test
                 }
             }
 
+
         }
 
         private void onMouseButtonPressed(object sender, MouseButtonEventArgs e)
         {
+
             ManagerOfInput.SetMousePos(e.X, e.Y);
             ManagerOfInput.SetMouseRelease(false);
             ManagerOfInput.SetMouseDown(true);
 
             if (State.GetState() == "game")
+
             {
                 var buttons = ui_man.getButtons();
                 for (var i = 0; i < buttons.Count; i++)
@@ -140,124 +168,65 @@ namespace Test
                 ManagerOfInput.SetMouseRelease(false);
                 ManagerOfInput.SetMouseDown(true);
             }
-            else 
-            updateMenuState(e.X,e.Y);
 
+            else if (State.GetState() == "menu") {
+                // Menu Traversal Logic
+                if (State.GetMenuState() == "start") //If Current Menu State is the Start Menu
+                {
+                    // Pass the current menu's buttons, along with a list of tuples symbolizing:
+                    //      Tuple(ButtonText, TargetState, AnonymousFunction)
+                    updateMenuState(startMenu.getMenuButtons(), new List<Tuple<string, string, Task>> {
+                        new Tuple<string, string, Task>("Game Start", "game", new Task(() => {})),
+                        new Tuple<string, string, Task>("Settings", "settings", new Task(() => {}))
+                    });
 
-            //
-            //if updatestate( currentmenu , 8k gmaing , -> gamek)
-            //if updatestte ( currentmenu , 8k gaming , -> menu)
-            //
-            //
-            //
-            //else if (State.GetState() == "menu") {
-            //    //detection of clicks on menu buttons
-            //    if (State.GetMenuState() == "start")
-            //    {
-            //       // updateMenuState(current menu, string, target);
-            //        var buttons = startMenu.getMenuButtons();
-            //        for (var i = 0; i < buttons.Count; i++)
-            //        {
-            //            if (buttons[i].Contains(e.X, e.Y))
-            //            {
-            //                var bounds = buttons[i].getRectBounds();
-            //                if (buttons[i].getMenuButtonText().DisplayedString == "Game Start")
-            //                {
-            //                    State.SetState("game");
-            //                }
-            //                else if (buttons[i].getMenuButtonText().DisplayedString == "Settings")
-            //                {
-            //                    State.SetMenuState("settings");
-            //                }
-            //            }
-            //        }
-            //    } else
-            //    {
-            //        var buttons = settingsMenu.getMenuButtons();
-            //        for (var i = 0; i < buttons.Count; i++)
-            //        {
-            //            if (buttons[i].Contains(e.X, e.Y))
-            //            {
-            //                var bounds = buttons[i].getRectBounds();
-            //                if (buttons[i].getMenuButtonText().DisplayedString == "8K GAMING")
-            //                {
-            //                    State.SetState("game");
-            //                }
-            //                else if (buttons[i].getMenuButtonText().DisplayedString == "<- Back")
-            //                {
-            //                    State.SetMenuState("start");
-            //                }
-            //            }
-            //        }
-            //    }
-
-            //    ManagerOfInput.SetMousePos(e.X, e.Y);
-            //    ManagerOfInput.SetMouseRelease(false);
-            //    ManagerOfInput.SetMouseDown(true);
-
-
-            //}
+                }
+                else if (State.GetMenuState() == "settings") //If Current Menu State is the Settings Menu
+                {
+                    updateMenuState(settingsMenu.getMenuButtons(), new List<Tuple<string, string, Task>> {
+                        new Tuple<string, string, Task>("8K GAMING", "settings", new Task(() => { if(clearColor == Color.Magenta) clearColor = Color.Cyan; // Change background clear color
+                                                                                                  else clearColor = Color.Magenta; })),
+                        new Tuple<string, string, Task>("<- Back", "start", new Task(() => {}))
+                    });
+                    
+                }
+            }
         }
 
-        private void updateMenuState(int x, int y) {
-            if (State.GetState() == "game")
-            {
-                var buttons = ui_man.getButtons();
-                for (var i = 0; i < buttons.Count; i++)
-                {
-                    if (buttons[i].Contains(x,y))
-                    {
-                        var bounds = buttons[i].getRectBounds();
-                        buttons[i].SetMouseOffset(x - (int)bounds.Left, y - (int)bounds.Top);
-                        buttons[i].SetSelected(true);
-                    }
-                }
+        // Handle Menu Traversal and Game Launching
+        private void updateMenuState(List<MenuButton> buttons, List<Tuple<string, string, Task>> mappings) {
+            // Get Mouse Position
+            var MousePos = ManagerOfInput.GetMousePos();
 
-                ManagerOfInput.SetMousePos(x, y);
-                ManagerOfInput.SetMouseRelease(false);
-                ManagerOfInput.SetMouseDown(true);
-            }
-            else if (State.GetState() == "menu")
+            // Loop through current menu's buttons
+            for (var i = 0; i < buttons.Count; i++)
             {
-                //detection of clicks on menu buttons
-                if (State.GetMenuState() == "start")
+                // If mouse position is over current button
+                if (buttons[i].Contains(MousePos[0], MousePos[1]))
                 {
-                    // updateMenuState(parms);
-                    var buttons = startMenu.getMenuButtons();
-                    for (var i = 0; i < buttons.Count; i++)
+                    // Find what this button is suppose to do
+                    for(var j = 0; j < mappings.Count; j++)
                     {
-                        if (buttons[i].Contains(x, y))
+                        // Found button being clicked
+                        if (buttons[i].getMenuButtonText().DisplayedString == mappings[j].Item1)
                         {
-                            var bounds = buttons[i].getRectBounds();
-                            if (buttons[i].getMenuButtonText().DisplayedString == "Game Start")
+                            // Change either game state or menu state based off of button's target state
+                            if (mappings[j].Item2 == "game")
                             {
-                                State.SetState("game");
+                                State.SetState(mappings[j].Item2);
+
+                            } else {
+
+                                State.SetMenuState(mappings[j].Item2);
+
                             }
-                            else if (buttons[i].getMenuButtonText().DisplayedString == "Settings")
-                            {
-                                State.SetMenuState("settings");
-                            }
+                            mappings[j].Item3.Start();
+
+                            break;
                         }
                     }
-                }
-                else
-                {
-                    var buttons = settingsMenu.getMenuButtons();
-                    for (var i = 0; i < buttons.Count; i++)
-                    {
-                        if (buttons[i].Contains(x, y))
-                        {
-                            var bounds = buttons[i].getRectBounds();
-                            if (buttons[i].getMenuButtonText().DisplayedString == "8K GAMING")
-                            {
-                                State.SetState("game");
-                            }
-                            else if (buttons[i].getMenuButtonText().DisplayedString == "<- Back")
-                            {
-                                State.SetMenuState("start");
-                            }
-                        }
-                    }
+                    break;
+
                 }
             }
 
@@ -272,44 +241,41 @@ namespace Test
         {
             init = true;
 
-            if(e.Code == Keyboard.Key.Escape)
+            if (e.Code == Keyboard.Key.N)
             {
-                window.Close();
-            }
-
-            if (e.Code == Keyboard.Key.P)
-            {
-                if (State.GetState() == "pause")
+                dialogueBox.getNext();
+                dialogueBox.checkEnd();
+                /*if (dialogueBox.getElementIndex() == dialogueBox.getArrLength())
                 {
-                    State.SetState("game");
-                }
-                else if (State.GetState() == "game") {
-                    State.SetState("pause");
-                }
+                    dialogueBox.active = false;
+                }*/
             }
 
             if (e.Code == Keyboard.Key.M)
             {
-                dialogueBox = new DialogueBox(700, 150, 50, 50, "kitty kat", Color.Black);
 
-                name = new Text("Alex", FontObjects.Adore64, 24);
-                name.Position = new Vector2f(dialogueBox.x + 40, dialogueBox.y - 25);
-                name.Color = color;
-
-                Console.WriteLine("Initialize");
-                string line = "say again by team babble fish";
-
-                Task.Run(async () => { //Task.Run puts on separate thread
-                    printTime = 100;
-                    await animateText(line); //await pauses thread until animateText() is completed
-                });
+                dialogueBox.renderDialogue("I took my love, I took it down "+
+                    "Climbed a mountain and I turned around " +
+                    "And I saw my reflection in the snow covered hills " +
+                    "'Til the landslide brought it down " +
+                    "Oh, mirror in the sky " +
+                    "What is love? " +
+                    "Can the child within my heart rise above? " +
+                    "Can I sail through the changin' ocean tides? " +
+                    "Can I handle the seasons of my life? " +
+                    "Well, I've been afraid of changin' " +
+                    "'Cause I've built my life around you " +
+                    "But time makes you bolder " +
+                    "Even children get older " +
+                    "And I'm getting older, too", "Alex");
             }
 
-           
-           
+
+
             if (e.Code == Keyboard.Key.Space)
             {
-                printTime = 0;
+                dialogueBox.setPrintTime(0);
+
             }
 
             if (!keys.ContainsKey(e.Code))
@@ -323,23 +289,27 @@ namespace Test
 
 
 
+
         protected override void LoadContent()
         {
             //load stuff for main menu
 
+
             startMenu = new StartMenu("start");
             settingsMenu = new StartMenu("settings");
 
+            cf = new ContextFilter("school", nums);
+
             //intialize AI dialogue box
-            string[] tone = new string[] { "suh dood", "a dood", "doodet", "pc" };
-            string[] jsondialogue = new string[] { "long ass-sentence", "short hyphen ass-sentence", "aye gains", "words" };
+            string[] tone = new string[] { "Rude", "Kind", "Calm", "Sarcastic" };
+            string[] jsondialogue = new string[] { "Rude Dialogue", "Kind Dialogue", "Calm Dialogue","Sarcastic Dialogue" };
+
             //initialize list of buttons
             int xPos = (int)SCREEN_WIDTH/tone.Length;
             for (int i = 1; i <= tone.Length; i++)
             {
                 ui_man.addButton(new UIButton(xPos/2 + (i-1) * xPos, SCREEN_HEIGHT - SCREEN_HEIGHT / 4, tone[i-1], jsondialogue[i-1]));
             }
-        
 
 
         }
@@ -347,37 +317,26 @@ namespace Test
         protected override void Initialize()
         {
 
-            instruction = new Text("press m for dialogue \n"+
-                "press space to speed up", FontObjects.Adore64, 24);
+
+
+            //the view of the whole game
+            fullScreenView = window.DefaultView;
+            //the view port is the whole window
+            fullScreenView.Viewport = new FloatRect(0, 0, 1, 1);
+            window.SetView(fullScreenView);
+            dialogueBox = new DialogueBox(0,0,710,150);
+            scrollview = new View(dialogueBox.GetBounds());
+            //where i want to view it (inside dialogueBox)
+            scrollview.Viewport = new FloatRect(0.165f, 0f, 0.65f, 0.27f)/*(0.1f, 0.05f, 0.8f, 0.3f)*/;
 
 
         }
 
 
 
+    
+        
 
-        //async means this function can run separate from main app.
-        //operate in own time and thread
-        async Task animateText(string chatter) 
-        {
-            
-            if (!started)
-            {
-                started = true;
-                int i = 0;
-                dialogue = new Text("", FontObjects.Adore64, 24);
-                dialogue.Position = new Vector2f(50, 70);
-                dialogue.Color = color;
-                while (i < chatter.Length)
-                {
-                    dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, chatter[i++]));
-                    await Task.Delay(printTime); //equivalent of putting thread to sleep
-                }
-                started = false;
-            }
-            // Do asynchronous work.
-            
-        }
 
 
 
@@ -390,7 +349,8 @@ namespace Test
                     var buttons = ui_man.getButtons();
                     for (var i = 0; i < buttons.Count; i++)
                     {
-                        if (buttons[i].GetSelected())
+                      if (buttons[i].GetSelected())
+
                         {
                             buttons[i].translate(MouseCoord[0], MouseCoord[1]);
                             //check collision with textbox
@@ -413,12 +373,18 @@ namespace Test
 
         protected override void Draw()
         {
+
+
+            window.SetView(fullScreenView);
+            window.Draw(TextBox.getBox());
+            window.Draw(TextBox.getBoxText());
+        
             window.Clear(clearColor);
             if (State.GetState() == "menu")
+
             {
                 if(State.GetMenuState() == "start")
                 {
-                    //menu stuff goes here
                     window.Draw(startMenu);
                 } else
                 {
@@ -428,16 +394,9 @@ namespace Test
 
             } else if (State.GetState() != "menu") {
                 
-                // change to GameState if (!pause) { 
-                window.Draw(instruction);
                 window.Draw(TextBox.getBox());
                 window.Draw(TextBox.getBoxText());
-
-                // window.Draw(SpeechBox.getNameBox());
-                // window.Draw(SpeechBox.getNameBoxText());
-                //  window.Draw(SpeechBox.getSpeechBox());
-                //  window.Draw(SpeechBox.getSpeechBoxText());
-
+            
                 var buttons = ui_man.getButtons();
 
                 for (var i = 0; i < buttons.Count; i++)
@@ -457,6 +416,17 @@ namespace Test
 
                 }
             }
+
+
+            if (init && dialogueBox.active)
+            {
+                window.SetView(scrollview);
+                window.Draw(dialogueBox);
+                window.Draw(dialogueBox.dialogue);
+                window.Draw(dialogueBox.name);
+
+            }
+
 
         }
     }

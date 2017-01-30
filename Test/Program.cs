@@ -12,6 +12,7 @@ namespace Test
         {
             SA myGame = new SA();
             myGame.Run();
+
         }
     }
 }
