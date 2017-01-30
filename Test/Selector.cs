@@ -59,7 +59,7 @@ namespace Test
                     if (possibleChoices.ElementAt(i).Key != 0)
                     {
                         possibleChoices.Remove(possibleChoices.ElementAt(i).Key);
-                        if (i > 0) i--;
+                        i--;
                     }
                 }
                 if (FNC > 0)
@@ -67,19 +67,21 @@ namespace Test
                     if (possibleChoices.ElementAt(i).Key > FNC || possibleChoices.ElementAt(i).Key < 0)
                     {
                         possibleChoices.Remove(possibleChoices.ElementAt(i).Key);
-                        if (i > 0) i--;
+                        i--;
                     }
                 }
                 if (FNC < 0)
                 {
-                    if (possibleChoices.ElementAt(i).Key <= FNC || possibleChoices.ElementAt(i).Key > 0)
+
+                    if (possibleChoices.ElementAt(i).Key < FNC || possibleChoices.ElementAt(i).Key > 0)
                     {
                         possibleChoices.Remove(possibleChoices.ElementAt(i).Key);
-                        if (i > 0) i--;
+                        i--;
                     }
                 }
             }
 
+            //prints values to choose from
             Console.WriteLine("number of possible choices = " + possibleChoices.Count);
             for (int i = 0; i < possibleChoices.Count; i++)
             {
