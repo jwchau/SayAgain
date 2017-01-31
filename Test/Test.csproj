@@ -87,9 +87,11 @@
     <Compile Include="DialogueBox.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="alextutorial_json.json" />
     <None Include="App.config" />
     <None Include="Fonts\Adore64.ttf" />
     <None Include="packages.config" />
+    <None Include="playertutorial_json.json" />
     <None Include="sampleJSON.JSON" />
   </ItemGroup>
   <ItemGroup>

@@ -11,11 +11,11 @@ namespace Test
         static void Main(string[] args)
         {
             //Testing Values---------------------------------------------
-            string[] currentMadeMemories = { "School", "Divorce" };
+            string[] currentMadeMemories = { "Greeting", "Root" };
             int FNC = 50;
             //-----------------------------------------------------------
 
-            DialogParsing r = new DialogParsing(@"C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\sampleJSON.json");
+            DialogParsing r = new DialogParsing(@"C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\playertutorial_json.json");
             Selector s = new Selector();
 
             string response = s.ChooseDialog(FNC, r, currentMadeMemories);

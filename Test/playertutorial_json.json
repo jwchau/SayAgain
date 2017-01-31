@@ -1,0 +1,108 @@
+{"Dialogues":[
+{
+	"content":"Hi Alex.",
+	"memory":["Greeting","Root"],
+	"FNC":0,
+	"Speaker":"Player"
+	
+},
+{
+	"content":"What are you staring at?",
+	"memory":["Greeting","Blunt"],
+	"FNC":0,
+	"Speaker":"Player"
+	
+},
+{
+	"content":"Hey.",
+	"memory":["Greeting","Indifferent"],
+	"FNC":0,
+	"Speaker":"Player"
+	
+},
+{
+	"content":"Alex?.",
+	"memory":["Greeting","Hesitant"],
+	"FNC":0,
+	"Speaker":"Player"
+	
+},
+{
+	"content":"Hi Alex! It seems like you're doing so well!",
+	"memory":["Greeting","Compassionate"],
+	"FNC":0,
+	"Speaker":"Player"
+	
+},
+{
+	"content":"How's is school?",
+	"memory":["School","Root"],
+	"FNC":0,
+	"Speaker":"Player"
+	
+},
+{
+	"content":"And your friends?",
+	"memory":["Friend","Root"],
+	"FNC":0,
+	"Speaker":"Player"
+	
+},
+{
+	"content":"I bet school sucks, huh.",
+	"memory":["School","Blunt"],
+	"FNC":0,
+	"Speaker":"Player"
+	
+},
+{
+	"content":"How's school.",
+	"memory":["School","Indifferent."],
+	"FNC":0, 
+	"Speaker":"Player"
+	
+},
+{
+	"content":"You're...a junior now, right?",
+	"memory":["School","Hesitant"],
+	"FNC":0,
+	"Speaker":"Player"
+	
+},
+{
+	"content":"I hope your classes are going really well, Alex.",
+	"memory":["School","Compassionate"],
+	"FNC":0,
+	"Speaker":"Player"
+	
+},
+{
+	"content":"Do you even have friends?",
+	"memory":["Friend","Blunt"],
+	"FNC":0,
+	"Speaker":"Player"
+	
+},
+{
+	"content":"Are your friends doing well?",
+	"memory":["Friend","Indifferent."],
+	"FNC":0, 
+	"Speaker":"Player"
+	
+},
+{
+	"content":"How's Ron? That one...person?",
+	"memory":["Friend","Hesitant"],
+	"FNC":0,
+	"Speaker":"Player"
+	
+},
+{
+	"content":"Are you and your friends getting along?",
+	"memory":["Friend","Compassionate"],
+	"FNC":0,
+	"Speaker":"Player"
+	
+}
+]
+}

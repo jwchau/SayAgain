@@ -13,8 +13,8 @@ namespace Test
             bool memoryCheck;
             int counter;
             //checks for memory requirements first (ones with no memorys are also added)
-            //Dictionary<int, string> possibleChoices = new Dictionary<int, string>();
             List<DialogueObj> possibleChoices = new List<DialogueObj>();
+
             //iterates through the json list
             for (int i = 0; i < r.r.Dialogues.Count; i++)
             {
@@ -83,20 +83,16 @@ namespace Test
                 }
             }
 
-            //prints values to choose from
-            Console.WriteLine("number of possible choices = " + possibleChoices.Count);
-            for (int i = 0; i < possibleChoices.Count; i++)
-            {
-                Console.WriteLine("One response = " + possibleChoices.ElementAt(i).content);
-            }
-
-
             //picks whats left (for now it picks at random)
             Random holder = new Random();
             int randomNumber = holder.Next(0, possibleChoices.Count);
             string response = "";
 
-            if (possibleChoices.Count == 1)
+            if(possibleChoices.Count == 0)
+            {
+                response = "returned empty string";
+            }
+            else if (possibleChoices.Count == 1)
             {
                 response = possibleChoices.ElementAt(0).content;
             }
