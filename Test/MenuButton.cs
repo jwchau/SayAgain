@@ -16,6 +16,7 @@ namespace Test
             this.y = y;
             buttonTextFont = FontObjects.Adore64;
             buttonText = new Text(content, buttonTextFont);
+
             buttonText.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width/2, y);
 
             rect = new RectangleShape(new SFML.System.Vector2f(buttonText.GetGlobalBounds().Width + 7, buttonText.GetGlobalBounds().Height + 10));

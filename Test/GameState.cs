@@ -42,7 +42,7 @@ namespace Test
 
         public void SetMenuState(string state)
         {
-            if (state != "start" && state != "settings")
+            if (state != "start" && state != "settings" && state != "pause")
             {
                 throw new FormatException();
             }
