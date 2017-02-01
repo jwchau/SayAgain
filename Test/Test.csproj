@@ -76,7 +76,6 @@
     <Compile Include="StartMenu.cs" />
     <Compile Include="ToneEffects.cs" />
     <Compile Include="Selector.cs" />
-    <Compile Include="StartMenu.cs" />
     <Compile Include="UIButton.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Program.cs" />

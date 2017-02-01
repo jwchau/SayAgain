@@ -15,7 +15,7 @@ namespace Test
             int FNC = 0;
             //-----------------------------------------------------------
 
-            DialogueParsing r = new DialogueParsing(@"C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\playertutorial_json.json");
+            DialogueParsing r = new DialogueParsing(@"../../playertutorial_json.json");
             Selector s = new Selector();
 
             List<DialogueObj> responseList = s.ChooseDialog(FNC, r, currentMadeMemories);

@@ -12,9 +12,9 @@ namespace Test
     class UITextBox : UIElement//The box where the dialogue will appear, not clickable or draggable
     {
         public UITextBox(float x, float y, string dialogue) {
-            //UITextBoxFont = new Font("../../Fonts/Adore64.ttf");
+            UITextBoxFont = new Font("../../Fonts/Adore64.ttf");
             //public UITextBox(float width, float height, float x, float y, string dialogue) {
-            UITextBoxFont = new Font(@"C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\Fonts/Adore64.ttf");
+            //UITextBoxFont = new Font(@"C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\Fonts/Adore64.ttf");
             UITextBoxText = new Text(dialogue, UITextBoxFont);
             UITextBoxText.Position = new Vector2f(x, y);
             box = new RectangleShape(new Vector2f(UITextBoxText.GetGlobalBounds().Width + 5, UITextBoxText.GetGlobalBounds().Height + 5));

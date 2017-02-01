@@ -107,7 +107,7 @@ namespace Test
 
             uint x = 5;
             uint y = SCREEN_HEIGHT - ((SCREEN_HEIGHT / 5));
-            Font tempFont = new Font("Fonts/Adore64.ttf");
+            Font tempFont = new Font("../../Fonts/Adore64.ttf");
 
             for (int i = 0; i < dialogueArray.Count() - 1; i++)
             {
