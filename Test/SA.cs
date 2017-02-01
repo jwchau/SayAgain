@@ -12,46 +12,40 @@ using System.Drawing;
 namespace Test
 {
 
-    class FontObjects
-    {
-
-          public static Font Adore64 = new Font(new FileStream("../../Fonts/Adore64.ttf", FileMode.Open));
-//        public static Font Adore64 = new Font(new FileStream("Content/Fonts/Adore64.ttf", FileMode.Open));
-    }
-
-
     class SA : Game
     {
+        // Screen width and height
         static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
         static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
 
+        //Dictionary of Keyboard keys and their corresponding states.
+        // MOVE TO MANAGER OF INPUT 
         Dictionary<SFML.Window.Keyboard.Key, bool[]> keys = new Dictionary<SFML.Window.Keyboard.Key, bool[]>();
 
-
-        UITextBox TextBox = new UITextBox( 0, SCREEN_HEIGHT-(SCREEN_HEIGHT/5), "HELLO WORLD!");
-
-
+        // Input Manager Object
         InputManager ManagerOfInput = new InputManager();
+
+        // Dialogue box and dialogue box custom color
         static Color color = Color.Black;
         DialogueBox dialogueBox;
+
+        // Dialogue init bool
+        // FOX WITH TIMER
         Boolean init;
         
-
+        // Different screen modes
         public View fullScreenView, scrollview;
 
-
+        // UI Manager Object
         UIManager ui_man = new UIManager();
+
+        // Declaration of different menu states
         StartMenu startMenu;
         StartMenu settingsMenu;
         StartMenu pauseMenu;
 
-        //UITextBox TextBox = new UITextBox(SCREEN_WIDTH, SCREEN_HEIGHT/5, 0, SCREEN_HEIGHT - SCREEN_HEIGHT / 5, "HELLO WORLD!");
-        //UISpeechBox SpeechBox = new UISpeechBox(700, 150, 50, 50, "Say Again by team babble fish", "Alex");
-
-
-
+        // Character declaration
         AlexState Alex = new AlexState(4.0,6.9);
-
 
         double[] nums = { -1, 2, 3, 4,
                             1, 2, 3, 4,
@@ -294,9 +288,6 @@ namespace Test
                 {
                     State.SetState("pause");
                     State.SetMenuState("pause");
-
-                  
-                   
                 }
             }
 

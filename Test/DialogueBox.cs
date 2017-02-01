@@ -24,6 +24,7 @@ namespace Test
         public int printTime;
         public bool active = true;
         int elementIndex = 0;
+        Font speechFont = new Font("Fonts/Adore64.ttf");
 
         public void setPrintTime(int i)
         {
@@ -77,7 +78,7 @@ namespace Test
             {
                 name = BufferName(speaker);
                 dialogue = BufferDialogue("");
-                Text tmp = new Text(s, FontObjects.Adore64, 24);
+                Text tmp = new Text(s, speechFont, 24);
 
                 arr = createStrings(tmp);
                 currentTask = Task.Run(async () =>
@@ -102,7 +103,7 @@ namespace Test
             float currentLineWidth = 0;
             foreach (String word in s)
             {
-                Text t = new Text(word + " ", FontObjects.Adore64, 24);
+                Text t = new Text(word + " ", speechFont, 24);
                 float wordSizeWithSpace = t.GetGlobalBounds().Width;
                 if (currentLineWidth + wordSizeWithSpace > maxw)
                 {
@@ -112,7 +113,7 @@ namespace Test
                     if (line.GetGlobalBounds().Height > maxh)
                     {
                         list.Add(line);
-                        line = new Text("", FontObjects.Adore64, 24);
+                        line = new Text("", speechFont, 24);
                     }
                 }
 
@@ -153,7 +154,6 @@ namespace Test
 
         public void Draw(RenderTarget target, RenderStates states)
         {
-            Console.WriteLine("AYE LMAO");
             target.Draw(box);
             target.Draw(nameBox);
 
@@ -179,7 +179,7 @@ namespace Test
         public Text BufferName(String speaker)
         {
 
-            Text name = new Text(speaker.ToUpper(), FontObjects.Adore64, 24);
+            Text name = new Text(speaker.ToUpper(), speechFont, 24);
             name.Position = new Vector2f(nameBox.Position.X + 17, nameBox.Position.Y + 12);
             name.Color = Color.Black;
             return name;
@@ -187,7 +187,7 @@ namespace Test
 
         public Text BufferDialogue(String s)
         {
-            Text dialogue = new Text(s, FontObjects.Adore64, 24);
+            Text dialogue = new Text(s, speechFont, 24);
             dialogue.Position = new Vector2f(box.Position.X + 13, box.Position.Y + 20);
             dialogue.Color = Color.Black;
             return dialogue;
