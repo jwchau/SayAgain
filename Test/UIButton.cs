@@ -25,7 +25,7 @@ namespace Test
             Color bgColor = new Color(177, 177, 177);
             rect.FillColor = bgColor;
             this.newDialogue = newDialogue;
-
+            tonalColor = buttonTonalColors[content];
         }
 
         //fields
@@ -138,10 +138,16 @@ namespace Test
             return newDialogue;
         }
 
+        public Color getTonalColor()
+        {
+            return tonalColor;
+        }
+
         public override void Draw(RenderTarget target, RenderStates states)
         {
             target.Draw(rect);
             target.Draw(buttonText);
         }
+    
     }
 }

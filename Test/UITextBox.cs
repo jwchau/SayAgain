@@ -18,7 +18,8 @@ namespace Test
             UITextBoxText.Position = new Vector2f(x, y);
             box = new RectangleShape(new Vector2f(UITextBoxText.GetGlobalBounds().Width + 5, UITextBoxText.GetGlobalBounds().Height + 5));
             box.Position = new Vector2f(x, y);
-            box.FillColor = Color.Red;
+            box.FillColor = buttonTonalColors["Default"];
+            prevColor = buttonTonalColors["Default"];
             UITextBoxText.Color = Color.White;
             this.affected = false;
         }
@@ -27,6 +28,8 @@ namespace Test
         Text UITextBoxText;
         RectangleShape box;
         bool affected = false;
+        Color prevColor;
+        bool mouseWasIn = false;
 
         public RectangleShape getBox()
         {
@@ -54,9 +57,15 @@ namespace Test
             box.FillColor = color;
         }
 
-        public Color getBoxColor()
+        public void setPrevColor(Color color)
         {
-            return box.FillColor;
+            prevColor = color;
+        }
+
+        public Color getBoxColor(string s)
+        {
+            if (s == "curr") return box.FillColor;
+            return prevColor;
         }
 
         public bool getAffected() {
@@ -65,6 +74,16 @@ namespace Test
 
         public void setAffected(bool b) {
             affected = b;
+        }
+
+        public void setMouseWasIn(bool w)
+        {
+            mouseWasIn = w;
+        }
+
+        public bool wasMouseIn()
+        {
+            return mouseWasIn;
         }
 
         public bool Contains(int mouseX, int mouseY)

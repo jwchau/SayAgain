@@ -66,8 +66,6 @@ namespace Test
             window.MouseButtonReleased += onMouseButtonReleased;
             window.MouseMoved += onMouseMoved;
 
-
-
         }
 
         private void onMouseMoved(object sender, MouseMoveEventArgs e)
@@ -114,7 +112,8 @@ namespace Test
 
                             if (playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1]))
                             {
-                                playerDialogues[j].setBoxColor(Color.Blue);
+                                playerDialogues[j].setPrevColor(playerDialogues[j].getBoxColor("curr"));
+                                playerDialogues[j].setBoxColor(buttons[i].getTonalColor());
 
                                 playerDialogues[j].changeDialogue(buttons[i].getNewDialogue());
                                 playerDialogues[j].setAffected(true);
@@ -369,12 +368,10 @@ namespace Test
 
         protected override void Update()
         {
-
-
             if (State.GetState() == "game")
             {
 
-
+                // Timer update
                 if (State.getCountDown() > 0)
                 {
                     //as long as you are not out of time
@@ -382,43 +379,57 @@ namespace Test
                     State.setCountDown(9 - (State.getNewTime() - State.getGameTime()));
 
                 }
-                
 
-                Console.WriteLine(State.getCountDown());
-
+                // Get the current UI Textboxes from the UI Manager
                 var playerDialogues = ui_man.getPlayerDialogues();
 
+                // Get the mouse coordinates from Input Manager
                 var MouseCoord = ManagerOfInput.GetMousePos();
+
+                // If the mouse is currently dragging
                 if (ManagerOfInput.GetMouseDown())
                 {
-
+                    // Get tonal buttons from UI Manager
                     var buttons = ui_man.getButtons();
+
+                    // Loop through buttons
                     for (var i = 0; i < buttons.Count; i++)
                     {
+                        // Find button currently being interacted with
                         if (buttons[i].GetSelected())
                         {
-
+                            // Move the button around the screen
                             buttons[i].translate(MouseCoord[0], MouseCoord[1]);
-                            //check collision with textbox
-                            var selectedBounds = buttons[i].getRectBounds();
+
+                            // Check collision with UI Textboxes
+                            // Loop through UI Textboxes
                             for (var j = 0; j < playerDialogues.Count; j++)
                             {
-
-                                var boxBounds = playerDialogues[j].getBoxBounds();
-                                //change color if the button is hovering over the textbox
-                                if (playerDialogues[j].getAffected() == false)
+                                // If the mouse just came from inside a UI Textbox
+                                if (playerDialogues[j].wasMouseIn())
                                 {
+                                    if (!playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1]))
+                                    {
+                                        // Reset the color to match its previous color
+                                        playerDialogues[j].setBoxColor(playerDialogues[j].getBoxColor("prev"));
+                                        // Mouse has now left the UI Textbox so set it to false
+                                        playerDialogues[j].setMouseWasIn(false);
+                                    }
+
+                                    // If mouse just came from outside the UI Textbox
+                                } else {
                                     if (playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1]))
                                     {
-                                        playerDialogues[j].setBoxColor(Color.Blue);
-
-                                    }
-                                    else
-                                    {
-                                        playerDialogues[j].setBoxColor(Color.Red);
+                                        // Update previous color to current color of the UI Textbox
+                                        playerDialogues[j].setPrevColor(playerDialogues[j].getBoxColor("curr"));
+                                        // Update current color to selected tonal button color
+                                        playerDialogues[j].setBoxColor(buttons[i].getTonalColor());
+                                        // Mouse is now inside a UI Textbox, so set it to true
+                                        playerDialogues[j].setMouseWasIn(true);
 
                                     }
                                 }
+
                             }
 
                         }
