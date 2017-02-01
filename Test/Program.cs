@@ -11,20 +11,16 @@ namespace Test
         static void Main(string[] args)
         {
             //Testing Values---------------------------------------------
-            string[] currentMadeMemories = { "Greeting", "Root" };
-            int FNC = 50;
+            string[] currentMadeMemories = { "Greeting","Indifferent" };
+            int FNC = 0;
             //-----------------------------------------------------------
 
-            DialogParsing r = new DialogParsing(@"C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\playertutorial_json.json");
+            DialogueParsing r = new DialogueParsing(@"C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\playertutorial_json.json");
             Selector s = new Selector();
 
             List<DialogueObj> responseList = s.ChooseDialog(FNC, r, currentMadeMemories);
 
             Console.WriteLine("First String in List -> " + responseList.ElementAt(0).content);
-
-            //Console.WriteLine(r.r.Dialogues[0].memory.ElementAt(1));
-            //Console.WriteLine(r.r.Dialogues[1].content);
-            //Console.WriteLine(r.r.Dialogues[2].content);
 
             SA myGame = new SA();
             myGame.Run();

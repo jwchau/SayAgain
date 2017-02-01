@@ -61,7 +61,7 @@
   <ItemGroup>
     <Compile Include="AlexState.cs" />
     <Compile Include="CharacterClass.cs" />
-    <Compile Include="DialogParsing.cs" />
+    <Compile Include="DialogueParsing.cs" />
     <Compile Include="DadState.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="InputManager.cs" />

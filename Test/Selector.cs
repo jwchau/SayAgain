@@ -8,7 +8,7 @@ namespace Test
 {
     class Selector
     {
-        public List<DialogueObj> ChooseDialog(int FNC, DialogParsing r, string[] memories)
+        public List<DialogueObj> ChooseDialog(int FNC, DialogueParsing r, string[] memories)
         {
             bool memoryCheck;
             int counter;

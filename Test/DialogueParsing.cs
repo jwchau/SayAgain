@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace Test
 {
-    class DialogParsing
+    class DialogueParsing
     {
         public RootObject r = new RootObject();
         private string filename = "";
@@ -18,13 +18,13 @@ namespace Test
         }
 
         RootObject GetObject() { return r; }
-        public DialogParsing(string file)
+        public DialogueParsing(string file)
         {
             filename = file;
             MakeParse();
         }
-        public DialogParsing() { }
-        ~DialogParsing() { }
+        public DialogueParsing() { }
+        ~DialogueParsing() { }
     }
 
     public class DialogueObj
