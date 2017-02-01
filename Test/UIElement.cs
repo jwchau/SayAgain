@@ -9,11 +9,11 @@ using SFML.Graphics;
 //
 namespace Test
 {
-    class UIElement:Drawable
+    class UIElement : Drawable
     {
         //constructor
-        public UIElement() {
-
+        public UIElement()
+        {
             this.size = 0;
             this.x = 0;
             this.y = 0;
