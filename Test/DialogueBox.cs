@@ -153,6 +153,7 @@ namespace Test
 
         public void Draw(RenderTarget target, RenderStates states)
         {
+            Console.WriteLine("AYE LMAO");
             target.Draw(box);
             target.Draw(nameBox);
 

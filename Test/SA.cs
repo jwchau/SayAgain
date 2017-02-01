@@ -35,6 +35,7 @@ namespace Test
         static Color color = Color.Black;
         DialogueBox dialogueBox;
         Boolean init;
+        
 
         public View fullScreenView, scrollview;
 
@@ -268,7 +269,7 @@ namespace Test
 
         private void onKeyPressed(object sender, KeyEventArgs e)
         {
-            init = true;
+            
 
             if (e.Code == Keyboard.Key.N)
             {
@@ -282,21 +283,26 @@ namespace Test
 
             if (e.Code == Keyboard.Key.P)
             {
+               
                 if (State.GetState() == "pause")
                 {
                     State.SetState("game");
                     State.SetMenuState("start");
+  
                 }
                 else if (State.GetState() == "game")
                 {
                     State.SetState("pause");
                     State.SetMenuState("pause");
+
+                  
+                   
                 }
             }
 
             if (e.Code == Keyboard.Key.M)
             {
-
+                init = true;
                 dialogueBox.renderDialogue("I took my love, I took it down "+
                     "Climbed a mountain and I turned around " +
                     "And I saw my reflection in the snow covered hills " +
@@ -337,7 +343,6 @@ namespace Test
         {
             //load stuff for main menu
 
-
             startMenu = new StartMenu("start");
             settingsMenu = new StartMenu("settings");
             pauseMenu = new StartMenu("pause");
@@ -346,16 +351,7 @@ namespace Test
 
             string test = "My name is Raman. My name is Michael. My name is John. My name is Jill. My name is Yuna. My name is Leo. My name is Koosha.";
             ui_man.produceTextBoxes(test);
-            ////intialize AI dialogue box
-            ////string[] tone = new string[] { "Rude", "Kind", "Calm", "Sarcastic" };
-            ////string[] jsondialogue = new string[] { "Rude Dialogue", "Kind Dialogue", "Calm Dialogue","Sarcastic Dialogue" };
-
-            //////initialize list of buttons
-            ////int xPos = (int)SCREEN_WIDTH/tone.Length;
-            //for (int i = 1; i <= tone.Length; i++)
-            //{
-            //    ui_man.addButton(new UIButton(xPos/2 + (i-1) * xPos, SCREEN_HEIGHT - SCREEN_HEIGHT / 4, tone[i-1], jsondialogue[i-1]));
-            //}
+      
 
 
         }
@@ -379,11 +375,28 @@ namespace Test
         }
 
 
+
         protected override void Update()
         {
+
+
             if (State.GetState() == "game")
             {
+
+
+                if (State.getCountDown() > 0)
+                {
+                    //as long as you are not out of time
+                    State.setNewTime((DateTime.Now.Ticks / 10000000) - State.getTimeDiff());
+                    State.setCountDown(9 - (State.getNewTime() - State.getGameTime()));
+
+                }
+                
+
+                Console.WriteLine(State.getCountDown());
+
                 var playerDialogues = ui_man.getPlayerDialogues();
+
                 var MouseCoord = ManagerOfInput.GetMousePos();
                 if (ManagerOfInput.GetMouseDown())
                 {
@@ -393,7 +406,7 @@ namespace Test
                     {
                         if (buttons[i].GetSelected())
                         {
-                            
+
                             buttons[i].translate(MouseCoord[0], MouseCoord[1]);
                             //check collision with textbox
                             var selectedBounds = buttons[i].getRectBounds();
@@ -421,7 +434,14 @@ namespace Test
                     }
 
                 }
-              
+
+            }
+            else if (State.GetState() == "pause") {
+                State.setPauseTime(State.getNewTime());
+                double a = State.getPauseTime();
+                double b = DateTime.Now.Ticks / 10000000;
+                State.setTimeDiff(b - a);
+
             }
         }
 
@@ -467,11 +487,22 @@ namespace Test
 
                 if (init)
                 {
-                    //window.Draw(dialogueBox);
-                    //window.Draw(dialogue);
-                    //window.Draw(name);
+                //    window.Draw(dialogueBox);
+                //    window.Draw(dialogue);
+                //    window.Draw(name);
                 }
-                if(State.GetState() == "pause")
+
+                if (init && dialogueBox.active)
+                {
+                    //UNCOMMENT
+                    window.SetView(scrollview);
+                    window.Draw(dialogueBox);
+                    window.Draw(dialogueBox.dialogue);
+                    window.Draw(dialogueBox.name);
+
+                }
+
+                if (State.GetState() == "pause")
                 {
                     pauseMenu.DrawBG(window);
                     if (State.GetMenuState() == "pause")
@@ -487,15 +518,7 @@ namespace Test
             }
 
 
-            if (init && dialogueBox.active)
-            {
-                //UNCOMMENT
-                //window.SetView(scrollview);
-                //window.Draw(dialogueBox);
-                //window.Draw(dialogueBox.dialogue);
-                //window.Draw(dialogueBox.name);
-
-            }
+            
 
             
 

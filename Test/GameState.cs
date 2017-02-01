@@ -20,11 +20,17 @@ namespace Test
 
         string currentState;
         string currentMenuState;
+        double oldTimeSeconds = 0;
+        double pauseTime = 0;
+        double newTimeSeconds = 0;
+        double timeDiff = 0;
+        double countDown = 1;
 
         public string GetState()
         {
             return currentState;
         }
+
 
         public void SetState(string state)
         {
@@ -32,6 +38,10 @@ namespace Test
             {
                 throw new FormatException();
             }
+            if (state == "game" && currentMenuState == "start") {
+                oldTimeSeconds = (DateTime.Now.Ticks / 10000) / 1000;
+            }
+
             currentState = state;
         }
 
@@ -48,5 +58,48 @@ namespace Test
             }
             currentMenuState = state;
         }
+
+        public void SetGameTime(double newTimeSeconds) {
+            oldTimeSeconds = newTimeSeconds;
+        }
+
+        public double getGameTime() {
+            return oldTimeSeconds;
+        }
+
+        public double getPauseTime() {
+            return pauseTime;
+        }
+
+        public void setPauseTime(double newTime) {
+            pauseTime = newTime;
+        }
+
+        public double getNewTime()
+        {
+            return newTimeSeconds;
+        }
+
+        public void setNewTime(double newTime)
+        {
+            newTimeSeconds = newTime;
+        }
+
+        public void setTimeDiff(double newTime) {
+            timeDiff = newTime;
+        }
+
+        public double getTimeDiff() {
+            return timeDiff;
+        }
+
+        public void setCountDown(double cd) {
+            countDown = cd;
+        }
+
+        public double getCountDown() {
+            return countDown;
+        }
+
     }
 }
