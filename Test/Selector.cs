@@ -8,7 +8,7 @@ namespace Test
 {
     class Selector
     {
-        public string ChooseDialog(int FNC, DialogParsing r, string[] memories)
+        public List<DialogueObj> ChooseDialog(int FNC, DialogParsing r, string[] memories)
         {
             bool memoryCheck;
             int counter;
@@ -83,25 +83,14 @@ namespace Test
                 }
             }
 
-            //picks whats left (for now it picks at random)
-            Random holder = new Random();
-            int randomNumber = holder.Next(0, possibleChoices.Count);
-            string response = "";
-
+            //sends results or returns empty value
             if(possibleChoices.Count == 0)
             {
-                response = "returned empty string";
-            }
-            else if (possibleChoices.Count == 1)
-            {
-                response = possibleChoices.ElementAt(0).content;
-            }
-            else
-            {
-                response = possibleChoices.ElementAt(randomNumber).content;
+                possibleChoices.Add(new DialogueObj());
+                possibleChoices.ElementAt(0).content = "returned empty string";
             }
 
-            return response;
+            return possibleChoices;
         }
         public Selector() { }
         ~Selector() { }

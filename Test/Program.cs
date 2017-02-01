@@ -18,9 +18,9 @@ namespace Test
             DialogParsing r = new DialogParsing(@"C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\playertutorial_json.json");
             Selector s = new Selector();
 
-            string response = s.ChooseDialog(FNC, r, currentMadeMemories);
+            List<DialogueObj> responseList = s.ChooseDialog(FNC, r, currentMadeMemories);
 
-            Console.WriteLine("Chosen At Random -> " + response);
+            Console.WriteLine("First String in List -> " + responseList.ElementAt(0).content);
 
             //Console.WriteLine(r.r.Dialogues[0].memory.ElementAt(1));
             //Console.WriteLine(r.r.Dialogues[1].content);
