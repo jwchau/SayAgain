@@ -17,8 +17,8 @@ namespace Test
         public UIManager() {
 
             /* TEMPORARY CODE REMOVE AND CLEAN LATER*/
-            string[] tone = new string[] { "Rude", "Kind", "Calm", "Sarcastic" };
-            string[] jsondialogue = new string[] { "Rude Dialogue.", "Kind Dialogue.", "Calm Dialogue.", "Sarcastic Dialogue." };
+            string[] tone = new string[] { "Blunt", "Indifferent", "Compassionate", "Hesitant" };
+            string[] jsondialogue = new string[] { "Blunt Dialogue.", "Indifferent Dialogue.", "Compassionate Dialogue.", "Hesitant Dialogue." };
             int xPos = (int)SCREEN_WIDTH / tone.Length;
             for (int i = 1; i <= tone.Length; i++)
             {
@@ -57,10 +57,15 @@ namespace Test
             dialogueArray = dialogue.Split('.');
 
             uint x = 5;
+//<<<<<<< HEAD
             uint y = SCREEN_HEIGHT - ((SCREEN_HEIGHT/5));
             Font tempFont = new Font("../../Fonts/Adore64.ttf");
+//=======
+            //uint y = SCREEN_HEIGHT - ((SCREEN_HEIGHT/5)) + 5;
+            //Font tempFont = new Font("Fonts/Adore64.ttf");
+//>>>>>>> 7053ad4965a1d2a0a06ba3c32d7a0dc2b320bfdb
 
-            for (int i = 0; i < dialogueArray.Count() -1; i++) {
+            for (int i = 0; i < dialogueArray.Count() - 1; i++) {
                 
                 if (dialogueArray[i][0] == ' ')
                 {
@@ -73,7 +78,7 @@ namespace Test
                 {
 
                     playerDialogues.Add(new UITextBox(x, y, dialogueArray[i]));
-                    x += (uint)tempText.GetGlobalBounds().Width + 15;
+                    x += (uint)tempText.GetGlobalBounds().Width + 10;
                 }
                 else
                 {
@@ -82,7 +87,7 @@ namespace Test
 
                     x = 5;
                     playerDialogues.Add(new UITextBox(x, y, dialogueArray[i]));
-                    x += (uint)tempText.GetGlobalBounds().Width + 15;
+                    x += (uint)tempText.GetGlobalBounds().Width + 10;
                 }
 
                 //Make textboxes using the dialogues.
@@ -93,21 +98,29 @@ namespace Test
 
         public void updateText(int pos, string newDialogue) {
 
-            List<bool> positionOfAffected = new List<bool>();//remembers who were affected
+            List<bool> positionOfAffected = new List<bool>(); //remembers who were affected
+            List<Color> dialogueColors = new List<Color>();
+
             for (int i = 0; i < playerDialogues.Count; i++)
             {
                 positionOfAffected.Add(playerDialogues[i].getAffected());
+                dialogueColors.Add(playerDialogues[i].getBoxColor("curr"));
+
             }
-
-
 
             playerDialogues.Clear();
 
             dialogueArray[pos] = newDialogue;
 
+
             uint x = 5;
+//<<<<<<< HEAD
             uint y = SCREEN_HEIGHT - ((SCREEN_HEIGHT / 5));
             Font tempFont = new Font("../../Fonts/Adore64.ttf");
+//=======
+            //uint y = SCREEN_HEIGHT - ((SCREEN_HEIGHT / 5)) + 5;
+            //Font tempFont = new Font("Fonts/Adore64.ttf");
+//>>>>>>> 7053ad4965a1d2a0a06ba3c32d7a0dc2b320bfdb
 
             for (int i = 0; i < dialogueArray.Count() - 1; i++)
             {
@@ -117,7 +130,7 @@ namespace Test
                 {
 
                     playerDialogues.Add(new UITextBox(x, y, dialogueArray[i]));
-                    x += (uint)tempText.GetGlobalBounds().Width + 15;
+                    x += (uint)tempText.GetGlobalBounds().Width + 10;
                 }
                 else
                 {
@@ -126,20 +139,17 @@ namespace Test
 
                     x = 5;
                     playerDialogues.Add(new UITextBox(x, y, dialogueArray[i]));
-                    x += (uint)tempText.GetGlobalBounds().Width + 15;
+                    x += (uint)tempText.GetGlobalBounds().Width + 10;
                 }
 
                 playerDialogues[i].setAffected(positionOfAffected[i]);
                 if (playerDialogues[i].getAffected())
                 {
-                    playerDialogues[i].setBoxColor(Color.Blue);
+                    playerDialogues[i].setBoxColor(dialogueColors[i]);
                 }
             }
 
-            foreach (var stuff in playerDialogues)
-            {
-                Console.WriteLine(stuff.getAffected());
-            }
+            dialogueColors.Clear();
         }
 
     }
