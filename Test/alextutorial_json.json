@@ -1,0 +1,83 @@
+{"Dialogues" :[
+{
+	"content": "Yeah I missed you too",
+	"memory": ["Greeting","Blunt"],
+	"FNC" : 0,
+	"speaker" : "Alex"
+},
+{
+	"content": "Hey",
+	"memory": ["","Indifferent"],
+	"FNC" : 0,
+	"speaker" : "Alex"
+	
+},
+{
+	"content": "Yeah it's me, Your sister. Remember?",
+	"memory": ["School1","Hesitant"],
+	"FNC" : 0,
+	"speaker" : "Alex"
+},
+{
+	"content": "Oh ... yeah",
+	"memory": ["school1","Compassionate"],
+	"FNC" : 0,
+	"speaker" : "Alex"
+	
+},
+{
+	"content": "Eh whatever",
+	"memory": ["School","Blunt"],
+	"FNC" : 0,
+	"speaker" : "Alex"
+},
+{
+	"content": "Fine",
+	"memory": ["School","Indifferent"],
+	"FNC" : 0,
+	"speaker" : "Alex"
+	
+},
+{
+	"content": "I'm fourteen, remember?",
+	"memory": ["School","Hesitant"],
+	"FNC" : 0,
+	"speaker" : "Alex"
+},
+{
+	"content": "Could be worse!",
+	"memory": ["School","Compassionate"],
+	"FNC" : 0,
+	"speaker" : "Alex"
+	
+},
+{
+	"content": "Yeah I know to make friends. thanks",
+	"memory": ["Friends","Blunt"],
+	"FNC" : 0,
+	"speaker" : "Alex"
+	
+},
+{
+	"content": "Oh I'm so glad you care about my wellbeing, sibling",
+	"memory": ["Friend","Compassionate"],
+	"FNC" : 0,
+	"speaker" : "Alex"
+	
+},
+{
+	"content": "Wait who? I've never had a friend named Ron. You don't need to act like you care",
+	"memory": ["Friend","Hesitant"],
+	"FNC" : 0,
+	"speaker" : "Alex"
+	
+},
+{
+	"content": "You've been gone for a year and that's what you ask? ",
+	"memory": ["Friend","Indifferent"],
+	"FNC" : 0,
+	"speaker" : "Alex"
+	
+}
+]
+}
