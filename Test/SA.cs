@@ -31,16 +31,22 @@ namespace Test {
         UITextBox TextBox = new UITextBox(0, SCREEN_HEIGHT - (SCREEN_HEIGHT / 5), "HELLO WORLD!");
         InputManager ManagerOfInput = new InputManager();
 
+
+
+
+        Dictionary<String, DialogueBox> chars = new Dictionary<String, DialogueBox>();
+        
+
         // Dialogue box and dialogue box custom color
         static Color color = Color.Black;
-        DialogueBox alexDialogueBox;
+        DialogueBox alexDialogueBox, dadDialogueBox, momDialogueBox;
 
         // Dialogue init bool
         // FOX WITH TIMER
         Boolean init;
 
         // Different screen modes
-        public View fullScreenView, alexDialogueView, charView;
+        public View fullScreenView, alexDialogueView, dadDialogueView, momDialogueView, charView;
 
         // UI Manager Object
         UIManager ui_man = new UIManager();
@@ -243,6 +249,13 @@ namespace Test {
 
             }
 
+
+            if (e.Code == Keyboard.Key.Space)
+            {
+                alexDialogueBox.setPrintTime(0);
+
+            }
+
             if (e.Code == Keyboard.Key.P) {
                 if (State.GetState() == "pause") {
                     State.SetState("game");
@@ -255,8 +268,35 @@ namespace Test {
             }
 
 
-            if (e.Code == Keyboard.Key.M) {
+            if (e.Code == Keyboard.Key.D)
+            {
                 init = true;
+
+                chars["Mom"].active = false;
+                chars["Alex"].active = false;
+                dadDialogueBox.renderDialogue("I took my love, I took it down " +
+                    "Climbed a mountain and I turned around " +
+                    "And I saw my reflection in the snow covered hills " +
+                    "'Til the landslide brought it down " +
+                    "Oh, mirror in the sky " +
+                    "What is love? " +
+                    "Can the child within my heart rise above? " +
+                    "Can I sail through the changin' ocean tides? " +
+                    "Can I handle the seasons of my life? " +
+                    "Well, I've been afraid of changin' " +
+                    "'Cause I've built my life around you " +
+                    "But time makes you bolder " +
+                    "Even children get older " +
+                    "And I'm getting older, too", "Dad", chars);
+            }
+
+
+
+            if (e.Code == Keyboard.Key.A) {
+                init = true;
+
+                chars["Mom"].active = false;
+                chars["Dad"].active = false;
                 alexDialogueBox.renderDialogue("I took my love, I took it down " +
                     "Climbed a mountain and I turned around " +
                     "And I saw my reflection in the snow covered hills " +
@@ -270,15 +310,31 @@ namespace Test {
                     "'Cause I've built my life around you " +
                     "But time makes you bolder " +
                     "Even children get older " +
-                    "And I'm getting older, too", "Alex");
+                    "And I'm getting older, too", "Alex", chars);
+            }
+
+            if (e.Code == Keyboard.Key.M)
+            {
+                init = true;
+                chars["Alex"].active = false;
+                chars["Dad"].active = false;
+                momDialogueBox.renderDialogue("I took my love, I took it down " +
+                    "Climbed a mountain and I turned around " +
+                    "And I saw my reflection in the snow covered hills " +
+                    "'Til the landslide brought it down " +
+                    "Oh, mirror in the sky " +
+                    "What is love? " +
+                    "Can the child within my heart rise above? " +
+                    "Can I sail through the changin' ocean tides? " +
+                    "Can I handle the seasons of my life? " +
+                    "Well, I've been afraid of changin' " +
+                    "'Cause I've built my life around you " +
+                    "But time makes you bolder " +
+                    "Even children get older " +
+                    "And I'm getting older, too", "Mom", chars);
             }
 
 
-
-            if (e.Code == Keyboard.Key.Space) {
-                alexDialogueBox.setPrintTime(0);
-
-            }
 
             if (!keys.ContainsKey(e.Code)) {
                 keys.Add(e.Code, new bool[] { true, e.Shift, e.Control, e.Alt });
@@ -321,7 +377,21 @@ namespace Test {
             window.SetView(fullScreenView);
             alexDialogueBox = new DialogueBox(0, 0, 710, 150);
             alexDialogueView = new View(alexDialogueBox.GetBounds());
-            alexDialogueView.Viewport = new FloatRect(0.32f, 0f, 0.35f, 0.2f);
+            alexDialogueView.Viewport = new FloatRect(0.3f, 0f, 0.35f, 0.2f);
+
+            dadDialogueBox = new DialogueBox(0, 0, 710, 150);
+            dadDialogueView = new View(dadDialogueBox.GetBounds());
+            dadDialogueView.Viewport = new FloatRect(0.0f, 0f, 0.35f, 0.2f);
+
+            momDialogueBox = new DialogueBox(0, 0, 710, 150);
+            momDialogueView = new View(momDialogueBox.GetBounds());
+            momDialogueView.Viewport = new FloatRect(0.63f, 0f, 0.35f, 0.2f);
+
+
+            chars.Add("Mom",momDialogueBox);
+            chars.Add("Dad",dadDialogueBox);
+            chars.Add("Alex",alexDialogueBox);
+
             charView = new View(mom.GetGlobalBounds());
             charView.Viewport = new FloatRect(0.3f, 0f, 0.1f, 0.1f);
 
@@ -450,6 +520,29 @@ namespace Test {
                     window.Draw(alexDialogueBox.name);
 
                 }
+
+                if (init && dadDialogueBox.active)
+                {
+                    Console.WriteLine("Why");
+                    //UNCOMMENT
+                    window.SetView(dadDialogueView);
+                    window.Draw(dadDialogueBox);
+                    window.Draw(dadDialogueBox.dialogue);
+                    window.Draw(dadDialogueBox.name);
+
+                }
+
+                if (init && momDialogueBox.active)
+                {
+                    Console.WriteLine("Why");
+                    //UNCOMMENT
+                    window.SetView(momDialogueView);
+                    window.Draw(momDialogueBox);
+                    window.Draw(momDialogueBox.dialogue);
+                    window.Draw(momDialogueBox.name);
+
+                }
+
 
                 if (State.GetState() == "pause") {
                     pauseMenu.DrawBG(window);

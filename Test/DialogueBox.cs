@@ -22,9 +22,13 @@ namespace Test
         Task currentTask;
         Text[] arr;
         public int printTime;
-        public bool active = true;
+        public bool active = false;
         int elementIndex = 0;
+
+        
         Font speechFont = new Font("../../Fonts/Adore64.ttf");
+
+
 
         public void forward()
         {
@@ -75,9 +79,10 @@ namespace Test
                 }
             }*/
         }
-        public void renderDialogue(String s, String speaker)
+        public void renderDialogue(String s, String speaker, Dictionary<String, DialogueBox> chars)
         {
             active = true;
+
             elementIndex = 0;
             if (currentTask == null || currentTask.IsCompleted)
             {
