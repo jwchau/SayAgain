@@ -18,6 +18,8 @@ namespace Test {
     }
 
     class SA : Game {
+        Sprite mom;
+
         // Screen width and height
         static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
         static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
@@ -31,14 +33,14 @@ namespace Test {
 
         // Dialogue box and dialogue box custom color
         static Color color = Color.Black;
-        DialogueBox dialogueBox;
+        DialogueBox alexDialogueBox;
 
         // Dialogue init bool
         // FOX WITH TIMER
         Boolean init;
 
         // Different screen modes
-        public View fullScreenView, scrollview;
+        public View fullScreenView, alexDialogueView, charView;
 
         // UI Manager Object
         UIManager ui_man = new UIManager();
@@ -237,7 +239,7 @@ namespace Test {
 
             if (e.Code == Keyboard.Key.N)
             {
-                dialogueBox.forward();
+                alexDialogueBox.forward();
 
             }
 
@@ -255,7 +257,7 @@ namespace Test {
 
             if (e.Code == Keyboard.Key.M) {
                 init = true;
-                dialogueBox.renderDialogue("I took my love, I took it down " +
+                alexDialogueBox.renderDialogue("I took my love, I took it down " +
                     "Climbed a mountain and I turned around " +
                     "And I saw my reflection in the snow covered hills " +
                     "'Til the landslide brought it down " +
@@ -274,7 +276,7 @@ namespace Test {
 
 
             if (e.Code == Keyboard.Key.Space) {
-                dialogueBox.setPrintTime(0);
+                alexDialogueBox.setPrintTime(0);
 
             }
 
@@ -305,21 +307,31 @@ namespace Test {
         }
 
         protected override void Initialize() {
+            Texture texture;
+            FileStream f = new FileStream("../../Art/angrymom.png", FileMode.Open);
+            texture = new Texture(f);
+
+
+            mom = new Sprite(texture);
+
             //the view of the whole game
             fullScreenView = window.DefaultView;
             //the view port is the whole window
             fullScreenView.Viewport = new FloatRect(0, 0, 1, 1);
             window.SetView(fullScreenView);
-            dialogueBox = new DialogueBox(0, 0, 710, 150);
-            scrollview = new View(dialogueBox.GetBounds());
-            //where i want to view it (inside dialogueBox)
-            scrollview.Viewport = new FloatRect(0.165f, 0f, 0.65f, 0.27f)/*(0.1f, 0.05f, 0.8f, 0.3f)*/;
+            alexDialogueBox = new DialogueBox(0, 0, 710, 150);
+            alexDialogueView = new View(alexDialogueBox.GetBounds());
+            alexDialogueView.Viewport = new FloatRect(0.32f, 0f, 0.35f, 0.2f);
+            charView = new View(mom.GetGlobalBounds());
+            charView.Viewport = new FloatRect(0.3f, 0f, 0.1f, 0.1f);
+
         }
 
 
 
         protected override void Update() {
             if (State.GetState() == "game") {
+
 
                 // Timer update
                 if (State.getCountDown() > 0) {
@@ -391,6 +403,7 @@ namespace Test {
         protected override void Draw() {
             window.SetView(fullScreenView);
 
+
             window.Clear(clearColor);
             if (State.GetState() == "menu") {
                 if (State.GetMenuState() == "start") {
@@ -401,12 +414,16 @@ namespace Test {
 
 
             } else if (State.GetState() != "menu") {
+                
+                window.Draw(mom);
+
 
                 //Draw text box background box
                 RectangleShape textBackground = new RectangleShape(new SFML.System.Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT / 5));
                 textBackground.Position = new SFML.System.Vector2f(0, SCREEN_HEIGHT - (SCREEN_HEIGHT / 5));
                 textBackground.FillColor = Color.Black;
                 window.Draw(textBackground);
+
 
                 var dialogues = ui_man.getPlayerDialogues();
 
@@ -420,17 +437,17 @@ namespace Test {
                 }
 
                 if (init) {
-                    //    window.Draw(dialogueBox);
+                    //    window.Draw(alexDialogueBox);
                     //    window.Draw(dialogue);
                     //    window.Draw(name);
                 }
 
-                if (init && dialogueBox.active) {
+                if (init && alexDialogueBox.active) {
                     //UNCOMMENT
-                    window.SetView(scrollview);
-                    window.Draw(dialogueBox);
-                    window.Draw(dialogueBox.dialogue);
-                    window.Draw(dialogueBox.name);
+                    window.SetView(alexDialogueView);
+                    window.Draw(alexDialogueBox);
+                    window.Draw(alexDialogueBox.dialogue);
+                    window.Draw(alexDialogueBox.name);
 
                 }
 
@@ -445,14 +462,7 @@ namespace Test {
                 }
             }
 
-            if (init && dialogueBox.active) {
-                //UNCOMMENT
-                //window.SetView(scrollview);
-                //window.Draw(dialogueBox);
-                //window.Draw(dialogueBox.dialogue);
-                //window.Draw(dialogueBox.name);
 
-            }
         }
     }
 }
