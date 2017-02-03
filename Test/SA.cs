@@ -243,12 +243,7 @@ namespace Test
 
             if (e.Code == Keyboard.Key.N)
             {
-                dialogueBox.getNext();
-                dialogueBox.checkEnd();
-                /*if (dialogueBox.getElementIndex() == dialogueBox.getArrLength())
-                {
-                    dialogueBox.active = false;
-                }*/
+                dialogueBox.forward();
             }
 
             if (e.Code == Keyboard.Key.M)

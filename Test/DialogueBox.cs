@@ -25,6 +25,11 @@ namespace Test
         public bool active = true;
         int elementIndex = 0;
 
+        public void forward()
+        {
+            getNext();
+            checkEnd();
+        }
         public void setPrintTime(int i)
         {
             printTime = i;
