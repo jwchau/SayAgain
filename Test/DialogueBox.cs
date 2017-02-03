@@ -27,15 +27,9 @@ namespace Test
         public bool active = false;
         int elementIndex = 0;
 
-
-        private View view;
+        public View view { get; private set; }
 
         Font speechFont = new Font("../../Fonts/Adore64.ttf");
-
-        public View getView()
-        {
-            return view;
-        }
 
         public void forward()
         {
@@ -119,7 +113,7 @@ namespace Test
                 float wordSizeWithSpace = t.GetGlobalBounds().Width;
                 if (currentLineWidth + wordSizeWithSpace > maxw)
                 {
-
+    
                     line.DisplayedString += "\n";
                     currentLineWidth = 0;
                     if (line.GetGlobalBounds().Height > maxh)
@@ -170,11 +164,15 @@ namespace Test
 
         public void Draw(RenderTarget target, RenderStates states)
         {
+            View resetView = target.GetView();
+            target.SetView(view);
+
             target.Draw(box);
             target.Draw(nameBox);
             target.Draw(name);
             target.Draw(dialogue);
 
+            target.SetView(resetView);
         }
         public FloatRect GetBounds()
         {

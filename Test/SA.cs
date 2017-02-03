@@ -271,7 +271,7 @@ namespace Test {
             {
                 init = true;
 
-                dialogueBox.getView().Viewport = new FloatRect(0.0f, 0f, 0.35f, 0.2f); 
+                dialogueBox.view.Viewport = new FloatRect(0.0f, 0f, 0.35f, 0.2f); 
                 dialogueBox.renderDialogue("whos ur daddy im ur daddy whos ur daddy im ur daddy "+
                     "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
                     "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
@@ -282,13 +282,13 @@ namespace Test {
 
             if (e.Code == Keyboard.Key.A) {
                 init = true;
-                dialogueBox.getView().Viewport = new FloatRect(0.3f, 0f, 0.35f, 0.2f);
+                dialogueBox.view.Viewport = new FloatRect(0.3f, 0f, 0.35f, 0.2f);
                 dialogueBox.renderDialogue("im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis ", "Alex");
             }
 
             if (e.Code == Keyboard.Key.M)
             {
-                dialogueBox.getView().Viewport = new FloatRect(0.63f, 0f, 0.35f, 0.2f);
+                dialogueBox.view.Viewport = new FloatRect(0.63f, 0f, 0.35f, 0.2f);
                 init = true;
                 dialogueBox.renderDialogue("mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom ", "Mom");
             }
@@ -419,7 +419,6 @@ namespace Test {
         protected override void Draw() {
             window.SetView(fullScreenView);
 
-
             window.Clear(clearColor);
             if (State.GetState() == "menu") {
                 if (State.GetMenuState() == "start") {
@@ -430,10 +429,10 @@ namespace Test {
 
 
             } else if (State.GetState() != "menu") {
-                
+                window.SetView(charView);
                 window.Draw(mom);
 
-
+                window.SetView(fullScreenView);
                 //Draw text box background box
                 RectangleShape textBackground = new RectangleShape(new SFML.System.Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT / 5));
                 textBackground.Position = new SFML.System.Vector2f(0, SCREEN_HEIGHT - (SCREEN_HEIGHT / 5));
@@ -452,17 +451,9 @@ namespace Test {
                     window.Draw(buttons[i]);
                 }
 
-                if (init) {
-                    //    window.Draw(dialogueBox);
-                    //    window.Draw(dialogue);
-                    //    window.Draw(name);
-                }
-
                 if (init && dialogueBox.active) {
                     //UNCOMMENT
-                    window.SetView(dialogueBox.getView());
                     window.Draw(dialogueBox);
-
                 }
 
 
