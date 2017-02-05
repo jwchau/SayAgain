@@ -19,10 +19,12 @@ namespace Test
             buttonText = new Text(content, buttonTextFont);
             buttonText.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
 
-            rect = new RectangleShape(new SFML.System.Vector2f(buttonText.GetGlobalBounds().Width + 7, buttonText.GetGlobalBounds().Height + 10));
-            rect.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
+            buttonText.Color = new Color(227, 215, 207);
+
+            rect = new RectangleShape(new SFML.System.Vector2f(buttonText.GetGlobalBounds().Width + 25, 45));
+            rect.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2 - 7, y - 5);
             rect.FillColor = Color.Black;
-            Color bgColor = new Color(177, 177, 177);
+            Color bgColor = new Color(86, 82, 100);
             rect.FillColor = bgColor;
             this.newDialogue = newDialogue;
             tonalColor = buttonTonalColors[content];
@@ -101,7 +103,7 @@ namespace Test
 
         public void snapBack()
         {
-            rect.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
+            rect.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2 - 7, y - 5);
             buttonText.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
         }
 
@@ -129,7 +131,7 @@ namespace Test
             }
 
             rect.Position = new SFML.System.Vector2f(newXPos, newYPos);
-            buttonText.Position = new SFML.System.Vector2f(newXPos, newYPos);
+            buttonText.Position = new SFML.System.Vector2f(newXPos + 8, newYPos + 5);
 
         }
 

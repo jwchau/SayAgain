@@ -82,3 +82,55 @@ C:\Users\Mikey\Documents\SayAgain\Test\bin\Debug\openal32.dll
 C:\Users\Mikey\Documents\SayAgain\Test\bin\Debug\OpenTK.Compatibility.dll
 C:\Users\Mikey\Documents\SayAgain\Test\bin\Debug\OpenTK.dll
 C:\Users\Mikey\Documents\SayAgain\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\bin\Debug\Test.exe.config
+C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\bin\Debug\csfml-audio-2.dll
+C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\bin\Debug\csfml-graphics-2.dll
+C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\bin\Debug\csfml-system-2.dll
+C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\bin\Debug\csfml-window-2.dll
+C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\bin\Debug\libsndfile-1.dll
+C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\bin\Debug\openal32.dll
+C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\bin\Debug\OpenTK.Compatibility.dll
+C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\bin\Debug\OpenTK.dll
+C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\bin\Debug\Test.exe
+C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\bin\Debug\Test.pdb
+C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\bin\Debug\sfmlnet-audio-2.dll
+C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\bin\Debug\sfmlnet-graphics-2.dll
+C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\bin\Debug\sfmlnet-system-2.dll
+C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\bin\Debug\sfmlnet-window-2.dll
+C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\obj\Debug\Test.exe
+C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\obj\Debug\Test.pdb
+G:\Raman - SayAgain-Mikey\Test\bin\Debug\Test.exe.config
+G:\Raman - SayAgain-Mikey\Test\obj\Debug\Test.exe
+G:\Raman - SayAgain-Mikey\Test\obj\Debug\Test.pdb
+G:\Raman - SayAgain-Mikey\Test\bin\Debug\csfml-audio-2.dll
+G:\Raman - SayAgain-Mikey\Test\bin\Debug\csfml-graphics-2.dll
+G:\Raman - SayAgain-Mikey\Test\bin\Debug\csfml-system-2.dll
+G:\Raman - SayAgain-Mikey\Test\bin\Debug\csfml-window-2.dll
+G:\Raman - SayAgain-Mikey\Test\bin\Debug\libsndfile-1.dll
+G:\Raman - SayAgain-Mikey\Test\bin\Debug\openal32.dll
+G:\Raman - SayAgain-Mikey\Test\bin\Debug\OpenTK.Compatibility.dll
+G:\Raman - SayAgain-Mikey\Test\bin\Debug\OpenTK.dll
+G:\Raman - SayAgain-Mikey\Test\bin\Debug\Test.exe
+G:\Raman - SayAgain-Mikey\Test\bin\Debug\Test.pdb
+G:\Raman - SayAgain-Mikey\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+G:\Raman - SayAgain-Mikey\Test\obj\Debug\Test.Properties.Resources.resources
+G:\Raman - SayAgain-Mikey\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+D:\Raman - SayAgain-Mikey\Test\bin\Debug\Test.exe.config
+D:\Raman - SayAgain-Mikey\Test\obj\Debug\Test.exe
+D:\Raman - SayAgain-Mikey\Test\obj\Debug\Test.pdb
+D:\Raman - SayAgain-Mikey\Test\bin\Debug\csfml-audio-2.dll
+D:\Raman - SayAgain-Mikey\Test\bin\Debug\csfml-graphics-2.dll
+D:\Raman - SayAgain-Mikey\Test\bin\Debug\csfml-system-2.dll
+D:\Raman - SayAgain-Mikey\Test\bin\Debug\csfml-window-2.dll
+D:\Raman - SayAgain-Mikey\Test\bin\Debug\libsndfile-1.dll
+D:\Raman - SayAgain-Mikey\Test\bin\Debug\openal32.dll
+D:\Raman - SayAgain-Mikey\Test\bin\Debug\OpenTK.Compatibility.dll
+D:\Raman - SayAgain-Mikey\Test\bin\Debug\OpenTK.dll
+D:\Raman - SayAgain-Mikey\Test\bin\Debug\Test.exe
+D:\Raman - SayAgain-Mikey\Test\bin\Debug\Test.pdb
+D:\Raman - SayAgain-Mikey\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+D:\Raman - SayAgain-Mikey\Test\obj\Debug\Test.Properties.Resources.resources
+D:\Raman - SayAgain-Mikey\Test\obj\Debug\Test.csproj.GenerateResource.Cache

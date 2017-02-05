@@ -20,7 +20,7 @@ namespace Test
             box.Position = new Vector2f(x, y);
             box.FillColor = buttonTonalColors["Default"];
             prevColor = buttonTonalColors["Default"];
-            UITextBoxText.Color = Color.White;
+            UITextBoxText.Color = new Color(227, 215, 207);
             this.affected = false;
         }
 

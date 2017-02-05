@@ -17,8 +17,7 @@ namespace Test
         public UIManager() {
 
             /* TEMPORARY CODE REMOVE AND CLEAN LATER*/
-            string[] tone = new string[] { "Blunt", "Indifferent", "Compassionate", "Hesitant" };
-            string[] jsondialogue = new string[] { "Blunt Dialogue.", "Indifferent Dialogue.", "Compassionate Dialogue.", "Hesitant Dialogue." };
+           
             int xPos = (int)SCREEN_WIDTH / tone.Length;
             for (int i = 1; i <= tone.Length; i++)
             {
@@ -32,7 +31,8 @@ namespace Test
         List<UITextBox> playerDialogues = new List<UITextBox>();
         static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
         static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
-
+        string[] tone = new string[] { "Blunt", "Indifferent", "Compassionate", "Hesitant" };
+        string[] jsondialogue = new string[] { "Blunt Dialogue.", "Indifferent Dialogue.", "Compassionate Dialogue.", "Hesitant Dialogue." };
         string[] dialogueArray;
 
         //methods
@@ -50,10 +50,11 @@ namespace Test
 
         public void produceTextBoxes(string dialogue) {
 
-            
+
             //Pushes onto the playerDialogues.
 
             //break up the dialogue by periods.
+
             dialogueArray = dialogue.Split('.');
 
             uint x = 5;
@@ -89,6 +90,13 @@ namespace Test
 
             }
 
+        }
+
+        public void resetButtons() {
+            foreach (var dialogue in playerDialogues) {
+                dialogue.setAffected(false);
+                dialogue.setBoxColor(Color.Red);
+            }
         }
 
         public void updateText(int pos, string newDialogue) {

@@ -25,11 +25,11 @@ namespace Test
         protected float y;
         protected string type;
         protected Dictionary<string, Color> buttonTonalColors = new Dictionary<string, Color>() {
-            {"Default", new Color(255, 0, 0)}, // Red
-            {"Blunt",  new Color(179, 97, 255) }, //Purple
-            {"Indifferent", new Color(56, 120, 255)}, // Blue
-            {"Compassionate", new Color(102, 255, 149)}, // Green
-            {"Hesitant", new Color(255, 225, 50)} // Yellow
+            {"Default", new Color(112, 102, 119)}, // Default
+            {"Blunt",  new Color(108, 75, 117) }, //Purple
+            {"Indifferent", new Color(78, 79, 160)}, // Blue
+            {"Compassionate", new Color(33, 192, 89)}, // Green
+            {"Hesitant", new Color(242, 210, 65)} // Yellow
         };
 
         //methods

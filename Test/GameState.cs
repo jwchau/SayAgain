@@ -20,11 +20,29 @@ namespace Test
 
         string currentState;
         string currentMenuState;
-        double oldTimeSeconds = 0;
-        double pauseTime = 0;
-        double newTimeSeconds = 0;
-        double timeDiff = 0;
-        double countDown = 1;
+        //double oldTimeSeconds = 0;
+        //double pauseTime = 0;
+        //double newTimeSeconds = 0;
+        //double timeDiff = 0;
+        //double countDown = 1;
+        Dictionary<string, GameTimer> DictGameTimer = new Dictionary<string, GameTimer>();
+
+        //Timer for keeping track of time given to the player
+        //DictGameTimer.Add(new GameTimer("test",10.0, new Task(() => { /*EVERYTHING HERE*/}))); //new timer for 10 seconds
+
+        public GameTimer getGameTimer(string tag) {
+            return DictGameTimer[tag];
+        }
+
+        public void addTimer(string name, double initTime, Action T) {
+            if (DictGameTimer.ContainsKey(name))
+            {
+                DictGameTimer[name] = new GameTimer(name,initTime,T);
+            }
+            else {
+                DictGameTimer.Add(name, new GameTimer(name, initTime, T));
+            }
+        }
 
         public string GetState()
         {
@@ -39,7 +57,7 @@ namespace Test
                 throw new FormatException();
             }
             if (state == "game" && currentMenuState == "start") {
-                oldTimeSeconds = (DateTime.Now.Ticks / 10000) / 1000;
+                DictGameTimer["game"].setOldGameTime((DateTime.Now.Ticks / 10000) / 1000);
             }
 
             currentState = state;
@@ -59,47 +77,73 @@ namespace Test
             currentMenuState = state;
         }
 
-        public void SetGameTime(double newTimeSeconds) {
-            oldTimeSeconds = newTimeSeconds;
+        public void updateTimerz() {
+            foreach (var pair in DictGameTimer) {
+                //pair.Value is a gameTimer
+                //pair.Key is the label of the game Timer;
+                if (pair.Value.getStart())
+                {
+                    pair.Value.updateTimer();
+                    
+                }
+                else
+                {
+                    if (pair.Value.getCountDown() == 0)
+                    {
+                        //DO STUFF BEFORE RESTARTING
+                        //Process Player dialogue
+                        pair.Value.doTask();
+                        pair.Value.restartTimer();
+                    }
+                    else
+                    {
+                        pair.Value.startTimer();
+                    }
+                }
+            }
         }
 
-        public double getGameTime() {
-            return oldTimeSeconds;
-        }
+        //public void setOldGameTime(double newTimeSeconds) {
+        //    oldTimeSeconds = newTimeSeconds;
+        //}
 
-        public double getPauseTime() {
-            return pauseTime;
-        }
+        //public double getOldGameTime() {
+        //    return oldTimeSeconds;
+        //}
 
-        public void setPauseTime(double newTime) {
-            pauseTime = newTime;
-        }
+        //public double getPauseTime() {
+        //    return pauseTime;
+        //}
 
-        public double getNewTime()
-        {
-            return newTimeSeconds;
-        }
+        //public void setPauseTime(double newTime) {
+        //    pauseTime = newTime;
+        //}
 
-        public void setNewTime(double newTime)
-        {
-            newTimeSeconds = newTime;
-        }
+        //public double getNewTime()
+        //{
+        //    return newTimeSeconds;
+        //}
 
-        public void setTimeDiff(double newTime) {
-            timeDiff = newTime;
-        }
+        //public void setNewTime(double newTime)
+        //{
+        //    newTimeSeconds = newTime;
+        //}
 
-        public double getTimeDiff() {
-            return timeDiff;
-        }
+        //public void setTimeDiff(double newTime) {
+        //    timeDiff = newTime;
+        //}
 
-        public void setCountDown(double cd) {
-            countDown = cd;
-        }
+        //public double getTimeDiff() {
+        //    return timeDiff;
+        //}
 
-        public double getCountDown() {
-            return countDown;
-        }
+        //public void setCountDown(double cd) {
+        //    countDown = cd;
+        //}
+
+        //public double getCountDown() {
+        //    return countDown;
+        //}
 
     }
 }

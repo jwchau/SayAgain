@@ -69,6 +69,7 @@
     <Compile Include="PauseMenu.cs" />
     <Compile Include="Relationships.cs" />
     <Compile Include="StartMenu.cs" />
+    <Compile Include="GameTimer.cs" />
     <Compile Include="ToneEffects.cs" />
     <Compile Include="UIButton.cs" />
     <Compile Include="Game.cs" />
@@ -121,6 +122,9 @@
     <Content Include="OpenTK.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -15,13 +15,13 @@ namespace Test
             this.x = x;
             this.y = y;
             buttonText = new Text(content, buttonTextFont);
+            buttonText.Color = new Color(227, 215, 207);
 
             buttonText.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width/2, y);
 
-            rect = new RectangleShape(new SFML.System.Vector2f(buttonText.GetGlobalBounds().Width + 7, buttonText.GetGlobalBounds().Height + 10));
-            rect.Position = new SFML.System.Vector2f(this.x - buttonText.GetGlobalBounds().Width/2, this.y);
-            rect.FillColor = Color.Black;
-            Color myColor = new Color(177, 177, 177);
+            rect = new RectangleShape(new SFML.System.Vector2f(buttonText.GetGlobalBounds().Width + 30, buttonText.GetGlobalBounds().Height + 20));
+            rect.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width/2 - 10, y - 7);
+            Color myColor = new Color(112, 102, 119);
             rect.FillColor = myColor;
         }
 
@@ -31,7 +31,6 @@ namespace Test
         Font buttonTextFont = new Font("Fonts/Adore64.ttf");
         Text buttonText;
         RectangleShape rect;
-        bool selected = false;
 
         public RectangleShape getMenuButtonRect()
         {

@@ -29,10 +29,14 @@ namespace Test
         static Color color = Color.Black;
         DialogueBox dialogueBox;
 
+        Color menuColor = new Color(56, 52, 64);
+        
+        Color gameColor = new Color(112, 102, 119);
+
         // Dialogue init bool
         // FOX WITH TIMER
         Boolean init;
-        
+
         // Different screen modes
         public View fullScreenView, scrollview;
 
@@ -45,7 +49,7 @@ namespace Test
         StartMenu pauseMenu;
 
         // Character declaration
-        AlexState Alex = new AlexState(4.0,6.9);
+        AlexState Alex = new AlexState(4.0, 6.9);
 
         double[] nums = { -1, 2, 3, 4,
                             1, 2, 3, 4,
@@ -57,7 +61,7 @@ namespace Test
         Relationships rs = new Relationships();
 
 
-        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?", Color.Magenta)
+        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?", new Color(86, 82, 100))
         {
 
             window.KeyPressed += onKeyPressed;
@@ -81,7 +85,7 @@ namespace Test
 
         }
 
-        private void onMouseButtonReleased(object sender, MouseButtonEventArgs e)    
+        private void onMouseButtonReleased(object sender, MouseButtonEventArgs e)
         {
 
             ManagerOfInput.SetMouseMove(false);
@@ -101,7 +105,7 @@ namespace Test
                         double[,] final = tfx.MatrixMult(tfx, cf);
                         Console.WriteLine(final[2, 3]);
 
-                        
+
                         var playerDialogues = ui_man.getPlayerDialogues();
 
                         for (var j = 0; j < playerDialogues.Count; j++)
@@ -125,10 +129,10 @@ namespace Test
                         buttons[i].snapBack();
                         buttons[i].SetSelected(false);
                         break;
-                        
+
                     }
                 }
-            } else if(State.GetState() == "pause")//If game is paused
+            } else if (State.GetState() == "pause")//If game is paused
             {
                 for (var i = 0; i < buttons.Count; i++)
                 {
@@ -186,7 +190,7 @@ namespace Test
                                                                                                   else clearColor = Color.Magenta; })),
                         new Tuple<string, string, Task>("<- Back", "start", new Task(() => {}))
                     });
-                    
+
                 }
             } else if (State.GetState() == "pause")
             {
@@ -222,7 +226,7 @@ namespace Test
                 if (buttons[i].Contains(MousePos[0], MousePos[1]))
                 {
                     // Find what this button is suppose to do
-                    for(var j = 0; j < mappings.Count; j++)
+                    for (var j = 0; j < mappings.Count; j++)
                     {
                         // Found button being clicked
                         if (buttons[i].getMenuButtonText().DisplayedString == mappings[j].Item1)
@@ -262,7 +266,7 @@ namespace Test
 
         private void onKeyPressed(object sender, KeyEventArgs e)
         {
-            
+
 
             if (e.Code == Keyboard.Key.N)
             {
@@ -276,12 +280,12 @@ namespace Test
 
             if (e.Code == Keyboard.Key.P)
             {
-               
+
                 if (State.GetState() == "pause")
                 {
                     State.SetState("game");
                     State.SetMenuState("start");
-  
+
                 }
                 else if (State.GetState() == "game")
                 {
@@ -293,7 +297,7 @@ namespace Test
             if (e.Code == Keyboard.Key.M)
             {
                 init = true;
-                dialogueBox.renderDialogue("I took my love, I took it down "+
+                dialogueBox.renderDialogue("I took my love, I took it down " +
                     "Climbed a mountain and I turned around " +
                     "And I saw my reflection in the snow covered hills " +
                     "'Til the landslide brought it down " +
@@ -326,11 +330,20 @@ namespace Test
             }
         }
 
+        CircleShape circle = new CircleShape(20);
 
 
 
         protected override void LoadContent()
         {
+            Console.WriteLine(circle.Position);
+       
+            circle.Origin = new Vector2f(circle.Radius/2, circle.Radius/2);
+            circle.Position = new Vector2f(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+
+
+            State.addTimer("game", 10, new Action(() => { ui_man.resetButtons(); }));
+
             //load stuff for main menu
 
             startMenu = new StartMenu("start");
@@ -341,15 +354,13 @@ namespace Test
 
             string test = "My name is Raman. My name is Michael. My name is John. My name is Jill. My name is Yuna. My name is Leo. My name is Koosha.";
             ui_man.produceTextBoxes(test);
-      
+
 
 
         }
 
         protected override void Initialize()
         {
-
-
 
             //the view of the whole game
             fullScreenView = window.DefaultView;
@@ -368,17 +379,13 @@ namespace Test
 
         protected override void Update()
         {
+           
             if (State.GetState() == "game")
             {
+                State.updateTimerz(); //edgeLorde Code
 
-                // Timer update
-                if (State.getCountDown() > 0)
-                {
-                    //as long as you are not out of time
-                    State.setNewTime((DateTime.Now.Ticks / 10000000) - State.getTimeDiff());
-                    State.setCountDown(9 - (State.getNewTime() - State.getGameTime()));
-
-                }
+                circle.Radius = 20 * (float)(State.getGameTimer("game").getCountDown()/ State.getGameTimer("game").getInitTime());
+                
 
                 // Get the current UI Textboxes from the UI Manager
                 var playerDialogues = ui_man.getPlayerDialogues();
@@ -439,24 +446,27 @@ namespace Test
 
             }
             else if (State.GetState() == "pause") {
-                State.setPauseTime(State.getNewTime());
-                double a = State.getPauseTime();
-                double b = DateTime.Now.Ticks / 10000000;
-                State.setTimeDiff(b - a);
+                //State.setPauseTime(State.getNewTime());
+                //double a = State.getPauseTime();
+                //double b = DateTime.Now.Ticks / 10000000;
+                //State.setTimeDiff(b - a);
+                State.getGameTimer("game").PauseTimer();
 
             }
         }
 
         protected override void Draw()
         {
-
+            
             window.SetView(fullScreenView);
         
             window.Clear(clearColor);
             if (State.GetState() == "menu")
-
             {
-                if(State.GetMenuState() == "start")
+
+                if (clearColor != menuColor) clearColor = menuColor;
+
+                if (State.GetMenuState() == "start")
                 {
                     window.Draw(startMenu);
                 } else
@@ -467,10 +477,12 @@ namespace Test
 
             } else if (State.GetState() != "menu") {
 
+                if (clearColor != gameColor) clearColor = gameColor;
+
                 //Draw text box background box
                 RectangleShape textBackground = new RectangleShape(new SFML.System.Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT / 5));
                 textBackground.Position = new SFML.System.Vector2f(0, SCREEN_HEIGHT - (SCREEN_HEIGHT / 5));
-                textBackground.FillColor = Color.Black;
+                textBackground.FillColor = menuColor;
                 window.Draw(textBackground);
 
                 var dialogues = ui_man.getPlayerDialogues();
@@ -519,11 +531,9 @@ namespace Test
                 }
             }
 
-
-            
-
-            
-
+            window.Draw(circle);
         }
+
+
     }
 }
