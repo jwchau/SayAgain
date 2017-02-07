@@ -126,6 +126,75 @@ namespace Test
             }
         }
 
+        public void Icantevenwiththiscode3(GameState State, InputManager ManagerOfInput) {
+            if (State.GetState() == "game") {
+
+                // Timer update
+                if (State.getCountDown() > 0) {
+                    //as long as you are not out of time
+                    State.setNewTime((DateTime.Now.Ticks / 10000000) - State.getTimeDiff());
+                    State.setCountDown(9 - (State.getNewTime() - State.getGameTime()));
+
+                }
+
+                // Get the current UI Textboxes from the UI Manager
+                var playerDialogues = this.getPlayerDialogues();
+
+                // Get the mouse coordinates from Input Manager
+                var MouseCoord = ManagerOfInput.GetMousePos();
+
+                // If the mouse is currently dragging
+                if (ManagerOfInput.GetMouseDown()) {
+                    // Get tonal buttons from UI Manager
+                    var buttons = this.getButtons();
+
+                    // Loop through buttons
+                    for (var i = 0; i < buttons.Count; i++) {
+                        // Find button currently being interacted with
+                        if (buttons[i].GetSelected()) {
+                            // Move the button around the screen
+                            buttons[i].translate(MouseCoord[0], MouseCoord[1]);
+
+                            // Check collision with UI Textboxes
+                            // Loop through UI Textboxes
+                            for (var j = 0; j < playerDialogues.Count; j++) {
+                                // If the mouse just came from inside a UI Textbox
+                                if (playerDialogues[j].wasMouseIn()) {
+                                    if (!playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1])) {
+                                        // Reset the color to match its previous color
+                                        playerDialogues[j].setBoxColor(playerDialogues[j].getBoxColor("prev"));
+                                        // Mouse has now left the UI Textbox so set it to false
+                                        playerDialogues[j].setMouseWasIn(false);
+                                    }
+
+                                    // If mouse just came from outside the UI Textbox
+                                } else {
+                                    if (playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1])) {
+                                        // Update previous color to current color of the UI Textbox
+                                        playerDialogues[j].setPrevColor(playerDialogues[j].getBoxColor("curr"));
+                                        // Update current color to selected tonal button color
+                                        playerDialogues[j].setBoxColor(buttons[i].getTonalColor());
+                                        // Mouse is now inside a UI Textbox, so set it to true
+                                        playerDialogues[j].setMouseWasIn(true);
+
+                                    }
+                                }
+
+                            }
+
+                        }
+                    }
+
+                }
+
+            } else if (State.GetState() == "pause") {
+                State.setPauseTime(State.getNewTime());
+                double a = State.getPauseTime();
+                double b = DateTime.Now.Ticks / 10000000;
+                State.setTimeDiff(b - a);
+
+            }
+        }
 
 
         public FloatRect dialogueBoxBounds() {
