@@ -339,7 +339,7 @@ namespace Test {
 
 
             charView = new View(mom.GetGlobalBounds());
-            charView.Viewport = new FloatRect(0.3f, 0f, 0.1f, 0.1f);
+            charView.Viewport = new FloatRect(0.7f, 0.3f, 0.23f, 0.5f);
 
         }
 
