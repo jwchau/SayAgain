@@ -12,14 +12,8 @@ using System.Drawing;
 namespace Test {
     
     class SA : Game {
-        // Screen width and height
-
-
-        //deprecate please
-        
 
         // Dialogue box and dialogue box custom color
-        static Color color = Color.Black;
         DialogueBox dialogueBox;
 
         // Dialogue init bool
@@ -30,7 +24,7 @@ namespace Test {
         public View fullScreenView, scrollview;
 
         // Character declaration
-        AlexState Alex = new AlexState(4.0, 6.9);
+        private CharacterState Alex = new CharacterState(4.0, 6.9);
 
         double[] nums = { -1, 2, 3, 4,
                            1, 2, 3, 4,

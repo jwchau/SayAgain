@@ -10,9 +10,9 @@ namespace Test
     {
         public DramaManager() { }
 
-        AlexState Alex;
-        MomState Mom;
-        DadState Dad;
+        CharacterState Alex;
+        CharacterState Mom;
+        CharacterState Dad;
 
         List<GameMatrix> matrices = new List<GameMatrix>();
     }

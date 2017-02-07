@@ -59,18 +59,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlexState.cs" />
-    <Compile Include="CharacterClass.cs" />
+    <Compile Include="CharacterState.cs" />
     <Compile Include="ContextFilter.cs" />
     <Compile Include="GameMatrix.cs" />
     <Compile Include="PersonState.cs" />
-    <Compile Include="DadState.cs" />
     <Compile Include="DramaManager.cs" />
     <Compile Include="DialogueParsing.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="InputManager.cs" />
     <Compile Include="MenuButton.cs" />
-    <Compile Include="MomState.cs" />
     <Compile Include="PauseMenu.cs" />
     <Compile Include="Relationships.cs" />
     <Compile Include="StartMenu.cs" />
