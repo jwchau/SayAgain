@@ -43,8 +43,9 @@ namespace Test
 
         //methods
         public DialogueBox getDialogueBox() {
-            return dialogueBox;
+            return this.dialogueBox;
         }
+
 
         public Boolean getInit() { 
             return init;
@@ -71,14 +72,6 @@ namespace Test
                         //window.Draw(name);
                 }
 
-                if (init && dialogueBox.active) {
-                    //UNCOMMENT
-                    window.SetView(scrollview);
-                    window.Draw(dialogueBox);
-                    window.Draw(dialogueBox.dialogue);
-                    window.Draw(dialogueBox.name);
-
-            }
         }
 
         /// <summary>
@@ -86,7 +79,7 @@ namespace Test
         /// </summary>
         public void Icantevenwiththiscode2(RenderWindow window, GameState State, UIManager ui, StartMenu sta, StartMenu pau, StartMenu set) {
             //////>>>>>clearColor to magenta
-            window.SetView(fullScreenView);
+            //window.SetView(fullScreenView);
             if (State.GetState() == "menu") {
                 if (State.GetMenuState() == "start") {
                     window.Draw(sta);
@@ -207,7 +200,7 @@ namespace Test
 
         public void setViews(View fs, View vp) {
             fullScreenView = fs;
-            scrollview = vp;
+            //scrollview = vp;
         }
 
         public void SetPrintTime(int t) {

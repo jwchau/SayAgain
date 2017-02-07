@@ -128,172 +128,60 @@ namespace Test {
             texture = new Texture(f);
 
 
-            mom = new Sprite(texture);
+            //mom = new Sprite(texture);
 
             //the view of the whole game
-            var temp1 = window.DefaultView;
-            //the view port is the whole window
-<<<<<<< HEAD
+            //var temp1 = window.DefaultView;
+            fullScreenView = window.DefaultView;
             fullScreenView.Viewport = new FloatRect(0, 0, 1, 1);
             window.SetView(fullScreenView);
-            dialogueBox = new DialogueBox(0, 0, 710, 150);
+            //the view port is the whole window
+
+            //fullScreenView.Viewport = new FloatRect(0, 0, 1, 1);
+            //window.SetView(fullScreenView);
+            //dialogueBox = new DialogueBox(0, 0, 710, 150);
+            ui_man.setDialogueBox();
 
 
+            //charView = new View(mom.GetGlobalBounds());
+            //charView.Viewport = new FloatRect(0.7f, 0.3f, 0.23f, 0.5f);
 
-            charView = new View(mom.GetGlobalBounds());
-            charView.Viewport = new FloatRect(0.7f, 0.3f, 0.23f, 0.5f);
-
-=======
+/*master =======
             temp1.Viewport = new FloatRect(0, 0, 1, 1);
             window.SetView(temp1);
             ui_man.setDialogueBox();// = new DialogueBox(0, 0, 710, 150);
-            var temp2 = new View(ui_man.dialogueBoxBounds());
-            //where i want to view it (inside dialogueBox)
-            temp2.Viewport = new FloatRect(0.165f, 0f, 0.65f, 0.27f);
-            ui_man.setViews(temp1, temp2);
->>>>>>> master
-        }
+            
 
 
+*/
 
-        protected override void Update() {
-<<<<<<< HEAD
-            if (State.GetState() == "game") {
-
-
-                // Timer update
-                if (State.getCountDown() > 0) {
-                    //as long as you are not out of time
-                    State.setNewTime((DateTime.Now.Ticks / 10000000) - State.getTimeDiff());
-                    State.setCountDown(9 - (State.getNewTime() - State.getGameTime()));
-
-                }
-
-                // Get the current UI Textboxes from the UI Manager
-                var playerDialogues = ui_man.getPlayerDialogues();
-
-                // Get the mouse coordinates from Input Manager
-                var MouseCoord = ManagerOfInput.GetMousePos();
-
-                // If the mouse is currently dragging
-                if (ManagerOfInput.GetMouseDown()) {
-                    // Get tonal buttons from UI Manager
-                    var buttons = ui_man.getButtons();
-
-                    // Loop through buttons
-                    for (var i = 0; i < buttons.Count; i++) {
-                        // Find button currently being interacted with
-                        if (buttons[i].GetSelected()) {
-                            // Move the button around the screen
-                            buttons[i].translate(MouseCoord[0], MouseCoord[1]);
-
-                            // Check collision with UI Textboxes
-                            // Loop through UI Textboxes
-                            for (var j = 0; j < playerDialogues.Count; j++) {
-                                // If the mouse just came from inside a UI Textbox
-                                if (playerDialogues[j].wasMouseIn()) {
-                                    if (!playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1])) {
-                                        // Reset the color to match its previous color
-                                        playerDialogues[j].setBoxColor(playerDialogues[j].getBoxColor("prev"));
-                                        // Mouse has now left the UI Textbox so set it to false
-                                        playerDialogues[j].setMouseWasIn(false);
-                                    }
-
-                                    // If mouse just came from outside the UI Textbox
-                                } else {
-                                    if (playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1])) {
-                                        // Update previous color to current color of the UI Textbox
-                                        playerDialogues[j].setPrevColor(playerDialogues[j].getBoxColor("curr"));
-                                        // Update current color to selected tonal button color
-                                        playerDialogues[j].setBoxColor(buttons[i].getTonalColor());
-                                        // Mouse is now inside a UI Textbox, so set it to true
-                                        playerDialogues[j].setMouseWasIn(true);
-
-                                    }
-                                }
-
-                            }
-
-                        }
-                    }
-
-                }
-
-            } else if (State.GetState() == "pause") {
-                State.setPauseTime(State.getNewTime());
-                double a = State.getPauseTime();
-                double b = DateTime.Now.Ticks / 10000000;
-                State.setTimeDiff(b - a);
-
-            }
-        }
-
-        protected override void Draw() {
-            window.SetView(fullScreenView);
-
-            window.Clear(clearColor);
-            if (State.GetState() == "menu") {
-                if (State.GetMenuState() == "start") {
-                    window.Draw(startMenu);
-                } else {
-                    window.Draw(settingsMenu);
-                }
+/*
+    
 
 
-            } else if (State.GetState() != "menu") {
-                window.SetView(charView);
-                window.Draw(mom);
-
-                window.SetView(fullScreenView);
-                //Draw text box background box
-                RectangleShape textBackground = new RectangleShape(new SFML.System.Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT / 5));
-                textBackground.Position = new SFML.System.Vector2f(0, SCREEN_HEIGHT - (SCREEN_HEIGHT / 5));
-                textBackground.FillColor = Color.Black;
-                window.Draw(textBackground);
+    */
 
 
-                var dialogues = ui_man.getPlayerDialogues();
-
-                for (var i = 0; i < dialogues.Count; i++) {
-                    window.Draw(dialogues[i]);
-                }
-                var buttons = ui_man.getButtons();
-
-                for (var i = 0; i < buttons.Count; i++) {
-                    window.Draw(buttons[i]);
-                }
-
-                if (init && dialogueBox.active) {
-                    //UNCOMMENT
-                    window.Draw(dialogueBox);
-                }
-
-
-
-
-                if (State.GetState() == "pause") {
-                    pauseMenu.DrawBG(window);
-                    if (State.GetMenuState() == "pause") {
-                        window.Draw(pauseMenu);
-                    } else if (State.GetMenuState() == "settings") {
-                        window.Draw(settingsMenu);
-                    }
-
-                }
-            }
-
-
-=======
             ui_man.Icantevenwiththiscode3(State, ManagerOfInput);
         }
 
+        protected override void Update()
+        {
+            if (ui_man.getDialogueBox().active)
+            {
+                //UNCOMMENT
+                window.Draw(ui_man.getDialogueBox());
+            }
+            
+        }
+            
         protected override void Draw() {
             //////>>>>>clearColor to magenta
             window.Clear(Color.Magenta);
             ui_man.Icantevenwiththiscode(window);
             ui_man.Icantevenwiththiscode2(window, State, ui_man, startMenu, pauseMenu, settingsMenu);
 
->>>>>>> master
+
         }
     }
 }
