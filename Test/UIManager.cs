@@ -62,22 +62,16 @@ namespace Test
         public void addButton(UIButton b) {
             buttons.Add(b);
         }
-        /// <summary>
-        //////////////////////////////////start of i cant even with this code.
-        /// </summary>
-        public void Icantevenwiththiscode(RenderWindow window) {
-                if (init) {
-                        window.Draw(dialogueBox);
-                        //window.Draw(dialogue);
-                        //window.Draw(name);
-                }
+
+        public void DrawDialogueBox(RenderWindow window) {
+            if (init) {
+                    window.Draw(dialogueBox);
+
+            }
 
         }
 
-        /// <summary>
-        /// ///////////////////////////////////////////////I cant even with this code part 2 yay!!!
-        /// </summary>
-        public void Icantevenwiththiscode2(RenderWindow window, GameState State, UIManager ui, StartMenu sta, StartMenu pau, StartMenu set) {
+        public void DrawUI(RenderWindow window, GameState State, UIManager ui, StartMenu sta, StartMenu pau, StartMenu set) {
             //////>>>>>clearColor to magenta
             window.SetView(fullScreenView);
             if (State.GetState() == "menu") {
@@ -119,7 +113,7 @@ namespace Test
             }
         }
 
-        public void Icantevenwiththiscode3(GameState State, InputManager ManagerOfInput) {
+        public void UpdateTimer(GameState State, InputManager ManagerOfInput) {
             if (State.GetState() == "game") {
 
                 // Timer update

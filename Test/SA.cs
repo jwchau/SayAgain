@@ -45,14 +45,7 @@ namespace Test {
         }
 
         private void onKeyPressed(object sender, KeyEventArgs e) {
-            /*
-                        if (e.Code == Keyboard.Key.N)
-                        {
-                            dialogueBox.forward();
 
-            <<<<<<< HEAD=======
-                        }
-                        */
 
             if (e.Code == Keyboard.Key.Space)
             {
@@ -97,12 +90,8 @@ namespace Test {
         }
 
 
-        /// <summary>
-        /// LOADCONTENT AND INITIALIZE ARE THE SAME THING. (FIX TOGETHER) RED RED RED RED RED RED RED RED RED BLUE RED RED RED RED RED RED RED
-        /// </summary>
 
         protected override void LoadContent() {
-            //context filter load, 4testing
             double[] nums = { -1, 2, 3, 4,
                                1, 2, 3, 4,
                                1, 2, 3, 4, };
@@ -127,20 +116,15 @@ namespace Test {
 
         protected override void Update()
         {
-            ui_man.Icantevenwiththiscode3(State, ManagerOfInput);
-            if (ui_man.getDialogueBox().active)
-            {
-                //UNCOMMENT
-                window.Draw(ui_man.getDialogueBox());
-            }
-            
+            ui_man.UpdateTimer(State, ManagerOfInput);
+
 
         }
             
         protected override void Draw() {
             window.Clear(Color.Magenta);
-            ui_man.Icantevenwiththiscode(window);
-            ui_man.Icantevenwiththiscode2(window, State, ui_man, startMenu, pauseMenu, settingsMenu);
+            ui_man.DrawDialogueBox(window);
+            ui_man.DrawUI(window, State, ui_man, startMenu, pauseMenu, settingsMenu);
 
 
         }
