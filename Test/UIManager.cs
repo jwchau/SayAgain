@@ -214,6 +214,11 @@ namespace Test
             this.dialogueBox.setPrintTime(t);
         }
 
+        public void SetDialogueViewBox ()
+        {
+            this.dialogueBox.view.Viewport = new FloatRect(0.0f, 0f, 0.35f, 0.2f);
+        }
+
         public void DialogueNextEndCheck() {
             this.dialogueBox.getNext();
             this.dialogueBox.checkEnd();
@@ -222,22 +227,9 @@ namespace Test
             }
         }
 
-        public void StartDialogueBox() {
+        public void RenderDialogue(string s, string sp) {
             init = true;
-            this.dialogueBox.renderDialogue("I took my love, I took it down " +
-                "Climbed a mountain and I turned around " +
-                "And I saw my reflection in the snow covered hills " +
-                "'Til the landslide brought it down " +
-                "Oh, mirror in the sky " +
-                "What is love? " +
-                "Can the child within my heart rise above? " +
-                "Can I sail through the changin' ocean tides? " +
-                "Can I handle the seasons of my life? " +
-                "Well, I've been afraid of changin' " +
-                "'Cause I've built my life around you " +
-                "But time makes you bolder " +
-                "Even children get older " +
-                "And I'm getting older, too", "Alex");
+            this.dialogueBox.renderDialogue(s, sp);
         }
 
         public void produceTextBoxes(string dialogue) {

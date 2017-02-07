@@ -68,14 +68,14 @@ namespace Test {
                 ManagerOfInput.PKeyCheck(State);
             }
 
-<<<<<<< HEAD
+
 
             if (e.Code == Keyboard.Key.D)
             {
-                init = true;
+                //init = true;
 
-                dialogueBox.view.Viewport = new FloatRect(0.0f, 0f, 0.35f, 0.2f); 
-                dialogueBox.renderDialogue("whos ur daddy im ur daddy whos ur daddy im ur daddy "+
+                ui_man.SetDialogueViewBox();
+                ui_man.RenderDialogue("whos ur daddy im ur daddy whos ur daddy im ur daddy "+
                     "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
                     "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
                     "whos ur daddy im ur daddy whos ur daddy im ur daddy ", "Dad");
@@ -84,36 +84,24 @@ namespace Test {
 
 
             if (e.Code == Keyboard.Key.A) {
-                init = true;
-                dialogueBox.view.Viewport = new FloatRect(0.3f, 0f, 0.35f, 0.2f);
-                dialogueBox.renderDialogue("im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis ", "Alex");
-            }
-=======
-            if (e.Code == Keyboard.Key.M) {
-                ui_man.StartDialogueBox();
+                ui_man.SetDialogueViewBox();
+                ui_man.RenderDialogue("im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis ", "Alex");
             }
 
-            if (e.Code == Keyboard.Key.Space) {
-                ui_man.SetPrintTime(0);
->>>>>>> master
 
             if (e.Code == Keyboard.Key.M)
             {
-                dialogueBox.view.Viewport = new FloatRect(0.63f, 0f, 0.35f, 0.2f);
-                init = true;
-                dialogueBox.renderDialogue("mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom ", "Mom");
+                ui_man.SetDialogueViewBox();
+                ui_man.RenderDialogue("mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom ", "Mom");
             }
-<<<<<<< HEAD
 
-
-
+/*
             if (!keys.ContainsKey(e.Code)) {
                 keys.Add(e.Code, new bool[] { true, e.Shift, e.Control, e.Alt });
             } else {
                 keys[e.Code] = new bool[] { true, e.Shift, e.Control, e.Alt };
-            }
-=======
->>>>>>> master
+            }*/
+
         }
 
 
