@@ -33,6 +33,10 @@ namespace Test
         protected Relationships rs = new Relationships();
         //Font
         static protected Font Adore64 = new Font(new FileStream("../../Fonts/Adore64.ttf", FileMode.Open));
+        //Jill's fields and variables
+        //protected DialogueBox dialogueBox;
+        //protected Boolean init;
+        //protected View fullScreenView, scrollview;
 
         /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -40,7 +44,7 @@ namespace Test
 
         public Game(uint width, uint height, string title, Color clearColor)
         {
-            this.window = new RenderWindow(new VideoMode(width, height), title, Styles.Close);
+            window = new RenderWindow(new VideoMode(width, height), title, Styles.Close);
             this.clearColor = clearColor;
 
             // Set-up Events

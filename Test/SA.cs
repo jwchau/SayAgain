@@ -12,17 +12,6 @@ using System.Drawing;
 namespace Test {
     
     class SA : Game {
-
-        // Dialogue box and dialogue box custom color
-        protected DialogueBox dialogueBox;
-
-        // Dialogue init bool
-        // FOX WITH TIMER
-        Boolean init;
-
-        // Different screen modes
-        public View fullScreenView, scrollview;
-
         // Character declaration
         private CharacterState Alex = new CharacterState(4.0, 6.9);
 
@@ -56,47 +45,19 @@ namespace Test {
 
 
             if (e.Code == Keyboard.Key.N) {
-                dialogueBox.getNext();
-                dialogueBox.checkEnd();
-                if (dialogueBox.getElementIndex() == dialogueBox.getArrLength()) {
-                    dialogueBox.active = false;
-                }
+                ui_man.DialogueNextEndCheck();
             }
 
             if (e.Code == Keyboard.Key.P) {
-                if (State.GetState() == "pause") {
-                    State.SetState("game");
-                    State.SetMenuState("start");
-
-                } else if (State.GetState() == "game") {
-                    State.SetState("pause");
-                    State.SetMenuState("pause");
-                }
+                ManagerOfInput.PKeyCheck(State);
             }
-
 
             if (e.Code == Keyboard.Key.M) {
-                init = true;
-                dialogueBox.renderDialogue("I took my love, I took it down " +
-                    "Climbed a mountain and I turned around " +
-                    "And I saw my reflection in the snow covered hills " +
-                    "'Til the landslide brought it down " +
-                    "Oh, mirror in the sky " +
-                    "What is love? " +
-                    "Can the child within my heart rise above? " +
-                    "Can I sail through the changin' ocean tides? " +
-                    "Can I handle the seasons of my life? " +
-                    "Well, I've been afraid of changin' " +
-                    "'Cause I've built my life around you " +
-                    "But time makes you bolder " +
-                    "Even children get older " +
-                    "And I'm getting older, too", "Alex");
+                ui_man.StartDialogueBox();
             }
 
-
-
             if (e.Code == Keyboard.Key.Space) {
-                dialogueBox.setPrintTime(0);
+                ui_man.SetPrintTime(0);
 
             }
         }
@@ -121,14 +82,15 @@ namespace Test {
 
         protected override void Initialize() {
             //the view of the whole game
-            fullScreenView = window.DefaultView;
+            var temp1 = window.DefaultView;
             //the view port is the whole window
-            fullScreenView.Viewport = new FloatRect(0, 0, 1, 1);
-            window.SetView(fullScreenView);
-            dialogueBox = new DialogueBox(0, 0, 710, 150);
-            scrollview = new View(dialogueBox.GetBounds());
+            temp1.Viewport = new FloatRect(0, 0, 1, 1);
+            window.SetView(temp1);
+            ui_man.setDialogueBox();// = new DialogueBox(0, 0, 710, 150);
+            var temp2 = new View(ui_man.dialogueBoxBounds());
             //where i want to view it (inside dialogueBox)
-            scrollview.Viewport = new FloatRect(0.165f, 0f, 0.65f, 0.27f)/*(0.1f, 0.05f, 0.8f, 0.3f)*/;
+            temp2.Viewport = new FloatRect(0.165f, 0f, 0.65f, 0.27f);
+            ui_man.setViews(temp1, temp2);
         }
 
 
@@ -204,70 +166,11 @@ namespace Test {
         }
 
         protected override void Draw() {
-            window.SetView(fullScreenView);
+            //////>>>>>clearColor to magenta
+            window.Clear(Color.Magenta);
+            ui_man.Icantevenwiththiscode(window);
+            ui_man.Icantevenwiththiscode2(window, State, ui_man, startMenu, pauseMenu, settingsMenu);
 
-            window.Clear(clearColor);
-            if (State.GetState() == "menu") {
-                if (State.GetMenuState() == "start") {
-                    window.Draw(startMenu);
-                } else {
-                    window.Draw(settingsMenu);
-                }
-
-
-            } else if (State.GetState() != "menu") {
-
-                //Draw text box background box
-                RectangleShape textBackground = new RectangleShape(new SFML.System.Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT / 5));
-                textBackground.Position = new SFML.System.Vector2f(0, SCREEN_HEIGHT - (SCREEN_HEIGHT / 5));
-                textBackground.FillColor = Color.Black;
-                window.Draw(textBackground);
-
-                var dialogues = ui_man.getPlayerDialogues();
-
-                for (var i = 0; i < dialogues.Count; i++) {
-                    window.Draw(dialogues[i]);
-                }
-                var buttons = ui_man.getButtons();
-
-                for (var i = 0; i < buttons.Count; i++) {
-                    window.Draw(buttons[i]);
-                }
-
-                if (init) {
-                    //    window.Draw(dialogueBox);
-                    //    window.Draw(dialogue);
-                    //    window.Draw(name);
-                }
-
-                if (init && dialogueBox.active) {
-                    //UNCOMMENT
-                    window.SetView(scrollview);
-                    window.Draw(dialogueBox);
-                    window.Draw(dialogueBox.dialogue);
-                    window.Draw(dialogueBox.name);
-
-                }
-
-                if (State.GetState() == "pause") {
-                    pauseMenu.DrawBG(window);
-                    if (State.GetMenuState() == "pause") {
-                        window.Draw(pauseMenu);
-                    } else if (State.GetMenuState() == "settings") {
-                        window.Draw(settingsMenu);
-                    }
-
-                }
-            }
-
-            if (init && dialogueBox.active) {
-                //UNCOMMENT
-                //window.SetView(scrollview);
-                //window.Draw(dialogueBox);
-                //window.Draw(dialogueBox.dialogue);
-                //window.Draw(dialogueBox.name);
-
-            }
         }
     }
 }

@@ -30,6 +30,16 @@ namespace Test {
             }
         }
 
+        public void PKeyCheck(GameState State) {
+            if (State.GetState() == "pause") {
+                State.SetState("game");
+                State.SetMenuState("start");
+            } else if (State.GetState() == "game") {
+                State.SetState("pause");
+                State.SetMenuState("pause");
+            }
+        }
+
         public void MouseReleasedCheck(string state, UIManager ui, ToneEffects tfx, ContextFilter cf) {
             this.SetMouseMove(false);
             this.SetMouseDown(false);
