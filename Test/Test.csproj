@@ -38,16 +38,16 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="sfmlnet-audio-2">
-      <HintPath>..\..\sfmlnet-audio-2.dll</HintPath>
+      <HintPath>bin\lib\sfmlnet-audio-2.dll</HintPath>
     </Reference>
     <Reference Include="sfmlnet-graphics-2">
-      <HintPath>..\..\sfmlnet-graphics-2.dll</HintPath>
+      <HintPath>bin\lib\sfmlnet-graphics-2.dll</HintPath>
     </Reference>
     <Reference Include="sfmlnet-system-2">
-      <HintPath>..\..\sfmlnet-system-2.dll</HintPath>
+      <HintPath>bin\lib\sfmlnet-system-2.dll</HintPath>
     </Reference>
     <Reference Include="sfmlnet-window-2">
-      <HintPath>..\..\sfmlnet-window-2.dll</HintPath>
+      <HintPath>bin\lib\sfmlnet-window-2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -59,18 +59,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlexState.cs" />
-    <Compile Include="CharacterClass.cs" />
+    <Compile Include="CharacterState.cs" />
     <Compile Include="ContextFilter.cs" />
     <Compile Include="GameMatrix.cs" />
     <Compile Include="PersonState.cs" />
-    <Compile Include="DadState.cs" />
     <Compile Include="DramaManager.cs" />
     <Compile Include="DialogueParsing.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="InputManager.cs" />
     <Compile Include="MenuButton.cs" />
-    <Compile Include="MomState.cs" />
     <Compile Include="PauseMenu.cs" />
     <Compile Include="Relationships.cs" />
     <Compile Include="StartMenu.cs" />
