@@ -10,24 +10,13 @@ using SFML.System;
 using System.Drawing;
 
 namespace Test {
-    class FontObjects {
-
-        public static Font Adore64 = new Font(new FileStream("../../Fonts/Adore64.ttf", FileMode.Open));
-        //public static Font Adore64 = new Font(new FileStream("Content/Fonts/Adore64.ttf", FileMode.Open));
-        //public static Font Adore64 = new Font(new FileStream(@"C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\Fonts/Adore64.ttf", FileMode.Open));
-    }
-
+    
     class SA : Game {
         // Screen width and height
-        static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
-        static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
 
-        //Dictionary of Keyboard keys and their corresponding states.
-        // MOVE TO MANAGER OF INPUT 
-        Dictionary<SFML.Window.Keyboard.Key, bool[]> keys = new Dictionary<SFML.Window.Keyboard.Key, bool[]>();
 
-        UITextBox TextBox = new UITextBox(0, SCREEN_HEIGHT - (SCREEN_HEIGHT / 5), "HELLO WORLD!");
-        InputManager ManagerOfInput = new InputManager();
+        //deprecate please
+        
 
         // Dialogue box and dialogue box custom color
         static Color color = Color.Black;
@@ -40,26 +29,15 @@ namespace Test {
         // Different screen modes
         public View fullScreenView, scrollview;
 
-        // UI Manager Object
-        UIManager ui_man = new UIManager();
-
-        // Declaration of different menu states
-        StartMenu startMenu;
-        StartMenu settingsMenu;
-
-        StartMenu pauseMenu;
-
         // Character declaration
         AlexState Alex = new AlexState(4.0, 6.9);
 
         double[] nums = { -1, 2, 3, 4,
-                            1, 2, 3, 4,
-                            1, 2, 3, 4
-                            };
+                           1, 2, 3, 4,
+                           1, 2, 3, 4
+                        };
 
-        ToneEffects tfx = new ToneEffects();
-        ContextFilter cf;
-        Relationships rs = new Relationships();
+
 
 
         public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?", Color.Magenta) {
@@ -73,12 +51,15 @@ namespace Test {
         }
 
         private void onMouseMoved(object sender, MouseMoveEventArgs e) {
-            if (State.GetState() == "game") {
-                if (ManagerOfInput.GetMouseDown()) {
-                    ManagerOfInput.SetMouseMove(true);
-                    ManagerOfInput.SetMousePos(e.X, e.Y);
-                }
-            }
+            ManagerOfInput.MouseMoveCheck(State.GetState(),e.X,e.Y);
+            //check game and mouse pressed->set position
+            //deprecated
+            //if (State.GetState() == "game") {
+            //    if (ManagerOfInput.GetMouseDown()) {
+            //        ManagerOfInput.SetMouseMove(true);
+            //        ManagerOfInput.SetMousePos(e.X, e.Y);
+            //    }
+            //}
 
         }
 
@@ -230,7 +211,7 @@ namespace Test {
         }
 
         private void onKeyReleased(object sender, KeyEventArgs e) {
-            keys[e.Code] = new bool[] { false, e.Shift, e.Control, e.Alt };
+
         }
 
         private void onKeyPressed(object sender, KeyEventArgs e) {
@@ -279,12 +260,6 @@ namespace Test {
             if (e.Code == Keyboard.Key.Space) {
                 dialogueBox.setPrintTime(0);
 
-            }
-
-            if (!keys.ContainsKey(e.Code)) {
-                keys.Add(e.Code, new bool[] { true, e.Shift, e.Control, e.Alt });
-            } else {
-                keys[e.Code] = new bool[] { true, e.Shift, e.Control, e.Alt };
             }
         }
 

@@ -38,16 +38,16 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="sfmlnet-audio-2">
-      <HintPath>..\..\sfmlnet-audio-2.dll</HintPath>
+      <HintPath>bin\lib\sfmlnet-audio-2.dll</HintPath>
     </Reference>
     <Reference Include="sfmlnet-graphics-2">
-      <HintPath>..\..\sfmlnet-graphics-2.dll</HintPath>
+      <HintPath>bin\lib\sfmlnet-graphics-2.dll</HintPath>
     </Reference>
     <Reference Include="sfmlnet-system-2">
-      <HintPath>..\..\sfmlnet-system-2.dll</HintPath>
+      <HintPath>bin\lib\sfmlnet-system-2.dll</HintPath>
     </Reference>
     <Reference Include="sfmlnet-window-2">
-      <HintPath>..\..\sfmlnet-window-2.dll</HintPath>
+      <HintPath>bin\lib\sfmlnet-window-2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

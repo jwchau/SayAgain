@@ -22,6 +22,22 @@ namespace Test
         bool MouseRelease = false;
         bool MouseMove = false;
 
+        //check game and mouse pressed->set position
+        public void MouseMoveCheck(string state, int x, int y) {
+            if (state == "game") {
+                if (this.GetMouseDown()) {
+                    this.SetMouseMove(true);
+                    this.SetMousePos(x,y);
+                }
+            }
+        }
+
+
+
+
+
+
+        /////////////////////////////////////////////////BUILT-IN
         public void SetMousePos(int x, int y) {
             MouseX = x;
             MouseY = y;
@@ -75,6 +91,6 @@ namespace Test
             }
             return false;
         }
-
+        //////////////////////////////////////////////////////////////////////BUILT-IN
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using SFML.Window;
 using SFML.Graphics;
 
@@ -13,6 +14,27 @@ namespace Test
     {
         protected RenderWindow window;
         protected Color clearColor;
+
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        //Screen defaults
+        static protected UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
+        static protected UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+        //Input Manager
+        protected InputManager ManagerOfInput = new InputManager();
+        //User Inferface Manager
+        protected UIManager ui_man = new UIManager();
+        //Menus
+        protected StartMenu startMenu;
+        protected StartMenu settingsMenu;
+        protected StartMenu pauseMenu;
+        //Matrices
+        protected ToneEffects tfx = new ToneEffects();
+        protected ContextFilter cf;
+        protected Relationships rs = new Relationships();
+        //Font
+        static protected Font Adore64 = new Font(new FileStream("../../Fonts/Adore64.ttf", FileMode.Open));
+
+        /////////////////////////////////////////////////////////////////////////////////////////////
 
         protected GameState State = new GameState();
 
@@ -54,6 +76,9 @@ namespace Test
         private void onKeyPressed(object sender, KeyEventArgs e)
         {
             Console.WriteLine(e.Code);
+            if (e.Code.Equals(Keyboard.Key.Escape)) {
+                window.Close();
+            }
         }
     }
 }
