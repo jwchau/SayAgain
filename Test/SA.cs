@@ -73,8 +73,7 @@ namespace Test {
             if (e.Code == Keyboard.Key.D)
             {
                 //init = true;
-
-                ui_man.SetDialogueViewBox();
+                ui_man.setDialogueBoxPos(new FloatRect(0.0f, 0f, 0.35f, 0.2f));
                 ui_man.RenderDialogue("whos ur daddy im ur daddy whos ur daddy im ur daddy "+
                     "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
                     "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
@@ -84,23 +83,16 @@ namespace Test {
 
 
             if (e.Code == Keyboard.Key.A) {
-                ui_man.SetDialogueViewBox();
+                ui_man.setDialogueBoxPos(new FloatRect(0.3f, 0f, 0.35f, 0.2f));
                 ui_man.RenderDialogue("im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis ", "Alex");
             }
 
 
             if (e.Code == Keyboard.Key.M)
             {
-                ui_man.SetDialogueViewBox();
+                ui_man.setDialogueBoxPos(new FloatRect(0.63f, 0f, 0.35f, 0.2f));
                 ui_man.RenderDialogue("mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom ", "Mom");
             }
-
-/*
-            if (!keys.ContainsKey(e.Code)) {
-                keys.Add(e.Code, new bool[] { true, e.Shift, e.Control, e.Alt });
-            } else {
-                keys[e.Code] = new bool[] { true, e.Shift, e.Control, e.Alt };
-            }*/
 
         }
 
@@ -123,60 +115,29 @@ namespace Test {
         }
 
         protected override void Initialize() {
-            Texture texture;
+            /*Texture texture;
             FileStream f = new FileStream("../../Art/angrymom.png", FileMode.Open);
-            texture = new Texture(f);
-
-
-            //mom = new Sprite(texture);
-
-            //the view of the whole game
-            //var temp1 = window.DefaultView;
+            texture = new Texture(f);*/
             fullScreenView = window.DefaultView;
             fullScreenView.Viewport = new FloatRect(0, 0, 1, 1);
             window.SetView(fullScreenView);
-            //the view port is the whole window
-
-            //fullScreenView.Viewport = new FloatRect(0, 0, 1, 1);
-            //window.SetView(fullScreenView);
-            //dialogueBox = new DialogueBox(0, 0, 710, 150);
             ui_man.setDialogueBox();
-
-
-            //charView = new View(mom.GetGlobalBounds());
-            //charView.Viewport = new FloatRect(0.7f, 0.3f, 0.23f, 0.5f);
-
-/*master =======
-            temp1.Viewport = new FloatRect(0, 0, 1, 1);
-            window.SetView(temp1);
-            ui_man.setDialogueBox();// = new DialogueBox(0, 0, 710, 150);
-            
-
-
-*/
-
-/*
-    
-
-
-    */
-
-
-            ui_man.Icantevenwiththiscode3(State, ManagerOfInput);
+            ui_man.setViews(fullScreenView);
         }
 
         protected override void Update()
         {
+            ui_man.Icantevenwiththiscode3(State, ManagerOfInput);
             if (ui_man.getDialogueBox().active)
             {
                 //UNCOMMENT
                 window.Draw(ui_man.getDialogueBox());
             }
             
+
         }
             
         protected override void Draw() {
-            //////>>>>>clearColor to magenta
             window.Clear(Color.Magenta);
             ui_man.Icantevenwiththiscode(window);
             ui_man.Icantevenwiththiscode2(window, State, ui_man, startMenu, pauseMenu, settingsMenu);

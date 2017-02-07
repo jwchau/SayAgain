@@ -34,7 +34,7 @@ namespace Test
         /// temp jill holding place
         protected DialogueBox dialogueBox;
         protected Boolean init;
-        protected View fullScreenView, scrollview;
+        protected View fullScreenView;
         /// </summary>
 
 
@@ -67,7 +67,7 @@ namespace Test
         /// </summary>
         public void Icantevenwiththiscode(RenderWindow window) {
                 if (init) {
-                        //window.Draw(dialogueBox);
+                        window.Draw(dialogueBox);
                         //window.Draw(dialogue);
                         //window.Draw(name);
                 }
@@ -79,7 +79,7 @@ namespace Test
         /// </summary>
         public void Icantevenwiththiscode2(RenderWindow window, GameState State, UIManager ui, StartMenu sta, StartMenu pau, StartMenu set) {
             //////>>>>>clearColor to magenta
-            //window.SetView(fullScreenView);
+            window.SetView(fullScreenView);
             if (State.GetState() == "menu") {
                 if (State.GetMenuState() == "start") {
                     window.Draw(sta);
@@ -198,19 +198,19 @@ namespace Test
             dialogueBox = new DialogueBox(0, 0, 710, 150);
         }
 
-        public void setViews(View fs, View vp) {
+        public void setViews(View fs) {
             fullScreenView = fs;
-            //scrollview = vp;
         }
 
+        public void setDialogueBoxPos(FloatRect f)
+        {
+            this.dialogueBox.view.Viewport = f;
+        }
         public void SetPrintTime(int t) {
             this.dialogueBox.setPrintTime(t);
         }
 
-        public void SetDialogueViewBox ()
-        {
-            this.dialogueBox.view.Viewport = new FloatRect(0.0f, 0f, 0.35f, 0.2f);
-        }
+
 
         public void DialogueNextEndCheck() {
             this.dialogueBox.getNext();
