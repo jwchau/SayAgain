@@ -50,7 +50,6 @@ namespace Test {
         }
 
         private void onKeyReleased(object sender, KeyEventArgs e) {
-
         }
 
         private void onKeyPressed(object sender, KeyEventArgs e) {
