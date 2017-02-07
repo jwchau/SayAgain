@@ -14,7 +14,7 @@ namespace Test {
     class SA : Game {
 
         // Dialogue box and dialogue box custom color
-        DialogueBox dialogueBox;
+        protected DialogueBox dialogueBox;
 
         // Dialogue init bool
         // FOX WITH TIMER
@@ -25,13 +25,6 @@ namespace Test {
 
         // Character declaration
         private CharacterState Alex = new CharacterState(4.0, 6.9);
-
-        double[] nums = { -1, 2, 3, 4,
-                           1, 2, 3, 4,
-                           1, 2, 3, 4
-                        };
-
-
 
 
         public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?", Color.Magenta) {
@@ -46,162 +39,14 @@ namespace Test {
 
         private void onMouseMoved(object sender, MouseMoveEventArgs e) {
             ManagerOfInput.MouseMoveCheck(State.GetState(),e.X,e.Y);
-            //check game and mouse pressed->set position
-            //deprecated
-            //if (State.GetState() == "game") {
-            //    if (ManagerOfInput.GetMouseDown()) {
-            //        ManagerOfInput.SetMouseMove(true);
-            //        ManagerOfInput.SetMousePos(e.X, e.Y);
-            //    }
-            //}
-
         }
 
         private void onMouseButtonReleased(object sender, MouseButtonEventArgs e) {
-
-            ManagerOfInput.SetMouseMove(false);
-            ManagerOfInput.SetMouseDown(false);
-            ManagerOfInput.SetMouseRelease(true);
-            var MouseCoord = ManagerOfInput.GetMousePos();
-
-            var buttons = ui_man.getButtons();
-
-            if (State.GetState() == "game") {
-                for (var i = 0; i < buttons.Count; i++) {
-                    if (buttons[i].GetSelected()) {
-                        //CHECK MATRIX BS
-                        double[,] final = tfx.MatrixMult(tfx, cf);
-                        Console.WriteLine(final[2, 3]);
-
-
-                        var playerDialogues = ui_man.getPlayerDialogues();
-
-                        for (var j = 0; j < playerDialogues.Count; j++) {
-
-                            var boxBounds = playerDialogues[j].getBoxBounds();
-                            //change color if the button is hovering over the textbox
-
-                            if (playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1])) {
-                                playerDialogues[j].setPrevColor(playerDialogues[j].getBoxColor("curr"));
-                                playerDialogues[j].setBoxColor(buttons[i].getTonalColor());
-
-                                playerDialogues[j].changeDialogue(buttons[i].getNewDialogue());
-                                playerDialogues[j].setAffected(true);
-                                ui_man.updateText(j, buttons[i].getNewDialogue());
-                                break;
-                            }
-
-                        }
-                        buttons[i].snapBack();
-                        buttons[i].SetSelected(false);
-                        break;
-
-                    }
-                }
-            } else if (State.GetState() == "pause")//If game is paused
-            {
-                for (var i = 0; i < buttons.Count; i++) {
-                    if (buttons[i].GetSelected()) {
-                        buttons[i].snapBack();
-                        buttons[i].SetSelected(false);
-                    }
-                }
-            }
-
-
+            ManagerOfInput.MouseReleasedCheck(State.GetState(), ui_man, tfx,cf);
         }
 
         private void onMouseButtonPressed(object sender, MouseButtonEventArgs e) {
-
-            ManagerOfInput.SetMousePos(e.X, e.Y);
-            ManagerOfInput.SetMouseRelease(false);
-            ManagerOfInput.SetMouseDown(true);
-
-            if (State.GetState() == "game") {
-                var buttons = ui_man.getButtons();
-                for (var i = 0; i < buttons.Count; i++) {
-                    if (buttons[i].Contains(e.X, e.Y)) {
-                        var bounds = buttons[i].getRectBounds();
-                        buttons[i].SetMouseOffset(e.X - (int)bounds.Left, e.Y - (int)bounds.Top);
-                        buttons[i].SetSelected(true);
-                    }
-                }
-
-                ManagerOfInput.SetMousePos(e.X, e.Y);
-                ManagerOfInput.SetMouseRelease(false);
-                ManagerOfInput.SetMouseDown(true);
-            } else if (State.GetState() == "menu") {
-                // Menu Traversal Logic
-                if (State.GetMenuState() == "start") //If Current Menu State is the Start Menu
-                {
-                    // Pass the current menu's buttons, along with a list of tuples symbolizing:
-                    //      Tuple(ButtonText, TargetState, AnonymousFunction)
-                    updateMenuState(startMenu.getMenuButtons(), new List<Tuple<string, string, Task>> {
-                        new Tuple<string, string, Task>("Game Start", "game", new Task(() => {})),
-                        new Tuple<string, string, Task>("Settings", "settings", new Task(() => {}))
-                    });
-
-                } else if (State.GetMenuState() == "settings") //If Current Menu State is the Settings Menu
-                  {
-                    updateMenuState(settingsMenu.getMenuButtons(), new List<Tuple<string, string, Task>> {
-                        new Tuple<string, string, Task>("8K GAMING", "settings", new Task(() => { if(clearColor == Color.Magenta) clearColor = Color.Cyan; // Change background clear color
-                                                                                                  else clearColor = Color.Magenta; })),
-                        new Tuple<string, string, Task>("<- Back", "start", new Task(() => {}))
-                    });
-
-                }
-            } else if (State.GetState() == "pause") {
-                Console.WriteLine(State.GetState());
-                if (State.GetMenuState() == "pause") {
-                    updateMenuState(pauseMenu.getMenuButtons(), new List<Tuple<string, string, Task>> {
-                        new Tuple<string, string, Task>("Back to Game", "game", new Task(() => {})),
-                        new Tuple<string, string, Task>("Settings", "settings", new Task(() => {})),
-                        new Tuple<string, string, Task>("Quit", "menu", new Task(() => {}))
-                    });
-                } else if (State.GetMenuState() == "settings") {
-                    updateMenuState(settingsMenu.getMenuButtons(), new List<Tuple<string, string, Task>> {
-                        new Tuple<string, string, Task>("8K GAMING", "settings", new Task(() => { if(clearColor == Color.Magenta) clearColor = Color.Cyan; // Change background clear color
-                                                                                                  else clearColor = Color.Magenta; })),
-                        new Tuple<string, string, Task>("<- Back", "pause", new Task(() => {}))
-                    });
-                }
-            }
-        }
-
-        // Handle Menu Traversal and Game Launching
-        private void updateMenuState(List<MenuButton> buttons, List<Tuple<string, string, Task>> mappings) {
-            // Get Mouse Position
-            var MousePos = ManagerOfInput.GetMousePos();
-
-            // Loop through current menu's buttons
-            for (var i = 0; i < buttons.Count; i++) {
-                // If mouse position is over current button
-                if (buttons[i].Contains(MousePos[0], MousePos[1])) {
-                    // Find what this button is suppose to do
-                    for (var j = 0; j < mappings.Count; j++) {
-                        // Found button being clicked
-                        if (buttons[i].getMenuButtonText().DisplayedString == mappings[j].Item1) {
-                            // Do button action
-                            mappings[j].Item3.Start();
-
-                            // Change either game state or menu state based off of button's target state
-                            if (mappings[j].Item2 == "game") {
-                                State.SetState(mappings[j].Item2);
-                            } else if (mappings[j].Item2 == "menu") {
-                                State.SetState(mappings[j].Item2);
-                                State.SetMenuState("start");
-                            } else {
-                                State.SetMenuState(mappings[j].Item2);
-                            }
-
-                            break;
-                        }
-                    }
-                    break;
-
-                }
-            }
-
+            ManagerOfInput.MouseClickedCheck(State, ui_man, startMenu, pauseMenu, settingsMenu, e.X, e.Y);
         }
 
         private void onKeyReleased(object sender, KeyEventArgs e) {
@@ -258,21 +103,20 @@ namespace Test {
         }
 
 
-
+        /// <summary>
+        /// LOADCONTENT AND INITIALIZE ARE THE SAME THING. (FIX TOGETHER) RED RED RED RED RED RED RED RED RED BLUE RED RED RED RED RED RED RED
+        /// </summary>
 
         protected override void LoadContent() {
-            //load stuff for main menu
-
-            startMenu = new StartMenu("start");
-            settingsMenu = new StartMenu("settings");
-            pauseMenu = new StartMenu("pause");
-
+            //context filter load, 4testing
+            double[] nums = { -1, 2, 3, 4,
+                               1, 2, 3, 4,
+                               1, 2, 3, 4, };
             cf = new ContextFilter("school", nums);
 
+            //player manipulated sentences, 4testing
             string test = "My name is Raman. My name is Michael. My name is John. My name is Jill. My name is Yuna. My name is Leo. My name is Koosha.";
             ui_man.produceTextBoxes(test);
-
-
 
         }
 

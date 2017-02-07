@@ -24,9 +24,9 @@ namespace Test
         //User Inferface Manager
         protected UIManager ui_man = new UIManager();
         //Menus
-        protected StartMenu startMenu;
-        protected StartMenu settingsMenu;
-        protected StartMenu pauseMenu;
+        protected StartMenu startMenu = new StartMenu("start");
+        protected StartMenu settingsMenu = new StartMenu("settings");
+        protected StartMenu pauseMenu = new StartMenu("pause");
         //Matrices
         protected ToneEffects tfx = new ToneEffects();
         protected ContextFilter cf;
