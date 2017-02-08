@@ -12,6 +12,9 @@ using System.Drawing;
 namespace Test {
     
     class SA : Game {
+
+
+        public View fullScreenView, charView;
         // Character declaration
         private CharacterState Alex = new CharacterState(4.0, 6.9);
 
@@ -44,31 +47,51 @@ namespace Test {
         private void onKeyPressed(object sender, KeyEventArgs e) {
 
 
+            if (e.Code == Keyboard.Key.Space)
+            {
+                ui_man.SetPrintTime(0);
+            }
+
             if (e.Code == Keyboard.Key.N) {
                 ui_man.DialogueNextEndCheck();
+
             }
 
             if (e.Code == Keyboard.Key.P) {
                 ManagerOfInput.PKeyCheck(State);
             }
 
-            if (e.Code == Keyboard.Key.M) {
-                ui_man.StartDialogueBox();
+
+
+            if (e.Code == Keyboard.Key.D)
+            {
+                //init = true;
+                ui_man.setDialogueBoxPos(new FloatRect(0.0f, 0f, 0.35f, 0.2f));
+                ui_man.RenderDialogue("whos ur daddy im ur daddy whos ur daddy im ur daddy "+
+                    "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
+                    "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
+                    "whos ur daddy im ur daddy whos ur daddy im ur daddy ", "Dad");
             }
 
-            if (e.Code == Keyboard.Key.Space) {
-                ui_man.SetPrintTime(0);
 
+
+            if (e.Code == Keyboard.Key.A) {
+                ui_man.setDialogueBoxPos(new FloatRect(0.3f, 0f, 0.35f, 0.2f));
+                ui_man.RenderDialogue("im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis ", "Alex");
             }
+
+
+            if (e.Code == Keyboard.Key.M)
+            {
+                ui_man.setDialogueBoxPos(new FloatRect(0.63f, 0f, 0.35f, 0.2f));
+                ui_man.RenderDialogue("mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom ", "Mom");
+            }
+
         }
 
 
-        /// <summary>
-        /// LOADCONTENT AND INITIALIZE ARE THE SAME THING. (FIX TOGETHER) RED RED RED RED RED RED RED RED RED BLUE RED RED RED RED RED RED RED
-        /// </summary>
 
         protected override void LoadContent() {
-            //context filter load, 4testing
             double[] nums = { -1, 2, 3, 4,
                                1, 2, 3, 4,
                                1, 2, 3, 4, };
@@ -81,29 +104,28 @@ namespace Test {
         }
 
         protected override void Initialize() {
-            //the view of the whole game
-            var temp1 = window.DefaultView;
-            //the view port is the whole window
-            temp1.Viewport = new FloatRect(0, 0, 1, 1);
-            window.SetView(temp1);
-            ui_man.setDialogueBox();// = new DialogueBox(0, 0, 710, 150);
-            var temp2 = new View(ui_man.dialogueBoxBounds());
-            //where i want to view it (inside dialogueBox)
-            temp2.Viewport = new FloatRect(0.165f, 0f, 0.65f, 0.27f);
-            ui_man.setViews(temp1, temp2);
+            /*Texture texture;
+            FileStream f = new FileStream("../../Art/angrymom.png", FileMode.Open);
+            texture = new Texture(f);*/
+            fullScreenView = window.DefaultView;
+            fullScreenView.Viewport = new FloatRect(0, 0, 1, 1);
+            window.SetView(fullScreenView);
+            ui_man.setDialogueBox();
+            ui_man.setViews(fullScreenView);
         }
 
+        protected override void Update()
+        {
+            ui_man.UpdateTimer(State, ManagerOfInput);
 
 
-        protected override void Update() {
-            ui_man.Icantevenwiththiscode3(State, ManagerOfInput);
         }
-
+            
         protected override void Draw() {
-            //////>>>>>clearColor to magenta
             window.Clear(Color.Magenta);
-            ui_man.Icantevenwiththiscode(window);
-            ui_man.Icantevenwiththiscode2(window, State, ui_man, startMenu, pauseMenu, settingsMenu);
+            ui_man.DrawDialogueBox(window);
+            ui_man.DrawUI(window, State, ui_man, startMenu, pauseMenu, settingsMenu);
+
 
         }
     }
