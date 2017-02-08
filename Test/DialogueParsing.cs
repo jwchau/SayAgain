@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace Test
 {
-    class DialogueParsing
+    public class DialogueParsing
     {
         public RootObject r = new RootObject();
         private string filename = "";

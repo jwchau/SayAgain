@@ -15,10 +15,10 @@ namespace Test
             int FNC = 0;
             //-----------------------------------------------------------
 
-            DialogueParsing r = new DialogueParsing(@"../../playertutorial_json.json");
+            Loader Load = new Loader();
             Selector s = new Selector();
 
-            List<DialogueObj> responseList = s.ChooseDialog(FNC, r, currentMadeMemories);
+            List<DialogueObj> responseList = s.ChooseDialog(FNC, Load.playerDialogueObj1, currentMadeMemories);
 
             Console.WriteLine("First String in List -> " + responseList.ElementAt(0).content);
 
