@@ -11,9 +11,9 @@ namespace Test
 {
     class UITextBox : UIElement//The box where the dialogue will appear, not clickable or draggable
     {
-        public UITextBox(float x, float y, string dialogue)
+        public UITextBox(float x, float y, string dialogue, int cluster)
         {
-            UITextBoxFont = new Font("Fonts/Adore64.ttf");
+            UITextBoxFont = new Font("../../Fonts/Adore64.ttf");
             UITextBoxText = new Text(dialogue, UITextBoxFont);
             UITextBoxText.Position = new Vector2f(x, y);
             box = new RectangleShape(new Vector2f(UITextBoxText.GetGlobalBounds().Width + 5, UITextBoxText.GetGlobalBounds().Height + 5));
@@ -22,6 +22,7 @@ namespace Test
             prevColor = buttonTonalColors["Default"];
             UITextBoxText.Color = new Color(227, 215, 207);
             this.affected = false;
+            this.cluster = cluster;
         }
 
         Font UITextBoxFont;
@@ -30,10 +31,25 @@ namespace Test
         bool affected = false;
         Color prevColor;
         bool mouseWasIn = false;
+        int cluster = -1;
+        string tone = "";
 
         public RectangleShape getBox()
         {
             return box;
+        }
+
+        public string getTone() {
+            return tone;
+        }
+
+        public void setTone(string tonez) {
+            tone = tonez;
+        }
+
+        public int getCluster()
+        {
+            return cluster;
         }
 
         public Text getBoxText()
@@ -68,11 +84,13 @@ namespace Test
             return prevColor;
         }
 
-        public bool getAffected() {
+        public bool getAffected()
+        {
             return affected;
         }
 
-        public void setAffected(bool b) {
+        public void setAffected(bool b)
+        {
             affected = b;
         }
 
@@ -102,6 +120,11 @@ namespace Test
             target.Draw(UITextBoxText);
         }
 
-        public void UpdateText() { }
+
+
+        public string getDialogue()
+        {
+            return UITextBoxText.DisplayedString;
+        }
     }
 }

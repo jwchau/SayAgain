@@ -10,6 +10,7 @@ namespace Test
     {
         static void Main(string[] args)
         {
+
             SA myGame = new SA();
             myGame.Run();
 

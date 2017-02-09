@@ -20,26 +20,23 @@ namespace Test
 
         string currentState;
         string currentMenuState;
-        //double oldTimeSeconds = 0;
-        //double pauseTime = 0;
-        //double newTimeSeconds = 0;
-        //double timeDiff = 0;
-        //double countDown = 1;
         Dictionary<string, GameTimer> DictGameTimer = new Dictionary<string, GameTimer>();
 
         //Timer for keeping track of time given to the player
-        //DictGameTimer.Add(new GameTimer("test",10.0, new Task(() => { /*EVERYTHING HERE*/}))); //new timer for 10 seconds
 
-        public GameTimer getGameTimer(string tag) {
+        public GameTimer getGameTimer(string tag)
+        {
             return DictGameTimer[tag];
         }
 
-        public void addTimer(string name, double initTime, Action T) {
+        public void addTimer(string name, double initTime, Action T)
+        {
             if (DictGameTimer.ContainsKey(name))
             {
-                DictGameTimer[name] = new GameTimer(name,initTime,T);
+                DictGameTimer[name] = new GameTimer(name, initTime, T);
             }
-            else {
+            else
+            {
                 DictGameTimer.Add(name, new GameTimer(name, initTime, T));
             }
         }
@@ -56,7 +53,8 @@ namespace Test
             {
                 throw new FormatException();
             }
-            if (state == "game" && currentMenuState == "start") {
+            if (state == "game" && currentMenuState == "start")
+            {
                 DictGameTimer["game"].setOldGameTime((DateTime.Now.Ticks / 10000) / 1000);
             }
 
@@ -77,14 +75,16 @@ namespace Test
             currentMenuState = state;
         }
 
-        public void updateTimerz() {
-            foreach (var pair in DictGameTimer) {
+        public void updateTimerz()
+        {
+            foreach (var pair in DictGameTimer)
+            {
                 //pair.Value is a gameTimer
                 //pair.Key is the label of the game Timer;
                 if (pair.Value.getStart())
                 {
                     pair.Value.updateTimer();
-                    
+
                 }
                 else
                 {
@@ -103,47 +103,61 @@ namespace Test
             }
         }
 
-        //public void setOldGameTime(double newTimeSeconds) {
-        //    oldTimeSeconds = newTimeSeconds;
-        //}
+        // Handle Menu Traversal and Game Launching
+        public void updateMenuState(int[] mouseCoords, List<MenuButton> buttons, List<Tuple<string, string, Task>> mappings)
+        {
 
-        //public double getOldGameTime() {
-        //    return oldTimeSeconds;
-        //}
+            // Loop through current menu's buttons
+            for (var i = 0; i < buttons.Count; i++)
+            {
+                // If mouse position is over current button
+                if (buttons[i].Contains(mouseCoords[0], mouseCoords[1]))
+                {
+                    // Find what this button is suppose to do
+                    for (var j = 0; j < mappings.Count; j++)
+                    {
+                        // Found button being clicked
+                        if (buttons[i].getMenuButtonText().DisplayedString == mappings[j].Item1)
+                        {
+                            // Do button action
+                            mappings[j].Item3.Start();
 
-        //public double getPauseTime() {
-        //    return pauseTime;
-        //}
+                            // Change either game state or menu state based off of button's target state
+                            if (mappings[j].Item2 == "game")
+                            {
+                                SetState(mappings[j].Item2);
+                            }
+                            else if (mappings[j].Item2 == "menu")
+                            {
+                                SetState(mappings[j].Item2);
+                                SetMenuState("start");
+                            }
+                            else
+                            {
+                                SetMenuState(mappings[j].Item2);
+                            }
 
-        //public void setPauseTime(double newTime) {
-        //    pauseTime = newTime;
-        //}
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
+        }
 
-        //public double getNewTime()
-        //{
-        //    return newTimeSeconds;
-        //}
-
-        //public void setNewTime(double newTime)
-        //{
-        //    newTimeSeconds = newTime;
-        //}
-
-        //public void setTimeDiff(double newTime) {
-        //    timeDiff = newTime;
-        //}
-
-        //public double getTimeDiff() {
-        //    return timeDiff;
-        //}
-
-        //public void setCountDown(double cd) {
-        //    countDown = cd;
-        //}
-
-        //public double getCountDown() {
-        //    return countDown;
-        //}
+        public void TogglePause()
+        {
+            if (GetState() == "pause")
+            {
+                SetState("game");
+                SetMenuState("start");
+            }
+            else if (GetState() == "game")
+            {
+                SetState("pause");
+                SetMenuState("pause");
+            }
+        }
 
     }
 }

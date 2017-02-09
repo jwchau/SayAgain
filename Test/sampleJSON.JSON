@@ -1,0 +1,29 @@
+ {"Dialogues" :[
+  {
+    "content": "I am dissapointed",
+    "memory": [ "School", "Divorce" ],
+    "FNC": 1
+  },
+{
+	"content": "I have become God",
+	"memory": ["Worship"],
+	"FNC" : 50
+},
+  {
+    "content": "suh bro",
+    "memory": [ ],
+    "FNC": 5
+  },
+  {
+    "content": "I have no words...",
+    "memory": [ ],
+    "FNC": 0
+  },
+  {
+	"content": "Don't ever talk to me!",
+	"memory": [ ],
+	"FNC" : -3
+}
+
+]
+}

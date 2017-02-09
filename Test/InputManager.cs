@@ -7,10 +7,8 @@ using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
 
-namespace Test
-{
-    class InputManager
-    {
+namespace Test {
+    class InputManager {
         public InputManager() {
 
         }
@@ -22,59 +20,50 @@ namespace Test
         bool MouseRelease = false;
         bool MouseMove = false;
 
+        /////////////////////////////////////////////////BUILT-IN
         public void SetMousePos(int x, int y) {
             MouseX = x;
             MouseY = y;
         }
 
-        public int[] GetMousePos()
-        {
+        public int[] GetMousePos() {
             return new int[] { MouseX, MouseY };
         }
 
-        public void SetMouseDown(bool value)
-        {
+        public void SetMouseDown(bool value) {
             MouseDown = value;
         }
 
-        public bool GetMouseDown()
-        {
+        public bool GetMouseDown() {
             return MouseDown;
         }
 
-        public void SetMouseRelease(bool value)
-        {
+        public void SetMouseRelease(bool value) {
             MouseRelease = value;
         }
 
-        public bool GetMouseRelease()
-        {
+        public bool GetMouseRelease() {
             return MouseRelease;
         }
 
-        public void SetMouseMove(bool value)
-        {
+        public void SetMouseMove(bool value) {
             MouseMove = value;
         }
 
-        public bool GetMouseMove()
-        {
+        public bool GetMouseMove() {
             return MouseMove;
         }
 
-        public void printMouseStuff()
-        {
+        private void printMouseStuff() {
             Console.WriteLine(MouseDown + ", " + MouseMove + ", " + MouseRelease);
         }
 
-        public bool CheckCollision(FloatRect bounds)
-        {
-            if (MouseX >= bounds.Left && MouseX <= bounds.Left + bounds.Width && MouseY >= bounds.Top && MouseY <= bounds.Top + bounds.Height)
-            {
+        private bool CheckCollision(FloatRect bounds) {
+            if (MouseX >= bounds.Left && MouseX <= bounds.Left + bounds.Width && MouseY >= bounds.Top && MouseY <= bounds.Top + bounds.Height) {
                 return true;
             }
             return false;
         }
-
+        //////////////////////////////////////////////////////////////////////BUILT-IN
     }
 }

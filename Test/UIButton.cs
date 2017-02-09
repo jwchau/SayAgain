@@ -19,12 +19,10 @@ namespace Test
             buttonText = new Text(content, buttonTextFont);
             buttonText.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
 
-            buttonText.Color = new Color(227, 215, 207);
-
-            rect = new RectangleShape(new SFML.System.Vector2f(buttonText.GetGlobalBounds().Width + 25, 45));
-            rect.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2 - 7, y - 5);
+            rect = new RectangleShape(new SFML.System.Vector2f(buttonText.GetGlobalBounds().Width + 7, buttonText.GetGlobalBounds().Height + 10));
+            rect.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
             rect.FillColor = Color.Black;
-            Color bgColor = new Color(86, 82, 100);
+            Color bgColor = new Color(177, 177, 177);
             rect.FillColor = bgColor;
             this.newDialogue = newDialogue;
             tonalColor = buttonTonalColors[content];
@@ -34,7 +32,7 @@ namespace Test
         static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
         static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
 
-        Font buttonTextFont = new Font("Fonts/Adore64.ttf");
+        Font buttonTextFont = new Font("../../Fonts/Adore64.ttf");
         Text buttonText;
         RectangleShape rect;
         string newDialogue;
@@ -103,7 +101,7 @@ namespace Test
 
         public void snapBack()
         {
-            rect.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2 - 7, y - 5);
+            rect.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
             buttonText.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
         }
 
@@ -131,7 +129,7 @@ namespace Test
             }
 
             rect.Position = new SFML.System.Vector2f(newXPos, newYPos);
-            buttonText.Position = new SFML.System.Vector2f(newXPos + 8, newYPos + 5);
+            buttonText.Position = new SFML.System.Vector2f(newXPos, newYPos);
 
         }
 
