@@ -64,9 +64,8 @@ namespace Test
         }
 
         public void DrawDialogueBox(RenderWindow window) {
-            if (init) {
-                    window.Draw(dialogueBox);
-
+            if (init && dialogueBox.active) {
+                    window.Draw(dialogueBox); 
             }
 
         }

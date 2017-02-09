@@ -22,7 +22,7 @@ namespace Test
         public RectangleShape nameBox;
         Task currentTask;
         CancellationTokenSource cts;
-        Text[] arr;
+        Text[] arr = {};
         public int printTime;
         public bool active = false;
         int elementIndex = 0;
@@ -53,7 +53,7 @@ namespace Test
 
         public void checkEnd()
         {
-            if (getElementIndex() == getArrLength())
+            if (getElementIndex() >= getArrLength())
             {
                 active = false;
             }
@@ -61,6 +61,7 @@ namespace Test
 
         public void getNext()
         {
+            elementIndex += 1;
             if (elementIndex < arr.Length)
             {
                 if (cts != null)
@@ -68,7 +69,6 @@ namespace Test
                     cts.Cancel();
                 }
                 cts = new CancellationTokenSource();
-                elementIndex += 1;
                 currentTask = Task.Run(async () =>
                 { //Task.Run puts on separate thread
                     printTime = 60;
