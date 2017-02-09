@@ -64,9 +64,8 @@ namespace Test
         }
 
         public void DrawDialogueBox(RenderWindow window) {
-            if (init) {
-                    window.Draw(dialogueBox);
-
+            if (init && dialogueBox.active) {
+                    window.Draw(dialogueBox); 
             }
 
         }
@@ -206,12 +205,8 @@ namespace Test
 
 
 
-        public void DialogueNextEndCheck() {
-            this.dialogueBox.getNext();
-            this.dialogueBox.checkEnd();
-            if (this.dialogueBox.getElementIndex() == this.dialogueBox.getArrLength()) {
-                this.dialogueBox.active = false;
-            }
+        public void DialogueNext() {
+            this.dialogueBox.forward();
         }
 
         public void RenderDialogue(string s, string sp) {

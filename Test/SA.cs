@@ -9,9 +9,11 @@ using SFML.Window;
 using SFML.System;
 using System.Drawing;
 
-namespace Test {
-    
-    class SA : Game {
+namespace Test
+{
+
+    class SA : Game
+    {
 
 
         public View fullScreenView, charView;
@@ -19,7 +21,8 @@ namespace Test {
         private CharacterState Alex = new CharacterState(4.0, 6.9);
 
 
-        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?", Color.Magenta) {
+        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?", Color.Magenta)
+        {
 
             window.KeyPressed += onKeyPressed;
             window.KeyReleased += onKeyReleased;
@@ -29,22 +32,27 @@ namespace Test {
 
         }
 
-        private void onMouseMoved(object sender, MouseMoveEventArgs e) {
-            ManagerOfInput.MouseMoveCheck(State.GetState(),e.X,e.Y);
+        private void onMouseMoved(object sender, MouseMoveEventArgs e)
+        {
+            ManagerOfInput.MouseMoveCheck(State.GetState(), e.X, e.Y);
         }
 
-        private void onMouseButtonReleased(object sender, MouseButtonEventArgs e) {
-            ManagerOfInput.MouseReleasedCheck(State.GetState(), ui_man, tfx,cf);
+        private void onMouseButtonReleased(object sender, MouseButtonEventArgs e)
+        {
+            ManagerOfInput.MouseReleasedCheck(State.GetState(), ui_man, tfx, cf);
         }
 
-        private void onMouseButtonPressed(object sender, MouseButtonEventArgs e) {
+        private void onMouseButtonPressed(object sender, MouseButtonEventArgs e)
+        {
             ManagerOfInput.MouseClickedCheck(State, ui_man, startMenu, pauseMenu, settingsMenu, e.X, e.Y);
         }
 
-        private void onKeyReleased(object sender, KeyEventArgs e) {
+        private void onKeyReleased(object sender, KeyEventArgs e)
+        {
         }
 
-        private void onKeyPressed(object sender, KeyEventArgs e) {
+        private void onKeyPressed(object sender, KeyEventArgs e)
+        {
 
 
             if (e.Code == Keyboard.Key.Space)
@@ -52,12 +60,15 @@ namespace Test {
                 ui_man.SetPrintTime(0);
             }
 
+
             if (e.Code == Keyboard.Key.N) {
-                ui_man.DialogueNextEndCheck();
+
+                ui_man.DialogueNext();
 
             }
 
-            if (e.Code == Keyboard.Key.P) {
+            if (e.Code == Keyboard.Key.P)
+            {
                 ManagerOfInput.PKeyCheck(State);
             }
 
@@ -67,7 +78,7 @@ namespace Test {
             {
                 //init = true;
                 ui_man.setDialogueBoxPos(new FloatRect(0.0f, 0f, 0.35f, 0.2f));
-                ui_man.RenderDialogue("whos ur daddy im ur daddy whos ur daddy im ur daddy "+
+                ui_man.RenderDialogue("whos ur daddy im ur daddy whos ur daddy im ur daddy " +
                     "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
                     "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
                     "whos ur daddy im ur daddy whos ur daddy im ur daddy ", "Dad");
@@ -75,7 +86,8 @@ namespace Test {
 
 
 
-            if (e.Code == Keyboard.Key.A) {
+            if (e.Code == Keyboard.Key.A)
+            {
                 ui_man.setDialogueBoxPos(new FloatRect(0.3f, 0f, 0.35f, 0.2f));
                 ui_man.RenderDialogue("im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis ", "Alex");
             }
@@ -91,7 +103,8 @@ namespace Test {
 
 
 
-        protected override void LoadContent() {
+        protected override void LoadContent()
+        {
             double[] nums = { -1, 2, 3, 4,
                                1, 2, 3, 4,
                                1, 2, 3, 4, };
@@ -103,7 +116,8 @@ namespace Test {
 
         }
 
-        protected override void Initialize() {
+        protected override void Initialize()
+        {
             /*Texture texture;
             FileStream f = new FileStream("../../Art/angrymom.png", FileMode.Open);
             texture = new Texture(f);*/
@@ -120,8 +134,9 @@ namespace Test {
 
 
         }
-            
-        protected override void Draw() {
+
+        protected override void Draw()
+        {
             window.Clear(Color.Magenta);
             ui_man.DrawDialogueBox(window);
             ui_man.DrawUI(window, State, ui_man, startMenu, pauseMenu, settingsMenu);
