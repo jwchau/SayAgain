@@ -21,7 +21,7 @@ namespace Test
         public RectangleShape box;
         public RectangleShape nameBox;
         Task currentTask;
-        CancellationTokenSource cts ;
+        CancellationTokenSource cts;
         Text[] arr;
         public int printTime;
         public bool active = false;
@@ -44,7 +44,7 @@ namespace Test
         {
             return elementIndex;
         }
-            
+
         public int getArrLength()
         {
             return arr.Length;
@@ -55,7 +55,7 @@ namespace Test
         {
             if (getElementIndex() == getArrLength())
             {
-               active = false;
+                active = false;
             }
         }
 
@@ -113,7 +113,7 @@ namespace Test
                 float wordSizeWithSpace = t.GetGlobalBounds().Width;
                 if (currentLineWidth + wordSizeWithSpace > maxw)
                 {
-    
+
                     line.DisplayedString += "\n";
                     currentLineWidth = 0;
                     if (line.GetGlobalBounds().Height > maxh)
@@ -137,7 +137,7 @@ namespace Test
             {
                 Console.WriteLine(list[i]);
             }
-            
+
             return list.ToArray();
 
         }
@@ -216,7 +216,7 @@ namespace Test
             this.w = width;
             this.h = height;
 
-            
+
             box = new RectangleShape(new Vector2f(this.w, this.h));
             box.Position = new Vector2f(this.x - 40, this.y + 35);
             box.OutlineThickness = 3;
@@ -234,5 +234,5 @@ namespace Test
 
 
     }
-    
+
 }

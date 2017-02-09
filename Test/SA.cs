@@ -53,7 +53,7 @@ namespace Test {
             }
 
             if (e.Code == Keyboard.Key.N) {
-                ui_man.DialogueNextEndCheck();
+                ui_man.DialogueNext();
 
             }
 
