@@ -48,7 +48,8 @@ namespace Test
                 if (memoryCheck)
                 {
                     possibleChoices.Add(new DialogueObj(r.r.Dialogues.ElementAt(i).content,
-                        r.r.Dialogues.ElementAt(i).memory, r.r.Dialogues.ElementAt(i).FNC,
+                        r.r.Dialogues.ElementAt(i).memory, r.r.Dialogues.ElementAt(i).context,
+                        r.r.Dialogues.ElementAt(i).milestone, r.r.Dialogues.ElementAt(i).FNC,
                         r.r.Dialogues.ElementAt(i).speaker, r.r.Dialogues.ElementAt(i).target));
                 }
             }
@@ -88,6 +89,9 @@ namespace Test
             {
                 possibleChoices.Add(new DialogueObj());
                 possibleChoices.ElementAt(0).content = "returned empty string";
+                possibleChoices.ElementAt(0).context[0] = "";
+                possibleChoices.ElementAt(0).milestone[0] = "";
+
             }
 
             return possibleChoices;

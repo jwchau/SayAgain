@@ -20,7 +20,9 @@ namespace Test
 
             List<DialogueObj> responseList = s.ChooseDialog(FNC, Load.playerDialogueObj1, currentMadeMemories);
 
-            Console.WriteLine("First String in List -> " + responseList.ElementAt(0).content);
+            Console.WriteLine("First content in List -> " + responseList.ElementAt(0).content);
+            Console.WriteLine("First context in List -> " + responseList.ElementAt(0).context[0]);
+            Console.WriteLine("First milestone in List -> " + responseList.ElementAt(0).milestone[0]);
 
             SA myGame = new SA();
             myGame.Run();
