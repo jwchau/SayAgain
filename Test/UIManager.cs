@@ -34,7 +34,7 @@ namespace Test
         /// temp jill holding place
         protected DialogueBox dialogueBox;
         protected Boolean init;
-        protected View fullScreenView, scrollview;
+        protected View fullScreenView;
         /// </summary>
 
 
@@ -43,8 +43,9 @@ namespace Test
 
         //methods
         public DialogueBox getDialogueBox() {
-            return dialogueBox;
+            return this.dialogueBox;
         }
+
 
         public Boolean getInit() { 
             return init;
@@ -61,30 +62,16 @@ namespace Test
         public void addButton(UIButton b) {
             buttons.Add(b);
         }
-        /// <summary>
-        //////////////////////////////////start of i cant even with this code.
-        /// </summary>
-        public void Icantevenwiththiscode(RenderWindow window) {
-                if (init) {
-                        //window.Draw(dialogueBox);
-                        //window.Draw(dialogue);
-                        //window.Draw(name);
-                }
 
-                if (init && dialogueBox.active) {
-                    //UNCOMMENT
-                    window.SetView(scrollview);
+        public void DrawDialogueBox(RenderWindow window) {
+            if (init) {
                     window.Draw(dialogueBox);
-                    window.Draw(dialogueBox.dialogue);
-                    window.Draw(dialogueBox.name);
 
             }
+
         }
 
-        /// <summary>
-        /// ///////////////////////////////////////////////I cant even with this code part 2 yay!!!
-        /// </summary>
-        public void Icantevenwiththiscode2(RenderWindow window, GameState State, UIManager ui, StartMenu sta, StartMenu pau, StartMenu set) {
+        public void DrawUI(RenderWindow window, GameState State, UIManager ui, StartMenu sta, StartMenu pau, StartMenu set) {
             //////>>>>>clearColor to magenta
             window.SetView(fullScreenView);
             if (State.GetState() == "menu") {
@@ -126,7 +113,7 @@ namespace Test
             }
         }
 
-        public void Icantevenwiththiscode3(GameState State, InputManager ManagerOfInput) {
+        public void UpdateTimer(GameState State, InputManager ManagerOfInput) {
             if (State.GetState() == "game") {
 
                 // Timer update
@@ -205,14 +192,19 @@ namespace Test
             dialogueBox = new DialogueBox(0, 0, 710, 150);
         }
 
-        public void setViews(View fs, View vp) {
+        public void setViews(View fs) {
             fullScreenView = fs;
-            scrollview = vp;
         }
 
+        public void setDialogueBoxPos(FloatRect f)
+        {
+            this.dialogueBox.view.Viewport = f;
+        }
         public void SetPrintTime(int t) {
             this.dialogueBox.setPrintTime(t);
         }
+
+
 
         public void DialogueNextEndCheck() {
             this.dialogueBox.getNext();
@@ -222,22 +214,9 @@ namespace Test
             }
         }
 
-        public void StartDialogueBox() {
+        public void RenderDialogue(string s, string sp) {
             init = true;
-            this.dialogueBox.renderDialogue("I took my love, I took it down " +
-                "Climbed a mountain and I turned around " +
-                "And I saw my reflection in the snow covered hills " +
-                "'Til the landslide brought it down " +
-                "Oh, mirror in the sky " +
-                "What is love? " +
-                "Can the child within my heart rise above? " +
-                "Can I sail through the changin' ocean tides? " +
-                "Can I handle the seasons of my life? " +
-                "Well, I've been afraid of changin' " +
-                "'Cause I've built my life around you " +
-                "But time makes you bolder " +
-                "Even children get older " +
-                "And I'm getting older, too", "Alex");
+            this.dialogueBox.renderDialogue(s, sp);
         }
 
         public void produceTextBoxes(string dialogue) {

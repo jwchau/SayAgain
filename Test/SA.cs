@@ -45,14 +45,12 @@ namespace Test {
         }
 
         private void onKeyPressed(object sender, KeyEventArgs e) {
-            /*
-                        if (e.Code == Keyboard.Key.N)
-                        {
-                            dialogueBox.forward();
 
-            <<<<<<< HEAD=======
-                        }
-                        */
+
+            if (e.Code == Keyboard.Key.Space)
+            {
+                ui_man.SetPrintTime(0);
+            }
 
             if (e.Code == Keyboard.Key.Space)
             {
@@ -73,8 +71,7 @@ namespace Test {
             if (e.Code == Keyboard.Key.D)
             {
                 //init = true;
-
-                ui_man.SetDialogueViewBox();
+                ui_man.setDialogueBoxPos(new FloatRect(0.0f, 0f, 0.35f, 0.2f));
                 ui_man.RenderDialogue("whos ur daddy im ur daddy whos ur daddy im ur daddy "+
                     "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
                     "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
@@ -84,33 +81,23 @@ namespace Test {
 
 
             if (e.Code == Keyboard.Key.A) {
-                ui_man.SetDialogueViewBox();
+                ui_man.setDialogueBoxPos(new FloatRect(0.3f, 0f, 0.35f, 0.2f));
                 ui_man.RenderDialogue("im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis ", "Alex");
             }
 
 
             if (e.Code == Keyboard.Key.M)
             {
-                ui_man.SetDialogueViewBox();
+                ui_man.setDialogueBoxPos(new FloatRect(0.63f, 0f, 0.35f, 0.2f));
                 ui_man.RenderDialogue("mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom ", "Mom");
             }
 
-/*
-            if (!keys.ContainsKey(e.Code)) {
-                keys.Add(e.Code, new bool[] { true, e.Shift, e.Control, e.Alt });
-            } else {
-                keys[e.Code] = new bool[] { true, e.Shift, e.Control, e.Alt };
-            }*/
-
+>>>>>>> 2a2addf2f1e476faa5bc0e61d556e2bc4807a492
         }
 
 
-        /// <summary>
-        /// LOADCONTENT AND INITIALIZE ARE THE SAME THING. (FIX TOGETHER) RED RED RED RED RED RED RED RED RED BLUE RED RED RED RED RED RED RED
-        /// </summary>
 
         protected override void LoadContent() {
-            //context filter load, 4testing
             double[] nums = { -1, 2, 3, 4,
                                1, 2, 3, 4,
                                1, 2, 3, 4, };
@@ -123,6 +110,7 @@ namespace Test {
         }
 
         protected override void Initialize() {
+<<<<<<< HEAD
             Texture texture;
             FileStream f = new FileStream("../../Art/angrymom.png", FileMode.Open);
             texture = new Texture(f);
@@ -151,7 +139,21 @@ namespace Test {
             window.SetView(temp1);
             ui_man.setDialogueBox();// = new DialogueBox(0, 0, 710, 150);
             
+=======
+            /*Texture texture;
+            FileStream f = new FileStream("../../Art/angrymom.png", FileMode.Open);
+            texture = new Texture(f);*/
+            fullScreenView = window.DefaultView;
+            fullScreenView.Viewport = new FloatRect(0, 0, 1, 1);
+            window.SetView(fullScreenView);
+            ui_man.setDialogueBox();
+            ui_man.setViews(fullScreenView);
+        }
+>>>>>>> 2a2addf2f1e476faa5bc0e61d556e2bc4807a492
 
+        protected override void Update()
+        {
+            ui_man.UpdateTimer(State, ManagerOfInput);
 
 */
 
@@ -162,6 +164,7 @@ namespace Test {
     */
 
 
+<<<<<<< HEAD
             ui_man.Icantevenwiththiscode3(State, ManagerOfInput);
         }
 
@@ -174,12 +177,15 @@ namespace Test {
             }
             
         }
+=======
+        }
+>>>>>>> 2a2addf2f1e476faa5bc0e61d556e2bc4807a492
             
         protected override void Draw() {
-            //////>>>>>clearColor to magenta
             window.Clear(Color.Magenta);
-            ui_man.Icantevenwiththiscode(window);
-            ui_man.Icantevenwiththiscode2(window, State, ui_man, startMenu, pauseMenu, settingsMenu);
+            ui_man.DrawDialogueBox(window);
+            ui_man.DrawUI(window, State, ui_man, startMenu, pauseMenu, settingsMenu);
+
 
 
         }
