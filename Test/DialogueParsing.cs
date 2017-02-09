@@ -32,13 +32,15 @@ namespace Test
     {
         public string content { get; set; }
         public List<string> memory { get; set; }
+        public List<string> context { get; set; }
+        public List<string> milestone { get; set; }
         public int FNC { get; set; }
         public string speaker { get; set; }
         public List<string> target { get; set; }
 
-        public DialogueObj(string newContent, List<string> newMemory, int newFNC, string newSpeaker, List<string> newTarget)
+        public DialogueObj(string newContent, List<string> newMemory, List<string> newContext, List<string> newMilestone, int newFNC, string newSpeaker, List<string> newTarget)
         {
-            content = newContent; memory = newMemory; FNC = newFNC; speaker = newSpeaker; target = newTarget;
+            content = newContent; memory = newMemory; context = newContext; milestone = newMilestone; FNC = newFNC; speaker = newSpeaker; target = newTarget;
         }
 
         public DialogueObj() { }
@@ -49,4 +51,5 @@ namespace Test
     {
         public List<DialogueObj> Dialogues { get; set; }
     }
+
 }

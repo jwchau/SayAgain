@@ -2,28 +2,43 @@
   {
     "content": "I am dissapointed",
     "memory": [ "School", "Divorce" ],
-    "FNC": 1
+    "context": [ "mom" ],
+    "milestone" :  ["PlayerGainedAlexTrust","MomMadAtPlayer"],
+    "FNC": 1,
+	  "Speaker":"Player"
   },
-{
-	"content": "I have become God",
-	"memory": ["Worship"],
-	"FNC" : 50
-},
+  {
+	  "content": "I have become God",
+    "memory": [ "Worship" ],
+    "context": [ "mom" ],
+    "milestone" :  ["PlayerGainedAlexTrust","MomMadAtPlayer"],
+	  "FNC" : 50,
+	  "Speaker":"Player"
+  },
   {
     "content": "suh bro",
     "memory": [ ],
-    "FNC": 5
+    "context": [ "mom" ],
+    "milestone" :  ["PlayerGainedAlexTrust","MomMadAtPlayer"],
+    "FNC": 5,
+	  "Speaker":"Player"
   },
   {
     "content": "I have no words...",
     "memory": [ ],
-    "FNC": 0
+    "context": [ "mom" ],
+    "milestone" :  ["PlayerGainedAlexTrust","MomMadAtPlayer"],
+    "FNC": 0,
+	  "Speaker":"Player"
   },
   {
-	"content": "Don't ever talk to me!",
-	"memory": [ ],
-	"FNC" : -3
-}
+	  "content": "Don't ever talk to me!",
+    "memory": [ ],
+    "context": [ "mom" ],
+    "milestone" :  ["PlayerGainedAlexTrust","MomMadAtPlayer"],
+	  "FNC" : -3,
+	  "Speaker":"Player"
+  }
 
 ]
 }

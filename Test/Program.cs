@@ -15,12 +15,14 @@ namespace Test
             int FNC = 0;
             //-----------------------------------------------------------
 
-            DialogueParsing r = new DialogueParsing(@"../../playertutorial_json.json");
+            DialogueParsing r = new DialogueParsing(@"../../sampleJSON.JSON");
             Selector s = new Selector();
 
             List<DialogueObj> responseList = s.ChooseDialog(FNC, r, currentMadeMemories);
 
-            Console.WriteLine("First String in List -> " + responseList.ElementAt(0).content);
+            Console.WriteLine("First content in List -> " + responseList.ElementAt(0).content);
+            Console.WriteLine("First context in List -> " + responseList.ElementAt(0).context[0]);
+            Console.WriteLine("First milestone in List -> " + responseList.ElementAt(0).milestone[0]);
 
             SA myGame = new SA();
             myGame.Run();
