@@ -33,8 +33,10 @@ namespace Test
 
         public void forward()
         {
-            getNext();
-            checkEnd();
+            if (currentTask == null || currentTask.IsCompleted) {
+                getNext();
+                checkEnd();
+            }
         }
         public void setPrintTime(int i)
         {
