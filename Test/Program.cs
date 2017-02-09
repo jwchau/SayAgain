@@ -18,11 +18,12 @@ namespace Test
             Loader Load = new Loader();
             Selector s = new Selector();
 
-            List<DialogueObj> responseList = s.ChooseDialog(FNC, Load.playerDialogueObj1, currentMadeMemories);
+            List<DialogueObj> responseList = s.ChooseDialog(FNC, Load.sampleDialogueObj, currentMadeMemories);
 
             Console.WriteLine("First content in List -> " + responseList.ElementAt(0).content);
             Console.WriteLine("First context in List -> " + responseList.ElementAt(0).context[0]);
             Console.WriteLine("First milestone in List -> " + responseList.ElementAt(0).milestone[0]);
+            Console.WriteLine("First target 1 in List -> " + responseList.ElementAt(0).target[0]);
 
             SA myGame = new SA();
             myGame.Run();

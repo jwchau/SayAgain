@@ -36,9 +36,9 @@ namespace Test
         public List<string> milestone { get; set; }
         public int FNC { get; set; }
         public string speaker { get; set; }
-        public List<string> target { get; set; }
+        public List<int> target { get; set; }
 
-        public DialogueObj(string newContent, List<string> newMemory, List<string> newContext, List<string> newMilestone, int newFNC, string newSpeaker, List<string> newTarget)
+        public DialogueObj(string newContent, List<string> newMemory, List<string> newContext, List<string> newMilestone, int newFNC, string newSpeaker, List<int> newTarget)
         {
             content = newContent; memory = newMemory; context = newContext; milestone = newMilestone; FNC = newFNC; speaker = newSpeaker; target = newTarget;
         }

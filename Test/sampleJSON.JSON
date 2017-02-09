@@ -5,7 +5,8 @@
     "context": [ "mom" ],
     "milestone" :  ["PlayerGainedAlexTrust","MomMadAtPlayer"],
     "FNC": 1,
-	  "Speaker":"Player"
+    "Speaker": "Player",
+    "target" :  [0,0,0]
   },
   {
 	  "content": "I have become God",
@@ -13,7 +14,9 @@
     "context": [ "mom" ],
     "milestone" :  ["PlayerGainedAlexTrust","MomMadAtPlayer"],
 	  "FNC" : 50,
-	  "Speaker":"Player"
+    "Speaker": "Player",
+    "target" :  [0,0,0]
+
   },
   {
     "content": "suh bro",
@@ -21,7 +24,9 @@
     "context": [ "mom" ],
     "milestone" :  ["PlayerGainedAlexTrust","MomMadAtPlayer"],
     "FNC": 5,
-	  "Speaker":"Player"
+    "Speaker": "Player",
+    "target" :  [0,0,0]
+
   },
   {
     "content": "I have no words...",
@@ -29,7 +34,8 @@
     "context": [ "mom" ],
     "milestone" :  ["PlayerGainedAlexTrust","MomMadAtPlayer"],
     "FNC": 0,
-	  "Speaker":"Player"
+    "Speaker": "Player",
+    "target" :  [0,0,0]
   },
   {
 	  "content": "Don't ever talk to me!",
@@ -37,7 +43,8 @@
     "context": [ "mom" ],
     "milestone" :  ["PlayerGainedAlexTrust","MomMadAtPlayer"],
 	  "FNC" : -3,
-	  "Speaker":"Player"
+	  "Speaker":"Player",
+    "target" :  [0,0,0]
   }
 
 ]
