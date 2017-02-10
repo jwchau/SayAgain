@@ -110,15 +110,10 @@ namespace Test
         public void translate(uint winx, uint winy, int x, int y)
         {
             var bounds = getRectBounds();
-            x = (int)(((double)VideoMode.DesktopMode.Width / (double)winx) * x);
-            mouseOffsetX = (int)(mouseOffsetX / ((double)VideoMode.DesktopMode.Width / (double)winx));
-            
-
-            y = (int)(((double)VideoMode.DesktopMode.Height / (double)winy) * y);
-            mouseOffsetY = (int)(mouseOffsetY / ((double)VideoMode.DesktopMode.Height / (double)winy));
-
             var newXPos = x - mouseOffsetX;
             var newYPos = y - mouseOffsetY;
+            newXPos = (int)(((double)VideoMode.DesktopMode.Width / (double)winx) * x);
+            newYPos = (int)(((double)VideoMode.DesktopMode.Height / (double)winy) * y);
 
             if (x - mouseOffsetX < 0)
             {
