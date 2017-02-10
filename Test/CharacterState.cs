@@ -10,7 +10,7 @@ namespace Test
         //fields
         private double mood;
         private double volatility;
-        private double goal;
+        //private double goal;
         double talkedTo = 0;
 
 

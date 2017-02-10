@@ -89,10 +89,12 @@ namespace Test
             return selected;
         }
 
-        public bool Contains(int mouseX, int mouseY)
+        public bool Contains(uint winx, uint winy, int mouseX, int mouseY)
         {
             FloatRect bounds = getRectBounds();
-            if (mouseX >= bounds.Left && mouseX <= bounds.Left + bounds.Width && mouseY >= bounds.Top && mouseY <= bounds.Top + bounds.Height)
+            var mathx = ((double)VideoMode.DesktopMode.Width / (double)winx) * mouseX;
+            var mathy = ((double)VideoMode.DesktopMode.Height / (double)winy) * mouseY;
+            if (mathx >= bounds.Left && mathx <= bounds.Left + bounds.Width && mathy >= bounds.Top && mathy <= bounds.Top + bounds.Height)
             {
                 return true;
             }
@@ -105,11 +107,19 @@ namespace Test
             buttonText.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
         }
 
-        public void translate(int x, int y)
+        public void translate(uint winx, uint winy, int x, int y)
         {
             var bounds = getRectBounds();
+            x = (int)(((double)VideoMode.DesktopMode.Width / (double)winx) * x);
+            mouseOffsetX = (int)(mouseOffsetX / ((double)VideoMode.DesktopMode.Width / (double)winx));
+            
+
+            y = (int)(((double)VideoMode.DesktopMode.Height / (double)winy) * y);
+            mouseOffsetY = (int)(mouseOffsetY / ((double)VideoMode.DesktopMode.Height / (double)winy));
+
             var newXPos = x - mouseOffsetX;
             var newYPos = y - mouseOffsetY;
+
             if (x - mouseOffsetX < 0)
             {
                 newXPos = 0;

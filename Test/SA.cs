@@ -14,16 +14,14 @@ namespace Test
 
     class SA : Game
     {
-
-
-        public View fullScreenView, charView;
+       
+        public View fullScreenView;
         // Character declaration
         private CharacterState Alex = new CharacterState(4.0, 6.9);
 
 
         public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?", Color.Magenta)
         {
-
             window.KeyPressed += onKeyPressed;
             window.KeyReleased += onKeyReleased;
             window.MouseButtonPressed += onMouseButtonPressed;
@@ -55,6 +53,12 @@ namespace Test
         {
 
 
+            if (e.Code == Keyboard.Key.Equal) {
+                fullScreenView = new View(new FloatRect(0, 0, 800, 600));
+                //window.SetView(new View(new FloatRect(0, 0, 800, 600)));
+               
+            }
+            
             if (e.Code == Keyboard.Key.Space)
             {
                 ui_man.SetPrintTime(0);
@@ -110,8 +114,14 @@ namespace Test
                                1, 2, 3, 4, };
             cf = new ContextFilter("school", nums);
 
-            //player manipulated sentences, 4testing
-            string test = "My name is Raman. My name is Michael. My name is John. My name is Jill. My name is Yuna. My name is Leo. My name is Koosha.";
+            startMenu = new StartMenu("start", window.Size.X, window.Size.Y);
+            settingsMenu = new StartMenu("settings");
+            pauseMenu = new StartMenu("pause");
+
+
+
+        //player manipulated sentences, 4testing
+        string test = "My name is Raman. My name is Michael. My name is John. My name is Jill. My name is Yuna. My name is Leo. My name is Koosha.";
             ui_man.produceTextBoxes(test);
 
         }
@@ -131,6 +141,8 @@ namespace Test
         protected override void Update()
         {
             ui_man.UpdateTimer(State, ManagerOfInput);
+            ManagerOfInput.winx = window.Size.X;
+            ManagerOfInput.winy = window.Size.Y;
 
 
         }
@@ -139,7 +151,7 @@ namespace Test
         {
             window.Clear(Color.Magenta);
             ui_man.DrawDialogueBox(window);
-            ui_man.DrawUI(window, State, ui_man, startMenu, pauseMenu, settingsMenu);
+            ui_man.DrawUI(window, State, startMenu, pauseMenu, settingsMenu);
 
 
         }

@@ -87,10 +87,12 @@ namespace Test
             return mouseWasIn;
         }
 
-        public bool Contains(int mouseX, int mouseY)
+        public bool Contains(uint winx, uint winy, int mouseX, int mouseY)
         {
             FloatRect bounds = getBoxBounds();
-            if (mouseX >= bounds.Left && mouseX <= bounds.Left + bounds.Width && mouseY >= bounds.Top && mouseY <= bounds.Top + bounds.Height)
+            var mathx = ((double)VideoMode.DesktopMode.Width / (double)winx) * mouseX;
+            var mathy = ((double)VideoMode.DesktopMode.Height / (double)winy) * mouseY;
+            if (mathx >= bounds.Left && mathx <= bounds.Left + bounds.Width && mathy >= bounds.Top && mathy <= bounds.Top + bounds.Height)
             {
                 return true;
             }

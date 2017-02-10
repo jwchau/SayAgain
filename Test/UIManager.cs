@@ -70,7 +70,7 @@ namespace Test
 
         }
 
-        public void DrawUI(RenderWindow window, GameState State, UIManager ui, StartMenu sta, StartMenu pau, StartMenu set) {
+        public void DrawUI(RenderWindow window, GameState State, StartMenu sta, StartMenu pau, StartMenu set) {
             //////>>>>>clearColor to magenta
             window.SetView(fullScreenView);
             if (State.GetState() == "menu") {
@@ -89,12 +89,12 @@ namespace Test
                 textBackground.FillColor = Color.Black;
                 window.Draw(textBackground);
 
-                var dialogues = ui.getPlayerDialogues();
+                var dialogues = this.getPlayerDialogues();
 
                 for (var i = 0; i < dialogues.Count; i++) {
                     window.Draw(dialogues[i]);
                 }
-                var buttons = ui.getButtons();
+                var buttons = this.getButtons();
 
                 for (var i = 0; i < buttons.Count; i++) {
                     window.Draw(buttons[i]);
@@ -139,14 +139,14 @@ namespace Test
                         // Find button currently being interacted with
                         if (buttons[i].GetSelected()) {
                             // Move the button around the screen
-                            buttons[i].translate(MouseCoord[0], MouseCoord[1]);
+                            buttons[i].translate(ManagerOfInput.winx, ManagerOfInput.winy, MouseCoord[0], MouseCoord[1]);
 
                             // Check collision with UI Textboxes
                             // Loop through UI Textboxes
                             for (var j = 0; j < playerDialogues.Count; j++) {
                                 // If the mouse just came from inside a UI Textbox
                                 if (playerDialogues[j].wasMouseIn()) {
-                                    if (!playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1])) {
+                                    if (!playerDialogues[j].Contains(ManagerOfInput.winx, ManagerOfInput.winy, MouseCoord[0], MouseCoord[1])) {
                                         // Reset the color to match its previous color
                                         playerDialogues[j].setBoxColor(playerDialogues[j].getBoxColor("prev"));
                                         // Mouse has now left the UI Textbox so set it to false
@@ -155,7 +155,7 @@ namespace Test
 
                                     // If mouse just came from outside the UI Textbox
                                 } else {
-                                    if (playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1])) {
+                                    if (playerDialogues[j].Contains(ManagerOfInput.winx, ManagerOfInput.winy, MouseCoord[0], MouseCoord[1])) {
                                         // Update previous color to current color of the UI Textbox
                                         playerDialogues[j].setPrevColor(playerDialogues[j].getBoxColor("curr"));
                                         // Update current color to selected tonal button color

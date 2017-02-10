@@ -10,7 +10,8 @@ using SFML.Window;
 namespace Test {
     class InputManager {
         public InputManager() {
-
+            winx = 0;
+            winy = 0;
         }
 
         //fields
@@ -19,6 +20,7 @@ namespace Test {
         bool MouseDown = false;
         bool MouseRelease = false;
         bool MouseMove = false;
+        public uint winx, winy;
 
         //check game and mouse pressed->set position
         public void MouseMoveCheck(string state, int x, int y) {
@@ -63,7 +65,7 @@ namespace Test {
                             var boxBounds = playerDialogues[j].getBoxBounds();
                             //change color if the button is hovering over the textbox
 
-                            if (playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1])) {
+                            if (playerDialogues[j].Contains(winx, winy, MouseCoord[0], MouseCoord[1])) {
                                 playerDialogues[j].setPrevColor(playerDialogues[j].getBoxColor("curr"));
                                 playerDialogues[j].setBoxColor(buttons[i].getTonalColor());
 
@@ -101,7 +103,7 @@ namespace Test {
             if (State.GetState() == "game") {
                 var buttons = ui.getButtons();
                 for (var i = 0; i < buttons.Count; i++) {
-                    if (buttons[i].Contains(x, y)) {
+                    if (buttons[i].Contains(winx, winy, x, y)) {
                         var bounds = buttons[i].getRectBounds();
                         buttons[i].SetMouseOffset(x - (int)bounds.Left, y - (int)bounds.Top);
                         buttons[i].SetSelected(true);
@@ -151,11 +153,11 @@ namespace Test {
         private void updateMenuState(GameState State, List<MenuButton> buttons, List<Tuple<string, string, Task>> mappings) {
             // Get Mouse Position
             var MousePos = this.GetMousePos();
-
+            
             // Loop through current menu's buttons
             for (var i = 0; i < buttons.Count; i++) {
                 // If mouse position is over current button
-                if (buttons[i].Contains(MousePos[0], MousePos[1])) {
+                if (buttons[i].Contains(winx, winy, MousePos[0], MousePos[1])) {
                     // Find what this button is suppose to do
                     for (var j = 0; j < mappings.Count; j++) {
                         // Found button being clicked

@@ -10,21 +10,40 @@ namespace Test
 {
     class StartMenu : UIElement
     {
-        public StartMenu(string type)
+        public StartMenu(string type, uint sw, uint sh)
         {
+
             this.type = type;
             if (type == "start")
             {
-                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3, "Game Start"));
-                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3 + 200, "Settings"));
+                MenuButtons.Add(new MenuButton(sw / 2, sh / 3, "Game Start"));
+                MenuButtons.Add(new MenuButton(sw / 2, sh / 3 + 200, "Settings"));
             }
             else if (type == "settings")
             {
-                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3, "8K GAMING"));
-                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3 + 200, "<- Back"));
+                MenuButtons.Add(new MenuButton(sw / 2, sh / 3, "8K GAMING"));
+                MenuButtons.Add(new MenuButton(sw / 2, sh / 3 + 200, "<- Back"));
             }
             else if (type == "pause")
             {
+                MenuButtons.Add(new MenuButton(sw / 2, sh / 3 - 100, "Back to Game"));
+                MenuButtons.Add(new MenuButton(sw / 2, sh / 3 + 100, "Settings"));
+                MenuButtons.Add(new MenuButton(sw / 2, sh / 3 + 300, "Quit"));
+            }
+            bg = new RectangleShape(new SFML.System.Vector2f(sw / 3, sh - 500));
+            bg.Position = new SFML.System.Vector2f((sw / 2) - bg.GetGlobalBounds().Width / 2, (sh / 2) - bg.GetGlobalBounds().Height / 2 - 100);
+            bg.FillColor = new Color(200, 45, 17);
+        }
+
+        public StartMenu(string type) {
+            this.type = type;
+            if (type == "start") {
+                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3, "Game Start"));
+                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3 + 200, "Settings"));
+            } else if (type == "settings") {
+                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3, "8K GAMING"));
+                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3 + 200, "<- Back"));
+            } else if (type == "pause") {
                 MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3 - 100, "Back to Game"));
                 MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3 + 100, "Settings"));
                 MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3 + 300, "Quit"));
@@ -45,6 +64,11 @@ namespace Test
             target.Draw(bg);
         }
 
+
+        public void updateScreenDim() {
+            SCREEN_WIDTH = VideoMode.DesktopMode.Width;
+            SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+        }
 
         public override void Draw(RenderTarget target, RenderStates states)
         {

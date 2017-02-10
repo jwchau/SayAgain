@@ -63,7 +63,6 @@
     <Compile Include="Loader.cs" />
     <Compile Include="ContextFilter.cs" />
     <Compile Include="GameMatrix.cs" />
-    <Compile Include="PersonState.cs" />
     <Compile Include="DramaManager.cs" />
     <Compile Include="DialogueParsing.cs" />
     <Compile Include="GameState.cs" />

@@ -9,12 +9,6 @@ namespace Test
     class Relationships : GameMatrix
     {
         public Relationships() {
-            //this.matrix = new double[3, 1];
-            //this.matrix[0, 0] = -3.0; //Alex FNC
-            //this.matrix[1, 0] = 0.0; //Mom FNC
-            //this.matrix[2, 0] = 4.0; //Dad FNC
-
-            //starting FNC at the beginning of the game
             AlexFNC = -3.0;
             MomFNC = 0.0;
             DadFNC = 4.0;
