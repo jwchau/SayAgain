@@ -23,7 +23,7 @@ namespace Test
         List<DialogueObj> responseList = new List<DialogueObj>();
         int FNC = 0;
         string currentContext = "";
-        tone currentTone = tone.Indifferent;
+        tone currentTone = tone.Root;
         List<string> currentMilestones = new List<string>();
         //currentMilestones.Add("bob");
         Loader Load = new Loader();
@@ -119,7 +119,6 @@ namespace Test
                                     //playerDialogues[k].changeDialogue(buttons[i].getNewDialogue());
                                     playerDialogues[k].setAffected(true);
                                     playerDialogues[k].setTone(buttons[i].getTone());
-                                    //playerDialogues[k].setTone(buttons[i].getUIButtonText().DisplayedString);
                                     //call updateText in resetButtons in UIManager
                                     //ui.updateText(k, buttons[i].getNewDialogue(), buttons[i].getTonalColor());
 
@@ -270,7 +269,7 @@ namespace Test
             //ui_man.produceTextBoxes2(test);
 
             // Create game timers
-            State.addTimer("game", 5, new Action(() => { wrapper(); }));
+            State.addTimer("game", 2, new Action(() => { wrapper(); }));
 
         }
 
@@ -288,13 +287,25 @@ namespace Test
         {
             if (!responseList.ElementAt(0).nextContext.Equals(""))
             {
-                currentMadeMemories.Add(responseList.ElementAt(0).context);
+                currentContext = responseList.ElementAt(0).nextContext;
             }
             currentMilestones.Add(responseList.ElementAt(0).consequence);
-            //currentTone = ;
-           // currentContext;
+            currentTone = ui_man.getTone(); 
             FNC = 0;
-            
+
+
+
+            //Console.WriteLine("tonal pre req: " + responseList.ElementAt(0).tonalPreReq);
+            ////Console.WriteLine("meermemoreis: " + responseList.ElementAt(0).memories);
+            //Console.WriteLine("context : " + responseList.ElementAt(0).context);
+            //Console.Write("milestones: ");
+            //foreach (var mstone in responseList.ElementAt(0).milestone)
+            //{
+            //    Console.Write(mstone + " , ");
+            //}
+            //Console.WriteLine("");
+            //Console.WriteLine("next context: " + responseList.ElementAt(0).nextContext);
+            //Console.WriteLine("////////////////////////////////////////////////////////////////////////");
         }
 
         protected override void Initialize()

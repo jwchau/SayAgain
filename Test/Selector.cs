@@ -8,7 +8,7 @@ namespace Test
 {
     public class Selector
     {
-        public List<DialogueObj> ChooseDialog(int fncPreReq, DialogueParsing r,List<string> memories, List<string> 
+        public List<DialogueObj> ChooseDialog(int fncPreReq, DialogueParsing r, List<string> memories, List<string>
                                               currentMilestones, tone currentTone, string currentContext)
         {
             //memory check
@@ -51,7 +51,7 @@ namespace Test
                 {
                     possibleChoices.Add(new DialogueObj(r.r.Dialogues.ElementAt(i).content,
                         r.r.Dialogues.ElementAt(i).tonalPreReq, r.r.Dialogues.ElementAt(i).context,
-                        r.r.Dialogues.ElementAt(i).consequence, r.r.Dialogues.ElementAt(i).memories, 
+                        r.r.Dialogues.ElementAt(i).consequence, r.r.Dialogues.ElementAt(i).memories,
                         r.r.Dialogues.ElementAt(i).milestone, r.r.Dialogues.ElementAt(i).fncPreReq,
                         r.r.Dialogues.ElementAt(i).speaker, r.r.Dialogues.ElementAt(i).target,
                         r.r.Dialogues.ElementAt(i).nextContext));
@@ -60,70 +60,59 @@ namespace Test
 
 
             //checks for fncPreReq requirements for whats left
+
             for (int i = 0; i < possibleChoices.Count; i++)
             {
-                if (fncPreReq == 0)
+                var ListOneNotTwo = currentMilestones.Except(possibleChoices.ElementAt(i).milestone).ToList();
+                //Console.WriteLine("i is : " + i);
+                //Console.WriteLine("possible count is : " + possibleChoices.Count);
+                if (fncPreReq == 0 && possibleChoices.ElementAt(i).fncPreReq != 0)
                 {
-                    if (possibleChoices.ElementAt(i).fncPreReq != 0)
-                    {
-                        possibleChoices.Remove(possibleChoices.ElementAt(i));
-                        i--;
-                    }
-                }
-                if (fncPreReq > 0)
-                {
-                    if (possibleChoices.ElementAt(i).fncPreReq > fncPreReq || possibleChoices.ElementAt(i).fncPreReq < 0)
-                    {
-                        possibleChoices.Remove(possibleChoices.ElementAt(i));
-                        i--;
-                    }
-                }
-                if (fncPreReq < 0)
-                {
+                    
+                    possibleChoices.Remove(possibleChoices.ElementAt(i));
+                    i--;
 
-                    if (possibleChoices.ElementAt(i).fncPreReq < fncPreReq || possibleChoices.ElementAt(i).fncPreReq > 0)
-                    {
-                        possibleChoices.Remove(possibleChoices.ElementAt(i));
-                        i--;
-                    }
                 }
-            }
+                else if (fncPreReq > 0 && possibleChoices.ElementAt(i).fncPreReq > fncPreReq || possibleChoices.ElementAt(i).fncPreReq < 0)
+                {
+                    possibleChoices.Remove(possibleChoices.ElementAt(i));
+                    i--;
 
-            //checks for milestone requirement
-            for (int i = 0; i < possibleChoices.Count; i++)
-            {
-                var ListOneNotTwo = possibleChoices.ElementAt(i).milestone.Except(currentMilestones).ToList();
-                if (ListOneNotTwo.Count != 0)
+                }
+                else if (fncPreReq < 0 && possibleChoices.ElementAt(i).fncPreReq < fncPreReq || possibleChoices.ElementAt(i).fncPreReq > 0)
                 {
                     possibleChoices.Remove(possibleChoices.ElementAt(i));
                     i--;
                 }
-            }
 
-            //checks for required tone
-            for(int i = 0; i < possibleChoices.Count; i++)
-            {
-                if (!possibleChoices[i].tonalPreReq.Equals(currentTone.ToString())) {
-                    possibleChoices.Remove(possibleChoices.ElementAt(i));
-                    i--;
-                }
-            }
-
-
-            for (int i = 0; i < possibleChoices.Count; i++)
-            {
-                if (!possibleChoices[i].context.Equals(currentContext))
+                //checks for milestone requirement
+                
+                else if (ListOneNotTwo.Count != 0)
                 {
                     possibleChoices.Remove(possibleChoices.ElementAt(i));
                     i--;
                 }
+
+                //checks for required tone
+                else if (!possibleChoices[i].tonalPreReq.Equals(currentTone.ToString()))
+                {
+                    possibleChoices.Remove(possibleChoices.ElementAt(i));
+                    i--;
+                }
+
+                //checks current context
+                else if (!possibleChoices[i].context.Equals(currentContext))
+                {
+                    possibleChoices.Remove(possibleChoices.ElementAt(i));
+                    i--;
+                }
+
             }
 
             //sends results or returns empty value
             if (possibleChoices.Count == 0)
             {
                 possibleChoices.Add(new DialogueObj());
-                possibleChoices.ElementAt(0).content = "returned empty string";
 
             }
 

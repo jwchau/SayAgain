@@ -46,7 +46,18 @@ namespace Test
             content = newContent; tonalPreReq = newTonalPreReq; context = newContext; consequence = newConsequence; memories = newMemories; milestone = newMilestone; fncPreReq = newFncPreReq; speaker = newSpeaker; target = newTarget; nextContext = newNextContext;
         }
 
-        public DialogueObj() { }
+        public DialogueObj() {
+            content = "returned empty string";
+            tonalPreReq = "";
+            context = "";
+            consequence = "";
+            nextContext = "Greetings";
+            memories = new List<string>();
+            milestone = new List<string>();
+            memories.Add("");
+            milestone.Add("");
+            
+        }
         ~DialogueObj() { }
     }
 

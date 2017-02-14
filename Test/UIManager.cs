@@ -161,9 +161,10 @@ namespace Test
             bool gotTone = false;
             tone Tone = tone.Root;
 
-            Console.WriteLine("First content in List -> " + responseList.ElementAt(0).content);
-            Console.WriteLine("First context in List -> " + responseList.ElementAt(0).context);
-            Console.WriteLine("First milestone in List -> " + responseList.ElementAt(0).milestone[0]);
+            //Console.WriteLine("First content in List -> " + responseList.ElementAt(0).content);
+            //Console.WriteLine("First context in List -> " + responseList.ElementAt(0).context);
+            
+            //Console.WriteLine("First milestone in List -> " + responseList.ElementAt(0).milestone[0]);
             //Console.WriteLine("First target 1 in List -> " + responseList.ElementAt(0).target);
 
 
