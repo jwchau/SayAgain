@@ -25,11 +25,13 @@ namespace Test
 
         //User Inferface Manager
         protected UIManager ui_man = new UIManager();
+        protected List<UIButton> buttons;
 
         //Menus
         protected Menu startMenu = new Menu("start");
         protected Menu settingsMenu = new Menu("settings");
         protected Menu pauseMenu = new Menu("pause");
+        protected List<Menu> menus = new List<Menu>();
 
         //Matrices
         protected ToneEffects tfx = new ToneEffects();
@@ -41,10 +43,22 @@ namespace Test
 
         //Character States
         protected CharacterState Alex, Mom, Dad;
+
         //Jill's fields and variables
         protected DialogueBox dialogueBox;
         protected Boolean init;
         protected View fullScreenView, scrollview;
+
+    #region AI_FIELDS
+        protected List<string> currentMadeMemories = new List<string>();
+        protected List<DialogueObj> responseList = new List<DialogueObj>();
+        protected List<string> currentMilestones = new List<string>();
+        protected int FNC = 0;
+        protected string currentContext = "";
+        protected tone currentTone = tone.Root;
+        protected Loader Load = new Loader();
+        protected Selector s = new Selector();
+    #endregion
 
         /////////////////////////////////////////////////////////////////////////////////////////////
 

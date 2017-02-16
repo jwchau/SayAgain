@@ -119,7 +119,11 @@ namespace Test
             return false;
         }
 
-
+        #region InputManager_targetCheck
+        public void targetCheck(int x, int y) {
+            if (this.Contains(x, y)) this.setTargets(this.who);
+        }
+        #endregion
 
     }
 }
