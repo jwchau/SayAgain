@@ -9,19 +9,13 @@ using SFML.Window;
 using SFML.System;
 using System.Drawing;
 
-namespace Test
-{
-
-    class SA : Game
-    {
-       
-        public View fullScreenView;
-        // Character declaration
-        private CharacterState Alex = new CharacterState(4.0, 6.9);
+namespace Test {
 
 
-        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?", Color.Magenta)
-        {
+
+    class SA : Game {
+        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?", Color.Magenta) {
+
             window.KeyPressed += onKeyPressed;
             window.KeyReleased += onKeyReleased;
             window.MouseButtonPressed += onMouseButtonPressed;
@@ -30,128 +24,238 @@ namespace Test
 
         }
 
-        private void onMouseMoved(object sender, MouseMoveEventArgs e)
-        {
-            ManagerOfInput.MouseMoveCheck(State.GetState(), e.X, e.Y);
+        private void onMouseMoved(object sender, MouseMoveEventArgs e) {
+            ManagerOfInput.OnMouseMoved(State, e.X, e.Y);
+
         }
 
-        private void onMouseButtonReleased(object sender, MouseButtonEventArgs e)
-        {
-            ManagerOfInput.MouseReleasedCheck(State.GetState(), ui_man, tfx, cf);
+        private void onMouseButtonReleased(object sender, MouseButtonEventArgs e) {
+
+            ManagerOfInput.onMouseButtonReleased();
+
+            ManagerOfInput.checkTargets(State, Alex, Mom, Dad);
+
+            ui_man.applyTones(e.X, e.Y);
         }
 
-        private void onMouseButtonPressed(object sender, MouseButtonEventArgs e)
-        {
-            ManagerOfInput.MouseClickedCheck(State, ui_man, startMenu, pauseMenu, settingsMenu, e.X, e.Y);
+        private void onMouseButtonPressed(object sender, MouseButtonEventArgs e) {
+
+            ManagerOfInput.onMouseButtonPressed(e.X, e.Y);
+
+            ManagerOfInput.GamePlay(State, buttons, e.X, e.Y);
+
+            ManagerOfInput.MenuPlay(State, menus, e.X, e.Y);
         }
 
-        private void onKeyReleased(object sender, KeyEventArgs e)
-        {
+        private void onKeyReleased(object sender, KeyEventArgs e) {
         }
 
-        private void onKeyPressed(object sender, KeyEventArgs e)
-        {
+        private void onKeyPressed(object sender, KeyEventArgs e) {
 
 
-            if (e.Code == Keyboard.Key.Equal) {
-                fullScreenView = new View(new FloatRect(0, 0, 800, 600));
-                //window.SetView(new View(new FloatRect(0, 0, 800, 600)));
-               
+            if (e.Code == Keyboard.Key.Space) {
+                dialogueBox.setPrintTime(0);
             }
-            
-            if (e.Code == Keyboard.Key.Space)
-            {
-                ui_man.SetPrintTime(0);
-            }
-
 
             if (e.Code == Keyboard.Key.N) {
+                dialogueBox.checkNext();
+            }
 
-                ui_man.DialogueNext();
+            if (e.Code == Keyboard.Key.P) {
+                // Toggles game state between game and pause
+                State.TogglePause();
 
             }
 
-            if (e.Code == Keyboard.Key.P)
-            {
-                ManagerOfInput.PKeyCheck(State);
+            if (e.Code == Keyboard.Key.A || e.Code == Keyboard.Key.M || e.Code == Keyboard.Key.D) {
+                init = true;
+                dialogueBox.createCharacterDB(e);
             }
-
-
-
-            if (e.Code == Keyboard.Key.D)
-            {
-                //init = true;
-                ui_man.setDialogueBoxPos(new FloatRect(0.0f, 0f, 0.35f, 0.2f));
-                ui_man.RenderDialogue("whos ur daddy im ur daddy whos ur daddy im ur daddy " +
-                    "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
-                    "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
-                    "whos ur daddy im ur daddy whos ur daddy im ur daddy ", "Dad");
-            }
-
-
-
-            if (e.Code == Keyboard.Key.A)
-            {
-                ui_man.setDialogueBoxPos(new FloatRect(0.3f, 0f, 0.35f, 0.2f));
-                ui_man.RenderDialogue("im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis ", "Alex");
-            }
-
-
-            if (e.Code == Keyboard.Key.M)
-            {
-                ui_man.setDialogueBoxPos(new FloatRect(0.63f, 0f, 0.35f, 0.2f));
-                ui_man.RenderDialogue("mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom mushroom mom ", "Mom");
-            }
-
         }
 
+        protected override void LoadContent() {
+
+            // Create Character states
+            Alex = new CharacterState("alex");
+            Mom = new CharacterState("mom");
+            Dad = new CharacterState("dad");
 
 
-        protected override void LoadContent()
-        {
+            currentMadeMemories.Add("");
+            currentMilestones.Add("");
+
+            // Test nums for a "school" context
             double[] nums = { -1, 2, 3, 4,
                                1, 2, 3, 4,
                                1, 2, 3, 4, };
+            // Initialize cf to new context
             cf = new ContextFilter("school", nums);
 
-            startMenu = new StartMenu("start", window.Size.X, window.Size.Y);
-            settingsMenu = new StartMenu("settings");
-            pauseMenu = new StartMenu("pause");
 
 
+            responseList = s.ChooseDialog(FNC, Load.sampleDialogueObj, currentMadeMemories, currentMilestones, currentTone, currentContext);
 
-        //player manipulated sentences, 4testing
-        string test = "My name is Raman. My name is Michael. My name is John. My name is Jill. My name is Yuna. My name is Leo. My name is Koosha.";
-            ui_man.produceTextBoxes(test);
+
+            string FirstDialogue = responseList[0].content;
+            //Console.WriteLine("First Line: " +FirstDialogue);
+            ui_man.produceTextBoxes2(FirstDialogue);
+
+
+            //player manipulated sentences, 4testing
+            string test = "my name is raman! my name is michael. my name is john? my name is jill. my name is yuna. my name is leo. my name is koosha.";
+            //ui_man.produceTextBoxes2(test);
+
+            // Create game timers
+            State.addTimer("game", 2, new Action(() => { wrapper(); }));
 
         }
 
-        protected override void Initialize()
-        {
+        private void wrapper() {
+            //update currentmademeories, currentmilestones, currenttone, currentcontext
+            updateCurrents();
+            responseList = s.ChooseDialog(FNC, Load.sampleDialogueObj, currentMadeMemories, currentMilestones, currentTone, currentContext);
+            ui_man.reset(Alex, Mom, Dad, responseList);
+            //ui_man.reset(Alex, Mom, Dad, responseList, currentMadeMemories, Load.sampleDialogueObj);
+        }
+
+        //after timer runs out update the current stuff
+        private void updateCurrents() {
+            if (!responseList.ElementAt(0).nextContext.Equals("")) {
+                currentContext = responseList.ElementAt(0).nextContext;
+            }
+            currentMilestones.Add(responseList.ElementAt(0).consequence);
+            currentTone = ui_man.getTone();
+            FNC = 0;
+        }
+
+        protected override void Initialize() {
             /*Texture texture;
             FileStream f = new FileStream("../../Art/angrymom.png", FileMode.Open);
             texture = new Texture(f);*/
             fullScreenView = window.DefaultView;
             fullScreenView.Viewport = new FloatRect(0, 0, 1, 1);
             window.SetView(fullScreenView);
-            ui_man.setDialogueBox();
-            ui_man.setViews(fullScreenView);
+            dialogueBox = new DialogueBox(0, 0, 710, 150);
+
+
+            buttons = ui_man.getButtons();
+            menus.Add(startMenu); menus.Add(settingsMenu); menus.Add(pauseMenu);
         }
 
-        protected override void Update()
-        {
-            ui_man.UpdateTimer(State, ManagerOfInput);
-            ManagerOfInput.winx = window.Size.X;
-            ManagerOfInput.winy = window.Size.Y;
+        protected override void Update() {
+            if (State.GetState() == "game") {
+                // Update the game timerz
+                State.updateTimerz();
+
+                // Get the current UI Textboxes from the UI Manager
+                var playerDialogues = ui_man.getPlayerDialogues();
+
+                // Get the mouse coordinates from Input Manager
+                var MouseCoord = ManagerOfInput.GetMousePos();
+
+                // If the mouse is currently dragging
+                if (ManagerOfInput.GetMouseDown()) {
+                    // Get tonal buttons from UI Manager
+                    var buttons = ui_man.getButtons();
+
+                    // Loop through buttons
+                    for (var i = 0; i < buttons.Count; i++) {
+                        // Find button currently being interacted with
+                        if (buttons[i].GetSelected()) {
+                            // Move the button around the screen
+                            buttons[i].translate(MouseCoord[0], MouseCoord[1]);
+
+                            // Check collision with UI Textboxes
+                            // Loop through UI Textboxes
+                            for (var j = 0; j < playerDialogues.Count; j++) {
+                                // If the mouse just came from inside a UI Textbox
+                                if (playerDialogues[j].wasMouseIn()) {
+                                    if (!playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1])) {
+                                        // Mouse has now left the UI Textbox so set it to false
+                                        playerDialogues[j].setMouseWasIn(false);
+                                        // Reset the color to match its previous color
+                                        playerDialogues[j].setBoxColor(playerDialogues[j].getBoxColor("prev"));
+                                        // Update the rest of the buttons in the cluster
+                                        ui_man.updateClusterColors(playerDialogues[j], playerDialogues, playerDialogues[j].getBoxColor("prev"), false);
+                                    }
+
+                                    // If mouse just came from outside the UI Textbox
+                                } else {
+                                    if (playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1])) {
+                                        // Mouse is now inside a UI Textbox, so set it to true
+                                        playerDialogues[j].setMouseWasIn(true);
+                                        // Update previous color to current color of the UI Textbox
+                                        playerDialogues[j].setPrevColor(playerDialogues[j].getBoxColor("curr"));
+                                        // Update current color to selected tonal button color
+                                        playerDialogues[j].setBoxColor(buttons[i].getTonalColor());
+                                        // Update the rest of the buttons in the cluster
+                                        ui_man.updateClusterColors(playerDialogues[j], playerDialogues, buttons[i].getTonalColor(), true);
+                                    }
+                                }
+
+                            }
+
+                        }
+                    }
+
+                }
+
+            } else if (State.GetState() == "pause") {
+                State.getGameTimer("game").PauseTimer();
+
+            }
 
 
         }
 
-        protected override void Draw()
-        {
-            window.Clear(Color.Magenta);
-            ui_man.DrawDialogueBox(window);
-            ui_man.DrawUI(window, State, startMenu, pauseMenu, settingsMenu);
+        protected override void Draw() {
+            window.Clear(clearColor);
+            if (init) {
+                window.Draw(dialogueBox);
+
+            }
+            window.SetView(fullScreenView);
+            if (State.GetState() == "menu") {
+                if (State.GetMenuState() == "start") {
+                    window.Draw(startMenu);
+                } else {
+                    window.Draw(settingsMenu);
+                }
+
+
+            } else {
+                //Draw text box background box
+                RectangleShape textBackground = new RectangleShape(new Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT / 5));
+                textBackground.Position = new Vector2f(0, SCREEN_HEIGHT - (SCREEN_HEIGHT / 5));
+                textBackground.FillColor = Color.Black;
+                window.Draw(textBackground);
+
+                var dialogues = ui_man.getPlayerDialogues();
+
+                for (var i = 0; i < dialogues.Count; i++) {
+                    window.Draw(dialogues[i]);
+                }
+                var buttons = ui_man.getButtons();
+
+                for (var i = 0; i < buttons.Count; i++) {
+                    window.Draw(buttons[i]);
+                }
+
+                window.Draw(Alex);
+                window.Draw(Mom);
+                window.Draw(Dad);
+
+                if (State.GetState() == "pause") {
+                    pauseMenu.DrawBG(window);
+                    if (State.GetMenuState() == "pause") {
+                        window.Draw(pauseMenu);
+                    } else if (State.GetMenuState() == "settings") {
+                        window.Draw(pauseMenu);
+                    }
+
+                }
+                window.Draw(State.getGameTimer("game")); //this is the timer circle
+            }
 
 
         }

@@ -21,8 +21,8 @@ namespace Test
         public RectangleShape box;
         public RectangleShape nameBox;
         Task currentTask;
-        CancellationTokenSource cts;
-        Text[] arr = {};
+        CancellationTokenSource cts ;
+        Text[] arr;
         public int printTime;
         public bool active = false;
         int elementIndex = 0;
@@ -33,10 +33,8 @@ namespace Test
 
         public void forward()
         {
-            if (currentTask == null || currentTask.IsCompleted) {
-                getNext();
-                checkEnd();
-            }
+            getNext();
+            checkEnd();
         }
         public void setPrintTime(int i)
         {
@@ -46,7 +44,7 @@ namespace Test
         {
             return elementIndex;
         }
-
+            
         public int getArrLength()
         {
             return arr.Length;
@@ -55,22 +53,22 @@ namespace Test
 
         public void checkEnd()
         {
-            if (getElementIndex() >= getArrLength())
+            if (arr != null && elementIndex == arr.Length)
             {
-                active = false;
+               active = false;
             }
         }
 
         public void getNext()
         {
-            elementIndex += 1;
-            if (elementIndex < arr.Length)
+            if (arr != null && elementIndex < arr.Length)
             {
                 if (cts != null)
                 {
                     cts.Cancel();
                 }
                 cts = new CancellationTokenSource();
+                elementIndex += 1;
                 currentTask = Task.Run(async () =>
                 { //Task.Run puts on separate thread
                     printTime = 60;
@@ -78,6 +76,37 @@ namespace Test
                 }, cts.Token);
             }
         }
+
+        public void checkNext()
+        {
+            getNext();
+            checkEnd();
+        }
+
+        public void createCharacterDB(KeyEventArgs e)
+        {
+            if (e.Code == Keyboard.Key.A)
+            {
+                view.Viewport = new FloatRect(0.3f, 0f, 0.35f, 0.2f);
+                renderDialogue("im alexis im alexis im alexis im alexis im alexis im " + 
+                    "alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis " + 
+                    "im alexis im alexis im alexis im alexis im alexis im alexis ", "Alex");
+
+            } else if (e.Code == Keyboard.Key.M)
+            {
+                view.Viewport = new FloatRect(0.63f, 0f, 0.35f, 0.2f);
+                renderDialogue("mushroom mom mushroom mom mushroom mom mushroom mom mushroom" + 
+                    " mom mushroom mom mushroom mom mushroom mom mushroom mom ", "Mom");
+            } else if (e.Code == Keyboard.Key.D)
+            {
+                view.Viewport = new FloatRect(0.0f, 0f, 0.35f, 0.2f);
+                renderDialogue("whos ur daddy im ur daddy whos ur daddy im ur daddy " +
+                    "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
+                    "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
+                    "whos ur daddy im ur daddy whos ur daddy im ur daddy ", "Dad");
+            }
+        }
+
         public void renderDialogue(String s, String speaker)
         {
             active = true;
@@ -115,7 +144,7 @@ namespace Test
                 float wordSizeWithSpace = t.GetGlobalBounds().Width;
                 if (currentLineWidth + wordSizeWithSpace > maxw)
                 {
-
+    
                     line.DisplayedString += "\n";
                     currentLineWidth = 0;
                     if (line.GetGlobalBounds().Height > maxh)
@@ -139,7 +168,7 @@ namespace Test
             {
                 Console.WriteLine(list[i]);
             }
-
+            
             return list.ToArray();
 
         }
@@ -218,7 +247,7 @@ namespace Test
             this.w = width;
             this.h = height;
 
-
+            
             box = new RectangleShape(new Vector2f(this.w, this.h));
             box.Position = new Vector2f(this.x - 40, this.y + 35);
             box.OutlineThickness = 3;
@@ -236,5 +265,5 @@ namespace Test
 
 
     }
-
+    
 }

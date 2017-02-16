@@ -9,7 +9,7 @@ namespace Test
     public class Loader
     {
         //Creates and loads Json Objects
-        public DialogueParsing playerDialogueObj1 = new DialogueParsing(@"../../playertutorial_json.json");
+        public DialogueParsing playerDialogueObj1 = new DialogueParsing(@"../../playerTutorial.json");
         public DialogueParsing alexDialogueObj1 = new DialogueParsing(@"../../alextutorial_json.json");
         public DialogueParsing sampleDialogueObj = new DialogueParsing(@"../../sampleJSON.JSON");
 
