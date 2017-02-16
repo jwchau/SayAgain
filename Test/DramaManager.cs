@@ -12,10 +12,9 @@ namespace Test {
             Dad = new CharacterState("mad");
         }
 
-        //shouldnt be public, will fix
-        public CharacterState Alex;
-        public CharacterState Mom;
-        public CharacterState Dad;
+        private CharacterState Alex;
+        private CharacterState Mom;
+        private CharacterState Dad;
 
         List<GameMatrix> matrices = new List<GameMatrix>();
 

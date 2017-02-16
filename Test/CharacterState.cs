@@ -103,7 +103,7 @@ namespace Test
         public Relationships getCharacterFNC() {
             return characterFNC;
         }
-
+        
         ///lol wat, turnary ?
         public void Draw(RenderTarget target, RenderStates states) {
             target.Draw(characterRect);

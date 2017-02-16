@@ -21,7 +21,7 @@ namespace Test {
         bool MouseMove = false;
 
         /////////////////////////////////////////////////BUILT-IN
-        public void SetMousePos(int x, int y) {
+        private void SetMousePos(int x, int y) {
             MouseX = x;
             MouseY = y;
         }
@@ -30,7 +30,7 @@ namespace Test {
             return new int[] { MouseX, MouseY };
         }
 
-        public void SetMouseDown(bool value) {
+        private void SetMouseDown(bool value) {
             MouseDown = value;
         }
 
@@ -38,24 +38,24 @@ namespace Test {
             return MouseDown;
         }
 
-        public void SetMouseRelease(bool value) {
+        private void SetMouseRelease(bool value) {
             MouseRelease = value;
         }
 
-        public bool GetMouseRelease() {
+        private bool GetMouseRelease() {
             return MouseRelease;
         }
 
-        public void SetMouseMove(bool value) {
+        private void SetMouseMove(bool value) {
             MouseMove = value;
         }
 
-        public bool GetMouseMove() {
+        private bool GetMouseMove() {
             return MouseMove;
         }
 
         private void printMouseStuff() {
-            Console.WriteLine(MouseDown + ", " + MouseMove + ", " + MouseRelease);
+            //Console.WriteLine(MouseDown + ", " + MouseMove + ", " + MouseRelease);
         }
 
         private bool CheckCollision(FloatRect bounds) {
@@ -77,10 +77,7 @@ namespace Test {
             }
         }
         #endregion
-
-        //SA: onMouseButtonReleased
-
-
+       
         #region SA_onMouseButtonReleased
         public void onMouseButtonReleased() {
             this.SetMouseMove(false);
@@ -95,6 +92,7 @@ namespace Test {
                 d.getAlex().targetCheck(MouseX, MouseY);
                 d.getMom().targetCheck(MouseX, MouseY);
                 d.getDad().targetCheck(MouseX, MouseY);
+
             }
         }
         #endregion

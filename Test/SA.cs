@@ -72,7 +72,7 @@ namespace Test {
                 dialogueBox.createCharacterDB(e);
             }
         }
-
+        
         #region Timer Action Placeholder
         public void TimerAction() {
             //update currentmademeories, currentmilestones, currenttone, currentcontext
@@ -81,7 +81,6 @@ namespace Test {
             ui_man.reset(D_Man, responseList);
             //ui_man.reset(Alex, Mom, Dad, responseList, currentMadeMemories, Load.sampleDialogueObj);
         }
-
         //after timer runs out update the current stuff
         private void updateCurrents() {
             if (!responseList.ElementAt(0).nextContext.Equals("")) {
@@ -129,8 +128,6 @@ namespace Test {
 
                 // If the mouse is currently dragging
                 if (ManagerOfInput.GetMouseDown()) {
-                    // Get tonal buttons from UI Manager
-                    //var buttons = ui_man.getButtons();
 
                     // Loop through buttons
                     for (var i = 0; i < buttons.Count; i++) {
@@ -214,7 +211,6 @@ namespace Test {
                 for (var i = 0; i < buttons.Count; i++) {
                     window.Draw(buttons[i]);
                 }
-
                 window.Draw(D_Man.getAlex());
                 window.Draw(D_Man.getMom());
                 window.Draw(D_Man.getDad());
@@ -230,7 +226,6 @@ namespace Test {
                 }
                 window.Draw(State.getGameTimer("game")); //this is the timer circle
             }
-
 
         }
     }

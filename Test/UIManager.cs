@@ -46,11 +46,11 @@ namespace Test {
         }
 
         public List<UITextBox> produceTextBoxes2(string Dialogue) {
-            Console.WriteLine("AM I HERE????");
+            //Console.WriteLine("AM I HERE????");
             dialogueArray = Dialogue.Split('.', '!', '?');
             //dialogue Array now holds all the sentences
             foreach (var dialogue in dialogueArray) {
-                Console.WriteLine(dialogue);
+                //Console.WriteLine(dialogue);
             }
 
             List<string> words = new List<string>();
@@ -66,7 +66,7 @@ namespace Test {
             for (int i = 0; i < length; i++) {
                 dialogueArray[i] += ".";
                 string[] temp = dialogueArray[i].Split(' '); //my name is Raman. //1 cluster
-                Console.WriteLine(temp);
+                //Console.WriteLine(temp);
                 for (int j = 0; j < temp.Length; j++) {
 
                     string word = temp[j].Trim();
@@ -83,7 +83,6 @@ namespace Test {
             uint y = SCREEN_HEIGHT - ((SCREEN_HEIGHT / 5)) + 5;
             for (int word = 0; word < words.Count; word++) {
                 string tempString = baseString;
-
                 Font tempFont = new Font("../../Fonts/Adore64.ttf");
                 //Console.WriteLine(words[word]);
 
@@ -138,7 +137,7 @@ namespace Test {
             tone Tone = tone.Root;
             foreach (var dialogue in playerDialogues) {
                 if (dialogue.getAffected() && !gotTone) {
-                    Console.WriteLine(dialogue.getTone());
+                    //Console.WriteLine(dialogue.getTone());
                     Tone = dialogue.getTone();
                     gotTone = true;
                 }
@@ -148,7 +147,6 @@ namespace Test {
                 dialogue.setPrevColor(Color.Red);
                 dialogue.setTone(tone.Root);
             }
-
             if (responseList.ElementAt(0).nextContext != "") {
                 playerDialogues = produceTextBoxes2(responseList.ElementAt(0).content);
             }
@@ -189,7 +187,6 @@ namespace Test {
                     var playerDialogues = this.getPlayerDialogues();
 
                     for (var j = 0; j < playerDialogues.Count; j++) {
-
                         var boxBounds = playerDialogues[j].getBoxBounds();
                         //change color if the button is hovering over the textbox
 

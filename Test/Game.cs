@@ -52,7 +52,7 @@ namespace Test
         protected Boolean init;
         protected View fullScreenView, scrollview;
 
-    #region AI_FIELDS
+        #region AI_FIELDS
         protected List<string> currentMadeMemories = new List<string>();
         protected List<DialogueObj> responseList = new List<DialogueObj>();
         protected List<string> currentMilestones = new List<string>();
@@ -69,13 +69,14 @@ namespace Test
 
         public Game(uint width, uint height, string title, Color clearColor)
         {
-            window = new RenderWindow(new VideoMode(width, height), title, Styles.Default);
+            window = new RenderWindow(new VideoMode(width, height), title, Styles.Close);
             this.clearColor = clearColor;
 
             // Set-up Events
             window.Closed += onClosed;
             window.KeyPressed += onKeyPressed;
             window.Resized += onResized;
+
         }
 
         public void Run()
