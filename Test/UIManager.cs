@@ -133,20 +133,9 @@ namespace Test {
             return playerDialogues;
         }
 
-        public void reset(CharacterState Alex, CharacterState Mom, CharacterState Dad, List<DialogueObj> responseList) {
-
-            ////we need to see what tones got dragged
-            ////do matrix operations to spit out FNC
+        public void reset(DramaManager D_Man, List<DialogueObj> responseList) {
             bool gotTone = false;
             tone Tone = tone.Root;
-
-            //Console.WriteLine("First content in List -> " + responseList.ElementAt(0).content);
-            //Console.WriteLine("First context in List -> " + responseList.ElementAt(0).context);
-
-            //Console.WriteLine("First milestone in List -> " + responseList.ElementAt(0).milestone[0]);
-            //Console.WriteLine("First target 1 in List -> " + responseList.ElementAt(0).target);
-
-
             foreach (var dialogue in playerDialogues) {
                 if (dialogue.getAffected() && !gotTone) {
                     Console.WriteLine(dialogue.getTone());
@@ -163,14 +152,6 @@ namespace Test {
             if (responseList.ElementAt(0).nextContext != "") {
                 playerDialogues = produceTextBoxes2(responseList.ElementAt(0).content);
             }
-
-
-            int FNC = 0;
-
-            // responseList = s.ChooseDialog(FNC, sampleJSON, currentMadeMemories, currentMilestones, tone.Blunt, ElementAt(0).nextContext);
-            //List<DialogueObj> responseList = s.ChooseDialog(0, r, currentMadeMemories);
-            //string newDialogue = responseList.ElementAt(0).content;
-            //Console.WriteLine(newDialogue);
         }
 
         public tone getTone() {

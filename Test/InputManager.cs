@@ -90,11 +90,11 @@ namespace Test {
         #endregion
 
         #region SA_checkTargets
-        public void checkTargets(GameState State, CharacterState Alex, CharacterState Mom, CharacterState Dad) {
+        public void checkTargets(GameState State, DramaManager d) {
             if (State.GetState() == "game") {
-                Alex.targetCheck(MouseX, MouseY);
-                Mom.targetCheck(MouseX, MouseY);
-                Dad.targetCheck(MouseX, MouseY);
+                d.getAlex().targetCheck(MouseX, MouseY);
+                d.getMom().targetCheck(MouseX, MouseY);
+                d.getDad().targetCheck(MouseX, MouseY);
             }
         }
         #endregion

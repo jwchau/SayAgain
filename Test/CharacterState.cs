@@ -13,9 +13,9 @@ namespace Test
     class CharacterState: Drawable{
         //fields
         private string who;
-        private double mood;
-        private double volatility;
-        private double goal;
+        //private double mood;
+        //private double volatility;
+        //private double goal;
         double talkedTo = 0;
         static bool[] targets = { false,false,false }; // 0 = alex 1 = mom 2 = dad
         static Relationships characterFNC = new Relationships();
@@ -104,6 +104,7 @@ namespace Test
             return characterFNC;
         }
 
+        ///lol wat, turnary ?
         public void Draw(RenderTarget target, RenderStates states) {
             target.Draw(characterRect);
             if (targets[(who == "alex" ? 0 : who == "mom" ? 1 : 2)]) target.Draw(targeted);

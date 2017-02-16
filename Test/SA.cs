@@ -33,7 +33,7 @@ namespace Test {
 
             ManagerOfInput.onMouseButtonReleased();
 
-            ManagerOfInput.checkTargets(State, Alex, Mom, Dad);
+            ManagerOfInput.checkTargets(State, D_Man);
 
             ui_man.applyTones(e.X, e.Y);
         }
@@ -73,48 +73,12 @@ namespace Test {
             }
         }
 
-        protected override void LoadContent() {
-
-            // Create Character states
-            Alex = new CharacterState("alex");
-            Mom = new CharacterState("mom");
-            Dad = new CharacterState("dad");
-
-
-            currentMadeMemories.Add("");
-            currentMilestones.Add("");
-
-            // Test nums for a "school" context
-            double[] nums = { -1, 2, 3, 4,
-                               1, 2, 3, 4,
-                               1, 2, 3, 4, };
-            // Initialize cf to new context
-            cf = new ContextFilter("school", nums);
-
-
-
-            responseList = s.ChooseDialog(FNC, Load.sampleDialogueObj, currentMadeMemories, currentMilestones, currentTone, currentContext);
-
-
-            string FirstDialogue = responseList[0].content;
-            //Console.WriteLine("First Line: " +FirstDialogue);
-            ui_man.produceTextBoxes2(FirstDialogue);
-
-
-            //player manipulated sentences, 4testing
-            string test = "my name is raman! my name is michael. my name is john? my name is jill. my name is yuna. my name is leo. my name is koosha.";
-            //ui_man.produceTextBoxes2(test);
-
-            // Create game timers
-            State.addTimer("game", 2, new Action(() => { wrapper(); }));
-
-        }
-
-        private void wrapper() {
+        #region Timer Action Placeholder
+        public void TimerAction() {
             //update currentmademeories, currentmilestones, currenttone, currentcontext
             updateCurrents();
             responseList = s.ChooseDialog(FNC, Load.sampleDialogueObj, currentMadeMemories, currentMilestones, currentTone, currentContext);
-            ui_man.reset(Alex, Mom, Dad, responseList);
+            ui_man.reset(D_Man, responseList);
             //ui_man.reset(Alex, Mom, Dad, responseList, currentMadeMemories, Load.sampleDialogueObj);
         }
 
@@ -127,16 +91,26 @@ namespace Test {
             currentTone = ui_man.getTone();
             FNC = 0;
         }
+        #endregion
 
         protected override void Initialize() {
             /*Texture texture;
             FileStream f = new FileStream("../../Art/angrymom.png", FileMode.Open);
             texture = new Texture(f);*/
+
+            //Originally in LoadContent/////////////////////////////////////////////////////////////////////////////////
+            currentMadeMemories.Add("");
+            currentMilestones.Add("");
+            responseList = s.ChooseDialog(FNC, Load.sampleDialogueObj, currentMadeMemories, currentMilestones, currentTone, currentContext);
+            string FirstDialogue = responseList[0].content;
+            ui_man.produceTextBoxes2(FirstDialogue);
+            State.addTimer("game", 2, new Action(() => { TimerAction(); }));
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
             fullScreenView = window.DefaultView;
             fullScreenView.Viewport = new FloatRect(0, 0, 1, 1);
             window.SetView(fullScreenView);
             dialogueBox = new DialogueBox(0, 0, 710, 150);
-
 
             buttons = ui_man.getButtons();
             menus.Add(startMenu); menus.Add(settingsMenu); menus.Add(pauseMenu);
@@ -156,7 +130,7 @@ namespace Test {
                 // If the mouse is currently dragging
                 if (ManagerOfInput.GetMouseDown()) {
                     // Get tonal buttons from UI Manager
-                    var buttons = ui_man.getButtons();
+                    //var buttons = ui_man.getButtons();
 
                     // Loop through buttons
                     for (var i = 0; i < buttons.Count; i++) {
@@ -241,9 +215,9 @@ namespace Test {
                     window.Draw(buttons[i]);
                 }
 
-                window.Draw(Alex);
-                window.Draw(Mom);
-                window.Draw(Dad);
+                window.Draw(D_Man.getAlex());
+                window.Draw(D_Man.getMom());
+                window.Draw(D_Man.getDad());
 
                 if (State.GetState() == "pause") {
                     pauseMenu.DrawBG(window);

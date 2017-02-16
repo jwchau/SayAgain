@@ -42,7 +42,10 @@ namespace Test
         static protected Font Adore64 = new Font(new FileStream("../../Fonts/Adore64.ttf", FileMode.Open));
 
         //Character States
-        protected CharacterState Alex, Mom, Dad;
+        // Deprecated: protected CharacterState Alex, Mom, Dad;
+        // Replaced with DramaManager that holds each characterstate
+        protected DramaManager D_Man = new DramaManager();
+
 
         //Jill's fields and variables
         protected DialogueBox dialogueBox;
@@ -66,17 +69,17 @@ namespace Test
 
         public Game(uint width, uint height, string title, Color clearColor)
         {
-            window = new RenderWindow(new VideoMode(width, height), title, Styles.Close);
+            window = new RenderWindow(new VideoMode(width, height), title, Styles.Default);
             this.clearColor = clearColor;
 
             // Set-up Events
             window.Closed += onClosed;
             window.KeyPressed += onKeyPressed;
+            window.Resized += onResized;
         }
 
         public void Run()
         {
-            LoadContent();
             Initialize();
 
             while (window.IsOpen)
@@ -89,10 +92,14 @@ namespace Test
             }
         }
 
-        protected abstract void LoadContent();
+        //protected abstract void LoadContent();
         protected abstract void Initialize();
         protected abstract void Update();
         protected abstract void Draw();
+
+        private void onResized(object sender, EventArgs e) {
+
+        }
 
         private void onClosed(object sender, EventArgs e)
         {
