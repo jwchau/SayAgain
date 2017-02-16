@@ -19,6 +19,8 @@ namespace Test
         //Screen defaults
         static protected UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
         static protected UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+        protected double scaleFactorX;
+        protected double scaleFactorY;
 
         //Input Manager
         protected InputManager ManagerOfInput = new InputManager();
@@ -46,7 +48,6 @@ namespace Test
         // Replaced with DramaManager that holds each characterstate
         protected DramaManager D_Man = new DramaManager();
 
-
         //Jill's fields and variables
         protected DialogueBox dialogueBox;
         protected Boolean init;
@@ -69,7 +70,7 @@ namespace Test
 
         public Game(uint width, uint height, string title, Color clearColor)
         {
-            window = new RenderWindow(new VideoMode(width, height), title, Styles.Close);
+            window = new RenderWindow(new VideoMode(width, height), title, Styles.Default);
             this.clearColor = clearColor;
 
             // Set-up Events

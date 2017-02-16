@@ -11,8 +11,6 @@ using System.Drawing;
 
 namespace Test {
 
-
-
     class SA : Game {
         public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?", Color.Magenta) {
 
@@ -23,6 +21,22 @@ namespace Test {
             window.MouseMoved += onMouseMoved;
 
         }
+
+        #region screen resize math
+        private void screenHelper() {
+
+            var DesktopX = (double)VideoMode.DesktopMode.Width;
+            var DesktopY = (double)VideoMode.DesktopMode.Height;
+            var WindowX = (double)window.Size.X;
+            var WindowY = (double)window.Size.Y;
+            scaleFactorX = DesktopX / WindowX;
+            scaleFactorY = DesktopY / WindowY;
+
+            //Console.WriteLine("");
+            //Console.WriteLine(scaleFactorX + " : " + scaleFactorY);
+            //Console.WriteLine("");
+        }
+        #endregion
 
         private void onMouseMoved(object sender, MouseMoveEventArgs e) {
             ManagerOfInput.OnMouseMoved(State, e.X, e.Y);
