@@ -25,9 +25,13 @@ namespace Test
             rect.FillColor = myColor;
         }
 
+        static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
+        static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+
         Font buttonTextFont = new Font("../../Fonts/Adore64.ttf");
         Text buttonText;
         RectangleShape rect;
+        bool selected = false;
 
         public RectangleShape getMenuButtonRect()
         {
@@ -44,18 +48,13 @@ namespace Test
             return rect.GetGlobalBounds();
         }
 
-        public bool Contains(uint winx, uint winy, int mouseX, int mouseY)
+        public bool Contains(int mouseX, int mouseY)
         {
-            
             FloatRect bounds = getRectBounds();
-            var mathx = ((double)VideoMode.DesktopMode.Width / (double)winx) * mouseX;
-            var mathy = ((double)VideoMode.DesktopMode.Height / (double)winy) * mouseY;
-            if (mathx >= bounds.Left && mathx <= bounds.Left + bounds.Width && mathy >= bounds.Top && mathy <= bounds.Top + bounds.Height)
+            if (mouseX >= bounds.Left && mouseX <= bounds.Left + bounds.Width && mouseY >= bounds.Top && mouseY <= bounds.Top + bounds.Height)
             {
                 return true;
             }
-
-            
             return false;
         }
     }

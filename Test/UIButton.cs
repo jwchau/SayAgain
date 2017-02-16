@@ -11,12 +11,12 @@ namespace Test
     class UIButton : UIElement
     {
         //constructor
-        public UIButton(float x, float y, string content, string newDialogue)
+        public UIButton(float x, float y, tone content, string newDialogue)
         {
 
             this.x = x;
             this.y = y;
-            buttonText = new Text(content, buttonTextFont);
+            buttonText = new Text(content.ToString(), buttonTextFont);
             buttonText.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
 
             rect = new RectangleShape(new SFML.System.Vector2f(buttonText.GetGlobalBounds().Width + 7, buttonText.GetGlobalBounds().Height + 10));
@@ -25,7 +25,8 @@ namespace Test
             Color bgColor = new Color(177, 177, 177);
             rect.FillColor = bgColor;
             this.newDialogue = newDialogue;
-            tonalColor = buttonTonalColors[content];
+            tonalColor = buttonTonalColors[content.ToString()];
+            this.buttonTone = content;
         }
 
         //fields
@@ -40,6 +41,7 @@ namespace Test
         int mouseOffsetX = 0;
         int mouseOffsetY = 0;
         Color tonalColor;
+        tone buttonTone;
 
         //methods
         //String eventHandler;
@@ -68,6 +70,11 @@ namespace Test
             return buttonText;
         }
 
+        public tone getTone()
+        {
+            return buttonTone;
+        }
+
         public FloatRect getRectBounds()
         {
             return rect.GetGlobalBounds();
@@ -89,12 +96,10 @@ namespace Test
             return selected;
         }
 
-        public bool Contains(uint winx, uint winy, int mouseX, int mouseY)
+        public bool Contains(int mouseX, int mouseY)
         {
             FloatRect bounds = getRectBounds();
-            var mathx = ((double)VideoMode.DesktopMode.Width / (double)winx) * mouseX;
-            var mathy = ((double)VideoMode.DesktopMode.Height / (double)winy) * mouseY;
-            if (mathx >= bounds.Left && mathx <= bounds.Left + bounds.Width && mathy >= bounds.Top && mathy <= bounds.Top + bounds.Height)
+            if (mouseX >= bounds.Left && mouseX <= bounds.Left + bounds.Width && mouseY >= bounds.Top && mouseY <= bounds.Top + bounds.Height)
             {
                 return true;
             }
@@ -107,14 +112,11 @@ namespace Test
             buttonText.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
         }
 
-        public void translate(uint winx, uint winy, int x, int y)
+        public void translate(int x, int y)
         {
             var bounds = getRectBounds();
             var newXPos = x - mouseOffsetX;
             var newYPos = y - mouseOffsetY;
-            newXPos = (int)(((double)VideoMode.DesktopMode.Width / (double)winx) * x);
-            newYPos = (int)(((double)VideoMode.DesktopMode.Height / (double)winy) * y);
-
             if (x - mouseOffsetX < 0)
             {
                 newXPos = 0;
