@@ -9,7 +9,7 @@ namespace Test {
         public DramaManager() {
             Alex = new CharacterState("alex");
             Mom = new CharacterState("mom");
-            Dad = new CharacterState("mad");
+            Dad = new CharacterState("dad");
         }
 
         private CharacterState Alex;
