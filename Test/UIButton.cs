@@ -11,12 +11,12 @@ namespace Test
     class UIButton : UIElement
     {
         //constructor
-        public UIButton(float x, float y, string content, string newDialogue)
+        public UIButton(float x, float y, tone content, string newDialogue)
         {
 
             this.x = x;
             this.y = y;
-            buttonText = new Text(content, buttonTextFont);
+            buttonText = new Text(content.ToString(), buttonTextFont);
             buttonText.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
 
             rect = new RectangleShape(new SFML.System.Vector2f(buttonText.GetGlobalBounds().Width + 7, buttonText.GetGlobalBounds().Height + 10));
@@ -25,7 +25,8 @@ namespace Test
             Color bgColor = new Color(177, 177, 177);
             rect.FillColor = bgColor;
             this.newDialogue = newDialogue;
-            tonalColor = buttonTonalColors[content];
+            tonalColor = buttonTonalColors[content.ToString()];
+            this.buttonTone = content;
         }
 
         //fields
@@ -40,6 +41,7 @@ namespace Test
         int mouseOffsetX = 0;
         int mouseOffsetY = 0;
         Color tonalColor;
+        tone buttonTone;
 
         //methods
         //String eventHandler;
@@ -66,6 +68,11 @@ namespace Test
         public Text getUIButtonText()
         {
             return buttonText;
+        }
+
+        public tone getTone()
+        {
+            return buttonTone;
         }
 
         public FloatRect getRectBounds()

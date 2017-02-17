@@ -38,16 +38,16 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="sfmlnet-audio-2">
-      <HintPath>bin\lib\sfmlnet-audio-2.dll</HintPath>
+      <HintPath>..\..\SFML.Net-2.2\lib\sfmlnet-audio-2.dll</HintPath>
     </Reference>
     <Reference Include="sfmlnet-graphics-2">
-      <HintPath>bin\lib\sfmlnet-graphics-2.dll</HintPath>
+      <HintPath>..\..\SFML.Net-2.2\lib\sfmlnet-graphics-2.dll</HintPath>
     </Reference>
     <Reference Include="sfmlnet-system-2">
-      <HintPath>bin\lib\sfmlnet-system-2.dll</HintPath>
+      <HintPath>..\..\SFML.Net-2.2\lib\sfmlnet-system-2.dll</HintPath>
     </Reference>
     <Reference Include="sfmlnet-window-2">
-      <HintPath>bin\lib\sfmlnet-window-2.dll</HintPath>
+      <HintPath>..\..\SFML.Net-2.2\lib\sfmlnet-window-2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -60,18 +60,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CharacterState.cs" />
-    <Compile Include="Loader.cs" />
     <Compile Include="ContextFilter.cs" />
     <Compile Include="GameMatrix.cs" />
+    <Compile Include="GameTimer.cs" />
+    <Compile Include="Loader.cs" />
     <Compile Include="PersonState.cs" />
     <Compile Include="DramaManager.cs" />
     <Compile Include="DialogueParsing.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="InputManager.cs" />
     <Compile Include="MenuButton.cs" />
-    <Compile Include="PauseMenu.cs" />
     <Compile Include="Relationships.cs" />
-    <Compile Include="StartMenu.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="ToneEffects.cs" />
     <Compile Include="Selector.cs" />
     <Compile Include="UIButton.cs" />
@@ -91,10 +91,12 @@
     <Compile Include="DialogueBox.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="alexTutorial.json" />
     <None Include="alextutorial_json.json" />
     <None Include="App.config" />
     <None Include="Fonts\Adore64.ttf" />
     <None Include="packages.config" />
+    <None Include="playerTutorial.json" />
     <None Include="playertutorial_json.json" />
     <None Include="sampleJSON.JSON" />
   </ItemGroup>
@@ -129,6 +131,10 @@
     <Content Include="OpenTK.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="sfmlnet-audio-2.dll" />
+    <Content Include="sfmlnet-graphics-2.dll" />
+    <Content Include="sfmlnet-system-2.dll" />
+    <Content Include="sfmlnet-window-2.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
