@@ -18,7 +18,7 @@ namespace Test
         //private double goal;
         double talkedTo = 0;
         static bool[] targets = { false,false,false }; // 0 = alex 1 = mom 2 = dad
-        static Relationships characterFNC = new Relationships();
+        static Relationships ship = new Relationships();
         Color color;
 
         RectangleShape characterRect = new RectangleShape(new Vector2f(75, 75));
@@ -100,10 +100,16 @@ namespace Test
 
         }
 
-        public Relationships getCharacterFNC() {
-            return characterFNC;
+        public double getDadFNC() {
+            return ship.getDadFNC();
         }
-        
+        public double getAlexFNC() {
+            return ship.getAlexFNC();
+        }
+        public double getMomFNC() {
+            return ship.getMomFNC();
+        }
+
         ///lol wat, turnary ?
         public void Draw(RenderTarget target, RenderStates states) {
             target.Draw(characterRect);
@@ -125,6 +131,7 @@ namespace Test
             if (this.Contains(x, y)) this.setTargets(this.who);
         }
         #endregion
+
 
     }
 }

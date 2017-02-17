@@ -1,6 +1,6 @@
 {"Dialogues":[
 {
-	"Content":"Hi Alex.",
+	"content":"Hi Alex.",
 	"Tonal prereq": "Indifferent",
 	"Context": "",
 	"Consequence": "",
@@ -24,7 +24,7 @@
 	
 },
 {
-	"content":"Hey.",
+	"Content":"Hey.",
 	"Tonal prereq": "Indifferent",
 	"Context": "AlexTalksPlayer",
 	"Consequence": "greeting",

@@ -64,7 +64,6 @@
     <Compile Include="GameMatrix.cs" />
     <Compile Include="GameTimer.cs" />
     <Compile Include="Loader.cs" />
-    <Compile Include="PersonState.cs" />
     <Compile Include="DramaManager.cs" />
     <Compile Include="DialogueParsing.cs" />
     <Compile Include="GameState.cs" />
@@ -92,12 +91,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="alexTutorial.json" />
-    <None Include="alextutorial_json.json" />
     <None Include="App.config" />
     <None Include="Fonts\Adore64.ttf" />
     <None Include="packages.config" />
     <None Include="playerTutorial.json" />
-    <None Include="playertutorial_json.json" />
     <None Include="sampleJSON.JSON" />
   </ItemGroup>
   <ItemGroup>
@@ -107,6 +104,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="context.txt" />
     <Content Include="csfml-audio-2.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

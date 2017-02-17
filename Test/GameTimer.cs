@@ -18,8 +18,8 @@ namespace Test
 
         public GameTimer(string name, double howLong, Action T)
 		{ //in seconds
-			initTime = howLong - 1; //0 till 9 = 10 seconds
-			countDown = howLong - 1;
+			initTime = howLong-1; //0 till 9 = 10 seconds
+			countDown = howLong;
 			timerEvent = T;
             circle.Position = new Vector2f(SCREEN_WIDTH - 100, SCREEN_HEIGHT - 200);
         }
@@ -28,14 +28,17 @@ namespace Test
 		{
 			if (start == true)
 			{
-				//timer update
-				if (countDown > 0)
+
+                Console.WriteLine("COUNTDOWN: " + countDown);
+                //timer update
+                if (countDown > 0)
 				{
 					//as long as you are not out of time
 					newTimeSeconds = ((DateTime.Now.Ticks / 10000000) - timeDiff);
-					countDown = (initTime - (newTimeSeconds - oldTimeSeconds));
+					countDown = (initTime - (newTimeSeconds - oldTimeSeconds));  
+                    Console.WriteLine("NTS: " + (newTimeSeconds - oldTimeSeconds));
 
-				}
+                }
 				else
 				{
 					timerFinished = true;
@@ -66,7 +69,9 @@ namespace Test
 		public void startTimer()
 		{
 			start = true;
-		}
+            timeDiff = 0;
+            oldTimeSeconds = (DateTime.Now.Ticks / 10000000);
+        }
 
 		public void PauseTimer()
 		{

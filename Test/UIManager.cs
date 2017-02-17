@@ -12,7 +12,8 @@ using SFML.System;
 namespace Test {
     class UIManager {
         //constructor
-        public UIManager() {
+        public UIManager()
+        {
 
             /* TEMPORARY CODE REMOVE AND CLEAN LATER*/
             tone[] tonez = new tone[] { tone.Blunt, tone.Indifferent, tone.Compassionate, tone.Hesitant };
@@ -33,18 +34,20 @@ namespace Test {
         string[] dialogueArray;
 
         //methods
-        public List<UIButton> getButtons() {
+        public List<UIButton> getButtons()
+        {
             return buttons;
         }
 
-        public List<UITextBox> getPlayerDialogues() {
+        public List<UITextBox> getPlayerDialogues()
+        {
             return playerDialogues;
         }
 
-        public void addButton(UIButton b) {
+        public void addButton(UIButton b)
+        {
             buttons.Add(b);
         }
-
         public List<UITextBox> produceTextBoxes2(string Dialogue) {
             //Console.WriteLine("AM I HERE????");
             dialogueArray = Dialogue.Split('.', '!', '?');
@@ -57,22 +60,27 @@ namespace Test {
 
             //length takes care of the differences between 1 sentence or multiple sentences
             int length = 0;
-            if (dialogueArray.Length > 1) {
+            if (dialogueArray.Length > 1)
+            {
                 length = dialogueArray.Length - 1;
-            } else {
+            }
+            else {
                 length = dialogueArray.Length;
             }
 
-            for (int i = 0; i < length; i++) {
+            for (int i = 0; i < length; i++)
+            {
                 dialogueArray[i] += ".";
                 string[] temp = dialogueArray[i].Split(' '); //my name is Raman. //1 cluster
-                //Console.WriteLine(temp);
-                for (int j = 0; j < temp.Length; j++) {
+                Console.WriteLine(temp);
+                for (int j = 0; j < temp.Length; j++)
+                {
 
                     string word = temp[j].Trim();
-                    if (word != "") {
+                    if (word != "")
+                    {
                         words.Add(word);
-
+                     
                     }
                 }
             }
@@ -81,13 +89,16 @@ namespace Test {
             bool newLine = false;
             uint x = 5;
             uint y = SCREEN_HEIGHT - ((SCREEN_HEIGHT / 5)) + 5;
-            for (int word = 0; word < words.Count; word++) {
+            for (int word = 0; word < words.Count; word++)
+            {
                 string tempString = baseString;
+
                 Font tempFont = new Font("../../Fonts/Adore64.ttf");
                 //Console.WriteLine(words[word]);
 
 
-                if (word != 0 && words[word - 1].Contains('.') != true && !newLine) {
+                if (word != 0 && words[word - 1].Contains('.') != true && !newLine)
+                {
                     tempString += " ";
                 }
 
@@ -95,7 +106,8 @@ namespace Test {
 
                 Text tempText = new Text(tempString, tempFont);
 
-                if (x + tempText.GetGlobalBounds().Width > SCREEN_WIDTH - 5) {
+                if (x + tempText.GetGlobalBounds().Width > SCREEN_WIDTH - 5)
+                {
                     //did not fit, make a text box out of the last fit string
                     //reset x and y
 
@@ -109,7 +121,9 @@ namespace Test {
                     baseString = "";
                     newLine = true;
 
-                } else if (words[word].Contains('.') || words[word].Contains('!') || words[word].Contains('?')) {
+                }
+                else if (words[word].Contains('.') || words[word].Contains('!') || words[word].Contains('?'))
+                {
                     //word with a period meaning the end of a sentence.
                     // playerDialogues.Add(new UITextBox(x, y, tempString))
                     baseString = tempString;
@@ -122,22 +136,27 @@ namespace Test {
                     tempString = "";
                     newLine = false;
                     cluster++;
-                } else if (x + tempText.GetGlobalBounds().Width < SCREEN_WIDTH - 5) {
+                }
+                else if (x + tempText.GetGlobalBounds().Width < SCREEN_WIDTH - 5)
+                {
                     //update baseString
                     baseString = tempString;
                     newLine = false;
-
                 }
             }
             return playerDialogues;
         }
 
-        public void reset(DramaManager D_Man, List<DialogueObj> responseList) {
+        public void reset(List<DialogueObj>  responseList)
+        {
             bool gotTone = false;
             tone Tone = tone.Root;
-            foreach (var dialogue in playerDialogues) {
-                if (dialogue.getAffected() && !gotTone) {
-                    //Console.WriteLine(dialogue.getTone());
+
+            foreach (var dialogue in playerDialogues)
+            {
+                if (dialogue.getAffected() && !gotTone)
+                {
+                    Console.WriteLine(dialogue.getTone());
                     Tone = dialogue.getTone();
                     gotTone = true;
                 }
@@ -147,23 +166,30 @@ namespace Test {
                 dialogue.setPrevColor(Color.Red);
                 dialogue.setTone(tone.Root);
             }
-            if (responseList.ElementAt(0).nextContext != "") {
-                playerDialogues = produceTextBoxes2(responseList.ElementAt(0).content);
-            }
+            playerDialogues.Clear();
+
+            produceTextBoxes2(responseList.ElementAt(0).content);
         }
 
-        public tone getTone() {
+        public tone getTone()
+        {
             return playerDialogues[0].getTone();
         }
-
-        public void updateClusterColors(UITextBox self, List<UITextBox> playerDialogues, Color c, bool f) {
+        
+        public void updateClusterColors(UITextBox self, List<UITextBox> playerDialogues, Color c, bool f)
+        {
             int cluster = self.getCluster();
-            for (int i = 0; i < playerDialogues.Count; i++) {
-                if (playerDialogues[i].getCluster() == cluster && playerDialogues[i] != self) {
-                    if (!f) {
+            for (int i = 0; i < playerDialogues.Count; i++)
+            {
+                if (playerDialogues[i].getCluster() == cluster && playerDialogues[i] != self)
+                {
+                    if (!f)
+                    {
                         playerDialogues[i].setBoxColor(playerDialogues[i].getBoxColor("prev"));
                         //playerDialogues[i].setMouseWasIn(false);
-                    } else {
+                    }
+                    else
+                    {
                         playerDialogues[i].setPrevColor(playerDialogues[i].getBoxColor("curr"));
                         playerDialogues[i].setBoxColor(c);
                         //playerDialogues[i].setMouseWasIn(true);

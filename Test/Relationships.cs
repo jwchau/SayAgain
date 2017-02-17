@@ -6,15 +6,9 @@ using System.Threading.Tasks;
 
 namespace Test
 {
-    class Relationships : GameMatrix
+    class Relationships
     {
         public Relationships() {
-            //this.matrix = new double[3, 1];
-            //this.matrix[0, 0] = -3.0; //Alex FNC
-            //this.matrix[1, 0] = 0.0; //Mom FNC
-            //this.matrix[2, 0] = 4.0; //Dad FNC
-
-            //starting FNC at the beginning of the game
             AlexFNC = -3.0;
             MomFNC = 0.0;
             DadFNC = 4.0;
@@ -24,8 +18,8 @@ namespace Test
         double MomFNC;
         double DadFNC;
 
-        public double getAlexFNC() {
-            return AlexFNC;
+        public int getAlexFNC() {
+            return (int)AlexFNC;
         }
         public double getMomFNC()
         {
@@ -48,44 +42,5 @@ namespace Test
         {
             MomFNC = value;
         }
-
-        //public override double GetValue(int x, int y)
-        //{
-        //    return matrix[x, y];
-        //}
-
-        //public override void SetValue(int x, int y, double value)
-        //{
-        //    matrix[x, y] = value;
-        //}
-
-        //public double getAlexFNC() {
-        //    return matrix[0, 0];
-        //}
-
-        //public double getMomFNC()
-        //{
-        //    return matrix[1, 0];
-        //}
-
-        //public double getDadFNC()
-        //{
-        //    return matrix[2, 0];
-        //}
-
-        //public void setAlexFNC(double value)
-        //{
-        //     matrix[0, 0] = value;
-        //}
-
-        //public void setMomFNC(double value)
-        //{
-        //    matrix[1, 0] = value;
-        //}
-
-        //public void setDadFNC(double value)
-        //{
-        //    matrix[2, 0] = value;
-        //}
     }
 }

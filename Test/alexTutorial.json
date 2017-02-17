@@ -6,7 +6,7 @@
 	"Consequence": "greeting",
 	"Memories":[""],
 	"Milestones":[""],
-	"FNCprereq":null,
+	"FNCprereq":0,
 	"Target":[1,0,0],
 	"NextContext":"School"
 },
@@ -17,7 +17,7 @@
 	"Consequence": "greeting",
 	"Memories":[""],
 	"Milestones":[""],
-	"FNCprereq":null,
+	"FNCprereq":0,
 	"Target":[1,0,0],
 	"NextContext":"School"
 	
@@ -29,7 +29,7 @@
 	"Consequence": "greeting",
 	"Memories":[""],
 	"Milestones":[""],
-	"FNCprereq":null,
+	"FNCprereq":0,
 	"Target":[1,0,0],
 	"NextContext":"School"
 },
@@ -40,7 +40,7 @@
 	"Consequence": "greeting",
 	"Memories":[""],
 	"Milestones":[""],
-	"FNCprereq":null,
+	"FNCprereq":0,
 	"Target":[1,0,0],
 	"NextContext":"School"
 	
@@ -52,7 +52,7 @@
 	"Consequence": "TalkedSchool",
 	"Memories":[""],
 	"Milestones":["greeting"],
-	"FNCprereq":null,
+	"FNCprereq":0,
 	"Target":[1,0,0],
 	"NextContext":"AlexTalksAlex"
 },
@@ -63,10 +63,9 @@
 	"Consequence": "TalkedSchool",
 	"Memories":[""],
 	"Milestones":["greeting"],
-	"FNCprereq":null,
+	"FNCprereq":0,
 	"Target":[1,0,0],
 	"NextContext":"AlexTalksAlex"
-	
 },
 {
 	"content": "I'm fourteen, remember?",
@@ -75,7 +74,7 @@
 	"Consequence": "TalkedSchool",
 	"Memories":[""],
 	"Milestones":["greeting"],
-	"FNCprereq":null,
+	"FNCprereq":0,
 	"Target":[1,0,0],
 	"NextContext":"AlexTalksAlex"
 },
@@ -86,7 +85,7 @@
 	"Consequence": "TalkedSchool",
 	"Memories":[""],
 	"Milestones":["greeting"],
-	"FNCprereq":null,
+	"FNCprereq":0,
 	"Target":[1,0,0],
 	"NextContext":"AlexTalksAlex"
 	
@@ -98,9 +97,9 @@
 	"Consequence": "TalkedFriends",
 	"Memories":["School"],
 	"Milestones":["greeting","TalkedSchool"],
-	"FNCprereq":null,
+	"FNCprereq":0,
 	"Target":[1,0,0],
-	"NextContext":["MomTalksMom","DadTalksDad"]
+	"NextContext":"MomTalksMom"
 	
 },
 {
@@ -110,9 +109,9 @@
 	"Consequence": "TalkedFriends",
 	"Memories":["School"],
 	"Milestones":["greeting","TalkedSchool"],
-	"FNCprereq":null,
+	"FNCprereq":0,
 	"Target":[1,0,0],
-	"NextContext":["MomTalksMom","DadTalksDad"]
+	"NextContext":"MomTalksMom"
 	
 },
 {
@@ -122,9 +121,9 @@
 	"Consequence": "TalkedFriends",
 	"Memories":["School"],
 	"Milestones":["greeting","TalkedSchool"],
-	"FNCprereq":null,
+	"FNCprereq":0,
 	"Target":[1,0,0],
-	"NextContext":["MomTalksMom","DadTalksDad"]
+	"NextContext":"MomTalksMom"
 	
 },
 {
@@ -134,9 +133,9 @@
 	"Consequence": "TalkedFriends",
 	"Memories":["School"],
 	"Milestones":["greeting","TalkedSchool"],
-	"FNCprereq":null,
+	"FNCprereq":0,
 	"Target":[1,0,0],
-	"NextContext":["MomTalksMom","DadTalksDad"]
+	"NextContext":"MomTalksMom"
 	
 }
 ]

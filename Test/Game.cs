@@ -22,6 +22,7 @@ namespace Test
         protected double scaleFactorX;
         protected double scaleFactorY;
 
+
         //Input Manager
         protected InputManager ManagerOfInput = new InputManager();
 
@@ -29,11 +30,13 @@ namespace Test
         protected UIManager ui_man = new UIManager();
         protected List<UIButton> buttons;
 
+
         //Menus
         protected Menu startMenu = new Menu("start");
         protected Menu settingsMenu = new Menu("settings");
         protected Menu pauseMenu = new Menu("pause");
         protected List<Menu> menus = new List<Menu>();
+
 
         //Matrices
         protected ToneEffects tfx = new ToneEffects();
@@ -47,7 +50,7 @@ namespace Test
         // Deprecated: protected CharacterState Alex, Mom, Dad;
         // Replaced with DramaManager that holds each characterstate
         protected DramaManager D_Man = new DramaManager();
-
+  
         //Jill's fields and variables
         protected DialogueBox dialogueBox;
         protected Boolean init;
@@ -56,6 +59,7 @@ namespace Test
         #region AI_FIELDS
         protected List<string> currentMadeMemories = new List<string>();
         protected List<DialogueObj> responseList = new List<DialogueObj>();
+        protected List<DialogueObj> responseListAlex = new List<DialogueObj>();
         protected List<string> currentMilestones = new List<string>();
         protected int FNC = 0;
         protected string currentContext = "";
@@ -71,6 +75,7 @@ namespace Test
         public Game(uint width, uint height, string title, Color clearColor)
         {
             window = new RenderWindow(new VideoMode(width, height), title, Styles.Default);
+
             this.clearColor = clearColor;
 
             // Set-up Events
