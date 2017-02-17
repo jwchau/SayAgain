@@ -56,6 +56,7 @@ namespace Test {
 
         private void printMouseStuff() {
             //Console.WriteLine(MouseDown + ", " + MouseMove + ", " + MouseRelease);
+
         }
 
         private bool CheckCollision(FloatRect bounds) {
@@ -162,7 +163,5 @@ namespace Test {
             }
         }
         #endregion
-
-
     }
 }

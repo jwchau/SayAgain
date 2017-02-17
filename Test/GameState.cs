@@ -58,6 +58,7 @@ namespace Test
                 DictGameTimer["game"].setOldGameTime((DateTime.Now.Ticks / 10000) / 1000);
             }
 
+
             currentState = state;
         }
 
@@ -77,12 +78,15 @@ namespace Test
 
         public void updateTimerz()
         {
+
+            //Console.WriteLine("GET START IS TRUE HERE: "+DictGameTimer["game"].getCountDown());
             foreach (var pair in DictGameTimer)
             {
                 //pair.Value is a gameTimer
                 //pair.Key is the label of the game Timer;
                 if (pair.Value.getStart())
                 {
+                    //Console.WriteLine("GET START IS TRUE HERE");
                     pair.Value.updateTimer();
 
                 }
@@ -95,18 +99,23 @@ namespace Test
                         pair.Value.doTask();
                         pair.Value.restartTimer();
                     }
-                    else
-                    {
-                        pair.Value.startTimer();
-                    }
+                    
                 }
             }
+        }
+
+        public void stopTimerz(string key) {
+            DictGameTimer[key].stopTimer();
+        }
+
+        public void startTimer(string key)
+        {
+            DictGameTimer[key].startTimer();
         }
 
         // Handle Menu Traversal and Game Launching
         public void updateMenuState(int[] mouseCoords, List<MenuButton> buttons, List<Tuple<string, string, Task>> mappings)
         {
-
             // Loop through current menu's buttons
             for (var i = 0; i < buttons.Count; i++)
             {
@@ -158,9 +167,6 @@ namespace Test
                 SetMenuState("pause");
             }
         }
-
-        #region 
-        #endregion
 
     }
 }

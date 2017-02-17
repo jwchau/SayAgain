@@ -100,10 +100,16 @@ namespace Test
 
         }
 
-        public Relationships getCharacterFNC() {
-            return characterFNC;
+        public double getDadFNC() {
+            return characterFNC.getDadFNC();
         }
-        
+        public double getAlexFNC() {
+            return characterFNC.getAlexFNC();
+        }
+        public double getMomFNC() {
+            return characterFNC.getMomFNC();
+        }
+
         ///lol wat, turnary ?
         public void Draw(RenderTarget target, RenderStates states) {
             target.Draw(characterRect);
@@ -125,6 +131,7 @@ namespace Test
             if (this.Contains(x, y)) this.setTargets(this.who);
         }
         #endregion
+
 
     }
 }

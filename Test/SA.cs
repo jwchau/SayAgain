@@ -8,6 +8,7 @@ using SFML.Graphics;
 using SFML.Window;
 using SFML.System;
 using System.Drawing;
+using Newtonsoft.Json;
 
 namespace Test {
 
@@ -78,8 +79,11 @@ namespace Test {
             if (e.Code == Keyboard.Key.P) {
                 // Toggles game state between game and pause
                 State.TogglePause();
-
             }
+
+
+            responseList = s.ChooseDialog(FNC, Load.sampleDialogueObj, currentMadeMemories, currentMilestones, currentTone, currentContext);
+            //responseListAlex = s.ChooseDialog((int)D_Man.getAlex().getAlexFNC(), Load.alexDialogueObj1, currentMadeMemories, currentMilestones, currentTone, currentContext);
 
             if (e.Code == Keyboard.Key.A || e.Code == Keyboard.Key.M || e.Code == Keyboard.Key.D) {
                 init = true;
@@ -92,8 +96,7 @@ namespace Test {
             //update currentmademeories, currentmilestones, currenttone, currentcontext
             updateCurrents();
             responseList = s.ChooseDialog(FNC, Load.sampleDialogueObj, currentMadeMemories, currentMilestones, currentTone, currentContext);
-            ui_man.reset(D_Man, responseList);
-            //ui_man.reset(Alex, Mom, Dad, responseList, currentMadeMemories, Load.sampleDialogueObj);
+            ui_man.reset(responseList);
         }
         //after timer runs out update the current stuff
         private void updateCurrents() {
@@ -123,7 +126,7 @@ namespace Test {
             fullScreenView = window.DefaultView;
             fullScreenView.Viewport = new FloatRect(0, 0, 1, 1);
             window.SetView(fullScreenView);
-            dialogueBox = new DialogueBox(0, 0, 710, 150);
+            dialogueBox = new DialogueBox(0, 0, 710, 150, State);
 
             buttons = ui_man.getButtons();
             menus.Add(startMenu); menus.Add(settingsMenu); menus.Add(pauseMenu);
@@ -131,6 +134,7 @@ namespace Test {
 
         protected override void Update() {
             if (State.GetState() == "game") {
+
                 // Update the game timerz
                 State.updateTimerz();
 
@@ -154,8 +158,10 @@ namespace Test {
                             // Loop through UI Textboxes
                             for (var j = 0; j < playerDialogues.Count; j++) {
                                 // If the mouse just came from inside a UI Textbox
-                                if (playerDialogues[j].wasMouseIn()) {
-                                    if (!playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1])) {
+                                if (playerDialogues[j].wasMouseIn())
+                                {
+                                    if (!playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1]))
+                                    {
                                         // Mouse has now left the UI Textbox so set it to false
                                         playerDialogues[j].setMouseWasIn(false);
                                         // Reset the color to match its previous color
@@ -165,8 +171,11 @@ namespace Test {
                                     }
 
                                     // If mouse just came from outside the UI Textbox
-                                } else {
-                                    if (playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1])) {
+                                }
+                                else
+                                {
+                                    if (playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1]))
+                                    {
                                         // Mouse is now inside a UI Textbox, so set it to true
                                         playerDialogues[j].setMouseWasIn(true);
                                         // Update previous color to current color of the UI Textbox
@@ -207,8 +216,8 @@ namespace Test {
                     window.Draw(settingsMenu);
                 }
 
-
             } else {
+
                 //Draw text box background box
                 RectangleShape textBackground = new RectangleShape(new Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT / 5));
                 textBackground.Position = new Vector2f(0, SCREEN_HEIGHT - (SCREEN_HEIGHT / 5));
