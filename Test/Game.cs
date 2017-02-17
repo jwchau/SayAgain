@@ -87,7 +87,6 @@ namespace Test
 
         private void onKeyPressed(object sender, KeyEventArgs e)
         {
-            Console.WriteLine(e.Code);
             if (e.Code.Equals(Keyboard.Key.Escape)) {
                 window.Close();
             }

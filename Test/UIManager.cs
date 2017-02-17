@@ -18,12 +18,12 @@ namespace Test
         {
 
             /* TEMPORARY CODE REMOVE AND CLEAN LATER*/
-            string[] tone = new string[] { "Blunt", "Indifferent", "Compassionate", "Hesitant" };
+            tone[] tonez = new tone[] { tone.Blunt, tone.Indifferent, tone.Compassionate, tone.Hesitant };
             string[] jsondialogue = new string[] { "Blunt Dialogue.", "Indifferent Dialogue.", "Compassionate Dialogue.", "Hesitant Dialogue." };
-            int xPos = (int)SCREEN_WIDTH / tone.Length;
-            for (int i = 1; i <= tone.Length; i++)
+            int xPos = (int)SCREEN_WIDTH / tonez.Length;
+            for (int i = 1; i <= tonez.Length; i++)
             {
-                addButton(new UIButton(xPos / 2 + (i - 1) * xPos, SCREEN_HEIGHT - SCREEN_HEIGHT / 4, tone[i - 1], jsondialogue[i - 1]));
+                addButton(new UIButton(xPos / 2 + (i - 1) * xPos, SCREEN_HEIGHT - SCREEN_HEIGHT / 4, tonez[i - 1], jsondialogue[i - 1]));
             }
             ////////////////////////////////////////////////
         }
@@ -52,14 +52,28 @@ namespace Test
             buttons.Add(b);
         }
 
-        public void produceTextBoxes2(string Dialogue)
+        public List<UITextBox> produceTextBoxes2(string Dialogue)
         {
+            Console.WriteLine("AM I HERE????");
             dialogueArray = Dialogue.Split('.', '!', '?');
             //dialogue Array now holds all the sentences
+            foreach (var dialogue in dialogueArray) {
+                Console.WriteLine(dialogue);
+            }
 
             List<string> words = new List<string>();
-            Console.WriteLine(dialogueArray.Length - 1);
-            for (int i = 0; i < dialogueArray.Length - 1; i++)
+
+            //length takes care of the differences between 1 sentence or multiple sentences
+            int length = 0;
+            if (dialogueArray.Length > 1)
+            {
+                length = dialogueArray.Length - 1;
+            }
+            else {
+                length = dialogueArray.Length;
+            }
+
+            for (int i = 0; i < length; i++)
             {
                 dialogueArray[i] += ".";
                 string[] temp = dialogueArray[i].Split(' '); //my name is Raman. //1 cluster
@@ -71,13 +85,10 @@ namespace Test
                     if (word != "")
                     {
                         words.Add(word);
-                        Console.WriteLine(words[0]);
+                     
                     }
                 }
             }
-
-
-            Console.WriteLine("SLDFJKLSDJFLJKSDFJL");
             int cluster = 0;
             string baseString = ""; //last known string of characters that does fit
             bool newLine = false;
@@ -139,19 +150,23 @@ namespace Test
 
                 }
             }
+            return playerDialogues;
         }
 
-        public void reset(CharacterState Alex, CharacterState Mom, CharacterState Dad, Selector s, DialogueParsing r, string[] currentMadeMemories)
+        public void reset(List<DialogueObj>  responseList)
         {
 
-            //we need to see what tones got dragged
-            //do matrix operations to spit out FNC
+            ////we need to see what tones got dragged
+            ////do matrix operations to spit out FNC
             bool gotTone = false;
-            string Tone = "";
+            tone Tone = tone.Root;
 
-            Console.WriteLine(Alex.getTargets()[0]);
-            Console.WriteLine(Alex.getTargets()[1]);
-            Console.WriteLine(Alex.getTargets()[2]);
+            //Console.WriteLine("First content in List -> " + responseList.ElementAt(0).content);
+            //Console.WriteLine("First context in List -> " + responseList.ElementAt(0).context);
+            
+            //Console.WriteLine("First milestone in List -> " + responseList.ElementAt(0).milestone[0]);
+            //Console.WriteLine("First target 1 in List -> " + responseList.ElementAt(0).target);
+
 
             foreach (var dialogue in playerDialogues)
             {
@@ -165,14 +180,22 @@ namespace Test
                 dialogue.setAffected(false);
                 dialogue.setBoxColor(Color.Red);
                 dialogue.setPrevColor(Color.Red);
-                dialogue.setTone("");
+                dialogue.setTone(tone.Root);
             }
+            playerDialogues.Clear();
 
-            currentMadeMemories[1] = Tone;
+            produceTextBoxes2(responseList.ElementAt(0).content);
 
-            List<DialogueObj> responseList = s.ChooseDialog(0, r, currentMadeMemories);
-            string newDialogue = responseList.ElementAt(0).content;
-            Console.WriteLine(newDialogue);
+
+           // responseList = s.ChooseDialog(FNC, sampleJSON, currentMadeMemories, currentMilestones, tone.Blunt, ElementAt(0).nextContext);
+            //List<DialogueObj> responseList = s.ChooseDialog(0, r, currentMadeMemories);
+            //string newDialogue = responseList.ElementAt(0).content;
+            //Console.WriteLine(newDialogue);
+        }
+
+        public tone getTone()
+        {
+            return playerDialogues[0].getTone();
         }
 
         public void updateText(int pos, string newDialogue, Color color)

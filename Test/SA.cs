@@ -8,17 +8,43 @@ using SFML.Graphics;
 using SFML.Window;
 using SFML.System;
 using System.Drawing;
+using Newtonsoft.Json;
 
-namespace Test {
-    
-    class SA : Game {
+namespace Test
+{
 
+    public enum tone
+    {
+        Blunt = 0,
+        Indifferent = 1,
+        Compassionate = 2,
+        Hesitant = 4,
+        Root = 8,
+    }
+
+
+    class SA : Game
+    {
+
+
+        //////Loading the very first dialogue for the player////
+        List<string> currentMadeMemories = new List<string>(); //contexts we are done with
+        List<DialogueObj> responseList = new List<DialogueObj>(); //holds the apppropriate response after caculating prereqs
+        List<DialogueObj> responseListAlex = new List<DialogueObj>();
+        int FNC = 0;
+        string currentContext = "";
+        tone currentTone = tone.Root;
+        List<string> currentMilestones = new List<string>();
+        //currentMilestones.Add("bob");
+        Loader Load = new Loader();
+        Selector s = new Selector();
 
         //public View fullScreenView, charView;
         // Character declaration
 
 
-        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?", Color.Magenta) {
+        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?", Color.Magenta)
+        {
 
             window.KeyPressed += onKeyPressed;
             window.KeyReleased += onKeyReleased;
@@ -28,7 +54,8 @@ namespace Test {
 
         }
 
-        private void onMouseMoved(object sender, MouseMoveEventArgs e) {
+        private void onMouseMoved(object sender, MouseMoveEventArgs e)
+        {
             if (State.GetState() == "game")
             {
                 if (ManagerOfInput.GetMouseDown())
@@ -39,7 +66,8 @@ namespace Test {
             }
         }
 
-        private void onMouseButtonReleased(object sender, MouseButtonEventArgs e) {
+        private void onMouseButtonReleased(object sender, MouseButtonEventArgs e)
+        {
 
             ManagerOfInput.SetMouseMove(false);
             ManagerOfInput.SetMouseDown(false);
@@ -49,20 +77,19 @@ namespace Test {
 
             if (State.GetState() == "game")
             {
-                
+
                 // Click to set conversation target
                 if (Alex.Contains(e.X, e.Y))
                 {
                     Alex.setTargets("alex");
-                    Console.WriteLine("ALEX SELECTED");
-                } else if (Mom.Contains(e.X, e.Y))
+                }
+                else if (Mom.Contains(e.X, e.Y))
                 {
                     Mom.setTargets("mom");
-                    Console.WriteLine("Mom SELECTED");
-                } else if (Dad.Contains(e.X, e.Y))
+                }
+                else if (Dad.Contains(e.X, e.Y))
                 {
                     Mom.setTargets("dad");
-                    Console.WriteLine("Dad SELECTED");
                 }
 
                 // Applying tones to Text Boxes
@@ -72,9 +99,6 @@ namespace Test {
                     {
                         //CHECK MATRIX BS
                         // Move to character state
-                        double[,] final = tfx.MatrixMult(tfx, cf);
-                        Console.WriteLine(final[2, 3]);
-
                         // Get UI Text Boxes
                         var playerDialogues = ui_man.getPlayerDialogues();
 
@@ -95,14 +119,13 @@ namespace Test {
                                 //ui_man.updateText(j, buttons[i].getNewDialogue());
 
                                 // Code to change all of the UITextBoxes
-                                Console.WriteLine(buttons[i].getUIButtonText().DisplayedString);
                                 for (int k = 0; k < playerDialogues.Count; k++)
                                 {
                                     playerDialogues[k].setPrevColor(playerDialogues[k].getBoxColor("curr"));
                                     playerDialogues[k].setBoxColor(buttons[i].getTonalColor());
                                     //playerDialogues[k].changeDialogue(buttons[i].getNewDialogue());
                                     playerDialogues[k].setAffected(true);
-                                    playerDialogues[k].setTone(buttons[i].getUIButtonText().DisplayedString);
+                                    playerDialogues[k].setTone(buttons[i].getTone());
                                     //call updateText in resetButtons in UIManager
                                     //ui.updateText(k, buttons[i].getNewDialogue(), buttons[i].getTonalColor());
 
@@ -121,7 +144,8 @@ namespace Test {
             }
         }
 
-        private void onMouseButtonPressed(object sender, MouseButtonEventArgs e) {
+        private void onMouseButtonPressed(object sender, MouseButtonEventArgs e)
+        {
             ManagerOfInput.SetMousePos(e.X, e.Y);
             ManagerOfInput.SetMouseRelease(false);
             ManagerOfInput.SetMouseDown(true);
@@ -186,15 +210,18 @@ namespace Test {
             }
         }
 
-        private void onKeyReleased(object sender, KeyEventArgs e) {
+        private void onKeyReleased(object sender, KeyEventArgs e)
+        {
         }
 
-        private void onKeyPressed(object sender, KeyEventArgs e) {
-
+        private void onKeyPressed(object sender, KeyEventArgs e)
+        {
+            
 
             if (e.Code == Keyboard.Key.Space)
             {
                 dialogueBox.setPrintTime(0);
+               // State.startTimer("game");
             }
 
             if (e.Code == Keyboard.Key.N)
@@ -202,62 +229,118 @@ namespace Test {
                 dialogueBox.checkNext();
             }
 
-            if (e.Code == Keyboard.Key.P) {
+            if (e.Code == Keyboard.Key.P)
+            {
                 // Toggles game state between game and pause
                 State.TogglePause();
-                
+
             }
 
-            if(e.Code == Keyboard.Key.A || e.Code == Keyboard.Key.M || e.Code == Keyboard.Key.D)
+            if (e.Code == Keyboard.Key.A || e.Code == Keyboard.Key.M || e.Code == Keyboard.Key.D)
             {
                 init = true;
                 dialogueBox.createCharacterDB(e);
+                
             }
         }
 
-        protected override void LoadContent() {
+        protected override void LoadContent()
+        {
+            string filename = @"../../context.txt";
+            string sample_contexts = System.IO.File.ReadAllText(filename);
+            //split string -> string array.
+            //foreach array element -> sample_context
+            string[] lines = sample_contexts.Split('@');
+            //Console.WriteLine(lines[0]);
+            Dictionary<string, ContextFilter> cfs = new Dictionary<string, ContextFilter>();
+            for (int x = 0; x < lines.Length; x++)
+            {
+                int colind = lines[x].IndexOf(":");
+                string[] numz = lines[x].Substring(colind + 2).Split(' ');
+                List<double> finalnumz = new List<double>();
+                for(int y = 0; y < numz.Length; y++)
+                {
+                    finalnumz.Add(Convert.ToDouble(numz[y]));
+                }
+                cfs.Add(lines[x].Substring(0, colind), new ContextFilter(lines[x].Substring(0, colind), finalnumz.ToArray()));
+            }
 
             // Create Character states
             Alex = new CharacterState("alex");
             Mom = new CharacterState("mom");
             Dad = new CharacterState("dad");
 
-            // Test nums for a "school" context
-            double[] nums = { -1, 2, 3, 4,
-                               1, 2, 3, 4,
-                               1, 2, 3, 4, };
-            // Initialize cf to new context
-            cf = new ContextFilter("school", nums);
+            currentMadeMemories.Add("");
+            currentMilestones.Add("");
 
-            //Testing Values---------------------------------------------
-            string[] currentMadeMemories = { "Greeting", "Compassionate" };
-            int FNC = 0;
-            //-----------------------------------------------------------
+            responseList = s.ChooseDialog(FNC, Load.sampleDialogueObj, currentMadeMemories, currentMilestones, currentTone, currentContext);
+            responseListAlex = s.ChooseDialog((int)Alex.getCharacterFNC().getAlexFNC(), Load.alexDialogueObj1, currentMadeMemories, currentMilestones, currentTone, currentContext);
 
-            DialogueParsing r = new DialogueParsing(@"../../playertutorial_json.json");
-            Selector s = new Selector();
-
-            List<DialogueObj> responseList = s.ChooseDialog(FNC, r, currentMadeMemories);
-
-            string test2 = responseList.ElementAt(0).content;
+            string FirstDialogue = responseList[0].content;
+            //Console.WriteLine("First Line: " +FirstDialogue);
+            ui_man.produceTextBoxes2(FirstDialogue);
 
             //player manipulated sentences, 4testing
-            string test = "My name is Raman! My name is Michael. My name is John? My name is Jill. My name is Yuna. My name is Leo. My name is Koosha.";
-            ui_man.produceTextBoxes2(test2);
+            string test = "my name is raman! my name is michael. my name is john? my name is jill. my name is yuna. my name is leo. my name is koosha.";
+            //ui_man.produceTextBoxes2(test);
 
             // Create game timers
-            State.addTimer("game", 10, new Action(() => { ui_man.reset(Alex, Mom, Dad, s, r, currentMadeMemories); }));
+            State.addTimer("game", 5, new Action(() => { wrapper(); }));
 
         }
 
-        protected override void Initialize() {
+        private void wrapper()
+        {
+            //update currentmademeories, currentmilestones, currenttone, currentcontext
+            State.stopTimerz("game");
+            updateCurrents(Alex,Mom,Dad);
+            responseList = s.ChooseDialog(FNC, Load.sampleDialogueObj, currentMadeMemories, currentMilestones, currentTone, currentContext);
+            
+            ui_man.reset(responseList);
+            dialogueBox.loadNewDialogue("alex",responseListAlex.ElementAt(0).content);
+        }
+
+        //after timer runs out update the current stuff
+        private void updateCurrents(CharacterState Alex, CharacterState Mom, CharacterState Dad)
+        {
+            var response = responseList.ElementAt(0); //I am lazy
+            
+
+            if (!response.nextContext.Equals(""))
+            {
+                if (!(response.context == "" && currentMadeMemories.Count == 1 && currentMadeMemories[0] == "")) {
+                    currentMadeMemories.Add(currentContext); //you are done with this context, add it to memories
+                }
+
+                Console.WriteLine("NextContext: " + response.nextContext);
+                foreach (var memory in currentMadeMemories) {
+                    Console.WriteLine("Current Memory: " + memory);
+                }
+               
+                currentContext = response.nextContext; //change context to new context
+                
+            }
+
+           if (!response.consequence.Equals("")) {
+                Console.WriteLine("Consequnece: " + response.consequence);
+                currentMilestones.Add(response.consequence);
+           }
+            
+            currentTone = ui_man.getTone();
+             
+            FNC = 0;
+        }
+
+        protected override void Initialize()
+        {
             /*Texture texture;
             FileStream f = new FileStream("../../Art/angrymom.png", FileMode.Open);
             texture = new Texture(f);*/
             fullScreenView = window.DefaultView;
             fullScreenView.Viewport = new FloatRect(0, 0, 1, 1);
             window.SetView(fullScreenView);
-            dialogueBox = new DialogueBox(0, 0, 710, 150);
+            dialogueBox = new DialogueBox(0, 0, 710, 150,State);
+           
         }
 
         protected override void Update()
@@ -336,10 +419,10 @@ namespace Test {
 
             }
 
-
         }
-            
-        protected override void Draw() {
+
+        protected override void Draw()
+        {
             window.Clear(clearColor);
             if (init)
             {
@@ -400,7 +483,6 @@ namespace Test {
                 }
                 window.Draw(State.getGameTimer("game")); //this is the timer circle
             }
-            
 
         }
     }

@@ -21,11 +21,12 @@ namespace Test
         public RectangleShape box;
         public RectangleShape nameBox;
         Task currentTask;
-        CancellationTokenSource cts ;
-        Text[] arr;
+        CancellationTokenSource cts;
+        Text[] arr = { };
         public int printTime;
         public bool active = false;
         int elementIndex = 0;
+        GameState state;
 
         public View view { get; private set; }
 
@@ -33,8 +34,11 @@ namespace Test
 
         public void forward()
         {
-            getNext();
-            checkEnd();
+            if (currentTask == null || currentTask.IsCompleted)
+            {
+                getNext();
+                checkEnd();
+            }
         }
         public void setPrintTime(int i)
         {
@@ -44,7 +48,7 @@ namespace Test
         {
             return elementIndex;
         }
-            
+
         public int getArrLength()
         {
             return arr.Length;
@@ -53,26 +57,28 @@ namespace Test
 
         public void checkEnd()
         {
-            if (arr != null && elementIndex == arr.Length)
+            if (getElementIndex() >= getArrLength())
             {
-               active = false;
+                active = false;
             }
         }
 
         public void getNext()
         {
-            if (arr != null && elementIndex < arr.Length)
+            elementIndex += 1;
+            if (elementIndex < arr.Length)
             {
                 if (cts != null)
                 {
                     cts.Cancel();
                 }
                 cts = new CancellationTokenSource();
-                elementIndex += 1;
                 currentTask = Task.Run(async () =>
                 { //Task.Run puts on separate thread
                     printTime = 60;
                     await animateText(arr[elementIndex], cts.Token); //await pauses thread until animateText() is completed
+                    state.startTimer("game");
+
                 }, cts.Token);
             }
         }
@@ -83,21 +89,39 @@ namespace Test
             checkEnd();
         }
 
+        public void loadNewDialogue(string speaker,string dialogue) {
+            if (speaker == "alex")
+            {
+                view.Viewport = new FloatRect(0.3f, 0f, 0.35f, 0.2f);
+                renderDialogue(dialogue, "Alex");
+            }
+            else if (speaker == "dad")
+            {
+                view.Viewport = new FloatRect(0.0f, 0f, 0.35f, 0.2f);
+                renderDialogue(dialogue, "Dad");
+            }
+            else if(speaker == "mom") {
+                view.Viewport = new FloatRect(0.63f, 0f, 0.35f, 0.2f);
+                renderDialogue(dialogue, "Mom");
+            }
+
+        }
+
         public void createCharacterDB(KeyEventArgs e)
         {
             if (e.Code == Keyboard.Key.A)
             {
                 view.Viewport = new FloatRect(0.3f, 0f, 0.35f, 0.2f);
-                renderDialogue("im alexis im alexis im alexis im alexis im alexis im " + 
-                    "alexis im alexis im alexis im alexis im alexis im alexis im alexis im alexis " + 
-                    "im alexis im alexis im alexis im alexis im alexis im alexis ", "Alex");
+                renderDialogue("I have daddy issues.", "Alex");
 
-            } else if (e.Code == Keyboard.Key.M)
+            }
+            else if (e.Code == Keyboard.Key.M)
             {
                 view.Viewport = new FloatRect(0.63f, 0f, 0.35f, 0.2f);
-                renderDialogue("mushroom mom mushroom mom mushroom mom mushroom mom mushroom" + 
+                renderDialogue("mushroom mom mushroom mom mushroom mom mushroom mom mushroom" +
                     " mom mushroom mom mushroom mom mushroom mom mushroom mom ", "Mom");
-            } else if (e.Code == Keyboard.Key.D)
+            }
+            else if (e.Code == Keyboard.Key.D)
             {
                 view.Viewport = new FloatRect(0.0f, 0f, 0.35f, 0.2f);
                 renderDialogue("whos ur daddy im ur daddy whos ur daddy im ur daddy " +
@@ -106,6 +130,8 @@ namespace Test
                     "whos ur daddy im ur daddy whos ur daddy im ur daddy ", "Dad");
             }
         }
+
+        public bool animationDone = false;
 
         public void renderDialogue(String s, String speaker)
         {
@@ -125,7 +151,13 @@ namespace Test
             { //Task.Run puts on separate thread
                 printTime = 60;
                 await animateText(arr[elementIndex], cts.Token); //await pauses thread until animateText() is completed
+                state.startTimer("game");
+                
+
             }, cts.Token);
+
+
+
         }
 
         public Text[] createStrings(Text line)
@@ -144,7 +176,7 @@ namespace Test
                 float wordSizeWithSpace = t.GetGlobalBounds().Width;
                 if (currentLineWidth + wordSizeWithSpace > maxw)
                 {
-    
+
                     line.DisplayedString += "\n";
                     currentLineWidth = 0;
                     if (line.GetGlobalBounds().Height > maxh)
@@ -168,15 +200,17 @@ namespace Test
             {
                 Console.WriteLine(list[i]);
             }
-            
+
             return list.ToArray();
 
         }
 
         //async means this function can run separate from main app.
         //operate in own time and thread
+
         public async Task animateText(Text line, CancellationToken ct)
         {
+            //animationDone = false;
             int i = 0;
             dialogue.DisplayedString = "";
             while (i < line.DisplayedString.Length)
@@ -188,7 +222,6 @@ namespace Test
                 dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, line.DisplayedString[i++]));
                 await Task.Delay(printTime); //equivalent of putting thread to sleep
             }
-
             // Do asynchronous work.
 
         }
@@ -240,14 +273,15 @@ namespace Test
         }
 
 
-        public DialogueBox(float x, float y, float width, float height)
+        public DialogueBox(float x, float y, float width, float height, GameState state)
         {
             this.x = x;
             this.y = y;
             this.w = width;
             this.h = height;
+            this.state = state;
 
-            
+
             box = new RectangleShape(new Vector2f(this.w, this.h));
             box.Position = new Vector2f(this.x - 40, this.y + 35);
             box.OutlineThickness = 3;
@@ -260,10 +294,5 @@ namespace Test
 
             view = new View(GetBounds());
         }
-
-
-
-
     }
-    
 }

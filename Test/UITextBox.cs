@@ -32,18 +32,18 @@ namespace Test
         Color prevColor;
         bool mouseWasIn = false;
         int cluster = -1;
-        string tone = "";
+        tone tone = tone.Root;
 
         public RectangleShape getBox()
         {
             return box;
         }
 
-        public string getTone() {
+        public tone getTone() {
             return tone;
         }
 
-        public void setTone(string tonez) {
+        public void setTone(tone tonez) {
             tone = tonez;
         }
 
