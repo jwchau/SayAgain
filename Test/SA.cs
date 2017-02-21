@@ -10,10 +10,13 @@ using SFML.System;
 using System.Drawing;
 using Newtonsoft.Json;
 
-namespace Test {
+namespace Test
+{
 
-    class SA : Game {
-        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?", Color.Magenta) {
+    class SA : Game
+    {
+        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?", Color.Magenta)
+        {
 
             window.KeyPressed += onKeyPressed;
             window.KeyReleased += onKeyReleased;
@@ -24,7 +27,8 @@ namespace Test {
         }
 
         #region screen resize math
-        private void screenHelper() {
+        private void screenHelper()
+        {
 
             var DesktopX = (double)VideoMode.DesktopMode.Width;
             var DesktopY = (double)VideoMode.DesktopMode.Height;
@@ -35,12 +39,14 @@ namespace Test {
         }
         #endregion
 
-        private void onMouseMoved(object sender, MouseMoveEventArgs e) {
+        private void onMouseMoved(object sender, MouseMoveEventArgs e)
+        {
             ManagerOfInput.OnMouseMoved(State, e.X, e.Y);
 
         }
 
-        private void onMouseButtonReleased(object sender, MouseButtonEventArgs e) {
+        private void onMouseButtonReleased(object sender, MouseButtonEventArgs e)
+        {
 
             ManagerOfInput.onMouseButtonReleased();
 
@@ -49,7 +55,8 @@ namespace Test {
             ui_man.applyTones(e.X, e.Y);
         }
 
-        private void onMouseButtonPressed(object sender, MouseButtonEventArgs e) {
+        private void onMouseButtonPressed(object sender, MouseButtonEventArgs e)
+        {
 
             ManagerOfInput.onMouseButtonPressed(e.X, e.Y);
 
@@ -58,56 +65,101 @@ namespace Test {
             ManagerOfInput.MenuPlay(State, menus, e.X, e.Y);
         }
 
-        private void onKeyReleased(object sender, KeyEventArgs e) {
+        private void onKeyReleased(object sender, KeyEventArgs e)
+        {
         }
 
-        private void onKeyPressed(object sender, KeyEventArgs e) {
+        private void onKeyPressed(object sender, KeyEventArgs e)
+        {
 
 
-            if (e.Code == Keyboard.Key.Space) {
+            if (e.Code == Keyboard.Key.Space)
+            {
                 dialogueBox.setPrintTime(0);
             }
 
-            if (e.Code == Keyboard.Key.N) {
+            if (e.Code == Keyboard.Key.N)
+            {
                 dialogueBox.checkNext();
             }
 
-            if (e.Code == Keyboard.Key.P) {
+            if (e.Code == Keyboard.Key.P)
+            {
                 // Toggles game state between game and pause
                 State.TogglePause();
             }
 
 
             responseList = s.ChooseDialog(FNC, Load.sampleDialogueObj, currentMadeMemories, currentMilestones, currentTone, currentContext);
-            //responseListAlex = s.ChooseDialog((int)D_Man.getAlex().getAlexFNC(), Load.alexDialogueObj1, currentMadeMemories, currentMilestones, currentTone, currentContext);
+            responseListAlex = s.ChooseDialog((int)D_Man.getAlex().getAlexFNC(), Load.alexDialogueObj1, currentMadeMemories, currentMilestones, currentTone, currentContext);
 
-            if (e.Code == Keyboard.Key.A || e.Code == Keyboard.Key.M || e.Code == Keyboard.Key.D) {
+            if (e.Code == Keyboard.Key.A || e.Code == Keyboard.Key.M || e.Code == Keyboard.Key.D)
+            {
                 init = true;
                 dialogueBox.createCharacterDB(e);
             }
         }
-        
+
         #region Timer Action Placeholder
-        public void TimerAction() {
+        public void TimerAction()
+        {
             //update currentmademeories, currentmilestones, currenttone, currentcontext
             updateCurrents();
             responseList = s.ChooseDialog(FNC, Load.sampleDialogueObj, currentMadeMemories, currentMilestones, currentTone, currentContext);
+            responseListAlex = s.ChooseDialog((int)D_Man.getAlex().getAlexFNC(), Load.alexDialogueObj1, currentMadeMemories, currentMilestones, currentTone, currentContext);
             ui_man.reset(responseList);
             dialogueBox.loadNewDialogue("alex", responseListAlex.ElementAt(0).content);
         }
 
         //after timer runs out update the current stuff
-        private void updateCurrents() {
-            if (!responseList.ElementAt(0).nextContext.Equals("")) {
-                currentContext = responseList.ElementAt(0).nextContext;
+        private void updateCurrents()
+        {
+            Console.WriteLine("BEFORE CurrentContext: " + currentContext);
+
+            Console.WriteLine("BEFORE MILESTONES: ");
+            foreach (var milestone in currentMilestones)
+            {
+                Console.WriteLine(milestone);
             }
-            currentMilestones.Add(responseList.ElementAt(0).consequence);
-            currentTone = ui_man.getTone();
+
+            Console.WriteLine("BEFORE MEMORIES: ");
+            foreach (var memory in currentMadeMemories) {
+                Console.WriteLine("FAA == " + memory);
+            }
+
+            if (!responseList.ElementAt(0).nextContext.Equals(""))
+            {
+                Console.WriteLine("GOING INTO THE NEXT CONTEXT: " + responseList.ElementAt(0).nextContext);
+                if (currentContext != "") {
+                    currentMadeMemories.Add(currentContext);
+                }
+                currentContext = responseList.ElementAt(0).nextContext;
+                Console.WriteLine("CurrentContext if there is a next context: " + currentContext);
+            }
+
+            if (!responseList.ElementAt(0).consequence.Equals("")) {
+                currentMilestones.Add(responseList.ElementAt(0).consequence);
+            }
+
+            Console.WriteLine("AFTER MILESTONES: ");
+            foreach (var milestone in currentMilestones)
+            {
+                Console.WriteLine("blah == " + milestone);
+            }
+
+            Console.WriteLine("AFTER MEMORIES: ");
+            foreach (var memory in currentMadeMemories)
+            {
+                Console.WriteLine("FOO == " +memory);
+            }
+
+            currentTone = tone.Root; //hard coded for now
             FNC = 0;
         }
         #endregion
 
-        protected override void Initialize() {
+        protected override void Initialize()
+        {
             /*Texture texture;
             FileStream f = new FileStream("../../Art/angrymom.png", FileMode.Open);
             texture = new Texture(f);*/
@@ -120,6 +172,7 @@ namespace Test {
             responseListAlex = s.ChooseDialog((int)D_Man.getAlex().getAlexFNC(), Load.alexDialogueObj1, currentMadeMemories, currentMilestones, currentTone, currentContext);
             string FirstDialogue = responseList[0].content;
             ui_man.produceTextBoxes2(FirstDialogue);
+            //timeflag
             State.addTimer("game", 5, new Action(() => { TimerAction(); }));
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -132,8 +185,10 @@ namespace Test {
             menus.Add(startMenu); menus.Add(settingsMenu); menus.Add(pauseMenu);
         }
 
-        protected override void Update() {
-            if (State.GetState() == "game") {
+        protected override void Update()
+        {
+            if (State.GetState() == "game")
+            {
 
                 // Update the game timerz
                 State.updateTimerz();
@@ -145,18 +200,22 @@ namespace Test {
                 var MouseCoord = ManagerOfInput.GetMousePos();
 
                 // If the mouse is currently dragging
-                if (ManagerOfInput.GetMouseDown()) {
+                if (ManagerOfInput.GetMouseDown())
+                {
 
                     // Loop through buttons
-                    for (var i = 0; i < buttons.Count; i++) {
+                    for (var i = 0; i < buttons.Count; i++)
+                    {
                         // Find button currently being interacted with
-                        if (buttons[i].GetSelected()) {
+                        if (buttons[i].GetSelected())
+                        {
                             // Move the button around the screen
                             buttons[i].translate(MouseCoord[0], MouseCoord[1]);
 
                             // Check collision with UI Textboxes
                             // Loop through UI Textboxes
-                            for (var j = 0; j < playerDialogues.Count; j++) {
+                            for (var j = 0; j < playerDialogues.Count; j++)
+                            {
                                 // If the mouse just came from inside a UI Textbox
                                 if (playerDialogues[j].wasMouseIn())
                                 {
@@ -194,7 +253,9 @@ namespace Test {
 
                 }
 
-            } else if (State.GetState() == "pause") {
+            }
+            else if (State.GetState() == "pause")
+            {
                 State.getGameTimer("game").PauseTimer();
 
             }
@@ -202,21 +263,29 @@ namespace Test {
 
         }
 
-        protected override void Draw() {
+        protected override void Draw()
+        {
             window.Clear(clearColor);
-            if (init) {
+            if (init)
+            {
                 window.Draw(dialogueBox);
 
             }
             window.SetView(fullScreenView);
-            if (State.GetState() == "menu") {
-                if (State.GetMenuState() == "start") {
+            if (State.GetState() == "menu")
+            {
+                if (State.GetMenuState() == "start")
+                {
                     window.Draw(startMenu);
-                } else {
+                }
+                else
+                {
                     window.Draw(settingsMenu);
                 }
 
-            } else {
+            }
+            else
+            {
 
                 //Draw text box background box
                 RectangleShape textBackground = new RectangleShape(new Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT / 5));
@@ -226,24 +295,30 @@ namespace Test {
 
                 var dialogues = ui_man.getPlayerDialogues();
 
-                for (var i = 0; i < dialogues.Count; i++) {
+                for (var i = 0; i < dialogues.Count; i++)
+                {
                     window.Draw(dialogues[i]);
                 }
                 var buttons = ui_man.getButtons();
 
-                for (var i = 0; i < buttons.Count; i++) {
+                for (var i = 0; i < buttons.Count; i++)
+                {
                     window.Draw(buttons[i]);
                 }
                 window.Draw(D_Man.getAlex());
                 window.Draw(D_Man.getMom());
                 window.Draw(D_Man.getDad());
 
-                if (State.GetState() == "pause") {
+                if (State.GetState() == "pause")
+                {
                     pauseMenu.DrawBG(window);
-                    if (State.GetMenuState() == "pause") {
+                    if (State.GetMenuState() == "pause")
+                    {
                         window.Draw(pauseMenu);
-                    } else if (State.GetMenuState() == "settings") {
-                        window.Draw(pauseMenu);
+                    }
+                    else if (State.GetMenuState() == "settings")
+                    {
+                        window.Draw(settingsMenu);
                     }
 
                 }

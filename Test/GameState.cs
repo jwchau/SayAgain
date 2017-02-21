@@ -125,6 +125,7 @@ namespace Test
                 // If mouse position is over current button
                 if (buttons[i].Contains(mouseCoords[0], mouseCoords[1]))
                 {
+                    
                     // Find what this button is suppose to do
                     for (var j = 0; j < mappings.Count; j++)
                     {
@@ -148,6 +149,7 @@ namespace Test
                             {
                                 SetMenuState(mappings[j].Item2);
                             }
+                            //Console.WriteLine("Butt num: {0}, State: {1}, Menu State: {2}", i, GetState(), GetMenuState());
 
                             break;
                         }

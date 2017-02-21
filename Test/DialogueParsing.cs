@@ -51,7 +51,7 @@ namespace Test
             tonalPreReq = "";
             context = "";
             consequence = "";
-            nextContext = "Greetings";
+            nextContext = "";
             memories = new List<string>();
             milestone = new List<string>();
             memories.Add("");

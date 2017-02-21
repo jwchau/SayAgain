@@ -29,6 +29,7 @@ namespace Test
         public bool active = false;
         int elementIndex = 0;
         GameState state;
+        int i = 0;
 
         public View view { get; private set; }
 
@@ -208,7 +209,7 @@ namespace Test
         {
             animationStart = true;
             state.resetTimer("game");
-            int i = 0;
+            i = 0;
             dialogue.DisplayedString = "";
             while (i < line.DisplayedString.Length)
             {
@@ -216,9 +217,14 @@ namespace Test
                 {
                     ct.ThrowIfCancellationRequested();
                 }
-                dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, line.DisplayedString[i++]));
-                await Task.Delay(printTime); //equivalent of putting thread to sleep
+                if (state.GetState() != "pause")
+                {
+                    dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, line.DisplayedString[i++]));
+                    await Task.Delay(printTime); //equivalent of putting thread to sleep
+                }
+                
             }
+
             // Do asynchronous work.
             state.startTimer("game");
             animationStart = false;

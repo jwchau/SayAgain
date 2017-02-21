@@ -126,17 +126,89 @@
 	"NextContext":"MomTalksMom"
 	
 },
-{
-	"content": "You've been gone for a year and that's what you ask? ",
-	"Tonal prereq": "Indifferent",
-	"Context": "AlexTalksAlex",
-	"Consequence": "TalkedFriends",
-	"Memories":["School"],
-	"Milestones":["greeting","TalkedSchool"],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"MomTalksMom"
-	
-}
+  {
+    "content": "You've been gone for a year and that's what you ask? ",
+    "Tonal prereq": "Indifferent",
+    "Context": "AlexTalksAlex",
+    "Consequence": "TalkedFriends",
+    "Memories": [ "School" ],
+    "Milestones": [ "greeting", "TalkedSchool" ],
+    "FNCprereq": 0,
+    "Target": [ 1, 0, 0 ],
+    "NextContext": "MomTalksMom"
+
+  },
+      {
+      "content": "first dialogue",
+      "tonalPreReq": "Root",
+      "context": "",
+      "consequence": "one done",
+      "memories": [ ],
+      "milestone": [ "" ],
+      "fncPreReq": 0,
+      "speaker": "Player",
+      "target": [ 0, 0, 0 ],
+      "nextContext": "Greetings"
+    },
+    {
+      "content": "I am alex",
+      "tonalPreReq": "Root",
+      "context": "Greetings",
+      "consequence": "two done",
+      "memories": [ ""],
+      "milestone": [ "", "one done" ],
+      "fncPreReq": 0,
+      "speaker": "Player",
+      "target": [ 0, 0, 0 ],
+      "nextContext": "SuhDude"
+    },
+    {
+      "content": "I am alex dialogue 2",
+      "tonalPreReq": "Root",
+      "context": "SuhDude",
+      "consequence": "three done",
+      "memories": ["","Greetings" ],
+      "milestone": [ "", "one done", "two done" ],
+      "fncPreReq": 0,
+      "speaker": "Player",
+      "target": [ 0, 0, 0 ],
+      "nextContext": "LastDia"
+    },
+    {
+      "content": "Dialogue am Alex 3 ",
+      "tonalPreReq": "Root",
+      "context": "LastDia",
+      "consequence": "",
+      "memories": [ "", "Greetings", "SuhDude" ],
+      "milestone": [ "", "one done", "two done", "three done" ],
+      "fncPreReq": 0,
+      "speaker": "Player",
+      "target": [ 0, 0, 0 ],
+      "nextContext": "looper1"
+    },
+    {
+      "content": "Alex Dialogue Loop",
+      "tonalPreReq": "Root",
+      "context": "looper2",
+      "consequence": "",
+      "memories": [ "", "Greetings", "SuhDude" ],
+      "milestone": [ "", "one done", "two done", "three done" ],
+      "fncPreReq": 0,
+      "speaker": "Player",
+      "target": [ 0, 0, 0 ],
+      "nextContext": "looper1"
+    },
+    {
+      "content": "Dialogue Loop Alex",
+      "tonalPreReq": "Root",
+      "context": "looper1",
+      "consequence": "",
+      "memories": [ "", "Greetings", "SuhDude" ],
+      "milestone": [ "", "one done", "two done", "three done" ],
+      "fncPreReq": 0,
+      "speaker": "Player",
+      "target": [ 0, 0, 0 ],
+      "nextContext": "looper2"
+    }
 ]
 }
