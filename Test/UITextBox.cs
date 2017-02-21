@@ -13,7 +13,6 @@ namespace Test
     {
         public UITextBox(float x, float y, string dialogue, int cluster)
         {
-            UITextBoxFont = new Font("../../Fonts/Adore64.ttf");
             UITextBoxText = new Text(dialogue, UITextBoxFont);
             UITextBoxText.Position = new Vector2f(x, y);
             box = new RectangleShape(new Vector2f(UITextBoxText.GetGlobalBounds().Width + 5, UITextBoxText.GetGlobalBounds().Height + 5));
@@ -25,7 +24,7 @@ namespace Test
             this.cluster = cluster;
         }
 
-        Font UITextBoxFont;
+        Font UITextBoxFont = new Font("../../Fonts/Adore64.ttf");
         Text UITextBoxText;
         RectangleShape box;
         bool affected = false;

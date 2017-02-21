@@ -10,7 +10,7 @@ namespace Test
     {
         //Creates and loads Json Objects
         public DialogueParsing playerDialogueObj1 = new DialogueParsing(@"../../playerTutorial.json");
-        public DialogueParsing alexDialogueObj1 = new DialogueParsing(@"../../alextutorial_json.json");
+        public DialogueParsing alexDialogueObj1 = new DialogueParsing(@"../../alexTutorial.json");
         public DialogueParsing sampleDialogueObj = new DialogueParsing(@"../../sampleJSON.JSON");
 
         //Creates and loads music and sound files

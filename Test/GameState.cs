@@ -53,6 +53,11 @@ namespace Test
             {
                 throw new FormatException();
             }
+            if (state == "game" && currentMenuState == "start")
+            {
+                //DictGameTimer["game"].setOldGameTime((DateTime.Now.Ticks / 10000) / 1000);
+            }
+
 
             currentState = state;
         }
@@ -74,14 +79,12 @@ namespace Test
         public void updateTimerz()
         {
 
-            //Console.WriteLine("GET START IS TRUE HERE: "+DictGameTimer["game"].getCountDown());
             foreach (var pair in DictGameTimer)
             {
                 //pair.Value is a gameTimer
                 //pair.Key is the label of the game Timer;
                 if (pair.Value.getStart())
                 {
-                    //Console.WriteLine("GET START IS TRUE HERE");
                     pair.Value.updateTimer();
 
                 }
@@ -92,7 +95,7 @@ namespace Test
                         //DO STUFF BEFORE RESTARTING
                         //Process Player dialogue
                         pair.Value.doTask();
-                        pair.Value.restartTimer();
+                        
                     }
                     
                 }
@@ -108,10 +111,14 @@ namespace Test
             DictGameTimer[key].startTimer();
         }
 
+        public void resetTimer(string key)
+        {
+            DictGameTimer[key].resetTimer();
+        }
+
         // Handle Menu Traversal and Game Launching
         public void updateMenuState(int[] mouseCoords, List<MenuButton> buttons, List<Tuple<string, string, Task>> mappings)
         {
-
             // Loop through current menu's buttons
             for (var i = 0; i < buttons.Count; i++)
             {

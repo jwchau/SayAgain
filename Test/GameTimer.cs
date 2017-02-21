@@ -22,29 +22,30 @@ namespace Test
 			countDown = howLong;
 			timerEvent = T;
             circle.Position = new Vector2f(SCREEN_WIDTH - 100, SCREEN_HEIGHT - 200);
+            timerRead = new Text(Convert.ToString(countDown), adore64);
+            timerRead.Position = new Vector2f(SCREEN_WIDTH - 100, SCREEN_HEIGHT - 200);
+            timerRead.Color = Color.White;
+            start = false;
         }
 
 		public void updateTimer()
 		{
 			if (start == true)
 			{
-                Console.WriteLine("COUNTDOWN: " + countDown);
+
                 //timer update
                 if (countDown > 0)
 				{
 					//as long as you are not out of time
 					newTimeSeconds = ((DateTime.Now.Ticks / 10000000) - timeDiff);
-					countDown = (initTime - (newTimeSeconds - oldTimeSeconds));
-                    
-                    Console.WriteLine("NTS: " + (newTimeSeconds - oldTimeSeconds));
-
+					countDown = (initTime - (newTimeSeconds - oldTimeSeconds));  
 
                 }
-				else
+				else if (countDown <= 0)
 				{
-					timerFinished = true;
 					start = false;
 				}
+                timerRead.DisplayedString = Convert.ToString(countDown);
                 circle.Radius = 20 * (float)(countDown / initTime);
             }
 		}
@@ -54,21 +55,30 @@ namespace Test
 			start = false;
 		}
 
-		public void restartTimer()
+
+        public void restartTimer()
 		{
-			timerFinished = false;
-			countDown = initTime;
+            //timerFinished = false;
+            //Console.WriteLine("oh baby");
+            start = true;
+			countDown = initTime + 1;
 			timeDiff = 0;
 			oldTimeSeconds = (DateTime.Now.Ticks / 10000000);
 		}
 
-		public double getInitTime()
+        public void resetTimer()
+        {
+            countDown = initTime + 1;
+        }
+
+        public double getInitTime()
 		{
 			return initTime;
 		}
 
 		public void startTimer()
 		{
+            //Console.WriteLine("plz do not poop here");
 			start = true;
             timeDiff = 0;
             oldTimeSeconds = (DateTime.Now.Ticks / 10000000);
@@ -76,10 +86,14 @@ namespace Test
 
 		public void PauseTimer()
 		{
-			pauseTime = newTimeSeconds;
-			double a = pauseTime;
-			double b = DateTime.Now.Ticks / 10000000;
-			timeDiff = b - a;
+            if (start)
+            {
+                //Console.WriteLine("I AM HERE");
+                pauseTime = newTimeSeconds;
+                double a = pauseTime;
+                double b = DateTime.Now.Ticks / 10000000;
+                timeDiff = b - a;
+            }
 		}
 
 		double oldTimeSeconds = 0;
@@ -90,8 +104,11 @@ namespace Test
 		double currentTime = 0;
 		double initTime = 0; //needed to restart
 		bool start = false;
-		bool timerFinished = false;
+        bool pause = false;
+		//bool timerFinished = false;
 		Action timerEvent;
+        Font adore64 = new Font("../../Fonts/Adore64.ttf");
+        Text timerRead;
 
 
 		public bool getStart()
@@ -169,7 +186,8 @@ namespace Test
         {
             // Change radius to match time elapsed and draw it
             
-            target.Draw(circle);
+            //target.Draw(circle);
+            target.Draw(timerRead);
         }
     }
 }

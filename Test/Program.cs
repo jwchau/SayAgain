@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace Test
 {
-    
+    public enum tone
+    {
+        Blunt = 0,
+        Indifferent = 1,
+        Compassionate = 2,
+        Hesitant = 4,
+        Root = 8,
+    }
+
     class Program
     {
        

@@ -18,12 +18,8 @@ namespace Test
             this.tag = tag;
 
             this.matrix = new double[3, 4]; //where 3 is the # of characters and 4 is the # of tones
-            //int[] nums = { -1, 3, 2, 4,
-            //                1, 3, 2, 4,
-            //                1, 3, 2, 4
-            //                };
-            int k = 0;
 
+            int k = 0;
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 4; j++)

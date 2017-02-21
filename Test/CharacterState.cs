@@ -13,12 +13,12 @@ namespace Test
     class CharacterState: Drawable{
         //fields
         private string who;
-        private double mood;
-        private double volatility;
-        private double goal;
+        //private double mood;
+        //private double volatility;
+        //private double goal;
         double talkedTo = 0;
         static bool[] targets = { false,false,false }; // 0 = alex 1 = mom 2 = dad
-        static Relationships characterFNC = new Relationships();
+        static Relationships ship = new Relationships();
         Color color;
 
         RectangleShape characterRect = new RectangleShape(new Vector2f(75, 75));
@@ -100,10 +100,17 @@ namespace Test
 
         }
 
-        public Relationships getCharacterFNC() {
-            return characterFNC;
+        public double getDadFNC() {
+            return ship.getDadFNC();
+        }
+        public double getAlexFNC() {
+            return ship.getAlexFNC();
+        }
+        public double getMomFNC() {
+            return ship.getMomFNC();
         }
 
+        ///lol wat, turnary ?
         public void Draw(RenderTarget target, RenderStates states) {
             target.Draw(characterRect);
             if (targets[(who == "alex" ? 0 : who == "mom" ? 1 : 2)]) target.Draw(targeted);
@@ -119,6 +126,11 @@ namespace Test
             return false;
         }
 
+        #region InputManager_targetCheck
+        public void targetCheck(int x, int y) {
+            if (this.Contains(x, y)) this.setTargets(this.who);
+        }
+        #endregion
 
 
     }

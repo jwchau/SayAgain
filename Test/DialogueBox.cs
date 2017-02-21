@@ -21,6 +21,8 @@ namespace Test
         public RectangleShape box;
         public RectangleShape nameBox;
         Task currentTask;
+
+        bool animationStart = false;
         CancellationTokenSource cts;
         Text[] arr = { };
         public int printTime;
@@ -54,6 +56,10 @@ namespace Test
             return arr.Length;
         }
 
+        public bool getAnimationStart()
+        {
+            return animationStart;
+        }
 
         public void checkEnd()
         {
@@ -77,8 +83,6 @@ namespace Test
                 { //Task.Run puts on separate thread
                     printTime = 60;
                     await animateText(arr[elementIndex], cts.Token); //await pauses thread until animateText() is completed
-                    state.startTimer("game");
-
                 }, cts.Token);
             }
         }
@@ -118,8 +122,8 @@ namespace Test
             else if (e.Code == Keyboard.Key.M)
             {
                 view.Viewport = new FloatRect(0.63f, 0f, 0.35f, 0.2f);
-                renderDialogue("mushroom mom mushroom mom mushroom mom mushroom mom mushroom" +
-                    " mom mushroom mom mushroom mom mushroom mom mushroom mom ", "Mom");
+                renderDialogue("mushroom mom mushroom mom mushroom mom mushroom mom mushroom " +
+                    "mom mushroom mom mushroom mom mushroom mom mushroom mom", "Mom");
             }
             else if (e.Code == Keyboard.Key.D)
             {
@@ -127,12 +131,10 @@ namespace Test
                 renderDialogue("whos ur daddy im ur daddy whos ur daddy im ur daddy " +
                     "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
                     "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
-                    "whos ur daddy im ur daddy whos ur daddy im ur daddy ", "Dad");
+                    "whos ur daddy im ur daddy whos ur daddy im ur daddy", "Dad");
             }
         }
-
-        public bool animationDone = false;
-
+        
         public void renderDialogue(String s, String speaker)
         {
             active = true;
@@ -151,13 +153,8 @@ namespace Test
             { //Task.Run puts on separate thread
                 printTime = 60;
                 await animateText(arr[elementIndex], cts.Token); //await pauses thread until animateText() is completed
-                state.startTimer("game");
-                
 
             }, cts.Token);
-
-
-
         }
 
         public Text[] createStrings(Text line)
@@ -176,7 +173,7 @@ namespace Test
                 float wordSizeWithSpace = t.GetGlobalBounds().Width;
                 if (currentLineWidth + wordSizeWithSpace > maxw)
                 {
-
+    
                     line.DisplayedString += "\n";
                     currentLineWidth = 0;
                     if (line.GetGlobalBounds().Height > maxh)
@@ -196,10 +193,10 @@ namespace Test
                 list.Add(line);
 
             }
-            for (int i = 0; i < list.Count; i++)
+            /*for (int i = 0; i < list.Count; i++)
             {
                 Console.WriteLine(list[i]);
-            }
+            }*/
 
             return list.ToArray();
 
@@ -207,10 +204,10 @@ namespace Test
 
         //async means this function can run separate from main app.
         //operate in own time and thread
-
         public async Task animateText(Text line, CancellationToken ct)
         {
-            //animationDone = false;
+            animationStart = true;
+            state.resetTimer("game");
             int i = 0;
             dialogue.DisplayedString = "";
             while (i < line.DisplayedString.Length)
@@ -223,6 +220,8 @@ namespace Test
                 await Task.Delay(printTime); //equivalent of putting thread to sleep
             }
             // Do asynchronous work.
+            state.startTimer("game");
+            animationStart = false;
 
         }
 
@@ -282,6 +281,7 @@ namespace Test
             this.state = state;
 
 
+            
             box = new RectangleShape(new Vector2f(this.w, this.h));
             box.Position = new Vector2f(this.x - 40, this.y + 35);
             box.OutlineThickness = 3;
@@ -291,7 +291,6 @@ namespace Test
             nameBox.Position = new Vector2f(this.x, this.y);
             nameBox.OutlineThickness = 3;
             nameBox.OutlineColor = Color.Black;
-
             view = new View(GetBounds());
         }
     }
