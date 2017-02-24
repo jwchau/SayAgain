@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CharacterState.cs" />
+    <Compile Include="CutsceneManager.cs" />
     <Compile Include="ContextFilter.cs" />
     <Compile Include="GameMatrix.cs" />
     <Compile Include="PersonState.cs" />

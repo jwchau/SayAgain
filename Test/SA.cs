@@ -126,6 +126,9 @@ namespace Test
             window.SetView(fullScreenView);
             ui_man.setDialogueBox();
             ui_man.setViews(fullScreenView);
+
+            cman.MakeMom();
+            made = true;
         }
 
         protected override void Update()
@@ -134,14 +137,22 @@ namespace Test
 
 
         }
+        
+        bool made;
 
         protected override void Draw()
         {
+            
+           
             window.Clear(Color.Magenta);
             ui_man.DrawDialogueBox(window);
             ui_man.DrawUI(window, State, ui_man, startMenu, pauseMenu, settingsMenu);
 
-
+            //cman.MakeMom();
+            if (made) { window.Draw(cman.mom); }
+            
         }
+
+
     }
 }

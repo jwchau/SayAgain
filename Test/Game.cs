@@ -23,6 +23,9 @@ namespace Test
         protected InputManager ManagerOfInput = new InputManager();
         //User Inferface Manager
         protected UIManager ui_man = new UIManager();
+
+        //Cutscene Manager
+        protected CutsceneManager cman = new CutsceneManager();
         //Menus
         protected StartMenu startMenu = new StartMenu("start");
         protected StartMenu settingsMenu = new StartMenu("settings");
@@ -57,13 +60,23 @@ namespace Test
             LoadContent();
             Initialize();
 
+            /**********************************************/
+            /*             framerate lock                 */
+            /**********************************************/
+
+            DateTime time = DateTime.Now;
+            float framerate = 60f;
             while (window.IsOpen)
             {
                 window.DispatchEvents();
                 Update();
-                
-                Draw();
-                window.Display();
+
+                if ((DateTime.Now - time).TotalMilliseconds > (1000f / framerate))
+                {
+                    time = DateTime.Now;
+                    Draw();
+                    window.Display();
+                }
             }
         }
 
