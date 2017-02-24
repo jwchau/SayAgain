@@ -10,7 +10,7 @@
       "fncPreReq": 1,
       "speaker": "Player",
       "target": [ 0, 0, 0 ],
-      "nextContext": ""
+      "nextContext": [ "" ]
     },
     {
       "content": "I have become God",
@@ -22,7 +22,7 @@
       "fncPreReq": 50,
       "speaker": "Player",
       "target": [ 0, 0, 0 ],
-      "nextContext": "test2"
+      "nextContext": ["test2"]
     },
     {
       "content": "suh bro",

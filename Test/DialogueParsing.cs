@@ -39,9 +39,9 @@ namespace Test
         public int fncPreReq { get; set; }
         public string speaker { get; set; }
         public List<int> target { get; set; }
-        public string nextContext { get; set; }
+        public List<string> nextContext { get; set; }
 
-        public DialogueObj(string newContent, string newTonalPreReq, string newContext, string newConsequence, List<string> newMemories, List<string> newMilestone, int newFncPreReq, string newSpeaker, List<int> newTarget, string newNextContext)
+        public DialogueObj(string newContent, string newTonalPreReq, string newContext, string newConsequence, List<string> newMemories, List<string> newMilestone, int newFncPreReq, string newSpeaker, List<int> newTarget, List<string> newNextContext)
         {
             content = newContent; tonalPreReq = newTonalPreReq; context = newContext; consequence = newConsequence; memories = newMemories; milestone = newMilestone; fncPreReq = newFncPreReq; speaker = newSpeaker; target = newTarget; nextContext = newNextContext;
         }
@@ -51,7 +51,8 @@ namespace Test
             tonalPreReq = "";
             context = "";
             consequence = "";
-            nextContext = "";
+            nextContext = new List<string>();
+            //nextContext.Add("");
             memories = new List<string>();
             milestone = new List<string>();
             memories.Add("");

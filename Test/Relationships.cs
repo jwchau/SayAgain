@@ -9,7 +9,7 @@ namespace Test
     class Relationships
     {
         public Relationships() {
-            AlexFNC = -3.0;
+            AlexFNC = -4.0;
             MomFNC = 0.0;
             DadFNC = 4.0;
         }
@@ -18,8 +18,8 @@ namespace Test
         double MomFNC;
         double DadFNC;
 
-        public int getAlexFNC() {
-            return (int)AlexFNC;
+        public double getAlexFNC() {
+            return AlexFNC;
         }
         public double getMomFNC()
         {

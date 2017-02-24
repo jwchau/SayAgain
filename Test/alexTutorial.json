@@ -1,214 +1,143 @@
 {"Dialogues" :[
 {
 	"content": "Yeah I missed you too",
-	"Tonal prereq": "Blunt",
-	"Context": "AlexTalksPlayer",
-	"Consequence": "greeting",
-	"Memories":[""],
-	"Milestones":[""],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"School"
+	"tonalPreReq": "Blunt",
+	"context": "AlexTalksPlayer",
+	"consequence": "",
+	"memories":[""],
+	"milestone":[""],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
 },
 {
 	"content": "Hey",
-	"Tonal prereq": "Indifferent",
-	"Context": "AlexTalksPlayer",
-	"Consequence": "greeting",
-	"Memories":[""],
-	"Milestones":[""],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"School"
+	"tonalPreReq": "Indifferent",
+	"context": "AlexTalksPlayer",
+	"consequence": "",
+	"memories":[""],
+	"milestone":[""],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
 	
 },
 {
 	"content": "Yeah it's me, Your sister. Remember?",
-	"Tonal prereq": "Hesitant",
-	"Context": "AlexTalksPlayer",
-	"Consequence": "greeting",
-	"Memories":[""],
-	"Milestones":[""],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"School"
+	"tonalPreReq": "Hesitant",
+	"context": "AlexTalksPlayer",
+	"consequence": "",
+	"memories":[""],
+	"milestone":[""],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
 },
 {
 	"content": "Oh ... yeah",
-	"Tonal prereq": "Compassionate",
-	"Context": "AlexTalksPlayer",
-	"Consequence": "greeting",
-	"Memories":[""],
-	"Milestones":[""],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"School"
+	"tonalPreReq": "Compassionate",
+	"context": "AlexTalksPlayer",
+	"consequence": "",
+	"memories":[""],
+	"milestone":[""],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
 	
 },
 {
 	"content": "Eh whatever",
-	"Tonal prereq": "Blunt",
-	"Context": "AlexTalksSchool",
-	"Consequence": "TalkedSchool",
-	"Memories":[""],
-	"Milestones":["greeting"],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"AlexTalksAlex"
+	"tonalPreReq": "Blunt",
+	"context": "AlexTalksAlex",
+	"consequence": "",
+	"memories":["","AlexTalksPlayer"],
+	"milestone":["","greeting"],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
 },
 {
 	"content": "Fine",
-	"Tonal prereq": "Indifferent",
-	"Context": "AlexTalksSchool",
-	"Consequence": "TalkedSchool",
-	"Memories":[""],
-	"Milestones":["greeting"],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"AlexTalksAlex"
+	"tonalPreReq": "Indifferent",
+	"context": "AlexTalksAlex",
+	"consequence": "",
+	"memories":["","AlexTalksPlayer"],
+	"milestone":["","greeting"],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
+	
 },
 {
 	"content": "I'm fourteen, remember?",
-	"Tonal prereq": "Hesitant",
-	"Context": "AlexTalksSchool",
-	"Consequence": "TalkedSchool",
-	"Memories":[""],
-	"Milestones":["greeting"],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"AlexTalksAlex"
+	"tonalPreReq": "Hesitant",
+	"context": "AlexTalksAlex",
+	"consequence": "",
+	"memories":["","AlexTalksPlayer"],
+	"milestone":["","greeting"],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
 },
 {
-	"content": "Could be worse!",
-	"Tonal prereq": "Compassionate",
-	"Context": "AlexTalksSchool",
-	"Consequence": "TalkedSchool",
-	"Memories":[""],
-	"Milestones":["greeting"],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"AlexTalksAlex"
+	"content": "As if you actually care!",
+	"tonalPreReq": "Compassionate",
+	"context": "AlexTalksAlex",
+	"consequence": "",
+	"memories":["","AlexTalksPlayer","AlexTalksAlex"],
+	"milestone":["","greeting","TalkedSchool"],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
 	
 },
 {
 	"content": "Yeah I know to make friends. Thanks",
-	"Tonal prereq": "Blunt",
-	"Context": "AlexTalksAlex",
-	"Consequence": "TalkedFriends",
-	"Memories":["School"],
-	"Milestones":["greeting","TalkedSchool"],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"MomTalksMom"
+	"tonalPreReq": "Blunt",
+	"context": "AlexTalksAlex",
+	"consequence": "",
+	"memories":["","AlexTalksPlayer","AlexTalksAlex"],
+	"milestone":["","greeting","TalkedSchool"],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
 	
 },
 {
 	"content": "Oh I'm so glad you care about my wellbeing, sibling",
-	"Tonal prereq": "Compassionate",
-	"Context": "AlexTalksAlex",
-	"Consequence": "TalkedFriends",
-	"Memories":["School"],
-	"Milestones":["greeting","TalkedSchool"],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"MomTalksMom"
+	"tonalPreReq": "Compassionate",
+	"context": "AlexTalksAlex",
+	"consequence": "",
+	"memories":["","AlexTalksPlayer","AlexTalksAlex"],
+	"milestone":["","greeting","TalkedSchool"],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
 	
 },
 {
 	"content": "Wait who? I've never had a friend named Ron. You don't need to act like you care",
-	"Tonal prereq": "Compassionate",
-	"Context": "AlexTalksAlex",
-	"Consequence": "TalkedFriends",
-	"Memories":["School"],
-	"Milestones":["greeting","TalkedSchool"],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"MomTalksMom"
+	"tonalPreReq": "Compassionate",
+	"context": "AlexTalksAlex",
+	"consequence": "",
+	"memories":["","AlexTalksPlayer","AlexTalksAlex"],
+	"milestone":["","greeting","TalkedSchool"],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
 	
 },
-  {
-    "content": "You've been gone for a year and that's what you ask? ",
-    "Tonal prereq": "Indifferent",
-    "Context": "AlexTalksAlex",
-    "Consequence": "TalkedFriends",
-    "Memories": [ "School" ],
-    "Milestones": [ "greeting", "TalkedSchool" ],
-    "FNCprereq": 0,
-    "Target": [ 1, 0, 0 ],
-    "NextContext": "MomTalksMom"
-
-  },
-      {
-      "content": "first dialogue",
-      "tonalPreReq": "Root",
-      "context": "",
-      "consequence": "one done",
-      "memories": [ ],
-      "milestone": [ "" ],
-      "fncPreReq": 0,
-      "speaker": "Player",
-      "target": [ 0, 0, 0 ],
-      "nextContext": "Greetings"
-    },
-    {
-      "content": "I am alex",
-      "tonalPreReq": "Root",
-      "context": "Greetings",
-      "consequence": "two done",
-      "memories": [ ""],
-      "milestone": [ "", "one done" ],
-      "fncPreReq": 0,
-      "speaker": "Player",
-      "target": [ 0, 0, 0 ],
-      "nextContext": "SuhDude"
-    },
-    {
-      "content": "I am alex dialogue 2",
-      "tonalPreReq": "Root",
-      "context": "SuhDude",
-      "consequence": "three done",
-      "memories": ["","Greetings" ],
-      "milestone": [ "", "one done", "two done" ],
-      "fncPreReq": 0,
-      "speaker": "Player",
-      "target": [ 0, 0, 0 ],
-      "nextContext": "LastDia"
-    },
-    {
-      "content": "Dialogue am Alex 3 ",
-      "tonalPreReq": "Root",
-      "context": "LastDia",
-      "consequence": "",
-      "memories": [ "", "Greetings", "SuhDude" ],
-      "milestone": [ "", "one done", "two done", "three done" ],
-      "fncPreReq": 0,
-      "speaker": "Player",
-      "target": [ 0, 0, 0 ],
-      "nextContext": "looper1"
-    },
-    {
-      "content": "Alex Dialogue Loop",
-      "tonalPreReq": "Root",
-      "context": "looper2",
-      "consequence": "",
-      "memories": [ "", "Greetings", "SuhDude" ],
-      "milestone": [ "", "one done", "two done", "three done" ],
-      "fncPreReq": 0,
-      "speaker": "Player",
-      "target": [ 0, 0, 0 ],
-      "nextContext": "looper1"
-    },
-    {
-      "content": "Dialogue Loop Alex",
-      "tonalPreReq": "Root",
-      "context": "looper1",
-      "consequence": "",
-      "memories": [ "", "Greetings", "SuhDude" ],
-      "milestone": [ "", "one done", "two done", "three done" ],
-      "fncPreReq": 0,
-      "speaker": "Player",
-      "target": [ 0, 0, 0 ],
-      "nextContext": "looper2"
-    }
+{
+	"content": "You've been gone for a year and that's what you ask? ",
+	"tonalPreReq": "Indifferent",
+	"context": "AlexTalksAlex",
+	"consequence": "",
+	"memories":["","AlexTalksPlayer","AlexTalksAlex"],
+	"milestone":["","greeting","TalkedSchool"],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
+	
+}
 ]
 }

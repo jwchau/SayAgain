@@ -15,6 +15,9 @@ namespace Test
 {
     class DialogueBox : Drawable
     {
+
+        static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
+        static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
         public float w, h, x, y;//, x2, y2, OffsetX, OffsetY, OffsetX2, OffsetY2;
         private Text name, dialogue;
         //public Dialogue line;
@@ -22,18 +25,27 @@ namespace Test
         public RectangleShape nameBox;
         Task currentTask;
 
-        bool animationStart = false;
+        Boolean init = false;
+        string tag; //AI or player
+
+        bool animationStart = true;
+        bool awaitInput = false;
         CancellationTokenSource cts;
         Text[] arr = { };
         public int printTime;
         public bool active = false;
         int elementIndex = 0;
         GameState state;
-        int i = 0;
 
         public View view { get; private set; }
 
+        // public View playerView { get; private set;}
+
         Font speechFont = new Font("../../Fonts/Adore64.ttf");
+
+        public void setInit(bool b) {
+            init = b;
+        }
 
         public void forward()
         {
@@ -94,7 +106,8 @@ namespace Test
             checkEnd();
         }
 
-        public void loadNewDialogue(string speaker,string dialogue) {
+        public void loadNewDialogue(string speaker, string dialogue)
+        {
             if (speaker == "alex")
             {
                 view.Viewport = new FloatRect(0.3f, 0f, 0.35f, 0.2f);
@@ -105,37 +118,41 @@ namespace Test
                 view.Viewport = new FloatRect(0.0f, 0f, 0.35f, 0.2f);
                 renderDialogue(dialogue, "Dad");
             }
-            else if(speaker == "mom") {
+            else if (speaker == "mom")
+            {
                 view.Viewport = new FloatRect(0.63f, 0f, 0.35f, 0.2f);
                 renderDialogue(dialogue, "Mom");
             }
+            else if (speaker == "player")
+            {
+                view.Viewport = new FloatRect(0.3f, .5f, 0.35f, 0.2f);
+                renderDialogue(dialogue, "player");
+            }
+
+
 
         }
 
-        public void createCharacterDB(KeyEventArgs e)
+        public void createCharacterDB(KeyEventArgs e, String dialogue)
         {
             if (e.Code == Keyboard.Key.A)
             {
                 view.Viewport = new FloatRect(0.3f, 0f, 0.35f, 0.2f);
-                renderDialogue("I have daddy issues.", "Alex");
+                renderDialogue(dialogue, "Alex");
 
             }
             else if (e.Code == Keyboard.Key.M)
             {
                 view.Viewport = new FloatRect(0.63f, 0f, 0.35f, 0.2f);
-                renderDialogue("mushroom mom mushroom mom mushroom mom mushroom mom mushroom " +
-                    "mom mushroom mom mushroom mom mushroom mom mushroom mom", "Mom");
+                renderDialogue(dialogue, "Mom");
             }
             else if (e.Code == Keyboard.Key.D)
             {
                 view.Viewport = new FloatRect(0.0f, 0f, 0.35f, 0.2f);
-                renderDialogue("whos ur daddy im ur daddy whos ur daddy im ur daddy " +
-                    "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
-                    "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
-                    "whos ur daddy im ur daddy whos ur daddy im ur daddy", "Dad");
+                renderDialogue(dialogue, "Dad");
             }
         }
-        
+
         public void renderDialogue(String s, String speaker)
         {
             active = true;
@@ -174,7 +191,7 @@ namespace Test
                 float wordSizeWithSpace = t.GetGlobalBounds().Width;
                 if (currentLineWidth + wordSizeWithSpace > maxw)
                 {
-    
+
                     line.DisplayedString += "\n";
                     currentLineWidth = 0;
                     if (line.GetGlobalBounds().Height > maxh)
@@ -209,7 +226,7 @@ namespace Test
         {
             animationStart = true;
             state.resetTimer("game");
-            i = 0;
+            int i = 0;
             dialogue.DisplayedString = "";
             while (i < line.DisplayedString.Length)
             {
@@ -222,26 +239,35 @@ namespace Test
                     dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, line.DisplayedString[i++]));
                     await Task.Delay(printTime); //equivalent of putting thread to sleep
                 }
-                
             }
-
             // Do asynchronous work.
-            state.startTimer("game");
-            animationStart = false;
+            if (tag == "AI")
+            {
+                state.startTimer("game");
+            }
+            animationStart = false; //done animating
+            awaitInput = true;
 
         }
 
+        
+
+
         public void Draw(RenderTarget target, RenderStates states)
         {
-            View resetView = target.GetView();
-            target.SetView(view);
+            if (init)
+            {
+                View resetView = target.GetView();
+                target.SetView(view);
 
-            target.Draw(box);
-            target.Draw(nameBox);
-            target.Draw(name);
-            target.Draw(dialogue);
+                target.Draw(box);
+                target.Draw(nameBox);
+                target.Draw(name);
+                target.Draw(dialogue);
 
-            target.SetView(resetView);
+
+                target.SetView(resetView);
+            }
         }
         public FloatRect GetBounds()
         {
@@ -264,7 +290,8 @@ namespace Test
         public Text BufferName(String speaker)
         {
             Text n = new Text(speaker.ToUpper(), speechFont, 24);
-            n.Position = new Vector2f(nameBox.Position.X + 17, nameBox.Position.Y + 12);
+            nameBox.Size = new Vector2f(n.GetGlobalBounds().Width + 30, this.h - 100);
+            n.Position = new Vector2f(nameBox.Position.X + 12, nameBox.Position.Y + 12);
             n.Color = Color.Black;
             return n;
         }
@@ -278,16 +305,15 @@ namespace Test
         }
 
 
-        public DialogueBox(float x, float y, float width, float height, GameState state)
+        public DialogueBox(float x, float y, float width, float height, GameState state, string tag)
         {
             this.x = x;
             this.y = y;
             this.w = width;
             this.h = height;
             this.state = state;
+            this.tag = tag;
 
-
-            
             box = new RectangleShape(new Vector2f(this.w, this.h));
             box.Position = new Vector2f(this.x - 40, this.y + 35);
             box.OutlineThickness = 3;

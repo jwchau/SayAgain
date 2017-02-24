@@ -15,6 +15,21 @@ namespace Test {
         private CharacterState Alex;
         private CharacterState Mom;
         private CharacterState Dad;
+        static Relationships ship = new Relationships();
+
+        public double getDadFNC()
+        {
+            return ship.getDadFNC();
+        }
+        public double getAlexFNC()
+        {
+            return ship.getAlexFNC();
+        }
+        public double getMomFNC()
+        {
+            return ship.getMomFNC();
+        }
+
 
         List<GameMatrix> matrices = new List<GameMatrix>();
 
