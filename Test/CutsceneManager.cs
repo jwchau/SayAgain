@@ -23,34 +23,33 @@ namespace Test
             FileStream angrymom = new FileStream("../../Art/mom_angry.png", FileMode.Open);
         }*/
 
-        public void MakeMom()/*Draw(RenderTarget target, RenderStates states)*/
-        {
-            IntRect first = new IntRect(0, 0, 360, 450);
-            FileStream f = new FileStream("../../Art/mom_angry.png", FileMode.Open);
-            Texture t = new Texture(f);
-            f.Close();
-            mom = new Sprite(t, first);
-
-
-
-
-            /*View resetView = target.GetView();
-            target.SetView(view);
-            target.SetView(resetView);*/
-        }
+       
 
     }
 
     class Mom : Drawable
     {
+        int index = 0;
+        List<Sprite> sprites = new List<Sprite>();
+
         public void Draw(RenderTarget target, RenderStates states)
         {
-
+            target.Draw(sprites[index++]);
+            if (index > 7) { index = 0; }
         }
 
         public Mom()
         {
-
+            int w = 360;
+            IntRect first = new IntRect(0, 0, w, 450);
+            FileStream f = new FileStream("../../Art/mom_angry.png", FileMode.Open);
+            Texture t = new Texture(f);
+            f.Close();
+            for (int i = 0; i < t.Size.X; i += w)
+            {
+                sprites.Add(new Sprite(t, new IntRect(i, 0, w, 450))); //btw might get extra sprite if sizes no precise
+            }
+      
         }
     }
 

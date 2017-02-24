@@ -15,6 +15,7 @@ namespace Test
     class SA : Game
     {
 
+        Mom mom;
 
         public View fullScreenView, charView;
         // Character declaration
@@ -127,8 +128,8 @@ namespace Test
             ui_man.setDialogueBox();
             ui_man.setViews(fullScreenView);
 
-            cman.MakeMom();
-            made = true;
+            mom = new Mom();
+
         }
 
         protected override void Update()
@@ -138,7 +139,7 @@ namespace Test
 
         }
         
-        bool made;
+
 
         protected override void Draw()
         {
@@ -148,8 +149,7 @@ namespace Test
             ui_man.DrawDialogueBox(window);
             ui_man.DrawUI(window, State, ui_man, startMenu, pauseMenu, settingsMenu);
 
-            //cman.MakeMom();
-            if (made) { window.Draw(cman.mom); }
+            window.Draw(mom);
             
         }
 
