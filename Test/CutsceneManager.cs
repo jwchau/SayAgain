@@ -18,29 +18,36 @@ namespace Test
         public View view { get; private set; }
 
 
-        /*public void LoadSprites()
-        {
-            FileStream angrymom = new FileStream("../../Art/mom_angry.png", FileMode.Open);
-        }*/
-
-       
-
     }
 
     class Mom : Drawable
     {
         int index = 0;
         List<Sprite> sprites = new List<Sprite>();
+        DateTime time = DateTime.Now;
 
         public void Draw(RenderTarget target, RenderStates states)
         {
-            target.Draw(sprites[index++]);
-            if (index > 7) { index = 0; }
+            
+        
+            target.Draw(sprites[index]);
+
+            float framerate = 4f;
+
+            if ((DateTime.Now - time).TotalMilliseconds > (1000f / framerate))
+            {
+                time = DateTime.Now;
+                if (++index >= sprites.Count)
+                {
+                    index = 0;               
+                }
+            }
+            
         }
 
         public Mom()
         {
-            int w = 360;
+            int w = 361;
             IntRect first = new IntRect(0, 0, w, 450);
             FileStream f = new FileStream("../../Art/mom_angry.png", FileMode.Open);
             Texture t = new Texture(f);

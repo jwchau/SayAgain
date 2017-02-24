@@ -60,9 +60,14 @@ namespace Test
             LoadContent();
             Initialize();
 
-            /**********************************************/
-            /*             framerate lock                 */
-            /**********************************************/
+            /***********************************************/
+            /*                                             */
+            /*        framerate lock                       */
+            /*        incase logic is bound to frames      */
+            /*        being drawn,                         */
+            /*        animation won't go insanely fast     */
+            /*                                             */
+            /***********************************************/
 
             DateTime time = DateTime.Now;
             float framerate = 60f;
