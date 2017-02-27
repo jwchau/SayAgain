@@ -18,7 +18,6 @@ namespace Test
         //private double goal;
         double talkedTo = 0;
         static bool[] targets = { false,false,false }; // 0 = alex 1 = mom 2 = dad
-        
         Color color;
 
         RectangleShape characterRect = new RectangleShape(new Vector2f(75, 75));
@@ -99,8 +98,6 @@ namespace Test
         public void DecreaseMood() {
 
         }
-
-       
 
         ///lol wat, turnary ?
         public void Draw(RenderTarget target, RenderStates states) {

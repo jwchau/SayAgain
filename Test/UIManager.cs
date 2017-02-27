@@ -54,7 +54,7 @@ namespace Test {
                 var rectxs = rectx + buttons[i].getRectSize().X;
                 var rectys = recty + buttons[i].getRectSize().Y;
 
-                if (buttons[i].inRange((int)(x*scalex), rectx, rectxs) && buttons[i].inRange((int)(y*scaley), recty, rectys) || buttons[i].GetSelected()) {
+                if (buttons[i].inRange((int)(x * scalex), rectx, rectxs) && buttons[i].inRange((int)(y * scaley), recty, rectys) || buttons[i].GetSelected()) {
                     buttons[i].setButtonColor(new Color(255, 0, 0));
                 } else {
                     buttons[i].setButtonColor(new Color(177, 177, 177));
@@ -62,7 +62,6 @@ namespace Test {
             }
         }
         #endregion
-
         public List<UITextBox> produceTextBoxes2(string Dialogue) {
             //Console.WriteLine("AM I HERE????");
             dialogueArray = Dialogue.Split('.', '!', '?');
@@ -157,6 +156,7 @@ namespace Test {
             foreach (var dialogue in playerDialogues) {
                 if (dialogue.getAffected() && !gotTone) {
                     //Console.WriteLine(dialogue.getTone());
+
                     Tone = dialogue.getTone();
                     gotTone = true;
                 }
@@ -176,6 +176,7 @@ namespace Test {
         }
 
         public void updateClusterColors(UITextBox self, List<UITextBox> playerDialogues, Color c, bool f) {
+
             int cluster = self.getCluster();
             for (int i = 0; i < playerDialogues.Count; i++) {
                 if (playerDialogues[i].getCluster() == cluster && playerDialogues[i] != self) {

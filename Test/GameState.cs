@@ -55,7 +55,6 @@ namespace Test
             }
             if (state == "game" && currentMenuState == "start")
             {
-                //DictGameTimer["game"].setOldGameTime((DateTime.Now.Ticks / 10000) / 1000);
             }
 
 

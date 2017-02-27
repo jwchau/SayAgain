@@ -62,12 +62,13 @@ namespace Test
         protected List<DialogueObj> responseListAlex = new List<DialogueObj>();
         protected List<string> currentMilestones = new List<string>();
         protected List<int> currentTargets = new List<int>();
+
         protected int FNC = 0;
         protected string currentContext = "";
         protected tone currentTone = tone.Root;
         protected Loader Load = new Loader();
         protected Selector s = new Selector();
-    #endregion
+        #endregion
 
         /////////////////////////////////////////////////////////////////////////////////////////////
 

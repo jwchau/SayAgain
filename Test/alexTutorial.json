@@ -20,7 +20,6 @@
 	"fncPreReq":-4,
 	"target":[1,0,0],
 	"nextContext":[""]
-	
 },
 {
 	"content": "Yeah it's me, Your sister. Remember?",
@@ -43,7 +42,6 @@
 	"fncPreReq":-4,
 	"target":[1,0,0],
 	"nextContext":[""]
-	
 },
 {
 	"content": "Eh whatever",
@@ -89,7 +87,6 @@
 	"fncPreReq":-4,
 	"target":[1,0,0],
 	"nextContext":[""]
-	
 },
 {
 	"content": "Yeah I know to make friends. Thanks",
@@ -101,7 +98,6 @@
 	"fncPreReq":-4,
 	"target":[1,0,0],
 	"nextContext":[""]
-	
 },
 {
 	"content": "Oh I'm so glad you care about my wellbeing, sibling",
@@ -113,7 +109,6 @@
 	"fncPreReq":-4,
 	"target":[1,0,0],
 	"nextContext":[""]
-	
 },
 {
 	"content": "Wait who? I've never had a friend named Ron. You don't need to act like you care",
@@ -125,7 +120,6 @@
 	"fncPreReq":-4,
 	"target":[1,0,0],
 	"nextContext":[""]
-	
 },
 {
 	"content": "You've been gone for a year and that's what you ask? ",
@@ -137,7 +131,6 @@
 	"fncPreReq":-4,
 	"target":[1,0,0],
 	"nextContext":[""]
-	
 }
 ]
 }

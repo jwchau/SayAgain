@@ -19,6 +19,7 @@ namespace Test
         public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?", Color.Magenta)
         {
 
+
             window.KeyPressed += onKeyPressed;
             window.KeyReleased += onKeyReleased;
             window.MouseButtonPressed += onMouseButtonPressed;
@@ -246,9 +247,10 @@ namespace Test
             currentMilestones.Add("");
 
             currentContext = "AlexTalksPlayer";
+
             FNC = 0;
         }
-
+        
         protected override void Update()
         {
             screenHelper();
@@ -268,19 +270,17 @@ namespace Test
                 if (ManagerOfInput.GetMouseDown())
                 {
 
+
                     // Loop through buttons
-                    for (var i = 0; i < buttons.Count; i++)
-                    {
+                    for (var i = 0; i < buttons.Count; i++) {
                         // Find button currently being interacted with
-                        if (buttons[i].GetSelected())
-                        {
+                        if (buttons[i].GetSelected()) {
                             // Move the button around the screen
                             buttons[i].translate(MouseCoord[0], MouseCoord[1], window.Size.X, window.Size.Y);
 
                             // Check collision with UI Textboxes
                             // Loop through UI Textboxes
-                            for (var j = 0; j < playerDialogues.Count; j++)
-                            {
+                            for (var j = 0; j < playerDialogues.Count; j++) {
                                 // If the mouse just came from inside a UI Textbox
                                 if (playerDialogues[j].wasMouseIn())
                                 {
@@ -319,7 +319,6 @@ namespace Test
                     }
 
                 }
-
                 // ui_man.dialogueLoadOrder(State, playerDialogueBox, dialogueBox, responseList, responseListAlex);
                 if (playerDialogueBox.getAnimationStart() == false && loadedAIDialogueOnce == true)
                 {
@@ -343,7 +342,7 @@ namespace Test
         }
         //Ensures that AI dialogue doesnt get loaded more than once per timer done
         bool loadedAIDialogueOnce = false;
-
+        
         protected override void Draw()
         {
 
@@ -353,6 +352,7 @@ namespace Test
                 window.Draw(mom);
                 window.Draw(alex);
                 window.Draw(dad);
+
             }
 
             window.Draw(playerDialogueBox);
@@ -360,20 +360,16 @@ namespace Test
 
 
             window.SetView(fullScreenView);
-            if (State.GetState() == "menu")
-            {
-                if (State.GetMenuState() == "start")
-                {
+            if (State.GetState() == "menu") {
+                if (State.GetMenuState() == "start") {
                     window.Draw(startMenu);
-                }
-                else
-                {
+                } else {
                     window.Draw(settingsMenu);
                 }
-
             }
             else
             {
+
 
                 //Draw text box background box
                 RectangleShape textBackground = new RectangleShape(new Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT / 5));
@@ -383,14 +379,12 @@ namespace Test
 
                 var dialogues = ui_man.getPlayerDialogues();
 
-                for (var i = 0; i < dialogues.Count; i++)
-                {
+                for (var i = 0; i < dialogues.Count; i++) {
                     window.Draw(dialogues[i]);
                 }
                 var buttons = ui_man.getButtons();
 
-                for (var i = 0; i < buttons.Count; i++)
-                {
+                for (var i = 0; i < buttons.Count; i++) {
                     window.Draw(buttons[i]);
                 }
                 window.Draw(D_Man.getAlex());
@@ -400,14 +394,15 @@ namespace Test
 
                 if (State.GetState() == "pause")
                 {
+
                     pauseMenu.DrawBG(window);
-                    if (State.GetMenuState() == "pause")
-                    {
+                    if (State.GetMenuState() == "pause") {
                         window.Draw(pauseMenu);
                     }
                     else if (State.GetMenuState() == "settings")
                     {
                         window.Draw(settingsMenu);
+
                     }
 
                 }

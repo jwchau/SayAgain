@@ -24,12 +24,13 @@ namespace Test
         public RectangleShape box;
         public RectangleShape nameBox;
         Task currentTask;
-
+        
         Boolean init = false;
         string tag; //AI or player
 
         bool animationStart = true;
         bool awaitInput = false;
+
         CancellationTokenSource cts;
         Text[] arr = { };
         public int printTime;
@@ -191,7 +192,7 @@ namespace Test
                 float wordSizeWithSpace = t.GetGlobalBounds().Width;
                 if (currentLineWidth + wordSizeWithSpace > maxw)
                 {
-
+    
                     line.DisplayedString += "\n";
                     currentLineWidth = 0;
                     if (line.GetGlobalBounds().Height > maxh)
@@ -314,6 +315,7 @@ namespace Test
             this.state = state;
             this.tag = tag;
 
+            
             box = new RectangleShape(new Vector2f(this.w, this.h));
             box.Position = new Vector2f(this.x - 40, this.y + 35);
             box.OutlineThickness = 3;

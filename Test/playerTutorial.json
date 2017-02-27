@@ -9,7 +9,6 @@
 	"fncPreReq":0,
 	"target":[1,0,0],
 	"nextContext":[""]
-	
 },
 {
 	"content":"What are you staring at?",
@@ -33,7 +32,6 @@
 	"fncPreReq":0,
 	"target":[1,0,0],
 	"nextContext":["AlexTalksAlex"]
-	
 },
 {
 	"content":"Alex?",
