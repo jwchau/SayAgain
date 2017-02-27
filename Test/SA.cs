@@ -30,7 +30,6 @@ namespace Test
         #region screen resize math
         private void screenHelper()
         {
-
             var DesktopX = (double)VideoMode.DesktopMode.Width;
             var DesktopY = (double)VideoMode.DesktopMode.Height;
             var WindowX = (double)window.Size.X;
@@ -43,6 +42,9 @@ namespace Test
         private void onMouseMoved(object sender, MouseMoveEventArgs e)
         {
             ManagerOfInput.OnMouseMoved(State, e.X, e.Y);
+            
+            ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
+
 
         }
 
@@ -58,6 +60,7 @@ namespace Test
 
         private void onMouseButtonPressed(object sender, MouseButtonEventArgs e)
         {
+
 
             ManagerOfInput.onMouseButtonPressed(e.X, e.Y);
 
@@ -248,6 +251,7 @@ namespace Test
 
         protected override void Update()
         {
+            screenHelper();
             if (State.GetState() == "game")
             {
 
@@ -271,7 +275,7 @@ namespace Test
                         if (buttons[i].GetSelected())
                         {
                             // Move the button around the screen
-                            buttons[i].translate(MouseCoord[0], MouseCoord[1]);
+                            buttons[i].translate(MouseCoord[0], MouseCoord[1], window.Size.X, window.Size.Y);
 
                             // Check collision with UI Textboxes
                             // Loop through UI Textboxes

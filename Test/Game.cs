@@ -22,7 +22,6 @@ namespace Test
         protected double scaleFactorX;
         protected double scaleFactorY;
 
-
         //Input Manager
         protected InputManager ManagerOfInput = new InputManager();
 
@@ -77,7 +76,6 @@ namespace Test
         public Game(uint width, uint height, string title, Color clearColor)
         {
             window = new RenderWindow(new VideoMode(width, height), title, Styles.Default);
-
             this.clearColor = clearColor;
 
             // Set-up Events

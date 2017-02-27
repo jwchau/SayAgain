@@ -7,13 +7,10 @@ using SFML.Window;
 using SFML.Graphics;
 
 //
-namespace Test
-{
-    class UIElement : Drawable
-    {
+namespace Test {
+    class UIElement : Drawable {
         //constructor
-        public UIElement()
-        {
+        public UIElement() {
             this.size = 0;
             this.x = 0;
             this.y = 0;
@@ -33,9 +30,12 @@ namespace Test
         };
 
         //methods
-        public virtual void Draw(RenderTarget target, RenderStates states)
-        {
+        public virtual void Draw(RenderTarget target, RenderStates states) {
             //target.Draw();
+        }
+
+        public bool inRange(int value, float min, float max) {
+            return value >= min && value <= max;
         }
 
     }

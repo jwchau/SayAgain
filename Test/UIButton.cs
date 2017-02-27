@@ -13,9 +13,6 @@ namespace Test
         //constructor
         public UIButton(float x, float y, tone content, string newDialogue)
         {
-
-            this.x = x;
-            this.y = y;
             buttonText = new Text(content.ToString(), buttonTextFont);
             buttonText.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
 
@@ -27,6 +24,8 @@ namespace Test
             this.newDialogue = newDialogue;
             tonalColor = buttonTonalColors[content.ToString()];
             this.buttonTone = content;
+            this.x = x - buttonText.GetGlobalBounds().Width / 2;
+            this.y = y;
         }
 
         //fields
@@ -45,6 +44,14 @@ namespace Test
 
         //methods
         //String eventHandler;
+
+        public SFML.System.Vector2f getRectSize() {
+            return rect.Size;
+        }
+
+        public void setButtonColor(Color c) {
+            rect.FillColor = c;
+        }
 
         public float getX()
         {
@@ -91,11 +98,15 @@ namespace Test
             selected = val;
         }
 
+        public void setTonalColor(Color c) {
+            this.tonalColor = c;
+        }
+
         public bool GetSelected()
         {
             return selected;
         }
-
+        
         public bool Contains(int mouseX, int mouseY)
         {
             FloatRect bounds = getRectBounds();
@@ -108,37 +119,48 @@ namespace Test
 
         public void snapBack()
         {
-            rect.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
-            buttonText.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
+            rect.Position = new SFML.System.Vector2f(x, y);
+            buttonText.Position = new SFML.System.Vector2f(x, y);
         }
 
-        public void translate(int x, int y)
+        public void translate(int x, int y, double winx, double winy)
         {
+            var temp = screenHelper(winx, winy);
             var bounds = getRectBounds();
-            var newXPos = x - mouseOffsetX;
-            var newYPos = y - mouseOffsetY;
+            double newXPos = x - mouseOffsetX;
+            double newYPos = y - mouseOffsetY;
+
             if (x - mouseOffsetX < 0)
             {
                 newXPos = 0;
             }
-            else if (x - mouseOffsetX + (int)bounds.Width > SCREEN_WIDTH)
+
+            else if (x - mouseOffsetX + bounds.Width > winx)
             {
-                newXPos = (int)SCREEN_WIDTH - (int)bounds.Width;
+                newXPos = winx - bounds.Width;
             }
 
-            if (y - mouseOffsetY < 0)
+            if (y - mouseOffsetY< 0)
             {
                 newYPos = 0;
             }
-            else if (y - mouseOffsetY + (int)bounds.Height > (int)SCREEN_HEIGHT)
+
+            else if (y - mouseOffsetY + bounds.Height > winy)
             {
-                newYPos = (int)SCREEN_HEIGHT - (int)bounds.Height;
+                newYPos = (float)winy - bounds.Height;
             }
 
-            rect.Position = new SFML.System.Vector2f(newXPos, newYPos);
-            buttonText.Position = new SFML.System.Vector2f(newXPos, newYPos);
-
+            rect.Position = new SFML.System.Vector2f((float)newXPos, (float)newYPos);
+            buttonText.Position = new SFML.System.Vector2f((float)newXPos, (float)newYPos);
         }
+
+        #region screen helper
+        private Tuple<double,double> screenHelper(double winx, double winy) {
+            var DesktopX = (double)VideoMode.DesktopMode.Width;
+            var DesktopY = (double)VideoMode.DesktopMode.Height;
+            return new Tuple<double,double>(DesktopX / winx, DesktopY / winy);
+        }
+        #endregion
 
         public string getNewDialogue()
         {
