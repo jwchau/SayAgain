@@ -139,6 +139,7 @@ namespace Test
                             {
                                 SetState(mappings[j].Item2);
                                 //DictGameTimer["game"].startTimer();
+                             
                             }
                             else if (mappings[j].Item2 == "menu")
                             {

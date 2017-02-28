@@ -241,7 +241,7 @@ namespace Test
                 }
             }
             // Do asynchronous work.
-            if (tag == "AI")
+            if (tag == "AI") 
             {
                 state.startTimer("game");
             }

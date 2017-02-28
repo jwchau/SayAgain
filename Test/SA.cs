@@ -43,6 +43,32 @@ namespace Test
         private void onMouseMoved(object sender, MouseMoveEventArgs e)
         {
             ManagerOfInput.OnMouseMoved(State, e.X, e.Y);
+            if (D_Man.getAlex().Contains(e.X, e.Y) == true)
+            {
+                D_Man.getAlex().setHover(true);
+            }
+            else
+            {
+                D_Man.getAlex().setHover(false);
+            }
+
+            if (D_Man.getMom().Contains(e.X, e.Y) == true)
+            {
+                D_Man.getMom().setHover(true);
+            }
+            else
+            {
+                D_Man.getMom().setHover(false);
+            }
+
+            if (D_Man.getDad().Contains(e.X, e.Y) == true)
+            {
+                D_Man.getDad().setHover(true);
+            }
+            else
+            {
+                D_Man.getDad().setHover(false);
+            }
 
         }
 
@@ -51,7 +77,46 @@ namespace Test
 
             ManagerOfInput.onMouseButtonReleased();
 
-            ManagerOfInput.checkTargets(State, D_Man);
+            if (playerChoice)
+            {
+                //ManagerOfInput.checkTargets(State, D_Man);
+                if (D_Man.getAlex().Contains(e.X, e.Y) == true)
+                {
+                    currentContext = nextContextDict["Alex"];
+                    loadDialogues();
+                    playerChoice = false;
+            
+                    //COME BACK HERE
+                }
+
+                if (D_Man.getMom().Contains(e.X, e.Y) == true)
+                {
+                    currentContext = nextContextDict["Mom"];
+                    loadDialogues();
+                    playerChoice = false;
+                    //COME BACK HERE
+                }
+
+                if (D_Man.getDad().Contains(e.X, e.Y) == true)
+                {
+                    currentContext = nextContextDict["Dad"];
+                    loadDialogues();
+                    playerChoice = false;
+                    State.getGameTimer("game").resetTimer();
+                    State.getGameTimer("game").startTimer();
+                    //restart the timer
+                    //COME BACK HERE
+                }
+
+
+
+                //d.getAlex().targetCheck(MouseX, MouseY);
+                //d.getMom().targetCheck(MouseX, MouseY);
+                //d.getDad().targetCheck(MouseX, MouseY);
+
+
+            }
+
 
             ui_man.applyTones(e.X, e.Y);
         }
@@ -65,7 +130,7 @@ namespace Test
 
             ManagerOfInput.MenuPlay(State, menus, e.X, e.Y);
 
-            if(State.getGameTimer("game").Contains(e.X, e.Y) && State.getGameTimer("game").getStart())
+            if (State.getGameTimer("game").Contains(e.X, e.Y) && State.getGameTimer("game").getStart())
             {
                 State.getGameTimer("game").setCountDown(0);
             }
@@ -102,13 +167,13 @@ namespace Test
 
 
 
-            if (e.Code == Keyboard.Key.A || e.Code == Keyboard.Key.M || e.Code == Keyboard.Key.D)
-            {
-                //init = true;
-                responseListAlex = s.ChooseDialog(D_Man.getAlexFNC(), Load.alexDialogueObj1, currentMadeMemories, currentMilestones, currentTone, currentContext);
-                dialogueBox.createCharacterDB(e, responseListAlex.ElementAt(0).content);
-                //State.getGameTimer("game").startTimer();
-            }
+            //if (e.Code == Keyboard.Key.A || e.Code == Keyboard.Key.M || e.Code == Keyboard.Key.D)
+            //{
+            //    //init = true;
+            //    responseListAlex = s.ChooseDialog(D_Man.getAlexFNC(), Load.alexDialogueObj1, currentMadeMemories, currentMilestones, currentTone, currentContext);
+            //    dialogueBox.createCharacterDB(e, responseListAlex.ElementAt(0).content);
+            //    //State.getGameTimer("game").startTimer();
+            //}
         }
 
         #region Timer Action Placeholder
@@ -118,7 +183,9 @@ namespace Test
             updateTargetFNC();
             //update currentmademeories, currentmilestones, currenttone, currentcontext
             updateCurrents(); //updates everything besides FNC
+
             loadDialogues();
+
         }
 
         public void updateTargetFNC()
@@ -134,21 +201,71 @@ namespace Test
         //after timer runs out update the current stuff
         private void updateCurrents()
         {
-            if (responseList.ElementAt(0).nextContext.Count == 1)
+            List<string> nextContext = responseList[0].nextContext;
+            if (nextContext.Count == 1)
             {
-                if (responseList.ElementAt(0).nextContext[0] != "")
+                if (nextContext[0] != "")
                 {
                     if (!currentMadeMemories.Contains(currentContext))
                     {
                         currentMadeMemories.Add(currentContext);
                     }
-                    currentContext = responseList.ElementAt(0).nextContext[0];
+                    currentContext = nextContext[0];
 
                 }
+
+                playerChoice = false;
             }
             else
             {
+
                 Console.WriteLine("player choice");
+                for (int i = 0; i != nextContext.Count; i++)
+                {
+                    if (nextContext[i][0] == 'A')
+                    {
+                        Console.WriteLine("Ayyyyy");
+                        D_Man.activateCharacterChoice("Alex");
+                        if (!nextContextDict.ContainsKey("Alex"))
+                        {
+                            nextContextDict.Add("Alex", nextContext[i]);
+                        }
+                        else
+                        {
+                            nextContextDict["Alex"] = nextContext[i];
+                        }
+                    }
+                    else if (nextContext[i][0] == 'M')
+                    {
+                        Console.WriteLine("Mmmmm");
+                        D_Man.activateCharacterChoice("Mom");
+                        if (!nextContextDict.ContainsKey("Mom"))
+                        {
+                            nextContextDict.Add("Mom", nextContext[i]);
+                        }
+                        else
+                        {
+                            nextContextDict["Mom"] = nextContext[i];
+                        }
+                    }
+                    else if (nextContext[i][0] == 'D')
+                    {
+                        Console.WriteLine("Deez Nutz");
+                        D_Man.activateCharacterChoice("Dad");
+                        if (!nextContextDict.ContainsKey("Dad"))
+                        {
+                            nextContextDict.Add("Dad", nextContext[i]);
+                        }
+                        else
+                        {
+                            nextContextDict["Dad"] = nextContext[i];
+                        }
+                    }
+                }
+                //currentcontext = whatever player clicked on 
+                playerChoice = true;
+                //State.getGameTimer("game").stopTimer();
+
             }
 
             if (!responseList.ElementAt(0).consequence.Equals(""))
@@ -173,7 +290,7 @@ namespace Test
 
                 responseList = s.ChooseDialog(FNC, Load.playerDialogueObj1, currentMadeMemories, currentMilestones, currentTone, currentContext); //loads "what are you staring at?"
                 responseListAlex = s.ChooseDialog(D_Man.getAlexFNC(), Load.alexDialogueObj1, currentMadeMemories, currentMilestones, currentTone, currentContext);//loads "yeah I missed you too?"
-                ui_man.dialogueLoadOrder(State, playerDialogueBox, dialogueBox, responseList, responseListAlex);
+                ui_man.dialogueLoadOrder(State, playerDialogueBox, dialogueBox, responseList, responseListAlex, playerChoice);
                 loadedAIDialogueOnce = true;
 
                 //give this responselist to playerdialogue box
@@ -204,8 +321,8 @@ namespace Test
             texturemom = new Texture(m);
             texturealex = new Texture(a);
             texturedad = new Texture(d);
-            mom = new Sprite(texturemom);
             alex = new Sprite(texturealex);
+            mom = new Sprite(texturemom);
             dad = new Sprite(texturedad);
             mom.Position = new Vector2f(1200, 350);
             dad.Position = new Vector2f(400, 325);
@@ -250,6 +367,15 @@ namespace Test
         {
             if (State.GetState() == "game")
             {
+                if (startOnce)
+                {
+                    State.getGameTimer("game").startTimer();
+                    startOnce = false;
+                }
+
+                if (playerChoice && State.getGameTimer("game").getStart()) {
+                    State.getGameTimer("game").stopTimer();
+                } //jank fix
 
                 // Update the game timerz
                 State.updateTimerz();
@@ -317,15 +443,19 @@ namespace Test
                 }
 
                 // ui_man.dialogueLoadOrder(State, playerDialogueBox, dialogueBox, responseList, responseListAlex);
-                if (playerDialogueBox.getAnimationStart() == false && loadedAIDialogueOnce == true)
+                if (playerDialogueBox.getAnimationStart() == false && loadedAIDialogueOnce == true /*&& playerChoice == false*/)
                 {
-                    dialogueBox.setInit(true);
-                    dialogueBox.loadNewDialogue("alex", responseListAlex.ElementAt(0).content);
-                    loadedAIDialogueOnce = false;
-                    if (dialogueBox.getAnimationStart() == false) {
-                        loadedAIDialogueOnce = true;
+                    if (responseListAlex[0].content != "returned empty string")
+                    {
+                        dialogueBox.setInit(true);
+                        dialogueBox.loadNewDialogue("alex", responseListAlex.ElementAt(0).content); //this makes the timer happen after the animation is done
+                        loadedAIDialogueOnce = false;
+                        if (dialogueBox.getAnimationStart() == false)
+                        {
+                            loadedAIDialogueOnce = true;
+                        }
                     }
-                        
+
                 }
 
             }
@@ -339,6 +469,7 @@ namespace Test
         }
         //Ensures that AI dialogue doesnt get loaded more than once per timer done
         bool loadedAIDialogueOnce = false;
+        bool playerChoice = false;
 
         protected override void Draw()
         {
@@ -389,9 +520,10 @@ namespace Test
                 {
                     window.Draw(buttons[i]);
                 }
-                window.Draw(D_Man.getAlex());
-                window.Draw(D_Man.getMom());
-                window.Draw(D_Man.getDad());
+                if (playerChoice)
+                {
+                    window.Draw(D_Man);
+                }
 
 
                 if (State.GetState() == "pause")

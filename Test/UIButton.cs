@@ -22,7 +22,7 @@ namespace Test
             rect = new RectangleShape(new SFML.System.Vector2f(buttonText.GetGlobalBounds().Width + 7, buttonText.GetGlobalBounds().Height + 10));
             rect.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
             rect.FillColor = Color.Black;
-            Color bgColor = new Color(177, 177, 177);
+            Color bgColor = buttonTonalColors[content.ToString()];
             rect.FillColor = bgColor;
             this.newDialogue = newDialogue;
             tonalColor = buttonTonalColors[content.ToString()];

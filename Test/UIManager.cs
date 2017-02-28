@@ -53,6 +53,7 @@ namespace Test
         }
         public List<UITextBox> produceTextBoxes2(string Dialogue)
         {
+
             //Console.WriteLine("AM I HERE????");
             dialogueArray = Dialogue.Split('.', '!', '?');
             //dialogue Array now holds all the sentences
@@ -151,6 +152,7 @@ namespace Test
                 }
             }
             return playerDialogues;
+
         }
 
         public void reset(List<DialogueObj> responseList)
@@ -247,13 +249,16 @@ namespace Test
         }
         #endregion
 
-        public void dialogueLoadOrder(GameState state, DialogueBox player, DialogueBox AI, List<DialogueObj> responseList, List<DialogueObj> responseListAlex)
+        public void dialogueLoadOrder(GameState state, DialogueBox player, DialogueBox AI, List<DialogueObj> responseList, List<DialogueObj> responseListAlex, bool playerChoice)
         {
 
 
-            player.setInit(true);
-            player.loadNewDialogue("player", responseList.ElementAt(0).content);
-            
+            if (!playerChoice && responseList[0].content != "returned empty string")
+            {
+                player.setInit(true);
+                player.loadNewDialogue("player", responseList.ElementAt(0).content);
+            }
+
             //check timer done
             //   run player animation
             //check player animation done

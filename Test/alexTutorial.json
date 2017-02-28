@@ -57,8 +57,20 @@
 	"nextContext":[""]
 },
 {
-	"content": "Fine",
-	"tonalPreReq": "Indifferent",
+   "content": "Fine",
+   "tonalPreReq": "Indifferent",
+   "context": "AlexTalksAlex",
+   "consequence": "",
+   "memories": [ "", "AlexTalksPlayer" ],
+   "milestone": [ "", "greeting" ],
+   "fncPreReq": -4,
+   "target": [ 1, 0, 0 ],
+   "nextContext": [ "" ]
+
+},
+{
+	"content": "Sure...",
+	"tonalPreReq": "Compassionate",
 	"context": "AlexTalksAlex",
 	"consequence": "",
 	"memories":["","AlexTalksPlayer"],
@@ -104,7 +116,7 @@
 	
 },
 {
-	"content": "Oh I'm so glad you care about my wellbeing, sibling",
+	"content": "Oh I'm so glad you care about my well being, sibling",
 	"tonalPreReq": "Compassionate",
 	"context": "AlexTalksAlex",
 	"consequence": "",
@@ -117,7 +129,7 @@
 },
 {
 	"content": "Wait who? I've never had a friend named Ron. You don't need to act like you care",
-	"tonalPreReq": "Compassionate",
+	"tonalPreReq": "Hesitant",
 	"context": "AlexTalksAlex",
 	"consequence": "",
 	"memories":["","AlexTalksPlayer","AlexTalksAlex"],

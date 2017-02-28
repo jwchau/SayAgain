@@ -22,7 +22,6 @@ namespace Test
         protected double scaleFactorX;
         protected double scaleFactorY;
 
-
         //Input Manager
         protected InputManager ManagerOfInput = new InputManager();
 
@@ -37,6 +36,8 @@ namespace Test
         protected Menu pauseMenu = new Menu("pause");
         protected List<Menu> menus = new List<Menu>();
 
+        //start game timer when game loads
+        protected bool startOnce = true;
 
         //Matrices
         protected ToneEffects tfx = new ToneEffects();
@@ -54,6 +55,7 @@ namespace Test
         //Jill's fields and variables
         protected DialogueBox dialogueBox;
         protected DialogueBox playerDialogueBox;
+
         //protected Boolean init;
         protected View fullScreenView, scrollview;
 
@@ -65,6 +67,7 @@ namespace Test
         protected List<int> currentTargets = new List<int>();
         protected int FNC = 0;
         protected string currentContext = "";
+        protected Dictionary<string, string> nextContextDict = new Dictionary<string, string>();
         protected tone currentTone = tone.Root;
         protected Loader Load = new Loader();
         protected Selector s = new Selector();
