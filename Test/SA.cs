@@ -15,7 +15,7 @@ namespace Test
     class SA : Game
     {
 
-        Mom mom;
+        Character mom;
 
         public View fullScreenView, charView;
         // Character declaration
@@ -128,7 +128,8 @@ namespace Test
             ui_man.setDialogueBox();
             ui_man.setViews(fullScreenView);
 
-            mom = new Mom();
+            mom = new Character();
+            mom.changeToCoop();
 
         }
 
