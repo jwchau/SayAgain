@@ -128,8 +128,10 @@ namespace Test
             ui_man.setDialogueBox();
             ui_man.setViews(fullScreenView);
 
-            mom = new Character();
-            Character.changeToAngry();
+
+            mom = new Mom();
+            mom.setHappy();
+
 
         }
 

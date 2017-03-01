@@ -12,34 +12,26 @@ using System.Drawing;
 
 namespace Test
 {
-    class Character: Drawable
+    abstract class Character: Drawable
     {
         int index = 0;
-        static List<Sprite> angrysprites = new List<Sprite>(); //frustrated sprite
+        /*static List<Sprite> angrysprites = new List<Sprite>(); //frustrated sprite
         static List<Sprite> happysprites = new List<Sprite>(); //cooperative
-        static List<Sprite> neutralsprites = new List<Sprite>(); //neutral
-        static List<Sprite> sprites { get; set; }//= new List<Sprite>(); //current sprite
-        static bool angry { get; set; }
-        static bool neutral { get; set; }
-        static bool happy { get; set; }
+        static List<Sprite> neutralsprites = new List<Sprite>(); //neutral*/
+        static List<Sprite> sprites = new List<Sprite>();
+
+        public abstract void setHappy();
+        public abstract void setAngry();
+        public abstract void setNeutral();
+        public abstract void setSad();
+
+
 
         DateTime time = DateTime.Now;
 
-
-
-        public static void setAngry(List<Sprite> s)
+        public static void setSprite(List<Sprite> s)
         {
-            angrysprites = s;
-        }
-
-        public static void setHappy(List<Sprite> s)
-        {
-            happysprites = s;
-        }
-
-        public static void setNeutral(List<Sprite> s)
-        {
-            neutralsprites = s;
+            sprites = s;
         }
 
         public void Draw(RenderTarget target, RenderStates states)
@@ -57,50 +49,9 @@ namespace Test
             }
         }
 
-    
-        static public void changeToAngry()
-        {
-
-            angry = true;
-            happy = false;
-            neutral = false;
-            sprites = angrysprites;
-
-        }
-
-        static public void changeToHappy()
-        {
-            happy = true;
-            angry = false;
-            neutral = false;
-            sprites = happysprites;
-
-        }
-        static public void changeToNeutral()
-        {
-            neutral = true;
-            happy = false;
-            angry = false;
-            sprites = neutralsprites;
-
-        }
-
 
         public Character()
         {
-            int w = 361;
-            IntRect first = new IntRect(0, 0, w, 450);
-            FileStream f = new FileStream("../../Art/momsprites.png", FileMode.Open);
-            Texture t = new Texture(f);
-            f.Close();
-            for (int i = 0; i < (361 * 7); i += w)
-            {
-                angrysprites.Add(new Sprite(t, new IntRect(i, 0, w, 465))); //btw might get extra sprite if sizes no precise
-            }
-            for (int i = 0; i < (361 * 9); i += w)
-            {
-                happysprites.Add(new Sprite(t, new IntRect(i, 465, w, 465))); //second row of sprites; happy epression 
-            }
 
 
         }
