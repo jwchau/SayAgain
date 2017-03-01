@@ -90,9 +90,13 @@ namespace Test {
         #region SA_checkTargets
         public void checkTargets(GameState State, DramaManager d) {
             if (State.GetState() == "game") {
-                d.getAlex().targetCheck(MouseX, MouseY);
-                d.getMom().targetCheck(MouseX, MouseY);
-                d.getDad().targetCheck(MouseX, MouseY);
+                if (d.getAlex().Contains(MouseX, MouseY)) {
+
+                }
+                
+                //d.getAlex().targetCheck(MouseX, MouseY);
+                //d.getMom().targetCheck(MouseX, MouseY);
+                //d.getDad().targetCheck(MouseX, MouseY);
 
             }
         }

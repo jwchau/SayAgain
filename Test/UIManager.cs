@@ -45,6 +45,7 @@ namespace Test {
             buttons.Add(b);
         }
 
+
         #region SweepButtons
         public void SweepButtons(int x, int y, double scalex, double scaley) {
             var buttons = getButtons();
@@ -57,11 +58,12 @@ namespace Test {
                 if (buttons[i].inRange((int)(x * scalex), rectx, rectxs) && buttons[i].inRange((int)(y * scaley), recty, rectys) || buttons[i].GetSelected()) {
                     buttons[i].setButtonColor(new Color(255, 0, 0));
                 } else {
-                    buttons[i].setButtonColor(new Color(177, 177, 177));
+                    buttons[i].setButtonColor(buttons[i].getTonalColor());
                 }
             }
         }
         #endregion
+
         public List<UITextBox> produceTextBoxes2(string Dialogue) {
             //Console.WriteLine("AM I HERE????");
             dialogueArray = Dialogue.Split('.', '!', '?');
@@ -147,6 +149,7 @@ namespace Test {
                 }
             }
             return playerDialogues;
+
         }
 
         public void reset(List<DialogueObj> responseList) {
@@ -229,11 +232,15 @@ namespace Test {
         }
         #endregion
 
-        public void dialogueLoadOrder(GameState state, DialogueBox player, DialogueBox AI, List<DialogueObj> responseList, List<DialogueObj> responseListAlex) {
+        public void dialogueLoadOrder(GameState state, DialogueBox player, DialogueBox AI, List<DialogueObj> responseList, List<DialogueObj> responseListAlex, bool playerChoice)
+        {
 
 
-            player.setInit(true);
-            player.loadNewDialogue("player", responseList.ElementAt(0).content);
+            if (!playerChoice && responseList[0].content != "returned empty string")
+            {
+                player.setInit(true);
+                player.loadNewDialogue("player", responseList.ElementAt(0).content);
+            }
 
             //check timer done
             //   run player animation

@@ -6,26 +6,26 @@ using System.Threading.Tasks;
 using SFML.Window;
 using SFML.Graphics;
 
-namespace Test
-{
-    class UIButton : UIElement
-    {
+namespace Test {
+    class UIButton : UIElement {
         //constructor
-        public UIButton(float x, float y, tone content, string newDialogue)
-        {
+        public UIButton(float x, float y, tone content, string newDialogue) {
+
+            this.newDialogue = newDialogue;
+            this.buttonTone = content;
+
             buttonText = new Text(content.ToString(), buttonTextFont);
             buttonText.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
 
             rect = new RectangleShape(new SFML.System.Vector2f(buttonText.GetGlobalBounds().Width + 7, buttonText.GetGlobalBounds().Height + 10));
             rect.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
-            rect.FillColor = Color.Black;
-            Color bgColor = new Color(177, 177, 177);
-            rect.FillColor = bgColor;
-            this.newDialogue = newDialogue;
-            tonalColor = buttonTonalColors[content.ToString()];
-            this.buttonTone = content;
+
             this.x = x - buttonText.GetGlobalBounds().Width / 2;
             this.y = y;
+
+            tonalColor = buttonTonalColors[content.ToString()];
+            Color bgColor = buttonTonalColors[content.ToString()];
+            rect.FillColor = bgColor;
         }
 
         //fields
@@ -53,48 +53,39 @@ namespace Test
             rect.FillColor = c;
         }
 
-        public float getX()
-        {
+        public float getX() {
             return x;
         }
 
-        public float getY()
-        {
+        public float getY() {
             return y;
         }
 
-        public void setX(float newX)
-        {
+        public void setX(float newX) {
             x = newX;
         }
 
-        public void setY(float newY)
-        {
+        public void setY(float newY) {
             y = newY;
         }
-        public Text getUIButtonText()
-        {
+        public Text getUIButtonText() {
             return buttonText;
         }
 
-        public tone getTone()
-        {
+        public tone getTone() {
             return buttonTone;
         }
 
-        public FloatRect getRectBounds()
-        {
+        public FloatRect getRectBounds() {
             return rect.GetGlobalBounds();
         }
 
-        public void SetMouseOffset(int x, int y)
-        {
+        public void SetMouseOffset(int x, int y) {
             mouseOffsetX = x;
             mouseOffsetY = y;
         }
 
-        public void SetSelected(bool val)
-        {
+        public void SetSelected(bool val) {
             selected = val;
         }
 
@@ -102,51 +93,38 @@ namespace Test
             this.tonalColor = c;
         }
 
-        public bool GetSelected()
-        {
+        public bool GetSelected() {
             return selected;
         }
-        
-        public bool Contains(int mouseX, int mouseY)
-        {
+
+        public bool Contains(int mouseX, int mouseY) {
             FloatRect bounds = getRectBounds();
-            if (mouseX >= bounds.Left && mouseX <= bounds.Left + bounds.Width && mouseY >= bounds.Top && mouseY <= bounds.Top + bounds.Height)
-            {
+            if (mouseX >= bounds.Left && mouseX <= bounds.Left + bounds.Width && mouseY >= bounds.Top && mouseY <= bounds.Top + bounds.Height) {
                 return true;
             }
             return false;
         }
 
-        public void snapBack()
-        {
+        public void snapBack() {
             rect.Position = new SFML.System.Vector2f(x, y);
             buttonText.Position = new SFML.System.Vector2f(x, y);
         }
 
-        public void translate(int x, int y, double winx, double winy)
-        {
+        public void translate(int x, int y, double winx, double winy) {
             var temp = screenHelper(winx, winy);
             var bounds = getRectBounds();
             double newXPos = x - mouseOffsetX;
             double newYPos = y - mouseOffsetY;
 
-            if (x - mouseOffsetX < 0)
-            {
+            if (x - mouseOffsetX < 0) {
                 newXPos = 0;
-            }
-
-            else if (x - mouseOffsetX + bounds.Width > winx)
-            {
+            } else if (x - mouseOffsetX + bounds.Width > winx) {
                 newXPos = winx - bounds.Width;
             }
 
-            if (y - mouseOffsetY< 0)
-            {
+            if (y - mouseOffsetY < 0) {
                 newYPos = 0;
-            }
-
-            else if (y - mouseOffsetY + bounds.Height > winy)
-            {
+            } else if (y - mouseOffsetY + bounds.Height > winy) {
                 newYPos = (float)winy - bounds.Height;
             }
 
@@ -155,28 +133,25 @@ namespace Test
         }
 
         #region screen helper
-        private Tuple<double,double> screenHelper(double winx, double winy) {
+        private Tuple<double, double> screenHelper(double winx, double winy) {
             var DesktopX = (double)VideoMode.DesktopMode.Width;
             var DesktopY = (double)VideoMode.DesktopMode.Height;
-            return new Tuple<double,double>(DesktopX / winx, DesktopY / winy);
+            return new Tuple<double, double>(DesktopX / winx, DesktopY / winy);
         }
         #endregion
 
-        public string getNewDialogue()
-        {
+        public string getNewDialogue() {
             return newDialogue;
         }
 
-        public Color getTonalColor()
-        {
+        public Color getTonalColor() {
             return tonalColor;
         }
 
-        public override void Draw(RenderTarget target, RenderStates states)
-        {
+        public override void Draw(RenderTarget target, RenderStates states) {
             target.Draw(rect);
             target.Draw(buttonText);
         }
-    
+
     }
 }
