@@ -23,47 +23,42 @@ namespace Test
 
         public override void setAngry()
         {
-            for (int i = 0; i < (361 * 7); i += w)
-            {
-
-                angrysprites.Add(new Sprite(t, new IntRect(i, 0, w, 465))); //btw might get extra sprite if sizes no precise
-                Character.setSprite(angrysprites);
-
-            }
+            Character.setSprite(angrysprites);
         }
         public override void setHappy()
         {
-            for (int i = 0; i < (361 * 9); i += w)
-            {
-                happysprites.Add(new Sprite(t, new IntRect(i, 465, w, 465))); //second row of sprites; happy epression 
-                Character.setSprite(happysprites);
-            }
+            Character.setSprite(happysprites);
         }
-
         public override void setNeutral()
         {
-            for (int i = 0; i < (361 * 4); i += w)
-            {
-                neutralsprites.Add(new Sprite(t, new IntRect(i, 465*2, w, 465))); 
-                Character.setSprite(neutralsprites);
-            }
+            Character.setSprite(neutralsprites);
         }
 
         public override void setSad()
         {
-            for (int i = 0; i < (361 * 4); i += w)
-            {
-                sadsprites.Add(new Sprite(t, new IntRect(i, 465 * 3, w, 465))); 
-                Character.setSprite(sadsprites);
-            }
+            Character.setSprite(sadsprites);
         }
 
         public Mom()
         {
-            
+            for (int i = 0; i < (361 * 7); i += w)
+            {
+                angrysprites.Add(new Sprite(t, new IntRect(i, 0, w, 465))); //btw might get extra sprite if sizes no precise
 
+            }
+            for (int i = 0; i < (361 * 9); i += w)
+            {
+                happysprites.Add(new Sprite(t, new IntRect(i, 465, w, 465))); //second row of sprites; happy epression 
+            }
+            for (int i = 0; i < (361 * 4); i += w)
+            {
+                neutralsprites.Add(new Sprite(t, new IntRect(i, 465 * 2, w, 465)));
+            }
+            for (int i = 0; i < (361 * 4); i += w)
+            {
+                sadsprites.Add(new Sprite(t, new IntRect(i, 465 * 3, w, 465)));
+            }
 
-            
 
         }
     }
