@@ -19,7 +19,7 @@ namespace Test
 
 
     }
-
+    /*
     class Mom : Drawable
     {
         int index = 0;
@@ -67,7 +67,7 @@ namespace Test
 
 
 
-    }
+    }*/
 
 
 

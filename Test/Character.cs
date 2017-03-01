@@ -15,12 +15,32 @@ namespace Test
     class Character: Drawable
     {
         int index = 0;
-        List<Sprite> fsprites = new List<Sprite>(); //frustrated sprite
-        List<Sprite> csprites = new List<Sprite>(); //cooperative
-        List<Sprite> nsprites = new List<Sprite>(); //neutral
-        List<Sprite> sprites = new List<Sprite>(); //current sprite
-        bool frus, neu, coop;
+        static List<Sprite> angrysprites = new List<Sprite>(); //frustrated sprite
+        static List<Sprite> happysprites = new List<Sprite>(); //cooperative
+        static List<Sprite> neutralsprites = new List<Sprite>(); //neutral
+        static List<Sprite> sprites { get; set; }//= new List<Sprite>(); //current sprite
+        static bool angry { get; set; }
+        static bool neutral { get; set; }
+        static bool happy { get; set; }
+
         DateTime time = DateTime.Now;
+
+
+
+        public static void setAngry(List<Sprite> s)
+        {
+            angrysprites = s;
+        }
+
+        public static void setHappy(List<Sprite> s)
+        {
+            happysprites = s;
+        }
+
+        public static void setNeutral(List<Sprite> s)
+        {
+            neutralsprites = s;
+        }
 
         public void Draw(RenderTarget target, RenderStates states)
         {
@@ -38,30 +58,30 @@ namespace Test
         }
 
     
-        public void changeToFrus()
+        static public void changeToAngry()
         {
 
-            frus = true;
-            coop = false;
-            neu = false;
-            sprites = fsprites;
+            angry = true;
+            happy = false;
+            neutral = false;
+            sprites = angrysprites;
 
         }
 
-        public void changeToCoop()
+        static public void changeToHappy()
         {
-            coop = true;
-            frus = false;
-            neu = false;
-            sprites = csprites;
+            happy = true;
+            angry = false;
+            neutral = false;
+            sprites = happysprites;
 
         }
-        public void changeToNeu()
+        static public void changeToNeutral()
         {
-            neu = true;
-            coop = false;
-            frus = false;
-            sprites = nsprites;
+            neutral = true;
+            happy = false;
+            angry = false;
+            sprites = neutralsprites;
 
         }
 
@@ -75,11 +95,11 @@ namespace Test
             f.Close();
             for (int i = 0; i < (361 * 7); i += w)
             {
-                fsprites.Add(new Sprite(t, new IntRect(i, 0, w, 465))); //btw might get extra sprite if sizes no precise
+                angrysprites.Add(new Sprite(t, new IntRect(i, 0, w, 465))); //btw might get extra sprite if sizes no precise
             }
             for (int i = 0; i < (361 * 9); i += w)
             {
-                csprites.Add(new Sprite(t, new IntRect(i, 465, w, 465))); //second row of sprites; happy epression 
+                happysprites.Add(new Sprite(t, new IntRect(i, 465, w, 465))); //second row of sprites; happy epression 
             }
 
 

@@ -129,7 +129,7 @@ namespace Test
             ui_man.setViews(fullScreenView);
 
             mom = new Character();
-            mom.changeToCoop();
+            Character.changeToAngry();
 
         }
 

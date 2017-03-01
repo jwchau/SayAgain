@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="CharacterState.cs" />
     <Compile Include="Character.cs" />
+    <Compile Include="Mom.cs" />
     <Compile Include="CutsceneManager.cs" />
     <Compile Include="ContextFilter.cs" />
     <Compile Include="GameMatrix.cs" />
