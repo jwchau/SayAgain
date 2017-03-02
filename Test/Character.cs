@@ -15,16 +15,14 @@ namespace Test
     abstract class Character: Drawable
     {
         int index = 0;
-        /*static List<Sprite> angrysprites = new List<Sprite>(); //frustrated sprite
-        static List<Sprite> happysprites = new List<Sprite>(); //cooperative
-        static List<Sprite> neutralsprites = new List<Sprite>(); //neutral*/
         static List<Sprite> sprites = new List<Sprite>();
 
         public abstract void setHappy();
         public abstract void setAngry();
         public abstract void setNeutral();
         public abstract void setSad();
-
+        
+        public abstract void checkFNC();
 
 
         DateTime time = DateTime.Now;
