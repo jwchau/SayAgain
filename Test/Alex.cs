@@ -14,6 +14,7 @@ namespace Test
 {
     class Alex: Character
     {
+        new View view;
         static FileStream f = new FileStream("../../Art/alexMaster.png", FileMode.Open);
         Texture t = new Texture(f);
         List<Sprite> angrysprites = new List<Sprite>();
@@ -27,15 +28,15 @@ namespace Test
         }
         public override void setAngry()
         {
-            Character.setSprite(angrysprites);
+            setSprite(angrysprites);
         }
         public override void setHappy()
         {
-            Character.setSprite(happysprites);
+            setSprite(happysprites);
         }
         public override void setNeutral()
         {
-            Character.setSprite(neutralsprites);
+            setSprite(neutralsprites);
         }
 
         public override void setSad()
@@ -45,6 +46,9 @@ namespace Test
 
         public Alex()
         {
+
+            //setView(new FloatRect(1,2,3,4));
+
             for (int i = 0; i < (361 * 4); i += 361)
             {
                 neutralsprites.Add(new Sprite(t, new IntRect(i, 0, 361, 449)));

@@ -13,6 +13,7 @@ namespace Test
 {
     class Mom: Character
     {
+        new View view;
         static FileStream f = new FileStream("../../Art/momsprites.png", FileMode.Open);
         Texture t = new Texture(f);
         List<Sprite> angrysprites = new List<Sprite>();
@@ -28,24 +29,25 @@ namespace Test
         }
         public override void setAngry()
         {
-            Character.setSprite(angrysprites);
+            setSprite(angrysprites);
         }
         public override void setHappy()
         {
-            Character.setSprite(happysprites);
+            setSprite(happysprites);
         }
         public override void setNeutral()
         {
-            Character.setSprite(neutralsprites);
+            setSprite(neutralsprites);
         }
 
         public override void setSad()
         {
-            Character.setSprite(sadsprites);
+            setSprite(sadsprites);
         }
 
         public Mom()
         {
+            //setView(new FloatRect(1, 2, 3, 4));
             for (int i = 0; i < (w * 7); i += w)
             {
                 angrysprites.Add(new Sprite(t, new IntRect(i, 0, w, 465))); //btw might get extra sprite if sizes no precise

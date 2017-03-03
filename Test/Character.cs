@@ -14,26 +14,33 @@ namespace Test
 {
     abstract class Character: Drawable
     {
+        public static View view;
         int index = 0;
-        static List<Sprite> sprites = new List<Sprite>();
+        List<Sprite> sprites = new List<Sprite>();
+        DateTime time = DateTime.Now;
 
         public abstract void setHappy();
         public abstract void setAngry();
         public abstract void setNeutral();
-        public abstract void setSad();
-        
+        public abstract void setSad();       
         public abstract void checkFNC();
-
-
-        DateTime time = DateTime.Now;
-
-        public static void setSprite(List<Sprite> s)
+  
+        public void setSprite(List<Sprite> s)
         {
             sprites = s;
         }
 
+        public static void setView(FloatRect f)
+        {
+            view = new View(f);
+        }
+
         public void Draw(RenderTarget target, RenderStates states)
         {
+
+            //View resetView = target.GetView();
+            //target.SetView(view);
+            
             float framerate = 4f;
             
             target.Draw(sprites[index]);
@@ -45,12 +52,15 @@ namespace Test
                     index = 0;
                 }
             }
+
+            //target.SetView(resetView);
+
         }
 
-
+        
         public Character()
         {
-
+            
 
         }
     }

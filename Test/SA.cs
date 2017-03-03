@@ -129,12 +129,16 @@ namespace Test
             ui_man.setViews(fullScreenView);
 
 
-            //mom = new Mom();
-            //mom.setHappy();
+            mom = new Mom();
+            mom.setHappy();
 
             alexis = new Alex();
             alexis.setAngry();
+
+
+
         }
+
 
         protected override void Update()
         {
@@ -153,7 +157,7 @@ namespace Test
             ui_man.DrawDialogueBox(window);
             ui_man.DrawUI(window, State, ui_man, startMenu, pauseMenu, settingsMenu);
 
-            //window.Draw(mom);
+            window.Draw(mom);
             window.Draw(alexis);
             
         }
