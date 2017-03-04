@@ -13,14 +13,27 @@ namespace Test
 {
     class Mom : Character
     {
-        new View view;
         static FileStream f = new FileStream("../../Art/momsprites.png", FileMode.Open);
         Texture t = new Texture(f);
         List<Sprite> angrysprites = new List<Sprite>();
         List<Sprite> happysprites = new List<Sprite>();
         List<Sprite> neutralsprites = new List<Sprite>();
         List<Sprite> sadsprites = new List<Sprite>();
-        int w = 361;
+
+
+        private View _view;
+        public override View view
+        {
+            get
+            {
+                return _view;
+            }
+
+            set
+            {
+                _view = value;
+            }
+        }
 
         public override void setPosition()
         {
@@ -49,29 +62,34 @@ namespace Test
                     setSprite(neutralsprites);
                     break;
             }
+            _view.Viewport = new FloatRect(x, y, w, h);
         } 
 
         public Mom()
         {
-            //setView(new FloatRect(1, 2, 3, 4));
-            for (int i = 0; i < (w * 7); i += w)
+            w = .2f;
+            h = .45f;
+            x = .5f;
+            y = .4f;
+
+            for (int i = 0; i < (361 * 7); i += 361)
             {
-                angrysprites.Add(new Sprite(t, new IntRect(i, 0, w, 465))); //btw might get extra sprite if sizes no precise
+                angrysprites.Add(new Sprite(t, new IntRect(i, 0, 361, 465))); //btw might get extra sprite if sizes no precise
             }
-            for (int i = 0; i < (w * 9); i += w)
+            for (int i = 0; i < (361 * 9); i += 361)
             {
-                happysprites.Add(new Sprite(t, new IntRect(i, 465, w, 465))); //second row of sprites; happy epression 
+                happysprites.Add(new Sprite(t, new IntRect(i, 465, 361, 465))); //second row of sprites; happy epression 
             }
-            for (int i = 0; i < (w * 4); i += w)
+            for (int i = 0; i < (361 * 4); i += 361)
             {
-                neutralsprites.Add(new Sprite(t, new IntRect(i, 465 * 2, w, 465)));
+                neutralsprites.Add(new Sprite(t, new IntRect(i, 465 * 2, 361, 465)));
             }
-            for (int i = 0; i < (w * 4); i += w)
+            for (int i = 0; i < (361 * 4); i += 361)
             {
-                sadsprites.Add(new Sprite(t, new IntRect(i, 465 * 3, w, 465)));
+                sadsprites.Add(new Sprite(t, new IntRect(i, 465 * 3, 361, 465)));
             }
 
-
+            _view = new View(sadsprites[0].GetGlobalBounds());
         }
     }
 }

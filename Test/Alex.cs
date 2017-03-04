@@ -14,12 +14,25 @@ namespace Test
 {
     class Alex : Character
     {
-        new View view;
+        private View _view;
         static FileStream f = new FileStream("../../Art/alexMaster.png", FileMode.Open);
         Texture t = new Texture(f);
         List<Sprite> angrysprites = new List<Sprite>();
         List<Sprite> happysprites = new List<Sprite>();
         List<Sprite> neutralsprites = new List<Sprite>();
+
+        public override View view
+        {
+            get
+            {
+                return _view;
+            }
+
+            set
+            {
+                _view = value;
+            }
+        }
 
         public override void setPosition()
         {
@@ -36,23 +49,29 @@ namespace Test
             {
                 case spriteEmotion.angry:
                     setSprite(angrysprites);
+                    _view = new View(angrysprites[0].GetGlobalBounds());
                     break;
                 case spriteEmotion.happy:
                     setSprite(happysprites);
+                    _view = new View(happysprites[0].GetGlobalBounds());
                     break;
                 case spriteEmotion.sad:
                     //alex has no sad emotions
                     break;
                 case spriteEmotion.neutral:
                     setSprite(neutralsprites);
+                    _view = new View(neutralsprites[0].GetGlobalBounds());
                     break;
             }
 
+            _view.Viewport = new FloatRect(x, y, w, h);
         } 
         public Alex()
         {
-
-            //setView(new FloatRect(0,0,0,50));
+            w = .18f;
+            h = .4f;
+            x = .2f;
+            y = .5f;
 
             for (int i = 0; i < (361 * 4); i += 361)
             {
@@ -64,9 +83,8 @@ namespace Test
             }
             for (int i = 0; i < (337 * 9); i += 337)
             {
-                angrysprites.Add(new Sprite(t, new IntRect(i, 449*2, 337, 449)));
+                angrysprites.Add(new Sprite(t, new IntRect(i, 449 * 2, 337, 449)));
             }
-            
         }
     }
 }

@@ -134,7 +134,7 @@ namespace Test
             //mom.dim();
 
             alexis = new Alex();
-            alexis.setSpriteEmotion(Character.spriteEmotion.angry);
+            alexis.setSpriteEmotion(Character.spriteEmotion.neutral);
 
 
 

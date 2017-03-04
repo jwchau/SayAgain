@@ -12,12 +12,15 @@ using System.Drawing;
 
 namespace Test
 {
+    
     abstract class Character: Drawable
     {
-        public View view;
         int index = 0;
         List<Sprite> sprites = new List<Sprite>();
         DateTime time = DateTime.Now;
+        public float x = 0, y = 0, w = 0, h = 0;
+
+        public abstract View view { get; set; }
 
         public enum spriteEmotion { happy, angry, neutral, sad };
         public abstract void setSpriteEmotion(spriteEmotion e);  
@@ -37,16 +40,12 @@ namespace Test
             sprites = s;
         }
 
-        public void setView(FloatRect f)
-        {
-            view = new View(f);
-        }
 
         public void Draw(RenderTarget target, RenderStates states)
         {
 
-            //View resetView = target.GetView();
-            //target.SetView(view);
+            View resetView = target.GetView();
+            target.SetView(view);
             
             float framerate = 4f;
             
@@ -60,7 +59,7 @@ namespace Test
                 }
             }
 
-            //target.SetView(resetView);
+            target.SetView(resetView);
 
         }
 
