@@ -14,23 +14,30 @@ namespace Test
 {
     abstract class Character: Drawable
     {
-        public static View view;
+        public View view;
         int index = 0;
         List<Sprite> sprites = new List<Sprite>();
         DateTime time = DateTime.Now;
 
-        public abstract void setHappy();
-        public abstract void setAngry();
-        public abstract void setNeutral();
-        public abstract void setSad();       
+        public enum spriteEmotion { happy, angry, neutral, sad };
+        public abstract void setSpriteEmotion(spriteEmotion e);  
         public abstract void checkFNC();
+        public abstract void setPosition();
+        
+        public void dim()
+        {
+            foreach (Sprite s in sprites)
+            {
+                s.Color = Color.Black;
+            }
+        }
   
         public void setSprite(List<Sprite> s)
         {
             sprites = s;
         }
 
-        public static void setView(FloatRect f)
+        public void setView(FloatRect f)
         {
             view = new View(f);
         }

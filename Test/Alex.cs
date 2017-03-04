@@ -12,7 +12,7 @@ using System.Drawing;
 
 namespace Test
 {
-    class Alex: Character
+    class Alex : Character
     {
         new View view;
         static FileStream f = new FileStream("../../Art/alexMaster.png", FileMode.Open);
@@ -21,33 +21,38 @@ namespace Test
         List<Sprite> happysprites = new List<Sprite>();
         List<Sprite> neutralsprites = new List<Sprite>();
 
-
+        public override void setPosition()
+        {
+            throw new NotImplementedException();
+        }
         public override void checkFNC()
         {
-
-        }
-        public override void setAngry()
-        {
-            setSprite(angrysprites);
-        }
-        public override void setHappy()
-        {
-            setSprite(happysprites);
-        }
-        public override void setNeutral()
-        {
-            setSprite(neutralsprites);
+            throw new NotImplementedException();
         }
 
-        public override void setSad()
+        public override void setSpriteEmotion(spriteEmotion e)
         {
-            //Alex has no sad expression
-        }
+            switch (e)
+            {
+                case spriteEmotion.angry:
+                    setSprite(angrysprites);
+                    break;
+                case spriteEmotion.happy:
+                    setSprite(happysprites);
+                    break;
+                case spriteEmotion.sad:
+                    //alex has no sad emotions
+                    break;
+                case spriteEmotion.neutral:
+                    setSprite(neutralsprites);
+                    break;
+            }
 
+        } 
         public Alex()
         {
 
-            //setView(new FloatRect(1,2,3,4));
+            //setView(new FloatRect(0,0,0,50));
 
             for (int i = 0; i < (361 * 4); i += 361)
             {
@@ -61,6 +66,7 @@ namespace Test
             {
                 angrysprites.Add(new Sprite(t, new IntRect(i, 449*2, 337, 449)));
             }
+            
         }
     }
 }

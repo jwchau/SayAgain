@@ -11,7 +11,7 @@ using SFML.System;
 using System.Drawing;
 namespace Test
 {
-    class Mom: Character
+    class Mom : Character
     {
         new View view;
         static FileStream f = new FileStream("../../Art/momsprites.png", FileMode.Open);
@@ -22,28 +22,34 @@ namespace Test
         List<Sprite> sadsprites = new List<Sprite>();
         int w = 361;
 
+        public override void setPosition()
+        {
+            throw new NotImplementedException();
+        }
 
         public override void checkFNC()
         {
-
-        }
-        public override void setAngry()
-        {
-            setSprite(angrysprites);
-        }
-        public override void setHappy()
-        {
-            setSprite(happysprites);
-        }
-        public override void setNeutral()
-        {
-            setSprite(neutralsprites);
+            throw new NotImplementedException();
         }
 
-        public override void setSad()
+        public override void setSpriteEmotion(spriteEmotion e)
         {
-            setSprite(sadsprites);
-        }
+            switch (e)
+            {
+                case spriteEmotion.angry:
+                    setSprite(angrysprites);
+                    break;
+                case spriteEmotion.happy:
+                    setSprite(happysprites);
+                    break;
+                case spriteEmotion.sad:
+                    setSprite(angrysprites);
+                    break;
+                case spriteEmotion.neutral:
+                    setSprite(neutralsprites);
+                    break;
+            }
+        } 
 
         public Mom()
         {

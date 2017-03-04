@@ -130,10 +130,11 @@ namespace Test
 
 
             mom = new Mom();
-            mom.setHappy();
+            mom.setSpriteEmotion(Character.spriteEmotion.happy);
+            //mom.dim();
 
             alexis = new Alex();
-            alexis.setAngry();
+            alexis.setSpriteEmotion(Character.spriteEmotion.angry);
 
 
 
