@@ -68,10 +68,11 @@ namespace Test
         } 
         public Alex()
         {
+            //determine size and position
             w = .18f;
             h = .4f;
             x = .2f;
-            y = .5f;
+            y = .3f;
 
             for (int i = 0; i < (361 * 4); i += 361)
             {
@@ -83,6 +84,10 @@ namespace Test
             }
             for (int i = 0; i < (337 * 9); i += 337)
             {
+
+                /*Sprite s = new Sprite(t, new IntRect(i, 449 * 2, 337, 449));
+                s.Color = new Color(s.Color.R, s.Color.G, s.Color.B, 180);
+                angrysprites.Add(s);*/
                 angrysprites.Add(new Sprite(t, new IntRect(i, 449 * 2, 337, 449)));
             }
         }

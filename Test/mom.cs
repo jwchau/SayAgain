@@ -67,10 +67,11 @@ namespace Test
 
         public Mom()
         {
+            //determine size and position
             w = .2f;
             h = .45f;
             x = .5f;
-            y = .4f;
+            y = .25f;
 
             for (int i = 0; i < (361 * 7); i += 361)
             {

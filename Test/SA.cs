@@ -131,10 +131,10 @@ namespace Test
 
             mom = new Mom();
             mom.setSpriteEmotion(Character.spriteEmotion.happy);
-            //mom.dim();
+            mom.active(false);
 
             alexis = new Alex();
-            alexis.setSpriteEmotion(Character.spriteEmotion.neutral);
+            alexis.setSpriteEmotion(Character.spriteEmotion.angry);
 
 
 

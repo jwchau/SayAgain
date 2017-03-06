@@ -19,6 +19,7 @@ namespace Test
         List<Sprite> sprites = new List<Sprite>();
         DateTime time = DateTime.Now;
         public float x = 0, y = 0, w = 0, h = 0;
+        public bool canTalk = false;
 
         public abstract View view { get; set; }
 
@@ -29,9 +30,32 @@ namespace Test
         
         public void dim()
         {
+
             foreach (Sprite s in sprites)
             {
-                s.Color = Color.Black;
+                s.Color = new Color(s.Color.R, s.Color.G, s.Color.B, 180);
+            }
+        }
+
+        public void undim()
+        {
+
+            foreach (Sprite s in sprites)
+            {
+                s.Color = new Color(s.Color.R, s.Color.G, s.Color.B, 255);
+            }
+        }
+
+        public void active(bool b)
+        {
+            if (b)
+            {
+                canTalk = true;
+                undim();
+            } else if (!b)
+            {
+                canTalk = false;
+                dim();
             }
         }
   
@@ -48,7 +72,8 @@ namespace Test
             target.SetView(view);
             
             float framerate = 4f;
-            
+
+
             target.Draw(sprites[index]);
             if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
             {
