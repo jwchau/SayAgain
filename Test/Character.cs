@@ -88,11 +88,43 @@ namespace Test
 
         }
 
-        
-        public Character()
+        public void click()
         {
             
+            Console.WriteLine("check if click");
+            Console.WriteLine((x * SA.getW()));
+            Console.WriteLine((x * SA.getW() + sprites[0].GetLocalBounds().Width));
+            Console.WriteLine(Mouse.GetPosition().X);
+            if (sprites != null)
+            {
+                if (Mouse.GetPosition().X >= (x * SA.getW())
+                    && Mouse.GetPosition().X <= x * (SA.getW()) + sprites[0].GetGlobalBounds().Width
+                    && Mouse.GetPosition().Y >= (y * SA.getH())
+                    && Mouse.GetPosition().Y <= (y * SA.getH()) + sprites[0].GetGlobalBounds().Height)
 
-        }
-    }
+
+                    /*Mouse.GetPosition().X >= sprites[0].Position.X 
+                    && Mouse.GetPosition().X <= sprites[0].Position.X + sprites[0].GetGlobalBounds().Width
+                    && Mouse.GetPosition().Y >= sprites[0].Position.Y
+                    && Mouse.GetPosition().Y <= sprites[0].Position.Y + sprites[0].GetGlobalBounds().Height)
+                    */
+
+
+                    /*http://stackoverflow.com/questions/23530360/how-do-you-make-a-clickable-sprite-in-sfml
+                     * sprites[0].GetGlobalBounds().Contains
+                     * (Mouse.GetPosition().X, Mouse.GetPosition().Y))*/
+                        {
+                            Console.WriteLine("mouse over sprite");
+                        }
+
+            }
+}
+
+
+public Character()
+{
+
+
+}
+}
 }

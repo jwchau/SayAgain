@@ -61,6 +61,12 @@ namespace Test
                 ui_man.SetPrintTime(0);
             }
 
+            if (e.Code == Keyboard.Key.C)
+            {
+
+                mom.click();
+
+            }
 
             if (e.Code == Keyboard.Key.N) {
 

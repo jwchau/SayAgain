@@ -43,6 +43,16 @@ namespace Test
 
         /////////////////////////////////////////////////////////////////////////////////////////////
 
+        public static UInt32 getW()
+        {
+            return SCREEN_WIDTH;
+        }
+
+        public static UInt32 getH()
+        {
+            return SCREEN_HEIGHT;
+        }
+
         protected GameState State = new GameState();
 
         public Game(uint width, uint height, string title, Color clearColor)

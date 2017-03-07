@@ -66,6 +66,9 @@ namespace Test
 
             _view.Viewport = new FloatRect(x, y, w, h);
         } 
+
+
+
         public Alex()
         {
             //determine size and position
