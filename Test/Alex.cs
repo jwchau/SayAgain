@@ -71,6 +71,9 @@ namespace Test
 
         public Alex()
         {
+            xpos = 500;
+            ypos = 400;
+
             //determine size and position
             w = .18f;
             h = .4f;

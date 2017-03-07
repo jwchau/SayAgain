@@ -18,7 +18,7 @@ namespace Test
         int index = 0;
         List<Sprite> sprites = new List<Sprite>();
         DateTime time = DateTime.Now;
-        public float x = 0, y = 0, w = 0, h = 0;
+        public float x = 0, y = 0, w = 0, h = 0, xpos = 0, ypos = 0;
         public bool canTalk = false;
 
         public abstract View view { get; set; }
@@ -68,11 +68,12 @@ namespace Test
         public void Draw(RenderTarget target, RenderStates states)
         {
 
-            View resetView = target.GetView();
-            target.SetView(view);
+            //View resetView = target.GetView();
+            //target.SetView(view);
             
             float framerate = 4f;
 
+            sprites[index].Position = new Vector2f(xpos, ypos);
 
             target.Draw(sprites[index]);
             if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
@@ -84,47 +85,46 @@ namespace Test
                 }
             }
 
-            target.SetView(resetView);
+            //target.SetView(resetView);
 
         }
-
+        
         public void click()
         {
-            
+            /*
             Console.WriteLine("check if click");
             Console.WriteLine((x * SA.getW()));
             Console.WriteLine((x * SA.getW() + sprites[0].GetLocalBounds().Width));
             Console.WriteLine(Mouse.GetPosition().X);
+            */
+
             if (sprites != null)
             {
-                if (Mouse.GetPosition().X >= (x * SA.getW())
+                /*if (Mouse.GetPosition().X >= (x * SA.getW())
                     && Mouse.GetPosition().X <= x * (SA.getW()) + sprites[0].GetGlobalBounds().Width
                     && Mouse.GetPosition().Y >= (y * SA.getH())
                     && Mouse.GetPosition().Y <= (y * SA.getH()) + sprites[0].GetGlobalBounds().Height)
 
 
-                    /*Mouse.GetPosition().X >= sprites[0].Position.X 
+                    Mouse.GetPosition().X >= sprites[0].Position.X 
                     && Mouse.GetPosition().X <= sprites[0].Position.X + sprites[0].GetGlobalBounds().Width
                     && Mouse.GetPosition().Y >= sprites[0].Position.Y
                     && Mouse.GetPosition().Y <= sprites[0].Position.Y + sprites[0].GetGlobalBounds().Height)
-                    */
+                */  
 
-
-                    /*http://stackoverflow.com/questions/23530360/how-do-you-make-a-clickable-sprite-in-sfml
-                     * sprites[0].GetGlobalBounds().Contains
-                     * (Mouse.GetPosition().X, Mouse.GetPosition().Y))*/
-                        {
-                            Console.WriteLine("mouse over sprite");
+                    //http://stackoverflow.com/questions/23530360/how-do-you-make-a-clickable-sprite-in-sfml
+                    if (sprites[0].GetGlobalBounds().Contains
+                        (Mouse.GetPosition().X, Mouse.GetPosition().Y)) {
+                            Console.WriteLine("clicked mom");
                         }
 
             }
 }
 
 
-public Character()
-{
+        public Character() {
 
 
-}
-}
+        }
+    }
 }

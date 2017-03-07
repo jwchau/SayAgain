@@ -41,6 +41,8 @@ namespace Test
         private void onMouseButtonReleased(object sender, MouseButtonEventArgs e)
         {
             ManagerOfInput.MouseReleasedCheck(State.GetState(), ui_man, tfx, cf);
+            mom.click();
+
         }
 
         private void onMouseButtonPressed(object sender, MouseButtonEventArgs e)
@@ -61,12 +63,6 @@ namespace Test
                 ui_man.SetPrintTime(0);
             }
 
-            if (e.Code == Keyboard.Key.C)
-            {
-
-                mom.click();
-
-            }
 
             if (e.Code == Keyboard.Key.N) {
 

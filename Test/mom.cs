@@ -67,6 +67,11 @@ namespace Test
 
         public Mom()
         {
+
+
+            xpos = 1000;
+            ypos = 400;
+
             //determine size and position
             w = .2f;
             h = .45f;
