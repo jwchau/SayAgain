@@ -18,8 +18,9 @@ namespace Test {
             tone[] tonez = new tone[] { tone.Blunt, tone.Indifferent, tone.Compassionate, tone.Hesitant };
             string[] jsondialogue = new string[] { "Blunt Dialogue.", "Indifferent Dialogue.", "Compassionate Dialogue.", "Hesitant Dialogue." };
             int xPos = (int)SCREEN_WIDTH / tonez.Length;
+            Console.WriteLine(SCREEN_HEIGHT);
             for (int i = 1; i <= tonez.Length; i++) {
-                addButton(new UIButton(xPos / 2 + (i - 1) * xPos, SCREEN_HEIGHT - SCREEN_HEIGHT / 4, tonez[i - 1], jsondialogue[i - 1]));
+                addButton(new UIButton(xPos / 2 + (i - 1) * xPos, (float)(SCREEN_HEIGHT - SCREEN_HEIGHT*0.26), tonez[i - 1], jsondialogue[i - 1]));
             }
             ////////////////////////////////////////////////
         }
@@ -54,12 +55,12 @@ namespace Test {
                 var recty = buttons[i].getY();
                 var rectxs = rectx + buttons[i].getRectSize().X;
                 var rectys = recty + buttons[i].getRectSize().Y;
-
-                if (buttons[i].inRange((int)(x * scalex), rectx, rectxs) && buttons[i].inRange((int)(y * scaley), recty, rectys) || buttons[i].GetSelected()) {
-                    buttons[i].setButtonColor(new Color(255, 0, 0));
-                } else {
-                    buttons[i].setButtonColor(buttons[i].getTonalColor());
-                }
+                buttons[i].setHover((int)(x * scalex), (int)(y * scaley));
+                //if (buttons[i].inRange((int)(x * scalex), rectx, rectxs) && buttons[i].inRange((int)(y * scaley), recty, rectys) || buttons[i].GetSelected()) {
+                //    buttons[i].setButtonColor(new Color(255, 0, 0));
+                //} else {
+                //    buttons[i].setButtonColor(buttons[i].getTonalColor());
+                //}
             }
         }
         #endregion

@@ -13,8 +13,8 @@ using Newtonsoft.Json;
 namespace Test {
 
     class SA : Game {
-        Sprite mom, alex, dad;
-        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?", Color.Magenta) {
+        
+        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?") {
 
 
             window.KeyPressed += onKeyPressed;
@@ -40,7 +40,6 @@ namespace Test {
             ManagerOfInput.OnMouseMoved(State, e.X, e.Y);
            
             ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
-
 
             if (D_Man.getAlex().Contains(e.X, e.Y)) {
                 D_Man.getAlex().setHover(true);
@@ -102,7 +101,7 @@ namespace Test {
 
             ManagerOfInput.onMouseButtonPressed(e.X, e.Y);
 
-            ManagerOfInput.GamePlay(State, buttons, e.X, e.Y);
+            ManagerOfInput.GamePlay(State, buttons, e.X, e.Y, scaleFactorX, scaleFactorY);
 
             ManagerOfInput.MenuPlay(State, menus, e.X, e.Y);
 
@@ -254,19 +253,21 @@ namespace Test {
         }
 
         protected override void Initialize() {
-            Texture texturemom, texturealex, texturedad;
-            FileStream m = new FileStream("../../Art/momdemo.png", FileMode.Open);
-            FileStream a = new FileStream("../../Art/alexdemo.png", FileMode.Open);
-            FileStream d = new FileStream("../../Art/daddemo.png", FileMode.Open);
-            texturemom = new Texture(m);
-            texturealex = new Texture(a);
-            texturedad = new Texture(d);
-            alex = new Sprite(texturealex);
-            mom = new Sprite(texturemom);
-            dad = new Sprite(texturedad);
+            alex = new Sprite(new Texture("../../Art/alexdemo.png"));
+            mom = new Sprite(new Texture("../../Art/momdemo.png"));
+            dad = new Sprite(new Texture("../../Art/daddemo.png"));
+            toneBar = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/tonebar.png"));
+
             mom.Position = new Vector2f(1200, 350);
             dad.Position = new Vector2f(400, 325);
             alex.Position = new Vector2f(800, 400);
+            toneBar.Position = new Vector2f(6, 794);
+
+            textBackground = new RectangleShape(new Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT / 5));
+            textBackground.Position = new Vector2f(0, SCREEN_HEIGHT - (float)(SCREEN_HEIGHT * 0.19));
+            textBackground.FillColor = new Color(67, 65, 69);
+            textBackground.OutlineColor = Color.White;
+            textBackground.OutlineThickness = 2;
 
             //Originally in LoadContent/////////////////////////////////////////////////////////////////////////////////
             // Create Character states
@@ -327,7 +328,6 @@ namespace Test {
                 // If the mouse is currently dragging
                 if (ManagerOfInput.GetMouseDown()) {
 
-
                     // Loop through buttons
                     for (var i = 0; i < buttons.Count; i++) {
                         // Find button currently being interacted with
@@ -340,7 +340,7 @@ namespace Test {
                             for (var j = 0; j < playerDialogues.Count; j++) {
                                 // If the mouse just came from inside a UI Textbox
                                 if (playerDialogues[j].wasMouseIn()) {
-                                    if (!playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1])) {
+                                    if (!playerDialogues[j].Contains((int)(MouseCoord[0]*scaleFactorX), (int)(MouseCoord[1]*scaleFactorY))) {
                                         // Mouse has now left the UI Textbox so set it to false
                                         playerDialogues[j].setMouseWasIn(false);
                                         // Reset the color to match its previous color
@@ -352,7 +352,7 @@ namespace Test {
 
                                     // If mouse just came from outside the UI Textbox
                                 } else {
-                                    if (playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1])) {
+                                    if (playerDialogues[j].Contains((int)(MouseCoord[0] * scaleFactorX), (int)(MouseCoord[1] * scaleFactorY))) {
                                         // Mouse is now inside a UI Textbox, so set it to true
                                         playerDialogues[j].setMouseWasIn(true);
                                         // Update previous color to current color of the UI Textbox
@@ -419,11 +419,7 @@ namespace Test {
                 }
             } else {
 
-
                 //Draw text box background box
-                RectangleShape textBackground = new RectangleShape(new Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT / 5));
-                textBackground.Position = new Vector2f(0, SCREEN_HEIGHT - (SCREEN_HEIGHT / 5));
-                textBackground.FillColor = Color.Black;
                 window.Draw(textBackground);
 
                 var dialogues = ui_man.getPlayerDialogues();
@@ -431,6 +427,8 @@ namespace Test {
                 for (var i = 0; i < dialogues.Count; i++) {
                     window.Draw(dialogues[i]);
                 }
+
+                window.Draw(toneBar);
                 var buttons = ui_man.getButtons();
 
                 for (var i = 0; i < buttons.Count; i++) {

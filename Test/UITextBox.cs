@@ -14,17 +14,17 @@ namespace Test
         public UITextBox(float x, float y, string dialogue, int cluster)
         {
             UITextBoxText = new Text(dialogue, UITextBoxFont);
-            UITextBoxText.Position = new Vector2f(x, y);
-            box = new RectangleShape(new Vector2f(UITextBoxText.GetGlobalBounds().Width + 5, UITextBoxText.GetGlobalBounds().Height + 5));
-            box.Position = new Vector2f(x, y);
+            UITextBoxText.Position = new Vector2f(x + 3, y + 12);
+            box = new RectangleShape(new Vector2f(UITextBoxText.GetGlobalBounds().Width + 10, UITextBoxText.GetGlobalBounds().Height + 10));
+            box.Position = new Vector2f(x, y + 17);
             box.FillColor = buttonTonalColors["Default"];
             prevColor = buttonTonalColors["Default"];
-            UITextBoxText.Color = new Color(227, 215, 207);
+            UITextBoxText.Color = new Color(67, 65, 69);
             this.affected = false;
             this.cluster = cluster;
         }
 
-        Font UITextBoxFont = new Font("../../Fonts/Adore64.ttf");
+        Font UITextBoxFont = new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf");
         Text UITextBoxText;
         RectangleShape box;
         bool affected = false;

@@ -72,16 +72,20 @@ namespace Test
         protected tone currentTone = tone.Root;
         protected Loader Load = new Loader();
         protected Selector s = new Selector();
+
         #endregion
+
+        protected Sprite mom, alex, dad, toneBar;
+        protected RectangleShape textBackground;
 
         /////////////////////////////////////////////////////////////////////////////////////////////
 
         protected GameState State = new GameState();
 
-        public Game(uint width, uint height, string title, Color clearColor)
+        public Game(uint width, uint height, string title)
         {
             window = new RenderWindow(new VideoMode(width, height), title, Styles.Default);
-            this.clearColor = clearColor;
+            this.clearColor = new Color(125, 116, 132);
 
             // Set-up Events
             window.Closed += onClosed;

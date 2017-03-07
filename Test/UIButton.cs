@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SFML.System;
 using SFML.Window;
 using SFML.Graphics;
 
@@ -14,29 +15,44 @@ namespace Test {
             this.newDialogue = newDialogue;
             this.buttonTone = content;
 
+            //Create sprite here
+            buttonTexture = new Texture(buttonSpritePaths[content.ToString()][0]);
+            buttonTextureHighlight = new Texture(buttonSpritePaths[content.ToString()][1]);
+
+            buttonSprite = new Sprite(buttonTexture);
+            buttonSpriteHighlight = new Sprite(buttonTextureHighlight);
+
+            buttonSprite.Position = new Vector2f(x - buttonSprite.GetGlobalBounds().Width / 2, y);
+            buttonSpriteHighlight.Position = new Vector2f(x - buttonSprite.GetGlobalBounds().Width / 2, y);
+
             buttonText = new Text(content.ToString(), buttonTextFont);
-            buttonText.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
+            //buttonText.Position = new Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
 
-            rect = new RectangleShape(new SFML.System.Vector2f(buttonText.GetGlobalBounds().Width + 7, buttonText.GetGlobalBounds().Height + 10));
-            rect.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
+            //rect = new RectangleShape(new Vector2f(buttonText.GetGlobalBounds().Width + 7, buttonText.GetGlobalBounds().Height + 10));
+            //rect.Position = new Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
 
-            this.x = x - buttonText.GetGlobalBounds().Width / 2;
+            this.x = x - buttonSprite.GetGlobalBounds().Width / 2;
             this.y = y;
 
             tonalColor = buttonTonalColors[content.ToString()];
-            Color bgColor = buttonTonalColors[content.ToString()];
-            rect.FillColor = bgColor;
+            //rect.FillColor = tonalColor;
         }
 
         //fields
         static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
         static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
 
+        Texture buttonTexture;
+        Sprite buttonSprite;
+        Texture buttonTextureHighlight;
+        Sprite buttonSpriteHighlight;
+
         Font buttonTextFont = new Font("../../Fonts/Adore64.ttf");
         Text buttonText;
         RectangleShape rect;
         string newDialogue;
         bool selected = false;
+        bool hover = false;
         int mouseOffsetX = 0;
         int mouseOffsetY = 0;
         Color tonalColor;
@@ -45,8 +61,8 @@ namespace Test {
         //methods
         //String eventHandler;
 
-        public SFML.System.Vector2f getRectSize() {
-            return rect.Size;
+        public Vector2f getRectSize() {
+            return new Vector2f(buttonSprite.GetGlobalBounds().Width, buttonSprite.GetGlobalBounds().Height);
         }
 
         public void setButtonColor(Color c) {
@@ -77,7 +93,7 @@ namespace Test {
         }
 
         public FloatRect getRectBounds() {
-            return rect.GetGlobalBounds();
+            return buttonSprite.GetGlobalBounds();
         }
 
         public void SetMouseOffset(int x, int y) {
@@ -87,10 +103,6 @@ namespace Test {
 
         public void SetSelected(bool val) {
             selected = val;
-        }
-
-        public void setTonalColor(Color c) {
-            this.tonalColor = c;
         }
 
         public bool GetSelected() {
@@ -106,15 +118,21 @@ namespace Test {
         }
 
         public void snapBack() {
-            rect.Position = new SFML.System.Vector2f(x, y);
-            buttonText.Position = new SFML.System.Vector2f(x, y);
+            buttonSprite.Position = new Vector2f(x, y);
+            buttonSpriteHighlight.Position = new Vector2f(x, y);
+            //buttonText.Position = new Vector2f(x, y);
+        }
+
+        public void setHover(int mouseX, int mouseY)
+        {
+            hover = Contains(mouseX, mouseY);
         }
 
         public void translate(int x, int y, double winx, double winy) {
             var temp = screenHelper(winx, winy);
             var bounds = getRectBounds();
-            double newXPos = x - mouseOffsetX;
-            double newYPos = y - mouseOffsetY;
+            double newXPos = x - (mouseOffsetX)*temp.Item1;
+            double newYPos = y - (mouseOffsetY)*temp.Item2;
 
             if (x - mouseOffsetX < 0) {
                 newXPos = 0;
@@ -128,12 +146,13 @@ namespace Test {
                 newYPos = (float)winy - bounds.Height;
             }
 
-            rect.Position = new SFML.System.Vector2f((float)newXPos, (float)newYPos);
-            buttonText.Position = new SFML.System.Vector2f((float)newXPos, (float)newYPos);
+            buttonSprite.Position = new Vector2f((float)newXPos, (float)newYPos);
+            buttonSpriteHighlight.Position = new Vector2f((float)newXPos, (float)newYPos);
+            //buttonText.Position = new SFML.System.Vector2f((float)newXPos, (float)newYPos);
         }
 
         #region screen helper
-        private Tuple<double, double> screenHelper(double winx, double winy) {
+        public Tuple<double, double> screenHelper(double winx, double winy) {
             var DesktopX = (double)VideoMode.DesktopMode.Width;
             var DesktopY = (double)VideoMode.DesktopMode.Height;
             return new Tuple<double, double>(DesktopX / winx, DesktopY / winy);
@@ -149,8 +168,22 @@ namespace Test {
         }
 
         public override void Draw(RenderTarget target, RenderStates states) {
-            target.Draw(rect);
-            target.Draw(buttonText);
+            //target.Draw(rect);
+            if (hover)
+            {
+                if(selected)
+                {
+                    buttonSpriteHighlight.Color = new Color(255, 255, 255, 128);
+                } else
+                {
+                    buttonSpriteHighlight.Color = new Color(255, 255, 255, 255);
+                }
+                target.Draw(buttonSpriteHighlight);
+            } else
+            {
+                target.Draw(buttonSprite);
+            }
+            //target.Draw(buttonText);
         }
 
     }
