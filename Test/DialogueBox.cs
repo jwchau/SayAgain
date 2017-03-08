@@ -221,6 +221,11 @@ namespace Test
 
         }
 
+        public void AlertSoundMan()
+        {
+            //send signal to sound man
+        }
+
         //async means this function can run separate from main app.
         //operate in own time and thread
         public async Task animateText(Text line, CancellationToken ct)
@@ -242,6 +247,7 @@ namespace Test
                 }
             }
             // Do asynchronous work.
+        
             if (tag == "AI") 
             {
                 state.startTimer("game");

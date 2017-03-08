@@ -54,6 +54,10 @@ namespace Test {
 
             ManagerOfInput.onMouseButtonReleased();
 
+            /////jksdfjklsfkldsfj 
+
+
+
             if (playerChoice) {
                 //ManagerOfInput.checkTargets(State, D_Man);
                 if (D_Man.getAlex().Contains(e.X, e.Y) == true) {
@@ -177,6 +181,9 @@ namespace Test {
                 Console.WriteLine("player choice");
                 for (int i = 0; i != nextContext.Count; i++) {
                     if (nextContext[i][0] == 'A') {
+
+                        //change music 
+
                         Console.WriteLine("Ayyyyy");
                         D_Man.activateCharacterChoice("Alex");
                         if (!nextContextDict.ContainsKey("Alex")) {
@@ -185,6 +192,8 @@ namespace Test {
                             nextContextDict["Alex"] = nextContext[i];
                         }
                     } else if (nextContext[i][0] == 'M') {
+
+
                         Console.WriteLine("Mmmmm");
                         D_Man.activateCharacterChoice("Mom");
                         if (!nextContextDict.ContainsKey("Mom")) {
@@ -193,6 +202,8 @@ namespace Test {
                             nextContextDict["Mom"] = nextContext[i];
                         }
                     } else if (nextContext[i][0] == 'D') {
+
+
                         Console.WriteLine("Deez Nutz");
                         D_Man.activateCharacterChoice("Dad");
                         if (!nextContextDict.ContainsKey("Dad")) {
@@ -258,6 +269,10 @@ namespace Test {
             textBackground.FillColor = new Color(67, 65, 69);
             textBackground.OutlineColor = Color.White;
             textBackground.OutlineThickness = 2;
+
+            //sound init
+            sound_man.init_sounds();
+            //sound_man.playMusic("Dad");
 
             //Originally in LoadContent/////////////////////////////////////////////////////////////////////////////////
             // Create Character states
@@ -389,6 +404,10 @@ namespace Test {
                 }
                 // ui_man.dialogueLoadOrder(State, playerDialogueBox, dialogueBox, responseList, responseListAlex);
                 if (playerDialogueBox.getAnimationStart() == false && loadedAIDialogueOnce == true /*&& playerChoice == false*/) {
+
+                    //sound starts on npc dialogue start
+                    sound_man.playSFX("chatter");
+
                     if (responseListAlex[0].content != "returned empty string") {
                         dialogueBox.setInit(true);
                         dialogueBox.loadNewDialogue("alex", responseListAlex.ElementAt(0).content); //this makes the timer happen after the animation is done

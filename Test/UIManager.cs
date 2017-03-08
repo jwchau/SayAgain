@@ -239,6 +239,7 @@ namespace Test {
 
             if (!playerChoice && responseList[0].content != "returned empty string")
             {
+
                 player.setInit(true);
                 player.loadNewDialogue("player", responseList.ElementAt(0).content);
             }
