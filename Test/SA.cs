@@ -261,7 +261,7 @@ namespace Test {
             mom.Position = new Vector2f(1200, 350);
             dad.Position = new Vector2f(400, 325);
             alex.Position = new Vector2f(800, 400);
-            toneBar.Position = new Vector2f(6, 794);
+            toneBar.Position = new Vector2f(6,(float)(SCREEN_HEIGHT*0.735));
 
             textBackground = new RectangleShape(new Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT / 5));
             textBackground.Position = new Vector2f(0, SCREEN_HEIGHT - (float)(SCREEN_HEIGHT * 0.19));
