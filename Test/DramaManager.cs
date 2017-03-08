@@ -8,9 +8,7 @@ using SFML.Graphics;
 namespace Test {
     class DramaManager : Drawable {
         public DramaManager() {
-            Alex = new CharacterState("alex");
-            Mom = new CharacterState("mom");
-            Dad = new CharacterState("dad");
+
         }
 
         private CharacterState Alex;

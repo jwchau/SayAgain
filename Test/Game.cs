@@ -27,15 +27,10 @@ namespace Test
 
         //User Inferface Manager
         protected UIManager ui_man = new UIManager();
-<<<<<<< HEAD
 
-        //Cutscene Manager
-        protected CutsceneManager cman = new CutsceneManager();
-=======
         protected List<UIButton> buttons;
 
 
->>>>>>> f32c8200d12f28a1b75958266e586ec639003800
         //Menus
         protected Menu startMenu = new Menu("start");
         protected Menu settingsMenu = new Menu("settings");

@@ -19,7 +19,7 @@ namespace Test {
         Character mom, alexis, dad;
 
 
-        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?", Color.Magenta)
+        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?")
         {
             
             window.KeyPressed += onKeyPressed;
@@ -46,17 +46,7 @@ namespace Test {
            
             ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
 
-            if (D_Man.getAlex().Contains(e.X, e.Y)) {
-                D_Man.getAlex().setHover(true);
-            } else if (D_Man.getMom().Contains(e.X, e.Y)) {
-                D_Man.getMom().setHover(true);
-            } else if (D_Man.getDad().Contains(e.X, e.Y)) {
-                D_Man.getDad().setHover(true);
-            } else {
-                D_Man.getAlex().setHover(false);
-                D_Man.getMom().setHover(false);
-                D_Man.getDad().setHover(false);
-            }
+     
 
         }
 
