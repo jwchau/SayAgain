@@ -22,6 +22,9 @@ namespace Test
         protected double scaleFactorX;
         protected double scaleFactorY;
 
+        //Sound Manager
+        protected SoundManager sound_man = new SoundManager();
+
         //Input Manager
         protected InputManager ManagerOfInput = new InputManager();
 
