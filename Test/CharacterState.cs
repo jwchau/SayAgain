@@ -15,9 +15,29 @@ namespace Test
 
 
         //methods
-        public CharacterState(double mood, double volatility) {
-            this.mood = mood;
-            this.volatility = volatility;
+        public CharacterState() {
+            this.mood = 0;
+            this.volatility = 0;
+        }
+
+        public void setMood(double m)
+        {
+            mood = m;
+        }
+
+        public double getMood()
+        {
+            return mood;
+        }
+
+        public void setVolatility(double v)
+        {
+            volatility = v;
+        }
+
+        public double getVolatility()
+        {
+            return volatility;
         }
 
         public void SetTalked(char f, double amount) {
@@ -35,9 +55,7 @@ namespace Test
             return false;
         }
 
-        public void DecreaseMood() {
-
-        }
+    
 
     }
 }

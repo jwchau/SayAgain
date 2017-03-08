@@ -21,24 +21,7 @@ namespace Test
         List<Sprite> sadsprites = new List<Sprite>();
 
 
-        private View _view;
-        public override View view
-        {
-            get
-            {
-                return _view;
-            }
 
-            set
-            {
-                _view = value;
-            }
-        }
-
-        public override void setPosition()
-        {
-            throw new NotImplementedException();
-        }
 
         public override void checkFNC()
         {
@@ -62,21 +45,19 @@ namespace Test
                     setSprite(neutralsprites);
                     break;
             }
-            _view.Viewport = new FloatRect(x, y, w, h);
         } 
 
         public Mom()
         {
-
-
-            xpos = 1000;
-            ypos = 400;
+            
 
             //determine size and position
-            w = .2f;
-            h = .45f;
-            x = .5f;
-            y = .25f;
+            xpos = 1000;
+            ypos = 400;
+            xscale = 0.5f;
+            yscale = 0.5f;
+            xscale = 1;
+            yscale = 1;
 
             for (int i = 0; i < (361 * 7); i += 361)
             {
@@ -94,8 +75,7 @@ namespace Test
             {
                 sadsprites.Add(new Sprite(t, new IntRect(i, 465 * 3, 361, 465)));
             }
-
-            _view = new View(sadsprites[0].GetGlobalBounds());
+            
         }
     }
 }

@@ -9,17 +9,18 @@ using SFML.Graphics;
 using SFML.Window;
 using SFML.System;
 using System.Drawing;
-
 namespace Test
 {
-    class Alex : Character
+    class Dad : Character
     {
-        //private View _view;
-        static FileStream f = new FileStream("../../Art/alexMaster.png", FileMode.Open);
+        static FileStream f = new FileStream("../../Art/dadMaster.png", FileMode.Open);
         Texture t = new Texture(f);
         List<Sprite> angrysprites = new List<Sprite>();
         List<Sprite> happysprites = new List<Sprite>();
         List<Sprite> neutralsprites = new List<Sprite>();
+        List<Sprite> sadsprites = new List<Sprite>();
+
+
 
 
         public override void checkFNC()
@@ -38,38 +39,40 @@ namespace Test
                     setSprite(happysprites);
                     break;
                 case spriteEmotion.sad:
-                    //alex has no sad emotions
+                    //dad has no sad emotion
                     break;
                 case spriteEmotion.neutral:
                     setSprite(neutralsprites);
                     break;
             }
-            
-        } 
+        }
 
-
-
-        public Alex()
+        public Dad()
         {
-            //determine size and position
-            xpos = 500;
-            ypos = 400;
-            xscale = 1;
-            yscale = 1;
+            
 
-            for (int i = 0; i < (361 * 4); i += 361)
+            //determine size and position
+            xpos = 100;
+            ypos = 400;
+            xscale = 0.5f;
+            yscale = 0.5f;
+            xscale = 1.2f;
+            yscale = 1.2f;
+
+            for (int i = 0; i < (343 * 4); i += 343)
             {
-                neutralsprites.Add(new Sprite(t, new IntRect(i, 0, 361, 449)));
+                neutralsprites.Add(new Sprite(t, new IntRect(i, 0, 343, 454))); //btw might get extra sprite if sizes no precise
             }
-            for (int i = 0; i < (361 * 9); i += 361)
+            for (int i = 0; i < (343 * 4); i += 343)
             {
-                happysprites.Add(new Sprite(t, new IntRect(i, 449, 361, 449)));
+                happysprites.Add(new Sprite(t, new IntRect(i, 454, 343, 454))); //second row of sprites; happy epression 
             }
-            for (int i = 0; i < (337 * 9); i += 337)
+            for (int i = 0; i < (343 * 4); i += 343)
             {
-                
-                angrysprites.Add(new Sprite(t, new IntRect(i, 449 * 2, 337, 449)));
+                angrysprites.Add(new Sprite(t, new IntRect(i, 454 * 2, 343, 454)));
             }
+
+
         }
     }
 }

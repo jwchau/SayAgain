@@ -15,12 +15,11 @@ namespace Test
     class SA : Game
     {
 
-        Character mom, alexis;
+        Character mom, alexis, dad;
 
         public View fullScreenView, charView;
         // Character declaration
-        private CharacterState Alex = new CharacterState(4.0, 6.9);
-
+        
 
         public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?", Color.Magenta)
         {
@@ -41,7 +40,7 @@ namespace Test
         private void onMouseButtonReleased(object sender, MouseButtonEventArgs e)
         {
             ManagerOfInput.MouseReleasedCheck(State.GetState(), ui_man, tfx, cf);
-            mom.click();
+            //mom.click();
 
         }
 
@@ -133,12 +132,17 @@ namespace Test
 
             mom = new Mom();
             mom.setSpriteEmotion(Character.spriteEmotion.happy);
-            mom.active(false);
+            mom.active(true);
+            mom.state.setMood(5f);
+            Console.WriteLine(mom.state.getMood());
 
             alexis = new Alex();
             alexis.setSpriteEmotion(Character.spriteEmotion.angry);
+            alexis.active(true);
 
-
+            dad = new Dad();
+            dad.setSpriteEmotion(Character.spriteEmotion.happy);
+            dad.active(true);
 
         }
 
@@ -154,15 +158,16 @@ namespace Test
 
         protected override void Draw()
         {
-            
+
            
             window.Clear(Color.Magenta);
             ui_man.DrawDialogueBox(window);
             ui_man.DrawUI(window, State, ui_man, startMenu, pauseMenu, settingsMenu);
 
+            
             window.Draw(mom);
             window.Draw(alexis);
-            
+            window.Draw(dad);
         }
 
 

@@ -62,6 +62,7 @@
     <Compile Include="CharacterState.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="Alex.cs" />
+    <Compile Include="Dad.cs" />
     <Compile Include="Mom.cs" />
     <Compile Include="CutsceneManager.cs" />
     <Compile Include="ContextFilter.cs" />
