@@ -53,7 +53,7 @@ namespace Test
 
             //determine size and position
             xpos = 1000;
-            ypos = 400;
+            ypos = 200;
             xscale = 0.5f;
             yscale = 0.5f;
             xscale = 1;
