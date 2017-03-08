@@ -9,18 +9,18 @@ using SFML.Window;
 using SFML.System;
 
 //holds UI elements such as buttons, input fields, TextBoxes, etc
-namespace Test
-{
+namespace Test {
     class UIManager {
         //constructor
         public UIManager() {
 
             /* TEMPORARY CODE REMOVE AND CLEAN LATER*/
-            string[] tone = new string[] { "Blunt", "Indifferent", "Compassionate", "Hesitant" };
+            tone[] tonez = new tone[] { tone.Blunt, tone.Indifferent, tone.Compassionate, tone.Hesitant };
             string[] jsondialogue = new string[] { "Blunt Dialogue.", "Indifferent Dialogue.", "Compassionate Dialogue.", "Hesitant Dialogue." };
-            int xPos = (int)SCREEN_WIDTH / tone.Length;
-            for (int i = 1; i <= tone.Length; i++) {
-                addButton(new UIButton(xPos / 2 + (i - 1) * xPos, SCREEN_HEIGHT - SCREEN_HEIGHT / 4, tone[i - 1], jsondialogue[i - 1]));
+            int xPos = (int)SCREEN_WIDTH / tonez.Length;
+            Console.WriteLine(SCREEN_HEIGHT);
+            for (int i = 1; i <= tonez.Length; i++) {
+                addButton(new UIButton(xPos / 2 + (i - 1) * xPos, (float)(SCREEN_HEIGHT - SCREEN_HEIGHT*0.26), tonez[i - 1], jsondialogue[i - 1]));
             }
             ////////////////////////////////////////////////
         }
@@ -31,26 +31,9 @@ namespace Test
         static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
         static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
 
-        /// temp jill holding place
-        protected DialogueBox dialogueBox;
-        protected Boolean init;
-        protected View fullScreenView;
-        /// </summary>
-
-
-
         string[] dialogueArray;
 
         //methods
-        public DialogueBox getDialogueBox() {
-            return this.dialogueBox;
-        }
-
-
-        public Boolean getInit() { 
-            return init;
-        }
-
         public List<UIButton> getButtons() {
             return buttons;
         }
@@ -63,250 +46,224 @@ namespace Test
             buttons.Add(b);
         }
 
-        public void DrawDialogueBox(RenderWindow window) {
-            if (init && dialogueBox.active) {
-                    window.Draw(dialogueBox); 
+
+        #region SweepButtons
+        public void SweepButtons(int x, int y, double scalex, double scaley) {
+            var buttons = getButtons();
+            for (var i = 0; i < buttons.Count; i++) {
+                var rectx = buttons[i].getX();
+                var recty = buttons[i].getY();
+                var rectxs = rectx + buttons[i].getRectSize().X;
+                var rectys = recty + buttons[i].getRectSize().Y;
+                buttons[i].setHover((int)(x * scalex), (int)(y * scaley));
+                //if (buttons[i].inRange((int)(x * scalex), rectx, rectxs) && buttons[i].inRange((int)(y * scaley), recty, rectys) || buttons[i].GetSelected()) {
+                //    buttons[i].setButtonColor(new Color(255, 0, 0));
+                //} else {
+                //    buttons[i].setButtonColor(buttons[i].getTonalColor());
+                //}
+            }
+        }
+        #endregion
+
+        public List<UITextBox> produceTextBoxes2(string Dialogue) {
+            //Console.WriteLine("AM I HERE????");
+            dialogueArray = Dialogue.Split('.', '!', '?');
+            //dialogue Array now holds all the sentences
+            foreach (var dialogue in dialogueArray) {
+                //Console.WriteLine(dialogue);
             }
 
-        }
+            List<string> words = new List<string>();
 
-        public void DrawUI(RenderWindow window, GameState State, UIManager ui, StartMenu sta, StartMenu pau, StartMenu set) {
-            //////>>>>>clearColor to magenta
-            window.SetView(fullScreenView);
-            if (State.GetState() == "menu") {
-                if (State.GetMenuState() == "start") {
-                    window.Draw(sta);
-                } else {
-                    window.Draw(set);
-                    //Console.WriteLine("in menu, in settings, draw settings");
-                }
-
-
+            //length takes care of the differences between 1 sentence or multiple sentences
+            int length = 0;
+            if (dialogueArray.Length > 1) {
+                length = dialogueArray.Length - 1;
             } else {
-                //Draw text box background box
-                RectangleShape textBackground = new RectangleShape(new SFML.System.Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT / 5));
-                textBackground.Position = new SFML.System.Vector2f(0, SCREEN_HEIGHT - (SCREEN_HEIGHT / 5));
-                textBackground.FillColor = Color.Black;
-                window.Draw(textBackground);
-
-                var dialogues = ui.getPlayerDialogues();
-
-                for (var i = 0; i < dialogues.Count; i++) {
-                    window.Draw(dialogues[i]);
-                }
-                var buttons = ui.getButtons();
-
-                for (var i = 0; i < buttons.Count; i++) {
-                    window.Draw(buttons[i]);
-                }
-
-                if (State.GetState() == "pause") {
-                    pau.DrawBG(window);
-                    if (State.GetMenuState() == "pause") {
-                        window.Draw(pau);
-                    } else if (State.GetMenuState() == "settings") {
-                        window.Draw(set);
-                    }
-
-                }
+                length = dialogueArray.Length;
             }
-        }
 
-        public void UpdateTimer(GameState State, InputManager ManagerOfInput) {
-            if (State.GetState() == "game") {
-
-                // Timer update
-                if (State.getCountDown() > 0) {
-                    //as long as you are not out of time
-                    State.setNewTime((DateTime.Now.Ticks / 10000000) - State.getTimeDiff());
-                    State.setCountDown(9 - (State.getNewTime() - State.getGameTime()));
-
-                }
-
-                // Get the current UI Textboxes from the UI Manager
-                var playerDialogues = this.getPlayerDialogues();
-
-                // Get the mouse coordinates from Input Manager
-                var MouseCoord = ManagerOfInput.GetMousePos();
-
-                // If the mouse is currently dragging
-                if (ManagerOfInput.GetMouseDown()) {
-                    // Get tonal buttons from UI Manager
-                    var buttons = this.getButtons();
-
-                    // Loop through buttons
-                    for (var i = 0; i < buttons.Count; i++) {
-                        // Find button currently being interacted with
-                        if (buttons[i].GetSelected()) {
-                            // Move the button around the screen
-                            buttons[i].translate(MouseCoord[0], MouseCoord[1]);
-
-                            // Check collision with UI Textboxes
-                            // Loop through UI Textboxes
-                            for (var j = 0; j < playerDialogues.Count; j++) {
-                                // If the mouse just came from inside a UI Textbox
-                                if (playerDialogues[j].wasMouseIn()) {
-                                    if (!playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1])) {
-                                        // Reset the color to match its previous color
-                                        playerDialogues[j].setBoxColor(playerDialogues[j].getBoxColor("prev"));
-                                        // Mouse has now left the UI Textbox so set it to false
-                                        playerDialogues[j].setMouseWasIn(false);
-                                    }
-
-                                    // If mouse just came from outside the UI Textbox
-                                } else {
-                                    if (playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1])) {
-                                        // Update previous color to current color of the UI Textbox
-                                        playerDialogues[j].setPrevColor(playerDialogues[j].getBoxColor("curr"));
-                                        // Update current color to selected tonal button color
-                                        playerDialogues[j].setBoxColor(buttons[i].getTonalColor());
-                                        // Mouse is now inside a UI Textbox, so set it to true
-                                        playerDialogues[j].setMouseWasIn(true);
-
-                                    }
-                                }
-
-                            }
-
-                        }
-                    }
-
-                }
-
-            } else if (State.GetState() == "pause") {
-                State.setPauseTime(State.getNewTime());
-                double a = State.getPauseTime();
-                double b = DateTime.Now.Ticks / 10000000;
-                State.setTimeDiff(b - a);
-
-            }
-        }
-
-
-        public FloatRect dialogueBoxBounds() {
-            return dialogueBox.GetBounds();
-        }
-
-        public void setDialogueBox() {
-            dialogueBox = new DialogueBox(0, 0, 710, 150);
-        }
-
-        public void setViews(View fs) {
-            fullScreenView = fs;
-        }
-
-        public void setDialogueBoxPos(FloatRect f)
-        {
-            this.dialogueBox.view.Viewport = f;
-        }
-        public void SetPrintTime(int t) {
-            this.dialogueBox.setPrintTime(t);
-        }
-
-
-
-        public void DialogueNext() {
-            this.dialogueBox.forward();
-        }
-
-        public void RenderDialogue(string s, string sp) {
-            init = true;
-            this.dialogueBox.renderDialogue(s, sp);
-        }
-
-        public void produceTextBoxes(string dialogue) {
-
-            
-            //Pushes onto the playerDialogues.
-
-            //break up the dialogue by periods.
-            dialogueArray = dialogue.Split('.');
-
-            uint x = 5;
-            uint y = SCREEN_HEIGHT - ((SCREEN_HEIGHT/5));
-            Font tempFont = new Font("../../Fonts/Adore64.ttf");
-
-            for (int i = 0; i < dialogueArray.Count() - 1; i++) {
-                
-                if (dialogueArray[i][0] == ' ')
-                {
-                    dialogueArray[i] = dialogueArray[i].Substring(1);
-                }
+            for (int i = 0; i < length; i++) {
                 dialogueArray[i] += ".";
+                string[] temp = dialogueArray[i].Split(' '); //my name is Raman. //1 cluster
+                                                             // Console.WriteLine(temp);
+                for (int j = 0; j < temp.Length; j++) {
 
-                Text tempText = new Text(dialogueArray[i], tempFont);
-                if (x + tempText.GetGlobalBounds().Width < SCREEN_WIDTH - 5)
-                {
+                    string word = temp[j].Trim();
+                    if (word != "") {
+                        words.Add(word);
 
-                    playerDialogues.Add(new UITextBox(x, y, dialogueArray[i]));
-                    x += (uint)tempText.GetGlobalBounds().Width + 10;
+                    }
                 }
-                else
-                {
-
-                    y += (uint)tempText.GetGlobalBounds().Height + 10;
-
-                    x = 5;
-                    playerDialogues.Add(new UITextBox(x, y, dialogueArray[i]));
-                    x += (uint)tempText.GetGlobalBounds().Width + 10;
-                }
-
-                //Make textboxes using the dialogues.
-
             }
+            int cluster = 0;
+            string baseString = ""; //last known string of characters that does fit
+            bool newLine = false;
+            uint x = 5;
+            uint y = SCREEN_HEIGHT - ((SCREEN_HEIGHT / 5)) + 5;
+            Font tempFont = new Font("../../Fonts/Adore64.ttf");
+            for (int word = 0; word < words.Count; word++) {
+                string tempString = baseString;
+
+                //Console.WriteLine(words[word]);
+
+
+                if (word != 0 && words[word - 1].Contains('.') != true && !newLine) {
+                    tempString += " ";
+                }
+
+                tempString += words[word];
+
+                Text tempText = new Text(tempString, tempFont);
+
+                if (x + tempText.GetGlobalBounds().Width > SCREEN_WIDTH - 5) {
+                    //did not fit, make a text box out of the last fit string
+                    //reset x and y
+
+                    playerDialogues.Add(new UITextBox(x, y, baseString, cluster));
+
+
+                    word--;
+                    y += (uint)tempText.GetGlobalBounds().Height + 10;
+                    x = 5;
+                    tempString = "";
+                    baseString = "";
+                    newLine = true;
+
+                } else if (words[word].Contains('.') || words[word].Contains('!') || words[word].Contains('?')) {
+                    //word with a period meaning the end of a sentence.
+                    // playerDialogues.Add(new UITextBox(x, y, tempString))
+                    baseString = tempString;
+                    playerDialogues.Add(new UITextBox(x, y, baseString, cluster));
+
+
+
+                    x += (uint)tempText.GetGlobalBounds().Width + 10;
+                    baseString = "";
+                    tempString = "";
+                    newLine = false;
+                    cluster++;
+                } else if (x + tempText.GetGlobalBounds().Width < SCREEN_WIDTH - 5) {
+                    //update baseString
+                    baseString = tempString;
+                    newLine = false;
+                }
+            }
+            return playerDialogues;
 
         }
 
-        public void updateText(int pos, string newDialogue) {
+        public void reset(List<DialogueObj> responseList) {
+            bool gotTone = false;
+            tone Tone = tone.Root;
 
-            List<bool> positionOfAffected = new List<bool>(); //remembers who were affected
-            List<Color> dialogueColors = new List<Color>();
+            foreach (var dialogue in playerDialogues) {
+                if (dialogue.getAffected() && !gotTone) {
+                    //Console.WriteLine(dialogue.getTone());
 
-            for (int i = 0; i < playerDialogues.Count; i++)
-            {
-                positionOfAffected.Add(playerDialogues[i].getAffected());
-                dialogueColors.Add(playerDialogues[i].getBoxColor("curr"));
+                    Tone = dialogue.getTone();
+                    gotTone = true;
+                }
 
+                dialogue.setAffected(false);
+                dialogue.setBoxColor(Color.Red);
+                dialogue.setPrevColor(Color.Red);
+                dialogue.setTone(tone.Root);
             }
-
             playerDialogues.Clear();
 
-            dialogueArray[pos] = newDialogue;
+            produceTextBoxes2(responseList.ElementAt(0).content);
+        }
 
+        public tone getTone() {
+            return playerDialogues[0].getTone();
+        }
 
-            uint x = 5;
-            uint y = SCREEN_HEIGHT - ((SCREEN_HEIGHT / 5));
-            Font tempFont = new Font("../../Fonts/Adore64.ttf");
+        public void updateClusterColors(UITextBox self, List<UITextBox> playerDialogues, Color c, bool f) {
 
-
-            for (int i = 0; i < dialogueArray.Count() - 1; i++)
-            {
-
-                Text tempText = new Text(dialogueArray[i], tempFont);
-                if (x + tempText.GetGlobalBounds().Width < SCREEN_WIDTH - 5)
-                {
-
-                    playerDialogues.Add(new UITextBox(x, y, dialogueArray[i]));
-                    x += (uint)tempText.GetGlobalBounds().Width + 10;
-                }
-                else
-                {
-
-                    y += (uint)tempText.GetGlobalBounds().Height + 10;
-
-                    x = 5;
-                    playerDialogues.Add(new UITextBox(x, y, dialogueArray[i]));
-                    x += (uint)tempText.GetGlobalBounds().Width + 10;
+            int cluster = self.getCluster();
+            for (int i = 0; i < playerDialogues.Count; i++) {
+                if (playerDialogues[i].getCluster() == cluster && playerDialogues[i] != self) {
+                    if (!f) {
+                        playerDialogues[i].setBoxColor(playerDialogues[i].getBoxColor("prev"));
+                        //playerDialogues[i].setMouseWasIn(false);
+                    } else {
+                        playerDialogues[i].setPrevColor(playerDialogues[i].getBoxColor("curr"));
+                        playerDialogues[i].setBoxColor(c);
+                        //playerDialogues[i].setMouseWasIn(true);
+                    }
                 }
 
-                playerDialogues[i].setAffected(positionOfAffected[i]);
-                if (playerDialogues[i].getAffected())
-                {
-                    playerDialogues[i].setBoxColor(dialogueColors[i]);
+            }
+        }
+
+        #region SA_applyTones
+        public void applyTones(int x, int y) {
+            // Applying tones to Text Boxes
+            for (var i = 0; i < buttons.Count; i++) {
+                if (buttons[i].GetSelected()) {
+                    //CHECK MATRIX BS
+                    // Move to character state
+                    //double[,] final = tfx.MatrixMult(tfx, cf);
+                    //Console.WriteLine(final[2, 3]);
+
+                    // Get UI Text Boxes
+                    var playerDialogues = this.getPlayerDialogues();
+
+                    for (var j = 0; j < playerDialogues.Count; j++) {
+                        var boxBounds = playerDialogues[j].getBoxBounds();
+                        //change color if the button is hovering over the textbox
+
+                        if (playerDialogues[j].Contains(x, y)) {
+
+                            for (int k = 0; k < playerDialogues.Count; k++) {
+                                playerDialogues[k].setPrevColor(playerDialogues[k].getBoxColor("curr"));
+                                playerDialogues[k].setBoxColor(buttons[i].getTonalColor());
+                                playerDialogues[k].setAffected(true);
+                                playerDialogues[k].setTone(buttons[i].getTone());
+                            }
+                            break;
+                        }
+                    }
+                    buttons[i].snapBack();
+                    buttons[i].SetSelected(false);
+                    break;
                 }
             }
+        }
+        #endregion
 
-            dialogueColors.Clear();
+        public void dialogueLoadOrder(GameState state, DialogueBox player, DialogueBox AI, List<DialogueObj> responseList, List<DialogueObj> responseListAlex, bool playerChoice)
+        {
+
+
+            if (!playerChoice && responseList[0].content != "returned empty string")
+            {
+                player.setInit(true);
+                player.loadNewDialogue("player", responseList.ElementAt(0).content);
+            }
+
+            //check timer done
+            //   run player animation
+            //check player animation done
+            //   run ai animation
+            //check ai animation done
+            //   update currents
+            //   reset UITextBox with root dialogue
+
+            //if (state.getGameTimer("game").getCountDown() == 0)
+            //{
+            //    AI.setInit(false);
+            //    player.setInit(true);
+            //    player.loadNewDialogue("player", responseList.ElementAt(0).content);
+            //}
+            //if (player.getAnimationStart() == false)
+            //{
+            //    AI.setInit(true);
+            //    AI.loadNewDialogue("alex", responseListAlex.ElementAt(0).content);
+            //    player.setInit(false);
+            //}
+
         }
 
     }

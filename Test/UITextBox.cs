@@ -11,30 +11,44 @@ namespace Test
 {
     class UITextBox : UIElement//The box where the dialogue will appear, not clickable or draggable
     {
-        public UITextBox(float x, float y, string dialogue) {
-            UITextBoxFont = new Font("../../Fonts/Adore64.ttf");
-            //public UITextBox(float width, float height, float x, float y, string dialogue) {
-            //UITextBoxFont = new Font(@"C:\Users\leogo_000\Documents\GitHub\SayAgain\Test\Fonts/Adore64.ttf");
+        public UITextBox(float x, float y, string dialogue, int cluster)
+        {
             UITextBoxText = new Text(dialogue, UITextBoxFont);
-            UITextBoxText.Position = new Vector2f(x, y);
-            box = new RectangleShape(new Vector2f(UITextBoxText.GetGlobalBounds().Width + 5, UITextBoxText.GetGlobalBounds().Height + 5));
-            box.Position = new Vector2f(x, y);
+            UITextBoxText.Position = new Vector2f(x + 3, y + 12);
+            box = new RectangleShape(new Vector2f(UITextBoxText.GetGlobalBounds().Width + 10, UITextBoxText.GetGlobalBounds().Height + 10));
+            box.Position = new Vector2f(x, y + 17);
             box.FillColor = buttonTonalColors["Default"];
             prevColor = buttonTonalColors["Default"];
-            UITextBoxText.Color = Color.White;
+            UITextBoxText.Color = new Color(67, 65, 69);
             this.affected = false;
+            this.cluster = cluster;
         }
 
-        Font UITextBoxFont;
+        Font UITextBoxFont = new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf");
         Text UITextBoxText;
         RectangleShape box;
         bool affected = false;
         Color prevColor;
         bool mouseWasIn = false;
+        int cluster = -1;
+        tone tone = tone.Root;
 
         public RectangleShape getBox()
         {
             return box;
+        }
+
+        public tone getTone() {
+            return tone;
+        }
+
+        public void setTone(tone tonez) {
+            tone = tonez;
+        }
+
+        public int getCluster()
+        {
+            return cluster;
         }
 
         public Text getBoxText()
@@ -69,11 +83,13 @@ namespace Test
             return prevColor;
         }
 
-        public bool getAffected() {
+        public bool getAffected()
+        {
             return affected;
         }
 
-        public void setAffected(bool b) {
+        public void setAffected(bool b)
+        {
             affected = b;
         }
 
@@ -103,6 +119,11 @@ namespace Test
             target.Draw(UITextBoxText);
         }
 
-        public void UpdateText() { }
+
+
+        public string getDialogue()
+        {
+            return UITextBoxText.DisplayedString;
+        }
     }
 }

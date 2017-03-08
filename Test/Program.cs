@@ -6,22 +6,21 @@ using System.Threading.Tasks;
 
 namespace Test
 {
+    public enum tone
+    {
+        Blunt = 0,
+        Indifferent = 1,
+        Compassionate = 2,
+        Hesitant = 4,
+        Root = 8,
+    }
+
     class Program
     {
+       
         static void Main(string[] args)
         {
-            //Testing Values---------------------------------------------
-            string[] currentMadeMemories = { "Greeting","Indifferent" };
-            int FNC = 0;
-            //-----------------------------------------------------------
-
-            DialogueParsing r = new DialogueParsing(@"../../playertutorial_json.json");
-            Selector s = new Selector();
-
-            List<DialogueObj> responseList = s.ChooseDialog(FNC, r, currentMadeMemories);
-
-            Console.WriteLine("First String in List -> " + responseList.ElementAt(0).content);
-
+           
             SA myGame = new SA();
             myGame.Run();
 

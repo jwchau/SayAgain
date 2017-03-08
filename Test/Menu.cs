@@ -8,9 +8,9 @@ using SFML.Graphics;
 
 namespace Test
 {
-    class StartMenu : UIElement
+    class Menu : UIElement
     {
-        public StartMenu(string type)
+        public Menu(string type)
         {
             this.type = type;
             if (type == "start")
