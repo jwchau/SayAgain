@@ -3,41 +3,56 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SFML.System;
 using SFML.Window;
 using SFML.Graphics;
 
-namespace Test
-{
-    class UIButton : UIElement
-    {
+namespace Test {
+    class UIButton : UIElement {
         //constructor
-        public UIButton(float x, float y, tone content, string newDialogue)
-        {
+        public UIButton(float x, float y, tone content, string newDialogue) {
 
-            this.x = x;
-            this.y = y;
-            buttonText = new Text(content.ToString(), buttonTextFont);
-            buttonText.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
-
-            rect = new RectangleShape(new SFML.System.Vector2f(buttonText.GetGlobalBounds().Width + 7, buttonText.GetGlobalBounds().Height + 10));
-            rect.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
-            rect.FillColor = Color.Black;
-            Color bgColor = new Color(177, 177, 177);
-            rect.FillColor = bgColor;
             this.newDialogue = newDialogue;
-            tonalColor = buttonTonalColors[content.ToString()];
             this.buttonTone = content;
+
+            //Create sprite here
+            buttonTexture = new Texture(buttonSpritePaths[content.ToString()][0]);
+            buttonTextureHighlight = new Texture(buttonSpritePaths[content.ToString()][1]);
+
+            buttonSprite = new Sprite(buttonTexture);
+            buttonSpriteHighlight = new Sprite(buttonTextureHighlight);
+
+            buttonSprite.Position = new Vector2f(x - buttonSprite.GetGlobalBounds().Width / 2, y);
+            buttonSpriteHighlight.Position = new Vector2f(x - buttonSprite.GetGlobalBounds().Width / 2, y);
+
+            buttonText = new Text(content.ToString(), buttonTextFont);
+            //buttonText.Position = new Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
+
+            //rect = new RectangleShape(new Vector2f(buttonText.GetGlobalBounds().Width + 7, buttonText.GetGlobalBounds().Height + 10));
+            //rect.Position = new Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
+
+            this.x = x - buttonSprite.GetGlobalBounds().Width / 2;
+            this.y = y;
+
+            tonalColor = buttonTonalColors[content.ToString()];
+            //rect.FillColor = tonalColor;
         }
 
         //fields
         static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
         static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
 
+        Texture buttonTexture;
+        Sprite buttonSprite;
+        Texture buttonTextureHighlight;
+        Sprite buttonSpriteHighlight;
+
         Font buttonTextFont = new Font("../../Fonts/Adore64.ttf");
         Text buttonText;
         RectangleShape rect;
         string newDialogue;
         bool selected = false;
+        bool hover = false;
         int mouseOffsetX = 0;
         int mouseOffsetY = 0;
         Color tonalColor;
@@ -46,115 +61,130 @@ namespace Test
         //methods
         //String eventHandler;
 
-        public float getX()
-        {
+        public Vector2f getRectSize() {
+            return new Vector2f(buttonSprite.GetGlobalBounds().Width, buttonSprite.GetGlobalBounds().Height);
+        }
+
+        public void setButtonColor(Color c) {
+            rect.FillColor = c;
+        }
+
+        public float getX() {
             return x;
         }
 
-        public float getY()
-        {
+        public float getY() {
             return y;
         }
 
-        public void setX(float newX)
-        {
+        public void setX(float newX) {
             x = newX;
         }
 
-        public void setY(float newY)
-        {
+        public void setY(float newY) {
             y = newY;
         }
-        public Text getUIButtonText()
-        {
+        public Text getUIButtonText() {
             return buttonText;
         }
 
-        public tone getTone()
-        {
+        public tone getTone() {
             return buttonTone;
         }
 
-        public FloatRect getRectBounds()
-        {
-            return rect.GetGlobalBounds();
+        public FloatRect getRectBounds() {
+            return buttonSprite.GetGlobalBounds();
         }
 
-        public void SetMouseOffset(int x, int y)
-        {
+        public void SetMouseOffset(int x, int y) {
             mouseOffsetX = x;
             mouseOffsetY = y;
         }
 
-        public void SetSelected(bool val)
-        {
+        public void SetSelected(bool val) {
             selected = val;
         }
 
-        public bool GetSelected()
-        {
+        public bool GetSelected() {
             return selected;
         }
 
-        public bool Contains(int mouseX, int mouseY)
-        {
+        public bool Contains(int mouseX, int mouseY) {
             FloatRect bounds = getRectBounds();
-            if (mouseX >= bounds.Left && mouseX <= bounds.Left + bounds.Width && mouseY >= bounds.Top && mouseY <= bounds.Top + bounds.Height)
-            {
+            if (mouseX >= bounds.Left && mouseX <= bounds.Left + bounds.Width && mouseY >= bounds.Top && mouseY <= bounds.Top + bounds.Height) {
                 return true;
             }
             return false;
         }
 
-        public void snapBack()
-        {
-            rect.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
-            buttonText.Position = new SFML.System.Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
+        public void snapBack() {
+            buttonSprite.Position = new Vector2f(x, y);
+            buttonSpriteHighlight.Position = new Vector2f(x, y);
+            //buttonText.Position = new Vector2f(x, y);
         }
 
-        public void translate(int x, int y)
+        public void setHover(int mouseX, int mouseY)
         {
+            hover = Contains(mouseX, mouseY);
+        }
+
+        public void translate(int x, int y, double winx, double winy) {
+            var temp = screenHelper(winx, winy);
             var bounds = getRectBounds();
-            var newXPos = x - mouseOffsetX;
-            var newYPos = y - mouseOffsetY;
-            if (x - mouseOffsetX < 0)
-            {
+            double newXPos = x - (mouseOffsetX)*temp.Item1;
+            double newYPos = y - (mouseOffsetY)*temp.Item2;
+
+            if (x - mouseOffsetX < 0) {
                 newXPos = 0;
-            }
-            else if (x - mouseOffsetX + (int)bounds.Width > SCREEN_WIDTH)
-            {
-                newXPos = (int)SCREEN_WIDTH - (int)bounds.Width;
+            } else if (x - mouseOffsetX + bounds.Width > winx) {
+                newXPos = winx - bounds.Width;
             }
 
-            if (y - mouseOffsetY < 0)
-            {
+            if (y - mouseOffsetY < 0) {
                 newYPos = 0;
-            }
-            else if (y - mouseOffsetY + (int)bounds.Height > (int)SCREEN_HEIGHT)
-            {
-                newYPos = (int)SCREEN_HEIGHT - (int)bounds.Height;
+            } else if (y - mouseOffsetY + bounds.Height > winy) {
+                newYPos = (float)winy - bounds.Height;
             }
 
-            rect.Position = new SFML.System.Vector2f(newXPos, newYPos);
-            buttonText.Position = new SFML.System.Vector2f(newXPos, newYPos);
-
+            buttonSprite.Position = new Vector2f((float)newXPos, (float)newYPos);
+            buttonSpriteHighlight.Position = new Vector2f((float)newXPos, (float)newYPos);
+            //buttonText.Position = new SFML.System.Vector2f((float)newXPos, (float)newYPos);
         }
 
-        public string getNewDialogue()
-        {
+        #region screen helper
+        public Tuple<double, double> screenHelper(double winx, double winy) {
+            var DesktopX = (double)VideoMode.DesktopMode.Width;
+            var DesktopY = (double)VideoMode.DesktopMode.Height;
+            return new Tuple<double, double>(DesktopX / winx, DesktopY / winy);
+        }
+        #endregion
+
+        public string getNewDialogue() {
             return newDialogue;
         }
 
-        public Color getTonalColor()
-        {
+        public Color getTonalColor() {
             return tonalColor;
         }
 
-        public override void Draw(RenderTarget target, RenderStates states)
-        {
-            target.Draw(rect);
-            target.Draw(buttonText);
+        public override void Draw(RenderTarget target, RenderStates states) {
+            //target.Draw(rect);
+            if (hover)
+            {
+                if(selected)
+                {
+                    buttonSpriteHighlight.Color = new Color(255, 255, 255, 128);
+                } else
+                {
+                    buttonSpriteHighlight.Color = new Color(255, 255, 255, 255);
+                }
+                target.Draw(buttonSpriteHighlight);
+            } else
+            {
+                target.Draw(buttonSprite);
+            }
+            //target.Draw(buttonText);
         }
-    
+
     }
 }

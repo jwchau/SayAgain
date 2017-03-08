@@ -22,12 +22,12 @@ namespace Test
         protected double scaleFactorX;
         protected double scaleFactorY;
 
-
         //Input Manager
         protected InputManager ManagerOfInput = new InputManager();
 
         //User Inferface Manager
         protected UIManager ui_man = new UIManager();
+
         protected List<UIButton> buttons;
 
 
@@ -37,6 +37,8 @@ namespace Test
         protected Menu pauseMenu = new Menu("pause");
         protected List<Menu> menus = new List<Menu>();
 
+        //start game timer when game loads
+        protected bool startOnce = true;
 
         //Matrices
         protected ToneEffects tfx = new ToneEffects();
@@ -53,7 +55,9 @@ namespace Test
   
         //Jill's fields and variables
         protected DialogueBox dialogueBox;
-        protected Boolean init;
+        protected DialogueBox playerDialogueBox;
+
+        //protected Boolean init;
         protected View fullScreenView, scrollview;
 
         #region AI_FIELDS
@@ -61,22 +65,38 @@ namespace Test
         protected List<DialogueObj> responseList = new List<DialogueObj>();
         protected List<DialogueObj> responseListAlex = new List<DialogueObj>();
         protected List<string> currentMilestones = new List<string>();
+        protected List<int> currentTargets = new List<int>();
+
         protected int FNC = 0;
         protected string currentContext = "";
+        protected Dictionary<string, string> nextContextDict = new Dictionary<string, string>();
         protected tone currentTone = tone.Root;
         protected Loader Load = new Loader();
         protected Selector s = new Selector();
-    #endregion
+
+        #endregion
+
+        protected Sprite mom, alex, dad, toneBar;
+        protected RectangleShape textBackground;
 
         /////////////////////////////////////////////////////////////////////////////////////////////
 
+        public static UInt32 getW()
+        {
+            return SCREEN_WIDTH;
+        }
+
+        public static UInt32 getH()
+        {
+            return SCREEN_HEIGHT;
+        }
+
         protected GameState State = new GameState();
 
-        public Game(uint width, uint height, string title, Color clearColor)
+        public Game(uint width, uint height, string title)
         {
             window = new RenderWindow(new VideoMode(width, height), title, Styles.Default);
-
-            this.clearColor = clearColor;
+            this.clearColor = new Color(125, 116, 132);
 
             // Set-up Events
             window.Closed += onClosed;
@@ -89,13 +109,28 @@ namespace Test
         {
             Initialize();
 
+            /***********************************************/
+            /*                                             */
+            /*        framerate lock                       */
+            /*        incase logic is bound to frames      */
+            /*        being drawn,                         */
+            /*        animation won't go insanely fast     */
+            /*                                             */
+            /***********************************************/
+
+            DateTime time = DateTime.Now;
+            float framerate = 60f;
             while (window.IsOpen)
             {
                 window.DispatchEvents();
                 Update();
-                
-                Draw();
-                window.Display();
+
+                if ((DateTime.Now - time).TotalMilliseconds > (1000f / framerate))
+                {
+                    time = DateTime.Now;
+                    Draw();
+                    window.Display();
+                }
             }
         }
 

@@ -10,7 +10,7 @@
       "fncPreReq": 1,
       "speaker": "Player",
       "target": [ 0, 0, 0 ],
-      "nextContext": ""
+      "nextContext": [ "" ]
     },
     {
       "content": "I have become God",
@@ -22,7 +22,7 @@
       "fncPreReq": 50,
       "speaker": "Player",
       "target": [ 0, 0, 0 ],
-      "nextContext": "test2"
+      "nextContext": ["test2"]
     },
     {
       "content": "suh bro",
@@ -89,12 +89,36 @@
       "tonalPreReq": "Root",
       "context": "LastDia",
       "consequence": "",
-      "memories": ["","Greetings","SuhDude" ],
+      "memories": [ "", "Greetings", "SuhDude" ],
       "milestone": [ "", "one done", "two done", "three done" ],
       "fncPreReq": 0,
       "speaker": "Player",
       "target": [ 0, 0, 0 ],
-      "nextContext": "Greetings"
+      "nextContext": "looper1"
+    },
+    {
+      "content": "loop forward",
+      "tonalPreReq": "Root",
+      "context": "looper2",
+      "consequence": "",
+      "memories": [ "", "Greetings", "SuhDude" ],
+      "milestone": [ "", "one done", "two done", "three done" ],
+      "fncPreReq": 0,
+      "speaker": "Player",
+      "target": [ 0, 0, 0 ],
+      "nextContext": "looper1"
+    },
+    {
+      "content": "loop back",
+      "tonalPreReq": "Root",
+      "context": "looper1",
+      "consequence": "",
+      "memories": [ "", "Greetings", "SuhDude" ],
+      "milestone": [ "", "one done", "two done", "three done" ],
+      "fncPreReq": 0,
+      "speaker": "Player",
+      "target": [ 0, 0, 0 ],
+      "nextContext": "looper2"
     }
   ]
 } 

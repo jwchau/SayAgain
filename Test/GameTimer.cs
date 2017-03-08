@@ -14,14 +14,25 @@ namespace Test
         protected UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
         protected UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
 
-        CircleShape circle = new CircleShape(20);
-
         public GameTimer(string name, double howLong, Action T)
 		{ //in seconds
-			initTime = howLong-1; //0 till 9 = 10 seconds
+            width = SCREEN_WIDTH / 10;
+            height = SCREEN_HEIGHT / 15;
+            x = SCREEN_WIDTH - 400;
+            y = SCREEN_HEIGHT - 200;
+            initTime = howLong-1; //0 till 9 = 10 seconds
 			countDown = howLong;
-			timerEvent = T;
-            circle.Position = new Vector2f(SCREEN_WIDTH - 100, SCREEN_HEIGHT - 200);
+            timerRead = new Text("SPEAK", adore64, 60);
+            timerRead.Position = new Vector2f((x + width/2) - timerRead.GetGlobalBounds().Width/2, (y + height/2) - timerRead.GetGlobalBounds().Height/2 - 20);
+            timerRead.Color = Color.White;
+            start = false;
+            timerBG = new RectangleShape(new Vector2f(width, height));
+            timerBG.Position = new Vector2f(x, y);
+            timerLevel = new RectangleShape(new Vector2f(width, height));
+            timerLevel.Position = new Vector2f(x, y);
+            timerBG.FillColor = Color.Blue;
+            timerLevel.FillColor = Color.Green;
+            timerEvent = T;
         }
 
 		public void updateTimer()
@@ -29,22 +40,20 @@ namespace Test
 			if (start == true)
 			{
 
-                Console.WriteLine("COUNTDOWN: " + countDown);
                 //timer update
                 if (countDown > 0)
 				{
 					//as long as you are not out of time
 					newTimeSeconds = ((DateTime.Now.Ticks / 10000000) - timeDiff);
 					countDown = (initTime - (newTimeSeconds - oldTimeSeconds));  
-                    Console.WriteLine("NTS: " + (newTimeSeconds - oldTimeSeconds));
 
                 }
-				else
+				else if (countDown <= 0)
 				{
-					timerFinished = true;
 					start = false;
 				}
-                circle.Radius = 20 * (float)(countDown / initTime);
+                //circle.Radius = 20 * (float)(countDown / initTime);
+                timerLevel.Size = new Vector2f(width * (float)(countDown / initTime), height);
             }
 		}
 
@@ -53,21 +62,30 @@ namespace Test
 			start = false;
 		}
 
-		public void restartTimer()
+
+        public void restartTimer()
 		{
-			timerFinished = false;
-			countDown = initTime;
+            //timerFinished = false;
+            //Console.WriteLine("oh baby");
+            start = true;
+			countDown = initTime + 1;
 			timeDiff = 0;
 			oldTimeSeconds = (DateTime.Now.Ticks / 10000000);
 		}
 
-		public double getInitTime()
+        public void resetTimer()
+        {
+            countDown = initTime + 1;
+        }
+
+        public double getInitTime()
 		{
 			return initTime;
 		}
 
 		public void startTimer()
 		{
+            //Console.WriteLine("plz do not poop here");
 			start = true;
             timeDiff = 0;
             oldTimeSeconds = (DateTime.Now.Ticks / 10000000);
@@ -75,12 +93,17 @@ namespace Test
 
 		public void PauseTimer()
 		{
-			pauseTime = newTimeSeconds;
-			double a = pauseTime;
-			double b = DateTime.Now.Ticks / 10000000;
-			timeDiff = b - a;
+            if (start)
+            {
+                //Console.WriteLine("I AM HERE");
+                pauseTime = newTimeSeconds;
+                double a = pauseTime;
+                double b = DateTime.Now.Ticks / 10000000;
+                timeDiff = b - a;
+            }
 		}
-
+        float height, width;
+        float x, y;
 		double oldTimeSeconds = 0;
 		double pauseTime = 0;
 		double newTimeSeconds = 0;
@@ -89,8 +112,13 @@ namespace Test
 		double currentTime = 0;
 		double initTime = 0; //needed to restart
 		bool start = false;
-		bool timerFinished = false;
+        bool pause = false;
+        RectangleShape timerBG;
+        RectangleShape timerLevel;
+		//bool timerFinished = false;
 		Action timerEvent;
+        Font adore64 = new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf");
+        Text timerRead;
 
 
 		public bool getStart()
@@ -164,11 +192,24 @@ namespace Test
 			return countDown;
 		}
 
+        public bool Contains(int mouseX, int mouseY)
+        {
+            FloatRect bounds = timerBG.GetGlobalBounds();
+            if (mouseX >= bounds.Left && mouseX <= bounds.Left + bounds.Width && mouseY >= bounds.Top && mouseY <= bounds.Top + bounds.Height)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public virtual void Draw(RenderTarget target, RenderStates states)
         {
             // Change radius to match time elapsed and draw it
-            
-            target.Draw(circle);
+
+            //target.Draw(circle);
+            target.Draw(timerBG);
+            target.Draw(timerLevel);
+            target.Draw(timerRead);
         }
     }
 }

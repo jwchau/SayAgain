@@ -15,12 +15,21 @@ namespace Test
 {
     class DialogueBox : Drawable
     {
+
+        static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
+        static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
         public float w, h, x, y;//, x2, y2, OffsetX, OffsetY, OffsetX2, OffsetY2;
         private Text name, dialogue;
         //public Dialogue line;
         public RectangleShape box;
         public RectangleShape nameBox;
         Task currentTask;
+        
+        Boolean init = false;
+        string tag; //AI or player
+
+        bool animationStart = true;
+        bool awaitInput = false;
 
         CancellationTokenSource cts;
         Text[] arr = { };
@@ -31,7 +40,13 @@ namespace Test
 
         public View view { get; private set; }
 
-        Font speechFont = new Font("../../Fonts/Adore64.ttf");
+        // public View playerView { get; private set;}
+
+        Font speechFont = new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf");
+
+        public void setInit(bool b) {
+            init = b;
+        }
 
         public void forward()
         {
@@ -55,6 +70,10 @@ namespace Test
             return arr.Length;
         }
 
+        public bool getAnimationStart()
+        {
+            return animationStart;
+        }
 
         public void checkEnd()
         {
@@ -78,8 +97,6 @@ namespace Test
                 { //Task.Run puts on separate thread
                     printTime = 60;
                     await animateText(arr[elementIndex], cts.Token); //await pauses thread until animateText() is completed
-
-                    state.startTimer("game");
                 }, cts.Token);
             }
         }
@@ -90,7 +107,8 @@ namespace Test
             checkEnd();
         }
 
-        public void loadNewDialogue(string speaker,string dialogue) {
+        public void loadNewDialogue(string speaker, string dialogue)
+        {
             if (speaker == "alex")
             {
                 view.Viewport = new FloatRect(0.3f, 0f, 0.35f, 0.2f);
@@ -101,40 +119,41 @@ namespace Test
                 view.Viewport = new FloatRect(0.0f, 0f, 0.35f, 0.2f);
                 renderDialogue(dialogue, "Dad");
             }
-            else if(speaker == "mom") {
+            else if (speaker == "mom")
+            {
                 view.Viewport = new FloatRect(0.63f, 0f, 0.35f, 0.2f);
                 renderDialogue(dialogue, "Mom");
             }
+            else if (speaker == "player")
+            {
+                view.Viewport = new FloatRect(0.3f, .5f, 0.35f, 0.2f);
+                renderDialogue(dialogue, "player");
+            }
+
+
 
         }
 
-        public void createCharacterDB(KeyEventArgs e)
+        public void createCharacterDB(KeyEventArgs e, String dialogue)
         {
             if (e.Code == Keyboard.Key.A)
             {
                 view.Viewport = new FloatRect(0.3f, 0f, 0.35f, 0.2f);
-                renderDialogue("I have daddy issues.", "Alex");
+                renderDialogue(dialogue, "Alex");
 
             }
             else if (e.Code == Keyboard.Key.M)
             {
                 view.Viewport = new FloatRect(0.63f, 0f, 0.35f, 0.2f);
-                renderDialogue("mushroom mom mushroom mom mushroom mom mushroom mom mushroom" +
-                    " mom mushroom mom mushroom mom mushroom mom mushroom mom ", "Mom");
+                renderDialogue(dialogue, "Mom");
             }
             else if (e.Code == Keyboard.Key.D)
             {
                 view.Viewport = new FloatRect(0.0f, 0f, 0.35f, 0.2f);
-                renderDialogue("whos ur daddy im ur daddy whos ur daddy im ur daddy " +
-                    "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
-                    "whos ur daddy im ur daddy whos ur daddy im ur daddy " +
-                    "whos ur daddy im ur daddy whos ur daddy im ur daddy ", "Dad");
+                renderDialogue(dialogue, "Dad");
             }
         }
 
-
-        public bool animationDone = false;
-        
         public void renderDialogue(String s, String speaker)
         {
             active = true;
@@ -153,8 +172,6 @@ namespace Test
             { //Task.Run puts on separate thread
                 printTime = 60;
                 await animateText(arr[elementIndex], cts.Token); //await pauses thread until animateText() is completed
-                state.startTimer("game");
-                
 
             }, cts.Token);
         }
@@ -195,10 +212,10 @@ namespace Test
                 list.Add(line);
 
             }
-            for (int i = 0; i < list.Count; i++)
+            /*for (int i = 0; i < list.Count; i++)
             {
                 Console.WriteLine(list[i]);
-            }
+            }*/
 
             return list.ToArray();
 
@@ -208,7 +225,8 @@ namespace Test
         //operate in own time and thread
         public async Task animateText(Text line, CancellationToken ct)
         {
-            //animationDone = false;
+            animationStart = true;
+            state.resetTimer("game");
             int i = 0;
             dialogue.DisplayedString = "";
             while (i < line.DisplayedString.Length)
@@ -217,24 +235,40 @@ namespace Test
                 {
                     ct.ThrowIfCancellationRequested();
                 }
-                dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, line.DisplayedString[i++]));
-                await Task.Delay(printTime); //equivalent of putting thread to sleep
+                if (state.GetState() != "pause")
+                {
+                    dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, line.DisplayedString[i++]));
+                    await Task.Delay(printTime); //equivalent of putting thread to sleep
+                }
             }
             // Do asynchronous work.
+            if (tag == "AI") 
+            {
+                state.startTimer("game");
+            }
+            animationStart = false; //done animating
+            awaitInput = true;
 
         }
 
+        
+
+
         public void Draw(RenderTarget target, RenderStates states)
         {
-            View resetView = target.GetView();
-            target.SetView(view);
+            if (init)
+            {
+                View resetView = target.GetView();
+                target.SetView(view);
 
-            target.Draw(box);
-            target.Draw(nameBox);
-            target.Draw(name);
-            target.Draw(dialogue);
+                target.Draw(box);
+                target.Draw(nameBox);
+                target.Draw(name);
+                target.Draw(dialogue);
 
-            target.SetView(resetView);
+
+                target.SetView(resetView);
+            }
         }
         public FloatRect GetBounds()
         {
@@ -256,29 +290,30 @@ namespace Test
 
         public Text BufferName(String speaker)
         {
-            Text n = new Text(speaker.ToUpper(), speechFont, 24);
-            n.Position = new Vector2f(nameBox.Position.X + 17, nameBox.Position.Y + 12);
+            Text n = new Text(speaker.ToUpper(), speechFont, 32);
+            nameBox.Size = new Vector2f(n.GetGlobalBounds().Width + 30, this.h - 110);
+            n.Position = new Vector2f(nameBox.Position.X + 12, nameBox.Position.Y);
             n.Color = Color.Black;
             return n;
         }
 
         public Text BufferDialogue(String s)
         {
-            Text d = new Text(s, speechFont, 24);
+            Text d = new Text(s, speechFont, 32);
             d.Position = new Vector2f(box.Position.X + 13, box.Position.Y + 20);
             d.Color = Color.Black;
             return d;
         }
 
 
-        public DialogueBox(float x, float y, float width, float height, GameState state)
+        public DialogueBox(float x, float y, float width, float height, GameState state, string tag)
         {
             this.x = x;
             this.y = y;
             this.w = width;
             this.h = height;
             this.state = state;
-
+            this.tag = tag;
 
             
             box = new RectangleShape(new Vector2f(this.w, this.h));

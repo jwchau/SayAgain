@@ -3,18 +3,73 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SFML.Graphics;
 
 namespace Test {
-    class DramaManager {
+    class DramaManager : Drawable {
         public DramaManager() {
-            Alex = new CharacterState("alex");
-            Mom = new CharacterState("mom");
-            Dad = new CharacterState("dad");
+
         }
 
         private CharacterState Alex;
         private CharacterState Mom;
         private CharacterState Dad;
+        static Relationships ship = new Relationships();
+        static bool[] targets = { false, false, false }; // 0 = alex 1 = mom 2 = dad
+
+        public double getDadFNC()
+        {
+            return ship.getDadFNC();
+        }
+        public double getAlexFNC()
+        {
+            return ship.getAlexFNC();
+        }
+        public double getMomFNC()
+        {
+            return ship.getMomFNC();
+        }
+
+        public void activateCharacterChoice(string c)
+        {
+            if(c == "Alex")
+            {
+                targets[0] = true;
+            } else if(c == "Mom")
+            {
+                targets[1] = true;
+            } else if(c == "Dad")
+            {
+                targets[2] = true;
+            }
+        }
+
+        public void setTargets(string who)
+        {
+            //targets[0] = alex; targets[1] = mom; targets[2] = dad;
+            // Old - Used for clicking will, revamp to newer system
+            //if (who == "alex")
+            //{
+            //    targets[0] = !targets[0];
+            //}
+
+            //else if (who == "mom")
+            //{
+            //    targets[1] = !targets[1];
+            //}
+
+            //else if (who == "dad")
+            //{
+            //    targets[2] = !targets[2];
+            //}
+
+        }
+
+        public bool[] getTargets()
+        {
+            return targets;
+        }
+
 
         List<GameMatrix> matrices = new List<GameMatrix>();
 
@@ -26,6 +81,15 @@ namespace Test {
         }
         public CharacterState getDad() {
             return Dad;
+        }
+
+        public void Draw(RenderTarget target, RenderStates states)
+        {
+
+            if(targets[0]) target.Draw(Alex);
+            if(targets[1]) target.Draw(Mom);
+            if(targets[2]) target.Draw(Dad);
+
         }
     }
 }

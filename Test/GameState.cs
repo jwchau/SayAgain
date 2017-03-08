@@ -55,7 +55,6 @@ namespace Test
             }
             if (state == "game" && currentMenuState == "start")
             {
-                DictGameTimer["game"].setOldGameTime((DateTime.Now.Ticks / 10000) / 1000);
             }
 
 
@@ -79,14 +78,12 @@ namespace Test
         public void updateTimerz()
         {
 
-            //Console.WriteLine("GET START IS TRUE HERE: "+DictGameTimer["game"].getCountDown());
             foreach (var pair in DictGameTimer)
             {
                 //pair.Value is a gameTimer
                 //pair.Key is the label of the game Timer;
                 if (pair.Value.getStart())
                 {
-                    //Console.WriteLine("GET START IS TRUE HERE");
                     pair.Value.updateTimer();
 
                 }
@@ -97,7 +94,7 @@ namespace Test
                         //DO STUFF BEFORE RESTARTING
                         //Process Player dialogue
                         pair.Value.doTask();
-                        pair.Value.restartTimer();
+                        
                     }
                     
                 }
@@ -111,6 +108,11 @@ namespace Test
         public void startTimer(string key)
         {
             DictGameTimer[key].startTimer();
+        }
+
+        public void resetTimer(string key)
+        {
+            DictGameTimer[key].resetTimer();
         }
 
         // Handle Menu Traversal and Game Launching
@@ -135,6 +137,8 @@ namespace Test
                             if (mappings[j].Item2 == "game")
                             {
                                 SetState(mappings[j].Item2);
+                                //DictGameTimer["game"].startTimer();
+                             
                             }
                             else if (mappings[j].Item2 == "menu")
                             {

@@ -90,9 +90,13 @@ namespace Test {
         #region SA_checkTargets
         public void checkTargets(GameState State, DramaManager d) {
             if (State.GetState() == "game") {
-                d.getAlex().targetCheck(MouseX, MouseY);
-                d.getMom().targetCheck(MouseX, MouseY);
-                d.getDad().targetCheck(MouseX, MouseY);
+                if (d.getAlex().Contains(MouseX, MouseY)) {
+
+                }
+                
+                //d.getAlex().targetCheck(MouseX, MouseY);
+                //d.getMom().targetCheck(MouseX, MouseY);
+                //d.getDad().targetCheck(MouseX, MouseY);
 
             }
         }
@@ -107,13 +111,15 @@ namespace Test {
         #endregion
 
         #region SA_GamePlay
-        public void GamePlay(GameState s, List<UIButton> b, int x, int y) {
+        public void GamePlay(GameState s, List<UIButton> b, int x, int y, double sx, double sy) {
             if (s.GetState() == "game") {
-
+                //Console.WriteLine(screenSize.Item1 + " " + screenSize.Item2);
                 for (var i = 0; i < b.Count; i++) {
-                    if (b[i].Contains(x, y)) {
+                    if (b[i].Contains((int)(x*sx), (int)(y*sy))) {
                         var bounds = b[i].getRectBounds();
-                        b[i].SetMouseOffset(x - (int)bounds.Left, y - (int)bounds.Top);
+                        Console.WriteLine(x + " " + y);
+
+                        b[i].SetMouseOffset((int)(x - bounds.Left), (int)(y - bounds.Top));
                         b[i].SetSelected(true);
                     }
                 }

@@ -1,142 +1,148 @@
 {"Dialogues" :[
 {
 	"content": "Yeah I missed you too",
-	"Tonal prereq": "Blunt",
-	"Context": "AlexTalksPlayer",
-	"Consequence": "greeting",
-	"Memories":[""],
-	"Milestones":[""],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"School"
+	"tonalPreReq": "Blunt",
+	"context": "AlexTalksPlayer",
+	"consequence": "",
+	"memories":[""],
+	"milestone":[""],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
 },
 {
 	"content": "Hey",
-	"Tonal prereq": "Indifferent",
-	"Context": "AlexTalksPlayer",
-	"Consequence": "greeting",
-	"Memories":[""],
-	"Milestones":[""],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"School"
-	
+	"tonalPreReq": "Indifferent",
+	"context": "AlexTalksPlayer",
+	"consequence": "",
+	"memories":[""],
+	"milestone":[""],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
 },
 {
 	"content": "Yeah it's me, Your sister. Remember?",
-	"Tonal prereq": "Hesitant",
-	"Context": "AlexTalksPlayer",
-	"Consequence": "greeting",
-	"Memories":[""],
-	"Milestones":[""],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"School"
+	"tonalPreReq": "Hesitant",
+	"context": "AlexTalksPlayer",
+	"consequence": "",
+	"memories":[""],
+	"milestone":[""],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
 },
 {
 	"content": "Oh ... yeah",
-	"Tonal prereq": "Compassionate",
-	"Context": "AlexTalksPlayer",
-	"Consequence": "greeting",
-	"Memories":[""],
-	"Milestones":[""],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"School"
-	
+	"tonalPreReq": "Compassionate",
+	"context": "AlexTalksPlayer",
+	"consequence": "",
+	"memories":[""],
+	"milestone":[""],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
 },
 {
 	"content": "Eh whatever",
-	"Tonal prereq": "Blunt",
-	"Context": "AlexTalksSchool",
-	"Consequence": "TalkedSchool",
-	"Memories":[""],
-	"Milestones":["greeting"],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"AlexTalksAlex"
+	"tonalPreReq": "Blunt",
+	"context": "AlexTalksAlex",
+	"consequence": "",
+	"memories":["","AlexTalksPlayer"],
+	"milestone":["","greeting"],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
 },
 {
-	"content": "Fine",
-	"Tonal prereq": "Indifferent",
-	"Context": "AlexTalksSchool",
-	"Consequence": "TalkedSchool",
-	"Memories":[""],
-	"Milestones":["greeting"],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"AlexTalksAlex"
+   "content": "Fine",
+   "tonalPreReq": "Indifferent",
+   "context": "AlexTalksAlex",
+   "consequence": "",
+   "memories": [ "", "AlexTalksPlayer" ],
+   "milestone": [ "", "greeting" ],
+   "fncPreReq": -4,
+   "target": [ 1, 0, 0 ],
+   "nextContext": [ "" ]
+
+},
+{
+	"content": "Sure...",
+	"tonalPreReq": "Compassionate",
+	"context": "AlexTalksAlex",
+	"consequence": "",
+	"memories":["","AlexTalksPlayer"],
+	"milestone":["","greeting"],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
+	
 },
 {
 	"content": "I'm fourteen, remember?",
-	"Tonal prereq": "Hesitant",
-	"Context": "AlexTalksSchool",
-	"Consequence": "TalkedSchool",
-	"Memories":[""],
-	"Milestones":["greeting"],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"AlexTalksAlex"
+	"tonalPreReq": "Hesitant",
+	"context": "AlexTalksAlex",
+	"consequence": "",
+	"memories":["","AlexTalksPlayer"],
+	"milestone":["","greeting"],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
 },
 {
-	"content": "Could be worse!",
-	"Tonal prereq": "Compassionate",
-	"Context": "AlexTalksSchool",
-	"Consequence": "TalkedSchool",
-	"Memories":[""],
-	"Milestones":["greeting"],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"AlexTalksAlex"
-	
+	"content": "As if you actually care!",
+	"tonalPreReq": "Compassionate",
+	"context": "AlexTalksAlex",
+	"consequence": "",
+	"memories":["","AlexTalksPlayer","AlexTalksAlex"],
+	"milestone":["","greeting","TalkedSchool"],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
 },
 {
 	"content": "Yeah I know to make friends. Thanks",
-	"Tonal prereq": "Blunt",
-	"Context": "AlexTalksAlex",
-	"Consequence": "TalkedFriends",
-	"Memories":["School"],
-	"Milestones":["greeting","TalkedSchool"],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"MomTalksMom"
-	
+	"tonalPreReq": "Blunt",
+	"context": "AlexTalksAlex",
+	"consequence": "",
+	"memories":["","AlexTalksPlayer","AlexTalksAlex"],
+	"milestone":["","greeting","TalkedSchool"],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
 },
 {
-	"content": "Oh I'm so glad you care about my wellbeing, sibling",
-	"Tonal prereq": "Compassionate",
-	"Context": "AlexTalksAlex",
-	"Consequence": "TalkedFriends",
-	"Memories":["School"],
-	"Milestones":["greeting","TalkedSchool"],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"MomTalksMom"
-	
+	"content": "Oh I'm so glad you care about my well being, sibling",
+	"tonalPreReq": "Compassionate",
+	"context": "AlexTalksAlex",
+	"consequence": "",
+	"memories":["","AlexTalksPlayer","AlexTalksAlex"],
+	"milestone":["","greeting","TalkedSchool"],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
 },
 {
 	"content": "Wait who? I've never had a friend named Ron. You don't need to act like you care",
-	"Tonal prereq": "Compassionate",
-	"Context": "AlexTalksAlex",
-	"Consequence": "TalkedFriends",
-	"Memories":["School"],
-	"Milestones":["greeting","TalkedSchool"],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"MomTalksMom"
-	
+	"tonalPreReq": "Hesitant",
+	"context": "AlexTalksAlex",
+	"consequence": "",
+	"memories":["","AlexTalksPlayer","AlexTalksAlex"],
+	"milestone":["","greeting","TalkedSchool"],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
 },
 {
 	"content": "You've been gone for a year and that's what you ask? ",
-	"Tonal prereq": "Indifferent",
-	"Context": "AlexTalksAlex",
-	"Consequence": "TalkedFriends",
-	"Memories":["School"],
-	"Milestones":["greeting","TalkedSchool"],
-	"FNCprereq":0,
-	"Target":[1,0,0],
-	"NextContext":"MomTalksMom"
-	
+	"tonalPreReq": "Indifferent",
+	"context": "AlexTalksAlex",
+	"consequence": "",
+	"memories":["","AlexTalksPlayer","AlexTalksAlex"],
+	"milestone":["","greeting","TalkedSchool"],
+	"fncPreReq":-4,
+	"target":[1,0,0],
+	"nextContext":[""]
 }
 ]
 }
