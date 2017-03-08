@@ -51,16 +51,7 @@ namespace Test {
         public void SweepButtons(int x, int y, double scalex, double scaley) {
             var buttons = getButtons();
             for (var i = 0; i < buttons.Count; i++) {
-                var rectx = buttons[i].getX();
-                var recty = buttons[i].getY();
-                var rectxs = rectx + buttons[i].getRectSize().X;
-                var rectys = recty + buttons[i].getRectSize().Y;
                 buttons[i].setHover((int)(x * scalex), (int)(y * scaley));
-                //if (buttons[i].inRange((int)(x * scalex), rectx, rectxs) && buttons[i].inRange((int)(y * scaley), recty, rectys) || buttons[i].GetSelected()) {
-                //    buttons[i].setButtonColor(new Color(255, 0, 0));
-                //} else {
-                //    buttons[i].setButtonColor(buttons[i].getTonalColor());
-                //}
             }
         }
         #endregion

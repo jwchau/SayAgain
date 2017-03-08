@@ -34,7 +34,12 @@ namespace Test {
             {"Blunt",   new List<string>() {"../../Art/UI_Art/buttons n boxes/purplebuttontext.png", "../../Art/UI_Art/buttons n boxes/purplebuttontexthighlight.png"}}, //Purple
             {"Indifferent", new List<string>() {"../../Art/UI_Art/buttons n boxes/bluebuttontext.png", "../../Art/UI_Art/buttons n boxes/bluebuttontexthighlight.png"}}, // Blue
             {"Compassionate", new List<string>() {"../../Art/UI_Art/buttons n boxes/greenbuttontext.png", "../../Art/UI_Art/buttons n boxes/greenbuttontexthighlight.png"}}, // Green
-            {"Hesitant", new List<string>() {"../../Art/UI_Art/buttons n boxes/yellowbuttontext.png", "../../Art/UI_Art/buttons n boxes/yellowbuttontexthighlight.png"}} // Yellow
+            {"Hesitant", new List<string>() {"../../Art/UI_Art/buttons n boxes/yellowbuttontext.png", "../../Art/UI_Art/buttons n boxes/yellowbuttontexthighlight.png"}}, // Yellow
+            {"Start", new List<string>() { "../../Art/UI_Art/buttons n boxes/startmenu.png", "../../Art/UI_Art/buttons n boxes/startmenuhighlight.png"}}, //Start Menu Button
+            {"Settings", new List<string>() { "../../Art/UI_Art/buttons n boxes/settingsmenu.png", "../../Art/UI_Art/buttons n boxes/settingsmenuhighlight.png"}}, //Settings Menu Button
+            {"Back", new List<string>() { "../../Art/UI_Art/buttons n boxes/backmenu.png", "../../Art/UI_Art/buttons n boxes/backmenuhighlight.png"}}, //Back Menu Button
+            {"Quit", new List<string>() { "../../Art/UI_Art/buttons n boxes/quitmenu.png", "../../Art/UI_Art/buttons n boxes/quitmenuhighlight.png"}}, //Quit Menu Button
+            {"Sound", new List<string>() { "../../Art/UI_Art/buttons n boxes/soundmenuc.png", "../../Art/UI_Art/buttons n boxes/soundmenuchighlight.png", "../../Art/UI_Art/buttons n boxes/soundmenuuc.png", "../../UI_Art/buttons n boxes/soundmenuuchighlight.png"}}, //Sound Menu Button
         };
 
         //methods

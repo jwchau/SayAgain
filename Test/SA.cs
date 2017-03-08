@@ -38,8 +38,29 @@ namespace Test {
 
         private void onMouseMoved(object sender, MouseMoveEventArgs e) {
             ManagerOfInput.OnMouseMoved(State, e.X, e.Y);
-           
-            ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
+            if(State.GetState() == "menu")
+            {
+                if(State.GetMenuState() == "start")
+                {
+                    startMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
+                } else if(State.GetMenuState() == "settings")
+                {
+                    settingsMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
+                }
+                
+            } else if(State.GetState() == "game")
+            {
+                ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
+            } else if(State.GetState() == "pause")
+            {
+                if(State.GetMenuState() == "pause")
+                {
+                    pauseMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
+                } else if(State.GetMenuState() == "settings")
+                {
+                    settingsMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
+                }
+            }
 
             if (D_Man.getAlex().Contains(e.X, e.Y)) {
                 D_Man.getAlex().setHover(true);
@@ -105,7 +126,7 @@ namespace Test {
 
             ManagerOfInput.MenuPlay(State, menus, e.X, e.Y);
 
-            if (State.getGameTimer("game").Contains(e.X, e.Y) && State.getGameTimer("game").getStart()) {
+            if (State.getGameTimer("game").Contains(e.X, e.Y, scaleFactorX, scaleFactorY) && State.getGameTimer("game").getStart()) {
                 State.getGameTimer("game").setCountDown(0);
             }
         }
@@ -441,7 +462,7 @@ namespace Test {
 
                 if (State.GetState() == "pause") {
 
-                    pauseMenu.DrawBG(window);
+                    pauseMenu.DrawPauseBG(window);
                     if (State.GetMenuState() == "pause") {
                         window.Draw(pauseMenu);
                     } else if (State.GetMenuState() == "settings") {

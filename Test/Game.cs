@@ -77,6 +77,7 @@ namespace Test
 
         protected Sprite mom, alex, dad, toneBar;
         protected RectangleShape textBackground;
+        ContextSettings settings;
 
         /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -84,7 +85,8 @@ namespace Test
 
         public Game(uint width, uint height, string title)
         {
-            window = new RenderWindow(new VideoMode(width, height), title, Styles.Default);
+            settings.AntialiasingLevel = 8;
+            window = new RenderWindow(new VideoMode(width, height), title, Styles.Default, settings);
             this.clearColor = new Color(125, 116, 132);
 
             // Set-up Events
