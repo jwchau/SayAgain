@@ -24,12 +24,13 @@ namespace Test
         public RectangleShape box;
         public RectangleShape nameBox;
         Task currentTask;
-
+        
         Boolean init = false;
         string tag; //AI or player
 
         bool animationStart = true;
         bool awaitInput = false;
+
         CancellationTokenSource cts;
         Text[] arr = { };
         public int printTime;
@@ -41,7 +42,7 @@ namespace Test
 
         // public View playerView { get; private set;}
 
-        Font speechFont = new Font("../../Fonts/Adore64.ttf");
+        Font speechFont = new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf");
 
         public void setInit(bool b) {
             init = b;
@@ -191,7 +192,7 @@ namespace Test
                 float wordSizeWithSpace = t.GetGlobalBounds().Width;
                 if (currentLineWidth + wordSizeWithSpace > maxw)
                 {
-
+    
                     line.DisplayedString += "\n";
                     currentLineWidth = 0;
                     if (line.GetGlobalBounds().Height > maxh)
@@ -289,16 +290,16 @@ namespace Test
 
         public Text BufferName(String speaker)
         {
-            Text n = new Text(speaker.ToUpper(), speechFont, 24);
-            nameBox.Size = new Vector2f(n.GetGlobalBounds().Width + 30, this.h - 100);
-            n.Position = new Vector2f(nameBox.Position.X + 12, nameBox.Position.Y + 12);
+            Text n = new Text(speaker.ToUpper(), speechFont, 32);
+            nameBox.Size = new Vector2f(n.GetGlobalBounds().Width + 30, this.h - 110);
+            n.Position = new Vector2f(nameBox.Position.X + 12, nameBox.Position.Y);
             n.Color = Color.Black;
             return n;
         }
 
         public Text BufferDialogue(String s)
         {
-            Text d = new Text(s, speechFont, 24);
+            Text d = new Text(s, speechFont, 32);
             d.Position = new Vector2f(box.Position.X + 13, box.Position.Y + 20);
             d.Color = Color.Black;
             return d;
@@ -314,6 +315,7 @@ namespace Test
             this.state = state;
             this.tag = tag;
 
+            
             box = new RectangleShape(new Vector2f(this.w, this.h));
             box.Position = new Vector2f(this.x - 40, this.y + 35);
             box.OutlineThickness = 3;

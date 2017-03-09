@@ -65,23 +65,27 @@ namespace Test
         protected List<DialogueObj> responseListAlex = new List<DialogueObj>();
         protected List<string> currentMilestones = new List<string>();
         protected List<int> currentTargets = new List<int>();
+
         protected int FNC = 0;
         protected string currentContext = "";
         protected Dictionary<string, string> nextContextDict = new Dictionary<string, string>();
         protected tone currentTone = tone.Root;
         protected Loader Load = new Loader();
         protected Selector s = new Selector();
-    #endregion
+
+        #endregion
+
+        protected Sprite mom, alex, dad, toneBar;
+        protected RectangleShape textBackground;
 
         /////////////////////////////////////////////////////////////////////////////////////////////
 
         protected GameState State = new GameState();
 
-        public Game(uint width, uint height, string title, Color clearColor)
+        public Game(uint width, uint height, string title)
         {
             window = new RenderWindow(new VideoMode(width, height), title, Styles.Default);
-
-            this.clearColor = clearColor;
+            this.clearColor = new Color(125, 116, 132);
 
             // Set-up Events
             window.Closed += onClosed;

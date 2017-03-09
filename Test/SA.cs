@@ -10,14 +10,12 @@ using SFML.System;
 using System.Drawing;
 using Newtonsoft.Json;
 
-namespace Test
-{
+namespace Test {
 
-    class SA : Game
-    {
-        Sprite mom, alex, dad;
-        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?", Color.Magenta)
-        {
+    class SA : Game {
+        
+        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?") {
+
 
             window.KeyPressed += onKeyPressed;
             window.KeyReleased += onKeyReleased;
@@ -28,9 +26,7 @@ namespace Test
         }
 
         #region screen resize math
-        private void screenHelper()
-        {
-
+        private void screenHelper() {
             var DesktopX = (double)VideoMode.DesktopMode.Width;
             var DesktopY = (double)VideoMode.DesktopMode.Height;
             var WindowX = (double)window.Size.X;
@@ -40,65 +36,46 @@ namespace Test
         }
         #endregion
 
-        private void onMouseMoved(object sender, MouseMoveEventArgs e)
-        {
+        private void onMouseMoved(object sender, MouseMoveEventArgs e) {
             ManagerOfInput.OnMouseMoved(State, e.X, e.Y);
-            if (D_Man.getAlex().Contains(e.X, e.Y) == true)
-            {
+           
+            ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
+
+            if (D_Man.getAlex().Contains(e.X, e.Y)) {
                 D_Man.getAlex().setHover(true);
-            }
-            else
-            {
-                D_Man.getAlex().setHover(false);
-            }
-
-            if (D_Man.getMom().Contains(e.X, e.Y) == true)
-            {
+            } else if (D_Man.getMom().Contains(e.X, e.Y)) {
                 D_Man.getMom().setHover(true);
-            }
-            else
-            {
-                D_Man.getMom().setHover(false);
-            }
-
-            if (D_Man.getDad().Contains(e.X, e.Y) == true)
-            {
+            } else if (D_Man.getDad().Contains(e.X, e.Y)) {
                 D_Man.getDad().setHover(true);
-            }
-            else
-            {
+            } else {
+                D_Man.getAlex().setHover(false);
+                D_Man.getMom().setHover(false);
                 D_Man.getDad().setHover(false);
             }
 
         }
 
-        private void onMouseButtonReleased(object sender, MouseButtonEventArgs e)
-        {
+        private void onMouseButtonReleased(object sender, MouseButtonEventArgs e) {
 
             ManagerOfInput.onMouseButtonReleased();
 
-            if (playerChoice)
-            {
+            if (playerChoice) {
                 //ManagerOfInput.checkTargets(State, D_Man);
-                if (D_Man.getAlex().Contains(e.X, e.Y) == true)
-                {
+                if (D_Man.getAlex().Contains(e.X, e.Y) == true) {
                     currentContext = nextContextDict["Alex"];
                     loadDialogues();
                     playerChoice = false;
-            
                     //COME BACK HERE
                 }
 
-                if (D_Man.getMom().Contains(e.X, e.Y) == true)
-                {
+                else if (D_Man.getMom().Contains(e.X, e.Y) == true) {
                     currentContext = nextContextDict["Mom"];
                     loadDialogues();
                     playerChoice = false;
                     //COME BACK HERE
                 }
 
-                if (D_Man.getDad().Contains(e.X, e.Y) == true)
-                {
+                else if (D_Man.getDad().Contains(e.X, e.Y) == true) {
                     currentContext = nextContextDict["Dad"];
                     loadDialogues();
                     playerChoice = false;
@@ -107,8 +84,6 @@ namespace Test
                     //restart the timer
                     //COME BACK HERE
                 }
-
-
 
                 //d.getAlex().targetCheck(MouseX, MouseY);
                 //d.getMom().targetCheck(MouseX, MouseY);
@@ -121,43 +96,36 @@ namespace Test
             ui_man.applyTones(e.X, e.Y);
         }
 
-        private void onMouseButtonPressed(object sender, MouseButtonEventArgs e)
-        {
+        private void onMouseButtonPressed(object sender, MouseButtonEventArgs e) {
+
 
             ManagerOfInput.onMouseButtonPressed(e.X, e.Y);
 
-            ManagerOfInput.GamePlay(State, buttons, e.X, e.Y);
+            ManagerOfInput.GamePlay(State, buttons, e.X, e.Y, scaleFactorX, scaleFactorY);
 
             ManagerOfInput.MenuPlay(State, menus, e.X, e.Y);
 
-            if (State.getGameTimer("game").Contains(e.X, e.Y) && State.getGameTimer("game").getStart())
-            {
+            if (State.getGameTimer("game").Contains(e.X, e.Y) && State.getGameTimer("game").getStart()) {
                 State.getGameTimer("game").setCountDown(0);
             }
         }
 
-        private void onKeyReleased(object sender, KeyEventArgs e)
-        {
+        private void onKeyReleased(object sender, KeyEventArgs e) {
         }
 
-        private void onKeyPressed(object sender, KeyEventArgs e)
-        {
+        private void onKeyPressed(object sender, KeyEventArgs e) {
 
-            if (State.GetState() == "game")
-            {
-                if (e.Code == Keyboard.Key.Space)
-                {
+            if (State.GetState() == "game") {
+                if (e.Code == Keyboard.Key.Space) {
                     dialogueBox.setPrintTime(0);
                     playerDialogueBox.setPrintTime(0);
                 }
 
-                if (e.Code == Keyboard.Key.N)
-                {
+                if (e.Code == Keyboard.Key.N) {
                     dialogueBox.checkNext();
                 }
 
-                if (e.Code == Keyboard.Key.P)
-                {
+                if (e.Code == Keyboard.Key.P) {
                     // Toggles game state between game and pause
                     State.TogglePause();
                 }
@@ -177,8 +145,7 @@ namespace Test
         }
 
         #region Timer Action Placeholder
-        public void TimerAction()
-        {
+        public void TimerAction() {
 
             updateTargetFNC();
             //update currentmademeories, currentmilestones, currenttone, currentcontext
@@ -188,8 +155,7 @@ namespace Test
 
         }
 
-        public void updateTargetFNC()
-        {
+        public void updateTargetFNC() {
 
             //load tonal matrix
             //get targets from player
@@ -199,15 +165,11 @@ namespace Test
         }
 
         //after timer runs out update the current stuff
-        private void updateCurrents()
-        {
+        private void updateCurrents() {
             List<string> nextContext = responseList[0].nextContext;
-            if (nextContext.Count == 1)
-            {
-                if (nextContext[0] != "")
-                {
-                    if (!currentMadeMemories.Contains(currentContext))
-                    {
+            if (nextContext.Count == 1) {
+                if (nextContext[0] != "") {
+                    if (!currentMadeMemories.Contains(currentContext)) {
                         currentMadeMemories.Add(currentContext);
                     }
                     currentContext = nextContext[0];
@@ -215,49 +177,32 @@ namespace Test
                 }
 
                 playerChoice = false;
-            }
-            else
-            {
+            } else {
 
                 Console.WriteLine("player choice");
-                for (int i = 0; i != nextContext.Count; i++)
-                {
-                    if (nextContext[i][0] == 'A')
-                    {
+                for (int i = 0; i != nextContext.Count; i++) {
+                    if (nextContext[i][0] == 'A') {
                         Console.WriteLine("Ayyyyy");
                         D_Man.activateCharacterChoice("Alex");
-                        if (!nextContextDict.ContainsKey("Alex"))
-                        {
+                        if (!nextContextDict.ContainsKey("Alex")) {
                             nextContextDict.Add("Alex", nextContext[i]);
-                        }
-                        else
-                        {
+                        } else {
                             nextContextDict["Alex"] = nextContext[i];
                         }
-                    }
-                    else if (nextContext[i][0] == 'M')
-                    {
+                    } else if (nextContext[i][0] == 'M') {
                         Console.WriteLine("Mmmmm");
                         D_Man.activateCharacterChoice("Mom");
-                        if (!nextContextDict.ContainsKey("Mom"))
-                        {
+                        if (!nextContextDict.ContainsKey("Mom")) {
                             nextContextDict.Add("Mom", nextContext[i]);
-                        }
-                        else
-                        {
+                        } else {
                             nextContextDict["Mom"] = nextContext[i];
                         }
-                    }
-                    else if (nextContext[i][0] == 'D')
-                    {
+                    } else if (nextContext[i][0] == 'D') {
                         Console.WriteLine("Deez Nutz");
                         D_Man.activateCharacterChoice("Dad");
-                        if (!nextContextDict.ContainsKey("Dad"))
-                        {
+                        if (!nextContextDict.ContainsKey("Dad")) {
                             nextContextDict.Add("Dad", nextContext[i]);
-                        }
-                        else
-                        {
+                        } else {
                             nextContextDict["Dad"] = nextContext[i];
                         }
                     }
@@ -268,8 +213,7 @@ namespace Test
 
             }
 
-            if (!responseList.ElementAt(0).consequence.Equals(""))
-            {
+            if (!responseList.ElementAt(0).consequence.Equals("")) {
                 currentMilestones.Add(responseList.ElementAt(0).consequence);
             }
 
@@ -282,11 +226,9 @@ namespace Test
 
 
 
-        public void loadDialogues()
-        {
+        public void loadDialogues() {
 
-            if (currentTone != tone.Root)
-            {
+            if (currentTone != tone.Root) {
 
                 responseList = s.ChooseDialog(FNC, Load.playerDialogueObj1, currentMadeMemories, currentMilestones, currentTone, currentContext); //loads "what are you staring at?"
                 responseListAlex = s.ChooseDialog(D_Man.getAlexFNC(), Load.alexDialogueObj1, currentMadeMemories, currentMilestones, currentTone, currentContext);//loads "yeah I missed you too?"
@@ -302,9 +244,7 @@ namespace Test
 
                 ui_man.reset(responseList);
 
-            }
-            else
-            {
+            } else {
                 //responseList = s.ChooseDialog(FNC, Load.playerDialogueObj1, currentMadeMemories, currentMilestones, currentTone, currentContext);
                 //ui_man.reset(responseList);
                 State.getGameTimer("game").resetTimer();
@@ -312,21 +252,22 @@ namespace Test
             }
         }
 
-        protected override void Initialize()
-        {
-            Texture texturemom, texturealex, texturedad;
-            FileStream m = new FileStream("../../Art/momdemo.png", FileMode.Open);
-            FileStream a = new FileStream("../../Art/alexdemo.png", FileMode.Open);
-            FileStream d = new FileStream("../../Art/daddemo.png", FileMode.Open);
-            texturemom = new Texture(m);
-            texturealex = new Texture(a);
-            texturedad = new Texture(d);
-            alex = new Sprite(texturealex);
-            mom = new Sprite(texturemom);
-            dad = new Sprite(texturedad);
+        protected override void Initialize() {
+            alex = new Sprite(new Texture("../../Art/alexdemo.png"));
+            mom = new Sprite(new Texture("../../Art/momdemo.png"));
+            dad = new Sprite(new Texture("../../Art/daddemo.png"));
+            toneBar = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/tonebar.png"));
+
             mom.Position = new Vector2f(1200, 350);
             dad.Position = new Vector2f(400, 325);
             alex.Position = new Vector2f(800, 400);
+            toneBar.Position = new Vector2f(6, 794);
+
+            textBackground = new RectangleShape(new Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT / 5));
+            textBackground.Position = new Vector2f(0, SCREEN_HEIGHT - (float)(SCREEN_HEIGHT * 0.19));
+            textBackground.FillColor = new Color(67, 65, 69);
+            textBackground.OutlineColor = Color.White;
+            textBackground.OutlineThickness = 2;
 
             //Originally in LoadContent/////////////////////////////////////////////////////////////////////////////////
             // Create Character states
@@ -352,23 +293,21 @@ namespace Test
             menus.Add(startMenu); menus.Add(settingsMenu); menus.Add(pauseMenu);
         }
 
-        private void LoadInitialPreReqs()
-        {
+        private void LoadInitialPreReqs() {
 
             currentMadeMemories.Add("");
 
             currentMilestones.Add("");
 
             currentContext = "AlexTalksPlayer";
+
             FNC = 0;
         }
 
-        protected override void Update()
-        {
-            if (State.GetState() == "game")
-            {
-                if (startOnce)
-                {
+        protected override void Update() {
+            screenHelper();
+            if (State.GetState() == "game") {
+                if (startOnce) {
                     State.getGameTimer("game").startTimer();
                     startOnce = false;
                 }
@@ -387,27 +326,21 @@ namespace Test
                 var MouseCoord = ManagerOfInput.GetMousePos();
 
                 // If the mouse is currently dragging
-                if (ManagerOfInput.GetMouseDown())
-                {
+                if (ManagerOfInput.GetMouseDown()) {
 
                     // Loop through buttons
-                    for (var i = 0; i < buttons.Count; i++)
-                    {
+                    for (var i = 0; i < buttons.Count; i++) {
                         // Find button currently being interacted with
-                        if (buttons[i].GetSelected())
-                        {
+                        if (buttons[i].GetSelected()) {
                             // Move the button around the screen
-                            buttons[i].translate(MouseCoord[0], MouseCoord[1]);
+                            buttons[i].translate(MouseCoord[0], MouseCoord[1], window.Size.X, window.Size.Y);
 
                             // Check collision with UI Textboxes
                             // Loop through UI Textboxes
-                            for (var j = 0; j < playerDialogues.Count; j++)
-                            {
+                            for (var j = 0; j < playerDialogues.Count; j++) {
                                 // If the mouse just came from inside a UI Textbox
-                                if (playerDialogues[j].wasMouseIn())
-                                {
-                                    if (!playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1]))
-                                    {
+                                if (playerDialogues[j].wasMouseIn()) {
+                                    if (!playerDialogues[j].Contains((int)(MouseCoord[0]*scaleFactorX), (int)(MouseCoord[1]*scaleFactorY))) {
                                         // Mouse has now left the UI Textbox so set it to false
                                         playerDialogues[j].setMouseWasIn(false);
                                         // Reset the color to match its previous color
@@ -418,11 +351,8 @@ namespace Test
                                     }
 
                                     // If mouse just came from outside the UI Textbox
-                                }
-                                else
-                                {
-                                    if (playerDialogues[j].Contains(MouseCoord[0], MouseCoord[1]))
-                                    {
+                                } else {
+                                    if (playerDialogues[j].Contains((int)(MouseCoord[0] * scaleFactorX), (int)(MouseCoord[1] * scaleFactorY))) {
                                         // Mouse is now inside a UI Textbox, so set it to true
                                         playerDialogues[j].setMouseWasIn(true);
                                         // Update previous color to current color of the UI Textbox
@@ -441,26 +371,20 @@ namespace Test
                     }
 
                 }
-
                 // ui_man.dialogueLoadOrder(State, playerDialogueBox, dialogueBox, responseList, responseListAlex);
-                if (playerDialogueBox.getAnimationStart() == false && loadedAIDialogueOnce == true /*&& playerChoice == false*/)
-                {
-                    if (responseListAlex[0].content != "returned empty string")
-                    {
+                if (playerDialogueBox.getAnimationStart() == false && loadedAIDialogueOnce == true /*&& playerChoice == false*/) {
+                    if (responseListAlex[0].content != "returned empty string") {
                         dialogueBox.setInit(true);
                         dialogueBox.loadNewDialogue("alex", responseListAlex.ElementAt(0).content); //this makes the timer happen after the animation is done
                         loadedAIDialogueOnce = false;
-                        if (dialogueBox.getAnimationStart() == false)
-                        {
+                        if (dialogueBox.getAnimationStart() == false) {
                             loadedAIDialogueOnce = true;
                         }
                     }
 
                 }
 
-            }
-            else if (State.GetState() == "pause")
-            {
+            } else if (State.GetState() == "pause") {
                 State.getGameTimer("game").PauseTimer();
 
             }
@@ -469,17 +393,17 @@ namespace Test
         }
         //Ensures that AI dialogue doesnt get loaded more than once per timer done
         bool loadedAIDialogueOnce = false;
+
         bool playerChoice = false;
 
-        protected override void Draw()
-        {
+        protected override void Draw() {
 
             window.Clear(clearColor);
-            if (State.GetState() != "menu")
-            {
+            if (State.GetState() != "menu") {
                 window.Draw(mom);
                 window.Draw(alex);
                 window.Draw(dad);
+
             }
 
             window.Draw(playerDialogueBox);
@@ -487,55 +411,42 @@ namespace Test
 
 
             window.SetView(fullScreenView);
-            if (State.GetState() == "menu")
-            {
-                if (State.GetMenuState() == "start")
-                {
+            if (State.GetState() == "menu") {
+                if (State.GetMenuState() == "start") {
                     window.Draw(startMenu);
-                }
-                else
-                {
+                } else {
                     window.Draw(settingsMenu);
                 }
-
-            }
-            else
-            {
+            } else {
 
                 //Draw text box background box
-                RectangleShape textBackground = new RectangleShape(new Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT / 5));
-                textBackground.Position = new Vector2f(0, SCREEN_HEIGHT - (SCREEN_HEIGHT / 5));
-                textBackground.FillColor = Color.Black;
                 window.Draw(textBackground);
 
                 var dialogues = ui_man.getPlayerDialogues();
 
-                for (var i = 0; i < dialogues.Count; i++)
-                {
+                for (var i = 0; i < dialogues.Count; i++) {
                     window.Draw(dialogues[i]);
                 }
+
+                window.Draw(toneBar);
                 var buttons = ui_man.getButtons();
 
-                for (var i = 0; i < buttons.Count; i++)
-                {
+                for (var i = 0; i < buttons.Count; i++) {
                     window.Draw(buttons[i]);
                 }
-                if (playerChoice)
-                {
+                if (playerChoice) {
                     window.Draw(D_Man);
                 }
 
 
-                if (State.GetState() == "pause")
-                {
+                if (State.GetState() == "pause") {
+
                     pauseMenu.DrawBG(window);
-                    if (State.GetMenuState() == "pause")
-                    {
+                    if (State.GetMenuState() == "pause") {
                         window.Draw(pauseMenu);
-                    }
-                    else if (State.GetMenuState() == "settings")
-                    {
+                    } else if (State.GetMenuState() == "settings") {
                         window.Draw(settingsMenu);
+
                     }
 
                 }

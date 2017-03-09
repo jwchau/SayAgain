@@ -22,8 +22,8 @@ namespace Test
             y = SCREEN_HEIGHT - 200;
             initTime = howLong-1; //0 till 9 = 10 seconds
 			countDown = howLong;
-            timerRead = new Text("SPEAK", adore64);
-            timerRead.Position = new Vector2f((x + width/2) - timerRead.GetGlobalBounds().Width/2, (y + height/2) - timerRead.GetGlobalBounds().Height/2);
+            timerRead = new Text("SPEAK", adore64, 60);
+            timerRead.Position = new Vector2f((x + width/2) - timerRead.GetGlobalBounds().Width/2, (y + height/2) - timerRead.GetGlobalBounds().Height/2 - 20);
             timerRead.Color = Color.White;
             start = false;
             timerBG = new RectangleShape(new Vector2f(width, height));
@@ -117,7 +117,7 @@ namespace Test
         RectangleShape timerLevel;
 		//bool timerFinished = false;
 		Action timerEvent;
-        Font adore64 = new Font("../../Fonts/Adore64.ttf");
+        Font adore64 = new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf");
         Text timerRead;
 
 

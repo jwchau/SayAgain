@@ -17,7 +17,8 @@ namespace Test
         //private double volatility;
         //private double goal;
         double talkedTo = 0;
-        
+        static bool[] targets = { false,false,false }; // 0 = alex 1 = mom 2 = dad
+
         Color color;
 
         RectangleShape characterRect = new RectangleShape(new Vector2f(75, 75));
@@ -82,7 +83,7 @@ namespace Test
             else
             {
                 characterRect.FillColor = this.color;
-                Console.WriteLine("i forgot what i said");
+                //Console.WriteLine("i forgot what i said");
             }
         }
 

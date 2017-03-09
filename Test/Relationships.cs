@@ -18,8 +18,8 @@ namespace Test
         double MomFNC;
         double DadFNC;
 
-        public double getAlexFNC() {
-            return AlexFNC;
+        public int getAlexFNC() {
+            return (int)AlexFNC;
         }
         public double getMomFNC()
         {
