@@ -75,9 +75,10 @@ namespace Test
 
         #endregion
 
-        protected Sprite mom, alex, dad, toneBar;
+        protected Sprite mom, alex, dad, toneBar, backwall, flower, lamp, pictures, table;
         protected RectangleShape textBackground;
         ContextSettings settings;
+        protected Character Mom, Alexis, Dad;
 
         /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -100,13 +101,28 @@ namespace Test
         {
             Initialize();
 
+            /***********************************************/
+            /*                                             */
+            /*        framerate lock                       */
+            /*        incase logic is bound to frames      */
+            /*        being drawn,                         */
+            /*        animation won't go insanely fast     */
+            /*                                             */
+            /***********************************************/
+
+            DateTime time = DateTime.Now;
+            float framerate = 60f;
             while (window.IsOpen)
             {
                 window.DispatchEvents();
                 Update();
-                
-                Draw();
-                window.Display();
+
+                if ((DateTime.Now - time).TotalMilliseconds > (1000f / framerate))
+                {
+                    time = DateTime.Now;
+                    Draw();
+                    window.Display();
+                }
             }
         }
 

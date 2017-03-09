@@ -62,17 +62,17 @@ namespace Test {
                 }
             }
 
-            if (D_Man.getAlex().Contains(e.X, e.Y)) {
-                D_Man.getAlex().setHover(true);
-            } else if (D_Man.getMom().Contains(e.X, e.Y)) {
-                D_Man.getMom().setHover(true);
-            } else if (D_Man.getDad().Contains(e.X, e.Y)) {
-                D_Man.getDad().setHover(true);
-            } else {
-                D_Man.getAlex().setHover(false);
-                D_Man.getMom().setHover(false);
-                D_Man.getDad().setHover(false);
-            }
+            //if (D_Man.getAlex().Contains(e.X, e.Y)) {
+            //    D_Man.getAlex().setHover(true);
+            //} else if (D_Man.getMom().Contains(e.X, e.Y)) {
+            //    D_Man.getMom().setHover(true);
+            //} else if (D_Man.getDad().Contains(e.X, e.Y)) {
+            //    D_Man.getDad().setHover(true);
+            //} else {
+            //    D_Man.getAlex().setHover(false);
+            //    D_Man.getMom().setHover(false);
+            //    D_Man.getDad().setHover(false);
+            //}
 
         }
 
@@ -80,41 +80,43 @@ namespace Test {
 
             ManagerOfInput.onMouseButtonReleased();
 
-            if (playerChoice) {
-                //ManagerOfInput.checkTargets(State, D_Man);
-                if (D_Man.getAlex().Contains(e.X, e.Y) == true) {
-                    currentContext = nextContextDict["Alex"];
-                    loadDialogues();
-                    playerChoice = false;
-                    //COME BACK HERE
-                }
+            //if (playerChoice) {
+            //    //ManagerOfInput.checkTargets(State, D_Man);
+            //    if (D_Man.getAlex().Contains(e.X, e.Y) == true) {
+            //        currentContext = nextContextDict["Alex"];
+            //        loadDialogues();
+            //        playerChoice = false;
+            //        //COME BACK HERE
+            //    }
 
-                else if (D_Man.getMom().Contains(e.X, e.Y) == true) {
-                    currentContext = nextContextDict["Mom"];
-                    loadDialogues();
-                    playerChoice = false;
-                    //COME BACK HERE
-                }
+            //    else if (D_Man.getMom().Contains(e.X, e.Y) == true) {
+            //        currentContext = nextContextDict["Mom"];
+            //        loadDialogues();
+            //        playerChoice = false;
+            //        //COME BACK HERE
+            //    }
 
-                else if (D_Man.getDad().Contains(e.X, e.Y) == true) {
-                    currentContext = nextContextDict["Dad"];
-                    loadDialogues();
-                    playerChoice = false;
-                    State.getGameTimer("game").resetTimer();
-                    State.getGameTimer("game").startTimer();
-                    //restart the timer
-                    //COME BACK HERE
-                }
+            //    else if (D_Man.getDad().Contains(e.X, e.Y) == true) {
+            //        currentContext = nextContextDict["Dad"];
+            //        loadDialogues();
+            //        playerChoice = false;
+            //        State.getGameTimer("game").resetTimer();
+            //        State.getGameTimer("game").startTimer();
+            //        //restart the timer
+            //        //COME BACK HERE
+            //    }
 
-                //d.getAlex().targetCheck(MouseX, MouseY);
-                //d.getMom().targetCheck(MouseX, MouseY);
-                //d.getDad().targetCheck(MouseX, MouseY);
-
-
-            }
+            //    //d.getAlex().targetCheck(MouseX, MouseY);
+            //    //d.getMom().targetCheck(MouseX, MouseY);
+            //    //d.getDad().targetCheck(MouseX, MouseY);
 
 
-            ui_man.applyTones(e.X, e.Y);
+            //}
+
+
+            ui_man.applyTones((int)(e.X*scaleFactorX), (int)(e.Y*scaleFactorY));
+            //sdfkklsdjfdlskf
+            
         }
 
         private void onMouseButtonPressed(object sender, MouseButtonEventArgs e) {
@@ -152,9 +154,6 @@ namespace Test {
                 }
             }
 
-            //responseList = s.ChooseDialog(FNC, Load.playerDialogueObj1, currentMadeMemories, currentMilestones, currentTone, currentContext);
-
-
 
             //if (e.Code == Keyboard.Key.A || e.Code == Keyboard.Key.M || e.Code == Keyboard.Key.D)
             //{
@@ -167,7 +166,6 @@ namespace Test {
 
         #region Timer Action Placeholder
         public void TimerAction() {
-
             updateTargetFNC();
             //update currentmademeories, currentmilestones, currenttone, currentcontext
             updateCurrents(); //updates everything besides FNC
@@ -239,7 +237,7 @@ namespace Test {
             }
 
 
-            currentTone = ui_man.getPlayerDialogues()[0].getTone();
+            currentTone = ui_man.getTone();
 
             Console.WriteLine("THE TONE I DRAGGED IN WAS: " + currentTone);
         }
@@ -274,14 +272,27 @@ namespace Test {
         }
 
         protected override void Initialize() {
-            alex = new Sprite(new Texture("../../Art/alexdemo.png"));
-            mom = new Sprite(new Texture("../../Art/momdemo.png"));
-            dad = new Sprite(new Texture("../../Art/daddemo.png"));
+            backwall = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/backwall.png"));
+            flower = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/flower.png"));
+            lamp = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/lamp.png"));
+            pictures = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/pictures.png"));
+            table = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/table.png"));
+            backwall.Scale = new Vector2f(1.66f, 1.66f);
+            flower.Scale = new Vector2f(1.66f, 1.66f);
+            lamp.Scale = new Vector2f(1.66f, 1.66f);
+            pictures.Scale = new Vector2f(1.66f, 1.66f);
+            table.Scale = new Vector2f(1.66f, 1.66f);
+            table.Position = new Vector2f(0, -200);
+            flower.Position = new Vector2f(0, -200);
+
+            //alex = new Sprite(new Texture("../../Art/alexdemo.png"));
+            //mom = new Sprite(new Texture("../../Art/momdemo.png"));
+            //dad = new Sprite(new Texture("../../Art/daddemo.png"));
             toneBar = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/tonebar.png"));
 
-            mom.Position = new Vector2f(1200, 350);
-            dad.Position = new Vector2f(400, 325);
-            alex.Position = new Vector2f(800, 400);
+            //mom.Position = new Vector2f(1200, 350);
+            //dad.Position = new Vector2f(400, 325);
+            //alex.Position = new Vector2f(800, 400);
             toneBar.Position = new Vector2f(6,(float)(SCREEN_HEIGHT*0.735));
 
             textBackground = new RectangleShape(new Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT / 5));
@@ -312,6 +323,20 @@ namespace Test {
 
             buttons = ui_man.getButtons();
             menus.Add(startMenu); menus.Add(settingsMenu); menus.Add(pauseMenu);
+
+            Mom = new Mom();
+            Mom.setSpriteEmotion(Character.spriteEmotion.happy);
+            Mom.active(true);
+            Mom.state.setMood(5f);
+            Console.WriteLine(Mom.state.getMood());
+
+            Alexis = new Alex();
+            Alexis.setSpriteEmotion(Character.spriteEmotion.angry);
+            Alexis.active(true);
+
+            Dad = new Dad();
+            Dad.setSpriteEmotion(Character.spriteEmotion.happy);
+            Dad.active(true);
         }
 
         private void LoadInitialPreReqs() {
@@ -383,6 +408,7 @@ namespace Test {
                                         // Update the rest of the buttons in the cluster
                                         ui_man.updateClusterColors(playerDialogues[j], playerDialogues, buttons[i].getTonalColor(), true);
 
+                                        
                                     }
                                 }
 
@@ -421,9 +447,14 @@ namespace Test {
 
             window.Clear(clearColor);
             if (State.GetState() != "menu") {
-                window.Draw(mom);
-                window.Draw(alex);
-                window.Draw(dad);
+                window.Draw(backwall);
+                window.Draw(pictures);
+                window.Draw(lamp);
+                window.Draw(Mom);
+                window.Draw(Alexis);
+                window.Draw(Dad);
+                window.Draw(table);
+                window.Draw(flower);
 
             }
 

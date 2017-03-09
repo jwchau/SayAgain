@@ -8,9 +8,7 @@ using SFML.Graphics;
 namespace Test {
     class DramaManager : Drawable {
         public DramaManager() {
-            Alex = new CharacterState("alex");
-            Mom = new CharacterState("mom");
-            Dad = new CharacterState("dad");
+
         }
 
         private CharacterState Alex;
@@ -88,9 +86,9 @@ namespace Test {
         public void Draw(RenderTarget target, RenderStates states)
         {
 
-            if(targets[0]) target.Draw(Alex);
-            if(targets[1]) target.Draw(Mom);
-            if(targets[2]) target.Draw(Dad);
+            //if(targets[0]) target.Draw(Alex);
+            //if(targets[1]) target.Draw(Mom);
+            //if(targets[2]) target.Draw(Dad);
 
         }
     }

@@ -174,13 +174,16 @@ namespace Test {
 
             int cluster = self.getCluster();
             for (int i = 0; i < playerDialogues.Count; i++) {
+                
                 if (playerDialogues[i].getCluster() == cluster && playerDialogues[i] != self) {
                     if (!f) {
                         playerDialogues[i].setBoxColor(playerDialogues[i].getBoxColor("prev"));
+                       
                         //playerDialogues[i].setMouseWasIn(false);
                     } else {
                         playerDialogues[i].setPrevColor(playerDialogues[i].getBoxColor("curr"));
                         playerDialogues[i].setBoxColor(c);
+
                         //playerDialogues[i].setMouseWasIn(true);
                     }
                 }
@@ -197,7 +200,7 @@ namespace Test {
                     // Move to character state
                     //double[,] final = tfx.MatrixMult(tfx, cf);
                     //Console.WriteLine(final[2, 3]);
-
+                    Console.WriteLine("HEY THE BUTTON I AM DRAGGING IS: " + buttons[i].getTone().ToString());
                     // Get UI Text Boxes
                     var playerDialogues = this.getPlayerDialogues();
 
@@ -212,6 +215,8 @@ namespace Test {
                                 playerDialogues[k].setBoxColor(buttons[i].getTonalColor());
                                 playerDialogues[k].setAffected(true);
                                 playerDialogues[k].setTone(buttons[i].getTone());
+                                Console.WriteLine("MY TONE IS: " + playerDialogues[0].getTone());
+
                             }
                             break;
                         }
