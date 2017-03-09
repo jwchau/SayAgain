@@ -38,8 +38,29 @@ namespace Test {
 
         private void onMouseMoved(object sender, MouseMoveEventArgs e) {
             ManagerOfInput.OnMouseMoved(State, e.X, e.Y);
-           
-            ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
+            if(State.GetState() == "menu")
+            {
+                if(State.GetMenuState() == "start")
+                {
+                    startMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
+                } else if(State.GetMenuState() == "settings")
+                {
+                    settingsMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
+                }
+                
+            } else if(State.GetState() == "game")
+            {
+                ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
+            } else if(State.GetState() == "pause")
+            {
+                if(State.GetMenuState() == "pause")
+                {
+                    pauseMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
+                } else if(State.GetMenuState() == "settings")
+                {
+                    settingsMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
+                }
+            }
 
             if (D_Man.getAlex().Contains(e.X, e.Y)) {
                 D_Man.getAlex().setHover(true);
@@ -105,7 +126,7 @@ namespace Test {
 
             ManagerOfInput.MenuPlay(State, menus, e.X, e.Y);
 
-            if (State.getGameTimer("game").Contains(e.X, e.Y) && State.getGameTimer("game").getStart()) {
+            if (State.getGameTimer("game").Contains(e.X, e.Y, scaleFactorX, scaleFactorY) && State.getGameTimer("game").getStart()) {
                 State.getGameTimer("game").setCountDown(0);
             }
         }
@@ -261,7 +282,7 @@ namespace Test {
             mom.Position = new Vector2f(1200, 350);
             dad.Position = new Vector2f(400, 325);
             alex.Position = new Vector2f(800, 400);
-            toneBar.Position = new Vector2f(6, 794);
+            toneBar.Position = new Vector2f(6,(float)(SCREEN_HEIGHT*0.735));
 
             textBackground = new RectangleShape(new Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT / 5));
             textBackground.Position = new Vector2f(0, SCREEN_HEIGHT - (float)(SCREEN_HEIGHT * 0.19));
@@ -441,7 +462,7 @@ namespace Test {
 
                 if (State.GetState() == "pause") {
 
-                    pauseMenu.DrawBG(window);
+                    pauseMenu.DrawPauseBG(window);
                     if (State.GetMenuState() == "pause") {
                         window.Draw(pauseMenu);
                     } else if (State.GetMenuState() == "settings") {
