@@ -288,7 +288,7 @@ namespace Test {
             alexis.active(true);
 
             dad = new Dad();
-            dad.setSpriteEmotion(Character.spriteEmotion.happy);
+            dad.setSpriteEmotion(Character.spriteEmotion.angry);
             dad.active(true);
 
         

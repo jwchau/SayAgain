@@ -85,11 +85,11 @@ namespace Test {
 
         public void Draw(RenderTarget target, RenderStates states)
         {
-
+            /*
             if(targets[0]) target.Draw(Alex);
             if(targets[1]) target.Draw(Mom);
             if(targets[2]) target.Draw(Dad);
-
+            */
         }
     }
 }
