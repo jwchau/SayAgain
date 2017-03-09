@@ -77,10 +77,12 @@ namespace Test
 
             if (expr.Equals("angry"))
             {
+                angryarm.Position = new Vector2f(xpos, ypos+225); 
                 target.Draw(angryarm);
             }
             else
             {
+                neutralarm.Position = new Vector2f(xpos, ypos+225);
                 target.Draw(neutralarm);
             }
 
