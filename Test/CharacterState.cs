@@ -18,7 +18,9 @@ namespace Test
         private double volatility;
         private double goal;
         double talkedTo = 0;
-        static bool[] targets = { false, false, false }; // 0 = alex 1 = mom 2 = dad
+
+        static bool[] targets = { false,false,false }; // 0 = alex 1 = mom 2 = dad
+        List<String> memory = new List<String>();
 
         Color color;
 
@@ -30,9 +32,20 @@ namespace Test
 
         //methods
 
-        public CharacterState() {
+        public CharacterState()
+        {
             this.mood = 0;
             this.volatility = 0;
+        }
+
+        public List<String> getMemories()
+        {
+            return memory;
+        }
+
+        public void addMemory(string s)
+        {
+            memory.Add(s);
         }
 
         public void setMood(double m)

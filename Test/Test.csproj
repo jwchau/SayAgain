@@ -74,9 +74,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Alex.cs" />
     <Compile Include="CharacterState.cs" />
     <Compile Include="Character.cs" />
+    <Compile Include="Alex.cs" />
+    <Compile Include="StoryManager.cs" />
     <Compile Include="Dad.cs" />
     <Compile Include="Mom.cs" />
     <Compile Include="CutsceneManager.cs" />
