@@ -11,17 +11,16 @@ using System.Drawing;
 using Newtonsoft.Json;
 
 namespace Test {
-    
+
     class SA : Game {
-        
+
 
         public View fullScreenView, charView;
         Character mom, alexis, dad;
 
 
-        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?")
-        {
-            
+        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?") {
+
             window.KeyPressed += onKeyPressed;
             window.KeyReleased += onKeyReleased;
             window.MouseButtonPressed += onMouseButtonPressed;
@@ -43,84 +42,43 @@ namespace Test {
 
         private void onMouseMoved(object sender, MouseMoveEventArgs e) {
             ManagerOfInput.OnMouseMoved(State, e.X, e.Y);
-            if(State.GetState() == "menu")
-            {
-                if(State.GetMenuState() == "start")
-                {
+            if (State.GetState() == "menu") {
+                if (State.GetMenuState() == "start") {
                     startMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
-                } else if(State.GetMenuState() == "settings")
-                {
+                } else if (State.GetMenuState() == "settings") {
                     settingsMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
                 }
-                
-            } else if(State.GetState() == "game")
-            {
+
+            } else if (State.GetState() == "game") {
                 ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
-            } else if(State.GetState() == "pause")
-            {
-                if(State.GetMenuState() == "pause")
-                {
+            } else if (State.GetState() == "pause") {
+                if (State.GetMenuState() == "pause") {
                     pauseMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
-                } else if(State.GetMenuState() == "settings")
-                {
+                } else if (State.GetMenuState() == "settings") {
                     settingsMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
                 }
             }
-           
+
             ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
-     
-
-
-            //if (D_Man.getAlex().Contains(e.X, e.Y)) {
-            //    D_Man.getAlex().setHover(true);
-            //} else if (D_Man.getMom().Contains(e.X, e.Y)) {
-            //    D_Man.getMom().setHover(true);
-            //} else if (D_Man.getDad().Contains(e.X, e.Y)) {
-            //    D_Man.getDad().setHover(true);
-            //} else {
-            //    D_Man.getAlex().setHover(false);
-            //    D_Man.getMom().setHover(false);
-            //    D_Man.getDad().setHover(false);
-            //}
-
         }
+
+
+
+        //if (D_Man.getAlex().Contains(e.X, e.Y)) {
+        //    D_Man.getAlex().setHover(true);
+        //} else if (D_Man.getMom().Contains(e.X, e.Y)) {
+        //    D_Man.getMom().setHover(true);
+        //} else if (D_Man.getDad().Contains(e.X, e.Y)) {
+        //    D_Man.getDad().setHover(true);
+        //} else {
+        //    D_Man.getAlex().setHover(false);
+        //    D_Man.getMom().setHover(false);
+        //    D_Man.getDad().setHover(false);
+        //}
 
         private void onMouseButtonReleased(object sender, MouseButtonEventArgs e) {
 
             ManagerOfInput.onMouseButtonReleased();
-
-            //if (playerChoice) {
-            //    //ManagerOfInput.checkTargets(State, D_Man);
-            //    if (D_Man.getAlex().Contains(e.X, e.Y) == true) {
-            //        currentContext = nextContextDict["Alex"];
-            //        loadDialogues();
-            //        playerChoice = false;
-            //        //COME BACK HERE
-            //    }
-
-            //    else if (D_Man.getMom().Contains(e.X, e.Y) == true) {
-            //        currentContext = nextContextDict["Mom"];
-            //        loadDialogues();
-            //        playerChoice = false;
-            //        //COME BACK HERE
-            //    }
-
-            //    else if (D_Man.getDad().Contains(e.X, e.Y) == true) {
-            //        currentContext = nextContextDict["Dad"];
-            //        loadDialogues();
-            //        playerChoice = false;
-            //        State.getGameTimer("game").resetTimer();
-            //        State.getGameTimer("game").startTimer();
-            //        //restart the timer
-            //        //COME BACK HERE
-            //    }
-
-            //    //d.getAlex().targetCheck(MouseX, MouseY);
-            //    //d.getMom().targetCheck(MouseX, MouseY);
-            //    //d.getDad().targetCheck(MouseX, MouseY);
-            /////jksdfjklsfkldsfj 
-
-
 
             if (playerChoice) {
                 //ManagerOfInput.checkTargets(State, D_Man);
@@ -129,16 +87,12 @@ namespace Test {
                     loadDialogues();
                     playerChoice = false;
                     //COME BACK HERE
-                }
-
-                else if (D_Man.getMom().Contains(e.X, e.Y) == true) {
+                } else if (D_Man.getMom().Contains(e.X, e.Y) == true) {
                     currentContext = nextContextDict["Mom"];
                     loadDialogues();
                     playerChoice = false;
                     //COME BACK HERE
-                }
-
-                else if (D_Man.getDad().Contains(e.X, e.Y) == true) {
+                } else if (D_Man.getDad().Contains(e.X, e.Y) == true) {
                     currentContext = nextContextDict["Dad"];
                     loadDialogues();
                     playerChoice = false;
@@ -153,12 +107,13 @@ namespace Test {
                 //d.getDad().targetCheck(MouseX, MouseY);
 
 
-            //}
+                //}
 
 
-            ui_man.applyTones((int)(e.X*scaleFactorX), (int)(e.Y*scaleFactorY));
-            //sdfkklsdjfdlskf
-            
+                ui_man.applyTones((int)(e.X * scaleFactorX), (int)(e.Y * scaleFactorY));
+                //sdfkklsdjfdlskf
+
+            }
         }
 
         private void onMouseButtonPressed(object sender, MouseButtonEventArgs e) {
