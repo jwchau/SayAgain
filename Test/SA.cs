@@ -62,8 +62,6 @@ namespace Test {
             ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
         }
 
-
-
         //if (D_Man.getAlex().Contains(e.X, e.Y)) {
         //    D_Man.getAlex().setHover(true);
         //} else if (D_Man.getMom().Contains(e.X, e.Y)) {
@@ -78,6 +76,7 @@ namespace Test {
 
         private void onMouseButtonReleased(object sender, MouseButtonEventArgs e) {
 
+            sound_man.playSFX("button");
             ManagerOfInput.onMouseButtonReleased();
 
             if (playerChoice) {
@@ -108,16 +107,13 @@ namespace Test {
 
 
                 //}
-
-
-                ui_man.applyTones((int)(e.X * scaleFactorX), (int)(e.Y * scaleFactorY));
-                //sdfkklsdjfdlskf
-
+            
             }
+            ui_man.applyTones((int)(e.X * scaleFactorX), (int)(e.Y * scaleFactorY));
         }
 
         private void onMouseButtonPressed(object sender, MouseButtonEventArgs e) {
-
+            sound_man.playSFX("button");
 
             ManagerOfInput.onMouseButtonPressed(e.X, e.Y);
 
@@ -307,7 +303,7 @@ namespace Test {
 
             //sound init
             sound_man.init_sounds();
-            //sound_man.playMusic("Dad");
+            sound_man.playMusic("Mom");
 
             //Originally in LoadContent/////////////////////////////////////////////////////////////////////////////////
             // Create Character states
@@ -386,6 +382,7 @@ namespace Test {
 
         protected override void Update() {
             screenHelper();
+            sound_man.soundUpdate();
             if (State.GetState() == "game") {
                 if (startOnce) {
                     State.getGameTimer("game").startTimer();
