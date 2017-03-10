@@ -155,8 +155,10 @@
     <Content Include="sfmlnet-graphics-2.dll" />
     <Content Include="sfmlnet-system-2.dll" />
     <Content Include="sfmlnet-window-2.dll" />
+    <Content Include="Sounds\button.wav" />
     <Content Include="Sounds\chatter.wav" />
     <Content Include="Sounds\sayagain-loop1.wav" />
+    <Content Include="Sounds\sayagain-loop2.wav" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

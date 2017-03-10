@@ -52,6 +52,7 @@ namespace Test {
 
         private void onMouseButtonReleased(object sender, MouseButtonEventArgs e) {
 
+            sound_man.playSFX("button");
             ManagerOfInput.onMouseButtonReleased();
 
             /////jksdfjklsfkldsfj 
@@ -96,7 +97,7 @@ namespace Test {
         }
 
         private void onMouseButtonPressed(object sender, MouseButtonEventArgs e) {
-
+            sound_man.playSFX("button");
 
             ManagerOfInput.onMouseButtonPressed(e.X, e.Y);
 
@@ -272,7 +273,7 @@ namespace Test {
 
             //sound init
             sound_man.init_sounds();
-            //sound_man.playMusic("Dad");
+            sound_man.playMusic("Mom");
 
             //Originally in LoadContent/////////////////////////////////////////////////////////////////////////////////
             // Create Character states
@@ -337,6 +338,7 @@ namespace Test {
 
         protected override void Update() {
             screenHelper();
+            sound_man.soundUpdate();
             if (State.GetState() == "game") {
                 if (startOnce) {
                     State.getGameTimer("game").startTimer();
