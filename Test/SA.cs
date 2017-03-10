@@ -11,12 +11,17 @@ using System.Drawing;
 using Newtonsoft.Json;
 
 namespace Test {
-
+    
     class SA : Game {
         
-        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?") {
+
+        public View fullScreenView, charView;
+        Character mom, alexis, dad;
 
 
+        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?")
+        {
+            
             window.KeyPressed += onKeyPressed;
             window.KeyReleased += onKeyReleased;
             window.MouseButtonPressed += onMouseButtonPressed;
@@ -61,6 +66,10 @@ namespace Test {
                     settingsMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
                 }
             }
+           
+            ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
+     
+
 
             //if (D_Man.getAlex().Contains(e.X, e.Y)) {
             //    D_Man.getAlex().setHover(true);
@@ -109,6 +118,39 @@ namespace Test {
             //    //d.getAlex().targetCheck(MouseX, MouseY);
             //    //d.getMom().targetCheck(MouseX, MouseY);
             //    //d.getDad().targetCheck(MouseX, MouseY);
+            /////jksdfjklsfkldsfj 
+
+
+
+            if (playerChoice) {
+                //ManagerOfInput.checkTargets(State, D_Man);
+                if (D_Man.getAlex().Contains(e.X, e.Y) == true) {
+                    currentContext = nextContextDict["Alex"];
+                    loadDialogues();
+                    playerChoice = false;
+                    //COME BACK HERE
+                }
+
+                else if (D_Man.getMom().Contains(e.X, e.Y) == true) {
+                    currentContext = nextContextDict["Mom"];
+                    loadDialogues();
+                    playerChoice = false;
+                    //COME BACK HERE
+                }
+
+                else if (D_Man.getDad().Contains(e.X, e.Y) == true) {
+                    currentContext = nextContextDict["Dad"];
+                    loadDialogues();
+                    playerChoice = false;
+                    State.getGameTimer("game").resetTimer();
+                    State.getGameTimer("game").startTimer();
+                    //restart the timer
+                    //COME BACK HERE
+                }
+
+                //d.getAlex().targetCheck(MouseX, MouseY);
+                //d.getMom().targetCheck(MouseX, MouseY);
+                //d.getDad().targetCheck(MouseX, MouseY);
 
 
             //}
@@ -201,6 +243,9 @@ namespace Test {
                 Console.WriteLine("player choice");
                 for (int i = 0; i != nextContext.Count; i++) {
                     if (nextContext[i][0] == 'A') {
+
+                        //change music 
+
                         Console.WriteLine("Ayyyyy");
                         D_Man.activateCharacterChoice("Alex");
                         if (!nextContextDict.ContainsKey("Alex")) {
@@ -209,6 +254,8 @@ namespace Test {
                             nextContextDict["Alex"] = nextContext[i];
                         }
                     } else if (nextContext[i][0] == 'M') {
+
+
                         Console.WriteLine("Mmmmm");
                         D_Man.activateCharacterChoice("Mom");
                         if (!nextContextDict.ContainsKey("Mom")) {
@@ -217,6 +264,8 @@ namespace Test {
                             nextContextDict["Mom"] = nextContext[i];
                         }
                     } else if (nextContext[i][0] == 'D') {
+
+
                         Console.WriteLine("Deez Nutz");
                         D_Man.activateCharacterChoice("Dad");
                         if (!nextContextDict.ContainsKey("Dad")) {
@@ -301,6 +350,10 @@ namespace Test {
             textBackground.OutlineColor = Color.White;
             textBackground.OutlineThickness = 2;
 
+            //sound init
+            sound_man.init_sounds();
+            //sound_man.playMusic("Dad");
+
             //Originally in LoadContent/////////////////////////////////////////////////////////////////////////////////
             // Create Character states
 
@@ -317,6 +370,26 @@ namespace Test {
             fullScreenView = window.DefaultView;
             fullScreenView.Viewport = new FloatRect(0, 0, 1, 1);
             window.SetView(fullScreenView);
+
+
+            mom = new Mom();
+            mom.setSpriteEmotion(Character.spriteEmotion.happy);
+            mom.active(true);
+            mom.state.setMood(5f);
+            Console.WriteLine(mom.state.getMood());
+
+            alexis = new Alex();
+            alexis.setSpriteEmotion(Character.spriteEmotion.angry);
+            alexis.active(true);
+
+            dad = new Dad();
+            dad.setSpriteEmotion(Character.spriteEmotion.happy);
+            dad.active(true);
+
+        
+
+
+
 
             dialogueBox = new DialogueBox(0, 0, 710, 150, State, "AI");
             playerDialogueBox = new DialogueBox(0, 0, 710, 150, State, "PLAYER");
@@ -345,10 +418,16 @@ namespace Test {
 
             currentMilestones.Add("");
 
+
             currentContext = "AlexTalksPlayer";
 
             FNC = 0;
         }
+
+
+
+
+ 
 
         protected override void Update() {
             screenHelper();
@@ -420,6 +499,10 @@ namespace Test {
                 }
                 // ui_man.dialogueLoadOrder(State, playerDialogueBox, dialogueBox, responseList, responseListAlex);
                 if (playerDialogueBox.getAnimationStart() == false && loadedAIDialogueOnce == true /*&& playerChoice == false*/) {
+
+                    //sound starts on npc dialogue start
+                    sound_man.playSFX("chatter");
+
                     if (responseListAlex[0].content != "returned empty string") {
                         dialogueBox.setInit(true);
                         dialogueBox.loadNewDialogue("alex", responseListAlex.ElementAt(0).content); //this makes the timer happen after the animation is done
@@ -505,6 +588,9 @@ namespace Test {
                 window.Draw(State.getGameTimer("game")); //this is the timer circle
             }
 
+
         }
+
+
     }
 }

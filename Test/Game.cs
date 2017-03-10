@@ -22,11 +22,15 @@ namespace Test
         protected double scaleFactorX;
         protected double scaleFactorY;
 
+        //Sound Manager
+        protected SoundManager sound_man = new SoundManager();
+
         //Input Manager
         protected InputManager ManagerOfInput = new InputManager();
 
         //User Inferface Manager
         protected UIManager ui_man = new UIManager();
+
         protected List<UIButton> buttons;
 
 
@@ -81,6 +85,16 @@ namespace Test
         protected Character Mom, Alexis, Dad;
 
         /////////////////////////////////////////////////////////////////////////////////////////////
+
+        public static UInt32 getW()
+        {
+            return SCREEN_WIDTH;
+        }
+
+        public static UInt32 getH()
+        {
+            return SCREEN_HEIGHT;
+        }
 
         protected GameState State = new GameState();
 
