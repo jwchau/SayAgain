@@ -11,17 +11,16 @@ using System.Drawing;
 using Newtonsoft.Json;
 
 namespace Test {
-    
+
     class SA : Game {
-        
+
 
         public View fullScreenView, charView;
         Character mom, alexis, dad;
 
 
-        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?")
-        {
-            
+        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?") {
+
             window.KeyPressed += onKeyPressed;
             window.KeyReleased += onKeyReleased;
             window.MouseButtonPressed += onMouseButtonPressed;
@@ -43,21 +42,42 @@ namespace Test {
 
         private void onMouseMoved(object sender, MouseMoveEventArgs e) {
             ManagerOfInput.OnMouseMoved(State, e.X, e.Y);
-           
+            if (State.GetState() == "menu") {
+                if (State.GetMenuState() == "start") {
+                    startMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
+                } else if (State.GetMenuState() == "settings") {
+                    settingsMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
+                }
+
+            } else if (State.GetState() == "game") {
+                ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
+            } else if (State.GetState() == "pause") {
+                if (State.GetMenuState() == "pause") {
+                    pauseMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
+                } else if (State.GetMenuState() == "settings") {
+                    settingsMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
+                }
+            }
+
             ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
-
-     
-
         }
+
+        //if (D_Man.getAlex().Contains(e.X, e.Y)) {
+        //    D_Man.getAlex().setHover(true);
+        //} else if (D_Man.getMom().Contains(e.X, e.Y)) {
+        //    D_Man.getMom().setHover(true);
+        //} else if (D_Man.getDad().Contains(e.X, e.Y)) {
+        //    D_Man.getDad().setHover(true);
+        //} else {
+        //    D_Man.getAlex().setHover(false);
+        //    D_Man.getMom().setHover(false);
+        //    D_Man.getDad().setHover(false);
+        //}
 
         private void onMouseButtonReleased(object sender, MouseButtonEventArgs e) {
 
             sound_man.playSFX("button");
             ManagerOfInput.onMouseButtonReleased();
-
-            /////jksdfjklsfkldsfj 
-
-
 
             if (playerChoice) {
                 //ManagerOfInput.checkTargets(State, D_Man);
@@ -66,16 +86,12 @@ namespace Test {
                     loadDialogues();
                     playerChoice = false;
                     //COME BACK HERE
-                }
-
-                else if (D_Man.getMom().Contains(e.X, e.Y) == true) {
+                } else if (D_Man.getMom().Contains(e.X, e.Y) == true) {
                     currentContext = nextContextDict["Mom"];
                     loadDialogues();
                     playerChoice = false;
                     //COME BACK HERE
-                }
-
-                else if (D_Man.getDad().Contains(e.X, e.Y) == true) {
+                } else if (D_Man.getDad().Contains(e.X, e.Y) == true) {
                     currentContext = nextContextDict["Dad"];
                     loadDialogues();
                     playerChoice = false;
@@ -90,10 +106,10 @@ namespace Test {
                 //d.getDad().targetCheck(MouseX, MouseY);
 
 
+                //}
+            
             }
-
-
-            ui_man.applyTones(e.X, e.Y);
+            ui_man.applyTones((int)(e.X * scaleFactorX), (int)(e.Y * scaleFactorY));
         }
 
         private void onMouseButtonPressed(object sender, MouseButtonEventArgs e) {
@@ -105,7 +121,7 @@ namespace Test {
 
             ManagerOfInput.MenuPlay(State, menus, e.X, e.Y);
 
-            if (State.getGameTimer("game").Contains(e.X, e.Y) && State.getGameTimer("game").getStart()) {
+            if (State.getGameTimer("game").Contains(e.X, e.Y, scaleFactorX, scaleFactorY) && State.getGameTimer("game").getStart()) {
                 State.getGameTimer("game").setCountDown(0);
             }
         }
@@ -131,9 +147,6 @@ namespace Test {
                 }
             }
 
-            //responseList = s.ChooseDialog(FNC, Load.playerDialogueObj1, currentMadeMemories, currentMilestones, currentTone, currentContext);
-
-
 
             //if (e.Code == Keyboard.Key.A || e.Code == Keyboard.Key.M || e.Code == Keyboard.Key.D)
             //{
@@ -146,7 +159,6 @@ namespace Test {
 
         #region Timer Action Placeholder
         public void TimerAction() {
-
             updateTargetFNC();
             //update currentmademeories, currentmilestones, currenttone, currentcontext
             updateCurrents(); //updates everything besides FNC
@@ -225,7 +237,7 @@ namespace Test {
             }
 
 
-            currentTone = ui_man.getPlayerDialogues()[0].getTone();
+            currentTone = ui_man.getTone();
 
             Console.WriteLine("THE TONE I DRAGGED IN WAS: " + currentTone);
         }
@@ -260,10 +272,28 @@ namespace Test {
         }
 
         protected override void Initialize() {
+            backwall = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/backwall.png"));
+            flower = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/flower.png"));
+            lamp = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/lamp.png"));
+            pictures = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/pictures.png"));
+            table = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/table.png"));
+            backwall.Scale = new Vector2f(1.66f, 1.66f);
+            flower.Scale = new Vector2f(1.66f, 1.66f);
+            lamp.Scale = new Vector2f(1.66f, 1.66f);
+            pictures.Scale = new Vector2f(1.66f, 1.66f);
+            table.Scale = new Vector2f(1.66f, 1.66f);
+            table.Position = new Vector2f(0, -200);
+            flower.Position = new Vector2f(0, -200);
 
+            //alex = new Sprite(new Texture("../../Art/alexdemo.png"));
+            //mom = new Sprite(new Texture("../../Art/momdemo.png"));
+            //dad = new Sprite(new Texture("../../Art/daddemo.png"));
             toneBar = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/tonebar.png"));
 
-            toneBar.Position = new Vector2f(6, 794);
+            //mom.Position = new Vector2f(1200, 350);
+            //dad.Position = new Vector2f(400, 325);
+            //alex.Position = new Vector2f(800, 400);
+            toneBar.Position = new Vector2f(6,(float)(SCREEN_HEIGHT*0.735));
 
             textBackground = new RectangleShape(new Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT / 5));
             textBackground.Position = new Vector2f(0, SCREEN_HEIGHT - (float)(SCREEN_HEIGHT * 0.19));
@@ -304,7 +334,7 @@ namespace Test {
             alexis.active(true);
 
             dad = new Dad();
-            dad.setSpriteEmotion(Character.spriteEmotion.happy);
+            dad.setSpriteEmotion(Character.spriteEmotion.angry);
             dad.active(true);
 
         
@@ -317,6 +347,20 @@ namespace Test {
 
             buttons = ui_man.getButtons();
             menus.Add(startMenu); menus.Add(settingsMenu); menus.Add(pauseMenu);
+
+            Mom = new Mom();
+            Mom.setSpriteEmotion(Character.spriteEmotion.happy);
+            Mom.active(true);
+            Mom.state.setMood(5f);
+            Console.WriteLine(Mom.state.getMood());
+
+            Alexis = new Alex();
+            Alexis.setSpriteEmotion(Character.spriteEmotion.angry);
+            Alexis.active(true);
+
+            Dad = new Dad();
+            Dad.setSpriteEmotion(Character.spriteEmotion.happy);
+            Dad.active(true);
         }
 
         private void LoadInitialPreReqs() {
@@ -395,6 +439,7 @@ namespace Test {
                                         // Update the rest of the buttons in the cluster
                                         ui_man.updateClusterColors(playerDialogues[j], playerDialogues, buttons[i].getTonalColor(), true);
 
+                                        
                                     }
                                 }
 
@@ -437,10 +482,14 @@ namespace Test {
 
             window.Clear(clearColor);
             if (State.GetState() != "menu") {
-                
-                window.Draw(mom);
-                window.Draw(alexis);
-                window.Draw(dad);
+                window.Draw(backwall);
+                window.Draw(pictures);
+                window.Draw(lamp);
+                window.Draw(Mom);
+                window.Draw(Alexis);
+                window.Draw(Dad);
+                window.Draw(table);
+                window.Draw(flower);
 
             }
 
@@ -479,7 +528,7 @@ namespace Test {
 
                 if (State.GetState() == "pause") {
 
-                    pauseMenu.DrawBG(window);
+                    pauseMenu.DrawPauseBG(window);
                     if (State.GetMenuState() == "pause") {
                         window.Draw(pauseMenu);
                     } else if (State.GetMenuState() == "settings") {

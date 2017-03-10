@@ -79,8 +79,10 @@ namespace Test
 
         #endregion
 
-        protected Sprite mom, alex, dad, toneBar;
+        protected Sprite mom, alex, dad, toneBar, backwall, flower, lamp, pictures, table;
         protected RectangleShape textBackground;
+        ContextSettings settings;
+        protected Character Mom, Alexis, Dad;
 
         /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -98,7 +100,8 @@ namespace Test
 
         public Game(uint width, uint height, string title)
         {
-            window = new RenderWindow(new VideoMode(width, height), title, Styles.Default);
+            settings.AntialiasingLevel = 8;
+            window = new RenderWindow(new VideoMode(width, height), title, Styles.Default, settings);
             this.clearColor = new Color(125, 116, 132);
 
             // Set-up Events

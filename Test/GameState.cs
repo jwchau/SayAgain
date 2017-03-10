@@ -128,7 +128,7 @@ namespace Test
                     for (var j = 0; j < mappings.Count; j++)
                     {
                         // Found button being clicked
-                        if (buttons[i].getMenuButtonText().DisplayedString == mappings[j].Item1)
+                        if (buttons[i].getMenuButtonContent() == mappings[j].Item1)
                         {
                             // Do button action
                             mappings[j].Item3.Start();

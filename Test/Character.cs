@@ -15,9 +15,12 @@ namespace Test
     
     abstract class Character: Drawable
     {
-        int index = 0;
-        List<Sprite> sprites = new List<Sprite>();
-        DateTime time = DateTime.Now;
+        public int index = 0;
+
+        private List<Sprite> lipsprites = new List<Sprite>();
+        private List<Sprite> sprites = new List<Sprite>();
+
+        public DateTime time = DateTime.Now;
         public float xpos = 0, ypos = 0, xscale = 1, yscale = 1;
         public bool canTalk = false;
         public CharacterState state;
@@ -62,8 +65,9 @@ namespace Test
         }
 
 
-        public void Draw(RenderTarget target, RenderStates states)
+        public virtual void Draw(RenderTarget target, RenderStates states)
         {
+            
             float framerate = 4f;
 
             sprites[index].Position = new Vector2f(xpos, ypos);

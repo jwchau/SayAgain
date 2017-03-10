@@ -15,8 +15,7 @@ namespace Test
     class Alex : Character
     {
         //private View _view;
-        static FileStream f = new FileStream("../../Art/alexMaster.png", FileMode.Open);
-        Texture t = new Texture(f);
+        Texture t = new Texture("../../Art/alexMaster.png");
         List<Sprite> angrysprites = new List<Sprite>();
         List<Sprite> happysprites = new List<Sprite>();
         List<Sprite> neutralsprites = new List<Sprite>();
@@ -52,8 +51,9 @@ namespace Test
         public Alex()
         {
             //determine size and position
-            xpos = 500;
-            ypos = 200;
+            xpos = 700;
+            ypos = 400;
+
             xscale = 1;
             yscale = 1;
 

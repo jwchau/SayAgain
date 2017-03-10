@@ -141,29 +141,29 @@ namespace Test {
                     // Pass the current menu's buttons, along with a list of tuples symbolizing:
                     //      Tuple(ButtonText, TargetState, AnonymousFunction)
                     s.updateMenuState(this.GetMousePos(), startMenu.getMenuButtons(), new List<Tuple<string, string, Task>> {
-                        new Tuple<string, string, Task>("Game Start", "game", new Task(() => {})),
+                        new Tuple<string, string, Task>("Start", "game", new Task(() => {})),
                         new Tuple<string, string, Task>("Settings", "settings", new Task(() => {}))
                     });
 
                 } else if (s.GetMenuState() == "settings") //If Current Menu State is the Settings Menu
                   {
                     s.updateMenuState(this.GetMousePos(), settingsMenu.getMenuButtons(), new List<Tuple<string, string, Task>> {
-                        new Tuple<string, string, Task>("8K GAMING", "settings", new Task(() => {})),
-                        new Tuple<string, string, Task>("<- Back", "start", new Task(() => {}))
+                        new Tuple<string, string, Task>("Sound", "settings", new Task(() => {})),
+                        new Tuple<string, string, Task>("Back", "start", new Task(() => {}))
                     });
 
                 }
             } else if (s.GetState() == "pause") {
                 if (s.GetMenuState() == "pause") {
                     s.updateMenuState(this.GetMousePos(), pauseMenu.getMenuButtons(), new List<Tuple<string, string, Task>> {
-                        new Tuple<string, string, Task>("Back to Game", "game", new Task(() => {})),
+                        new Tuple<string, string, Task>("Back", "game", new Task(() => {})),
                         new Tuple<string, string, Task>("Settings", "settings", new Task(() => {})),
                         new Tuple<string, string, Task>("Quit", "menu", new Task(() => {}))
                     });
                 } else if (s.GetMenuState() == "settings") {
                     s.updateMenuState(this.GetMousePos(), settingsMenu.getMenuButtons(), new List<Tuple<string, string, Task>> {
-                        new Tuple<string, string, Task>("8K GAMING", "settings", new Task(() => {})),
-                        new Tuple<string, string, Task>("<- Back", "pause", new Task(() => {}))
+                        new Tuple<string, string, Task>("Sound", "settings", new Task(() => {})),
+                        new Tuple<string, string, Task>("Back", "pause", new Task(() => {}))
                     });
                 }
             }

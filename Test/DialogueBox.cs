@@ -38,6 +38,8 @@ namespace Test
         int elementIndex = 0;
         GameState state;
 
+        Sprite dialogueBoxSprite;
+
         public View view { get; private set; }
 
         // public View playerView { get; private set;}
@@ -111,47 +113,31 @@ namespace Test
         {
             if (speaker == "alex")
             {
-                view.Viewport = new FloatRect(0.3f, 0f, 0.35f, 0.2f);
+                dialogueBoxSprite = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/speechbubbleright.png"));
+                view.Viewport = new FloatRect(0.3f, 0, 0.35f, 0.2f);
                 renderDialogue(dialogue, "Alex");
             }
             else if (speaker == "dad")
             {
+                dialogueBoxSprite = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/speechbubbleleft.png"));
                 view.Viewport = new FloatRect(0.0f, 0f, 0.35f, 0.2f);
                 renderDialogue(dialogue, "Dad");
             }
             else if (speaker == "mom")
             {
+                dialogueBoxSprite = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/speechbubbleright.png"));
                 view.Viewport = new FloatRect(0.63f, 0f, 0.35f, 0.2f);
                 renderDialogue(dialogue, "Mom");
             }
             else if (speaker == "player")
             {
+                // MAKE PLAYER SPRITE HERE
                 view.Viewport = new FloatRect(0.3f, .5f, 0.35f, 0.2f);
                 renderDialogue(dialogue, "player");
             }
 
 
 
-        }
-
-        public void createCharacterDB(KeyEventArgs e, String dialogue)
-        {
-            if (e.Code == Keyboard.Key.A)
-            {
-                view.Viewport = new FloatRect(0.3f, 0f, 0.35f, 0.2f);
-                renderDialogue(dialogue, "Alex");
-
-            }
-            else if (e.Code == Keyboard.Key.M)
-            {
-                view.Viewport = new FloatRect(0.63f, 0f, 0.35f, 0.2f);
-                renderDialogue(dialogue, "Mom");
-            }
-            else if (e.Code == Keyboard.Key.D)
-            {
-                view.Viewport = new FloatRect(0.0f, 0f, 0.35f, 0.2f);
-                renderDialogue(dialogue, "Dad");
-            }
         }
 
         public void renderDialogue(String s, String speaker)
@@ -266,11 +252,17 @@ namespace Test
             {
                 View resetView = target.GetView();
                 target.SetView(view);
-
-                target.Draw(box);
-                target.Draw(nameBox);
+                if (tag == "AI")
+                {
+                    target.Draw(dialogueBoxSprite);
+                } else
+                {
+                    target.Draw(box);
+                    target.Draw(nameBox);
+                }
                 target.Draw(name);
                 target.Draw(dialogue);
+                
 
 
                 target.SetView(resetView);
@@ -291,23 +283,44 @@ namespace Test
 
         public float GetMaxTextHeight()
         {
-            return box.GetGlobalBounds().Height - 20;
+            if (tag == "PLAYER")
+            {
+                return box.GetGlobalBounds().Height - 20;
+            } else
+            {
+                return dialogueBoxSprite.GetGlobalBounds().Height - 20;
+            }
         }
 
         public Text BufferName(String speaker)
         {
             Text n = new Text(speaker.ToUpper(), speechFont, 32);
-            nameBox.Size = new Vector2f(n.GetGlobalBounds().Width + 30, this.h - 110);
-            n.Position = new Vector2f(nameBox.Position.X + 12, nameBox.Position.Y);
-            n.Color = Color.Black;
+            if (tag == "PLAYER")
+            {
+                nameBox.Size = new Vector2f(n.GetGlobalBounds().Width + 30, this.h - 110);
+                n.Position = new Vector2f(nameBox.Position.X + 12, nameBox.Position.Y);
+                n.Color = Color.Black;
+            } else
+            {
+                n.Position = new Vector2f(dialogueBoxSprite.Position.X + 55, dialogueBoxSprite.Position.Y + 7);
+                n.Color = Color.White;
+            }
             return n;
         }
 
         public Text BufferDialogue(String s)
         {
             Text d = new Text(s, speechFont, 32);
-            d.Position = new Vector2f(box.Position.X + 13, box.Position.Y + 20);
-            d.Color = Color.Black;
+            if (tag == "PLAYER")
+            {
+                d.Position = new Vector2f(box.Position.X + 13, box.Position.Y + 20);
+                d.Color = Color.Black;
+            } else
+            {
+                d.Position = new Vector2f(dialogueBoxSprite.Position.X + 13, dialogueBoxSprite.Position.Y + 40);
+                d.Color = Color.White;
+            }
+            
             return d;
         }
 
@@ -321,17 +334,24 @@ namespace Test
             this.state = state;
             this.tag = tag;
 
-            
-            box = new RectangleShape(new Vector2f(this.w, this.h));
-            box.Position = new Vector2f(this.x - 40, this.y + 35);
-            box.OutlineThickness = 3;
-            box.OutlineColor = Color.Black;
+            if (tag == "AI")
+            {
+                view = new View(new FloatRect(new Vector2f(0, 0), new Vector2f(500, 248)));
+            }
+            else
+            {
+                box = new RectangleShape(new Vector2f(this.w, this.h));
+                box.Position = new Vector2f(this.x - 40, this.y + 35);
+                box.OutlineThickness = 3;
+                box.OutlineColor = Color.Black;
 
-            nameBox = new RectangleShape(new Vector2f(this.w - 575, this.h - 100));
-            nameBox.Position = new Vector2f(this.x, this.y);
-            nameBox.OutlineThickness = 3;
-            nameBox.OutlineColor = Color.Black;
-            view = new View(GetBounds());
+                nameBox = new RectangleShape(new Vector2f(this.w - 575, this.h - 100));
+                nameBox.Position = new Vector2f(this.x, this.y);
+                nameBox.OutlineThickness = 3;
+                nameBox.OutlineColor = Color.Black;
+                view = new View(GetBounds());
+            }
+            
         }
     }
 }

@@ -13,8 +13,7 @@ namespace Test
 {
     class Mom : Character
     {
-        static FileStream f = new FileStream("../../Art/momsprites.png", FileMode.Open);
-        Texture t = new Texture(f);
+        Texture t = new Texture("../../Art/momsprites.png");
         List<Sprite> angrysprites = new List<Sprite>();
         List<Sprite> happysprites = new List<Sprite>();
         List<Sprite> neutralsprites = new List<Sprite>();
@@ -49,11 +48,10 @@ namespace Test
 
         public Mom()
         {
-            
 
             //determine size and position
-            xpos = 1000;
-            ypos = 200;
+            xpos = 1300;
+            ypos = 300;
             xscale = 0.5f;
             yscale = 0.5f;
             xscale = 1;
