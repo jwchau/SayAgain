@@ -458,10 +458,6 @@ namespace Test {
 
             }
 
-            window.Draw(playerDialogueBox);
-            window.Draw(dialogueBox);
-
-
             window.SetView(fullScreenView);
             if (State.GetState() == "menu") {
                 if (State.GetMenuState() == "start") {
@@ -486,6 +482,8 @@ namespace Test {
                 for (var i = 0; i < buttons.Count; i++) {
                     window.Draw(buttons[i]);
                 }
+                window.Draw(playerDialogueBox);
+                window.Draw(dialogueBox);
                 if (playerChoice) {
                     window.Draw(D_Man);
                 }
