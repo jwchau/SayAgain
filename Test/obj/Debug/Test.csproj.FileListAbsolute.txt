@@ -61,6 +61,7 @@ C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\bin\Debug\Newtonsoft.Json.xml
 C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\obj\Debug\Test.Properties.Resources.resources
 C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\obj\Debug\Test.csproj.GenerateResource.Cache
 C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\obj\Debug\Test.exe
+<<<<<<< HEAD
 C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\obj\Debug\Test.pdb
 C:\Users\Mikey\Documents\SayAgain\Test\bin\Debug\csfml-audio-2.dll
 C:\Users\Mikey\Documents\SayAgain\Test\bin\Debug\csfml-graphics-2.dll
@@ -84,3 +85,6 @@ C:\Users\Mikey\Documents\SayAgain\Test\obj\Debug\Test.csproj.GenerateResource.Ca
 C:\Users\Mikey\Documents\SayAgain\Test\obj\Debug\Test.exe
 C:\Users\Mikey\Documents\SayAgain\Test\obj\Debug\Test.pdb
 C:\Users\Mikey\Documents\SayAgain\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+=======
+C:\Users\rnakarmi\Desktop\SayAgain-Mikey\Test\obj\Debug\Test.pdb
+>>>>>>> 5543b316192d49186a6a85ceb6a734d5024cdd16

@@ -77,6 +77,11 @@
     <Compile Include="Alex.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="CharacterState.cs" />
+    <Compile Include="Character.cs" />
+    <Compile Include="Alex.cs" />
+    <Compile Include="Dad.cs" />
+    <Compile Include="Mom.cs" />
+    <Compile Include="CutsceneManager.cs" />
     <Compile Include="ContextFilter.cs" />
     <Compile Include="Dad.cs" />
     <Compile Include="GameMatrix.cs" />
@@ -90,6 +95,7 @@
     <Compile Include="mom.cs" />
     <Compile Include="Relationships.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="SoundManager.cs" />
     <Compile Include="ToneEffects.cs" />
     <Compile Include="Selector.cs" />
     <Compile Include="UIButton.cs" />
@@ -154,6 +160,8 @@
     <Content Include="sfmlnet-graphics-2.dll" />
     <Content Include="sfmlnet-system-2.dll" />
     <Content Include="sfmlnet-window-2.dll" />
+    <Content Include="Sounds\chatter.wav" />
+    <Content Include="Sounds\sayagain-loop1.wav" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
