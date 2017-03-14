@@ -16,10 +16,13 @@ namespace Test
         {
             currentState = "menu";
             currentMenuState = "start";
+            sound_man.playMusic("Mom");
         }
 
         string currentState;
         string currentMenuState;
+        //Sound Manager
+        public SoundManager sound_man = new SoundManager();
         Dictionary<string, GameTimer> DictGameTimer = new Dictionary<string, GameTimer>();
 
         //Timer for keeping track of time given to the player

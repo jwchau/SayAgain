@@ -117,8 +117,8 @@ namespace Test {
                 for (var i = 0; i < b.Count; i++) {
                     if (b[i].Contains((int)(x*sx), (int)(y*sy))) {
                         var bounds = b[i].getRectBounds();
-                        Console.WriteLine(x + " " + y);
-
+                        //Console.WriteLine(x + " " + y);
+                        s.sound_man.playSFX("button");
                         b[i].SetMouseOffset((int)(x - bounds.Left), (int)(y - bounds.Top));
                         b[i].SetSelected(true);
                     }
@@ -141,29 +141,29 @@ namespace Test {
                     // Pass the current menu's buttons, along with a list of tuples symbolizing:
                     //      Tuple(ButtonText, TargetState, AnonymousFunction)
                     s.updateMenuState(this.GetMousePos(), startMenu.getMenuButtons(), new List<Tuple<string, string, Task>> {
-                        new Tuple<string, string, Task>("Start", "game", new Task(() => {})),
-                        new Tuple<string, string, Task>("Settings", "settings", new Task(() => {}))
+                        new Tuple<string, string, Task>("Start", "game", new Task(() => { s.sound_man.playSFX("button"); })),
+                        new Tuple<string, string, Task>("Settings", "settings", new Task(() => { s.sound_man.playSFX("button"); }))
                     });
 
                 } else if (s.GetMenuState() == "settings") //If Current Menu State is the Settings Menu
                   {
                     s.updateMenuState(this.GetMousePos(), settingsMenu.getMenuButtons(), new List<Tuple<string, string, Task>> {
-                        new Tuple<string, string, Task>("Sound", "settings", new Task(() => { settingsMenu.getMenuButtons()[0].toggleon = !settingsMenu.getMenuButtons()[0].toggleon; })),
-                        new Tuple<string, string, Task>("Back", "start", new Task(() => {}))
+                        new Tuple<string, string, Task>("Sound", "settings", new Task(() => { settingsMenu.getMenuButtons()[0].toggleon = !settingsMenu.getMenuButtons()[0].toggleon; s.sound_man.playSFX("button"); })),
+                        new Tuple<string, string, Task>("Back", "start", new Task(() => { s.sound_man.playSFX("button"); }))
                     });
 
                 }
             } else if (s.GetState() == "pause") {
                 if (s.GetMenuState() == "pause") {
                     s.updateMenuState(this.GetMousePos(), pauseMenu.getMenuButtons(), new List<Tuple<string, string, Task>> {
-                        new Tuple<string, string, Task>("Back", "game", new Task(() => {})),
-                        new Tuple<string, string, Task>("Settings", "settings", new Task(() => {})),
-                        new Tuple<string, string, Task>("Quit", "menu", new Task(() => {}))
+                        new Tuple<string, string, Task>("Back", "game", new Task(() => { s.sound_man.playSFX("button"); })),
+                        new Tuple<string, string, Task>("Settings", "settings", new Task(() => { s.sound_man.playSFX("button"); })),
+                        new Tuple<string, string, Task>("Quit", "menu", new Task(() => { s.sound_man.playSFX("button"); }))
                     });
                 } else if (s.GetMenuState() == "settings") {
                     s.updateMenuState(this.GetMousePos(), settingsMenu.getMenuButtons(), new List<Tuple<string, string, Task>> {
-                        new Tuple<string, string, Task>("Sound", "settings", new Task(() => { settingsMenu.getMenuButtons()[0].toggleon = !settingsMenu.getMenuButtons()[0].toggleon;  })),
-                        new Tuple<string, string, Task>("Back", "pause", new Task(() => {}))
+                        new Tuple<string, string, Task>("Sound", "settings", new Task(() => { settingsMenu.getMenuButtons()[0].toggleon = !settingsMenu.getMenuButtons()[0].toggleon; s.sound_man.playSFX("button"); })),
+                        new Tuple<string, string, Task>("Back", "pause", new Task(() => { s.sound_man.playSFX("button"); }))
                     });
                 }
             }

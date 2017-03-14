@@ -38,7 +38,7 @@ namespace Test
         private uint getFontSize()
         {
 
-            return (uint)((SCREEN_WIDTH / 1920) * 30);
+            return (uint)((SCREEN_WIDTH / 1920) * 40);
         }
 
         public RectangleShape getBox()

@@ -75,8 +75,6 @@ namespace Test {
         //}
 
         private void onMouseButtonReleased(object sender, MouseButtonEventArgs e) {
-
-            sound_man.playSFX("button");
             ManagerOfInput.onMouseButtonReleased();
 
             if (playerChoice) {
@@ -113,7 +111,6 @@ namespace Test {
         }
 
         private void onMouseButtonPressed(object sender, MouseButtonEventArgs e) {
-            sound_man.playSFX("button");
 
             ManagerOfInput.onMouseButtonPressed(e.X, e.Y);
 
@@ -122,6 +119,7 @@ namespace Test {
             ManagerOfInput.MenuPlay(State, menus, e.X, e.Y);
 
             if (State.getGameTimer("game").Contains(e.X, e.Y, scaleFactorX, scaleFactorY) && State.getGameTimer("game").getStart()) {
+                State.sound_man.playSFX("button");
                 State.getGameTimer("game").setCountDown(0);
             }
         }
@@ -288,10 +286,6 @@ namespace Test {
             textBackground.OutlineColor = Color.White;
             textBackground.OutlineThickness = 2;
 
-            //sound init
-            sound_man.init_sounds();
-            sound_man.playMusic("Mom");
-
             //Originally in LoadContent/////////////////////////////////////////////////////////////////////////////////
             // Create Character states
 
@@ -309,8 +303,8 @@ namespace Test {
             fullScreenView.Viewport = new FloatRect(0, 0, 1, 1);
             window.SetView(fullScreenView);
 
-            dialogueBox = new DialogueBox(0, 0, 710, 150, State, "AI");
-            playerDialogueBox = new DialogueBox(0, 0, 710, 150, State, "PLAYER");
+            dialogueBox = new DialogueBox(State, "AI");
+            playerDialogueBox = new DialogueBox(State, "PLAYER");
 
             buttons = ui_man.getButtons();
             menus.Add(startMenu); menus.Add(settingsMenu); menus.Add(pauseMenu);
@@ -344,14 +338,8 @@ namespace Test {
 
         protected override void Update() {
             screenHelper();
-            if(!settingsMenu.getSoundToggle() && !sound_man.getSoundPause())
-            {
-                sound_man.setSoundPause(true);
-            } else if(settingsMenu.getSoundToggle() && sound_man.getSoundPause())
-            {
-                sound_man.setSoundPause(false);
-            }
-            sound_man.soundUpdate();
+            
+            State.sound_man.soundUpdate(settingsMenu.getSoundToggle());
             if (State.GetState() == "game") {
                 if (startOnce) {
                     State.getGameTimer("game").startTimer();
@@ -422,7 +410,7 @@ namespace Test {
                 if (playerDialogueBox.getAnimationStart() == false && loadedAIDialogueOnce == true /*&& playerChoice == false*/) {
 
                     //sound starts on npc dialogue start
-                    sound_man.playSFX("chatter");
+                    State.sound_man.playSFX("chatter");
 
                     if (responseListAlex[0].content != "returned empty string") {
                         dialogueBox.setInit(true);
@@ -451,20 +439,8 @@ namespace Test {
 
             window.Clear(clearColor);
             if (State.GetState() != "menu") {
-                window.Draw(backwall);
-                window.Draw(pictures);
-                window.Draw(lamp);
-                window.Draw(Mom);
-                window.Draw(Alexis);
-                window.Draw(Dad);
-                window.Draw(table);
-                window.Draw(flower);
-
+                
             }
-
-            window.Draw(playerDialogueBox);
-            window.Draw(dialogueBox);
-
 
             window.SetView(fullScreenView);
             if (State.GetState() == "menu") {
@@ -474,7 +450,15 @@ namespace Test {
                     window.Draw(settingsMenu);
                 }
             } else {
-
+                window.Draw(backwall);
+                window.Draw(pictures);
+                window.Draw(lamp);
+                window.Draw(Mom);
+                window.Draw(Alexis);
+                window.Draw(Dad);
+                window.Draw(table);
+                window.Draw(flower);
+                
                 //Draw text box background box
                 window.Draw(textBackground);
 
@@ -483,8 +467,10 @@ namespace Test {
                 for (var i = 0; i < dialogues.Count; i++) {
                     window.Draw(dialogues[i]);
                 }
-
-                window.Draw(toneBar);
+                if (!playerDialogueBox.active)
+                {
+                    window.Draw(toneBar);
+                }
                 var buttons = ui_man.getButtons();
 
                 for (var i = 0; i < buttons.Count; i++) {
@@ -493,7 +479,9 @@ namespace Test {
                 if (playerChoice) {
                     window.Draw(D_Man);
                 }
-
+                window.Draw(State.getGameTimer("game")); //this is the timer circle
+                window.Draw(playerDialogueBox);
+                window.Draw(dialogueBox);
 
                 if (State.GetState() == "pause") {
 
@@ -506,7 +494,7 @@ namespace Test {
                     }
 
                 }
-                window.Draw(State.getGameTimer("game")); //this is the timer circle
+                
             }
 
 
