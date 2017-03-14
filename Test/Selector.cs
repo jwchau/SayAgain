@@ -13,7 +13,10 @@ namespace Test
         {
             //memory check
             bool memoriesCheck = false;
+            int fncDirection = 0;
             int counter = 0;
+            //check fnc direction
+            if (fncPreReq > 0) fncDirection = 1; else if (fncPreReq < 0) fncDirection = -1; else fncDirection = 0;
             //checks for memories requirements first (ones with no memoriess are also added)
             List<DialogueObj> possibleChoices = new List<DialogueObj>();
             possibleChoices.Clear();
@@ -70,27 +73,27 @@ namespace Test
                     i--;
                 }
 
+                /*
+                //zero fnc
+                if (fncDirection == 0 && possibleChoices.ElementAt(i).fncPreReq != 0)
+                {  
+                    possibleChoices.Remove(possibleChoices.ElementAt(i));
+                    i--;
+                }
+                //positive fnc
+                else if (fncDirection == 1 && (possibleChoices.ElementAt(i).fncPreReq > (int)fncPreReq || possibleChoices.ElementAt(i).fncPreReq < 0 ))
+                {
+                    possibleChoices.Remove(possibleChoices.ElementAt(i));
+                    i--;
+                }
+                //negative fnc 
+                else if (fncDirection == -1 && (possibleChoices.ElementAt(i).fncPreReq < (int)fncPreReq || possibleChoices.ElementAt(i).fncPreReq > 0))
+                {
+                    possibleChoices.Remove(possibleChoices.ElementAt(i));
+                    i--;
+                }
 
-
-                //if (fncPreReq == 0 && possibleChoices.ElementAt(i).fncPreReq != 0)
-                //{
-                //   
-                //    possibleChoices.Remove(possibleChoices.ElementAt(i));
-                //    i--;
-                //}
-                //else if (fncPreReq > 0 && (possibleChoices.ElementAt(i).fncPreReq > fncPreReq || possibleChoices.ElementAt(i).fncPreReq < 0 ))
-                //{
-                //    
-                //    possibleChoices.Remove(possibleChoices.ElementAt(i));
-                //    i--;
-
-                //}
-                //else if (fncPreReq < 0 && (possibleChoices.ElementAt(i).fncPreReq < fncPreReq || possibleChoices.ElementAt(i).fncPreReq > 0))
-                //{
-                //    
-                //    possibleChoices.Remove(possibleChoices.ElementAt(i));
-                //    i--;
-                //}
+                */
 
                 //possibleChoices.Ele
 

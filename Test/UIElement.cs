@@ -39,7 +39,7 @@ namespace Test {
             {"Settings", new List<string>() { "../../Art/UI_Art/buttons n boxes/settingsmenu.png", "../../Art/UI_Art/buttons n boxes/settingsmenuhighlight.png"}}, //Settings Menu Button
             {"Back", new List<string>() { "../../Art/UI_Art/buttons n boxes/backmenu.png", "../../Art/UI_Art/buttons n boxes/backmenuhighlight.png"}}, //Back Menu Button
             {"Quit", new List<string>() { "../../Art/UI_Art/buttons n boxes/quitmenu.png", "../../Art/UI_Art/buttons n boxes/quitmenuhighlight.png"}}, //Quit Menu Button
-            {"Sound", new List<string>() { "../../Art/UI_Art/buttons n boxes/soundmenuc.png", "../../Art/UI_Art/buttons n boxes/soundmenuchighlight.png", "../../Art/UI_Art/buttons n boxes/soundmenuuc.png", "../../UI_Art/buttons n boxes/soundmenuuchighlight.png"}}, //Sound Menu Button
+            {"Sound", new List<string>() { "../../Art/UI_Art/buttons n boxes/soundmenuc.png", "../../Art/UI_Art/buttons n boxes/soundmenuchighlight.png", "../../Art/UI_Art/buttons n boxes/soundmenuuc.png", "../../Art/UI_Art/buttons n boxes/soundmenuuchighlight.png"}}, //Sound Menu Button
         };
 
         //methods

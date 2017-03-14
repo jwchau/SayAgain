@@ -148,7 +148,7 @@ namespace Test {
                 } else if (s.GetMenuState() == "settings") //If Current Menu State is the Settings Menu
                   {
                     s.updateMenuState(this.GetMousePos(), settingsMenu.getMenuButtons(), new List<Tuple<string, string, Task>> {
-                        new Tuple<string, string, Task>("Sound", "settings", new Task(() => {})),
+                        new Tuple<string, string, Task>("Sound", "settings", new Task(() => { settingsMenu.getMenuButtons()[0].toggleon = !settingsMenu.getMenuButtons()[0].toggleon; })),
                         new Tuple<string, string, Task>("Back", "start", new Task(() => {}))
                     });
 
@@ -162,7 +162,7 @@ namespace Test {
                     });
                 } else if (s.GetMenuState() == "settings") {
                     s.updateMenuState(this.GetMousePos(), settingsMenu.getMenuButtons(), new List<Tuple<string, string, Task>> {
-                        new Tuple<string, string, Task>("Sound", "settings", new Task(() => {})),
+                        new Tuple<string, string, Task>("Sound", "settings", new Task(() => { settingsMenu.getMenuButtons()[0].toggleon = !settingsMenu.getMenuButtons()[0].toggleon;  })),
                         new Tuple<string, string, Task>("Back", "pause", new Task(() => {}))
                     });
                 }

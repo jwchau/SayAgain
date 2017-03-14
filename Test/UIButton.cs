@@ -15,24 +15,19 @@ namespace Test {
             this.newDialogue = newDialogue;
             this.buttonTone = content;
 
-            //Create sprite here
-            buttonTexture = new Texture(buttonSpritePaths[content.ToString()][0]);
-            buttonTextureHighlight = new Texture(buttonSpritePaths[content.ToString()][1]);
+            buttonSprite = new Sprite(new Texture(buttonSpritePaths[content.ToString()][0]));
+            buttonSpriteHighlight = new Sprite(new Texture(buttonSpritePaths[content.ToString()][1]));
 
-            buttonSprite = new Sprite(buttonTexture);
-            buttonSpriteHighlight = new Sprite(buttonTextureHighlight);
-
-            buttonSprite.Position = new Vector2f(x - buttonSprite.GetGlobalBounds().Width / 2, y);
-            buttonSpriteHighlight.Position = new Vector2f(x - buttonSprite.GetGlobalBounds().Width / 2, y);
-
-            buttonText = new Text(content.ToString(), buttonTextFont);
-            //buttonText.Position = new Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
-
-            //rect = new RectangleShape(new Vector2f(buttonText.GetGlobalBounds().Width + 7, buttonText.GetGlobalBounds().Height + 10));
-            //rect.Position = new Vector2f(x - buttonText.GetGlobalBounds().Width / 2, y);
+            buttonSprite.Scale = new Vector2f(SCREEN_WIDTH / 1920, SCREEN_HEIGHT / 1080);
+            buttonSpriteHighlight.Scale = new Vector2f(SCREEN_WIDTH / 1920, SCREEN_HEIGHT / 1080);
 
             this.x = x - buttonSprite.GetGlobalBounds().Width / 2;
             this.y = y;
+
+            buttonSprite.Position = new Vector2f(this.x, this.y);
+            buttonSpriteHighlight.Position = new Vector2f(this.x, this.y);
+
+            buttonText = new Text(content.ToString(), buttonTextFont);
 
             tonalColor = buttonTonalColors[content.ToString()];
             //rect.FillColor = tonalColor;
@@ -42,14 +37,11 @@ namespace Test {
         static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
         static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
 
-        Texture buttonTexture;
         Sprite buttonSprite;
-        Texture buttonTextureHighlight;
         Sprite buttonSpriteHighlight;
 
         Font buttonTextFont = new Font("../../Fonts/Adore64.ttf");
         Text buttonText;
-        RectangleShape rect;
         string newDialogue;
         bool selected = false;
         bool hover = false;
@@ -63,10 +55,6 @@ namespace Test {
 
         public Vector2f getRectSize() {
             return new Vector2f(buttonSprite.GetGlobalBounds().Width, buttonSprite.GetGlobalBounds().Height);
-        }
-
-        public void setButtonColor(Color c) {
-            rect.FillColor = c;
         }
 
         public float getX() {

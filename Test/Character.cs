@@ -15,16 +15,22 @@ namespace Test
     
     abstract class Character: Drawable
     {
-        int index = 0;
-        List<Sprite> sprites = new List<Sprite>();
-        DateTime time = DateTime.Now;
-        public float xpos = 0, ypos = 0, xscale = 1, yscale = 1;
-        public bool canTalk = false;
+        public int index = 0;
+
+        private List<Sprite> lipsprites = new List<Sprite>();
+        private List<Sprite> sprites = new List<Sprite>();
+
+        public DateTime time = DateTime.Now;
+        protected float xpos, ypos, xscale, yscale;
+        protected bool canTalk = false;
         public CharacterState state;
         public enum spriteEmotion { happy, angry, neutral, sad };
         public abstract void setSpriteEmotion(spriteEmotion e);  
         public abstract void checkFNC();
-        
+
+        protected uint SCREEN_WIDTH = VideoMode.DesktopMode.Width;
+        protected uint SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+
         public void dim()
         {
 
@@ -62,22 +68,23 @@ namespace Test
         }
 
 
-        public void Draw(RenderTarget target, RenderStates states)
+        public virtual void Draw(RenderTarget target, RenderStates states)
         {
-            float framerate = 4f;
+            
+            //float framerate = 4f;
+            //sprites[index].Position = new Vector2f(xpos, ypos);
+            //Console.WriteLine("WIDTH: " + sprites[index].GetGlobalBounds().Width + " height: " + sprites[index].GetGlobalBounds().Height);
+            //// sprites[index].Scale = new Vector2f(SCREEN_WIDTH / sprites[index].GetGlobalBounds().Width, SCREEN_HEIGHT / sprites[index].GetGlobalBounds().Height);
 
-            sprites[index].Position = new Vector2f(xpos, ypos);
-            sprites[index].Scale = new Vector2f(xscale, yscale);
-
-            target.Draw(sprites[index]);
-            if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
-            {
-                time = DateTime.Now;
-                if (++index >= sprites.Count)
-                {
-                    index = 0;
-                }
-            }
+            //target.Draw(sprites[index]);
+            //if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
+            //{
+            //    time = DateTime.Now;
+            //    if (++index >= sprites.Count)
+            //    {
+            //        index = 0;
+            //    }
+            //}
         }
         
         public void click()

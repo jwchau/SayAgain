@@ -11,17 +11,16 @@ using System.Drawing;
 using Newtonsoft.Json;
 
 namespace Test {
-    
+
     class SA : Game {
-        
+
 
         public View fullScreenView, charView;
-        Character mom, alexis, dad;
+        //Character mom, alexis, dad;
 
 
-        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?")
-        {
-            
+        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?") {
+
             window.KeyPressed += onKeyPressed;
             window.KeyReleased += onKeyReleased;
             window.MouseButtonPressed += onMouseButtonPressed;
@@ -43,84 +42,42 @@ namespace Test {
 
         private void onMouseMoved(object sender, MouseMoveEventArgs e) {
             ManagerOfInput.OnMouseMoved(State, e.X, e.Y);
-            if(State.GetState() == "menu")
-            {
-                if(State.GetMenuState() == "start")
-                {
+            if (State.GetState() == "menu") {
+                if (State.GetMenuState() == "start") {
                     startMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
-                } else if(State.GetMenuState() == "settings")
-                {
+                } else if (State.GetMenuState() == "settings") {
                     settingsMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
                 }
-                
-            } else if(State.GetState() == "game")
-            {
+
+            } else if (State.GetState() == "game") {
                 ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
-            } else if(State.GetState() == "pause")
-            {
-                if(State.GetMenuState() == "pause")
-                {
+            } else if (State.GetState() == "pause") {
+                if (State.GetMenuState() == "pause") {
                     pauseMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
-                } else if(State.GetMenuState() == "settings")
-                {
+                } else if (State.GetMenuState() == "settings") {
                     settingsMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
                 }
             }
-           
+
             ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
-     
-
-
-            //if (D_Man.getAlex().Contains(e.X, e.Y)) {
-            //    D_Man.getAlex().setHover(true);
-            //} else if (D_Man.getMom().Contains(e.X, e.Y)) {
-            //    D_Man.getMom().setHover(true);
-            //} else if (D_Man.getDad().Contains(e.X, e.Y)) {
-            //    D_Man.getDad().setHover(true);
-            //} else {
-            //    D_Man.getAlex().setHover(false);
-            //    D_Man.getMom().setHover(false);
-            //    D_Man.getDad().setHover(false);
-            //}
-
         }
+
+        //if (D_Man.getAlex().Contains(e.X, e.Y)) {
+        //    D_Man.getAlex().setHover(true);
+        //} else if (D_Man.getMom().Contains(e.X, e.Y)) {
+        //    D_Man.getMom().setHover(true);
+        //} else if (D_Man.getDad().Contains(e.X, e.Y)) {
+        //    D_Man.getDad().setHover(true);
+        //} else {
+        //    D_Man.getAlex().setHover(false);
+        //    D_Man.getMom().setHover(false);
+        //    D_Man.getDad().setHover(false);
+        //}
 
         private void onMouseButtonReleased(object sender, MouseButtonEventArgs e) {
 
+            sound_man.playSFX("button");
             ManagerOfInput.onMouseButtonReleased();
-
-            //if (playerChoice) {
-            //    //ManagerOfInput.checkTargets(State, D_Man);
-            //    if (D_Man.getAlex().Contains(e.X, e.Y) == true) {
-            //        currentContext = nextContextDict["Alex"];
-            //        loadDialogues();
-            //        playerChoice = false;
-            //        //COME BACK HERE
-            //    }
-
-            //    else if (D_Man.getMom().Contains(e.X, e.Y) == true) {
-            //        currentContext = nextContextDict["Mom"];
-            //        loadDialogues();
-            //        playerChoice = false;
-            //        //COME BACK HERE
-            //    }
-
-            //    else if (D_Man.getDad().Contains(e.X, e.Y) == true) {
-            //        currentContext = nextContextDict["Dad"];
-            //        loadDialogues();
-            //        playerChoice = false;
-            //        State.getGameTimer("game").resetTimer();
-            //        State.getGameTimer("game").startTimer();
-            //        //restart the timer
-            //        //COME BACK HERE
-            //    }
-
-            //    //d.getAlex().targetCheck(MouseX, MouseY);
-            //    //d.getMom().targetCheck(MouseX, MouseY);
-            //    //d.getDad().targetCheck(MouseX, MouseY);
-            /////jksdfjklsfkldsfj 
-
-
 
             if (playerChoice) {
                 //ManagerOfInput.checkTargets(State, D_Man);
@@ -129,16 +86,12 @@ namespace Test {
                     loadDialogues();
                     playerChoice = false;
                     //COME BACK HERE
-                }
-
-                else if (D_Man.getMom().Contains(e.X, e.Y) == true) {
+                } else if (D_Man.getMom().Contains(e.X, e.Y) == true) {
                     currentContext = nextContextDict["Mom"];
                     loadDialogues();
                     playerChoice = false;
                     //COME BACK HERE
-                }
-
-                else if (D_Man.getDad().Contains(e.X, e.Y) == true) {
+                } else if (D_Man.getDad().Contains(e.X, e.Y) == true) {
                     currentContext = nextContextDict["Dad"];
                     loadDialogues();
                     playerChoice = false;
@@ -153,16 +106,14 @@ namespace Test {
                 //d.getDad().targetCheck(MouseX, MouseY);
 
 
-            //}
-
-
-            ui_man.applyTones((int)(e.X*scaleFactorX), (int)(e.Y*scaleFactorY));
-            //sdfkklsdjfdlskf
+                //}
             
+            }
+            ui_man.applyTones((int)(e.X * scaleFactorX), (int)(e.Y * scaleFactorY));
         }
 
         private void onMouseButtonPressed(object sender, MouseButtonEventArgs e) {
-
+            sound_man.playSFX("button");
 
             ManagerOfInput.onMouseButtonPressed(e.X, e.Y);
 
@@ -195,15 +146,6 @@ namespace Test {
                     State.TogglePause();
                 }
             }
-
-
-            //if (e.Code == Keyboard.Key.A || e.Code == Keyboard.Key.M || e.Code == Keyboard.Key.D)
-            //{
-            //    //init = true;
-            //    responseListAlex = s.ChooseDialog(D_Man.getAlexFNC(), Load.alexDialogueObj1, currentMadeMemories, currentMilestones, currentTone, currentContext);
-            //    dialogueBox.createCharacterDB(e, responseListAlex.ElementAt(0).content);
-            //    //State.getGameTimer("game").startTimer();
-            //}
         }
 
         #region Timer Action Placeholder
@@ -320,29 +262,25 @@ namespace Test {
             }
         }
 
-        protected override void Initialize() {
+        protected override void Initialize() { 
             backwall = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/backwall.png"));
             flower = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/flower.png"));
             lamp = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/lamp.png"));
             pictures = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/pictures.png"));
             table = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/table.png"));
-            backwall.Scale = new Vector2f(1.66f, 1.66f);
-            flower.Scale = new Vector2f(1.66f, 1.66f);
-            lamp.Scale = new Vector2f(1.66f, 1.66f);
-            pictures.Scale = new Vector2f(1.66f, 1.66f);
-            table.Scale = new Vector2f(1.66f, 1.66f);
+            
+            backwall.Scale = new Vector2f(SCREEN_WIDTH / backwall.GetGlobalBounds().Width, SCREEN_HEIGHT / backwall.GetGlobalBounds().Height);
+            flower.Scale = new Vector2f(SCREEN_WIDTH / flower.GetGlobalBounds().Width, SCREEN_HEIGHT / flower.GetGlobalBounds().Height);
+            lamp.Scale = new Vector2f(SCREEN_WIDTH / lamp.GetGlobalBounds().Width, SCREEN_HEIGHT / lamp.GetGlobalBounds().Height);
+            pictures.Scale = new Vector2f(SCREEN_WIDTH / pictures.GetGlobalBounds().Width, SCREEN_HEIGHT / pictures.GetGlobalBounds().Height);
+            table.Scale = new Vector2f(SCREEN_WIDTH / table.GetGlobalBounds().Width, SCREEN_HEIGHT / table.GetGlobalBounds().Height);
+
             table.Position = new Vector2f(0, -200);
             flower.Position = new Vector2f(0, -200);
 
-            //alex = new Sprite(new Texture("../../Art/alexdemo.png"));
-            //mom = new Sprite(new Texture("../../Art/momdemo.png"));
-            //dad = new Sprite(new Texture("../../Art/daddemo.png"));
             toneBar = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/tonebar.png"));
-
-            //mom.Position = new Vector2f(1200, 350);
-            //dad.Position = new Vector2f(400, 325);
-            //alex.Position = new Vector2f(800, 400);
             toneBar.Position = new Vector2f(6,(float)(SCREEN_HEIGHT*0.735));
+            toneBar.Scale = new Vector2f(SCREEN_WIDTH/1920, SCREEN_HEIGHT/1080);
 
             textBackground = new RectangleShape(new Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT / 5));
             textBackground.Position = new Vector2f(0, SCREEN_HEIGHT - (float)(SCREEN_HEIGHT * 0.19));
@@ -352,7 +290,7 @@ namespace Test {
 
             //sound init
             sound_man.init_sounds();
-            //sound_man.playMusic("Dad");
+            sound_man.playMusic("Mom");
 
             //Originally in LoadContent/////////////////////////////////////////////////////////////////////////////////
             // Create Character states
@@ -370,26 +308,6 @@ namespace Test {
             fullScreenView = window.DefaultView;
             fullScreenView.Viewport = new FloatRect(0, 0, 1, 1);
             window.SetView(fullScreenView);
-
-
-            mom = new Mom();
-            mom.setSpriteEmotion(Character.spriteEmotion.happy);
-            mom.active(true);
-            mom.state.setMood(5f);
-            Console.WriteLine(mom.state.getMood());
-
-            alexis = new Alex();
-            alexis.setSpriteEmotion(Character.spriteEmotion.angry);
-            alexis.active(true);
-
-            dad = new Dad();
-            dad.setSpriteEmotion(Character.spriteEmotion.happy);
-            dad.active(true);
-
-        
-
-
-
 
             dialogueBox = new DialogueBox(0, 0, 710, 150, State, "AI");
             playerDialogueBox = new DialogueBox(0, 0, 710, 150, State, "PLAYER");
@@ -424,13 +342,16 @@ namespace Test {
             FNC = 0;
         }
 
-
-
-
- 
-
         protected override void Update() {
             screenHelper();
+            if(!settingsMenu.getSoundToggle() && !sound_man.getSoundPause())
+            {
+                sound_man.setSoundPause(true);
+            } else if(settingsMenu.getSoundToggle() && sound_man.getSoundPause())
+            {
+                sound_man.setSoundPause(false);
+            }
+            sound_man.soundUpdate();
             if (State.GetState() == "game") {
                 if (startOnce) {
                     State.getGameTimer("game").startTimer();
@@ -541,6 +462,10 @@ namespace Test {
 
             }
 
+            window.Draw(playerDialogueBox);
+            window.Draw(dialogueBox);
+
+
             window.SetView(fullScreenView);
             if (State.GetState() == "menu") {
                 if (State.GetMenuState() == "start") {
@@ -565,8 +490,6 @@ namespace Test {
                 for (var i = 0; i < buttons.Count; i++) {
                     window.Draw(buttons[i]);
                 }
-                window.Draw(playerDialogueBox);
-                window.Draw(dialogueBox);
                 if (playerChoice) {
                     window.Draw(D_Man);
                 }

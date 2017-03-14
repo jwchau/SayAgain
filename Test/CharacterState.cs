@@ -18,7 +18,9 @@ namespace Test
         private double volatility;
         private double goal;
         double talkedTo = 0;
-        static bool[] targets = { false, false, false }; // 0 = alex 1 = mom 2 = dad
+
+        static bool[] targets = { false,false,false }; // 0 = alex 1 = mom 2 = dad
+        List<String> memory = new List<String>();
 
         Color color;
 
@@ -30,68 +32,30 @@ namespace Test
 
         //methods
 
-        public CharacterState() {
-            this.mood = 0;
-            this.volatility = 0;
-        }
-
-        public void setMood(double m)
-        {
-            mood = m;
-        }
-
-        public double getMood()
-        {
-            return mood;
-        }
-
-        public void setVolatility(double v)
-        {
-            volatility = v;
-        }
-
-        public double getVolatility()
-        {
-            return volatility;
-/*
-        public 
-        
-        
-        
-        (string who) {
-            this.who = who;
-            characterRect.OutlineColor = Color.White;
-            if (who == "alex")
-            {
-                this.x = 10;
-               
-                this.color = Color.Red;
-            }
-            else if (who == "mom")
-            {
-                this.x = 110;
-
         public CharacterState()
         {
             this.mood = 0;
             this.volatility = 0;
         }
 
+        public List<String> getMemories()
+        {
+            return memory;
+        }
+
+        public void addMemory(string s)
+        {
+            memory.Add(s);
+        }
+
         public void setMood(double m)
         {
             mood = m;
         }
 
-
         public double getMood()
         {
             return mood;
-
-            characterRect.Position = new Vector2f(x, y);
-            characterRect.FillColor = this.color;
-            //this.mood = mood;
-            //this.volatility = volatility;
-*/
         }
 
         public void setVolatility(double v)
@@ -99,37 +63,10 @@ namespace Test
             volatility = v;
         }
 
-        public double getVolatility()
-        {
+        public double getVolatility() {
             return volatility;
-            /*
-                    public CharacterState(string who) {
-                        this.who = who;
-                        characterRect.OutlineColor = Color.White;
-                        if (who == "alex")
-                        {
-                            this.x = 10;
-
-                            this.color = Color.Red;
-                        }
-                        else if (who == "mom")
-                        {
-                            this.x = 110;
-
-                            this.color = Color.Black;
-                        }
-                        else if (who == "dad") {
-                            this.x = 210;
-
-                            this.color = Color.Green;
-                        }
-
-                        characterRect.Position = new Vector2f(x, y);
-                        characterRect.FillColor = this.color;
-                        //this.mood = mood;
-                        //this.volatility = volatility;
-            */
         }
+
 
         public void SetTalked(char f, double amount)
         {

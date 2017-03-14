@@ -74,16 +74,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Alex.cs" />
-    <Compile Include="Character.cs" />
     <Compile Include="CharacterState.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="Alex.cs" />
+    <Compile Include="StoryManager.cs" />
     <Compile Include="Dad.cs" />
     <Compile Include="Mom.cs" />
     <Compile Include="CutsceneManager.cs" />
     <Compile Include="ContextFilter.cs" />
-    <Compile Include="Dad.cs" />
     <Compile Include="GameMatrix.cs" />
     <Compile Include="GameTimer.cs" />
     <Compile Include="Loader.cs" />
@@ -92,7 +90,6 @@
     <Compile Include="GameState.cs" />
     <Compile Include="InputManager.cs" />
     <Compile Include="MenuButton.cs" />
-    <Compile Include="mom.cs" />
     <Compile Include="Relationships.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="SoundManager.cs" />
@@ -130,7 +127,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Art\UI_Art\buttons n boxes\psb.png" />
     <Content Include="context.txt" />
     <Content Include="csfml-audio-2.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -160,8 +156,10 @@
     <Content Include="sfmlnet-graphics-2.dll" />
     <Content Include="sfmlnet-system-2.dll" />
     <Content Include="sfmlnet-window-2.dll" />
+    <Content Include="Sounds\button.wav" />
     <Content Include="Sounds\chatter.wav" />
     <Content Include="Sounds\sayagain-loop1.wav" />
+    <Content Include="Sounds\sayagain-loop2.wav" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
