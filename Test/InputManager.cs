@@ -141,7 +141,7 @@ namespace Test {
                     // Pass the current menu's buttons, along with a list of tuples symbolizing:
                     //      Tuple(ButtonText, TargetState, AnonymousFunction)
                     s.updateMenuState(this.GetMousePos(), startMenu.getMenuButtons(), new List<Tuple<string, string, Task>> {
-                        new Tuple<string, string, Task>("Start", "game", new Task(() => { s.sound_man.playSFX("button"); })),
+                        new Tuple<string, string, Task>("Start", "game", new Task(() => { s.sound_man.playSFX("button");})),
                         new Tuple<string, string, Task>("Settings", "settings", new Task(() => { s.sound_man.playSFX("button"); }))
                     });
 

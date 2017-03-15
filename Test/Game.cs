@@ -52,7 +52,7 @@ namespace Test
         // Deprecated: protected CharacterState Alex, Mom, Dad;
         // Replaced with DramaManager that holds each characterstate
         protected DramaManager D_Man = new DramaManager();
-  
+
         //Jill's fields and variables
         protected DialogueBox dialogueBox;
         protected DialogueBox playerDialogueBox;

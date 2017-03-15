@@ -132,8 +132,13 @@ namespace Test {
 
             if (State.GetState() == "game") {
                 if (e.Code == Keyboard.Key.Space) {
-                    dialogueBox.setPrintTime(0);
-                    playerDialogueBox.setPrintTime(0);
+                    if (dialogueBox.printTime != 0 && dialogueBox.animationStart)
+                    {
+                        dialogueBox.setPrintTime(0);
+                    }
+                    else if(dialogueBox.printTime == 0 && !dialogueBox.animationStart){
+                        dialogueBox.acknowledge();
+                    }
                 }
 
                 if (e.Code == Keyboard.Key.N) {
@@ -259,7 +264,7 @@ namespace Test {
             window.SetView(fullScreenView);
 
             dialogueBox = new DialogueBox(State, "AI");
-            dialogueBox.loadNewDialogue("dad", "Hey! It’s great having you back home.");
+            //dialogueBox.loadNewDialogue("dad", "Hey! It’s great having you back home.");
 
             playerDialogueBox = new DialogueBox(State, "PLAYER");
 
@@ -292,16 +297,19 @@ namespace Test {
 
             FNC = 0;
         }
-
+        bool yolo = true;
         protected override void Update() {
             screenHelper();
-            
+            if (State.GetState() == "game" && yolo == true) {
+                dialogueBox.loadNewDialogue("dad", "Hey! It’s great having you back home.");
+                yolo = false;
+            }
             State.sound_man.soundUpdate(settingsMenu.getSoundToggle());
             if (State.GetState() == "game") {
-                if (startOnce) {
-                    State.getGameTimer("game").startTimer();
-                    startOnce = false;
-                }
+                //if (startOnce) {
+                //    State.getGameTimer("game").startTimer();
+                //    startOnce = false;
+                //}
 
                 if (playerChoice && State.getGameTimer("game").getStart()) {
                     State.getGameTimer("game").stopTimer();

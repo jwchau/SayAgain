@@ -32,7 +32,7 @@ namespace Test
         Boolean init = false;
         string tag; //AI or player
 
-        bool animationStart = true;
+        public bool animationStart = true;
         bool awaitInput = false;
 
         CancellationTokenSource cts;
@@ -44,14 +44,29 @@ namespace Test
 
         Sprite dialogueBoxSprite;
 
-        public View view { get; private set; }
+        CircleShape cursor = new CircleShape(20);
 
         // public View playerView { get; private set;}
 
         Font speechFont = new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf");
 
+        public void acknowledge() {
+            if (awaitInput) {
+                if (tag == "AI")
+                {
+                    state.startTimer("game");
+                }
+                awaitInput = false;
+            }
+        }
+
         public void setInit(bool b) {
             init = b;
+        }
+
+        public bool getAwaitInput()
+        {
+            return awaitInput;
         }
 
         public void forward()
@@ -115,6 +130,7 @@ namespace Test
 
         public void loadNewDialogue(string speaker, string content)
         {
+            Console.WriteLine("I WAS CALLED HELLA!!!!!!: "+content);
             if (speaker == "alex")
             {
                 dialogueBoxSprite = spriteDict["right"];
@@ -241,7 +257,6 @@ namespace Test
         //operate in own time and thread
         public async Task animateText(Text line, CancellationToken ct)
         {
-            Console.WriteLine("LINE: " + line.DisplayedString);
             animationStart = true;
             state.resetTimer("game");
             int i = 0;
@@ -256,16 +271,15 @@ namespace Test
                 if (state.GetState() != "pause")
                 {
                     dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, line.DisplayedString[i++]));
-                    Console.WriteLine("Line at " + i + ": " + line.DisplayedString[i]);
                     await Task.Delay(printTime); //equivalent of putting thread to sleep
                 }
             }
             // Do asynchronous work.
-        
-            if (tag == "AI") 
-            {
-                state.startTimer("game");
-            }
+
+            //if (tag == "AI")
+            //{
+            //    state.startTimer("game");
+            //}
             animationStart = false; //done animating
             awaitInput = true;
 
@@ -278,6 +292,12 @@ namespace Test
                 target.Draw(dialogueBoxSprite);
                 target.Draw(name);
                 target.Draw(dialogue);
+                if(awaitInput)
+                {
+                    Console.WriteLine("IM WAITING");
+                    cursor.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + dialogueBoxSprite.GetGlobalBounds().Width - 150, dialogueBoxSprite.GetGlobalBounds().Top + dialogueBoxSprite.GetGlobalBounds().Height - 150);
+                    target.Draw(cursor);
+                }
             }
         }
 
