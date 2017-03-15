@@ -18,17 +18,21 @@ namespace Test
 
         static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
         static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
-        public float w, h, x, y;//, x2, y2, OffsetX, OffsetY, OffsetX2, OffsetY2;
+        Vector2f scale = new Vector2f(SCREEN_WIDTH / 1920, SCREEN_HEIGHT / 1080);
         private Text name, dialogue;
         //public Dialogue line;
         public RectangleShape box;
         public RectangleShape nameBox;
         Task currentTask;
+        uint dialogueFontSize = 40;
+        uint nameFontSize = 55;
+
+        static Dictionary<string, Sprite> spriteDict = new Dictionary<string, Sprite>();
         
         Boolean init = false;
         string tag; //AI or player
 
-        bool animationStart = true;
+        public bool animationStart = true;
         bool awaitInput = false;
 
         CancellationTokenSource cts;
@@ -37,17 +41,37 @@ namespace Test
         public bool active = false;
         int elementIndex = 0;
         GameState state;
+        public bool initRun = true;
+
+        public bool ready = false;
 
         Sprite dialogueBoxSprite;
 
-        public View view { get; private set; }
+        CircleShape cursor = new CircleShape(20);
 
         // public View playerView { get; private set;}
 
         Font speechFont = new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf");
 
+        public void acknowledge() {
+            if (awaitInput) {
+                if (tag == "AI")
+                {
+                    state.startTimer("game");
+                } 
+                active = false;
+                awaitInput = false;
+                init = false;
+            }
+        }
+
         public void setInit(bool b) {
             init = b;
+        }
+
+        public bool getAwaitInput()
+        {
+            return awaitInput;
         }
 
         public void forward()
@@ -109,38 +133,58 @@ namespace Test
             checkEnd();
         }
 
-        public void loadNewDialogue(string speaker, string dialogue)
+        public void loadNewDialogue(string speaker, string content)
         {
             if (speaker == "alex")
             {
-                dialogueBoxSprite = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/speechbubbleright.png"));
-                view.Viewport = new FloatRect(0.3f, 0, 0.35f, 0.2f);
-                renderDialogue(dialogue, "Alex");
+                dialogueBoxSprite = spriteDict["right"];
+                dialogueBoxSprite.Position = new Vector2f(SCREEN_WIDTH / 2 - (dialogueBoxSprite.GetGlobalBounds().Width / 2), SCREEN_HEIGHT / 5);
+
+                name = new Text(speaker.ToUpper(), speechFont, nameFontSize);
+                name.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + ((118 * scale.X) - name.GetGlobalBounds().Width / 2), dialogueBoxSprite.GetGlobalBounds().Top + ((22 * scale.Y) - name.GetGlobalBounds().Height));
+                dialogue = new Text(content, speechFont, dialogueFontSize);
+                dialogue.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + (uint)(SCREEN_WIDTH * 0.004), dialogueBoxSprite.GetGlobalBounds().Top + (uint)(SCREEN_HEIGHT * 0.046));
             }
             else if (speaker == "dad")
             {
-                dialogueBoxSprite = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/speechbubbleleft.png"));
-                view.Viewport = new FloatRect(0.0f, 0f, 0.35f, 0.2f);
-                renderDialogue(dialogue, "Dad");
+                dialogueBoxSprite = spriteDict["left"];
+                dialogueBoxSprite.Position = new Vector2f((float)(SCREEN_WIDTH*0.21) - (dialogueBoxSprite.GetGlobalBounds().Width / 2), (float)(SCREEN_HEIGHT*0.19) - (dialogueBoxSprite.GetGlobalBounds().Height / 2));
+
+                name = new Text(speaker.ToUpper(), speechFont, nameFontSize);
+                name.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + ((118*scale.X) - name.GetGlobalBounds().Width/2), dialogueBoxSprite.GetGlobalBounds().Top + ((22 * scale.Y) - name.GetGlobalBounds().Height));
+                dialogue = new Text(content, speechFont, dialogueFontSize);
+                dialogue.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + (uint)(SCREEN_WIDTH*0.004), dialogueBoxSprite.GetGlobalBounds().Top + (uint)(SCREEN_HEIGHT*0.046));
             }
             else if (speaker == "mom")
             {
-                dialogueBoxSprite = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/speechbubbleright.png"));
-                view.Viewport = new FloatRect(0.63f, 0f, 0.35f, 0.2f);
-                renderDialogue(dialogue, "Mom");
+                dialogueBoxSprite = spriteDict["right"];
+                dialogueBoxSprite.Position = new Vector2f(3 * SCREEN_WIDTH / 4 - (dialogueBoxSprite.GetGlobalBounds().Width / 2), SCREEN_HEIGHT / 5);
+
+                name = new Text(speaker.ToUpper(), speechFont, nameFontSize);
+                name.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + ((118 * scale.X) - name.GetGlobalBounds().Width / 2), dialogueBoxSprite.GetGlobalBounds().Top + ((22 * scale.Y) - name.GetGlobalBounds().Height));
+                dialogue = new Text(content, speechFont, dialogueFontSize);
+                dialogue.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + (uint)(SCREEN_WIDTH * 0.004), dialogueBoxSprite.GetGlobalBounds().Top + (uint)(SCREEN_HEIGHT * 0.046));
+
             }
             else if (speaker == "player")
             {
-                // MAKE PLAYER SPRITE HERE
-                view.Viewport = new FloatRect(0.3f, .5f, 0.35f, 0.2f);
-                renderDialogue(dialogue, "player");
+                dialogueBoxSprite = spriteDict["player"];
+                dialogueBoxSprite.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * 0.74));
+
+                name = new Text("YOU", speechFont, nameFontSize + 40);
+                name.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + ((354 * scale.X) - name.GetGlobalBounds().Width / 2), dialogueBoxSprite.GetGlobalBounds().Top + ((32 * scale.Y) - name.GetGlobalBounds().Height));
+                dialogue = new Text(content, speechFont, dialogueFontSize + 40);
+                dialogue.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + (uint)(SCREEN_WIDTH * 0.004), dialogueBoxSprite.GetGlobalBounds().Top + (uint)(SCREEN_HEIGHT * 0.062));
             }
+            name.Color = Color.White;
+            dialogue.Color = Color.White;
+            renderDialogue(content);
 
 
 
         }
 
-        public void renderDialogue(String s, String speaker)
+        public void renderDialogue(String s)
         {
             active = true;
             elementIndex = 0;
@@ -149,13 +193,11 @@ namespace Test
                 cts.Cancel();
             }
             cts = new CancellationTokenSource();
-            name = BufferName(speaker);
-            dialogue = BufferDialogue("");
-            Text tmp = new Text(s, speechFont, 24);
 
-            arr = createStrings(tmp);
+            arr = createStrings(dialogue);
             currentTask = Task.Run(async () =>
             { //Task.Run puts on separate thread
+                //Console.WriteLine("ARR at " + elementIndex + ": " + arr[elementIndex].DisplayedString);
                 printTime = 60;
                 await animateText(arr[elementIndex], cts.Token); //await pauses thread until animateText() is completed
 
@@ -164,44 +206,47 @@ namespace Test
 
         public Text[] createStrings(Text line)
         {
-            float maxw = w - 26;
+            float maxw = dialogueBoxSprite.GetGlobalBounds().Width;
             float maxh = GetMaxTextHeight();
             List<Text> list = new List<Text>();
-
+            Text newline = new Text(line.DisplayedString, line.Font, dialogueFontSize);
             // split dialogue into words
-            String[] s = line.DisplayedString.Split(' ');
-            line.DisplayedString = "";
+            String[] s = newline.DisplayedString.Split(' ');
+            newline.DisplayedString = "";
             float currentLineWidth = 0;
             foreach (String word in s)
             {
-                Text t = new Text(word + " ", speechFont, 24);
+                //Console.WriteLine("WORD: " + word);
+                Text t = new Text(word + " ", speechFont, dialogueFontSize);
                 float wordSizeWithSpace = t.GetGlobalBounds().Width;
                 if (currentLineWidth + wordSizeWithSpace > maxw)
                 {
-    
-                    line.DisplayedString += "\n";
+
+                    newline.DisplayedString += "\n";
                     currentLineWidth = 0;
-                    if (line.GetGlobalBounds().Height > maxh)
+                    if (newline.GetGlobalBounds().Height*1.5 > maxh)
                     {
-                        list.Add(line);
-                        line = new Text("", speechFont, 24);
+                        list.Add(newline);
+                        newline = new Text("", speechFont, dialogueFontSize);
                     }
                 }
 
-                line.DisplayedString += (t.DisplayedString);
+                newline.DisplayedString += (t.DisplayedString);
                 currentLineWidth += wordSizeWithSpace;
             }
 
+
+
             // Add the last one
-            if (line.DisplayedString != "")
+            if (newline.DisplayedString != "")
             {
-                list.Add(line);
+                list.Add(newline);
 
             }
-            /*for (int i = 0; i < list.Count; i++)
+            for (int i = 0; i < list.Count; i++)
             {
-                Console.WriteLine(list[i]);
-            }*/
+                //Console.WriteLine("LIST!: " + list[i].DisplayedString);
+            }
 
             return list.ToArray();
 
@@ -220,6 +265,7 @@ namespace Test
             state.resetTimer("game");
             int i = 0;
             dialogue.DisplayedString = "";
+           
             while (i < line.DisplayedString.Length)
             {
                 if (ct.IsCancellationRequested)
@@ -233,123 +279,55 @@ namespace Test
                 }
             }
             // Do asynchronous work.
-        
-            if (tag == "AI") 
-            {
-                state.startTimer("game");
-            }
+
+            //if (tag == "AI")
+            //{
+            //    state.startTimer("game");
+            //}
             animationStart = false; //done animating
             awaitInput = true;
 
         }
 
-        
-
-
         public void Draw(RenderTarget target, RenderStates states)
         {
             if (init)
             {
-                View resetView = target.GetView();
-                target.SetView(view);
-                if (tag == "AI")
-                {
-                    target.Draw(dialogueBoxSprite);
-                } else
-                {
-                    target.Draw(box);
-                    target.Draw(nameBox);
-                }
+                target.Draw(dialogueBoxSprite);
                 target.Draw(name);
                 target.Draw(dialogue);
-                
-
-
-                target.SetView(resetView);
+                if(awaitInput)
+                {
+                    cursor.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + dialogueBoxSprite.GetGlobalBounds().Width - 150, dialogueBoxSprite.GetGlobalBounds().Top + dialogueBoxSprite.GetGlobalBounds().Height - 150);
+                    target.Draw(cursor);
+                }
             }
-        }
-        public FloatRect GetBounds()
-        {
-            FloatRect f = new FloatRect(box.GetGlobalBounds().Left - 20,
-                nameBox.GetGlobalBounds().Top - 20,
-                box.GetGlobalBounds().Width + 20,
-                (box.GetGlobalBounds().Top + box.GetGlobalBounds().Height + 20) - nameBox.GetGlobalBounds().Top);
-            return f;
-        }
-        public FloatRect GetGlobalBounds()
-        {
-            return box.GetGlobalBounds();
         }
 
         public float GetMaxTextHeight()
         {
-            if (tag == "PLAYER")
-            {
-                return box.GetGlobalBounds().Height - 20;
-            } else
-            {
-                return dialogueBoxSprite.GetGlobalBounds().Height - 20;
-            }
+            return 156 * (SCREEN_HEIGHT / 1080);
         }
 
-        public Text BufferName(String speaker)
+        public DialogueBox(GameState state, string tag)
         {
-            Text n = new Text(speaker.ToUpper(), speechFont, 32);
-            if (tag == "PLAYER")
-            {
-                nameBox.Size = new Vector2f(n.GetGlobalBounds().Width + 30, this.h - 110);
-                n.Position = new Vector2f(nameBox.Position.X + 12, nameBox.Position.Y);
-                n.Color = Color.Black;
-            } else
-            {
-                n.Position = new Vector2f(dialogueBoxSprite.Position.X + 55, dialogueBoxSprite.Position.Y + 7);
-                n.Color = Color.White;
-            }
-            return n;
-        }
-
-        public Text BufferDialogue(String s)
-        {
-            Text d = new Text(s, speechFont, 32);
-            if (tag == "PLAYER")
-            {
-                d.Position = new Vector2f(box.Position.X + 13, box.Position.Y + 20);
-                d.Color = Color.Black;
-            } else
-            {
-                d.Position = new Vector2f(dialogueBoxSprite.Position.X + 13, dialogueBoxSprite.Position.Y + 40);
-                d.Color = Color.White;
-            }
-            
-            return d;
-        }
-
-
-        public DialogueBox(float x, float y, float width, float height, GameState state, string tag)
-        {
-            this.x = x;
-            this.y = y;
-            this.w = width;
-            this.h = height;
             this.state = state;
             this.tag = tag;
 
-            if (tag == "AI")
+            if(!spriteDict.ContainsKey("left"))
             {
-                view = new View(new FloatRect(new Vector2f(0, 0), new Vector2f(500, 248)));
+                spriteDict.Add("left", new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/speechbubbleleft.png")));
+                spriteDict["left"].Scale = scale;
             }
-            else
+            if (!spriteDict.ContainsKey("right"))
             {
-                box = new RectangleShape(new Vector2f(this.w, this.h));
-                box.Position = new Vector2f(this.x - 40, this.y + 35);
-                box.OutlineThickness = 3;
-                box.OutlineColor = Color.Black;
-
-                nameBox = new RectangleShape(new Vector2f(this.w - 575, this.h - 100));
-                nameBox.Position = new Vector2f(this.x, this.y);
-                nameBox.OutlineThickness = 3;
-                nameBox.OutlineColor = Color.Black;
-                view = new View(GetBounds());
+                spriteDict.Add("right", new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/speechbubbleright.png")));
+                spriteDict["right"].Scale = scale;
+            }
+            if (!spriteDict.ContainsKey("player"))
+            {
+                spriteDict.Add("player", new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/psb.png")));
+                spriteDict["player"].Scale = scale;
             }
             
         }

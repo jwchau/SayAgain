@@ -7,6 +7,7 @@ using SFML.Graphics;
 using SFML.Audio;
 using SFML.Window;
 using SFML.System;
+using System.Text.RegularExpressions;
 
 //holds UI elements such as buttons, input fields, TextBoxes, etc
 namespace Test {
@@ -58,7 +59,7 @@ namespace Test {
 
         public List<UITextBox> produceTextBoxes2(string Dialogue) {
             //Console.WriteLine("AM I HERE????");
-            dialogueArray = Dialogue.Split('.', '!', '?');
+            dialogueArray = Regex.Split(Dialogue, @"(?=\.)|(?<=\!)|(?=\?)");
             //dialogue Array now holds all the sentences
             foreach (var dialogue in dialogueArray) {
                 //Console.WriteLine(dialogue);

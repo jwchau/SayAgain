@@ -21,13 +21,16 @@ namespace Test
         private List<Sprite> sprites = new List<Sprite>();
 
         public DateTime time = DateTime.Now;
-        public float xpos = 0, ypos = 0, xscale = 1, yscale = 1;
-        public bool canTalk = false;
+        protected float xpos, ypos, xscale, yscale;
+        protected bool canTalk = false;
         public CharacterState state;
         public enum spriteEmotion { happy, angry, neutral, sad };
         public abstract void setSpriteEmotion(spriteEmotion e);  
         public abstract void checkFNC();
-        
+
+        protected uint SCREEN_WIDTH = VideoMode.DesktopMode.Width;
+        protected uint SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+
         public void dim()
         {
 
@@ -68,20 +71,6 @@ namespace Test
         public virtual void Draw(RenderTarget target, RenderStates states)
         {
             
-            float framerate = 4f;
-
-            sprites[index].Position = new Vector2f(xpos, ypos);
-            sprites[index].Scale = new Vector2f(xscale, yscale);
-
-            target.Draw(sprites[index]);
-            if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
-            {
-                time = DateTime.Now;
-                if (++index >= sprites.Count)
-                {
-                    index = 0;
-                }
-            }
         }
         
         public void click()

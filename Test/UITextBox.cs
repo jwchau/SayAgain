@@ -13,9 +13,9 @@ namespace Test
     {
         public UITextBox(float x, float y, string dialogue, int cluster)
         {
-            UITextBoxText = new Text(dialogue, UITextBoxFont);
+            UITextBoxText = new Text(dialogue, UITextBoxFont, getFontSize());
             UITextBoxText.Position = new Vector2f(x + 3, y + 12);
-            box = new RectangleShape(new Vector2f(UITextBoxText.GetGlobalBounds().Width + 10, UITextBoxText.GetGlobalBounds().Height + 10));
+            box = new RectangleShape(new Vector2f(UITextBoxText.GetGlobalBounds().Width + 10, (float)(UITextBoxText.GetGlobalBounds().Height*1.5) + 10));
             box.Position = new Vector2f(x, y + 17);
             box.FillColor = buttonTonalColors["Default"];
             prevColor = buttonTonalColors["Default"];
@@ -32,6 +32,14 @@ namespace Test
         bool mouseWasIn = false;
         int cluster = -1;
         tone tone = tone.Root;
+        UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
+        UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+
+        private uint getFontSize()
+        {
+
+            return (uint)((SCREEN_WIDTH / 1920) * 50);
+        }
 
         public RectangleShape getBox()
         {
