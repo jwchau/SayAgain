@@ -5,4 +5,4 @@ Test/obj/*
 Test/packages.config
 .vs/
 packages/*
-
+Test/obj/Debug/Test.csproj.FileListAbsolute.txt

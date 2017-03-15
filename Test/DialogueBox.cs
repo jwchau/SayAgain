@@ -41,6 +41,9 @@ namespace Test
         public bool active = false;
         int elementIndex = 0;
         GameState state;
+        public bool initRun = true;
+
+        public bool ready = false;
 
         Sprite dialogueBoxSprite;
 
@@ -55,8 +58,10 @@ namespace Test
                 if (tag == "AI")
                 {
                     state.startTimer("game");
-                }
+                } 
+                active = false;
                 awaitInput = false;
+                init = false;
             }
         }
 
@@ -130,7 +135,6 @@ namespace Test
 
         public void loadNewDialogue(string speaker, string content)
         {
-            Console.WriteLine("I WAS CALLED HELLA!!!!!!: "+content);
             if (speaker == "alex")
             {
                 dialogueBoxSprite = spriteDict["right"];
@@ -193,7 +197,7 @@ namespace Test
             arr = createStrings(dialogue);
             currentTask = Task.Run(async () =>
             { //Task.Run puts on separate thread
-                Console.WriteLine("ARR at " + elementIndex + ": " + arr[elementIndex].DisplayedString);
+                //Console.WriteLine("ARR at " + elementIndex + ": " + arr[elementIndex].DisplayedString);
                 printTime = 60;
                 await animateText(arr[elementIndex], cts.Token); //await pauses thread until animateText() is completed
 
@@ -212,7 +216,7 @@ namespace Test
             float currentLineWidth = 0;
             foreach (String word in s)
             {
-                Console.WriteLine("WORD: " + word);
+                //Console.WriteLine("WORD: " + word);
                 Text t = new Text(word + " ", speechFont, dialogueFontSize);
                 float wordSizeWithSpace = t.GetGlobalBounds().Width;
                 if (currentLineWidth + wordSizeWithSpace > maxw)
@@ -294,7 +298,6 @@ namespace Test
                 target.Draw(dialogue);
                 if(awaitInput)
                 {
-                    Console.WriteLine("IM WAITING");
                     cursor.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + dialogueBoxSprite.GetGlobalBounds().Width - 150, dialogueBoxSprite.GetGlobalBounds().Top + dialogueBoxSprite.GetGlobalBounds().Height - 150);
                     target.Draw(cursor);
                 }

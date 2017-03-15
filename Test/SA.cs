@@ -132,12 +132,21 @@ namespace Test {
 
             if (State.GetState() == "game") {
                 if (e.Code == Keyboard.Key.Space) {
-                    if (dialogueBox.printTime != 0 && dialogueBox.animationStart)
+                    if (dialogueBox.printTime != 0 && dialogueBox.getAnimationStart() && !dialogueBox.getAwaitInput())
                     {
                         dialogueBox.setPrintTime(0);
                     }
-                    else if(dialogueBox.printTime == 0 && !dialogueBox.animationStart){
+                    else {
                         dialogueBox.acknowledge();
+                    }
+
+                    if (playerDialogueBox.printTime != 0 && playerDialogueBox.getAnimationStart() && !playerDialogueBox.getAwaitInput())
+                    {
+                        playerDialogueBox.setPrintTime(0);
+                    }
+                    else
+                    {
+                        playerDialogueBox.acknowledge();
                     }
                 }
 
@@ -372,8 +381,8 @@ namespace Test {
 
                 }
                 // ui_man.dialogueLoadOrder(State, playerDialogueBox, dialogueBox, responseList, responseListAlex);
-                if (playerDialogueBox.getAnimationStart() == false && loadedAIDialogueOnce == true /*&& playerChoice == false*/) {
-
+                if (playerDialogueBox.getAnimationStart() == false && loadedAIDialogueOnce == true && playerDialogueBox.getAwaitInput() == false) {
+                    //add another condition to see if the User has pressed space on player dialogue
                     //sound starts on npc dialogue start
                     State.sound_man.playSFX("chatter");
 
@@ -427,31 +436,42 @@ namespace Test {
                 window.Draw(flower);
                 
                 //Draw text box background box
-                window.Draw(textBackground);
+              
 
                 var dialogues = ui_man.getPlayerDialogues();
 
-                for (var i = 0; i < dialogues.Count; i++) {
-                    window.Draw(dialogues[i]);
-                }
+               
 
                 var buttons = ui_man.getButtons();
 
-                if (!playerDialogueBox.active)
+                if (!playerDialogueBox.active && !dialogueBox.active)
                 {
+
+                    window.Draw(textBackground);
+                    for (var i = 0; i < dialogues.Count; i++)
+                    {
+                        window.Draw(dialogues[i]);
+                    }
                     window.Draw(toneBar);
                     for (var i = 0; i < buttons.Count; i++)
                     {
                         window.Draw(buttons[i]);
                     }
+                    window.Draw(State.getGameTimer("game")); //this is the timer circle
                 }
                 
                 if (playerChoice) {
                     window.Draw(D_Man);
                 }
-                window.Draw(State.getGameTimer("game")); //this is the timer circle
-                window.Draw(playerDialogueBox);
-                window.Draw(dialogueBox);
+                
+                if (!dialogueBox.active)
+                {
+                    window.Draw(playerDialogueBox);
+                }
+                if (!playerDialogueBox.active)
+                {
+                    window.Draw(dialogueBox);
+                }
 
                 if (State.GetState() == "pause") {
 
