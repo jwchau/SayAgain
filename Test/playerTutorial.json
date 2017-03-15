@@ -1,196 +1,77 @@
 {
   "Dialogues": [
     {
-      "content": "Hi Alex.",
-      "tonalPreReq": "Root",
-      "context": "AlexTalksPlayer",
-      "consequence": "",
-      "memories": [ "" ],
-      "milestone": [ "" ],
-      "fncPreReq": 0,
-      "target": [ 1, 0, 0 ],
-      "nextContext": [ "" ]
+      "content": "Awaiting npc dialogue",
+      "tone": "Root",
+      "id": "1",
+      "next": "2"
+    },
+    {
+      "content": "asdfas1214asdfadfasdfasdfasdfad",
+      "tone": "blah",
+      "id": "2",
+      "next": "9"
+    },
+    {
+      "content": "Thank you.",
+      "tone": "Root",
+      "id": "3",
+      "next": ""
 
     },
     {
-      "content": "What are you staring at?",
-      "tonalPreReq": "Blunt",
-      "context": "AlexTalksPlayer",
-      "consequence": "greeting",
-      "memories": [ "" ],
-      "milestone": [ "" ],
-      "fncPreReq": 0,
-      "target": [ 1, 0, 0 ],
-      "nextContext": [ "AlexTalksAlex" ]
-
+      "content": "Yea. It's great.",
+      "tone": "Indifferent",
+      "id": "4",
+      "next": "9"
     },
     {
-      "content": "Hey.",
-      "tonalPreReq": "Indifferent",
-      "context": "AlexTalksPlayer",
-      "consequence": "greeting",
-      "memories": [ "" ],
-      "milestone": [ "" ],
-      "fncPreReq": 0,
-      "target": [ 1, 0, 0 ],
-      "nextContext": [ "AlexTalksAlex" ]
-
+      "content": "Yes",
+      "tone": "Root",
+      "id": "5",
+      "next": ""
     },
     {
-      "content": "Alex?",
-      "tonalPreReq": "Hesitant",
-      "context": "AlexTalksPlayer",
-      "consequence": "greeting",
-      "memories": [ "" ],
-      "milestone": [ "" ],
-      "fncPreReq": 0,
-      "target": [ 1, 0, 0 ],
-      "nextContext": [ "AlexTalksAlex" ]
-
+      "content": "water yoo doin?.",
+      "tone": "Indifferent",
+      "id": "6",
+      "next": ""
     },
     {
-      "content": "Hi Alex! It seems like you're doing so well!",
-      "tonalPreReq": "Compassionate",
-      "context": "AlexTalksPlayer",
-      "consequence": "greeting",
-      "memories": [ "" ],
-      "milestone": [ "" ],
-      "fncPreReq": 0,
-      "target": [ 1, 0, 0 ],
-      "nextContext": [ "AlexTalksAlex" ]
-
+      "content": "this is root, 5.",
+      "tone": "Indifferent",
+      "id": "7",
+      "next": ""
     },
     {
-      "content": "How's is school?",
-      "tonalPreReq": "Root",
-      "context": "AlexTalksAlex",
-      "consequence": "",
-      "memories": [ "", "AlexTalksPlayer" ],
-      "milestone": [ "", "greeting" ],
-      "fncPreReq": 0,
-      "target": [ 0, 0, 0 ],
-      "nextContext": [ "" ]
-
+      "content": "this is indiff, 6",
+      "tone": "Indifferent",
+      "id": "8",
+      "next": ""
     },
     {
-      "content": "How are your friends?",
-      "tonalPreReq": "Root",
-      "context": "AlexTalksAlex",
-      "consequence": "",
-      "memories": [ "", "AlexTalksPlayer" ],
-      "milestone": [ "", "greeting", "TalkedSchool" ],
-      "fncPreReq": 0,
-      "target": [ 0, 0, 0 ],
-      "nextContext": [ "" ]
-
+      "content": "this is root, 7.",
+      "tone": "Indifferent",
+      "id": "9",
+      "next": ""
     },
     {
-      "content": "I bet school sucks, huh.",
-      "tonalPreReq": "Blunt",
-      "context": "AlexTalksAlex",
-      "consequence": "TalkedSchool",
-      "memories": [ "", "AlexTalksPlayer" ],
-      "milestone": [ "", "greeting" ],
-      "fncPreReq": 0,
-      "target": [ 0, 0, 0 ],
-      "nextContext": [ "AlexTalksAlex" ]
-
+      "content": "this is indiff, 8.",
+      "tone": "Indifferent",
+      "id": "10",
+      "next": ""
     },
     {
-      "content": "How's school.",
-      "tonalPreReq": "Indifferent",
-      "context": "AlexTalksAlex",
-      "consequence": "TalkedSchool",
-      "memories": [ "", "AlexTalksPlayer" ],
-      "milestone": [ "", "greeting" ],
-      "fncPreReq": 0,
-      "target": [ 0, 0, 0 ],
-      "nextContext": [ "AlexTalksAlex" ]
-
+      "content": "this is root, 9.",
+      "tone": "Indifferent",
+      "id": "11",
+      "next": ""
     },
     {
-      "content": "You're...a junior now, right?",
-      "tonalPreReq": "Hesitant",
-      "context": "AlexTalksAlex",
-      "consequence": "TalkedSchool",
-      "memories": [ "", "AlexTalksPlayer" ],
-      "milestone": [ "", "greeting" ],
-      "fncPreReq": 0,
-      "target": [ 0, 0, 0 ],
-      "nextContext": [ "AlexTalksAlex" ]
-
-    },
-    {
-      "content": "I hope your classes are going really well, Alex.",
-      "tonalPreReq": "Compassionate",
-      "context": "AlexTalksAlex",
-      "consequence": "TalkedSchool",
-      "memories": [ "", "AlexTalksPlayer" ],
-      "milestone": [ "", "greeting" ],
-      "fncPreReq": 0,
-      "target": [ 0, 0, 0 ],
-      "nextContext": [ "AlexTalksAlex" ]
-
-    },
-    {
-      "content": "Do you even have friends?",
-      "tonalPreReq": "Blunt",
-      "context": "AlexTalksAlex",
-      "consequence": "TalkedFriends",
-      "memories": [ "", "AlexTalksPlayer", "AlexTalksAlex" ],
-      "milestone": [ "", "greeting", "TalkedSchool" ],
-      "fncPreReq": 0,
-      "target": [ 0, 0, 0 ],
-      "nextContext": [ "MomTalksMom", "DadTalksDad", "AlexTalksMemes" ]
-
-    },
-    {
-      "content": "Are your friends doing well?",
-      "tonalPreReq": "Indifferent",
-      "context": "AlexTalksAlex",
-      "consequence": "TalkedFriends",
-      "memories": [ "", "AlexTalksPlayer", "AlexTalksAlex" ],
-      "milestone": [ "", "greeting", "TalkedSchool" ],
-      "fncPreReq": 0,
-      "target": [ 0, 0, 0 ],
-      "nextContext": [ "MomTalksMom", "DadTalksDad", "AlexTalksMemes" ]
-
-    },
-    {
-      "content": "How's Ron? That one...person?",
-      "tonalPreReq": "Hesitant",
-      "context": "AlexTalksAlex",
-      "consequence": "TalkedFriends",
-      "memories": [ "", "AlexTalksPlayer", "AlexTalksAlex" ],
-      "milestone": [ "", "greeting", "TalkedSchool" ],
-      "fncPreReq": 0,
-      "target": [ 0, 0, 0 ],
-      "nextContext": [ "MomTalksMom", "DadTalksDad", "AlexTalksMemes" ]
-
-    },
-    {
-      "content": "Are you and your friends getting along?",
-      "tonalPreReq": "Compassionate",
-      "context": "AlexTalksAlex",
-      "consequence": "TalkedFriends",
-      "memories": [ "", "AlexTalksPlayer", "AlexTalksAlex" ],
-      "milestone": [ "", "greeting", "TalkedSchool" ],
-      "fncPreReq": 0,
-      "target": [ 0, 0, 0 ],
-      "nextContext": [ "MomTalksMom", "DadTalksDad", "AlexTalksMemes" ]
-
-    },
-    {
-      "content": "Hi old man",
-      "tonalPreReq": "Root",
-      "context": "DadTalksDad",
-      "consequence": "",
-      "memories": [ "", "AlexTalksPlayer", "AlexTalksAlex" ],
-      "milestone": [ "", "greeting", "TalkedSchool", "TalkedFriends" ],
-      "fncPreReq": 0,
-      "target": [ 0, 0, 0 ],
-      "nextContext": [ "" ]
+      "content": "this is indiff, 10.",
+      "tone": "Indifferent",
+      "id": "12",
+      "next": ""
     }
-
   ]
 }

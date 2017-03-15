@@ -11,7 +11,7 @@ using SFML.System;
 using System.Drawing;
 namespace Test
 {
-    class Dad : Character
+    class Dad : Character, Drawable
     {
         Texture t = new Texture("../../Art/dadMaster.png");
         Texture arm = new Texture("../../Art/armMaster.png");
@@ -72,9 +72,11 @@ namespace Test
 
             for (int i = 0; i < (343 * 4); i += 343)
             {
+
                 sprites["angry"].Add(new Sprite(t, new IntRect(i, 0, 343, 454))); //btw might get extra sprite if sizes no precise
                 sprites["angry"][sprites["angry"].Count - 1].Scale = new Vector2f(xscale, yscale);
                 sprites["angry"][sprites["angry"].Count - 1].Position = new Vector2f(xpos - sprites["angry"][0].GetGlobalBounds().Width / 2, ypos);
+
             }
             for (int i = 0; i < (343 * 4); i += 343)
             {
@@ -84,9 +86,11 @@ namespace Test
             }
             for (int i = 0; i < (343 * 4); i += 343)
             {
+
                 sprites["neutral"].Add(new Sprite(t, new IntRect(i, 454 * 2, 343, 454)));
                 sprites["neutral"][sprites["neutral"].Count - 1].Scale = new Vector2f(xscale, yscale);
                 sprites["neutral"][sprites["neutral"].Count - 1].Position = new Vector2f(xpos - sprites["neutral"][0].GetGlobalBounds().Width / 2, ypos);
+
             }
             neutralarm.Scale = sprites["neutral"][0].Scale;
             angryarm.Scale = sprites["angry"][0].Scale;

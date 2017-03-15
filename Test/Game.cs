@@ -63,7 +63,7 @@ namespace Test
         #region AI_FIELDS
         protected List<string> currentMadeMemories = new List<string>();
         protected List<DialogueObj> responseList = new List<DialogueObj>();
-        protected List<DialogueObj> responseListAlex = new List<DialogueObj>();
+        protected List<DialogueObj> responseListNPC = new List<DialogueObj>();
         protected List<string> currentMilestones = new List<string>();
         protected List<int> currentTargets = new List<int>();
 
@@ -72,7 +72,7 @@ namespace Test
         protected Dictionary<string, string> nextContextDict = new Dictionary<string, string>();
         protected tone currentTone = tone.Root;
         protected Loader Load = new Loader();
-        protected Selector s = new Selector();
+        protected OldSelector s = new OldSelector();
 
         #endregion
 

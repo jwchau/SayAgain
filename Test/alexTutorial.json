@@ -1,148 +1,40 @@
-{"Dialogues" :[
 {
-	"content": "Yeah I missed you too",
-	"tonalPreReq": "Blunt",
-	"context": "AlexTalksPlayer",
-	"consequence": "",
-	"memories":[""],
-	"milestone":[""],
-	"fncPreReq":-4,
-	"target":[1,0,0],
-	"nextContext":[""]
-},
-{
-	"content": "Hey",
-	"tonalPreReq": "Indifferent",
-	"context": "AlexTalksPlayer",
-	"consequence": "",
-	"memories":[""],
-	"milestone":[""],
-	"fncPreReq":-4,
-	"target":[1,0,0],
-	"nextContext":[""]
-},
-{
-	"content": "Yeah it's me, Your sister. Remember?",
-	"tonalPreReq": "Hesitant",
-	"context": "AlexTalksPlayer",
-	"consequence": "",
-	"memories":[""],
-	"milestone":[""],
-	"fncPreReq":-4,
-	"target":[1,0,0],
-	"nextContext":[""]
-},
-{
-	"content": "Oh ... yeah",
-	"tonalPreReq": "Compassionate",
-	"context": "AlexTalksPlayer",
-	"consequence": "",
-	"memories":[""],
-	"milestone":[""],
-	"fncPreReq":-4,
-	"target":[1,0,0],
-	"nextContext":[""]
-},
-{
-	"content": "Eh whatever",
-	"tonalPreReq": "Blunt",
-	"context": "AlexTalksAlex",
-	"consequence": "",
-	"memories":["","AlexTalksPlayer"],
-	"milestone":["","greeting"],
-	"fncPreReq":-4,
-	"target":[1,0,0],
-	"nextContext":[""]
-},
-{
-   "content": "Fine",
-   "tonalPreReq": "Indifferent",
-   "context": "AlexTalksAlex",
-   "consequence": "",
-   "memories": [ "", "AlexTalksPlayer" ],
-   "milestone": [ "", "greeting" ],
-   "fncPreReq": -4,
-   "target": [ 1, 0, 0 ],
-   "nextContext": [ "" ]
-
-},
-{
-	"content": "Sure...",
-	"tonalPreReq": "Compassionate",
-	"context": "AlexTalksAlex",
-	"consequence": "",
-	"memories":["","AlexTalksPlayer"],
-	"milestone":["","greeting"],
-	"fncPreReq":-4,
-	"target":[1,0,0],
-	"nextContext":[""]
-	
-},
-{
-	"content": "I'm fourteen, remember?",
-	"tonalPreReq": "Hesitant",
-	"context": "AlexTalksAlex",
-	"consequence": "",
-	"memories":["","AlexTalksPlayer"],
-	"milestone":["","greeting"],
-	"fncPreReq":-4,
-	"target":[1,0,0],
-	"nextContext":[""]
-},
-{
-	"content": "As if you actually care!",
-	"tonalPreReq": "Compassionate",
-	"context": "AlexTalksAlex",
-	"consequence": "",
-	"memories":["","AlexTalksPlayer","AlexTalksAlex"],
-	"milestone":["","greeting","TalkedSchool"],
-	"fncPreReq":-4,
-	"target":[1,0,0],
-	"nextContext":[""]
-},
-{
-	"content": "Yeah I know to make friends. Thanks",
-	"tonalPreReq": "Blunt",
-	"context": "AlexTalksAlex",
-	"consequence": "",
-	"memories":["","AlexTalksPlayer","AlexTalksAlex"],
-	"milestone":["","greeting","TalkedSchool"],
-	"fncPreReq":-4,
-	"target":[1,0,0],
-	"nextContext":[""]
-},
-{
-	"content": "Oh I'm so glad you care about my well being, sibling",
-	"tonalPreReq": "Compassionate",
-	"context": "AlexTalksAlex",
-	"consequence": "",
-	"memories":["","AlexTalksPlayer","AlexTalksAlex"],
-	"milestone":["","greeting","TalkedSchool"],
-	"fncPreReq":-4,
-	"target":[1,0,0],
-	"nextContext":[""]
-},
-{
-	"content": "Wait who? I've never had a friend named Ron. You don't need to act like you care",
-	"tonalPreReq": "Hesitant",
-	"context": "AlexTalksAlex",
-	"consequence": "",
-	"memories":["","AlexTalksPlayer","AlexTalksAlex"],
-	"milestone":["","greeting","TalkedSchool"],
-	"fncPreReq":-4,
-	"target":[1,0,0],
-	"nextContext":[""]
-},
-{
-	"content": "You've been gone for a year and that's what you ask? ",
-	"tonalPreReq": "Indifferent",
-	"context": "AlexTalksAlex",
-	"consequence": "",
-	"memories":["","AlexTalksPlayer","AlexTalksAlex"],
-	"milestone":["","greeting","TalkedSchool"],
-	"fncPreReq":-4,
-	"target":[1,0,0],
-	"nextContext":[""]
-}
-]
+  "Dialogues": [
+    {
+      "content": "am alex.",
+      "tone": "Indifferent",
+      "id": "1",
+      "next": "2"
+    },
+    {
+      "content": "am alex2.",
+      "tone": "Indifferent",
+      "id": "2",
+      "next": "2"
+    },
+    {
+      "content": "this is alex, 3.",
+      "tone": "Indifferent",
+      "id": "3",
+      "next": "2"
+    },
+    {
+      "content": "this is alex, 4",
+      "tone": "Indifferent",
+      "id": "4",
+      "next": "2"
+    },
+    {
+      "content": "this is alex, 5.",
+      "tone": "Indifferent",
+      "id": "5",
+      "next": "2"
+    },
+    {
+      "content": "this is alex, 6.",
+      "tone": "Indifferent",
+      "id": "6",
+      "next": "2"
+    }
+  ]
 }

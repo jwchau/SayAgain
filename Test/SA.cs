@@ -75,6 +75,7 @@ namespace Test {
         //}
 
         private void onMouseButtonReleased(object sender, MouseButtonEventArgs e) {
+
             ManagerOfInput.onMouseButtonReleased();
 
             if (playerChoice) {
@@ -150,8 +151,8 @@ namespace Test {
         public void TimerAction() {
             updateTargetFNC();
             //update currentmademeories, currentmilestones, currenttone, currentcontext
-            updateCurrents(); //updates everything besides FNC
-
+            currentTone = ui_man.getTone();
+            if (currentTone != tone.Root) updateCurrents(); //updates everything besides FNC
             loadDialogues();
 
         }
@@ -165,70 +166,25 @@ namespace Test {
             //meth;
         }
 
+        string pcurrid = "1";
+        string ncurrid = "1";
+
         //after timer runs out update the current stuff
         private void updateCurrents() {
-            List<string> nextContext = responseList[0].nextContext;
-            if (nextContext.Count == 1) {
-                if (nextContext[0] != "") {
-                    if (!currentMadeMemories.Contains(currentContext)) {
-                        currentMadeMemories.Add(currentContext);
-                    }
-                    currentContext = nextContext[0];
+            int temp2 = Int32.Parse(pcurrid);
+            int temp1 = Int32.Parse(ncurrid);
 
-                }
-
-                playerChoice = false;
-            } else {
-
-                Console.WriteLine("player choice");
-                for (int i = 0; i != nextContext.Count; i++) {
-                    if (nextContext[i][0] == 'A') {
-
-                        //change music 
-
-                        Console.WriteLine("Ayyyyy");
-                        D_Man.activateCharacterChoice("Alex");
-                        if (!nextContextDict.ContainsKey("Alex")) {
-                            nextContextDict.Add("Alex", nextContext[i]);
-                        } else {
-                            nextContextDict["Alex"] = nextContext[i];
-                        }
-                    } else if (nextContext[i][0] == 'M') {
-
-
-                        Console.WriteLine("Mmmmm");
-                        D_Man.activateCharacterChoice("Mom");
-                        if (!nextContextDict.ContainsKey("Mom")) {
-                            nextContextDict.Add("Mom", nextContext[i]);
-                        } else {
-                            nextContextDict["Mom"] = nextContext[i];
-                        }
-                    } else if (nextContext[i][0] == 'D') {
-
-
-                        Console.WriteLine("Deez Nutz");
-                        D_Man.activateCharacterChoice("Dad");
-                        if (!nextContextDict.ContainsKey("Dad")) {
-                            nextContextDict.Add("Dad", nextContext[i]);
-                        } else {
-                            nextContextDict["Dad"] = nextContext[i];
-                        }
-                    }
-                }
-                //currentcontext = whatever player clicked on 
-                playerChoice = true;
-                //State.getGameTimer("game").stopTimer();
-
+            temp2++;
+            if (temp2 % 2 == 0 && temp2 > 2)
+            {
+                temp1++;
             }
 
-            if (!responseList.ElementAt(0).consequence.Equals("")) {
-                currentMilestones.Add(responseList.ElementAt(0).consequence);
-            }
+            ncurrid = temp1.ToString();
+            pcurrid = temp2.ToString();
 
-
-            currentTone = ui_man.getTone();
-
-            Console.WriteLine("THE TONE I DRAGGED IN WAS: " + currentTone);
+            if (responseList.ElementAt(0).next != "") pcurrid = responseList.ElementAt(0).next;
+            if (responseListNPC.ElementAt(0).next != "") ncurrid = responseListNPC.ElementAt(0).next;
         }
         #endregion
 
@@ -236,27 +192,27 @@ namespace Test {
 
         public void loadDialogues() {
 
-            if (currentTone != tone.Root) {
+            if (currentTone != tone.Root)
+            {
 
-                responseList = s.ChooseDialog(FNC, Load.playerDialogueObj1, currentMadeMemories, currentMilestones, currentTone, currentContext); //loads "what are you staring at?"
-                responseListAlex = s.ChooseDialog(D_Man.getAlexFNC(), Load.alexDialogueObj1, currentMadeMemories, currentMilestones, currentTone, currentContext);//loads "yeah I missed you too?"
-                ui_man.dialogueLoadOrder(State, playerDialogueBox, dialogueBox, responseList, responseListAlex, playerChoice);
+                responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, currentTone.ToString());
+                responseListNPC = s.ChooseDialog(Load.NPCDialogueObj, ncurrid, currentTone.ToString());
+                ui_man.dialogueLoadOrder(State, playerDialogueBox, dialogueBox, responseList, responseListNPC, playerChoice);
                 loadedAIDialogueOnce = true;
 
-                //give this responselist to playerdialogue box
-                Console.WriteLine("Affected Dialogue: " + responseList.ElementAt(0).content);
-                //dialogueBox.loadNewDialogue("player", responseList.ElementAt(0).content);
                 updateCurrents();
-                responseList = s.ChooseDialog(FNC, Load.playerDialogueObj1, currentMadeMemories, currentMilestones, tone.Root, currentContext); //loads "how is school?"
-                //give this response list to root player uitextbox.
+
+                responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, tone.Root.ToString());
 
                 ui_man.reset(responseList);
 
-            } else {
-                //responseList = s.ChooseDialog(FNC, Load.playerDialogueObj1, currentMadeMemories, currentMilestones, currentTone, currentContext);
-                //ui_man.reset(responseList);
+            }
+            else
+            {
+
                 State.getGameTimer("game").resetTimer();
                 State.getGameTimer("game").startTimer();
+
             }
         }
 
@@ -289,9 +245,8 @@ namespace Test {
             //Originally in LoadContent/////////////////////////////////////////////////////////////////////////////////
             // Create Character states
 
-            LoadInitialPreReqs();
-
-            responseList = s.ChooseDialog(FNC, Load.playerDialogueObj1, currentMadeMemories, currentMilestones, currentTone, currentContext);
+            responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, currentTone.ToString());
+            responseListNPC = s.ChooseDialog(Load.NPCDialogueObj, ncurrid, currentTone.ToString());
 
             string FirstDialogue = responseList[0].content;
             ui_man.produceTextBoxes2(FirstDialogue);
@@ -304,6 +259,8 @@ namespace Test {
             window.SetView(fullScreenView);
 
             dialogueBox = new DialogueBox(State, "AI");
+            dialogueBox.loadNewDialogue("dad", "Hey! It’s great having you back home.");
+
             playerDialogueBox = new DialogueBox(State, "PLAYER");
 
             buttons = ui_man.getButtons();
@@ -412,9 +369,9 @@ namespace Test {
                     //sound starts on npc dialogue start
                     State.sound_man.playSFX("chatter");
 
-                    if (responseListAlex[0].content != "returned empty string") {
+                    if (responseListNPC[0].content != "returned empty string") {
                         dialogueBox.setInit(true);
-                        dialogueBox.loadNewDialogue("alex", responseListAlex.ElementAt(0).content); //this makes the timer happen after the animation is done
+                        dialogueBox.loadNewDialogue("dad", responseListNPC.ElementAt(0).content); //this makes the timer happen after the animation is done
                         loadedAIDialogueOnce = false;
                         if (dialogueBox.getAnimationStart() == false) {
                             loadedAIDialogueOnce = true;
@@ -438,8 +395,10 @@ namespace Test {
         protected override void Draw() {
 
             window.Clear(clearColor);
-            if (State.GetState() != "menu") {
-                
+
+            if (State.GetState() == "game")
+            {
+                dialogueBox.setInit(true);
             }
 
             window.SetView(fullScreenView);
@@ -467,15 +426,18 @@ namespace Test {
                 for (var i = 0; i < dialogues.Count; i++) {
                     window.Draw(dialogues[i]);
                 }
+
+                var buttons = ui_man.getButtons();
+
                 if (!playerDialogueBox.active)
                 {
                     window.Draw(toneBar);
+                    for (var i = 0; i < buttons.Count; i++)
+                    {
+                        window.Draw(buttons[i]);
+                    }
                 }
-                var buttons = ui_man.getButtons();
-
-                for (var i = 0; i < buttons.Count; i++) {
-                    window.Draw(buttons[i]);
-                }
+                
                 if (playerChoice) {
                     window.Draw(D_Man);
                 }

@@ -71,20 +71,6 @@ namespace Test
         public virtual void Draw(RenderTarget target, RenderStates states)
         {
             
-            //float framerate = 4f;
-            //sprites[index].Position = new Vector2f(xpos, ypos);
-            //Console.WriteLine("WIDTH: " + sprites[index].GetGlobalBounds().Width + " height: " + sprites[index].GetGlobalBounds().Height);
-            //// sprites[index].Scale = new Vector2f(SCREEN_WIDTH / sprites[index].GetGlobalBounds().Width, SCREEN_HEIGHT / sprites[index].GetGlobalBounds().Height);
-
-            //target.Draw(sprites[index]);
-            //if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
-            //{
-            //    time = DateTime.Now;
-            //    if (++index >= sprites.Count)
-            //    {
-            //        index = 0;
-            //    }
-            //}
         }
         
         public void click()
