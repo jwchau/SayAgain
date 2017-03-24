@@ -235,13 +235,15 @@ namespace Test {
             flower = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/flower.png"));
             lamp = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/lamp.png"));
             pictures = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/pictures.png"));
-            table = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/table.png"));
-            
+            table = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/letable.png"));
+            windowsprite = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/window.png"));
+
             backwall.Scale = new Vector2f(SCREEN_WIDTH / backwall.GetGlobalBounds().Width, SCREEN_HEIGHT / backwall.GetGlobalBounds().Height);
             flower.Scale = new Vector2f(SCREEN_WIDTH / flower.GetGlobalBounds().Width, SCREEN_HEIGHT / flower.GetGlobalBounds().Height);
             lamp.Scale = new Vector2f(SCREEN_WIDTH / lamp.GetGlobalBounds().Width, SCREEN_HEIGHT / lamp.GetGlobalBounds().Height);
             pictures.Scale = new Vector2f(SCREEN_WIDTH / pictures.GetGlobalBounds().Width, SCREEN_HEIGHT / pictures.GetGlobalBounds().Height);
             table.Scale = new Vector2f(SCREEN_WIDTH / table.GetGlobalBounds().Width, SCREEN_HEIGHT / table.GetGlobalBounds().Height);
+            windowsprite.Scale = new Vector2f(SCREEN_WIDTH / windowsprite.GetGlobalBounds().Width, SCREEN_HEIGHT / windowsprite.GetGlobalBounds().Height);
 
             table.Position = new Vector2f(0, -200);
             flower.Position = new Vector2f(0, -200);
@@ -429,11 +431,13 @@ namespace Test {
                 window.Draw(backwall);
                 window.Draw(pictures);
                 window.Draw(lamp);
+                window.Draw(windowsprite);
                 window.Draw(Mom);
                 window.Draw(Alexis);
                 window.Draw(Dad);
                 window.Draw(table);
                 window.Draw(flower);
+                
                 
                 //Draw text box background box
               

@@ -61,7 +61,7 @@ namespace Test
                     song.Stop();
                 }
                 song = new Music(song_dict[musicname]);
-                song.Volume = 0;
+                //song.Volume = 0;
                 song.Play();
                 song.Loop = true;
                 current = musicname;

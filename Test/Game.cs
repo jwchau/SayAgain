@@ -76,7 +76,7 @@ namespace Test
 
         #endregion
 
-        protected Sprite mom, alex, dad, toneBar, backwall, flower, lamp, pictures, table;
+        protected Sprite mom, alex, dad, toneBar, backwall, flower, lamp, pictures, table, windowsprite;
         protected RectangleShape textBackground;
         ContextSettings settings;
         protected Character Mom, Alexis, Dad;
