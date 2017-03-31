@@ -16,23 +16,25 @@ namespace Test
 
         public GameTimer(string name, double howLong, Action T)
 		{ //in seconds
-            width = SCREEN_WIDTH / 10;
-            height = SCREEN_HEIGHT / 15;
-            x = SCREEN_WIDTH - 400;
-            y = SCREEN_HEIGHT - 200;
+            timerFrame = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/speakbutton.png"));
+            timerFrame.Scale = new Vector2f(SCREEN_WIDTH / 1920, SCREEN_HEIGHT / 1080);
+            width = timerFrame.GetGlobalBounds().Width - 8;
+            height = timerFrame.GetGlobalBounds().Height - 8;
+            x = (float)(SCREEN_WIDTH - SCREEN_WIDTH*0.15);
+            y = (float)(SCREEN_HEIGHT - SCREEN_HEIGHT*0.13);
             initTime = howLong-1; //0 till 9 = 10 seconds
 			countDown = howLong;
-            timerRead = new Text("SPEAK", adore64, 60);
-            timerRead.Position = new Vector2f((x + width/2) - timerRead.GetGlobalBounds().Width/2, (y + height/2) - timerRead.GetGlobalBounds().Height/2 - 20);
-            timerRead.Color = Color.White;
             start = false;
+            
             timerBG = new RectangleShape(new Vector2f(width, height));
-            timerBG.Position = new Vector2f(x, y);
+            timerBG.Position = new Vector2f(x + 4, y + 4);
             timerLevel = new RectangleShape(new Vector2f(width, height));
-            timerLevel.Position = new Vector2f(x, y);
+            timerLevel.Position = new Vector2f(x + 4, y + 4);
             timerBG.FillColor = Color.Blue;
             timerLevel.FillColor = Color.Green;
             timerEvent = T;
+            
+            timerFrame.Position = new Vector2f(x, y);
         }
 
 		public void updateTimer()
@@ -119,6 +121,7 @@ namespace Test
 		Action timerEvent;
         Font adore64 = new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf");
         Text timerRead;
+        Sprite timerFrame;
 
 
 		public bool getStart()
@@ -192,9 +195,11 @@ namespace Test
 			return countDown;
 		}
 
-        public bool Contains(int mouseX, int mouseY)
+        public bool Contains(int mouseX, int mouseY, double sx, double sy)
         {
             FloatRect bounds = timerBG.GetGlobalBounds();
+            mouseX = (int)(mouseX * sx);
+            mouseY = (int)(mouseY * sy);
             if (mouseX >= bounds.Left && mouseX <= bounds.Left + bounds.Width && mouseY >= bounds.Top && mouseY <= bounds.Top + bounds.Height)
             {
                 return true;
@@ -209,7 +214,7 @@ namespace Test
             //target.Draw(circle);
             target.Draw(timerBG);
             target.Draw(timerLevel);
-            target.Draw(timerRead);
+            target.Draw(timerFrame);
         }
     }
 }

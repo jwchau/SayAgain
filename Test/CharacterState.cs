@@ -10,13 +10,15 @@ using SFML.Audio;
 
 namespace Test
 {
-    class CharacterState : Drawable{
+    class CharacterState : Drawable
+    {
         //fields
         private string who;
         private double mood;
         private double volatility;
         private double goal;
         double talkedTo = 0;
+
         static bool[] targets = { false,false,false }; // 0 = alex 1 = mom 2 = dad
         List<String> memory = new List<String>();
 
@@ -61,54 +63,31 @@ namespace Test
             volatility = v;
         }
 
-        public double getVolatility()
-        {
+        public double getVolatility() {
             return volatility;
-/*
-        public CharacterState(string who) {
-            this.who = who;
-            characterRect.OutlineColor = Color.White;
-            if (who == "alex")
-            {
-                this.x = 10;
-               
-                this.color = Color.Red;
-            }
-            else if (who == "mom")
-            {
-                this.x = 110;
-
-                this.color = Color.Black;
-            }
-            else if (who == "dad") {
-                this.x = 210;
-
-                this.color = Color.Green;
-            }
-
-            characterRect.Position = new Vector2f(x, y);
-            characterRect.FillColor = this.color;
-            //this.mood = mood;
-            //this.volatility = volatility;
-*/
         }
 
-        public void SetTalked(char f, double amount) {
-            if (f == 'i') {
+
+        public void SetTalked(char f, double amount)
+        {
+            if (f == 'i')
+            {
                 talkedTo += amount;
-            } else if (f == 'd') {
+            }
+            else if (f == 'd')
+            {
                 talkedTo -= amount;
             }
         }
 
-        public bool CheckTalked() {
-            if (talkedTo == 10000000.0) {
+        public bool CheckTalked()
+        {
+            if (talkedTo == 10000000.0)
+            {
                 return true;
             }
             return false;
         }
-
-    
 
         public void setHover(bool b)
         {

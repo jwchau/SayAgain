@@ -16,11 +16,16 @@ namespace Test
         {
             currentState = "menu";
             currentMenuState = "start";
+            sound_man.playMusic("Mom");
+            
         }
 
         string currentState;
         string currentMenuState;
+        //Sound Manager
+        public SoundManager sound_man = new SoundManager();
         Dictionary<string, GameTimer> DictGameTimer = new Dictionary<string, GameTimer>();
+        
 
         //Timer for keeping track of time given to the player
 
@@ -128,7 +133,7 @@ namespace Test
                     for (var j = 0; j < mappings.Count; j++)
                     {
                         // Found button being clicked
-                        if (buttons[i].getMenuButtonText().DisplayedString == mappings[j].Item1)
+                        if (buttons[i].getMenuButtonContent() == mappings[j].Item1)
                         {
                             // Do button action
                             mappings[j].Item3.Start();

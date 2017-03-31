@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SFML.Window;
 using SFML.Graphics;
+using SFML.System;
 
 namespace Test
 {
@@ -15,44 +16,41 @@ namespace Test
             this.type = type;
             if (type == "start")
             {
-                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3, "Game Start"));
-                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3 + 200, "Settings"));
+                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3, "Start"));
+                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3 + (float)(SCREEN_HEIGHT*.15), "Settings"));
             }
             else if (type == "settings")
             {
-                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3, "8K GAMING"));
-                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3 + 200, "<- Back"));
+                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3, "Sound"));
+                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3 + (float)(SCREEN_HEIGHT * .15), "Back"));
             }
             else if (type == "pause")
             {
-                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3 - 100, "Back to Game"));
-                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3 + 100, "Settings"));
-                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3 + 300, "Quit"));
+                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - (float)(SCREEN_HEIGHT * .15), "Back"));
+                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, "Settings"));
+                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + (float)(SCREEN_HEIGHT * .15), "Quit"));
+                pauseBG = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/pausemenu.png"));
+                pauseBG.Scale = new Vector2f(SCREEN_WIDTH / 1920, SCREEN_HEIGHT / 1080);
+                pauseBG.Position = new Vector2f(SCREEN_WIDTH / 2 - pauseBG.GetGlobalBounds().Width / 2, SCREEN_HEIGHT / 2 - pauseBG.GetGlobalBounds().Height / 2);
             }
-            bg = new RectangleShape(new SFML.System.Vector2f(SCREEN_WIDTH / 3, SCREEN_HEIGHT - 500));
-            bg.Position = new SFML.System.Vector2f((SCREEN_WIDTH / 2) - bg.GetGlobalBounds().Width / 2, (SCREEN_HEIGHT / 2) - bg.GetGlobalBounds().Height / 2 - 100);
-            bg.FillColor = new Color(200, 45, 17);
         }
 
         static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
         static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
-
+        string type;
         List<MenuButton> MenuButtons = new List<MenuButton>();
-        RectangleShape bg;
+        Sprite pauseBG;
 
-        public void DrawBG(RenderWindow target)
+        public void DrawPauseBG(RenderTarget target)
         {
-            target.Draw(bg);
+            target.Draw(pauseBG);
         }
-
 
         public override void Draw(RenderTarget target, RenderStates states)
         {
-
             foreach (var butt in MenuButtons)
             {
-                target.Draw(butt.getMenuButtonRect());
-                target.Draw(butt.getMenuButtonText());
+                target.Draw(butt);
             }
 
         }
@@ -60,6 +58,20 @@ namespace Test
         public List<MenuButton> getMenuButtons()
         {
             return MenuButtons;
+        }
+
+        public bool getSoundToggle()
+        {
+            return getMenuButtons()[0].toggleon;
+        }
+
+        public void SweepButtons(int x, int y, double scalex, double scaley)
+        {
+            var buttons = getMenuButtons();
+            for (var i = 0; i < buttons.Count; i++)
+            {
+                buttons[i].setHover((int)(x * scalex), (int)(y * scaley));
+            }
         }
     }
 }

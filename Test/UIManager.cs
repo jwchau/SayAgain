@@ -7,6 +7,7 @@ using SFML.Graphics;
 using SFML.Audio;
 using SFML.Window;
 using SFML.System;
+using System.Text.RegularExpressions;
 
 //holds UI elements such as buttons, input fields, TextBoxes, etc
 namespace Test {
@@ -51,23 +52,14 @@ namespace Test {
         public void SweepButtons(int x, int y, double scalex, double scaley) {
             var buttons = getButtons();
             for (var i = 0; i < buttons.Count; i++) {
-                var rectx = buttons[i].getX();
-                var recty = buttons[i].getY();
-                var rectxs = rectx + buttons[i].getRectSize().X;
-                var rectys = recty + buttons[i].getRectSize().Y;
                 buttons[i].setHover((int)(x * scalex), (int)(y * scaley));
-                //if (buttons[i].inRange((int)(x * scalex), rectx, rectxs) && buttons[i].inRange((int)(y * scaley), recty, rectys) || buttons[i].GetSelected()) {
-                //    buttons[i].setButtonColor(new Color(255, 0, 0));
-                //} else {
-                //    buttons[i].setButtonColor(buttons[i].getTonalColor());
-                //}
             }
         }
         #endregion
 
         public List<UITextBox> produceTextBoxes2(string Dialogue) {
             //Console.WriteLine("AM I HERE????");
-            dialogueArray = Dialogue.Split('.', '!', '?');
+            dialogueArray = Regex.Split(Dialogue, @"(?=\.)|(?<=\!)|(?=\?)");
             //dialogue Array now holds all the sentences
             foreach (var dialogue in dialogueArray) {
                 //Console.WriteLine(dialogue);
@@ -183,13 +175,16 @@ namespace Test {
 
             int cluster = self.getCluster();
             for (int i = 0; i < playerDialogues.Count; i++) {
+                
                 if (playerDialogues[i].getCluster() == cluster && playerDialogues[i] != self) {
                     if (!f) {
                         playerDialogues[i].setBoxColor(playerDialogues[i].getBoxColor("prev"));
+                       
                         //playerDialogues[i].setMouseWasIn(false);
                     } else {
                         playerDialogues[i].setPrevColor(playerDialogues[i].getBoxColor("curr"));
                         playerDialogues[i].setBoxColor(c);
+
                         //playerDialogues[i].setMouseWasIn(true);
                     }
                 }
@@ -206,7 +201,7 @@ namespace Test {
                     // Move to character state
                     //double[,] final = tfx.MatrixMult(tfx, cf);
                     //Console.WriteLine(final[2, 3]);
-
+                    Console.WriteLine("HEY THE BUTTON I AM DRAGGING IS: " + buttons[i].getTone().ToString());
                     // Get UI Text Boxes
                     var playerDialogues = this.getPlayerDialogues();
 
@@ -221,6 +216,8 @@ namespace Test {
                                 playerDialogues[k].setBoxColor(buttons[i].getTonalColor());
                                 playerDialogues[k].setAffected(true);
                                 playerDialogues[k].setTone(buttons[i].getTone());
+                                Console.WriteLine("MY TONE IS: " + playerDialogues[0].getTone());
+
                             }
                             break;
                         }
@@ -239,6 +236,7 @@ namespace Test {
 
             if (!playerChoice && responseList[0].content != "returned empty string")
             {
+
                 player.setInit(true);
                 player.loadNewDialogue("player", responseList.ElementAt(0).content);
             }

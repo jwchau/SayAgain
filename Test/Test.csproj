@@ -77,7 +77,7 @@
     <Compile Include="CharacterState.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="Alex.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="OldSelector.cs" />
     <Compile Include="StoryManager.cs" />
     <Compile Include="Dad.cs" />
     <Compile Include="Mom.cs" />
@@ -93,8 +93,8 @@
     <Compile Include="MenuButton.cs" />
     <Compile Include="Relationships.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="SoundManager.cs" />
     <Compile Include="ToneEffects.cs" />
-    <Compile Include="Selector.cs" />
     <Compile Include="UIButton.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Program.cs" />
@@ -114,9 +114,11 @@
   <ItemGroup>
     <None Include="alexTutorial.json" />
     <None Include="App.config" />
+    <None Include="dad.json" />
     <None Include="dumbo.json" />
     <None Include="Fonts\Adore64.ttf" />
     <None Include="packages.config" />
+    <None Include="player.json" />
     <None Include="playerTutorial.json" />
     <None Include="sampleJSON.JSON" />
   </ItemGroup>
@@ -156,6 +158,10 @@
     <Content Include="sfmlnet-graphics-2.dll" />
     <Content Include="sfmlnet-system-2.dll" />
     <Content Include="sfmlnet-window-2.dll" />
+    <Content Include="Sounds\button.wav" />
+    <Content Include="Sounds\chatter.wav" />
+    <Content Include="Sounds\sayagain-loop1.wav" />
+    <Content Include="Sounds\sayagain-loop2.wav" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
