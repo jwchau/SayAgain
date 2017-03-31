@@ -26,7 +26,7 @@ namespace Test
 
         public void print()
         {
-            foreach (var kvp in plot_dict)
+           /* foreach (var kvp in plot_dict)
             {
 
                 Console.WriteLine(kvp.Key);
@@ -38,9 +38,9 @@ namespace Test
                     Console.WriteLine(kvp.Value.Item1[1]);
                 }
 
-
+          
             }
-
+  */
         }
         
         void clear()
