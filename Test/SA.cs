@@ -106,6 +106,7 @@ namespace Test {
         }
 
         private void onKeyReleased(object sender, KeyEventArgs e) {
+           
         }
 
         private void onKeyPressed(object sender, KeyEventArgs e) {
@@ -246,8 +247,11 @@ namespace Test {
                 State.getGameTimer("game").startTimer();
             }
         }
-
+        StoryManager sman = new StoryManager();
         protected override void Initialize() {
+
+            
+            sman.print();
 
             toneBar = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/tonebar.png"));
 

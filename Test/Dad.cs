@@ -38,10 +38,12 @@ namespace Test
             switch (e)
             {
                 case spriteEmotion.angry:
+                    setSprite(angrysprites);
                     sprites = angrysprites;
                     expr = "angry";
                     break;
                 case spriteEmotion.happy:
+                    setSprite(happysprites);
                     sprites = happysprites;
                     expr = "happy";
                     break;
@@ -49,12 +51,13 @@ namespace Test
                     //dad has no sad emotion
                     break;
                 case spriteEmotion.neutral:
+                    setSprite(neutralsprites);
                     sprites = neutralsprites;
                     expr = "neutral";
                     break;
             }
         }
-
+        
         public override void Draw(RenderTarget target, RenderStates states)
         {
             
