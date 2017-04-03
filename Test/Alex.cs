@@ -17,11 +17,13 @@ namespace Test
         //private View _view;
         Texture t = new Texture("../../Art/alexMaster.png");
         string expr;
+        int longerframe;
         Dictionary<string, List<Sprite>> sprites = new Dictionary<string, List<Sprite>>() { { "angry", new List<Sprite>() },
                                                                                             { "happy", new List<Sprite>() },
                                                                                             { "neutral", new List<Sprite>() }
                                                                                            };
-
+        float framerate = 4f;
+        int prevIndex = -1;
 
         public override void checkFNC()
         {
@@ -34,17 +36,73 @@ namespace Test
             
         }
 
+        public void pickSpecialFrame()
+        {
+            if (expr == "neutral")
+            {
+                longerframe = 0;
+            }
+            if (expr == "happy")
+            {
+                int rnd = r.Next(0, 4);
+
+                if (rnd == 0)
+                {
+                    longerframe = 1;
+                }
+                else if (rnd == 1)
+                {
+                    longerframe = 4;
+
+                }
+                else if (rnd == 2)
+                {
+                    longerframe = 8;
+                }
+            }
+
+            if (expr == "angry")
+            {
+                int rnd = r.Next(0, 4);
+
+                if (rnd == 0)
+                {
+                    longerframe = 2;
+                }
+                else if (rnd == 1)
+                {
+                    longerframe = 8;
+
+                }
+            }
+        }
+
         public override void Draw(RenderTarget target, RenderStates states)
         {
+            rnd = r.Next(4, 16);
+            
+            // neutral expressoin
+            //dont want draw to contain any logic about which expression,
+            //so have the interested index defined somewhere else
+            if (index == longerframe && prevIndex != longerframe)
+            {
+                framerate = framerate / (float)rnd;
+                prevIndex = longerframe;
+            }
 
-            float framerate = 4f;
+            else if (index != longerframe)
+            {
+                prevIndex = index - 1;
+                framerate = 4f;
+            }
 
             target.Draw(sprites[expr][index]);
             if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
             {
                 time = DateTime.Now;
-                if (++index >= sprites.Count)
+                if (++index >= sprites[expr].Count)
                 {
+                    pickSpecialFrame();
                     index = 0;
                 }
             }

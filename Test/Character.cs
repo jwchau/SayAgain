@@ -10,12 +10,19 @@ using SFML.Window;
 using SFML.System;
 using System.Drawing;
 
+
+//todo: share random
+//multiple interesting frames
 namespace Test
 {
     
     abstract class Character: Drawable
     {
         public int index = 0;
+
+        protected Random r = new Random();
+        protected int rnd;
+
 
         private List<Sprite> lipsprites = new List<Sprite>();
         private List<Sprite> sprites = new List<Sprite>();
