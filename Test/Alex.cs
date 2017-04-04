@@ -79,7 +79,7 @@ namespace Test
 
         public override void Draw(RenderTarget target, RenderStates states)
         {
-            rnd = r.Next(4, 16);
+            rnd = r.Next(4, 14);
             
             // neutral expressoin
             //dont want draw to contain any logic about which expression,

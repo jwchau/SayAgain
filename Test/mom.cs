@@ -15,6 +15,7 @@ namespace Test
     {
         float framerate = 4f;
         int prevIndex = -1;
+        int longerframe;
 
         Texture t = new Texture("../../Art/momsprites.png");
         string expr;
@@ -33,22 +34,68 @@ namespace Test
             expr = e.ToString();
         }
 
+        public void pickSpecialFrame()
+        {
+            if (expr == "neutral")
+            {
+                longerframe = 0;
+            }
+            if (expr == "happy")
+            {
+                int rnd = r.Next(0, 3);
+
+                if (rnd == 0)
+                {
+                    longerframe = 1;
+                    Console.WriteLine("1");
+                }
+                else if (rnd == 1)
+                {
+                    longerframe = 6;
+                    Console.WriteLine("2");
+
+                }
+            }
+
+            if (expr == "angry")
+            {
+                int rnd = r.Next(0, 3);
+
+                if (rnd == 0)
+                {
+                    longerframe = 0;
+                }
+                else if (rnd == 1)
+                {
+                    longerframe = 3;
+
+                }
+            }
+            if (expr == "sad")
+            {
+               
+                longerframe = 0;
+               
+               
+            }
+        }
+
         public override void Draw(RenderTarget target, RenderStates states)
         {
-            rnd = r.Next(4, 16);
+            rnd = r.Next(4, 14);
             
 
 
             target.Draw(sprites[expr][index]);
 
-            if (index == 0 && prevIndex != 0)
+            if (index == longerframe && prevIndex != longerframe)
             {
                 
                 framerate = framerate / (float)rnd;
-                prevIndex = 0;
+                prevIndex = longerframe;
             }
 
-            else if (index != 0)
+            else if (index != longerframe)
             {
 
                 prevIndex = index - 1;
@@ -61,6 +108,7 @@ namespace Test
                 time = DateTime.Now;
                 if (++index >= sprites[expr].Count)
                 {
+                    pickSpecialFrame();
                     index = 0;
                 }
             }
