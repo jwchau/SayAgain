@@ -34,10 +34,11 @@ namespace Test
         public string tone { get; set; }
         public string id { get; set; }
         public string next { get; set; }
+        public int FNC { get; set; }
 
         public DialogueObj(string newContent, string newTonalPreReq, string id, string next)
         {
-            content = newContent; tone = newTonalPreReq; this.id = id; this.next = next;
+            content = newContent; tone = newTonalPreReq; this.id = id; this.next = next; FNC = 2 ^ 16;
         }
 
         public DialogueObj()
@@ -46,6 +47,7 @@ namespace Test
             tone = "";
             id = "";
             next = "";
+            FNC = 2^16;
         }
         ~DialogueObj() { }
     }

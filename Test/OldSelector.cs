@@ -30,6 +30,29 @@ namespace Test
 
             return responseList;
         }
+
+        public List<DialogueObj> ChooseDialog2(DialogueParsing r,string currNode, int NPCFNC)
+        {
+            List<DialogueObj> responseList = new List<DialogueObj>();
+            var best = new DialogueObj();
+            for (int i = 0; i < r.r.Dialogues.Count; i++)
+            {
+                if(Math.Abs(r.r.Dialogues.ElementAt(i).FNC - NPCFNC) < best.FNC)
+                {
+                    best = r.r.Dialogues.ElementAt(i);
+                }
+            }
+
+            //sends results or returns empty value
+            if (responseList.Count == 0)
+            {
+                responseList.Add(new DialogueObj());
+                return responseList;
+            }
+
+            responseList.Add(best);
+            return responseList;
+        }
         public OldSelector() { }
         ~OldSelector() { }
     }
