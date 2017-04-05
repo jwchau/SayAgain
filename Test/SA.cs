@@ -265,7 +265,8 @@ namespace Test {
             responseListNPC = s.ChooseDialog(Load.NPCDialogueObj, ncurrid, currentTone.ToString());
 
             string FirstDialogue = responseList[0].content;
-            ui_man.produceTextBoxes2(FirstDialogue);
+           // ui_man.produceTextBoxes2(FirstDialogue);
+            ui_man.produceTextBoxes(FirstDialogue);
             //timeflag
             State.addTimer("game", 10, new Action(() => { TimerAction(); }));
             /////////////////////////////////////////////////////////////////////////////////////////////////////////

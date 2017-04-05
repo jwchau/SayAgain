@@ -116,6 +116,7 @@ namespace Test
             {
                 if (cts != null)
                 {
+                    Console.WriteLine("getNext: cts.Cancel()");
                     cts.Cancel();
                 }
                 cts = new CancellationTokenSource();
@@ -190,6 +191,7 @@ namespace Test
             elementIndex = 0;
             if (cts != null)
             {
+                Console.WriteLine("render Dialogue: cts.Cancel()");
                 cts.Cancel();
             }
             cts = new CancellationTokenSource();

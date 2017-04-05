@@ -57,14 +57,80 @@ namespace Test {
         }
         #endregion
 
-        public List<UITextBox> produceTextBoxes2(string Dialogue) {
-            //Console.WriteLine("AM I HERE????");
-            dialogueArray = Regex.Split(Dialogue, @"(?=\.)|(?<=\!)|(?=\?)");
-            //dialogue Array now holds all the sentences
+        public List<UITextBox> produceTextBoxes(string Dialogue) {
+            dialogueArray = Dialogue.Split(' ');
+            List<string> words = new List<string>();
             foreach (var dialogue in dialogueArray) {
-                //Console.WriteLine(dialogue);
+                Console.WriteLine(dialogue);
             }
 
+            string tempString = dialogueArray[0];
+            Font tempFont = new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf");
+            uint x = 5;
+            uint y = SCREEN_HEIGHT - ((SCREEN_HEIGHT / 5)) + 5;
+            int cluster = 0;
+
+            int length = 0;
+            if (dialogueArray.Length > 1)
+            {
+                length = dialogueArray.Length - 1;
+            }
+            else
+            {
+                length = dialogueArray.Length;
+            }
+
+            Console.WriteLine("THE LENGTH OF THE DIALOGUE IS: " + dialogueArray.Length);
+
+            if (dialogueArray.Length != 1)
+            {
+
+                for (int word = 1; word < dialogueArray.Length; word++)
+                {
+                    Text tempText = new Text(tempString + ' ' + dialogueArray[word], tempFont, getFontSize()); //current word + the next one after
+
+                    if (tempText.GetGlobalBounds().Width + 10 >= SCREEN_WIDTH)
+                    {
+                        //time to go the next line
+                        Console.WriteLine("NEXT LINE TIME!!!");
+                        playerDialogues.Add(new UITextBox(x, y, tempString, cluster));
+                        y += (uint)tempText.GetGlobalBounds().Height + 10;
+                        tempString = dialogueArray[word];
+                        if (word == dialogueArray.Length - 1)
+                        {
+                            playerDialogues.Add(new UITextBox(x, y, tempString, cluster));
+                            y += (uint)tempText.GetGlobalBounds().Height + 10;
+                        }
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("tempString before adding the next word: " + tempString);
+                        tempString += ' ';
+                        tempString += dialogueArray[word];
+                        Console.WriteLine("tempString after adding the next word: " + tempString);
+                        if (word == dialogueArray.Length - 1)
+                        {
+                            playerDialogues.Add(new UITextBox(x, y, tempString, cluster));
+                            y += (uint)tempText.GetGlobalBounds().Height + 10;
+                        }
+                    }
+
+                }
+            }
+            else if (dialogueArray.Length == 1) {
+                playerDialogues.Add(new UITextBox(x, y, tempString, cluster));
+            }
+
+            return playerDialogues;
+
+        }
+
+        public List<UITextBox> produceTextBoxes2(string Dialogue) {
+          
+            dialogueArray = Regex.Split(Dialogue, @"(?=\.)|(?<=\!)|(?=\?)");
+            //dialogue Array now holds all the sentences
+         
             List<string> words = new List<string>();
 
             //length takes care of the differences between 1 sentence or multiple sentences
@@ -76,7 +142,7 @@ namespace Test {
             }
 
             for (int i = 0; i < length; i++) {
-                dialogueArray[i] += ".";
+                //dialogueArray[i] += ".";
                 string[] temp = dialogueArray[i].Split(' '); //my name is Raman. //1 cluster
                                                              // Console.WriteLine(temp);
                 for (int j = 0; j < temp.Length; j++) {
@@ -93,7 +159,7 @@ namespace Test {
             bool newLine = false;
             uint x = 5;
             uint y = SCREEN_HEIGHT - ((SCREEN_HEIGHT / 5)) + 5;
-            Font tempFont = new Font("../../Fonts/Adore64.ttf");
+            Font tempFont = new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf");
             for (int word = 0; word < words.Count; word++) {
                 string tempString = baseString;
 
@@ -106,14 +172,13 @@ namespace Test {
 
                 tempString += words[word];
 
-                Text tempText = new Text(tempString, tempFont);
+                Text tempText = new Text(tempString, tempFont,getFontSize());
 
                 if (x + tempText.GetGlobalBounds().Width > SCREEN_WIDTH - 5) {
                     //did not fit, make a text box out of the last fit string
                     //reset x and y
 
                     playerDialogues.Add(new UITextBox(x, y, baseString, cluster));
-
 
                     word--;
                     y += (uint)tempText.GetGlobalBounds().Height + 10;
@@ -127,9 +192,6 @@ namespace Test {
                     // playerDialogues.Add(new UITextBox(x, y, tempString))
                     baseString = tempString;
                     playerDialogues.Add(new UITextBox(x, y, baseString, cluster));
-
-
-
                     x += (uint)tempText.GetGlobalBounds().Width + 10;
                     baseString = "";
                     tempString = "";
@@ -143,6 +205,12 @@ namespace Test {
             }
             return playerDialogues;
 
+        }
+
+        private uint getFontSize()
+        {
+
+            return (uint)((SCREEN_WIDTH / 1920) * 80);
         }
 
         public void reset(List<DialogueObj> responseList) {
@@ -164,7 +232,7 @@ namespace Test {
             }
             playerDialogues.Clear();
 
-            produceTextBoxes2(responseList.ElementAt(0).content);
+            produceTextBoxes(responseList.ElementAt(0).content);
         }
 
         public tone getTone() {
