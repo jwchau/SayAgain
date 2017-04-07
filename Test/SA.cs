@@ -126,6 +126,7 @@ namespace Test {
         }
 
         private void onKeyReleased(object sender, KeyEventArgs e) {
+           
         }
 
         private void onKeyPressed(object sender, KeyEventArgs e) {
@@ -229,8 +230,12 @@ namespace Test {
 
             }
         }
+        StoryManager sman = new StoryManager();
 
-        protected override void Initialize() { 
+        protected override void Initialize() {
+
+            sman.print();
+
             backwall = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/backwall.png"));
             flower = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/flower.png"));
             lamp = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/lamp.png"));

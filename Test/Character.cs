@@ -10,12 +10,23 @@ using SFML.Window;
 using SFML.System;
 using System.Drawing;
 
+
+//todo: share random
+//multiple interesting frames
 namespace Test
 {
     
     abstract class Character: Drawable
     {
+
+        protected int[] FNCSpectrum = new int[3];
+        protected int currentFNC;
+
         public int index = 0;
+
+        protected Random r = new Random();
+        protected int rnd;
+
 
         private List<Sprite> lipsprites = new List<Sprite>();
         private List<Sprite> sprites = new List<Sprite>();
@@ -73,6 +84,20 @@ namespace Test
             
         }
         
+        public int[] getSpectrum()
+        {
+            return FNCSpectrum;
+        }
+
+        public int getCurrentFNC()
+        {
+            return currentFNC;
+        }
+
+        public void changeFNC()
+        {
+
+        }
         public void click()
         {
             if (sprites != null)
