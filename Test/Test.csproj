@@ -91,7 +91,6 @@
     <Compile Include="GameState.cs" />
     <Compile Include="InputManager.cs" />
     <Compile Include="MenuButton.cs" />
-    <Compile Include="Relationships.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="SoundManager.cs" />
     <Compile Include="ToneEffects.cs" />
@@ -117,9 +116,9 @@
     <None Include="dad.json" />
     <None Include="dumbo.json" />
     <None Include="Fonts\Adore64.ttf" />
+    <None Include="newplayer.json" />
     <None Include="packages.config" />
     <None Include="player.json" />
-    <None Include="playerTutorial.json" />
     <None Include="sampleJSON.JSON" />
   </ItemGroup>
   <ItemGroup>

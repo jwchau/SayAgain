@@ -19,8 +19,8 @@ namespace Test
     abstract class Character: Drawable
     {
 
-        protected int[] FNCSpectrum = new int[3];
-        protected int currentFNC;
+        protected double[] FNCSpectrum = new double[3];
+        protected double currentFNC;
 
         public int index = 0;
 
@@ -84,12 +84,12 @@ namespace Test
             
         }
         
-        public int[] getSpectrum()
+        public double[] getSpectrum()
         {
             return FNCSpectrum;
         }
 
-        public int getCurrentFNC()
+        public double getCurrentFNC()
         {
             return currentFNC;
         }
