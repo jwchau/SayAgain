@@ -110,6 +110,11 @@ namespace Test
 
         public Alex()
         {
+            FNCSpectrum[0] = 2;
+            FNCSpectrum[1] = 5;
+            FNCSpectrum[2] = 8;
+            currentFNC = -1;
+
             //determine size and position
             xpos = (float)(SCREEN_WIDTH*0.5);
             ypos = (float)(SCREEN_HEIGHT*0.37);

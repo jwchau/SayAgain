@@ -116,6 +116,10 @@ namespace Test
 
         public Mom()
         {
+            FNCSpectrum[0] = 2;
+            FNCSpectrum[1] = 5;
+            FNCSpectrum[2] = 8;
+            currentFNC = -1;
 
             //determine size and position
             xpos = (float)(SCREEN_WIDTH*.79);

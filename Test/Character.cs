@@ -18,6 +18,10 @@ namespace Test
     
     abstract class Character: Drawable
     {
+
+        protected int[] FNCSpectrum = new int[3];
+        protected int currentFNC;
+
         public int index = 0;
 
         protected Random r = new Random();
@@ -80,6 +84,20 @@ namespace Test
             
         }
         
+        public int[] getSpectrum()
+        {
+            return FNCSpectrum;
+        }
+
+        public int getCurrentFNC()
+        {
+            return currentFNC;
+        }
+
+        public void changeFNC()
+        {
+
+        }
         public void click()
         {
             if (sprites != null)
