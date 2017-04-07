@@ -126,6 +126,7 @@ namespace Test {
         }
 
         private void onKeyReleased(object sender, KeyEventArgs e) {
+           
         }
 
         private void onKeyPressed(object sender, KeyEventArgs e) {
@@ -147,6 +148,10 @@ namespace Test {
                     else
                     {
                         playerDialogueBox.acknowledge();
+                    }
+
+                    if (State.getGameTimer("game").getCountDown() != 0.0) {
+                        State.getGameTimer("game").setCountDown(0);
                     }
                 }
 
@@ -229,21 +234,23 @@ namespace Test {
 
             }
         }
+        StoryManager sman = new StoryManager();
 
-        protected override void Initialize() { 
+        protected override void Initialize() {
+
+            sman.print();
+
             backwall = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/backwall.png"));
             flower = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/flower.png"));
             lamp = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/lamp.png"));
             pictures = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/pictures.png"));
-            table = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/letable.png"));
-            windowsprite = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/window.png"));
-
+            table = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/table.png"));
+            
             backwall.Scale = new Vector2f(SCREEN_WIDTH / backwall.GetGlobalBounds().Width, SCREEN_HEIGHT / backwall.GetGlobalBounds().Height);
             flower.Scale = new Vector2f(SCREEN_WIDTH / flower.GetGlobalBounds().Width, SCREEN_HEIGHT / flower.GetGlobalBounds().Height);
             lamp.Scale = new Vector2f(SCREEN_WIDTH / lamp.GetGlobalBounds().Width, SCREEN_HEIGHT / lamp.GetGlobalBounds().Height);
             pictures.Scale = new Vector2f(SCREEN_WIDTH / pictures.GetGlobalBounds().Width, SCREEN_HEIGHT / pictures.GetGlobalBounds().Height);
             table.Scale = new Vector2f(SCREEN_WIDTH / table.GetGlobalBounds().Width, SCREEN_HEIGHT / table.GetGlobalBounds().Height);
-            windowsprite.Scale = new Vector2f(SCREEN_WIDTH / windowsprite.GetGlobalBounds().Width, SCREEN_HEIGHT / windowsprite.GetGlobalBounds().Height);
 
             table.Position = new Vector2f(0, -200);
             flower.Position = new Vector2f(0, -200);
@@ -265,10 +272,10 @@ namespace Test {
             responseListNPC = s.ChooseDialog(Load.NPCDialogueObj, ncurrid, currentTone.ToString());
 
             string FirstDialogue = responseList[0].content;
-           // ui_man.produceTextBoxes2(FirstDialogue);
             ui_man.produceTextBoxes(FirstDialogue);
             //timeflag
             State.addTimer("game", 10, new Action(() => { TimerAction(); }));
+            State.addTimer("cursor", 1, null);
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             fullScreenView = window.DefaultView;
@@ -351,7 +358,7 @@ namespace Test {
                             for (var j = 0; j < playerDialogues.Count; j++) {
                                 // If the mouse just came from inside a UI Textbox
                                 if (playerDialogues[j].wasMouseIn()) {
-                                    if (!playerDialogues[j].Contains((int)(MouseCoord[0]*scaleFactorX), (int)(MouseCoord[1]*scaleFactorY))) {
+                                    if (!playerDialogues[j].Contains(buttons[i])) {
                                         // Mouse has now left the UI Textbox so set it to false
                                         playerDialogues[j].setMouseWasIn(false);
                                         // Reset the color to match its previous color
@@ -363,7 +370,7 @@ namespace Test {
 
                                     // If mouse just came from outside the UI Textbox
                                 } else {
-                                    if (playerDialogues[j].Contains((int)(MouseCoord[0] * scaleFactorX), (int)(MouseCoord[1] * scaleFactorY))) {
+                                    if (playerDialogues[j].Contains(buttons[i])) {
                                         // Mouse is now inside a UI Textbox, so set it to true
                                         playerDialogues[j].setMouseWasIn(true);
                                         // Update previous color to current color of the UI Textbox
@@ -432,13 +439,11 @@ namespace Test {
                 window.Draw(backwall);
                 window.Draw(pictures);
                 window.Draw(lamp);
-                window.Draw(windowsprite);
                 window.Draw(Mom);
                 window.Draw(Alexis);
                 window.Draw(Dad);
                 window.Draw(table);
                 window.Draw(flower);
-                
                 
                 //Draw text box background box
               

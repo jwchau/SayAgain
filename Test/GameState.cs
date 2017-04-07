@@ -98,8 +98,11 @@ namespace Test
                     {
                         //DO STUFF BEFORE RESTARTING
                         //Process Player dialogue
-                        pair.Value.doTask();
-                        
+                        if (pair.Value != null)
+                        {
+                            pair.Value.doTask();
+                        }
+
                     }
                     
                 }

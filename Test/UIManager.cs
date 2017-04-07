@@ -57,10 +57,12 @@ namespace Test {
         }
         #endregion
 
-        public List<UITextBox> produceTextBoxes(string Dialogue) {
+        public List<UITextBox> produceTextBoxes(string Dialogue)
+        {
             dialogueArray = Dialogue.Split(' ');
             List<string> words = new List<string>();
-            foreach (var dialogue in dialogueArray) {
+            foreach (var dialogue in dialogueArray)
+            {
                 Console.WriteLine(dialogue);
             }
 
@@ -80,7 +82,7 @@ namespace Test {
                 length = dialogueArray.Length;
             }
 
-            Console.WriteLine("THE LENGTH OF THE DIALOGUE IS: " + dialogueArray.Length);
+            //Console.WriteLine("THE LENGTH OF THE DIALOGUE IS: " + dialogueArray.Length);
 
             if (dialogueArray.Length != 1)
             {
@@ -88,7 +90,6 @@ namespace Test {
                 for (int word = 1; word < dialogueArray.Length; word++)
                 {
                     Text tempText = new Text(tempString + ' ' + dialogueArray[word], tempFont, getFontSize()); //current word + the next one after
-
                     if (tempText.GetGlobalBounds().Width + 10 >= SCREEN_WIDTH)
                     {
                         //time to go the next line
@@ -118,91 +119,11 @@ namespace Test {
 
                 }
             }
-            else if (dialogueArray.Length == 1) {
+            else if (dialogueArray.Length == 1)
+            {
                 playerDialogues.Add(new UITextBox(x, y, tempString, cluster));
             }
 
-            return playerDialogues;
-
-        }
-
-        public List<UITextBox> produceTextBoxes2(string Dialogue) {
-          
-            dialogueArray = Regex.Split(Dialogue, @"(?=\.)|(?<=\!)|(?=\?)");
-            //dialogue Array now holds all the sentences
-         
-            List<string> words = new List<string>();
-
-            //length takes care of the differences between 1 sentence or multiple sentences
-            int length = 0;
-            if (dialogueArray.Length > 1) {
-                length = dialogueArray.Length - 1;
-            } else {
-                length = dialogueArray.Length;
-            }
-
-            for (int i = 0; i < length; i++) {
-                //dialogueArray[i] += ".";
-                string[] temp = dialogueArray[i].Split(' '); //my name is Raman. //1 cluster
-                                                             // Console.WriteLine(temp);
-                for (int j = 0; j < temp.Length; j++) {
-
-                    string word = temp[j].Trim();
-                    if (word != "") {
-                        words.Add(word);
-
-                    }
-                }
-            }
-            int cluster = 0;
-            string baseString = ""; //last known string of characters that does fit
-            bool newLine = false;
-            uint x = 5;
-            uint y = SCREEN_HEIGHT - ((SCREEN_HEIGHT / 5)) + 5;
-            Font tempFont = new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf");
-            for (int word = 0; word < words.Count; word++) {
-                string tempString = baseString;
-
-                //Console.WriteLine(words[word]);
-
-
-                if (word != 0 && words[word - 1].Contains('.') != true && !newLine) {
-                    tempString += " ";
-                }
-
-                tempString += words[word];
-
-                Text tempText = new Text(tempString, tempFont,getFontSize());
-
-                if (x + tempText.GetGlobalBounds().Width > SCREEN_WIDTH - 5) {
-                    //did not fit, make a text box out of the last fit string
-                    //reset x and y
-
-                    playerDialogues.Add(new UITextBox(x, y, baseString, cluster));
-
-                    word--;
-                    y += (uint)tempText.GetGlobalBounds().Height + 10;
-                    x = 5;
-                    tempString = "";
-                    baseString = "";
-                    newLine = true;
-
-                } else if (words[word].Contains('.') || words[word].Contains('!') || words[word].Contains('?')) {
-                    //word with a period meaning the end of a sentence.
-                    // playerDialogues.Add(new UITextBox(x, y, tempString))
-                    baseString = tempString;
-                    playerDialogues.Add(new UITextBox(x, y, baseString, cluster));
-                    x += (uint)tempText.GetGlobalBounds().Width + 10;
-                    baseString = "";
-                    tempString = "";
-                    newLine = false;
-                    cluster++;
-                } else if (x + tempText.GetGlobalBounds().Width < SCREEN_WIDTH - 5) {
-                    //update baseString
-                    baseString = tempString;
-                    newLine = false;
-                }
-            }
             return playerDialogues;
 
         }
@@ -277,7 +198,7 @@ namespace Test {
                         var boxBounds = playerDialogues[j].getBoxBounds();
                         //change color if the button is hovering over the textbox
 
-                        if (playerDialogues[j].Contains(x, y)) {
+                        if (playerDialogues[j].Contains(buttons[i])) {
 
                             for (int k = 0; k < playerDialogues.Count; k++) {
                                 playerDialogues[k].setPrevColor(playerDialogues[k].getBoxColor("curr"));

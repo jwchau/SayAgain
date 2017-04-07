@@ -17,11 +17,11 @@ namespace Test
 
     class Program
     {
-
+       
         static void Main(string[] args)
         {
-            SA myGame;
-            myGame = new SA();
+           
+            SA myGame = new SA();
             myGame.Run();
 
         }

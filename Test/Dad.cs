@@ -13,6 +13,10 @@ namespace Test
 {
     class Dad : Character, Drawable
     {
+
+        float framerate = 4f;
+        int prevIndex = -1;
+
         Texture t = new Texture("../../Art/dadMaster.png");
         Texture arm = new Texture("../../Art/armMaster.png");
       
@@ -33,19 +37,35 @@ namespace Test
 
         public override void setSpriteEmotion(spriteEmotion e)
         {
+
+           
             if (e.ToString() != "sad") expr = e.ToString();
         }
-
+        
         public override void Draw(RenderTarget target, RenderStates states)
         {
-            
-            float framerate = 4f;
+            rnd = r.Next(4, 14);
+
+
 
             target.Draw(sprites[expr][index]);
+
+            if (index == 0 && prevIndex != 0)
+            {
+                framerate = framerate/(float)rnd;
+                prevIndex = 0;
+            }
+
+            else if (index != 0)
+            {
+                prevIndex = index - 1;
+                framerate = 4f;
+            }
+
             if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
             {
                 time = DateTime.Now;
-                if (++index >= sprites.Count)
+                if (++index >= sprites[expr].Count)
                 {
                     index = 0;
                 }
@@ -59,6 +79,10 @@ namespace Test
 
         public Dad()
         {
+            FNCSpectrum[0] = 2;
+            FNCSpectrum[1] = 5;
+            FNCSpectrum[2] = 8;
+            currentFNC = -1;
 
             //determine size and position
             xpos = (float)(SCREEN_WIDTH * .21);
