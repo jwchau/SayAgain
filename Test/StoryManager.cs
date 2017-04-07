@@ -8,7 +8,11 @@ namespace Test
 {
     class StoryManager
     {
- 
+
+        protected string dialogueType;
+        protected List<String> nextPreconditions;
+        protected string currentNode;
+
         static Dictionary<String, Tuple<List<String>, List<String>>> plot_dict
             = new Dictionary < String, Tuple<List<String>, List<String>>>();
         List<String> next_nodes = new List<String>();
@@ -43,6 +47,11 @@ namespace Test
   */
         }
         
+        public string getCurrentNode()
+        {
+            return currentNode;
+        }
+
         void clear()
         {
             next_nodes = null;
@@ -51,9 +60,49 @@ namespace Test
             preconditions = new List<String>();
         }
 
-        public StoryManager()
-
+        public void setTypePlotNode()
         {
+            dialogueType = "plotnode";
+        }
+
+        public void setTypeTransition()
+        {
+            dialogueType = "transition";
+        }
+
+        public void findNextPossibleNodes()
+        {
+
+            Console.WriteLine("Current node: " + currentNode);
+            Console.WriteLine("Possible next nodes: ");
+            if (plot_dict[currentNode].Item1 != null)
+            {
+                //the string name of each child node
+                foreach (var n in plot_dict[currentNode].Item1)
+                {
+                    Console.WriteLine("- " + n);
+                    if (plot_dict[n].Item2 != null)
+                    {   
+                        foreach (var c in plot_dict[n].Item2)
+                        {
+                            Console.WriteLine(">>> With precondition: ");
+                            Console.WriteLine(">>> " + c);
+
+                            nextPreconditions.Add(c);
+
+                        }
+                    }
+                }
+            }
+        }
+        public StoryManager() {
+
+            nextPreconditions = new List<String> ();
+            
+            currentNode = "GreetDad";
+
+
+
             //TODO: all blow up nodes reachable from any point
 
             next_nodes.Add("MomTellsPlayerTalkToAlex");
@@ -71,11 +120,12 @@ namespace Test
             preconditions.Add("AlexAdmitsNeglect");
             preconditions.Add("DadAccusesMom");
             addNode("MomAdmitsJob", next_nodes, preconditions);
-/*
+
 
             next_nodes.Add("DadAccusesMom");
             next_nodes.Add("DadBlowsUp");
             addNode("GreetDad", next_nodes, preconditions);
+
             preconditions.Add("Dad: MC-HC");
             next_nodes.Add("MomBlowsUp");
             next_nodes.Add("DadApologizesMom");
@@ -123,7 +173,8 @@ namespace Test
 
             preconditions.Add("Mom: HF");
             addNode("MomBlowsUp", next_nodes, preconditions);
-            */
+
+            findNextPossibleNodes();
         }
 
     }
