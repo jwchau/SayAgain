@@ -12,6 +12,7 @@ namespace Test
         protected string dialogueType;
         protected List<String> nextPreconditions;
         protected string currentNode;
+        protected int numberOfChildren;
 
         static Dictionary<String, Tuple<List<String>, List<String>>> plot_dict
             = new Dictionary < String, Tuple<List<String>, List<String>>>();
@@ -72,21 +73,22 @@ namespace Test
 
         public void findNextPossibleNodes()
         {
-
-            Console.WriteLine("Current node: " + currentNode);
-            Console.WriteLine("Possible next nodes: ");
+            numberOfChildren = 0;
+            //Console.WriteLine("Current node: " + currentNode);
+            //Console.WriteLine("Possible next nodes: ");
             if (plot_dict[currentNode].Item1 != null)
             {
                 //the string name of each child node
                 foreach (var n in plot_dict[currentNode].Item1)
                 {
+                    numberOfChildren += 1;
                     Console.WriteLine("- " + n);
                     if (plot_dict[n].Item2 != null)
                     {   
                         foreach (var c in plot_dict[n].Item2)
                         {
-                            Console.WriteLine(">>> With precondition: ");
-                            Console.WriteLine(">>> " + c);
+                            //Console.WriteLine(">>> With precondition: ");
+                            //Console.WriteLine(">>> " + c);
 
                             nextPreconditions.Add(c);
 
@@ -94,12 +96,24 @@ namespace Test
                     }
                 }
             }
+            checkIfPreconSatisfied();
+        }
+
+        public void checkIfPreconSatisfied()
+        {
+            foreach (var p in nextPreconditions)
+            {
+                //if p has a ' in it (multiple preconditions)
+                //then separate the two conitions, parse for whether FNC or plot point requirement
+                Console.WriteLine(p);
+
+            }
         }
         public StoryManager() {
 
             nextPreconditions = new List<String> ();
             
-            currentNode = "GreetDad";
+            currentNode = "MomTellsPlayerTalkToAlex";
 
 
 
