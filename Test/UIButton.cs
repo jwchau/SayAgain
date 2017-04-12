@@ -51,10 +51,7 @@ namespace Test {
         tone buttonTone;
 
         //methods
-<<<<<<< HEAD
         //String eventHandler;
-=======
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
 
         public Vector2f getRectSize() {
             return new Vector2f(buttonSprite.GetGlobalBounds().Width, buttonSprite.GetGlobalBounds().Height);

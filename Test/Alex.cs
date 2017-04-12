@@ -17,20 +17,13 @@ namespace Test
         //private View _view;
         Texture t = new Texture("../../Art/alexMaster.png");
         string expr;
-<<<<<<< HEAD
-=======
         int longerframe;
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
         Dictionary<string, List<Sprite>> sprites = new Dictionary<string, List<Sprite>>() { { "angry", new List<Sprite>() },
                                                                                             { "happy", new List<Sprite>() },
                                                                                             { "neutral", new List<Sprite>() }
                                                                                            };
-<<<<<<< HEAD
-
-=======
         float framerate = 4f;
         int prevIndex = -1;
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
 
         public override void checkFNC()
         {
@@ -43,12 +36,6 @@ namespace Test
             
         }
 
-<<<<<<< HEAD
-        public override void Draw(RenderTarget target, RenderStates states)
-        {
-
-            float framerate = 4f;
-=======
         public void pickSpecialFrame()
         {
             if (expr == "neutral")
@@ -108,20 +95,14 @@ namespace Test
                 prevIndex = index - 1;
                 framerate = 4f;
             }
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
 
             target.Draw(sprites[expr][index]);
             if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
             {
                 time = DateTime.Now;
-<<<<<<< HEAD
-                if (++index >= sprites.Count)
-                {
-=======
                 if (++index >= sprites[expr].Count)
                 {
                     pickSpecialFrame();
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
                     index = 0;
                 }
             }
@@ -129,14 +110,11 @@ namespace Test
 
         public Alex()
         {
-<<<<<<< HEAD
-=======
             FNCSpectrum[0] = 2;
             FNCSpectrum[1] = 5;
             FNCSpectrum[2] = 8;
             currentFNC = -1;
 
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
             //determine size and position
             xpos = (float)(SCREEN_WIDTH*0.5);
             ypos = (float)(SCREEN_HEIGHT*0.37);

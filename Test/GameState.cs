@@ -16,23 +16,16 @@ namespace Test
         {
             currentState = "menu";
             currentMenuState = "start";
-<<<<<<< HEAD
-=======
             sound_man.playMusic("Mom");
             
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
         }
 
         string currentState;
         string currentMenuState;
-<<<<<<< HEAD
-        Dictionary<string, GameTimer> DictGameTimer = new Dictionary<string, GameTimer>();
-=======
         //Sound Manager
         public SoundManager sound_man = new SoundManager();
         Dictionary<string, GameTimer> DictGameTimer = new Dictionary<string, GameTimer>();
         
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
 
         //Timer for keeping track of time given to the player
 
@@ -105,16 +98,11 @@ namespace Test
                     {
                         //DO STUFF BEFORE RESTARTING
                         //Process Player dialogue
-<<<<<<< HEAD
-                        pair.Value.doTask();
-                        
-=======
                         if (pair.Value != null)
                         {
                             pair.Value.doTask();
                         }
 
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
                     }
                     
                 }

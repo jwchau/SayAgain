@@ -18,24 +18,11 @@ namespace Test
 
         static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
         static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
-<<<<<<< HEAD
-        public float w, h, x, y;//, x2, y2, OffsetX, OffsetY, OffsetX2, OffsetY2;
-        private Text name, dialogue;
-        //public Dialogue line;
-        public RectangleShape box;
-        public RectangleShape nameBox;
-        Task currentTask;
-        
-        Boolean init = false;
-        string tag; //AI or player
-
-        bool animationStart = true;
-=======
         Vector2f scale = new Vector2f(SCREEN_WIDTH / 1920, SCREEN_HEIGHT / 1080);
         private Text name, dialogue;
         Task currentTask;
-        uint dialogueFontSize;
-        uint nameFontSize;
+        uint dialogueFontSize = 40;
+        uint nameFontSize = 55;
 
         static Dictionary<string, Sprite> spriteDict = new Dictionary<string, Sprite>();
 
@@ -43,65 +30,43 @@ namespace Test
         string tag; //AI or player
 
         public bool animationStart = true;
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
         bool awaitInput = false;
 
         CancellationTokenSource cts;
-        Text[] arr = { };
+        public List<Text> dialoguePanes = new List<Text>();
         public int printTime;
         public bool active = false;
         int elementIndex = 0;
         GameState state;
-<<<<<<< HEAD
+        public bool initRun = true;
 
-        Sprite dialogueBoxSprite;
-
-        public View view { get; private set; }
-=======
-        //public bool initRun = true;
-
-        //public bool ready = false;
+        public bool ready = false;
 
         Sprite dialogueBoxSprite;
 
         public CircleShape cursor;
         public float OGcursorX;
-        public float FcursorX;
         public float OGcursorY;
+        public float FcursorX;
         public float FcursorY;
         float iterator = 0.5f;
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
-
-        // public View playerView { get; private set;}
+        public Boolean lastDialogue = false;
 
         Font speechFont = new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf");
 
-<<<<<<< HEAD
-        public void setInit(bool b) {
-            init = b;
-        }
-
-=======
-        private uint getFontSize()
-        {
-
-            return (uint)((SCREEN_WIDTH / 1920) * 27);
-        }
-
-        public void acknowledge()
-        {
-            if (awaitInput)
-            {
-                if (tag == "AI")
-                {
-                    state.startTimer("game");
-                }
-                active = false;
-                awaitInput = false;
-                
-            }
-            init = false;
-        }
+        //public void acknowledge()
+        //{
+        //    if (awaitInput)
+        //    {
+        //        if (tag == "AI")
+        //        {
+        //            state.startTimer("game");
+        //        }
+        //        active = false;
+        //        awaitInput = false;
+        //        init = false;
+        //    }
+        //}
 
         public void setInit(bool b)
         {
@@ -113,15 +78,15 @@ namespace Test
             return awaitInput;
         }
 
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
-        public void forward()
-        {
-            if (currentTask == null || currentTask.IsCompleted)
-            {
-                getNext();
-                checkEnd();
-            }
-        }
+        //public void forward()
+        //{
+        //    if (currentTask == null || currentTask.IsCompleted)
+        //    {
+        //        getNext();
+        //        checkEnd();
+        //    }
+        //}
+
         public void setPrintTime(int i)
         {
             printTime = i;
@@ -131,121 +96,93 @@ namespace Test
             return elementIndex;
         }
 
-        public int getArrLength()
-        {
-            return arr.Length;
-        }
-
         public bool getAnimationStart()
         {
             return animationStart;
         }
 
-        public void checkEnd()
-        {
-<<<<<<< HEAD
-            if (getElementIndex() >= getArrLength())
-            {
-                active = false;
-=======
-            Console.WriteLine("TAG: " + tag);
-            Console.WriteLine("elindex: " + getElementIndex() + ", arrlength: " + getArrLength());
-            for(var i = 0; i < arr.Length; i++)
-            {
-                Console.WriteLine(i + ": " + arr[i].DisplayedString);
-            }
+        //public void checkEnd()
+        //{
 
-            if (getElementIndex() >= getArrLength())
-            {
-                Console.WriteLine("TAG 2: " + tag + ", hello?");
-                active = false;
-                acknowledge();
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
-            }
-        }
+        //    //Console.WriteLine("HERE ARE ALL THE PANES: ");
+        //    foreach (var pane in dialoguePanes)
+        //    {
+        //        //Console.WriteLine(pane.Item1.DisplayedString);
+        //    }
 
-        public void getNext()
+        //    if (tag != "AI")
+        //    {
+        //        if (lastDialogue == true && animationStart == false)
+        //        {
+        //            active = false;
+        //            acknowledge();
+        //        }
+        //    }
+        //    else
+        //    {
+        //        if (getElementIndex() >= dialoguePanes.Count - 1 && (lastDialogue == true && animationStart == false))
+        //        {
+        //            //Console.WriteLine("TAG 2: " + tag + ", hello?");
+        //            active = false;
+        //            acknowledge();
+        //        }
+        //    }
+
+        //}
+
+        //public void getNext()
+        //{
+        //    if (tag != "AI")
+        //    {
+        //        elementIndex += 1;
+        //    }
+        //    if (elementIndex < dialoguePanes.Count)
+        //    {
+        //        if (cts != null)
+        //        {
+        //            //Console.WriteLine("getNext: cts.Cancel()");
+        //            cts.Cancel();
+        //        }
+        //        cts = new CancellationTokenSource();
+        //        currentTask = Task.Run(async () =>
+        //        { //Task.Run puts on separate thread
+        //            printTime = 60;
+        //            await animateText(cts.Token); //await pauses thread until animateText() is completed
+        //        }, cts.Token);
+        //        if (tag == "AI")
+        //        {
+        //            elementIndex += 1;
+        //        }
+        //    }
+
+        //}
+
+        public void checkNext()
         {
-            elementIndex += 1;
-<<<<<<< HEAD
-=======
-            //active = true;
-            awaitInput = false;
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
-            if (elementIndex < arr.Length)
+            if (elementIndex < dialoguePanes.Count)
             {
                 if (cts != null)
                 {
-<<<<<<< HEAD
-=======
-                    //Console.WriteLine("getNext: cts.Cancel()");
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
                     cts.Cancel();
                 }
                 cts = new CancellationTokenSource();
                 currentTask = Task.Run(async () =>
-                { //Task.Run puts on separate thread
+                {
                     printTime = 60;
-                    await animateText(arr[elementIndex], cts.Token); //await pauses thread until animateText() is completed
+                    await animateText(cts.Token);
                 }, cts.Token);
+            } else
+            {
+                if(tag == "AI")
+                {
+                    state.startTimer("game");
+                }
+                active = false;
+                awaitInput = false;
+                init = false;
             }
         }
 
-        public void checkNext()
-        {
-            getNext();
-            checkEnd();
-        }
-
-<<<<<<< HEAD
-        public void loadNewDialogue(string speaker, string dialogue)
-        {
-            if (speaker == "alex")
-            {
-                dialogueBoxSprite = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/speechbubbleright.png"));
-                view.Viewport = new FloatRect(0.3f, 0, 0.35f, 0.2f);
-                renderDialogue(dialogue, "Alex");
-            }
-            else if (speaker == "dad")
-            {
-                dialogueBoxSprite = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/speechbubbleleft.png"));
-                view.Viewport = new FloatRect(0.0f, 0f, 0.35f, 0.2f);
-                renderDialogue(dialogue, "Dad");
-            }
-            else if (speaker == "mom")
-            {
-                dialogueBoxSprite = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/speechbubbleright.png"));
-                view.Viewport = new FloatRect(0.63f, 0f, 0.35f, 0.2f);
-                renderDialogue(dialogue, "Mom");
-            }
-            else if (speaker == "player")
-            {
-                // MAKE PLAYER SPRITE HERE
-                view.Viewport = new FloatRect(0.3f, .5f, 0.35f, 0.2f);
-                renderDialogue(dialogue, "player");
-            }
-
-
-
-        }
-
-        public void renderDialogue(String s, String speaker)
-        {
-            active = true;
-            elementIndex = 0;
-            if (cts != null)
-            {
-                cts.Cancel();
-            }
-            cts = new CancellationTokenSource();
-            name = BufferName(speaker);
-            dialogue = BufferDialogue("");
-            Text tmp = new Text(s, speechFont, 24);
-
-            arr = createStrings(tmp);
-            currentTask = Task.Run(async () =>
-            { //Task.Run puts on separate thread
-=======
         public void loadNewDialogue(string speaker, string content)
         {
             if (speaker == "alex")
@@ -293,116 +230,81 @@ namespace Test
 
             }
 
-            name.Color = Color.White;
-            dialogue.Color = Color.White;
-            renderDialogue(content);
-
-            
+            // Cursor initializations
             if (tag == "AI")
             {
                 OGcursorX = dialogueBoxSprite.GetGlobalBounds().Left + dialogueBoxSprite.GetGlobalBounds().Width - (float)(dialogueBoxSprite.GetGlobalBounds().Width * 0.05);
                 OGcursorY = dialogueBoxSprite.GetGlobalBounds().Top + dialogueBoxSprite.GetGlobalBounds().Height - (float)(dialogueBoxSprite.GetGlobalBounds().Height * .3);
-            } else
+            }
+            else
             {
                 OGcursorX = (float)(SCREEN_WIDTH * 0.95);
                 OGcursorY = (float)(SCREEN_HEIGHT * 0.95);
             }
             cursor.Position = new Vector2f(OGcursorX, OGcursorY);
 
-            cursor.Origin = new Vector2f(cursor.GetGlobalBounds().Width/2, cursor.GetGlobalBounds().Height/2);
+            cursor.Origin = new Vector2f(cursor.GetGlobalBounds().Width / 2, cursor.GetGlobalBounds().Height / 2);
             FcursorX = OGcursorX + 3;
             FcursorY = OGcursorY + 3;
+            // ----------------------
+
+            name.Color = Color.White;
+            dialogue.Color = Color.White;
+
+            awaitInput = false;
+            active = true;
+            elementIndex = 0;
+
+            renderDialogue(content);
 
         }
 
         public void renderDialogue(String s)
         {
-            active = true;
-            awaitInput = false;
-            elementIndex = 0;
-            //cursor.Rotation = 180;
+            
+            dialoguePanes.Clear();
             if (cts != null)
             {
-                //Console.WriteLine("render Dialogue: cts.Cancel()");
                 cts.Cancel();
             }
             cts = new CancellationTokenSource();
 
-            arr = createStrings(dialogue);
-
+            dialoguePanes = createStrings();
             currentTask = Task.Run(async () =>
             { //Task.Run puts on separate thread
-                //Console.WriteLine("ARR at " + elementIndex + ": " + arr[elementIndex].DisplayedString);
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
                 printTime = 60;
-                await animateText(arr[elementIndex], cts.Token); //await pauses thread until animateText() is completed
+                await animateText(cts.Token); //await pauses thread until animateText() is completed
 
             }, cts.Token);
         }
 
-        public Text[] createStrings(Text line)
+        public List<Text> createStrings()
         {
-<<<<<<< HEAD
-            float maxw = w - 26;
-            float maxh = GetMaxTextHeight();
-            List<Text> list = new List<Text>();
-
-            // split dialogue into words
-            String[] s = line.DisplayedString.Split(' ');
-            line.DisplayedString = "";
-            float currentLineWidth = 0;
-            foreach (String word in s)
-            {
-                Text t = new Text(word + " ", speechFont, 24);
-                float wordSizeWithSpace = t.GetGlobalBounds().Width;
-                if (currentLineWidth + wordSizeWithSpace > maxw)
-                {
-    
-                    line.DisplayedString += "\n";
-                    currentLineWidth = 0;
-                    if (line.GetGlobalBounds().Height > maxh)
-                    {
-                        list.Add(line);
-                        line = new Text("", speechFont, 24);
-                    }
-                }
-
-                line.DisplayedString += (t.DisplayedString);
-                currentLineWidth += wordSizeWithSpace;
-            }
-
-            // Add the last one
-            if (line.DisplayedString != "")
-            {
-                list.Add(line);
-
-            }
-            /*for (int i = 0; i < list.Count; i++)
-            {
-                Console.WriteLine(list[i]);
-            }*/
-=======
+            
             float maxw;
             float maxh;
             if (tag == "AI")
             {
                 maxw = dialogueBoxSprite.GetGlobalBounds().Width - cursor.GetGlobalBounds().Width;
                 maxh = (float)(dialogueBoxSprite.GetGlobalBounds().Height * 0.8);
-            } else
+            }
+            else
             {
                 maxw = dialogueBoxSprite.GetGlobalBounds().Width - cursor.GetGlobalBounds().Width;
                 maxh = SCREEN_HEIGHT - dialogue.GetGlobalBounds().Top;
             }
-            Console.WriteLine("Tag: " + tag + ", w: " + maxw + ", h: " + maxh);
+
+            Text line = dialogue;
             List<Text> list = new List<Text>();
-            Text newline = new Text(line.DisplayedString, line.Font, dialogueFontSize);
+            
             // split dialogue into words
-            String[] s = newline.DisplayedString.Split(' ');
-            newline.DisplayedString = "";
+            string[] s = line.DisplayedString.Split(' ');
+
+            Text newline = new Text("", speechFont, dialogueFontSize);
+            
             float currentLineWidth = 0;
-            foreach (String word in s)
+            foreach (string word in s)
             {
-                //Console.WriteLine("WORD: " + word);
                 Text t = new Text(word + " ", speechFont, dialogueFontSize);
                 float wordSizeWithSpace = t.GetGlobalBounds().Width;
                 if (currentLineWidth + wordSizeWithSpace > maxw)
@@ -421,18 +323,13 @@ namespace Test
                 currentLineWidth += wordSizeWithSpace;
             }
 
-
-
             // Add the last one
             if (newline.DisplayedString != "")
             {
                 list.Add(newline);
-
             }
-            
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
 
-            return list.ToArray();
+            return list;
 
         }
 
@@ -443,16 +340,17 @@ namespace Test
 
         //async means this function can run separate from main app.
         //operate in own time and thread
-        public async Task animateText(Text line, CancellationToken ct)
+        public async Task animateText(CancellationToken ct)
         {
-            animationStart = true;
-            state.resetTimer("game");
-            int i = 0;
-            dialogue.DisplayedString = "";
-<<<<<<< HEAD
-=======
+            Text line = dialoguePanes[elementIndex];
 
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
+            animationStart = true;
+            awaitInput = false;
+
+            state.resetTimer("game");
+            dialogue.DisplayedString = "";
+
+            int i = 0;
             while (i < line.DisplayedString.Length)
             {
                 if (ct.IsCancellationRequested)
@@ -466,150 +364,29 @@ namespace Test
                 }
             }
             // Do asynchronous work.
-<<<<<<< HEAD
-        
-            if (tag == "AI") 
+            if (elementIndex < dialoguePanes.Count - 1)
             {
-                state.startTimer("game");
-            }
-            animationStart = false; //done animating
-            awaitInput = true;
-
-        }
-
-        
-
-
-=======
-
-            //if (tag == "AI")
-            //{
-            //    state.startTimer("game");
-            //}
-            if (elementIndex < arr.Length - 1) {
                 cursor.Rotation = 180;
-            } else
+            }
+            else
             {
                 cursor.Rotation = 90;
             }
+
             animationStart = false; //done animating
             awaitInput = true;
-            //state.startTimer("cursor");
+            elementIndex++;
 
         }
 
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
         public void Draw(RenderTarget target, RenderStates states)
         {
             if (init)
             {
-<<<<<<< HEAD
-                View resetView = target.GetView();
-                target.SetView(view);
-                if (tag == "AI")
-                {
-                    target.Draw(dialogueBoxSprite);
-                } else
-                {
-                    target.Draw(box);
-                    target.Draw(nameBox);
-                }
-                target.Draw(name);
-                target.Draw(dialogue);
-                
-
-
-                target.SetView(resetView);
-            }
-        }
-        public FloatRect GetBounds()
-        {
-            FloatRect f = new FloatRect(box.GetGlobalBounds().Left - 20,
-                nameBox.GetGlobalBounds().Top - 20,
-                box.GetGlobalBounds().Width + 20,
-                (box.GetGlobalBounds().Top + box.GetGlobalBounds().Height + 20) - nameBox.GetGlobalBounds().Top);
-            return f;
-        }
-        public FloatRect GetGlobalBounds()
-        {
-            return box.GetGlobalBounds();
-        }
-
-        public float GetMaxTextHeight()
-        {
-            if (tag == "PLAYER")
-            {
-                return box.GetGlobalBounds().Height - 20;
-            } else
-            {
-                return dialogueBoxSprite.GetGlobalBounds().Height - 20;
-            }
-        }
-
-        public Text BufferName(String speaker)
-        {
-            Text n = new Text(speaker.ToUpper(), speechFont, 32);
-            if (tag == "PLAYER")
-            {
-                nameBox.Size = new Vector2f(n.GetGlobalBounds().Width + 30, this.h - 110);
-                n.Position = new Vector2f(nameBox.Position.X + 12, nameBox.Position.Y);
-                n.Color = Color.Black;
-            } else
-            {
-                n.Position = new Vector2f(dialogueBoxSprite.Position.X + 55, dialogueBoxSprite.Position.Y + 7);
-                n.Color = Color.White;
-            }
-            return n;
-        }
-
-        public Text BufferDialogue(String s)
-        {
-            Text d = new Text(s, speechFont, 32);
-            if (tag == "PLAYER")
-            {
-                d.Position = new Vector2f(box.Position.X + 13, box.Position.Y + 20);
-                d.Color = Color.Black;
-            } else
-            {
-                d.Position = new Vector2f(dialogueBoxSprite.Position.X + 13, dialogueBoxSprite.Position.Y + 40);
-                d.Color = Color.White;
-            }
-            
-            return d;
-        }
-
-
-        public DialogueBox(float x, float y, float width, float height, GameState state, string tag)
-        {
-            this.x = x;
-            this.y = y;
-            this.w = width;
-            this.h = height;
-            this.state = state;
-            this.tag = tag;
-
-            if (tag == "AI")
-            {
-                view = new View(new FloatRect(new Vector2f(0, 0), new Vector2f(500, 248)));
-            }
-            else
-            {
-                box = new RectangleShape(new Vector2f(this.w, this.h));
-                box.Position = new Vector2f(this.x - 40, this.y + 35);
-                box.OutlineThickness = 3;
-                box.OutlineColor = Color.Black;
-
-                nameBox = new RectangleShape(new Vector2f(this.w - 575, this.h - 100));
-                nameBox.Position = new Vector2f(this.x, this.y);
-                nameBox.OutlineThickness = 3;
-                nameBox.OutlineColor = Color.Black;
-                view = new View(GetBounds());
-            }
-=======
                 target.Draw(dialogueBoxSprite);
                 target.Draw(name);
                 target.Draw(dialogue);
-                //double timediff = ((state.getGameTimer("cursor").getInitTime() - state.getGameTimer("cursor").getCountDown()) / state.getGameTimer("cursor").getInitTime());
+
                 if (awaitInput)
                 {
                     if (cursor.Rotation == 90)
@@ -625,7 +402,8 @@ namespace Test
                             iterator *= -1;
                         }
                         cursor.Position = new Vector2f(cursor.Position.X + iterator, cursor.Position.Y);
-                    } else
+                    }
+                    else
                     {
                         if (cursor.Position.Y > FcursorY)
                         {
@@ -639,31 +417,35 @@ namespace Test
                         }
                         cursor.Position = new Vector2f(cursor.Position.X, cursor.Position.Y + iterator);
                     }
-                    
-                   
+
+
                     target.Draw(cursor);
                 }
             }
         }
 
+        private uint getFontSize()
+        {
+            return (uint)((SCREEN_WIDTH / 1920) * 27);
+        }
+
+
         public DialogueBox(GameState state, string tag)
         {
             this.state = state;
             this.tag = tag;
-
             if (tag == "AI")
             {
                 cursor = new CircleShape((SCREEN_WIDTH / 1920) * 10, 3);
                 dialogueFontSize = getFontSize();
                 nameFontSize = getFontSize() + 20;
-            } else
+            }
+            else
             {
                 cursor = new CircleShape((SCREEN_WIDTH / 1920) * 20, 3);
                 dialogueFontSize = getFontSize() + 20;
                 nameFontSize = getFontSize() + 30;
             }
-
-            
 
             cursor.Rotation = 180;
 
@@ -683,9 +465,8 @@ namespace Test
                 spriteDict["player"].Scale = scale;
             }
 
-            
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
-            
+
+
         }
     }
 }

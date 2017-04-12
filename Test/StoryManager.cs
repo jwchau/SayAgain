@@ -8,12 +8,6 @@ namespace Test
 {
     class StoryManager
     {
-<<<<<<< HEAD
-        public List<String> allNodes = new List<String>();
-        public List<String> remainingNodes = new List<String>();
-        public List<String> eliminatedNodes = new List<String>();
-        public List<String> possibleNodes = new List<String>();
-=======
  
         static Dictionary<String, Tuple<List<String>, List<String>>> plot_dict
             = new Dictionary < String, Tuple<List<String>, List<String>>>();
@@ -56,15 +50,10 @@ namespace Test
             preconditions = null;
             preconditions = new List<String>();
         }
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
 
         public StoryManager()
 
         {
-<<<<<<< HEAD
-
-        }
-=======
             //TODO: all blow up nodes reachable from any point
 
             next_nodes.Add("MomTellsPlayerTalkToAlex");
@@ -137,6 +126,5 @@ namespace Test
             */
         }
 
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
     }
 }

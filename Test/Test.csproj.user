@@ -3,15 +3,6 @@
   <PropertyGroup>
     <ReferencePath>
     </ReferencePath>
-<<<<<<< HEAD
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartWorkingDirectory>
-    </StartWorkingDirectory>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <StartWorkingDirectory>C:\Users\jy\Desktop\SayAgain\Test\</StartWorkingDirectory>
-=======
     <ProjectView>ShowAllFiles</ProjectView>
     <PublishUrlHistory />
     <InstallUrlHistory />
@@ -23,15 +14,11 @@
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartWorkingDirectory>C:\Users\misimpso\Desktop\SayAgain-Raman-Test\Test\bin\Debug\</StartWorkingDirectory>
+    <StartWorkingDirectory>C:\Users\Mikey\Desktop\SayAgain-Raman-Test\Test\bin\Debug\</StartWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <StartWorkingDirectory>C:\Users\yuchoe\Desktop\SAAUGH\Test\bin\Release\</StartWorkingDirectory>
     <StartAction>Project</StartAction>
     <StartProgram>C:\Users\yuchoe\Desktop\SAAUGH\Test\bin\Release\Test.exe</StartProgram>
-  </PropertyGroup>
-  <PropertyGroup>
-    <EnableSecurityDebugging>false</EnableSecurityDebugging>
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
   </PropertyGroup>
 </Project>

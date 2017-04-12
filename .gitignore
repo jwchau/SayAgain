@@ -5,8 +5,4 @@ Test/obj/*
 Test/packages.config
 .vs/
 packages/*
-<<<<<<< HEAD
-
-=======
 Test/obj/Debug/Test.csproj.FileListAbsolute.txt
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303

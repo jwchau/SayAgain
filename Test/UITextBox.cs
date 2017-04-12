@@ -14,16 +14,10 @@ namespace Test
         public UITextBox(float x, float y, string dialogue, int cluster)
         {
             UITextBoxText = new Text(dialogue, UITextBoxFont, getFontSize());
-<<<<<<< HEAD
-            UITextBoxText.Position = new Vector2f(x + 3, y + 12);
-            box = new RectangleShape(new Vector2f(UITextBoxText.GetGlobalBounds().Width + 10, (float)(UITextBoxText.GetGlobalBounds().Height*1.5) + 10));
-            box.Position = new Vector2f(x, y + 17);
-=======
             //Console.WriteLine("TEXT HEIGHT: " + (UITextBoxText.GetGlobalBounds().Height * 1.5) + 10);
             box = new RectangleShape(new Vector2f(UITextBoxText.GetGlobalBounds().Width + 30, (float)(UITextBoxText.GetGlobalBounds().Height*1.5) + 10));
             box.Position = new Vector2f(x, y + 17);
             UITextBoxText.Position = new Vector2f((box.GetGlobalBounds().Width/2 - UITextBoxText.GetGlobalBounds().Width/2) + box.GetGlobalBounds().Left, (box.GetGlobalBounds().Height / 2 - (float)(UITextBoxText.GetGlobalBounds().Height / 1.1)) + box.GetGlobalBounds().Top);
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
             box.FillColor = buttonTonalColors["Default"];
             prevColor = buttonTonalColors["Default"];
             UITextBoxText.Color = new Color(67, 65, 69);
@@ -45,11 +39,7 @@ namespace Test
         private uint getFontSize()
         {
 
-<<<<<<< HEAD
-            return (uint)((SCREEN_WIDTH / 1920) * 30);
-=======
             return (uint)((SCREEN_WIDTH / 1920) * 50);
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
         }
 
         public RectangleShape getBox()
@@ -122,14 +112,6 @@ namespace Test
             return mouseWasIn;
         }
 
-<<<<<<< HEAD
-        public bool Contains(int mouseX, int mouseY)
-        {
-            FloatRect bounds = getBoxBounds();
-            if (mouseX >= bounds.Left && mouseX <= bounds.Left + bounds.Width && mouseY >= bounds.Top && mouseY <= bounds.Top + bounds.Height)
-            {
-                return true;
-=======
         public bool Contains(UIButton button)
         {
             //FloatRect bounds = getBoxBounds();
@@ -148,7 +130,6 @@ namespace Test
             {
                 return true;
                 // collision detected!
->>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
             }
             return false;
         }
