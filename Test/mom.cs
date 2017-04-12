@@ -13,6 +13,10 @@ namespace Test
 {
     class Mom : Character
     {
+        float framerate = 4f;
+        int prevIndex = -1;
+        int longerframe;
+
         Texture t = new Texture("../../Art/momsprites.png");
         string expr;
         Dictionary<string, List<Sprite>> sprites = new Dictionary<string, List<Sprite>>() { { "angry", new List<Sprite>() },
@@ -30,17 +34,81 @@ namespace Test
             expr = e.ToString();
         }
 
+        public void pickSpecialFrame()
+        {
+            if (expr == "neutral")
+            {
+                longerframe = 0;
+            }
+            if (expr == "happy")
+            {
+                int rnd = r.Next(0, 3);
+
+                if (rnd == 0)
+                {
+                    longerframe = 1;
+                    //Console.WriteLine("1");
+                }
+                else if (rnd == 1)
+                {
+                    longerframe = 6;
+                    //Console.WriteLine("2");
+
+                }
+            }
+
+            if (expr == "angry")
+            {
+                int rnd = r.Next(0, 3);
+
+                if (rnd == 0)
+                {
+                    longerframe = 0;
+                }
+                else if (rnd == 1)
+                {
+                    longerframe = 3;
+
+                }
+            }
+            if (expr == "sad")
+            {
+               
+                longerframe = 0;
+               
+               
+            }
+        }
+
         public override void Draw(RenderTarget target, RenderStates states)
         {
+            rnd = r.Next(4, 14);
+            
 
-            float framerate = 4f;
 
             target.Draw(sprites[expr][index]);
+
+            if (index == longerframe && prevIndex != longerframe)
+            {
+                
+                framerate = framerate / (float)rnd;
+                prevIndex = longerframe;
+            }
+
+            else if (index != longerframe)
+            {
+
+                prevIndex = index - 1;
+                framerate = 4f;
+            }
+
+
             if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
             {
                 time = DateTime.Now;
-                if (++index >= sprites.Count)
+                if (++index >= sprites[expr].Count)
                 {
+                    pickSpecialFrame();
                     index = 0;
                 }
             }
@@ -48,6 +116,10 @@ namespace Test
 
         public Mom()
         {
+            FNCSpectrum[0] = 2;
+            FNCSpectrum[1] = 5;
+            FNCSpectrum[2] = 8;
+            currentFNC = -1;
 
             //determine size and position
             xpos = (float)(SCREEN_WIDTH*.79);
