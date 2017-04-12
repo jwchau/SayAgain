@@ -132,7 +132,11 @@ namespace Test
 		public void doTask()
 		{
 
+<<<<<<< HEAD
 			timerEvent();
+=======
+			 timerEvent();
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
 		}
 
 		public void setCurrentTime(double newTimeSeconds)

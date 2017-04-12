@@ -31,6 +31,7 @@ namespace Test
     public class DialogueObj
     {
         public string content { get; set; }
+<<<<<<< HEAD
         public string tonalPreReq { get; set; }
         public string context { get; set; }
         public string consequence { get; set; }
@@ -58,6 +59,23 @@ namespace Test
             memories.Add("");
             milestone.Add("");
             
+=======
+        public string tone { get; set; }
+        public string id { get; set; }
+        public string next { get; set; }
+
+        public DialogueObj(string newContent, string newTonalPreReq, string id, string next)
+        {
+            content = newContent; tone = newTonalPreReq; this.id = id; this.next = next;
+        }
+
+        public DialogueObj()
+        {
+            content = "returned empty string";
+            tone = "";
+            id = "";
+            next = "";
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
         }
         ~DialogueObj() { }
     }

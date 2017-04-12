@@ -12,20 +12,38 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+<<<<<<< HEAD
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
+=======
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>C:\Users\misimpso\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+<<<<<<< HEAD
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+=======
+    <InstallUrl>http://www.sayagaingame.com/</InstallUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -47,6 +65,21 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+<<<<<<< HEAD
+=======
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>8630B6C051AEF9AA5DB9FC0DCC9DA9D0DE21619C</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Test_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -77,6 +110,10 @@
     <Compile Include="CharacterState.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="Alex.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="OldSelector.cs" />
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
     <Compile Include="StoryManager.cs" />
     <Compile Include="Dad.cs" />
     <Compile Include="Mom.cs" />
@@ -94,7 +131,10 @@
     <Compile Include="Menu.cs" />
     <Compile Include="SoundManager.cs" />
     <Compile Include="ToneEffects.cs" />
+<<<<<<< HEAD
     <Compile Include="Selector.cs" />
+=======
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
     <Compile Include="UIButton.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Program.cs" />
@@ -114,11 +154,22 @@
   <ItemGroup>
     <None Include="alexTutorial.json" />
     <None Include="App.config" />
+<<<<<<< HEAD
     <None Include="dumbo.json" />
     <None Include="Fonts\Adore64.ttf" />
     <None Include="packages.config" />
     <None Include="playerTutorial.json" />
     <None Include="sampleJSON.JSON" />
+=======
+    <None Include="dad.json" />
+    <None Include="dumbo.json" />
+    <None Include="Fonts\Adore64.ttf" />
+    <None Include="packages.config" />
+    <None Include="player.json" />
+    <None Include="playerTutorial.json" />
+    <None Include="sampleJSON.JSON" />
+    <None Include="Test_TemporaryKey.pfx" />
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

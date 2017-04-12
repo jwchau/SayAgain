@@ -10,13 +10,32 @@ using SFML.Window;
 using SFML.System;
 using System.Drawing;
 
+<<<<<<< HEAD
+=======
+
+//todo: share random
+//multiple interesting frames
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
 namespace Test
 {
     
     abstract class Character: Drawable
     {
+<<<<<<< HEAD
         public int index = 0;
 
+=======
+
+        protected int[] FNCSpectrum = new int[3];
+        protected int currentFNC;
+
+        public int index = 0;
+
+        protected Random r = new Random();
+        protected int rnd;
+
+
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
         private List<Sprite> lipsprites = new List<Sprite>();
         private List<Sprite> sprites = new List<Sprite>();
 
@@ -71,6 +90,7 @@ namespace Test
         public virtual void Draw(RenderTarget target, RenderStates states)
         {
             
+<<<<<<< HEAD
             //float framerate = 4f;
             //sprites[index].Position = new Vector2f(xpos, ypos);
             //Console.WriteLine("WIDTH: " + sprites[index].GetGlobalBounds().Width + " height: " + sprites[index].GetGlobalBounds().Height);
@@ -87,6 +107,24 @@ namespace Test
             //}
         }
         
+=======
+        }
+        
+        public int[] getSpectrum()
+        {
+            return FNCSpectrum;
+        }
+
+        public int getCurrentFNC()
+        {
+            return currentFNC;
+        }
+
+        public void changeFNC()
+        {
+
+        }
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
         public void click()
         {
             if (sprites != null)
@@ -100,7 +138,11 @@ namespace Test
                     //http://stackoverflow.com/questions/23530360/how-do-you-make-a-clickable-sprite-in-sfml
                     if (sprites[0].GetGlobalBounds().Contains
                         (Mouse.GetPosition().X, Mouse.GetPosition().Y)) {
+<<<<<<< HEAD
                             Console.WriteLine("clicked mom");
+=======
+                            //Console.WriteLine("clicked mom");
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
                         }
 
             }

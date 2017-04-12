@@ -22,9 +22,12 @@ namespace Test
         protected double scaleFactorX;
         protected double scaleFactorY;
 
+<<<<<<< HEAD
         //Sound Manager
         protected SoundManager sound_man = new SoundManager();
 
+=======
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
         //Input Manager
         protected InputManager ManagerOfInput = new InputManager();
 
@@ -55,7 +58,11 @@ namespace Test
         // Deprecated: protected CharacterState Alex, Mom, Dad;
         // Replaced with DramaManager that holds each characterstate
         protected DramaManager D_Man = new DramaManager();
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
         //Jill's fields and variables
         protected DialogueBox dialogueBox;
         protected DialogueBox playerDialogueBox;
@@ -66,7 +73,11 @@ namespace Test
         #region AI_FIELDS
         protected List<string> currentMadeMemories = new List<string>();
         protected List<DialogueObj> responseList = new List<DialogueObj>();
+<<<<<<< HEAD
         protected List<DialogueObj> responseListAlex = new List<DialogueObj>();
+=======
+        protected List<DialogueObj> responseListNPC = new List<DialogueObj>();
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
         protected List<string> currentMilestones = new List<string>();
         protected List<int> currentTargets = new List<int>();
 
@@ -75,11 +86,19 @@ namespace Test
         protected Dictionary<string, string> nextContextDict = new Dictionary<string, string>();
         protected tone currentTone = tone.Root;
         protected Loader Load = new Loader();
+<<<<<<< HEAD
         protected Selector s = new Selector();
 
         #endregion
 
         protected Sprite mom, alex, dad, toneBar, backwall, flower, lamp, pictures, table;
+=======
+        protected OldSelector s = new OldSelector();
+
+        #endregion
+
+        protected Sprite mom, alex, dad, toneBar, backwall, flower, lamp, pictures, table, lewindow;
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
         protected RectangleShape textBackground;
         ContextSettings settings;
         protected Character Mom, Alexis, Dad;
@@ -101,7 +120,11 @@ namespace Test
         public Game(uint width, uint height, string title)
         {
             settings.AntialiasingLevel = 8;
+<<<<<<< HEAD
             window = new RenderWindow(new VideoMode(width, height), title, Styles.Default, settings);
+=======
+            window = new RenderWindow(new VideoMode(width, height), title, Styles.Fullscreen, settings);
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
             this.clearColor = new Color(125, 116, 132);
 
             // Set-up Events

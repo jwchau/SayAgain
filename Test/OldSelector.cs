@@ -8,6 +8,7 @@ namespace Test
 {
     class OldSelector
     {
+<<<<<<< HEAD
         public List<DialogueObj> ChooseDialog(int FNC, DialogueParsing r, string[] memories)
         {
             bool memoryCheck;
@@ -80,10 +81,24 @@ namespace Test
                         possibleChoices.Remove(possibleChoices.ElementAt(i));
                         i--;
                     }
+=======
+        public List<DialogueObj> ChooseDialog(DialogueParsing r, string now, string currTone)
+        {
+            List<DialogueObj> responseList = new List<DialogueObj>();
+            for(int i = 0; i < r.r.Dialogues.Count; i++)
+            {
+                var curr = r.r.Dialogues[i];
+                if (curr.id == now && currTone == curr.tone)
+                {
+                    //Console.WriteLine("found 1");
+                    responseList.Add(curr);
+                    return responseList;
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
                 }
             }
 
             //sends results or returns empty value
+<<<<<<< HEAD
             if(possibleChoices.Count == 0)
             {
                 possibleChoices.Add(new DialogueObj());
@@ -91,6 +106,14 @@ namespace Test
             }
 
             return possibleChoices;
+=======
+            if(responseList.Count == 0)
+            {
+                responseList.Add(new DialogueObj());
+            }
+
+            return responseList;
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
         }
         public OldSelector() { }
         ~OldSelector() { }

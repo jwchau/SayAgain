@@ -11,8 +11,17 @@ using SFML.System;
 using System.Drawing;
 namespace Test
 {
+<<<<<<< HEAD
     class Dad : Character
     {
+=======
+    class Dad : Character, Drawable
+    {
+
+        float framerate = 4f;
+        int prevIndex = -1;
+
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
         Texture t = new Texture("../../Art/dadMaster.png");
         Texture arm = new Texture("../../Art/armMaster.png");
       
@@ -33,6 +42,7 @@ namespace Test
 
         public override void setSpriteEmotion(spriteEmotion e)
         {
+<<<<<<< HEAD
             if (e.ToString() != "sad") expr = e.ToString();
         }
 
@@ -46,6 +56,37 @@ namespace Test
             {
                 time = DateTime.Now;
                 if (++index >= sprites.Count)
+=======
+
+           
+            if (e.ToString() != "sad") expr = e.ToString();
+        }
+        
+        public override void Draw(RenderTarget target, RenderStates states)
+        {
+            rnd = r.Next(4, 14);
+
+
+
+            target.Draw(sprites[expr][index]);
+
+            if (index == 0 && prevIndex != 0)
+            {
+                framerate = framerate/(float)rnd;
+                prevIndex = 0;
+            }
+
+            else if (index != 0)
+            {
+                prevIndex = index - 1;
+                framerate = 4f;
+            }
+
+            if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
+            {
+                time = DateTime.Now;
+                if (++index >= sprites[expr].Count)
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
                 {
                     index = 0;
                 }
@@ -59,6 +100,13 @@ namespace Test
 
         public Dad()
         {
+<<<<<<< HEAD
+=======
+            FNCSpectrum[0] = 2;
+            FNCSpectrum[1] = 5;
+            FNCSpectrum[2] = 8;
+            currentFNC = -1;
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
 
             //determine size and position
             xpos = (float)(SCREEN_WIDTH * .21);
@@ -72,9 +120,17 @@ namespace Test
 
             for (int i = 0; i < (343 * 4); i += 343)
             {
+<<<<<<< HEAD
                 sprites["angry"].Add(new Sprite(t, new IntRect(i, 0, 343, 454))); //btw might get extra sprite if sizes no precise
                 sprites["angry"][sprites["angry"].Count - 1].Scale = new Vector2f(xscale, yscale);
                 sprites["angry"][sprites["angry"].Count - 1].Position = new Vector2f(xpos - sprites["angry"][0].GetGlobalBounds().Width / 2, ypos);
+=======
+
+                sprites["angry"].Add(new Sprite(t, new IntRect(i, 0, 343, 454))); //btw might get extra sprite if sizes no precise
+                sprites["angry"][sprites["angry"].Count - 1].Scale = new Vector2f(xscale, yscale);
+                sprites["angry"][sprites["angry"].Count - 1].Position = new Vector2f(xpos - sprites["angry"][0].GetGlobalBounds().Width / 2, ypos);
+
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
             }
             for (int i = 0; i < (343 * 4); i += 343)
             {
@@ -84,9 +140,17 @@ namespace Test
             }
             for (int i = 0; i < (343 * 4); i += 343)
             {
+<<<<<<< HEAD
                 sprites["neutral"].Add(new Sprite(t, new IntRect(i, 454 * 2, 343, 454)));
                 sprites["neutral"][sprites["neutral"].Count - 1].Scale = new Vector2f(xscale, yscale);
                 sprites["neutral"][sprites["neutral"].Count - 1].Position = new Vector2f(xpos - sprites["neutral"][0].GetGlobalBounds().Width / 2, ypos);
+=======
+
+                sprites["neutral"].Add(new Sprite(t, new IntRect(i, 454 * 2, 343, 454)));
+                sprites["neutral"][sprites["neutral"].Count - 1].Scale = new Vector2f(xscale, yscale);
+                sprites["neutral"][sprites["neutral"].Count - 1].Position = new Vector2f(xpos - sprites["neutral"][0].GetGlobalBounds().Width / 2, ypos);
+
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
             }
             neutralarm.Scale = sprites["neutral"][0].Scale;
             angryarm.Scale = sprites["angry"][0].Scale;

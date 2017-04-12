@@ -19,7 +19,11 @@ namespace Test {
             tone[] tonez = new tone[] { tone.Blunt, tone.Indifferent, tone.Compassionate, tone.Hesitant };
             string[] jsondialogue = new string[] { "Blunt Dialogue.", "Indifferent Dialogue.", "Compassionate Dialogue.", "Hesitant Dialogue." };
             int xPos = (int)SCREEN_WIDTH / tonez.Length;
+<<<<<<< HEAD
             Console.WriteLine(SCREEN_HEIGHT);
+=======
+            //Console.WriteLine(SCREEN_HEIGHT);
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
             for (int i = 1; i <= tonez.Length; i++) {
                 addButton(new UIButton(xPos / 2 + (i - 1) * xPos, (float)(SCREEN_HEIGHT - SCREEN_HEIGHT*0.26), tonez[i - 1], jsondialogue[i - 1]));
             }
@@ -57,6 +61,7 @@ namespace Test {
         }
         #endregion
 
+<<<<<<< HEAD
         public List<UITextBox> produceTextBoxes2(string Dialogue) {
             //Console.WriteLine("AM I HERE????");
             dialogueArray = Regex.Split(Dialogue, @"(?=\.)|(?<=\!)|(?=\?)");
@@ -143,6 +148,83 @@ namespace Test {
             }
             return playerDialogues;
 
+=======
+        public List<UITextBox> produceTextBoxes(string Dialogue)
+        {
+            dialogueArray = Dialogue.Split(' ');
+            List<string> words = new List<string>();
+            foreach (var dialogue in dialogueArray)
+            {
+                //Console.WriteLine(dialogue);
+            }
+
+            string tempString = dialogueArray[0];
+            Font tempFont = new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf");
+            uint x = 5;
+            uint y = SCREEN_HEIGHT - ((SCREEN_HEIGHT / 5)) + 5;
+            int cluster = 0;
+
+            int length = 0;
+            if (dialogueArray.Length > 1)
+            {
+                length = dialogueArray.Length - 1;
+            }
+            else
+            {
+                length = dialogueArray.Length;
+            }
+
+            //Console.WriteLine("THE LENGTH OF THE DIALOGUE IS: " + dialogueArray.Length);
+
+            if (dialogueArray.Length != 1)
+            {
+
+                for (int word = 1; word < dialogueArray.Length; word++)
+                {
+                    Text tempText = new Text(tempString + ' ' + dialogueArray[word], tempFont, getFontSize()); //current word + the next one after
+                    if (tempText.GetGlobalBounds().Width + 10 >= SCREEN_WIDTH)
+                    {
+                        //time to go the next line
+                        //Console.WriteLine("NEXT LINE TIME!!!");
+                        playerDialogues.Add(new UITextBox(x, y, tempString, cluster));
+                        y += (uint)tempText.GetGlobalBounds().Height + 10;
+                        tempString = dialogueArray[word];
+                        if (word == dialogueArray.Length - 1)
+                        {
+                            playerDialogues.Add(new UITextBox(x, y, tempString, cluster));
+                            y += (uint)tempText.GetGlobalBounds().Height + 10;
+                        }
+
+                    }
+                    else
+                    {
+                        //Console.WriteLine("tempString before adding the next word: " + tempString);
+                        tempString += ' ';
+                        tempString += dialogueArray[word];
+                        //Console.WriteLine("tempString after adding the next word: " + tempString);
+                        if (word == dialogueArray.Length - 1)
+                        {
+                            playerDialogues.Add(new UITextBox(x, y, tempString, cluster));
+                            y += (uint)tempText.GetGlobalBounds().Height + 10;
+                        }
+                    }
+
+                }
+            }
+            else if (dialogueArray.Length == 1)
+            {
+                playerDialogues.Add(new UITextBox(x, y, tempString, cluster));
+            }
+
+            return playerDialogues;
+
+        }
+
+        private uint getFontSize()
+        {
+
+            return (uint)((SCREEN_WIDTH / 1920) * 80);
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
         }
 
         public void reset(List<DialogueObj> responseList) {
@@ -164,7 +246,11 @@ namespace Test {
             }
             playerDialogues.Clear();
 
+<<<<<<< HEAD
             produceTextBoxes2(responseList.ElementAt(0).content);
+=======
+            produceTextBoxes(responseList.ElementAt(0).content);
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
         }
 
         public tone getTone() {
@@ -201,7 +287,11 @@ namespace Test {
                     // Move to character state
                     //double[,] final = tfx.MatrixMult(tfx, cf);
                     //Console.WriteLine(final[2, 3]);
+<<<<<<< HEAD
                     Console.WriteLine("HEY THE BUTTON I AM DRAGGING IS: " + buttons[i].getTone().ToString());
+=======
+                    //Console.WriteLine("HEY THE BUTTON I AM DRAGGING IS: " + buttons[i].getTone().ToString());
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
                     // Get UI Text Boxes
                     var playerDialogues = this.getPlayerDialogues();
 
@@ -209,14 +299,22 @@ namespace Test {
                         var boxBounds = playerDialogues[j].getBoxBounds();
                         //change color if the button is hovering over the textbox
 
+<<<<<<< HEAD
                         if (playerDialogues[j].Contains(x, y)) {
+=======
+                        if (playerDialogues[j].Contains(buttons[i])) {
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
 
                             for (int k = 0; k < playerDialogues.Count; k++) {
                                 playerDialogues[k].setPrevColor(playerDialogues[k].getBoxColor("curr"));
                                 playerDialogues[k].setBoxColor(buttons[i].getTonalColor());
                                 playerDialogues[k].setAffected(true);
                                 playerDialogues[k].setTone(buttons[i].getTone());
+<<<<<<< HEAD
                                 Console.WriteLine("MY TONE IS: " + playerDialogues[0].getTone());
+=======
+                                //Console.WriteLine("MY TONE IS: " + playerDialogues[0].getTone());
+>>>>>>> 24292412928b907bdb0e2cd81f7a16bf1fc4e303
 
                             }
                             break;
