@@ -56,18 +56,6 @@ namespace Test {
             ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
         }
 
-        //if (D_Man.getAlex().Contains(e.X, e.Y)) {
-        //    D_Man.getAlex().setHover(true);
-        //} else if (D_Man.getMom().Contains(e.X, e.Y)) {
-        //    D_Man.getMom().setHover(true);
-        //} else if (D_Man.getDad().Contains(e.X, e.Y)) {
-        //    D_Man.getDad().setHover(true);
-        //} else {
-        //    D_Man.getAlex().setHover(false);
-        //    D_Man.getMom().setHover(false);
-        //    D_Man.getDad().setHover(false);
-        //}
-
         private void onMouseButtonReleased(object sender, MouseButtonEventArgs e) {
 
             ManagerOfInput.onMouseButtonReleased();
@@ -200,6 +188,9 @@ namespace Test {
 
 
         public void loadDialogues() {
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //Console.WriteLine("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" + Load.newplayerp.r.Dialogues.ElementAt(0).content);
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             if (currentTone != tone.Root)
             {
