@@ -14,13 +14,7 @@ namespace Test {
 
     class SA : Game {
 
-
-        public View fullScreenView, charView;
-        //Character mom, alexis, dad;
-
-
         public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?") {
-
             window.KeyPressed += onKeyPressed;
             window.KeyReleased += onKeyReleased;
             window.MouseButtonPressed += onMouseButtonPressed;

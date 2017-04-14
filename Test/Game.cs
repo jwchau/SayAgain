@@ -43,7 +43,6 @@ namespace Test
         //Matrices
         protected ToneEffects tfx = new ToneEffects();
         protected ContextFilter cf;
-        protected Relationships rs = new Relationships();
 
         //Font
         static protected Font Adore64 = new Font(new FileStream("../../Fonts/Adore64.ttf", FileMode.Open));
