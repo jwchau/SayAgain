@@ -11,6 +11,8 @@ namespace Test
         //Creates and loads Json Objects
         public DialogueParsing playerDialogueObj1 = new DialogueParsing(@"../../player.json");
         public DialogueParsing NPCDialogueObj = new DialogueParsing(@"../../dad.json");
+        public DialogueParsing newplayert = new DialogueParsing(@"../../newplayertt.json");
+        public DialogueParsing newplayerp = new DialogueParsing(@"../../newplayerpp.json");
 
         //Creates and loads music and sound files
 
