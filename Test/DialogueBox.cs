@@ -34,7 +34,7 @@ namespace Test
 
         CancellationTokenSource cts;
         public List<Text> dialoguePanes = new List<Text>();
-        public int printTime;
+        public int printTime = 30;
         public bool active = false;
         int elementIndex = 0;
         GameState state;
@@ -161,6 +161,7 @@ namespace Test
         {
             if (elementIndex < dialoguePanes.Count)
             {
+                Console.WriteLine("\n---------- CHECK NEXT");
                 if (cts != null)
                 {
                     cts.Cancel();
@@ -168,7 +169,7 @@ namespace Test
                 cts = new CancellationTokenSource();
                 currentTask = Task.Run(async () =>
                 {
-                    printTime = 60;
+                    printTime = 30;
                     await animateText(cts.Token);
                 }, cts.Token);
             } else
@@ -261,8 +262,8 @@ namespace Test
 
         public void renderDialogue(String s)
         {
-            
             dialoguePanes.Clear();
+            Console.WriteLine("\n---------- RENDER DIALOGUE");
             if (cts != null)
             {
                 cts.Cancel();
@@ -272,10 +273,11 @@ namespace Test
             dialoguePanes = createStrings();
             currentTask = Task.Run(async () =>
             { //Task.Run puts on separate thread
-                printTime = 60;
+                printTime = 30;
                 await animateText(cts.Token); //await pauses thread until animateText() is completed
 
             }, cts.Token);
+            Console.WriteLine("\n---------- END OF RENDER DIALOGUE");
         }
 
         public List<Text> createStrings()
@@ -344,6 +346,8 @@ namespace Test
         {
             Text line = dialoguePanes[elementIndex];
 
+            Console.WriteLine("ANIMATE TEXT: " + line.DisplayedString);
+
             animationStart = true;
             awaitInput = false;
 
@@ -359,7 +363,27 @@ namespace Test
                 }
                 if (state.GetState() != "pause")
                 {
+                    if (printTime != 0)
+                    {
+                        if(i == line.DisplayedString.Length - 2)
+                        {
+                            printTime = 0;
+                        }
+                        else if (".!?".Contains(line.DisplayedString[i]))
+                        {
+                            printTime *= 14;
+                        }
+                        else if (",".Contains(line.DisplayedString[i]))
+                        {
+                            printTime *= 10;
+                        }
+                        else
+                        {
+                            printTime = 30;
+                        }
+                    }
                     dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, line.DisplayedString[i++]));
+                    
                     await Task.Delay(printTime); //equivalent of putting thread to sleep
                 }
             }

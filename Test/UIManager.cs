@@ -16,12 +16,22 @@ namespace Test {
         public UIManager() {
 
             /* TEMPORARY CODE REMOVE AND CLEAN LATER*/
-            tone[] tonez = new tone[] { tone.Blunt, tone.Indifferent, tone.Compassionate, tone.Hesitant };
-            string[] jsondialogue = new string[] { "Blunt Dialogue.", "Indifferent Dialogue.", "Compassionate Dialogue.", "Hesitant Dialogue." };
-            int xPos = (int)SCREEN_WIDTH / tonez.Length;
+            List<tone> tonez;
+            if (buttonOrder == 0)
+            {
+                tonez = new List<tone>() { tone.Blunt, tone.Indifferent, tone.Compassionate, tone.Hesitant };
+            } else
+            {
+                tonez = new List<tone>() { tone.Compassionate, tone.Indifferent, tone.Blunt, tone.Hesitant };
+                if(buttonOrder == 2)
+                {
+                    tonez = shuffleList(tonez);
+                }
+            }
+            int xPos = (int)SCREEN_WIDTH / tonez.Count;
             //Console.WriteLine(SCREEN_HEIGHT);
-            for (int i = 1; i <= tonez.Length; i++) {
-                addButton(new UIButton(xPos / 2 + (i - 1) * xPos, (float)(SCREEN_HEIGHT - SCREEN_HEIGHT*0.26), tonez[i - 1], jsondialogue[i - 1]));
+            for (int i = 1; i <= tonez.Count; i++) {
+                addButton(new UIButton(xPos / 2 + (i - 1) * xPos, (float)(SCREEN_HEIGHT - SCREEN_HEIGHT*0.26), tonez[i - 1]));
             }
             ////////////////////////////////////////////////
         }
@@ -31,6 +41,8 @@ namespace Test {
         List<UITextBox> playerDialogues = new List<UITextBox>();
         static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
         static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+
+        int buttonOrder = 0;
 
         string[] dialogueArray;
 
@@ -47,6 +59,20 @@ namespace Test {
             buttons.Add(b);
         }
 
+        private List<tone> shuffleList(List<tone> inputList)
+        {
+            var rand = new Random();
+            for (int i = inputList.Count - 1; i >= 0; i--)
+            {
+                tone tmp = inputList[i];
+                int randomIndex = rand.Next(i + 1);
+
+                //Swap elements
+                inputList[i] = inputList[randomIndex];
+                inputList[randomIndex] = tmp;
+            }
+            return inputList;
+        }
 
         #region SweepButtons
         public void SweepButtons(int x, int y, double scalex, double scaley) {
@@ -181,6 +207,8 @@ namespace Test {
             }
         }
 
+
+
         #region SA_applyTones
         public void applyTones(int x, int y) {
             // Applying tones to Text Boxes
@@ -218,6 +246,16 @@ namespace Test {
             }
         }
         #endregion
+
+        public void applyToneShortcut(UIButton button)
+        {
+            for(int i = 0; i < playerDialogues.Count; i++)
+            {
+                playerDialogues[i].setPrevColor(playerDialogues[i].getBoxColor("curr"));
+                playerDialogues[i].setBoxColor(button.getTonalColor());
+                playerDialogues[i].setTone(button.getTone());
+            }
+        }
 
         public void dialogueLoadOrder(GameState state, DialogueBox player, DialogueBox AI, List<DialogueObj> responseList, List<DialogueObj> responseListAlex, bool playerChoice)
         {

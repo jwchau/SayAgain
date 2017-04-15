@@ -30,6 +30,8 @@ namespace Test
 
         protected List<UIButton> buttons;
 
+        // Debug
+        protected bool debugInfo = true;
 
         //Menus
         protected Menu startMenu = new Menu("start");

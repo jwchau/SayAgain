@@ -1,13 +1,13 @@
 { 
  "Dialogues":[ 
   {
-     "content":"Thanks"
+     "content":"Thank you"
     ,"tone":"Root"
     ,"id":"1"
     ,"next":""
   },
   {
-     "content":"Lol you think you get me punk? JAJAJAJAJAJAJAJ JAJAJAJ AJAJAJA JAJAJAJAJA JAJAJAJAJAJAJAJ JAJAJAJ AJAJAJA JAJAJAJAJA JAJAJAJAJAJAJAJ JAJAJAJ AJAJAJA JAJAJAJAJA JAJAJAJAJAJAJAJ JAJAJAJ AJAJAJA JAJAJAJAJA JAJAJAJAJAJAJAJ JAJAJAJ AJAJAJA JAJAJAJAJA JAJAJAJAJAJAJAJ JAJAJAJ AJAJAJA JAJAJAJAJA"
+     "content":"I'm only here because you told me to be."
     ,"tone":"Blunt"
     ,"id":"2"
     ,"next":"128"
@@ -79,7 +79,7 @@
     ,"next":""
   },
   {
-     "content":"You don''t have to worry about me. School is peach keen!"
+     "content":"You don't have to worry about me. School is peach keen!"
     ,"tone":"Compassionate"
     ,"id":"4"
     ,"next":""
