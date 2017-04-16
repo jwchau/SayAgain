@@ -270,6 +270,7 @@ namespace Test {
             buttons = ui_man.getButtons();
             menus.Add(startMenu); menus.Add(settingsMenu); menus.Add(pauseMenu);
 
+
             Mom = new Mom();
             Mom.setSpriteEmotion(Character.spriteEmotion.happy);
             Mom.active(true);
