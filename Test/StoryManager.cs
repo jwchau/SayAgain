@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//greetdad, settype PP, 
 namespace Test
 {
     class StoryManager
     {
 
         protected string dialogueType;
+        public enum type { plotpoint, transition };
         protected List<String> nextPreconditions;
         protected string currentNode;
         protected int numberOfChildren;
@@ -61,9 +63,21 @@ namespace Test
             preconditions = new List<String>();
         }
 
+
+        
+        public string getDialogueType()
+        {
+            return dialogueType;
+        }
+
+        public void setDialogueType(type t)
+        {
+            dialogueType = t.ToString();
+        }
+
         public void setTypePlotNode()
         {
-            dialogueType = "plotnode";
+            dialogueType = type.transition.ToString();
         }
 
         public void setTypeTransition()
@@ -74,8 +88,8 @@ namespace Test
         public void findNextPossibleNodes()
         {
             numberOfChildren = 0;
-            //Console.WriteLine("Current node: " + currentNode);
-            //Console.WriteLine("Possible next nodes: ");
+            Console.WriteLine("Current node: " + currentNode);
+            Console.WriteLine("Possible next nodes: ");
             if (plot_dict[currentNode].Item1 != null)
             {
                 //the string name of each child node
@@ -87,8 +101,8 @@ namespace Test
                     {   
                         foreach (var c in plot_dict[n].Item2)
                         {
-                            //Console.WriteLine(">>> With precondition: ");
-                            //Console.WriteLine(">>> " + c);
+                            Console.WriteLine(">>> With precondition: ");
+                            Console.WriteLine(">>> " + c);
 
                             nextPreconditions.Add(c);
 
@@ -101,20 +115,30 @@ namespace Test
 
         public void checkIfPreconSatisfied()
         {
+            int childSatisfied = -1;//track which child of currentNode has satisfied preconditions
+            bool satisfied = false;//true whenever a child is satisfied. ASSUMES that children dont have overlapping preconditions
             foreach (var p in nextPreconditions)
             {
                 //if p has a ' in it (multiple preconditions)
                 //then separate the two conitions, parse for whether FNC or plot point requirement
-                Console.WriteLine(p);
+                //Console.WriteLine(p);
+                if (p.Contains(","))
+                {
+                    childSatisfied += 1;
+                    string tmp = p.Replace(" ", String.Empty);
+                    var array = tmp.Split(',')[1];
+                    //for each thing in array satisfied, satisfied = true, else false and break
+                }
 
             }
         }
         public StoryManager() {
 
+
             nextPreconditions = new List<String> ();
             
             currentNode = "MomTellsPlayerTalkToAlex";
-
+            setDialogueType(type.plotpoint);
 
 
             //TODO: all blow up nodes reachable from any point
