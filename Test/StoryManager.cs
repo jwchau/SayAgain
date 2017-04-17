@@ -12,7 +12,7 @@ namespace Test
 
         protected string dialogueType;
         public enum type { plotpoint, transition };
-        protected List<String> nextPreconditions;
+        //protected List<String> nextPreconditions;
         protected string currentNode;
         protected int numberOfChildren;
 
@@ -93,30 +93,37 @@ namespace Test
             if (plot_dict[currentNode].Item1 != null)
             {
                 //the string name of each child node
-                foreach (var n in plot_dict[currentNode].Item1)
+                foreach (var n in plot_dict[currentNode].Item1) //each child
                 {
+                    List<String> nextPreconditions = new List<String>();
                     numberOfChildren += 1;
                     Console.WriteLine("- " + n);
                     if (plot_dict[n].Item2 != null)
                     {   
-                        foreach (var c in plot_dict[n].Item2)
+                        foreach (var c in plot_dict[n].Item2) //the precondition of each child
                         {
+
                             Console.WriteLine(">>> With precondition: ");
                             Console.WriteLine(">>> " + c);
 
                             nextPreconditions.Add(c);
+                            
+                            if (checkIfPreconSatisfied(nextPreconditions)) //if true
+                            {
+                                currentNode = n;//current node is set to child node 
+                            }
 
                         }
                     }
                 }
             }
-            checkIfPreconSatisfied();
+            
         }
 
-        public void checkIfPreconSatisfied()
+    //ASSUMES that children dont have overlapping preconditions
+        public bool checkIfPreconSatisfied(List<String> nextPreconditions)
         {
-            int childSatisfied = -1;//track which child of currentNode has satisfied preconditions
-            bool satisfied = false;//true whenever a child is satisfied. ASSUMES that children dont have overlapping preconditions
+            
             foreach (var p in nextPreconditions)
             {
                 //if p has a ' in it (multiple preconditions)
@@ -124,18 +131,53 @@ namespace Test
                 //Console.WriteLine(p);
                 if (p.Contains(","))
                 {
-                    childSatisfied += 1;
-                    string tmp = p.Replace(" ", String.Empty);
-                    var array = tmp.Split(',')[1];
+                    string tmp = p.Replace(" ", String.Empty); //get rid of whitespace
+                    var array = tmp.Split(',');
                     //for each thing in array satisfied, satisfied = true, else false and break
+                    foreach (var k in array)
+                    {
+                        if (!k.Contains(":"))
+                        {
+                            //this means its not an FNC check
+                            //means its a plotpoint check
+                            if (!checkPastPlotPoint(k))//if false
+                            {
+                                return false;
+                            }
+                        }
+                        else
+                        {
+                            var t = k.Replace(":", String.Empty);
+                            if (!checkCharFNC())
+                            {
+                                return false;
+                            }
+                        }
+                    }
                 }
-
+                
             }
+            return true;
         }
+        
+        public bool checkCharFNC()
+        {
+            return false;
+        }
+
+        public bool checkPastPlotPoint(string p)
+        {
+            //if p exists in list of reached plotpoints
+            //return true;
+            //else
+            //return false;
+            return false;
+        }
+
         public StoryManager() {
 
 
-            nextPreconditions = new List<String> ();
+            //nextPreconditions = new List<String> ();
             
             currentNode = "MomTellsPlayerTalkToAlex";
             setDialogueType(type.plotpoint);
@@ -151,10 +193,10 @@ namespace Test
             next_nodes.Add("MomBlowsUp");
             next_nodes.Add("GreetDad");
             next_nodes.Add("GreetAlex");
-            preconditions.Add("Mom: LF-MF");
+            preconditions.Add("M: LF-MF");
             addNode("MomTellsPlayerTalkToAlex", next_nodes, preconditions);
             
-            preconditions.Add("Mom: MC-HC");
+            preconditions.Add("M: MC-HC");
             preconditions.Add("AlexAdmitsNeglect");
             preconditions.Add("DadAccusesMom");
             addNode("MomAdmitsJob", next_nodes, preconditions);
@@ -164,21 +206,21 @@ namespace Test
             next_nodes.Add("DadBlowsUp");
             addNode("GreetDad", next_nodes, preconditions);
 
-            preconditions.Add("Dad: MC-HC");
+            preconditions.Add("D: MC-HC");
             next_nodes.Add("MomBlowsUp");
             next_nodes.Add("DadApologizesMom");
             addNode("DadAccusesMom", next_nodes, preconditions);
 
-            preconditions.Add("Dad: HC");
-            preconditions.Add("MomAdmitsJob, Dad: LN-HC");
+            preconditions.Add("D: HC");
+            preconditions.Add("MomAdmitsJob, D: LN-HC");
             next_nodes.Add("DadApologizesAlex");
             addNode("DadApologizesMom", next_nodes, preconditions);
 
-            preconditions.Add("AlexAdmitsNeglect, Dad: LC-HC");
-            preconditions.Add("Dad: HC");
+            preconditions.Add("AlexAdmitsNeglect, D: LC-HC");
+            preconditions.Add("D: HC");
             addNode("DadApologizesAlex", next_nodes, preconditions);
 
-            preconditions.Add("DadApologizesMom, Mom: LN-HC");
+            preconditions.Add("DadApologizesMom, M: LN-HC");
             next_nodes.Add("AlexAdmitsNeglect");
             addNode("MomReconcilesDad", next_nodes, preconditions);
 
@@ -187,29 +229,29 @@ namespace Test
             next_nodes.Add("GreetDad");
             addNode("GreetAlex", next_nodes, preconditions);
 
-            preconditions.Add("Alex: LC-HC");
+            preconditions.Add("A: LC-HC");
             next_nodes.Add("AlexReconcilesPlayer");
             addNode("AlexAdmitsNeglect", next_nodes, preconditions);
 
-            preconditions.Add("Alex: LC-HC");
+            preconditions.Add("A: LC-HC");
             next_nodes.Add("AlexReconcilesMom");
             addNode("AlexReconcilesPlayer", next_nodes, preconditions);
 
             
-            preconditions.Add("Alex: LC-HC, MomAdmitsJob");
+            preconditions.Add("A: LC-HC, MomAdmitsJob");
             next_nodes.Add("AlexReconcilesDad");
             addNode("AlexReconcilesMom", next_nodes, preconditions);
 
-            preconditions.Add("Alex: LC-HC, DadApologizesAlex");
+            preconditions.Add("A: LC-HC, DadApologizesAlex");
             addNode("AlexReconcilesDad", next_nodes, preconditions);
 
-            preconditions.Add("Dad: HF");
+            preconditions.Add("D: HF");
             addNode("DadBlowsUp", next_nodes, preconditions);
 
-            preconditions.Add("Alex: HF");
+            preconditions.Add("A: HF");
             addNode("AlexBlowsUp", next_nodes, preconditions);
 
-            preconditions.Add("Mom: HF");
+            preconditions.Add("M: HF");
             addNode("MomBlowsUp", next_nodes, preconditions);
 
             findNextPossibleNodes();
