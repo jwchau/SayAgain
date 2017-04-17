@@ -9,7 +9,7 @@ namespace Test
 {
     class StoryManager
     {
-
+        protected List<String> reachedPlotpoints;
         protected string dialogueType;
         public enum type { plotpoint, transition };
         //protected List<String> nextPreconditions;
@@ -111,6 +111,7 @@ namespace Test
                             if (checkIfPreconSatisfied(nextPreconditions)) //if true
                             {
                                 currentNode = n;//current node is set to child node 
+                                reachedPlotpoints.Add(currentNode);
                             }
 
                         }
@@ -148,7 +149,7 @@ namespace Test
                         else
                         {
                             var t = k.Replace(":", String.Empty);
-                            if (!checkCharFNC())
+                            if (!checkCharFNC(t))
                             {
                                 return false;
                             }
@@ -160,8 +161,20 @@ namespace Test
             return true;
         }
         
-        public bool checkCharFNC()
+        public bool checkCharFNC(string s)
         {
+            char character = s[0];
+            switch (character) {
+                case 'M':
+                    return false;
+                    
+                case 'D':
+                    return false;
+                    
+                case 'A':
+                    return false;
+                    
+            }
             return false;
         }
 
@@ -171,6 +184,13 @@ namespace Test
             //return true;
             //else
             //return false;
+            foreach (var plotpoint in reachedPlotpoints)
+            {
+                if (p == plotpoint)
+                {
+                    return true;
+                }
+            }
             return false;
         }
 
@@ -181,11 +201,13 @@ namespace Test
             
             currentNode = "MomTellsPlayerTalkToAlex";
             setDialogueType(type.plotpoint);
+            reachedPlotpoints = new List<String>();
+            reachedPlotpoints.Add(currentNode);
 
 
-            //TODO: all blow up nodes reachable from any point
+        //TODO: all blow up nodes reachable from any point
 
-            next_nodes.Add("MomTellsPlayerTalkToAlex");
+        next_nodes.Add("MomTellsPlayerTalkToAlex");
             next_nodes.Add("MomAdmitsJob");
             addNode("GreetMom", next_nodes, preconditions);
 
