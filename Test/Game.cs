@@ -30,6 +30,8 @@ namespace Test
 
         protected List<UIButton> buttons;
 
+        // Debug
+        protected bool debugInfo = true;
 
         //Menus
         protected Menu startMenu = new Menu("start");
@@ -52,10 +54,6 @@ namespace Test
         // Deprecated: protected CharacterState Alex, Mom, Dad;
         // Replaced with DramaManager that holds each characterstate
         protected DramaManager D_Man = new DramaManager();
-
-        //Jill's fields and variables
-        protected DialogueBox dialogueBox;
-        protected DialogueBox playerDialogueBox;
 
         //protected Boolean init;
         protected View fullScreenView, scrollview;

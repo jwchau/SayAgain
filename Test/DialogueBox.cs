@@ -26,21 +26,19 @@ namespace Test
 
         static Dictionary<string, Sprite> spriteDict = new Dictionary<string, Sprite>();
 
-        Boolean init = false;
+        public bool init = false;
         string tag; //AI or player
 
-        public bool animationStart = true;
+        public bool animationStart = false;
         bool awaitInput = false;
 
         CancellationTokenSource cts;
         public List<Text> dialoguePanes = new List<Text>();
-        public int printTime;
+        public int printTime = 30;
         public bool active = false;
-        int elementIndex = 0;
+        public int elementIndex = 0;
+        public bool done = false;
         GameState state;
-        public bool initRun = true;
-
-        public bool ready = false;
 
         Sprite dialogueBoxSprite;
 
@@ -101,66 +99,11 @@ namespace Test
             return animationStart;
         }
 
-        //public void checkEnd()
-        //{
-
-        //    //Console.WriteLine("HERE ARE ALL THE PANES: ");
-        //    foreach (var pane in dialoguePanes)
-        //    {
-        //        //Console.WriteLine(pane.Item1.DisplayedString);
-        //    }
-
-        //    if (tag != "AI")
-        //    {
-        //        if (lastDialogue == true && animationStart == false)
-        //        {
-        //            active = false;
-        //            acknowledge();
-        //        }
-        //    }
-        //    else
-        //    {
-        //        if (getElementIndex() >= dialoguePanes.Count - 1 && (lastDialogue == true && animationStart == false))
-        //        {
-        //            //Console.WriteLine("TAG 2: " + tag + ", hello?");
-        //            active = false;
-        //            acknowledge();
-        //        }
-        //    }
-
-        //}
-
-        //public void getNext()
-        //{
-        //    if (tag != "AI")
-        //    {
-        //        elementIndex += 1;
-        //    }
-        //    if (elementIndex < dialoguePanes.Count)
-        //    {
-        //        if (cts != null)
-        //        {
-        //            //Console.WriteLine("getNext: cts.Cancel()");
-        //            cts.Cancel();
-        //        }
-        //        cts = new CancellationTokenSource();
-        //        currentTask = Task.Run(async () =>
-        //        { //Task.Run puts on separate thread
-        //            printTime = 60;
-        //            await animateText(cts.Token); //await pauses thread until animateText() is completed
-        //        }, cts.Token);
-        //        if (tag == "AI")
-        //        {
-        //            elementIndex += 1;
-        //        }
-        //    }
-
-        //}
-
-        public void checkNext()
+        public bool checkNext()
         {
             if (elementIndex < dialoguePanes.Count)
             {
+                Console.WriteLine("\n---------- CHECK NEXT");
                 if (cts != null)
                 {
                     cts.Cancel();
@@ -168,18 +111,21 @@ namespace Test
                 cts = new CancellationTokenSource();
                 currentTask = Task.Run(async () =>
                 {
-                    printTime = 60;
+                    printTime = 30;
                     await animateText(cts.Token);
                 }, cts.Token);
+
+                return false;
             } else
             {
                 if(tag == "AI")
                 {
                     state.startTimer("game");
                 }
-                active = false;
+                
                 awaitInput = false;
-                init = false;
+
+                return true;
             }
         }
 
@@ -261,8 +207,8 @@ namespace Test
 
         public void renderDialogue(String s)
         {
-            
             dialoguePanes.Clear();
+            Console.WriteLine("\n---------- RENDER DIALOGUE");
             if (cts != null)
             {
                 cts.Cancel();
@@ -272,10 +218,11 @@ namespace Test
             dialoguePanes = createStrings();
             currentTask = Task.Run(async () =>
             { //Task.Run puts on separate thread
-                printTime = 60;
+                printTime = 30;
                 await animateText(cts.Token); //await pauses thread until animateText() is completed
 
             }, cts.Token);
+            Console.WriteLine("\n---------- END OF RENDER DIALOGUE");
         }
 
         public List<Text> createStrings()
@@ -344,6 +291,8 @@ namespace Test
         {
             Text line = dialoguePanes[elementIndex];
 
+            Console.WriteLine("ANIMATE TEXT: " + line.DisplayedString);
+
             animationStart = true;
             awaitInput = false;
 
@@ -359,7 +308,30 @@ namespace Test
                 }
                 if (state.GetState() != "pause")
                 {
+                    if (printTime != 0)
+                    {
+                        if(i == line.DisplayedString.Length - 2)
+                        {
+                            printTime = 0;
+                        }
+                        else if (".!?".Contains(line.DisplayedString[i]))
+                        {
+                            if (!(".!?".Contains(line.DisplayedString[i - 1])))
+                            {
+                                printTime *= 14;
+                            }
+                        }
+                        else if (",".Contains(line.DisplayedString[i]))
+                        {
+                            printTime *= 10;
+                        }
+                        else
+                        {
+                            printTime = 30;
+                        }
+                    }
                     dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, line.DisplayedString[i++]));
+                    
                     await Task.Delay(printTime); //equivalent of putting thread to sleep
                 }
             }
