@@ -54,8 +54,12 @@ namespace Test {
             content = newContent; tone = newTonalPreReq; this.id = id; this.next = next; this.FNC = 2 ^ 16;
         }
 
-        public DialogueObj(string newContent, string newTonalPreReq, string id, string next, string FNC) {
-            content = newContent; tone = newTonalPreReq; this.id = id; this.next = next; this.FNC = double.Parse(FNC);
+        public DialogueObj(string content, string tone, string plotpoint, string id, string FNC, string finished) {
+            this.content = content; this.tone = tone; this.plotpoint = plotpoint; this.id = id; this.FNC = double.Parse(FNC); this.finished = finished;
+        }
+
+        public DialogueObj(string c, string t, string id, string f, string b) {
+            this.content = c; this.tone = t; this.id = id; this.FNC = double.Parse(f); this.bucket = double.Parse(b);
         }
 
         public DialogueObj() {

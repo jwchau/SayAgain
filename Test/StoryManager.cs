@@ -48,7 +48,11 @@ namespace Test
         }
 
 
-        
+        public bool testPlotPoint(string s)
+        {
+            return (s == "plotpoint");
+        }
+
         public string getDialogueType()
         {
             return dialogueType;

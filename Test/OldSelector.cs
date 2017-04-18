@@ -25,23 +25,31 @@ namespace Test {
             return responseList;
         }
 
-        public List<DialogueObj> ChooseDialog2(DialogueParsing r, string currNode, double NPCFNC) {
+        public List<DialogueObj> ChooseDialog2(DialogueParsing r, string currNode, string id) {
             List<DialogueObj> responseList = new List<DialogueObj>();
             var best = new DialogueObj();
             for (int i = 0; i < r.r.Dialogues.Count; i++) {
-                if (currNode == r.r.Dialogues.ElementAt(i).id) {
-                    if (Math.Abs(r.r.Dialogues.ElementAt(i).FNC - NPCFNC) < best.FNC) {
-                        best = r.r.Dialogues.ElementAt(i);
-                    }
+                var curr = r.r.Dialogues[i];
+                if (curr.plotpoint == currNode && id == curr.id) {
+                    responseList.Add(curr);
+                    return responseList;
                 }
             }
+            responseList.Add(best);
+            return responseList;
+        }
 
-            //sends results or returns empty value
-            if (responseList.Count == 0) {
-                responseList.Add(new DialogueObj());
-                return responseList;
+        public List<DialogueObj> ChooseDialog3(DialogueParsing r, double b, string id) {
+            List<DialogueObj> responseList = new List<DialogueObj>();
+            var best = new DialogueObj();
+            for (int i = 0; i < r.r.Dialogues.Count; i++) {
+                var curr = r.r.Dialogues[i];
+                if (curr.id == id) {
+                   
+                    responseList.Add(curr);
+                    return responseList;
+                }
             }
-
             responseList.Add(best);
             return responseList;
         }

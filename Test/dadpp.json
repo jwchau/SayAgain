@@ -31,6 +31,14 @@
       "id": "1",
       "FNC": "10",
       "finished": "fin"
+    },
+    {
+      "content": "tone: root; plotpoint: MomTellsPlayerTalkToAlex; id: 1; FNC: 10; fin;",
+      "tone": "Root",
+      "plotpoint": "MomTellsPlayerTalkToAlex",
+      "id": "1",
+      "FNC": "10",
+      "finished": "fin"
     }
   ]
 }
