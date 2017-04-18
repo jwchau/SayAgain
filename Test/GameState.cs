@@ -17,7 +17,13 @@ namespace Test
             currentState = "menu";
             currentMenuState = "start";
             sound_man.playMusic("Mom");
+
+            playerDialogueBox = new DialogueBox(this, "PLAYER");
+            dialogueBox = new DialogueBox(this, "AI");
+            dialogueBox.animationStart = true;
+            dialogueBox.init = true;
             
+
         }
 
         string currentState;
@@ -25,7 +31,80 @@ namespace Test
         //Sound Manager
         public SoundManager sound_man = new SoundManager();
         Dictionary<string, GameTimer> DictGameTimer = new Dictionary<string, GameTimer>();
-        
+
+        //Jill's fields and variables
+        public DialogueBox dialogueBox;
+        public DialogueBox playerDialogueBox;
+
+        public string dialogueIndex;
+
+
+        public void advanceConversation(List<DialogueObj> responseList, List<DialogueObj> responseListNPC) {
+            
+            if (dialogueIndex == null)
+            {
+                
+                // Inital state of conversation. Load dad inital text and "increment" index
+                dialogueBox.loadNewDialogue("dad", "Hey! It's great having you back home.");
+                dialogueIndex = "AI";
+            }
+            else if (dialogueIndex == "AI")
+            {
+                // 
+                playerDialogueBox.init = false;
+                playerDialogueBox.active = false;
+                dialogueBox.active = true;
+                if (dialogueBox.active && !playerDialogueBox.active)
+                {
+                    if (dialogueBox.printTime != 0 && dialogueBox.getAnimationStart() && !dialogueBox.getAwaitInput())
+                    {
+                        dialogueBox.setPrintTime(0);
+                    }
+                    else
+                    {
+                        if (dialogueBox.checkNext())
+                        {
+                            dialogueIndex = "root";
+                            dialogueBox.active = false;
+                            playerDialogueBox.active = false;
+
+                        }
+
+                    }
+                }
+
+            }
+            else if (dialogueIndex == "root") {
+                dialogueBox.init = false;
+                playerDialogueBox.init = true;
+                dialogueIndex = "player";
+
+            } else if (dialogueIndex == "player")
+            {
+                dialogueBox.init = false;
+                dialogueBox.active = false;
+                
+                if (playerDialogueBox.active && !dialogueBox.active)
+                {
+                    if (playerDialogueBox.printTime != 0 && playerDialogueBox.getAnimationStart() && !playerDialogueBox.getAwaitInput())
+                    {
+                        playerDialogueBox.setPrintTime(0);
+                    }
+                    else
+                    {
+                        if (playerDialogueBox.checkNext())
+                        {
+                            
+                            dialogueIndex = "AI";
+                            playerDialogueBox.active = false;
+                            dialogueBox.active = true;
+                            dialogueBox.init = true;
+                            dialogueBox.loadNewDialogue("dad", responseListNPC[0].content);
+                        }
+                    }
+                }
+            }
+        }
 
         //Timer for keeping track of time given to the player
 
@@ -60,6 +139,7 @@ namespace Test
             }
             if (state == "game" && currentMenuState == "start")
             {
+                advanceConversation(null,null);
             }
 
 

@@ -111,7 +111,7 @@ namespace Test
                     //http://stackoverflow.com/questions/23530360/how-do-you-make-a-clickable-sprite-in-sfml
                     if (sprites[0].GetGlobalBounds().Contains
                         (Mouse.GetPosition().X, Mouse.GetPosition().Y)) {
-                            Console.WriteLine("clicked mom");
+                            //Console.WriteLine("clicked mom");
                         }
 
             }

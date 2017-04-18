@@ -14,7 +14,7 @@ namespace Test
         public UITextBox(float x, float y, string dialogue, int cluster)
         {
             UITextBoxText = new Text(dialogue, UITextBoxFont, getFontSize());
-            Console.WriteLine("TEXT HEIGHT: " + (UITextBoxText.GetGlobalBounds().Height * 1.5) + 10);
+            //Console.WriteLine("TEXT HEIGHT: " + (UITextBoxText.GetGlobalBounds().Height * 1.5) + 10);
             box = new RectangleShape(new Vector2f(UITextBoxText.GetGlobalBounds().Width + 30, (float)(UITextBoxText.GetGlobalBounds().Height*1.5) + 10));
             box.Position = new Vector2f(x, y + 17);
             UITextBoxText.Position = new Vector2f((box.GetGlobalBounds().Width/2 - UITextBoxText.GetGlobalBounds().Width/2) + box.GetGlobalBounds().Left, (box.GetGlobalBounds().Height / 2 - (float)(UITextBoxText.GetGlobalBounds().Height / 1.1)) + box.GetGlobalBounds().Top);
