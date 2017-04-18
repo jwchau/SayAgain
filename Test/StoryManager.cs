@@ -31,6 +31,11 @@ namespace Test
 
         }
         
+        public void traverse(string nx_node)
+        {
+            currentNode = nx_node;
+        }
+
         public string getCurrentNode()
         {
             return currentNode;

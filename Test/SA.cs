@@ -189,20 +189,21 @@ namespace Test {
 
         public void loadDialogues() {
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //Console.WriteLine("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" + Load.newplayerp.r.Dialogues.ElementAt(0).content);
+            //Console.WriteLine("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" + Load.newplayerp.r.Dialogues.ElementAt(0).plotpoint);
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             if (currentTone != tone.Root)
             {
 
-                responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, currentTone.ToString());
-                responseListNPC = s.ChooseDialog(Load.NPCDialogueObj, ncurrid, currentTone.ToString());
+                //responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, currentTone.ToString());
+                //responseListNPC = s.ChooseDialog(Load.NPCDialogueObj, ncurrid, currentTone.ToString());
+
                 ui_man.dialogueLoadOrder(State, playerDialogueBox, dialogueBox, responseList, responseListNPC, playerChoice);
                 loadedAIDialogueOnce = true;
 
                 updateCurrents();
 
-                responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, tone.Root.ToString());
+                //responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, tone.Root.ToString());
 
                 ui_man.reset(responseList);
 
