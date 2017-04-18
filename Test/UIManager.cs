@@ -16,6 +16,10 @@ namespace Test {
         public UIManager() {
 
             /* TEMPORARY CODE REMOVE AND CLEAN LATER*/
+<<<<<<< HEAD
+=======
+            List<tone> tonez;
+>>>>>>> 68155f7ceffad9a5a41580fbb9318cfa769e8a4f
             if (buttonOrder == 0)
             {
                 tonez = new List<tone>() { tone.Blunt, tone.Indifferent, tone.Compassionate, tone.Hesitant };
@@ -24,10 +28,14 @@ namespace Test {
                 tonez = new List<tone>() { tone.Compassionate, tone.Indifferent, tone.Blunt, tone.Hesitant };
                 if(buttonOrder == 2)
                 {
+<<<<<<< HEAD
                     while (tonez == null || (tonez[0] == tone.Blunt || tonez[0] == tone.Compassionate || tonez[2] == tone.Blunt || tonez[2] == tone.Compassionate))
                     {
                         tonez = shuffleList(tonez);
                     }
+=======
+                    tonez = shuffleList(tonez);
+>>>>>>> 68155f7ceffad9a5a41580fbb9318cfa769e8a4f
                 }
             }
             int xPos = (int)SCREEN_WIDTH / tonez.Count;
@@ -44,7 +52,11 @@ namespace Test {
         static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
         static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
 
+<<<<<<< HEAD
         int buttonOrder = 2;
+=======
+        int buttonOrder = 0;
+>>>>>>> 68155f7ceffad9a5a41580fbb9318cfa769e8a4f
 
         string[] dialogueArray;
 
@@ -248,6 +260,19 @@ namespace Test {
         #endregion
 
         public void applyToneShortcut(UIButton button)
+<<<<<<< HEAD
+=======
+        {
+            for(int i = 0; i < playerDialogues.Count; i++)
+            {
+                playerDialogues[i].setPrevColor(playerDialogues[i].getBoxColor("curr"));
+                playerDialogues[i].setBoxColor(button.getTonalColor());
+                playerDialogues[i].setTone(button.getTone());
+            }
+        }
+
+        public void dialogueLoadOrder(GameState state, DialogueBox player, DialogueBox AI, List<DialogueObj> responseList, List<DialogueObj> responseListAlex, bool playerChoice)
+>>>>>>> 68155f7ceffad9a5a41580fbb9318cfa769e8a4f
         {
             for(int i = 0; i < playerDialogues.Count; i++)
             {

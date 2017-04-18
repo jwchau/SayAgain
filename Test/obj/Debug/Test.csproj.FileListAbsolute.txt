@@ -85,6 +85,7 @@ D:\SayAgain\Test\bin\Debug\Newtonsoft.Json.xml
 D:\SayAgain\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 D:\SayAgain\Test\obj\Debug\Test.Properties.Resources.resources
 D:\SayAgain\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+<<<<<<< HEAD
 F:\SayAgain\Test\bin\Debug\Test.exe.config
 F:\SayAgain\Test\obj\Debug\Test.exe
 F:\SayAgain\Test\obj\Debug\Test.pdb
@@ -107,3 +108,5 @@ F:\SayAgain\Test\bin\Debug\Newtonsoft.Json.xml
 F:\SayAgain\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 F:\SayAgain\Test\obj\Debug\Test.Properties.Resources.resources
 F:\SayAgain\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+=======
+>>>>>>> 68155f7ceffad9a5a41580fbb9318cfa769e8a4f

@@ -316,10 +316,14 @@ namespace Test
                         }
                         else if (".!?".Contains(line.DisplayedString[i]))
                         {
+<<<<<<< HEAD
                             if (!(".!?".Contains(line.DisplayedString[i - 1])))
                             {
                                 printTime *= 14;
                             }
+=======
+                            printTime *= 14;
+>>>>>>> 68155f7ceffad9a5a41580fbb9318cfa769e8a4f
                         }
                         else if (",".Contains(line.DisplayedString[i]))
                         {

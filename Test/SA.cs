@@ -157,12 +157,16 @@ namespace Test {
                     }
                     
                 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 68155f7ceffad9a5a41580fbb9318cfa769e8a4f
                 if (State.getGameTimer("game").getStart())
                 {
                     if (e.Code == Keyboard.Key.B || e.Code == Keyboard.Key.I || e.Code == Keyboard.Key.C || e.Code == Keyboard.Key.H)
                     {
+<<<<<<< HEAD
                         for(int i = 0; i < buttons.Count; i++)
                         {
                             if (e.Code == Keyboard.Key.B && buttons[i].getTone() == tone.Blunt)
@@ -185,6 +189,11 @@ namespace Test {
                                 break;
                             }
                         }
+=======
+                        List<UITextBox> playerDialogues = ui_man.getPlayerDialogues();
+                        int buttonIndex = (e.Code == Keyboard.Key.B ? 0 : (e.Code == Keyboard.Key.I ? 1 : (e.Code == Keyboard.Key.C ? 2 : (e.Code == Keyboard.Key.H ? 3 : -1))));
+                        ui_man.applyToneShortcut(buttons[buttonIndex]);
+>>>>>>> 68155f7ceffad9a5a41580fbb9318cfa769e8a4f
                         
                     }
                 }
@@ -346,7 +355,15 @@ namespace Test {
         }
         protected override void Update() {
             screenHelper();
+<<<<<<< HEAD
             
+=======
+            if (State.GetState() == "game" && yolo == true) {
+                //dialogueBox.loadNewDialogue("dad", "Lol you fat Lol you fat Lol you fat Lol you fat Lol you fat Lol you fat Lol you fat Lol you fat Lol you fat Lol you fat Lol you fat Lol you fat Lol you fat Lol you fat Lol you fat Lol you fat Lol you fat Lol you fat Lol you fat Lol you fat Lol you fat Lol you fat");
+                dialogueBox.loadNewDialogue("dad", "Hey! It's great having you back home.");
+                yolo = false;
+            }
+>>>>>>> 68155f7ceffad9a5a41580fbb9318cfa769e8a4f
             State.sound_man.soundUpdate(settingsMenu.getSoundToggle());
             if (State.GetState() == "game") {
                 
@@ -411,6 +428,25 @@ namespace Test {
                     }
 
                 }
+<<<<<<< HEAD
+=======
+                // ui_man.dialogueLoadOrder(State, playerDialogueBox, dialogueBox, responseList, responseListAlex);
+                if (playerDialogueBox.getAnimationStart() == false && loadedAIDialogueOnce == true && playerDialogueBox.getAwaitInput() == false) {
+                    //add another condition to see if the User has pressed space on player dialogue
+                    //sound starts on npc dialogue start
+                    State.sound_man.playSFX("chatter");
+                    Console.WriteLine("\n~~~~~~~~~~ SA UPDATE - AnimStart: " + playerDialogueBox.getAnimationStart() + ", loadOnce: " + loadedAIDialogueOnce + ", awaitInput: " + playerDialogueBox.getAwaitInput());
+                    if (responseListNPC[0].content != "returned empty string") {
+                        dialogueBox.setInit(true);
+                        dialogueBox.loadNewDialogue("dad", responseListNPC.ElementAt(0).content); //this makes the timer happen after the animation is done
+                        loadedAIDialogueOnce = false;
+                        if (dialogueBox.getAnimationStart() == false) {
+                            loadedAIDialogueOnce = true;
+                        }
+                    }
+
+                }
+>>>>>>> 68155f7ceffad9a5a41580fbb9318cfa769e8a4f
 
             } else if (State.GetState() == "pause") {
                 State.getGameTimer("game").PauseTimer();
@@ -451,6 +487,7 @@ namespace Test {
 
                 var buttons = ui_man.getButtons();
 
+<<<<<<< HEAD
                 if (!State.dialogueBox.active)
                 {
                     window.Draw(textBackground); // Account for fixed height of player dialogue box (makes sure there isnt a gap below the PDB)
@@ -462,6 +499,19 @@ namespace Test {
                 }
 
                 if (!State.playerDialogueBox.active && !State.dialogueBox.active)
+=======
+                if (!dialogueBox.active)
+                {
+                    window.Draw(textBackground); // Account for fixed height of player dialogue box (makes sure there isnt a gap below the PDB)
+                    window.Draw(playerDialogueBox);
+                }
+                if (!playerDialogueBox.active)
+                {
+                    window.Draw(dialogueBox);
+                }
+
+                if (!playerDialogueBox.active && !dialogueBox.active)
+>>>>>>> 68155f7ceffad9a5a41580fbb9318cfa769e8a4f
                 {
 
                     window.Draw(textBackground);
@@ -497,6 +547,7 @@ namespace Test {
                 if (debugInfo)
                 {
                     Text AI_DB = new Text("LoadAIOnce: " + loadedAIDialogueOnce + "\n" +
+<<<<<<< HEAD
                                           "AI_DB - animStart: " + State.dialogueBox.getAnimationStart() + "\n" + 
                                           "        awaitInput: " + State.dialogueBox.getAwaitInput() + "\n" +
                                           "        dialoguePanesLength: " + State.dialogueBox.dialoguePanes.Count + "\n" + 
@@ -508,6 +559,17 @@ namespace Test {
                                           "        dialoguePanesLength: " + State.playerDialogueBox.dialoguePanes.Count + "\n" +
                                           "        init: " + State.playerDialogueBox.init + "\n" +
                                           "        active: " + State.playerDialogueBox.active, new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf"), 20);
+=======
+                                          "AI_DB - animStart: " + dialogueBox.getAnimationStart() + "\n" + 
+                                          "        awaitInput: " + dialogueBox.getAwaitInput() + "\n" +
+                                          "        dialoguePanesLength: " + dialogueBox.dialoguePanes.Count + "\n" + 
+                                          "        active: " + dialogueBox.active, new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf"), 20);
+
+                    Text P_DB = new Text("P_DB - animStart: " + playerDialogueBox.getAnimationStart() + "\n" +
+                                          "        awaitInput: " + playerDialogueBox.getAwaitInput() + "\n" +
+                                          "        dialoguePanesLength: " + playerDialogueBox.dialoguePanes.Count + "\n" +
+                                          "        active: " + playerDialogueBox.active, new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf"), 20);
+>>>>>>> 68155f7ceffad9a5a41580fbb9318cfa769e8a4f
                     AI_DB.Position = new Vector2f(SCREEN_WIDTH - (AI_DB.GetGlobalBounds().Width + 50), 50);
                     P_DB.Position = new Vector2f(SCREEN_WIDTH - (P_DB.GetGlobalBounds().Width + 50), 200);
                     AI_DB.Color = Color.White;
