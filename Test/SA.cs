@@ -284,6 +284,9 @@ namespace Test {
                     responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, (double)(rnd.Next(0,2)), ncurrid);
                 }
 
+                State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
+                State.advanceConversation(responseList, responseListNPC);
+
                 updateCurrents();
 
                 responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, tone.Root.ToString());
