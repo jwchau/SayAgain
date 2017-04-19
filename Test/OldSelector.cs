@@ -25,6 +25,7 @@ namespace Test {
             return responseList;
         }
 
+        //plot point dialogue
         public List<DialogueObj> ChooseDialog2(DialogueParsing r, string currNode, string id) {
             List<DialogueObj> responseList = new List<DialogueObj>();
             var best = new DialogueObj();
@@ -32,7 +33,6 @@ namespace Test {
                 var curr = r.r.Dialogues[i];
                 //Console.WriteLine(currNode +" asdf " + curr.plotpoint + ": : : :" + id);
                 if (curr.plotpoint == currNode && id == curr.id) {
-                    Console.WriteLine(":OSDKNFIOSNDFIONDSF");
                     responseList.Add(curr);
                     return responseList;
                 }
@@ -41,12 +41,13 @@ namespace Test {
             return responseList;
         }
 
+        //transition
         public List<DialogueObj> ChooseDialog3(DialogueParsing r, double b, string id) {
             List<DialogueObj> responseList = new List<DialogueObj>();
             var best = new DialogueObj();
             for (int i = 0; i < r.r.Dialogues.Count; i++) {
                 var curr = r.r.Dialogues[i];
-                if (curr.id == id) {
+                if (b == curr.bucket && curr.id == id) {
                    
                     responseList.Add(curr);
                     return responseList;

@@ -6,6 +6,7 @@
       "plotpoint": "GreetDad",
       "id": "1",
       "FNC": "0",
+      "speaker": "dad",
       "finished": "fin"
     },
     {
@@ -14,6 +15,7 @@
       "plotpoint": "DadAccusesMum",
       "id": "1",
       "FNC": "-5",
+      "speaker": "",
       "finished": "fin"
     },
     {
@@ -22,6 +24,7 @@
       "plotpoint": "MomBlowsUp",
       "id": "1",
       "FNC": "3",
+      "speaker": "",
       "finished": "fin"
     },
     {
@@ -30,6 +33,7 @@
       "plotpoint": "BombsAfghan",
       "id": "1",
       "FNC": "10",
+      "speaker": "",
       "finished": "fin"
     },
     {
@@ -38,6 +42,7 @@
       "plotpoint": "MomTellsPlayerTalkToAlex",
       "id": "1",
       "FNC": "10",
+      "speaker": "",
       "finished": "fin"
     }
   ]

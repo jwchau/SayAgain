@@ -28,22 +28,6 @@ namespace Test {
 
         }
 
-        public void print() {
-            /* foreach (var kvp in plot_dict)
-             {
-                 Console.WriteLine(kvp.Key);
-                 if (!kvp.Value.Item1[0].Equals(null))
-                 {
-                     Console.WriteLine(kvp.Value.Item1[0]);
-                 }
-                 if (!kvp.Value.Item1[1].Equals(null)) { 
-                     Console.WriteLine(kvp.Value.Item1[1]);
-                 }
-
-             }
-   */
-        }
-
         public string getCurrentNode() {
             return currentNode;
         }

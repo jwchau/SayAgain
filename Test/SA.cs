@@ -120,7 +120,7 @@ namespace Test {
                     // Activate playerDialogueBox to display and be responsive, or switch to AI dialogue
                     if (State.dialogueIndex == "player")
                     {
-                        State.advanceConversation(null, responseListNPC);
+                        State.advanceConversation(speaker, null, responseListNPC);
                     // Deactivate dialogueBox, Display playerDialogueBox, and submit tone 
                     } else if(State.dialogueIndex == "root")
                     {
@@ -133,7 +133,7 @@ namespace Test {
                     } else if(State.dialogueIndex == "AI")
                     {
 
-                        State.advanceConversation(responseList, null);
+                        State.advanceConversation(speaker, responseList, null);
                     }
                     
                 }
@@ -226,38 +226,7 @@ namespace Test {
         }
         #endregion
 
-
-        #region load dialogues old
-        //public void loadDialogues() {
-        //    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //    //Console.WriteLine("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" + Load.newplayerp.r.Dialogues.ElementAt(0).plotpoint);
-        //    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        //    if (currentTone != tone.Root)
-        //    {
-
-        //        //responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, currentTone.ToString());
-        //        //responseListNPC = s.ChooseDialog(Load.NPCDialogueObj, ncurrid, currentTone.ToString());
-
-        //        ui_man.dialogueLoadOrder(State, playerDialogueBox, dialogueBox, responseList, responseListNPC, playerChoice);
-        //        loadedAIDialogueOnce = true;
-
-        //        updateCurrents();
-
-        //        //responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, tone.Root.ToString());
-
-        //        ui_man.reset(responseList);
-
-        //    }
-        //    else
-        //    {
-
-        //        State.getGameTimer("game").resetTimer();
-        //        State.getGameTimer("game").startTimer();
-
-        //    }
-        //}
-        #endregion
+        string speaker = "dad";
 
         #region load dialogue new
         public void loadDialogues()
@@ -281,11 +250,17 @@ namespace Test {
                     Load.NPCDialogueObj = Load.dadt;
                     var rnd = new Random();
                     Console.WriteLine("por que: " + ncurrid);
-                    responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, (double)(rnd.Next(0,2)), ncurrid);
+                    //responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, (double)(rnd.Next(0, 2)), ncurrid);
+                    responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid);
+                }
+
+                if (responseListNPC[0].speaker != "") {
+                    speaker = responseListNPC[0].speaker;
+                    State.dialogueIndex = "AI";
                 }
 
                 State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
-                State.advanceConversation(responseList, responseListNPC);
+                State.advanceConversation(speaker, responseList, responseListNPC);
 
                 updateCurrents();
 

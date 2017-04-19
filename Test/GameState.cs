@@ -39,7 +39,7 @@ namespace Test
         public string dialogueIndex;
 
 
-        public void advanceConversation(List<DialogueObj> responseList, List<DialogueObj> responseListNPC) {
+        public void advanceConversation(string speaker, List<DialogueObj> responseList, List<DialogueObj> responseListNPC) {
             
             if (dialogueIndex == null)
             {
@@ -99,7 +99,7 @@ namespace Test
                             playerDialogueBox.active = false;
                             dialogueBox.active = true;
                             dialogueBox.init = true;
-                            dialogueBox.loadNewDialogue("dad", responseListNPC[0].content);
+                            dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
                         }
                     }
                 }
@@ -139,7 +139,7 @@ namespace Test
             }
             if (state == "game" && currentMenuState == "start")
             {
-                advanceConversation(null,null);
+                advanceConversation("",null,null);
             }
 
 

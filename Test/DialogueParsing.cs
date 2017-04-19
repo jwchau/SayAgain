@@ -48,18 +48,19 @@ namespace Test {
         public string next;
         public double FNC;
         public double bucket;
+        public string speaker;
         public string finished;
 
-        public DialogueObj(string newContent, string newTonalPreReq, string id, string next) {
+        public DialogueObj(string newContent, string newTonalPreReq, string id, string next) { //for linked list reading
             content = newContent; tone = newTonalPreReq; this.id = id; this.next = next; this.FNC = 2 ^ 16;
         }
 
-        public DialogueObj(string content, string tone, string plotpoint, string id, string FNC, string finished) {
-            this.content = content; this.tone = tone; this.plotpoint = plotpoint; this.id = id; this.FNC = double.Parse(FNC); this.finished = finished;
+        public DialogueObj(string content, string tone, string plotpoint, string id, string FNC, string finished, string speaker) { //for plot point lines
+            this.content = content; this.tone = tone; this.plotpoint = plotpoint; this.id = id; this.FNC = double.Parse(FNC); this.finished = finished; this.speaker = speaker;
         }
 
-        public DialogueObj(string c, string t, string id, string f, string b) {
-            this.content = c; this.tone = t; this.id = id; this.FNC = double.Parse(f); this.bucket = double.Parse(b);
+        public DialogueObj(string c, string t, string id, string f, string b, string s){ //for transitino lines
+            this.content = c; this.tone = t; this.id = id; this.FNC = double.Parse(f); this.bucket = double.Parse(b); this.speaker = s;
         }
 
         public DialogueObj() {
@@ -69,6 +70,7 @@ namespace Test {
             id = "";
             next = "";
             finished = "";
+            speaker = "";
             bucket = -(2 ^ 16);
             FNC = 2 ^ 16;
         }
