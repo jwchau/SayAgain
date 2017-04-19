@@ -23,10 +23,10 @@ namespace Test {
         protected string type;
         protected Dictionary<string, Color> buttonTonalColors = new Dictionary<string, Color>() {
             {"Default", new Color(214, 214, 214)}, // Red
-            {"Blunt",  new Color(179, 97, 255) }, //Purple
-            {"Indifferent", new Color(56, 120, 255)}, // Blue
-            {"Compassionate", new Color(102, 255, 149)}, // Green
-            {"Hesitant", new Color(255, 225, 50)} // Yellow
+            {"Blunt",  new Color(207, 162, 252) }, //Purple
+            {"Indifferent", new Color(116, 123, 247)}, // Blue
+            {"Compassionate", new Color(158, 222, 89)}, // Green
+            {"Hesitant", new Color(255, 245, 112)} // Yellow
         };
 
         protected Dictionary<string, List<string>> buttonSpritePaths = new Dictionary<string, List<string>> {

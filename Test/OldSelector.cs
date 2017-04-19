@@ -30,7 +30,9 @@ namespace Test {
             var best = new DialogueObj();
             for (int i = 0; i < r.r.Dialogues.Count; i++) {
                 var curr = r.r.Dialogues[i];
+                //Console.WriteLine(currNode +" asdf " + curr.plotpoint + ": : : :" + id);
                 if (curr.plotpoint == currNode && id == curr.id) {
+                    Console.WriteLine(":OSDKNFIOSNDFIONDSF");
                     responseList.Add(curr);
                     return responseList;
                 }

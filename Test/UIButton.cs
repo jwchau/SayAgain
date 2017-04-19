@@ -10,9 +10,8 @@ using SFML.Graphics;
 namespace Test {
     class UIButton : UIElement {
         //constructor
-        public UIButton(float x, float y, tone content, string newDialogue) {
+        public UIButton(float x, float y, tone content) {
 
-            this.newDialogue = newDialogue;
             this.buttonTone = content;
 
             buttonSprite = new Sprite(new Texture(buttonSpritePaths[content.ToString()][0]));
@@ -27,8 +26,6 @@ namespace Test {
             buttonSprite.Position = new Vector2f(this.x, this.y);
             buttonSpriteHighlight.Position = new Vector2f(this.x, this.y);
 
-            buttonText = new Text(content.ToString(), buttonTextFont);
-
             tonalColor = buttonTonalColors[content.ToString()];
             //rect.FillColor = tonalColor;
         }
@@ -40,9 +37,6 @@ namespace Test {
         Sprite buttonSprite;
         Sprite buttonSpriteHighlight;
 
-        Font buttonTextFont = new Font("../../Fonts/Adore64.ttf");
-        Text buttonText;
-        string newDialogue;
         bool selected = false;
         bool hover = false;
         int mouseOffsetX = 0;
@@ -71,9 +65,6 @@ namespace Test {
 
         public void setY(float newY) {
             y = newY;
-        }
-        public Text getUIButtonText() {
-            return buttonText;
         }
 
         public tone getTone() {
@@ -147,9 +138,6 @@ namespace Test {
         }
         #endregion
 
-        public string getNewDialogue() {
-            return newDialogue;
-        }
 
         public Color getTonalColor() {
             return tonalColor;
@@ -159,10 +147,12 @@ namespace Test {
             //target.Draw(rect);
             if (hover)
             {
-                if(selected)
+                // Make button transperent when dragging
+                if (selected)
                 {
                     buttonSpriteHighlight.Color = new Color(255, 255, 255, 128);
-                } else
+                }
+                else
                 {
                     buttonSpriteHighlight.Color = new Color(255, 255, 255, 255);
                 }

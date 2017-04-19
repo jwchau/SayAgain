@@ -30,6 +30,8 @@ namespace Test
 
         protected List<UIButton> buttons;
 
+        // Debug
+        protected bool debugInfo = true;
 
         //Menus
         protected Menu startMenu = new Menu("start");
@@ -51,10 +53,6 @@ namespace Test
         // Deprecated: protected CharacterState Alex, Mom, Dad;
         // Replaced with DramaManager that holds each characterstate
         protected DramaManager D_Man = new DramaManager();
-
-        //Jill's fields and variables
-        protected DialogueBox dialogueBox;
-        protected DialogueBox playerDialogueBox;
 
         //protected Boolean init;
         protected View fullScreenView, scrollview;
@@ -97,7 +95,7 @@ namespace Test
         public Game(uint width, uint height, string title)
         {
             settings.AntialiasingLevel = 8;
-            window = new RenderWindow(new VideoMode(width, height), title, Styles.Default, settings);
+            window = new RenderWindow(new VideoMode(width, height), title, Styles.Fullscreen, settings);
             this.clearColor = new Color(125, 116, 132);
 
             // Set-up Events
