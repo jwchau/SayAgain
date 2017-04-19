@@ -88,7 +88,7 @@ namespace Test {
 
 
                 //}
-            
+
             }
             ui_man.applyTones((int)(e.X * scaleFactorX), (int)(e.Y * scaleFactorY));
         }
@@ -108,34 +108,31 @@ namespace Test {
         }
 
         private void onKeyReleased(object sender, KeyEventArgs e) {
-           
+
         }
 
         private void onKeyPressed(object sender, KeyEventArgs e) {
 
-            if (State.GetState() == "game")
-            {
-                if (e.Code == Keyboard.Key.Space)
-                {
+            if (State.GetState() == "game") {
+                if (e.Code == Keyboard.Key.Space) {
                     // Activate playerDialogueBox to display and be responsive, or switch to AI dialogue
-                    if (State.dialogueIndex == "player")
-                    {
+                    if (State.dialogueIndex == "player") {
+                        Console.WriteLine("during: dialogue index = player");
                         State.advanceConversation(speaker, null, responseListNPC);
-                    // Deactivate dialogueBox, Display playerDialogueBox, and submit tone 
-                    } else if(State.dialogueIndex == "root")
-                    {
+                        // Deactivate dialogueBox, Display playerDialogueBox, and submit tone 
+                    } else if (State.dialogueIndex == "root") {
                         // Sets the timer to 0 which calls Timer Action to advance the Conversation with the new responseLists
-                        if (State.getGameTimer("game").getCountDown() != 0.0)
-                        {
+                        Console.WriteLine("during:  dialogue index = root");
+                        if (State.getGameTimer("game").getCountDown() != 0.0) {
                             State.getGameTimer("game").setCountDown(0);
                         }
-                    // Activate dialogueBox to display and be responsive, or switch to Root dialogue
-                    } else if(State.dialogueIndex == "AI")
-                    {
+                        // Activate dialogueBox to display and be responsive, or switch to Root dialogue
+                    } else if (State.dialogueIndex == "AI") {
+                        Console.WriteLine("during: dialogue index = ai");
 
                         State.advanceConversation(speaker, responseList, null);
                     }
-                    
+
                 }
 
                 #region button to apply tones
@@ -213,8 +210,7 @@ namespace Test {
             int temp1 = Int32.Parse(ncurrid);
 
             temp2++;
-            if (temp2 % 2 == 0 && temp2 > 2)
-            {
+            if (temp2 % 2 == 0 && temp2 > 2) {
                 temp1++;
             }
 
@@ -229,15 +225,13 @@ namespace Test {
         string speaker = "dad";
 
         #region load dialogue new
-        public void loadDialogues()
-        {
+        public void loadDialogues() {
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //Console.WriteLine("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" + Load.newplayerp.r.Dialogues.ElementAt(0).plotpoint);
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            if (currentTone != tone.Root)
-            {
-                
+            if (currentTone != tone.Root) {
+
 
                 // Update response Lists with the recently used tone
                 responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, currentTone.ToString());
@@ -254,9 +248,10 @@ namespace Test {
                     responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid);
                 }
 
+
                 if (responseListNPC[0].speaker != "") {
                     speaker = responseListNPC[0].speaker;
-                    State.dialogueIndex = "AI";
+                    State.dialogueIndex = "player";
                 }
 
                 State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
@@ -268,9 +263,9 @@ namespace Test {
 
                 ui_man.reset(responseList);
 
-            }
-            else
-            {
+                
+
+            } else {
                 State.getGameTimer("game").resetTimer();
                 State.getGameTimer("game").startTimer();
 
@@ -288,7 +283,7 @@ namespace Test {
             lamp = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/lamp.png"));
             pictures = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/pictures.png"));
             table = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/table.png"));
-            
+
             backwall.Scale = new Vector2f(SCREEN_WIDTH / backwall.GetGlobalBounds().Width, SCREEN_HEIGHT / backwall.GetGlobalBounds().Height);
             flower.Scale = new Vector2f(SCREEN_WIDTH / flower.GetGlobalBounds().Width, SCREEN_HEIGHT / flower.GetGlobalBounds().Height);
             lamp.Scale = new Vector2f(SCREEN_WIDTH / lamp.GetGlobalBounds().Width, SCREEN_HEIGHT / lamp.GetGlobalBounds().Height);
@@ -299,8 +294,8 @@ namespace Test {
             flower.Position = new Vector2f(0, -200);
 
             toneBar = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/tonebar.png"));
-            toneBar.Position = new Vector2f(6,(float)(SCREEN_HEIGHT*0.735));
-            toneBar.Scale = new Vector2f(SCREEN_WIDTH/1920, SCREEN_HEIGHT/1080);
+            toneBar.Position = new Vector2f(6, (float)(SCREEN_HEIGHT * 0.735));
+            toneBar.Scale = new Vector2f(SCREEN_WIDTH / 1920, SCREEN_HEIGHT / 1080);
 
             textBackground = new RectangleShape(new Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT / 5));
             textBackground.Position = new Vector2f(0, SCREEN_HEIGHT - (float)(SCREEN_HEIGHT * 0.19));
@@ -356,10 +351,10 @@ namespace Test {
         }
         protected override void Update() {
             screenHelper();
-            
+
             State.sound_man.soundUpdate(settingsMenu.getSoundToggle());
             if (State.GetState() == "game") {
-                
+
 
                 if (playerChoice && State.getGameTimer("game").getStart()) {
                     State.getGameTimer("game").stopTimer();
@@ -411,7 +406,7 @@ namespace Test {
                                         // Update the rest of the buttons in the cluster
                                         ui_man.updateClusterColors(playerDialogues[j], playerDialogues, buttons[i].getTonalColor(), true);
 
-                                        
+
                                     }
                                 }
 
@@ -454,40 +449,35 @@ namespace Test {
                 window.Draw(Dad);
                 window.Draw(table);
                 window.Draw(flower);
-                
+
                 //Draw text box background box
-              
+
                 var dialogues = ui_man.getPlayerDialogues();
 
                 var buttons = ui_man.getButtons();
 
-                if (!State.dialogueBox.active)
-                {
-                    window.Draw(textBackground); // Account for fixed height of player dialogue box (makes sure there isnt a gap below the PDB)
+                if (!State.dialogueBox.active) {
+                    if (State.dialogueIndex != "player") window.Draw(textBackground); // Account for fixed height of player dialogue box (makes sure there isnt a gap below the PDB)
                     window.Draw(State.playerDialogueBox);
                 }
-                if (!State.playerDialogueBox.active)
-                {
+                if (!State.playerDialogueBox.active) {
                     window.Draw(State.dialogueBox);
                 }
 
-                if (!State.playerDialogueBox.active && !State.dialogueBox.active)
-                {
+                if (!State.playerDialogueBox.active && !State.dialogueBox.active) {
 
                     window.Draw(textBackground);
 
-                    for (var i = 0; i < dialogues.Count; i++)
-                    {
+                    for (var i = 0; i < dialogues.Count; i++) {
                         window.Draw(dialogues[i]);
                     }
-                    window.Draw(toneBar);
-                    for (var i = 0; i < buttons.Count; i++)
-                    {
+                    if (State.dialogueIndex != "player") window.Draw(toneBar);
+                    for (var i = 0; i < buttons.Count; i++) {
                         window.Draw(buttons[i]);
                     }
                     window.Draw(State.getGameTimer("game")); //this is the speak button
                 }
-                
+
                 if (playerChoice) {
                     window.Draw(D_Man);
                 }
@@ -504,12 +494,11 @@ namespace Test {
 
                 }
 
-                if (debugInfo)
-                {
+                if (debugInfo) {
                     Text AI_DB = new Text("LoadAIOnce: " + loadedAIDialogueOnce + "\n" +
-                                          "AI_DB - animStart: " + State.dialogueBox.getAnimationStart() + "\n" + 
+                                          "AI_DB - animStart: " + State.dialogueBox.getAnimationStart() + "\n" +
                                           "        awaitInput: " + State.dialogueBox.getAwaitInput() + "\n" +
-                                          "        dialoguePanesLength: " + State.dialogueBox.dialoguePanes.Count + "\n" + 
+                                          "        dialoguePanesLength: " + State.dialogueBox.dialoguePanes.Count + "\n" +
                                           "        init: " + State.dialogueBox.init + "\n" +
                                           "        active: " + State.dialogueBox.active, new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf"), 20);
 
@@ -525,7 +514,7 @@ namespace Test {
                     window.Draw(AI_DB);
                     window.Draw(P_DB);
                 }
-                
+
             }
 
 
