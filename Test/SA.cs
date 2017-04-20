@@ -310,7 +310,6 @@ namespace Test {
             ui_man.produceTextBoxes(responseList[0].content);
             //timeflag
             State.addTimer("game", 10, new Action(() => { TimerAction(); }));
-            State.addTimer("cursor", 1, null);
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             fullScreenView = window.DefaultView;

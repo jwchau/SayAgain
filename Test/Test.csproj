@@ -78,10 +78,10 @@
     <Compile Include="Character.cs" />
     <Compile Include="Alex.cs" />
     <Compile Include="Arm.cs" />
+    <Compile Include="Mom.cs" />
     <Compile Include="OldSelector.cs" />
     <Compile Include="StoryManager.cs" />
     <Compile Include="Dad.cs" />
-    <Compile Include="Mom.cs" />
     <Compile Include="CutsceneManager.cs" />
     <Compile Include="ContextFilter.cs" />
     <Compile Include="GameMatrix.cs" />
