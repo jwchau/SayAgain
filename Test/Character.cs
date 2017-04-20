@@ -83,6 +83,10 @@ namespace Test
         {
             
         }
+
+        public abstract Vector2f getArmPosition();
+
+        public abstract void setArmPosition(Vector2f position);
         
         public int[] getSpectrum()
         {

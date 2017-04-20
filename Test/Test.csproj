@@ -77,6 +77,7 @@
     <Compile Include="CharacterState.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="Alex.cs" />
+    <Compile Include="Arm.cs" />
     <Compile Include="OldSelector.cs" />
     <Compile Include="StoryManager.cs" />
     <Compile Include="Dad.cs" />

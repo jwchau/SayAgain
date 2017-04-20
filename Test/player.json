@@ -1,21 +1,13 @@
 { 
  "Dialogues":[ 
   {
-<<<<<<< HEAD
      "content":"Thank you."
-=======
-     "content":"Thank you"
->>>>>>> 68155f7ceffad9a5a41580fbb9318cfa769e8a4f
     ,"tone":"Root"
     ,"id":"1"
     ,"next":""
   },
   {
-<<<<<<< HEAD
      "content":"I'm only here because you told me to be. JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA JAJAJA "
-=======
-     "content":"I'm only here because you told me to be."
->>>>>>> 68155f7ceffad9a5a41580fbb9318cfa769e8a4f
     ,"tone":"Blunt"
     ,"id":"2"
     ,"next":"128"
@@ -87,7 +79,7 @@
     ,"next":""
   },
   {
-     "content":"You don't have to worry about me. School is peach keen!"
+     "content":"You don''t have to worry about me. School is peach keen!"
     ,"tone":"Compassionate"
     ,"id":"4"
     ,"next":""

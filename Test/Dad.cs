@@ -11,28 +11,31 @@ using SFML.System;
 using System.Drawing;
 namespace Test
 {
-    class Dad : Character, Drawable
+    class Dad : Character
     {
 
         float framerate = 4f;
         int prevIndex = -1;
 
-        Texture t = new Texture("../../Art/dadMaster.png");
-        Texture arm = new Texture("../../Art/armMaster.png");
+        Texture t = new Texture("../../Art/dadMasterwoArm.png");
       
         Dictionary<string, List<Sprite>> sprites = new Dictionary<string, List<Sprite>>() { { "angry", new List<Sprite>() },
                                                                                             { "happy", new List<Sprite>() },
                                                                                             { "neutral", new List<Sprite>() }
                                                                                            };
-        Sprite angryarm = new Sprite();
-        Sprite neutralarm = new Sprite();
         string expr;
-
-
 
         public override void checkFNC()
         {
             throw new NotImplementedException();
+        }
+
+        public override void setArmPosition(Vector2f position) {
+            throw new NotImplementedException();
+        }
+
+        public override Vector2f getArmPosition() {
+            return new Vector2f(sprites["neutral"][0].Position.X, sprites["neutral"][0].Position.Y + 224);
         }
 
         public override void setSpriteEmotion(spriteEmotion e)
@@ -45,8 +48,6 @@ namespace Test
         public override void Draw(RenderTarget target, RenderStates states)
         {
             rnd = r.Next(4, 14);
-
-
 
             target.Draw(sprites[expr][index]);
 
@@ -72,9 +73,6 @@ namespace Test
             }
 
 
-            if (expr == "angry") target.Draw(angryarm);
-            if (expr != "neutral") target.Draw(neutralarm);
-
         }
 
         public Dad()
@@ -90,9 +88,6 @@ namespace Test
 
             xscale = SCREEN_WIDTH / 1920;
             yscale = SCREEN_HEIGHT / 1080;
-
-            neutralarm = new Sprite(arm, new IntRect(0, 0, 320, 229));
-            angryarm = new Sprite(arm, new IntRect(0, 229, 320, 229));
 
             for (int i = 0; i < (343 * 4); i += 343)
             {
@@ -116,11 +111,6 @@ namespace Test
                 sprites["neutral"][sprites["neutral"].Count - 1].Position = new Vector2f(xpos - sprites["neutral"][0].GetGlobalBounds().Width / 2, ypos);
 
             }
-            neutralarm.Scale = sprites["neutral"][0].Scale;
-            angryarm.Scale = sprites["angry"][0].Scale;
-
-            neutralarm.Position = new Vector2f(sprites["neutral"][0].Position.X, sprites["neutral"][0].Position.Y + 450);
-            angryarm.Position = new Vector2f(sprites["neutral"][0].Position.X, sprites["neutral"][0].Position.Y + 450);
         }
     }
 }
