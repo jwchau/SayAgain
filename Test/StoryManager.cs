@@ -14,11 +14,12 @@ namespace Test {
         protected string currentNode;
         protected int numberOfChildren;
 
+
         static Dictionary<String, Tuple<List<String>, List<String>>> plot_dict
             = new Dictionary<String, Tuple<List<String>, List<String>>>();
         List<String> next_nodes = new List<String>();
         List<String> preconditions = new List<String>();
-
+        
         void addNode(String s, List<String> n, List<String> p) {
 
             Tuple<List<String>, List<String>> value =
@@ -190,10 +191,10 @@ namespace Test {
             addNode("GreetDad", next_nodes, preconditions);
 
             preconditions.Add("D: MC-HC");
+
             next_nodes.Add("MomBlowsUp");
             next_nodes.Add("DadApologizesMom");
             addNode("DadAccusesMom", next_nodes, preconditions);
-
             preconditions.Add("D: HC");
             preconditions.Add("MomAdmitsJob, D: LN-HC");
             next_nodes.Add("DadApologizesAlex");
@@ -204,6 +205,7 @@ namespace Test {
             addNode("DadApologizesAlex", next_nodes, preconditions);
 
             preconditions.Add("DadApologizesMom, M: LN-HC");
+
             next_nodes.Add("AlexAdmitsNeglect");
             addNode("MomReconcilesDad", next_nodes, preconditions);
 
@@ -211,7 +213,6 @@ namespace Test {
             next_nodes.Add("GreetMom");
             next_nodes.Add("GreetDad");
             addNode("GreetAlex", next_nodes, preconditions);
-
             preconditions.Add("A: LC-HC");
             next_nodes.Add("AlexReconcilesPlayer");
             addNode("AlexAdmitsNeglect", next_nodes, preconditions);

@@ -30,6 +30,14 @@ namespace Test
             throw new NotImplementedException();
         }
 
+        public override void setArmPosition(Vector2f position) {
+            throw new NotImplementedException();
+        }
+
+        public override Vector2f getArmPosition() {
+            throw new NotImplementedException();
+        }
+
         public override void setSpriteEmotion(spriteEmotion e)
         {
             expr = e.ToString();
@@ -118,8 +126,8 @@ namespace Test
             //determine size and position
             xpos = (float)(SCREEN_WIDTH*0.5);
             ypos = (float)(SCREEN_HEIGHT*0.37);
-            xscale = SCREEN_WIDTH / 1920;
-            yscale = SCREEN_HEIGHT / 1080;
+            xscale = (float)((SCREEN_WIDTH / 1920)*.8);
+            yscale = (float)((SCREEN_HEIGHT / 1080)*0.8);
 
             for (int i = 0; i < (361 * 4); i += 361)
             {
@@ -136,7 +144,7 @@ namespace Test
             for (int i = 0; i < (337 * 9); i += 337)
             {
                 
-                sprites["angry"].Add(new Sprite(t, new IntRect(i, 449 * 2, 337, 449)));
+                sprites["angry"].Add(new Sprite(t, new IntRect(i, 899, 337, 449)));
                 sprites["angry"][sprites["angry"].Count - 1].Scale = new Vector2f(xscale, yscale);
                 sprites["angry"][sprites["angry"].Count - 1].Position = new Vector2f(xpos - sprites["angry"][0].GetGlobalBounds().Width/2, ypos);
             }

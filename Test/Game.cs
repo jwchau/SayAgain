@@ -33,6 +33,7 @@ namespace Test
         // Debug
         protected bool debugInfo = true;
 
+
         //Menus
         protected Menu startMenu = new Menu("start");
         protected Menu settingsMenu = new Menu("settings");
@@ -73,10 +74,10 @@ namespace Test
 
         #endregion
 
-        protected Sprite mom, alex, dad, toneBar, backwall, flower, lamp, pictures, table;
+        protected Sprite mom, alex, dad, toneBar, backwall, flower, lamp, pictures, table, wallWindow;
         protected RectangleShape textBackground;
         ContextSettings settings;
-        protected Character Mom, Alexis, Dad;
+        protected Character Mom, Alexis, Dad, Arm;
 
         /////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -6,22 +6,6 @@ using System.Threading.Tasks;
 using System.IO;
 using Newtonsoft.Json;
 
-/*
-       "content": "plot point with fnc 0. Root tone.",
-      "tone": "Root",
-      "id": "4",
-      "FNC": "-99999",
-      "bucket": "4"
-        "content": "plot point with fnc 0. Root tone.",
-      "tone": "Root",
-      "plotpoint": "GreetDad",
-      "id": "1",
-      "FNC": "0",
-      "finished": "fin"
-
-*/
-
-
 namespace Test {
     public class DialogueParsing {
         public RootObject r = new RootObject();
@@ -39,7 +23,7 @@ namespace Test {
         public DialogueParsing() { }
         ~DialogueParsing() { }
     }
-
+    
     public class DialogueObj {
         public string content;
         public string tone;
@@ -63,7 +47,8 @@ namespace Test {
             this.content = c; this.tone = t; this.id = id; this.FNC = double.Parse(f); this.bucket = double.Parse(b); this.speaker = s;
         }
 
-        public DialogueObj() {
+        public DialogueObj()
+        {
             content = "returned empty string";
             tone = "";
             plotpoint = "";

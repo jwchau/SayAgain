@@ -22,6 +22,7 @@ namespace Test {
                 tonez = new List<tone>() { tone.Compassionate, tone.Indifferent, tone.Blunt, tone.Hesitant };
                 if (buttonOrder == 2) {
                     while (tonez == null || (tonez[0] == tone.Blunt || tonez[0] == tone.Compassionate || tonez[2] == tone.Blunt || tonez[2] == tone.Compassionate)) {
+
                         tonez = shuffleList(tonez);
                     }
                 }
@@ -30,6 +31,7 @@ namespace Test {
             //Console.WriteLine(SCREEN_HEIGHT);
             for (int i = 1; i <= tonez.Count; i++) {
                 addButton(new UIButton(xPos / 2 + (i - 1) * xPos, (float)(SCREEN_HEIGHT - SCREEN_HEIGHT * 0.26), tonez[i - 1]));
+
             }
             ////////////////////////////////////////////////
         }
@@ -60,6 +62,7 @@ namespace Test {
         private List<tone> shuffleList(List<tone> inputList) {
             var rand = new Random();
             for (int i = inputList.Count - 1; i >= 0; i--) {
+
                 tone tmp = inputList[i];
                 int randomIndex = rand.Next(i + 1);
 
@@ -83,6 +86,7 @@ namespace Test {
             dialogueArray = Dialogue.Split(' ');
             List<string> words = new List<string>();
             foreach (var dialogue in dialogueArray) {
+
                 //Console.WriteLine(dialogue);
             }
 
@@ -106,22 +110,26 @@ namespace Test {
                 for (int word = 1; word < dialogueArray.Length; word++) {
                     Text tempText = new Text(tempString + ' ' + dialogueArray[word], tempFont, getFontSize()); //current word + the next one after
                     if (tempText.GetGlobalBounds().Width + 10 >= SCREEN_WIDTH) {
+
                         //time to go the next line
                         //Console.WriteLine("NEXT LINE TIME!!!");
                         playerDialogues.Add(new UITextBox(x, y, tempString, cluster));
                         y += (uint)tempText.GetGlobalBounds().Height + 10;
                         tempString = dialogueArray[word];
                         if (word == dialogueArray.Length - 1) {
+
                             playerDialogues.Add(new UITextBox(x, y, tempString, cluster));
                             y += (uint)tempText.GetGlobalBounds().Height + 10;
                         }
 
                     } else {
+
                         //Console.WriteLine("tempString before adding the next word: " + tempString);
                         tempString += ' ';
                         tempString += dialogueArray[word];
                         //Console.WriteLine("tempString after adding the next word: " + tempString);
                         if (word == dialogueArray.Length - 1) {
+
                             playerDialogues.Add(new UITextBox(x, y, tempString, cluster));
                             y += (uint)tempText.GetGlobalBounds().Height + 10;
                         }
@@ -129,13 +137,13 @@ namespace Test {
 
                 }
             } else if (dialogueArray.Length == 1) {
+
                 playerDialogues.Add(new UITextBox(x, y, tempString, cluster));
             }
 
             return playerDialogues;
 
         }
-
         private uint getFontSize() {
 
             return (uint)((SCREEN_WIDTH / 1920) * 80);
@@ -228,6 +236,7 @@ namespace Test {
 
         public void applyToneShortcut(UIButton button) {
             for (int i = 0; i < playerDialogues.Count; i++) {
+
                 playerDialogues[i].setPrevColor(playerDialogues[i].getBoxColor("curr"));
                 playerDialogues[i].setBoxColor(button.getTonalColor());
                 playerDialogues[i].setTone(button.getTone());

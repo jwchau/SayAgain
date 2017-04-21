@@ -108,11 +108,9 @@ namespace Test {
         }
 
         private void onKeyReleased(object sender, KeyEventArgs e) {
-
         }
 
         private void onKeyPressed(object sender, KeyEventArgs e) {
-
             if (State.GetState() == "game") {
                 if (e.Code == Keyboard.Key.Space) {
                     // Activate playerDialogueBox to display and be responsive, or switch to AI dialogue
@@ -142,36 +140,6 @@ namespace Test {
                     else if (e.Code == Keyboard.Key.Num3) ui_man.applyToneShortcut(buttons[2]);
                     else if (e.Code == Keyboard.Key.Num4) ui_man.applyToneShortcut(buttons[3]);
                 }
-
-                //if (State.getGameTimer("game").getStart())
-                //{
-                //    if (e.Code == Keyboard.Key.B || e.Code == Keyboard.Key.I || e.Code == Keyboard.Key.C || e.Code == Keyboard.Key.H)
-                //    {
-                //        for(int i = 0; i < buttons.Count; i++)
-                //        {
-                //            if (e.Code == Keyboard.Key.B && buttons[i].getTone() == tone.Blunt)
-                //            {
-                //                ui_man.applyToneShortcut(buttons[i]);
-                //                break;
-                //            } else if (e.Code == Keyboard.Key.I && buttons[i].getTone() == tone.Indifferent)
-                //            {
-                //                ui_man.applyToneShortcut(buttons[i]);
-                //                break;
-                //            }
-                //            else if (e.Code == Keyboard.Key.C && buttons[i].getTone() == tone.Compassionate)
-                //            {
-                //                ui_man.applyToneShortcut(buttons[i]);
-                //                break;
-                //            }
-                //            else if (e.Code == Keyboard.Key.H && buttons[i].getTone() == tone.Hesitant)
-                //            {
-                //                ui_man.applyToneShortcut(buttons[i]);
-                //                break;
-                //            }
-                //        }
-
-                //    }
-                //}
                 #endregion
 
                 if (e.Code == Keyboard.Key.P) {
@@ -201,6 +169,7 @@ namespace Test {
         }
 
         #region update currents
+
         string pcurrid = "1";
         string ncurrid = "1";
 
@@ -231,7 +200,8 @@ namespace Test {
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             if (currentTone != tone.Root) {
-
+                // Load playerDialogueBox with the new content from responseList
+                State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
 
                 // Update response Lists with the recently used tone
                 responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, currentTone.ToString());
@@ -248,7 +218,6 @@ namespace Test {
                     responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid);
                 }
 
-
                 if (responseListNPC[0].speaker != "") {
                     speaker = responseListNPC[0].speaker;
                     State.dialogueIndex = "player";
@@ -262,9 +231,6 @@ namespace Test {
                 responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, tone.Root.ToString());
 
                 ui_man.reset(responseList);
-
-                
-
             } else {
                 State.getGameTimer("game").resetTimer();
                 State.getGameTimer("game").startTimer();
@@ -277,21 +243,23 @@ namespace Test {
         StoryManager sman = new StoryManager();
 
         protected override void Initialize() {
-
             backwall = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/backwall.png"));
-            flower = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/flower.png"));
+            flower = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/flowershadow.png"));
             lamp = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/lamp.png"));
             pictures = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/pictures.png"));
-            table = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/table.png"));
+
+            table = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/newletable.png"));
+            wallWindow = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/window.png"));
 
             backwall.Scale = new Vector2f(SCREEN_WIDTH / backwall.GetGlobalBounds().Width, SCREEN_HEIGHT / backwall.GetGlobalBounds().Height);
-            flower.Scale = new Vector2f(SCREEN_WIDTH / flower.GetGlobalBounds().Width, SCREEN_HEIGHT / flower.GetGlobalBounds().Height);
+            flower.Scale = new Vector2f((float)((SCREEN_WIDTH / flower.GetGlobalBounds().Width) * 0.8), (float)((SCREEN_HEIGHT / flower.GetGlobalBounds().Height) * 0.8));
             lamp.Scale = new Vector2f(SCREEN_WIDTH / lamp.GetGlobalBounds().Width, SCREEN_HEIGHT / lamp.GetGlobalBounds().Height);
             pictures.Scale = new Vector2f(SCREEN_WIDTH / pictures.GetGlobalBounds().Width, SCREEN_HEIGHT / pictures.GetGlobalBounds().Height);
             table.Scale = new Vector2f(SCREEN_WIDTH / table.GetGlobalBounds().Width, SCREEN_HEIGHT / table.GetGlobalBounds().Height);
+            wallWindow.Scale = new Vector2f(SCREEN_WIDTH / wallWindow.GetGlobalBounds().Width, SCREEN_HEIGHT / wallWindow.GetGlobalBounds().Height);
 
-            table.Position = new Vector2f(0, -200);
-            flower.Position = new Vector2f(0, -200);
+            table.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * -0.15));
+            flower.Position = new Vector2f((SCREEN_WIDTH / 2) - (flower.GetGlobalBounds().Width / 2), 0);
 
             toneBar = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/tonebar.png"));
             toneBar.Position = new Vector2f(6, (float)(SCREEN_HEIGHT * 0.735));
@@ -337,6 +305,11 @@ namespace Test {
             Dad.setSpriteEmotion(Character.spriteEmotion.happy);
             Dad.active(true);
 
+            Arm = new Arm();
+            Arm.setSpriteEmotion(Character.spriteEmotion.neutral);
+            Arm.setArmPosition(Dad.getArmPosition());
+            Arm.active(true);
+
         }
 
         private void LoadInitialPreReqs() {
@@ -354,7 +327,6 @@ namespace Test {
 
             State.sound_man.soundUpdate(settingsMenu.getSoundToggle());
             if (State.GetState() == "game") {
-
 
                 if (playerChoice && State.getGameTimer("game").getStart()) {
                     State.getGameTimer("game").stopTimer();
@@ -442,12 +414,15 @@ namespace Test {
                 }
             } else {
                 window.Draw(backwall);
+
+                window.Draw(wallWindow);
                 window.Draw(pictures);
                 window.Draw(lamp);
                 window.Draw(Mom);
                 window.Draw(Alexis);
                 window.Draw(Dad);
                 window.Draw(table);
+                window.Draw(Arm);
                 window.Draw(flower);
 
                 //Draw text box background box
@@ -477,7 +452,6 @@ namespace Test {
                     }
                     window.Draw(State.getGameTimer("game")); //this is the speak button
                 }
-
                 if (playerChoice) {
                     window.Draw(D_Man);
                 }
@@ -514,7 +488,6 @@ namespace Test {
                     window.Draw(AI_DB);
                     window.Draw(P_DB);
                 }
-
             }
 
 

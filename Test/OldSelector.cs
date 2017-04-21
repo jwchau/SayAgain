@@ -35,12 +35,13 @@ namespace Test {
                 if (curr.plotpoint == currNode && id == curr.id) {
                     responseList.Add(curr);
                     return responseList;
+
                 }
             }
             responseList.Add(best);
             return responseList;
         }
-
+        
         //transition
         public List<DialogueObj> ChooseDialog3(DialogueParsing r, double b, string id) {
             List<DialogueObj> responseList = new List<DialogueObj>();
@@ -54,6 +55,7 @@ namespace Test {
                 }
             }
             responseList.Add(best);
+
             return responseList;
         }
         public OldSelector() { }

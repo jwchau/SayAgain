@@ -20,7 +20,6 @@ namespace Test {
             dialogueBox.animationStart = true;
             dialogueBox.init = true;
 
-
         }
 
         string currentState;
@@ -34,7 +33,6 @@ namespace Test {
         public DialogueBox playerDialogueBox;
 
         public string dialogueIndex;
-
 
         public void advanceConversation(string speaker, List<DialogueObj> responseList, List<DialogueObj> responseListNPC) {
 
@@ -58,6 +56,7 @@ namespace Test {
                 }
 
             } else if (dialogueIndex == "root") {
+
                 dialogueBox.init = false;
                 playerDialogueBox.init = true;
                 dialogueIndex = "player";
@@ -77,6 +76,7 @@ namespace Test {
                             dialogueBox.active = true;
                             dialogueBox.init = true;
                             dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
+
                         }
                     }
                 }
@@ -108,6 +108,7 @@ namespace Test {
             }
             if (state == "game" && currentMenuState == "start") {
                 advanceConversation("", null, null);
+
             }
 
 
@@ -138,6 +139,7 @@ namespace Test {
                         //DO STUFF BEFORE RESTARTING
                         //Process Player dialogue
                         if (pair.Value != null) {
+
                             pair.Value.doTask();
                         }
 
