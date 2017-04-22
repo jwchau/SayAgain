@@ -30,6 +30,9 @@ namespace Test
 
         protected List<UIButton> buttons;
 
+        // Debug
+        protected bool debugInfo = true;
+
 
         //Menus
         protected Menu startMenu = new Menu("start");
@@ -43,7 +46,6 @@ namespace Test
         //Matrices
         protected ToneEffects tfx = new ToneEffects();
         protected ContextFilter cf;
-        protected Relationships rs = new Relationships();
 
         //Font
         static protected Font Adore64 = new Font(new FileStream("../../Fonts/Adore64.ttf", FileMode.Open));
@@ -52,10 +54,6 @@ namespace Test
         // Deprecated: protected CharacterState Alex, Mom, Dad;
         // Replaced with DramaManager that holds each characterstate
         protected DramaManager D_Man = new DramaManager();
-
-        //Jill's fields and variables
-        protected DialogueBox dialogueBox;
-        protected DialogueBox playerDialogueBox;
 
         //protected Boolean init;
         protected View fullScreenView, scrollview;
@@ -76,10 +74,10 @@ namespace Test
 
         #endregion
 
-        protected Sprite mom, alex, dad, toneBar, backwall, flower, lamp, pictures, table;
+        protected Sprite mom, alex, dad, toneBar, backwall, flower, lamp, pictures, table, wallWindow;
         protected RectangleShape textBackground;
         ContextSettings settings;
-        protected Character Mom, Alexis, Dad;
+        protected Character Mom, Alexis, Dad, Arm;
 
         /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -98,7 +96,7 @@ namespace Test
         public Game(uint width, uint height, string title)
         {
             settings.AntialiasingLevel = 8;
-            window = new RenderWindow(new VideoMode(width, height), title, Styles.Default, settings);
+            window = new RenderWindow(new VideoMode(width, height), title, Styles.Fullscreen, settings);
             this.clearColor = new Color(125, 116, 132);
 
             // Set-up Events

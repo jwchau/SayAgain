@@ -4,12 +4,24 @@
     <ReferencePath>
     </ReferencePath>
     <ProjectView>ShowAllFiles</ProjectView>
+    <PublishUrlHistory>publish\</PublishUrlHistory>
+    <InstallUrlHistory />
+    <SupportUrlHistory />
+    <UpdateUrlHistory />
+    <BootstrapperUrlHistory />
+    <ErrorReportUrlHistory />
+    <FallbackCulture>en-US</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartWorkingDirectory>
-    </StartWorkingDirectory>
+    <StartWorkingDirectory>C:\Users\jwchau\Desktop\lol\Test\bin\Debug\</StartWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <StartWorkingDirectory>C:\Users\jy\Desktop\SayAgain\Test\</StartWorkingDirectory>
+    <StartWorkingDirectory>C:\Users\jwchau\Desktop\SayAgain\Test\bin\Release\</StartWorkingDirectory>
+    <StartAction>Project</StartAction>
+    <StartProgram>C:\Users\yuchoe\Desktop\SAAUGH\Test\bin\Release\Test.exe</StartProgram>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableSecurityDebugging>false</EnableSecurityDebugging>
   </PropertyGroup>
 </Project>

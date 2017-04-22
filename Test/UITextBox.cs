@@ -14,9 +14,10 @@ namespace Test
         public UITextBox(float x, float y, string dialogue, int cluster)
         {
             UITextBoxText = new Text(dialogue, UITextBoxFont, getFontSize());
-            UITextBoxText.Position = new Vector2f(x + 3, y + 12);
-            box = new RectangleShape(new Vector2f(UITextBoxText.GetGlobalBounds().Width + 10, (float)(UITextBoxText.GetGlobalBounds().Height*1.5) + 10));
+            //Console.WriteLine("TEXT HEIGHT: " + (UITextBoxText.GetGlobalBounds().Height * 1.5) + 10);
+            box = new RectangleShape(new Vector2f(UITextBoxText.GetGlobalBounds().Width + 30, (float)(UITextBoxText.GetGlobalBounds().Height*1.5) + 10));
             box.Position = new Vector2f(x, y + 17);
+            UITextBoxText.Position = new Vector2f((box.GetGlobalBounds().Width/2 - UITextBoxText.GetGlobalBounds().Width/2) + box.GetGlobalBounds().Left, (box.GetGlobalBounds().Height / 2 - (float)(UITextBoxText.GetGlobalBounds().Height / 1.1)) + box.GetGlobalBounds().Top);
             box.FillColor = buttonTonalColors["Default"];
             prevColor = buttonTonalColors["Default"];
             UITextBoxText.Color = new Color(67, 65, 69);
@@ -111,12 +112,24 @@ namespace Test
             return mouseWasIn;
         }
 
-        public bool Contains(int mouseX, int mouseY)
+        public bool Contains(UIButton button)
         {
-            FloatRect bounds = getBoxBounds();
-            if (mouseX >= bounds.Left && mouseX <= bounds.Left + bounds.Width && mouseY >= bounds.Top && mouseY <= bounds.Top + bounds.Height)
+            //FloatRect bounds = getBoxBounds();
+            //if (mouseX >= bounds.Left && mouseX <= bounds.Left + bounds.Width && mouseY >= bounds.Top && mouseY <= bounds.Top + bounds.Height)
+            //{
+            //    return true;
+            //}
+            //return false;
+            FloatRect rootBounds = getBoxBounds();
+            FloatRect toneButton = button.getRectBounds();
+
+            if (rootBounds.Left < toneButton.Left + toneButton.Width &&
+   rootBounds.Left + rootBounds.Width > toneButton.Left &&
+   rootBounds.Top < toneButton.Top + toneButton.Height &&
+   rootBounds.Height + rootBounds.Top > toneButton.Top)
             {
                 return true;
+                // collision detected!
             }
             return false;
         }
