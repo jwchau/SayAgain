@@ -48,11 +48,20 @@
     {
       "content": "And how a hotdog is techinically a sandwich.",
       "tone": "Root",
-      "id": "1",
-      "FNC": "0",
+      "id": "6",
+      "FNC": "-99999",
       "speaker": "",
-      "bucket": "2",
+      "bucket": "1",
       "inext": "mom"
+    },
+    {
+      "content": "Please stop.",
+      "tone": "Root",
+      "id": "7",
+      "FNC": "0",
+      "speaker": "mom",
+      "bucket": "1",
+      "inext": ""
     },
     {
       "content": "Please stop.",
