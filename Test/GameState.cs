@@ -107,13 +107,18 @@ namespace Test
             else if (dialogueIndex == "interject")
             {
 
-                dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
-                Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ ENTERED INTERJECT");
-                Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ INTERJECT CONTENT IS: " + responseListNPC[0].content);
-
-                if (responseListNPC[0].inext == "")
+                if (dialogueBox.checkNext())
                 {
-                    dialogueIndex = "root";
+
+                    dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
+                    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ ENTERED INTERJECT");
+                    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ INTERJECT CONTENT IS: " + responseListNPC[0].content);
+
+                    if (responseListNPC[0].inext == "")
+                    {
+                        dialogueIndex = "root";
+
+                    }
 
                 }
             }

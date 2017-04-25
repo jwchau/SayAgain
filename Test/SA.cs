@@ -178,20 +178,22 @@ namespace Test
                     {
                         if (State.dialogueBox.getAwaitInput() == true)
                         {
-
-                            responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid2);
-
-                            if (responseListNPC[0].speaker != "")
+                            if (State.dialogueBox.checkNext())
                             {
-                                speaker = responseListNPC[0].speaker;
-                                Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~ Speaker:" + speaker);
+                                responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid2);
 
+                                if (responseListNPC[0].speaker != "")
+                                {
+                                    speaker = responseListNPC[0].speaker;
+                                    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~ Speaker:" + speaker);
+
+                                }
+                                int temp1 = Int32.Parse(ncurrid2);
+                                temp1++;
+                                ncurrid2 = temp1.ToString();
+
+                                State.advanceConversation(speaker, responseList, responseListNPC);
                             }
-                            int temp1 = Int32.Parse(ncurrid2);
-                            temp1++;
-                            ncurrid2 = temp1.ToString();
-
-                            State.advanceConversation(speaker, responseList, responseListNPC);
                         }
                         else if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0)
                         {
