@@ -31,31 +31,31 @@
       "next": ""
     },
     {
-      "content": "Maybe",
+      "content": "No I get it from you dad.",
       "tone": "Root",
       "id": "128",
       "next": ""
     },
     {
-      "content": "What do you think?",
+      "content": "And that mustache makes me want to inject acid into my anus.",
       "tone": "Blunt",
       "id": "129",
       "next": "3"
     },
     {
-      "content": "Eh.",
+      "content": "God why.",
       "tone": "Indifferent",
       "id": "129",
       "next": "3"
     },
     {
-      "content": "Gosh! I was just acting, Dad.",
+      "content": "Gosh! I love getting berated by my own father!",
       "tone": "Compassionate",
       "id": "129",
       "next": "5"
     },
     {
-      "content": "Er, possibly?",
+      "content": "Er, kys?",
       "tone": "Hesitant",
       "id": "129",
       "next": "3"
