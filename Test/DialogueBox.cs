@@ -20,6 +20,7 @@ namespace Test
         static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
         Vector2f scale = new Vector2f(SCREEN_WIDTH / 1920, SCREEN_HEIGHT / 1080);
         private Text name, dialogue;
+        private 
         Task currentTask;
         uint dialogueFontSize = 40;
         uint nameFontSize = 55;
@@ -68,6 +69,7 @@ namespace Test
 
         public string getDialogueText()
         {
+            if (dialogue == null) return "";
             return dialogue.DisplayedString;
         }
 
@@ -219,13 +221,87 @@ namespace Test
             }
             cts = new CancellationTokenSource();
 
-            dialoguePanes = createStrings();
+            dialoguePanes = createStringsProto();
             currentTask = Task.Run(async () =>
             { //Task.Run puts on separate thread
                 printTime = 30;
                 await animateText(cts.Token); //await pauses thread until animateText() is completed
 
             }, cts.Token);
+        }
+
+        bool italy = false;
+
+        public List<Text> createStringsProto() {
+
+            float maxw;
+            float maxh;
+            if (tag == "AI")
+            {
+                maxw = dialogueBoxSprite.GetGlobalBounds().Width - cursor.GetGlobalBounds().Width;
+                maxh = (float)(dialogueBoxSprite.GetGlobalBounds().Height * 0.8);
+            }
+            else
+            {
+                maxw = dialogueBoxSprite.GetGlobalBounds().Width - cursor.GetGlobalBounds().Width;
+                maxh = SCREEN_HEIGHT - dialogue.GetGlobalBounds().Top;
+            }
+
+            List<Text> list = new List<Text>();
+
+
+            Text line = dialogue;
+            string[] s = line.DisplayedString.Split(' ');
+
+            Text newline = new Text("", speechFont, dialogueFontSize);
+
+            
+
+            float currentLineWidth = 0;
+            int italyHolder = 0;
+
+            for (int i = 0; i < s.Count(); i++) {
+                String word = s[i];
+
+                if (word.Contains('<')) {
+
+                    italy = true;
+                    italyHolder = word.IndexOf('<');
+                }
+                //if (word.Contains('>'))
+                //{
+                //    word = word.Replace(">", "");
+                //}
+
+                Console.WriteLine("WORD: " + word);
+                word = word.Replace("<", "");
+
+                Text t = new Text(word + " ", speechFont, dialogueFontSize);
+                float wordSizeWithSpace = t.GetGlobalBounds().Width;
+                if (currentLineWidth + wordSizeWithSpace > maxw)
+                {
+
+                    newline.DisplayedString += "\n";
+                    currentLineWidth = 0;
+                    if (newline.GetGlobalBounds().Height * 1.5 > maxh)
+                    {
+                        newline.Style = Text.Styles.Italic;
+                        list.Add(newline);
+                        newline = new Text("", speechFont, dialogueFontSize);
+                    }
+                }
+
+                newline.DisplayedString += (t.DisplayedString);
+                currentLineWidth += wordSizeWithSpace;
+
+            }
+
+            if (newline.DisplayedString != "")
+            {
+                list.Add(newline);
+            }
+
+            return list;
         }
 
         public List<Text> createStrings()
@@ -251,26 +327,70 @@ namespace Test
             string[] s = line.DisplayedString.Split(' ');
 
             Text newline = new Text("", speechFont, dialogueFontSize);
-            
-            float currentLineWidth = 0;
-            foreach (string word in s)
-            {
-                Text t = new Text(word + " ", speechFont, dialogueFontSize);
-                float wordSizeWithSpace = t.GetGlobalBounds().Width;
-                if (currentLineWidth + wordSizeWithSpace > maxw)
-                {
 
-                    newline.DisplayedString += "\n";
-                    currentLineWidth = 0;
-                    if (newline.GetGlobalBounds().Height * 1.5 > maxh)
+            bool italics = false;
+
+            float currentLineWidth = 0;
+            for (int i = 0; i < s.Count(); i++)
+            {
+                String word = s[i];
+              
+               
+                if (word.Contains('<') && !italics)
+                {
+                    italics = true;
+                }
+                if (italics)
+                {
+                    Console.WriteLine("WORD: " + word);
+                    word = word.Replace("<", "");
+                    if (word.Contains('>'))
                     {
-                        list.Add(newline);
-                        newline = new Text("", speechFont, dialogueFontSize);
+                        italics = false;
+                        word = word.Replace(">", "");
                     }
+
+                
+                    Text t = new Text(word + " ", speechFont, dialogueFontSize);
+                    float wordSizeWithSpace = t.GetGlobalBounds().Width;
+                    if (currentLineWidth + wordSizeWithSpace > maxw)
+                    {
+
+                        newline.DisplayedString += "\n";
+                        currentLineWidth = 0;
+                        if (newline.GetGlobalBounds().Height * 1.5 > maxh)
+                        {
+                            newline.Style = Text.Styles.Italic;
+                            list.Add(newline);
+                            newline = new Text("", speechFont, dialogueFontSize);
+                        }
+                    }
+
+                    newline.DisplayedString += (t.DisplayedString);
+                    currentLineWidth += wordSizeWithSpace;
+                } else
+                {
+                    Text t = new Text(word + " ", speechFont, dialogueFontSize);
+                    float wordSizeWithSpace = t.GetGlobalBounds().Width;
+                    if (currentLineWidth + wordSizeWithSpace > maxw)
+                    {
+
+                        newline.DisplayedString += "\n";
+                        currentLineWidth = 0;
+                        if (newline.GetGlobalBounds().Height * 1.5 > maxh)
+                        {
+
+                            newline.Style = Text.Styles.Regular;
+                            list.Add(newline);
+                            newline = new Text("", speechFont, dialogueFontSize);
+                        }
+                    }
+                    
+                    newline.DisplayedString += (t.DisplayedString);
+                    currentLineWidth += wordSizeWithSpace;
                 }
 
-                newline.DisplayedString += (t.DisplayedString);
-                currentLineWidth += wordSizeWithSpace;
+                
             }
 
             // Add the last one
@@ -333,9 +453,30 @@ namespace Test
                             printTime = 30;
                         }
                     }
-                    dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, line.DisplayedString[i++]));
+                    if (italy)
+                    {
+                        dialogue.Style = Text.Styles.Italic;
+                    }
                     
-                    await Task.Delay(printTime); //equivalent of putting thread to sleep
+                    dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, line.DisplayedString[i++]));
+                    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ KJDFHJKDSHFJKSHDF: "+ dialogue.DisplayedString);
+                    if (dialogue.DisplayedString.Contains('>'))
+                    {
+                        dialogue.DisplayedString = dialogue.DisplayedString.Replace(">", "");
+                        italy = false;
+                        Console.WriteLine("YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+                        
+                        printTime = 500;
+                        await Task.Delay(printTime); //equivalent of putting thread to sleep
+                        dialogue.DisplayedString = "";
+                        dialogue.Style = Text.Styles.Regular;
+
+                    }
+                    else
+                    {
+
+                        await Task.Delay(printTime); //equivalent of putting thread to sleep
+                    }
                 }
             }
             // Do asynchronous work.

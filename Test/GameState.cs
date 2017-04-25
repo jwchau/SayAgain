@@ -117,7 +117,8 @@ namespace Test
                     if (responseListNPC[0].inext == "")
                     {
                         dialogueIndex = "root";
-
+                        dialogueBox.active = false;
+                        playerDialogueBox.active = false;
                     }
 
                 }
