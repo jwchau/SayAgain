@@ -30,7 +30,7 @@ namespace Test
         string tag; //AI or player
 
         public bool animationStart = false;
-        bool awaitInput = false;
+        public bool awaitInput = false;
 
         CancellationTokenSource cts;
         public List<Text> dialoguePanes = new List<Text>();
@@ -65,6 +65,11 @@ namespace Test
         //        init = false;
         //    }
         //}
+
+        public string getDialogueText()
+        {
+            return dialogue.DisplayedString;
+        }
 
         public void setInit(bool b)
         {
@@ -103,7 +108,7 @@ namespace Test
         {
             if (elementIndex < dialoguePanes.Count)
             {
-                Console.WriteLine("\n---------- CHECK NEXT");
+               // Console.WriteLine("\n---------- CHECK NEXT");
                 if (cts != null)
                 {
                     cts.Cancel();
@@ -208,7 +213,6 @@ namespace Test
         public void renderDialogue(String s)
         {
             dialoguePanes.Clear();
-            Console.WriteLine("\n---------- RENDER DIALOGUE");
             if (cts != null)
             {
                 cts.Cancel();
@@ -222,7 +226,6 @@ namespace Test
                 await animateText(cts.Token); //await pauses thread until animateText() is completed
 
             }, cts.Token);
-            Console.WriteLine("\n---------- END OF RENDER DIALOGUE");
         }
 
         public List<Text> createStrings()
@@ -291,7 +294,7 @@ namespace Test
         {
             Text line = dialoguePanes[elementIndex];
 
-            Console.WriteLine("ANIMATE TEXT: " + line.DisplayedString);
+            //Console.WriteLine("ANIMATE TEXT: " + line.DisplayedString);
 
             animationStart = true;
             awaitInput = false;

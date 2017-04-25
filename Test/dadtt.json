@@ -1,0 +1,85 @@
+{
+  "Dialogues": [
+    {
+      "content": "You know I don't how to say this besides being really forward. Your mum is harier than a gorilla right now. It is as if Harambe died and then bam! She is the next one.",
+      "tone": "Root",
+      "id": "1",
+      "FNC": "0",
+      "speaker": "dad",
+      "bucket": "1",
+      "inext": "mom"
+    },
+    {
+      "content": "Yeah at least I don't have a mustache that screams I sleep with children.",
+      "tone": "Root",
+      "id": "2",
+      "FNC": "-5",
+      "speaker": "mom",
+      "bucket": "1",
+      "inext": "alex"
+    },
+    {
+      "content": "I wish I was batman. His parents are dead. I guess the money is a plus too.",
+      "tone": "Root",
+      "id": "3",
+      "FNC": "6",
+      "speaker": "alex",
+      "bucket": "1",
+      "inext": ""
+    },
+    {
+      "content": " You know dad thinks cheese cake is a pie?",
+      "tone": "Root",
+      "id": "4",
+      "FNC": "-99999",
+      "speaker": "",
+      "bucket": "1",
+      "inext": "dad"
+    },
+    {
+      "content": "Yea, just like how cereal is technically a soup.",
+      "tone": "Root",
+      "id": "5",
+      "FNC": "-99999",
+      "speaker": "dad",
+      "bucket": "1",
+      "inext": ""
+    },
+    {
+      "content": "And how a hotdog is techinically a sandwich.",
+      "tone": "Root",
+      "id": "1",
+      "FNC": "0",
+      "speaker": "",
+      "bucket": "2",
+      "inext": "mom"
+    },
+    {
+      "content": "Please stop.",
+      "tone": "Root",
+      "id": "2",
+      "FNC": "0",
+      "speaker": "mom",
+      "bucket": "2",
+      "inext": "alex"
+    },
+    {
+      "content": "And stop breathing while you at it. You too mom.",
+      "tone": "Root",
+      "id": "3",
+      "FNC": "0",
+      "speaker": "",
+      "bucket": "2",
+      "inext": ""
+    },
+    {
+      "content": "I poisoned the food, we are going to die. Welcome back!",
+      "tone": "Root",
+      "id": "4",
+      "FNC": "0",
+      "speaker": "",
+      "bucket": "2",
+      "inext": ""
+    }
+  ]
+}

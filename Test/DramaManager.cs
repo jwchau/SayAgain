@@ -16,21 +16,7 @@ namespace Test {
         private CharacterState Alex;
         private CharacterState Mom;
         private CharacterState Dad;
-        static Relationships ship = new Relationships();
         static bool[] targets = { false, false, false }; // 0 = alex 1 = mom 2 = dad
-
-        public double getDadFNC()
-        {
-            return ship.getDadFNC();
-        }
-        public double getAlexFNC()
-        {
-            return ship.getAlexFNC();
-        }
-        public double getMomFNC()
-        {
-            return ship.getMomFNC();
-        }
 
         public void activateCharacterChoice(string c)
         {

@@ -31,7 +31,8 @@ namespace Test
         protected List<UIButton> buttons;
 
         // Debug
-        protected bool debugInfo = true;
+        protected bool debugInfo = false;
+
 
         //Menus
         protected Menu startMenu = new Menu("start");
@@ -45,7 +46,6 @@ namespace Test
         //Matrices
         protected ToneEffects tfx = new ToneEffects();
         protected ContextFilter cf;
-        protected Relationships rs = new Relationships();
 
         //Font
         static protected Font Adore64 = new Font(new FileStream("../../Fonts/Adore64.ttf", FileMode.Open));
@@ -74,10 +74,12 @@ namespace Test
 
         #endregion
 
-        protected Sprite mom, alex, dad, toneBar, backwall, flower, lamp, pictures, table;
+        protected Sprite mom, alex, dad, toneBar, backwall, flower, lamp, pictures, table, wallWindow;
         protected RectangleShape textBackground;
         ContextSettings settings;
-        protected Character Mom, Alexis, Dad;
+        protected Character Mom, Alexis, Dad, Arm;
+
+        
 
         /////////////////////////////////////////////////////////////////////////////////////////////
 

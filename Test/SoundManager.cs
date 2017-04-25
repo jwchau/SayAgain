@@ -53,7 +53,6 @@ namespace Test
 
         public void playMusic(string musicname)
         {
-            //Console.WriteLine(current + " " + musicname);
             if (current != musicname)
             {
                 if (current != "None" && song.Status == SoundStatus.Playing)
