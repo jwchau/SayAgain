@@ -8,6 +8,7 @@
       "FNC": "0",
       "speaker": "dad",
       "finished": "fin",
+      "target": [ "mom", "dad", "alex" ],
       "inext": ""
     },
     {
@@ -18,6 +19,7 @@
       "FNC": "-5",
       "speaker": "",
       "finished": "fin",
+      "target": [ "mom", "dad", "alex" ],
       "inext": ""
     },
     {
@@ -28,6 +30,7 @@
       "FNC": "3",
       "speaker": "",
       "finished": "fin",
+      "target": [ "mom", "dad", "alex" ],
       "inext": ""
     },
     {
@@ -38,6 +41,7 @@
       "FNC": "10",
       "speaker": "",
       "finished": "fin",
+      "target": [ "mom", "dad", "alex" ],
       "inext": ""
     },
     {
@@ -48,6 +52,7 @@
       "FNC": "10",
       "speaker": "",
       "finished": "fin",
+      "target": [ "mom", "dad", "alex" ],
       "inext": ""
     }
   ]

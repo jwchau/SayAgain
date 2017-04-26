@@ -8,6 +8,7 @@
       "FNC": "0",
       "speaker": "dad",
       "bucket": "1",
+      "target": ["mom","dad","alex"],
       "inext": ""
     }
   ]

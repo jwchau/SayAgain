@@ -35,17 +35,18 @@ namespace Test {
         public string speaker;
         public string finished;
         public string inext;
+        public List<string> target;
 
         public DialogueObj(string newContent, string newTonalPreReq, string id, string next) { //for linked list reading
             content = newContent; tone = newTonalPreReq; this.id = id; this.next = next; this.FNC = 2 ^ 16;
         }
 
-        public DialogueObj(string content, string tone, string plotpoint, string id, string FNC, string finished, string speaker, string InterjectionNext) { //for plot point lines
-            this.content = content; this.tone = tone; this.plotpoint = plotpoint; this.id = id; this.FNC = double.Parse(FNC); this.finished = finished; this.speaker = speaker; this.inext = InterjectionNext;
+        public DialogueObj(string content, string tone, string plotpoint, string id, string FNC, string finished, string speaker, string InterjectionNext, List<string> targets) { //for plot point lines
+            this.content = content; this.tone = tone; this.plotpoint = plotpoint; this.id = id; this.FNC = double.Parse(FNC); this.finished = finished; this.speaker = speaker; this.inext = InterjectionNext; this.target = targets;
         }
 
-        public DialogueObj(string c, string t, string id, string f, string b, string s, string ix){ //for transitino lines
-            this.content = c; this.tone = t; this.id = id; this.FNC = double.Parse(f); this.bucket = double.Parse(b); this.speaker = s; this.inext = ix;
+        public DialogueObj(string c, string t, string id, string f, string b, string s, string ix, List<string> tar){ //for transitino lines
+            this.content = c; this.tone = t; this.id = id; this.FNC = double.Parse(f); this.bucket = double.Parse(b); this.speaker = s; this.inext = ix; this.target = tar;
         }
 
         public DialogueObj()
@@ -58,6 +59,7 @@ namespace Test {
             finished = "";
             speaker = "";
             inext = "";
+            target = new List<string>();
             bucket = -(2 ^ 16);
             FNC = 2 ^ 16;
         }
