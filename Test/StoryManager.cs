@@ -63,6 +63,11 @@ namespace Test
             preconditions = new List<String>();
         }
 
+        public bool testPlotPoint(string s)
+        {
+            return (s == "plotpoint");
+        }
+
 
 
         public string getDialogueType()
