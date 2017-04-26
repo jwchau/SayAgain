@@ -92,12 +92,6 @@ namespace Test {
             return false;
         }
 
-        //#region InputManager_targetCheck
-        //public void targetCheck(int x, int y) {
-        //    if (this.Contains(x, y)) this.setTargets(this.who);
-        //}
-        //#endregion
-
         public void Draw(RenderTarget target, RenderStates states) {
             target.Draw(characterRect);
 

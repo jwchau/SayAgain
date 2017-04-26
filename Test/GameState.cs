@@ -7,7 +7,6 @@ using SFML.Graphics;
 using SFML.Window;
 using SFML.System;
 using System.Drawing;
-
 namespace Test {
     class GameState {
         public GameState() {
@@ -74,7 +73,7 @@ namespace Test {
 
                                 //if there is an interjector
                                 dialogueIndex = "interject";
-                                //Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ SET INTERJECT");
+                                Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ SET INTERJECT");
                                 dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
                             }
                             // Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~ THE CONTENT IS ")
@@ -86,8 +85,8 @@ namespace Test {
                 if (dialogueBox.checkNext()) {
 
                     dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
-                    //Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ ENTERED INTERJECT");
-                    //Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ INTERJECT CONTENT IS: " + responseListNPC[0].content);
+                    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ ENTERED INTERJECT");
+                    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ INTERJECT CONTENT IS: " + responseListNPC[0].content);
 
                     if (responseListNPC[0].inext == "") {
                         dialogueIndex = "root";
@@ -141,7 +140,6 @@ namespace Test {
                         //DO STUFF BEFORE RESTARTING
                         //Process Player dialogue
                         if (pair.Value != null) {
-
                             pair.Value.doTask();
                         }
                     }
@@ -173,7 +171,6 @@ namespace Test {
                             if (mappings[j].Item2 == "game") {
                                 SetState(mappings[j].Item2);
                                 //DictGameTimer["game"].startTimer();
-
                             } else if (mappings[j].Item2 == "menu") {
                                 SetState(mappings[j].Item2);
                                 SetMenuState("start");
