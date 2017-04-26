@@ -226,7 +226,11 @@ namespace Test {
                                 //HAVE THE TARGET CHARS REACT ANGRILY
                                 if (playerDialogues[0].getTone() == tone.Blunt)
                                 {
-                                    applyReactionToBlunt(Program.getGame().getTargets());
+                                    Console.WriteLine("hello");
+                                    foreach (var t in Program.getGame().getTargets()) { 
+                                        Console.WriteLine(t);
+                                    }
+                                    //applyReactionToBlunt(Program.getGame().getTargets());
                                 }
                             }
                             break;

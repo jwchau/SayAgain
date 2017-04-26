@@ -216,6 +216,9 @@ namespace Test {
 
         public List<string> getTargets()
         {
+            targets = Load.NPCDialogueObj.r.Dialogues.ElementAt(0).target;
+            Console.WriteLine("jfkld");
+            Console.WriteLine(targets[0]);
             return targets;
         }
         public void updateTargetFNC() {
@@ -225,7 +228,7 @@ namespace Test {
             //get context
             //load context matrix
             //meth;
-        }
+              }
 
         #region update currents
 
@@ -262,7 +265,7 @@ namespace Test {
 
                 // Update response Lists with the recently used tone
                 responseList = s.ChooseDialog(Load.playerexpo, pcurrid, currentTone.ToString());
-                if (true/*sman.testPlotPoint(sman.getDialogueType())*/) {
+                if (/*sman.testPlotPoint(sman.getDialogueType())*/) {
                     //Console.WriteLine("hello babby");
                     Load.NPCDialogueObj = Load.dadp;
                     responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid);
@@ -389,6 +392,10 @@ namespace Test {
             FNC = 0;
         }
         protected override void Update() {
+
+
+
+
             screenHelper();
 
             State.sound_man.soundUpdate(settingsMenu.getSoundToggle());
