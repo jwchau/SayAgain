@@ -34,10 +34,11 @@ namespace Test {
         public double bucket;
         public string speaker;
         public string finished;
+        public string skip;
         public string inext;
 
-        public DialogueObj(string newContent, string newTonalPreReq, string id, string next) { //for linked list reading
-            content = newContent; tone = newTonalPreReq; this.id = id; this.next = next; this.FNC = 2 ^ 16;
+        public DialogueObj(string newContent, string newTonalPreReq, string id, string next, string skip) { //for linked list reading
+            content = newContent; tone = newTonalPreReq; this.id = id; this.next = next; this.FNC = 2 ^ 16; this.skip = skip;
         }
 
         public DialogueObj(string content, string tone, string plotpoint, string id, string FNC, string finished, string speaker, string InterjectionNext) { //for plot point lines
@@ -57,6 +58,7 @@ namespace Test {
             next = "";
             finished = "";
             speaker = "";
+            skip = "";
             inext = "";
             bucket = -(2 ^ 16);
             FNC = 2 ^ 16;

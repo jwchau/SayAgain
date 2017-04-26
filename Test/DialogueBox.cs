@@ -69,6 +69,14 @@ namespace Test {
             return animationStart;
         }
 
+        public string getPrintShit() {
+            return tag + " - animStart: " + animationStart + "\n" +
+                   "        awaitInput: " + awaitInput + "\n" +
+                   "        dialoguePanesLength: " + dialoguePanes.Count + "\n" +
+                   "        init: " + init + "\n" +
+                   "        active: " + active;
+        }
+
         public bool checkNext() {
             if (elementIndex < dialoguePanes.Count) {
                 Console.WriteLine("\n---------- CHECK NEXT");
@@ -80,15 +88,15 @@ namespace Test {
                     printTime = 30;
                     await animateText(cts.Token);
                 }, cts.Token);
-
+                Console.WriteLine("CHECKNEXT RETURN FALSE");
                 return false;
             } else {
                 if (tag == "AI") {
                     state.startTimer("game");
                 }
-
+                
                 awaitInput = false;
-
+                Console.WriteLine("CHECKNEXT RETURN TRUE");
                 return true;
             }
         }
@@ -177,7 +185,7 @@ namespace Test {
 
         public List<Text> createStrings() {
 
-            // Fields for max width and height of dialogue box, and current width/height of the chopped dialogue
+            // Fields for max width/height of dialogue box, and current width/height of the chopped dialogue
             float maxw;
             float maxh;
             float currw = 0;
@@ -188,15 +196,19 @@ namespace Test {
 
             // Boolean to handle when to end 
             bool end = false;
-
+            
+            // Style and colors for the text object
             Text.Styles style = Text.Styles.Regular;
             Color color = Color.White;
             Color thoughtColor = new Color(172, 172, 172);
 
+            // List of chopped dialogues 
             List<Text> panes = new List<Text>();
 
+            // Split the dialogue string by spaces into an array
             string[] words = dialogue.DisplayedString.Split(' ');
 
+            // Set max width and height based off of the current dialogue box sprite
             if (tag == "AI") {
                 maxw = cursor.GetGlobalBounds().Left - dialogueBoxSprite.GetGlobalBounds().Left;
                 maxh = (float)(dialogueBoxSprite.GetGlobalBounds().Height * 0.4);
@@ -205,35 +217,58 @@ namespace Test {
                 maxh = (float)(dialogueBoxSprite.GetGlobalBounds().Height * 0.7);
             }
 
+            // Loop through all of the words
             for (int i = 0; i < words.Count(); i++) {
+
+                // Save current word
                 string currWord = words[i];
+
+                // Check for italic start condition
                 if (currWord.Contains("<")) {
                     style = Text.Styles.Italic;
                     color = thoughtColor;
                     currWord = currWord.Replace("<", "");
                 }
+
+                // Check for italic end condition
                 if (currWord.Contains(">")) {
                     currWord = currWord.Replace(">", "");
                     end = true;
                 }
 
+                // Check if next word has an italic start condition then end current pane
+                if (words[((i + 1 < words.Count()) ? i + 1 : i)].Contains("<")) {
+                    end = true;
+                    style = Text.Styles.Regular;
+                }
+
+                // Temp text object for sizing
                 Text temp = new Text(currWord + " ", speechFont, dialogueFontSize);
 
+                // Reset current height
                 if (currh == 0) currh += (float)(temp.GetGlobalBounds().Height * 1.5);
 
+                // If temp string's width plus the current width is less than the width of the dialogue box sprite
                 if (temp.GetGlobalBounds().Width + currw <= maxw) {
                     line += currWord + " ";
                     currw += temp.GetGlobalBounds().Width;
+
+                // Else If temp string's height plus the current height is less than the height of the dialogue box sprite
                 } else if ((temp.GetGlobalBounds().Height * 1.5) + currh <= maxh) {
                     line += "\n" + currWord + " ";
                     currh += (float)(temp.GetGlobalBounds().Height * 1.5);
                     currw = temp.GetGlobalBounds().Width;
+
+                // Else end that shit
                 } else {
                     end = true;
                 }
 
+                // If we're at the end of the array and end hasn't been met yet, end it.
                 if (!end && i == words.Count() - 1) end = true;
 
+                // If we have reached an end, package the current string and put it in a text object with the current style and color
+                // Reset current width, height, line, and end for the next iteration
                 if (end) {
                     Text pane = new Text(line, speechFont, dialogueFontSize);
                     pane.Style = style;
@@ -244,6 +279,7 @@ namespace Test {
                     currw = 0;
                     currh = 0;
                 }
+                // Reset the style if we have found an italic termination symbol
                 if (words[i].Contains(">") && style == Text.Styles.Italic) {
                     style = Text.Styles.Regular;
                     color = Color.White;

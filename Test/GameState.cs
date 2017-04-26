@@ -28,6 +28,7 @@ namespace Test {
         public DialogueBox playerDialogueBox;
         public string dialogueIndex;
         public bool interjection = false;
+        public bool skip = false;
         int counter = 0;
         public void advanceConversation(string speaker, List<DialogueObj> responseList, List<DialogueObj> responseListNPC) {
             //Console.WriteLine("ADVANCE CONVERSATION COUNTER: " + counter);
@@ -44,14 +45,19 @@ namespace Test {
                     if (dialogueBox.printTime != 0 && dialogueBox.getAnimationStart() && !dialogueBox.getAwaitInput()) {
                         dialogueBox.setPrintTime(0);
                     } else if (dialogueBox.checkNext()) {
-                        dialogueIndex = "root";
-                        dialogueBox.active = false;
-                        playerDialogueBox.active = false;
+                            dialogueIndex = "root";
+                            dialogueBox.active = false;
+                            playerDialogueBox.active = false;
                     }
                 }
             } else if (dialogueIndex == "root") {
+                Console.WriteLine("I'M SHOWING SHIT");
                 dialogueBox.init = false;
                 playerDialogueBox.init = true;
+                if (skip) {
+                    dialogueBox.active = false;
+                    playerDialogueBox.loadNewDialogue("player", responseList[0].content);
+                }
                 dialogueIndex = "player";
             } else if (dialogueIndex == "player") {
                 dialogueBox.init = false;
@@ -81,20 +87,30 @@ namespace Test {
                     }
                 }
             } else if (dialogueIndex == "interject") {
+                
+                if (dialogueBox.active && !playerDialogueBox.active) {
+                    if (dialogueBox.printTime != 0 && dialogueBox.getAnimationStart() && !dialogueBox.getAwaitInput()) {
+                        dialogueBox.setPrintTime(0);
+                    } else {
+                        if (dialogueBox.checkNext()) {
 
-                if (dialogueBox.checkNext()) {
+                            dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
+                            //if (dialogueBox.checkNext()) {
+                                //Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ ENTERED INTERJECT");
+                                Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ INTERJECT CONTENT IS: " + responseListNPC[0].content);
 
-                    dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
-                    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ ENTERED INTERJECT");
-                    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ INTERJECT CONTENT IS: " + responseListNPC[0].content);
-
-                    if (responseListNPC[0].inext == "") {
-                        dialogueIndex = "root";
-                        dialogueBox.active = false;
-                        playerDialogueBox.active = false;
+                                if (responseListNPC[0].inext == "") {
+                                    dialogueIndex = "AI";
+                                    //dialogueBox.active = false;
+                                    //playerDialogueBox.active = false;
+                                }
+                                Console.WriteLine(responseListNPC[0].inext);
+                                Console.WriteLine(dialogueBox.getPrintShit());
+                            //}
+                        }
                     }
-
                 }
+                
             }
         }
         //Timer for keeping track of time given to the player

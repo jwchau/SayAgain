@@ -135,7 +135,16 @@ namespace Test {
                         // Activate dialogueBox to display and be responsive, or switch to Root dialogue
                     } else if (State.dialogueIndex == "AI") {
                         //Console.WriteLine("during: dialogue index = ai");
+                        if (responseList[0].skip == "true") {
 
+                            int temp1 = Int32.Parse(pcurrid);
+                            temp1++;
+                            pcurrid = temp1.ToString();
+                            responseList = s.ChooseDialog(Load.playerexpo, pcurrid, currentTone.ToString());
+                            State.skip = true;
+                            State.dialogueIndex = "root";
+                            Console.WriteLine("RESPONSE LIST: " + responseList[0].content);
+                        }
                         State.advanceConversation(speaker, responseList, responseListNPC);
                     } else if (State.dialogueIndex == "interject") {
                         if (State.dialogueBox.getAwaitInput() == true) {
@@ -481,7 +490,7 @@ namespace Test {
                     for (var i = 0; i < dialogues.Count; i++) {
                         window.Draw(dialogues[i]);
                     }
-                    if (State.dialogueIndex != "player") window.Draw(toneBar);
+                    window.Draw(toneBar);
                     for (var i = 0; i < buttons.Count; i++) {
                         window.Draw(buttons[i]);
                     }
@@ -504,16 +513,15 @@ namespace Test {
                 }
 
                 if (debugInfo) {
-                    Text AI_DB = new Text("LoadAIOnce: "  + "\n" +
-                                          "AI_DB - animStart: " + State.dialogueBox.getAnimationStart() + "\n" +
+                    Text AI_DB = new Text("AI_DB - animStart: " + State.dialogueBox.getAnimationStart() + "\n" +
                                           "        awaitInput: " + State.dialogueBox.getAwaitInput() + "\n" +
-                                          "        dialoguePanesLength: " + State.dialogueBox.dialoguePanes.Count + "\n" +
+                                          "        dialoguePanes: " + State.dialogueBox.elementIndex + ":" + State.dialogueBox.dialoguePanes.Count + "\n" +
                                           "        init: " + State.dialogueBox.init + "\n" +
                                           "        active: " + State.dialogueBox.active, new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf"), 20);
 
                     Text P_DB = new Text("P_DB - animStart: " + State.playerDialogueBox.getAnimationStart() + "\n" +
                                           "        awaitInput: " + State.playerDialogueBox.getAwaitInput() + "\n" +
-                                          "        dialoguePanesLength: " + State.playerDialogueBox.dialoguePanes.Count + "\n" +
+                                          "        dialoguePanes: " + State.playerDialogueBox.elementIndex + ":" + State.playerDialogueBox.dialoguePanes.Count + "\n" +
                                           "        init: " + State.playerDialogueBox.init + "\n" +
                                           "        active: " + State.playerDialogueBox.active, new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf"), 20);
                     AI_DB.Position = new Vector2f(SCREEN_WIDTH - (AI_DB.GetGlobalBounds().Width + 50), 50);
