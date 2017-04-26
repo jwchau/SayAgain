@@ -31,7 +31,7 @@ namespace Test {
         public bool interjection = false;
         int counter = 0;
         public void advanceConversation(string speaker, List<DialogueObj> responseList, List<DialogueObj> responseListNPC) {
-            Console.WriteLine("ADVANCE CONVERSATION COUNTER: " + counter);
+            //Console.WriteLine("ADVANCE CONVERSATION COUNTER: " + counter);
             counter++;
             if (dialogueIndex == null) {
                 // Inital state of conversation. Load dad inital text and "increment" index
@@ -74,7 +74,7 @@ namespace Test {
 
                                 //if there is an interjector
                                 dialogueIndex = "interject";
-                                Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ SET INTERJECT");
+                                //Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ SET INTERJECT");
                                 dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
                             }
                             // Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~ THE CONTENT IS ")
@@ -86,8 +86,8 @@ namespace Test {
                 if (dialogueBox.checkNext()) {
 
                     dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
-                    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ ENTERED INTERJECT");
-                    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ INTERJECT CONTENT IS: " + responseListNPC[0].content);
+                    //Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ ENTERED INTERJECT");
+                    //Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ INTERJECT CONTENT IS: " + responseListNPC[0].content);
 
                     if (responseListNPC[0].inext == "") {
                         dialogueIndex = "root";

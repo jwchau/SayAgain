@@ -459,12 +459,10 @@ namespace Test
                     }
                     
                     dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, line.DisplayedString[i++]));
-                    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ KJDFHJKDSHFJKSHDF: "+ dialogue.DisplayedString);
                     if (dialogue.DisplayedString.Contains('>'))
                     {
                         dialogue.DisplayedString = dialogue.DisplayedString.Replace(">", "");
                         italy = false;
-                        Console.WriteLine("YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
                         
                         printTime = 500;
                         await Task.Delay(printTime); //equivalent of putting thread to sleep

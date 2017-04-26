@@ -145,7 +145,7 @@ namespace Test {
 
                             if (responseListNPC[0].speaker != "") {
                                 speaker = responseListNPC[0].speaker;
-                                Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~ Speaker:" + speaker);
+                                //Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~ Speaker:" + speaker);
 
                             }
                             int temp1 = Int32.Parse(ncurrid2);
@@ -253,7 +253,7 @@ namespace Test {
 
                 if (responseListNPC[0].speaker != "") {
                     speaker = responseListNPC[0].speaker;
-                    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~ Speaker:" + speaker);
+                    //Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~ Speaker:" + speaker);
 
                 }
 
