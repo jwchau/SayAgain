@@ -15,6 +15,8 @@ namespace Test
         public DialogueParsing newplayerp = new DialogueParsing(@"../../newplayerpp.json");
         public DialogueParsing dadt = new DialogueParsing(@"../../dadtt.json");
         public DialogueParsing dadp = new DialogueParsing(@"../../dadpp.json");
+        public DialogueParsing npcexpo = new DialogueParsing(@"../../NPCExposition.json");
+        public DialogueParsing playerexpo = new DialogueParsing(@"../../PlayerExposition.json");
 
 
         //Creates and loads music and sound files

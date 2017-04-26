@@ -239,7 +239,7 @@ namespace Test {
                     responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid);
                     if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
                 } else {
-                    Load.NPCDialogueObj = Load.dadt;
+                    Load.NPCDialogueObj = Load.npcexpo;
                     var rnd = new Random();
                     //Console.WriteLine("por que: " + ncurrid);
                     //responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, (double)(rnd.Next(0, 2)), ncurrid);
@@ -275,6 +275,11 @@ namespace Test {
         StoryManager sman = new StoryManager();
 
         protected override void Initialize() {
+            ///sneaky deeky/
+            Load.playerDialogueObj1 = Load.playerexpo;
+            
+            ///
+
             backwall = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/backwall.png"));
             flower = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/flowershadow.png"));
             lamp = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/lamp.png"));
