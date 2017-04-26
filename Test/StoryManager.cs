@@ -180,6 +180,12 @@ namespace Test
             return true;
         }
 
+
+
+        public bool testPlotPoint(string s) {
+            return (s == "plotpoint");
+        }
+
         public bool checkCharFNC(string s)
         {
             Console.WriteLine("checkCharFNC()");
