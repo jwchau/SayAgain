@@ -79,9 +79,14 @@ namespace Test
                
             }
         }
-        public override void setArmPosition(Vector2f a) { }
-        public override Vector2f getArmPosition() { return new Vector2f(); }
 
+        public override void setArmPosition(Vector2f position) {
+            throw new NotImplementedException();
+        }
+
+        public override Vector2f getArmPosition() {
+            throw new NotImplementedException();
+        }
 
         public override void Draw(RenderTarget target, RenderStates states)
         {

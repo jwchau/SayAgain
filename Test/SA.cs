@@ -507,31 +507,28 @@ namespace Test {
 
 
                 if (debugInfo) {
-                                Text AI_DB = new Text("AI_DB - animStart: " + State.dialogueBox.getAnimationStart() + "\n" +
-                                                      "        awaitInput: " + State.dialogueBox.getAwaitInput() + "\n" +
-                                                      "        dialoguePanesLength: " + State.dialogueBox.elementIndex + ":" + State.dialogueBox.dialoguePanes.Count + "\n" +
-            
-                                                      "        init: " + State.dialogueBox.init + "\n" +
-                                                      "        active: " + State.dialogueBox.active + "\n" +
-                                                      "        dialogue: " + State.dialogueBox.getDialogueText(), new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf"), 20);
+                    Text AI_DB = new Text("AI_DB - animStart: " + State.dialogueBox.getAnimationStart() + "\n" +
+                                          "        awaitInput: " + State.dialogueBox.getAwaitInput() + "\n" +
+                                          "        dialoguePanesLength: " + State.dialogueBox.dialoguePanes.Count + "\n" +
+                                          "        init: " + State.dialogueBox.init + "\n" +
+                                          "        active: " + State.dialogueBox.active, new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf"), 20);
 
-                                Text P_DB = new Text("P_DB - animStart: " + State.playerDialogueBox.getAnimationStart() + "\n" +
-                                                      "        awaitInput: " + State.playerDialogueBox.getAwaitInput() + "\n" +
-                                                      "        dialoguePanesLength: " + State.playerDialogueBox.elementIndex + ":" + State.playerDialogueBox.dialoguePanes.Count + "\n" +
-                                                      "        init: " + State.playerDialogueBox.init + "\n" +
-                                                      "        active: " + State.playerDialogueBox.active + "\n" +
-                                                      "        dialogue: " + State.playerDialogueBox.getDialogueText(), new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf"), 20);
-                                AI_DB.Position = new Vector2f(SCREEN_WIDTH - (AI_DB.GetGlobalBounds().Width + 50), 50);
-                                P_DB.Position = new Vector2f(SCREEN_WIDTH - (P_DB.GetGlobalBounds().Width + 50), P_DB.GetGlobalBounds().Top + AI_DB.GetGlobalBounds().Height + 50);
-                                AI_DB.Color = Color.White;
-                                P_DB.Color = Color.White;
-                                window.Draw(AI_DB);
-                                window.Draw(P_DB);
-                            }
-                        }
+                    Text P_DB = new Text("P_DB - animStart: " + State.playerDialogueBox.getAnimationStart() + "\n" +
+                                          "        awaitInput: " + State.playerDialogueBox.getAwaitInput() + "\n" +
+                                          "        dialoguePanesLength: " + State.playerDialogueBox.dialoguePanes.Count + "\n" +
+                                          "        init: " + State.playerDialogueBox.init + "\n" +
+                                          "        active: " + State.playerDialogueBox.active, new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf"), 20);
+                    AI_DB.Position = new Vector2f(SCREEN_WIDTH - (AI_DB.GetGlobalBounds().Width + 50), 50);
+                    P_DB.Position = new Vector2f(SCREEN_WIDTH - (P_DB.GetGlobalBounds().Width + 50), 200);
+                    AI_DB.Color = Color.White;
+                    P_DB.Color = Color.White;
+                    window.Draw(AI_DB);
+                    window.Draw(P_DB);
+                }
+            }
 
 
-                    }
+        }
 
 
                 }
