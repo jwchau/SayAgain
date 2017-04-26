@@ -14,6 +14,9 @@ namespace Test {
 
     class SA : Game {
 
+        List<string> targets = new List<string>();
+
+
         public Character getMom()
         {
             return Mom;
@@ -211,6 +214,10 @@ namespace Test {
             return speaker;
         }
 
+        public List<string> getTargets()
+        {
+            return targets;
+        }
         public void updateTargetFNC() {
 
             //load tonal matrix

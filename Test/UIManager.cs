@@ -226,7 +226,7 @@ namespace Test {
                                 //HAVE THE TARGET CHARS REACT ANGRILY
                                 if (playerDialogues[0].getTone() == tone.Blunt)
                                 {
-                                    applyReactionToBlunt("mom");
+                                    applyReactionToBlunt(Program.getGame().getTargets());
                                 }
                             }
                             break;
@@ -240,19 +240,22 @@ namespace Test {
         }
         #endregion
 
-        public virtual void applyReactionToBlunt(String c)
+        public virtual void applyReactionToBlunt(List<string> t)
         {
-            if (string.Equals(c, "mom", StringComparison.OrdinalIgnoreCase))
+            foreach (var c in t)
             {
-                Program.getGame().getMom().setSpriteEmotion(Character.spriteEmotion.angry);
-            }
-            else if (string.Equals(c, "dad", StringComparison.OrdinalIgnoreCase))
-            {
-                Program.getGame().getDad().setSpriteEmotion(Character.spriteEmotion.angry);
-            }
-            else if (string.Equals(c, "alex", StringComparison.OrdinalIgnoreCase))
-            {
-                Program.getGame().getAlexis().setSpriteEmotion(Character.spriteEmotion.angry);
+                if (string.Equals(c, "mom", StringComparison.OrdinalIgnoreCase))
+                {
+                    Program.getGame().getMom().setSpriteEmotion(Character.spriteEmotion.angry);
+                }
+                else if (string.Equals(c, "dad", StringComparison.OrdinalIgnoreCase))
+                {
+                    Program.getGame().getDad().setSpriteEmotion(Character.spriteEmotion.angry);
+                }
+                else if (string.Equals(c, "alex", StringComparison.OrdinalIgnoreCase))
+                {
+                    Program.getGame().getAlexis().setSpriteEmotion(Character.spriteEmotion.angry);
+                }
             }
         }
 
