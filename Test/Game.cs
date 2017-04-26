@@ -31,7 +31,8 @@ namespace Test
         protected List<UIButton> buttons;
 
         // Debug
-        protected bool debugInfo = true;
+        protected bool debugInfo = false;
+
 
 
         //Menus
@@ -78,7 +79,6 @@ namespace Test
         protected RectangleShape textBackground;
         ContextSettings settings;
         protected Character Mom, Alexis, Dad, Arm;
-
         /////////////////////////////////////////////////////////////////////////////////////////////
 
         public static UInt32 getW()

@@ -1,76 +1,14 @@
 {
   "Dialogues": [
     {
-      "content": "dad transition block 1 part 1: bucket 1, id 1",
+
+      "content": "You know I don't how to say this besides being really forward. Your mum is harier than a gorilla right now. It is as if Harambe died and then bam! She is the next one.",
       "tone": "Root",
       "id": "1",
       "FNC": "0",
       "speaker": "dad",
-      "bucket": "1"
-    },
-    {
-      "content": "dad transition block 1 part 2: bucket 1, id 2",
-      "tone": "Root",
-      "id": "2",
-      "FNC": "-5",
-      "speaker": "mom",
-      "bucket": "1"
-    },
-    {
-      "content": "dad transition block 1 part 3: bucket 1, id 3",
-      "tone": "Root",
-      "id": "3",
-      "FNC": "6",
-      "speaker": "alex",
-      "bucket": "1"
-    },
-    {
-      "content": "dad transition block 1 part 4: bucket 1, id 4",
-      "tone": "Root",
-      "id": "4",
-      "FNC": "-99999",
-      "speaker": "",
-      "bucket": "1"
-    },
-    {
-      "content": "dad transition block 1 part 5: bucket 1, id 5",
-      "tone": "Root",
-      "id": "5",
-      "FNC": "-99999",
-      "speaker": "dad",
-      "bucket": "1"
-    },
-    {
-      "content": "dad transition block 2 part 1: bucket 2, id 1",
-      "tone": "Root",
-      "id": "1",
-      "FNC": "0",
-      "speaker": "",
-      "bucket": "2"
-    },
-    {
-      "content": "dad transition block 2 part 2: bucket 2, id 2",
-      "tone": "Root",
-      "id": "2",
-      "FNC": "0",
-      "speaker": "",
-      "bucket": "2"
-    },
-    {
-      "content": "dad transition block 2 part 3: bucket 2, id 3",
-      "tone": "Root",
-      "id": "3",
-      "FNC": "0",
-      "speaker": "",
-      "bucket": "2"
-    },
-    {
-      "content": "dad transition block 2 part 4: bucket 2, id 4",
-      "tone": "Root",
-      "id": "4",
-      "FNC": "0",
-      "speaker": "",
-      "bucket": "2"
+      "bucket": "1",
+      "inext": ""
     }
   ]
 }

@@ -113,23 +113,53 @@ namespace Test {
         private void onKeyPressed(object sender, KeyEventArgs e) {
             if (State.GetState() == "game") {
                 if (e.Code == Keyboard.Key.Space) {
+
+
                     // Activate playerDialogueBox to display and be responsive, or switch to AI dialogue
                     if (State.dialogueIndex == "player") {
-                        Console.WriteLine("during: dialogue index = player");
                         State.advanceConversation(speaker, null, responseListNPC);
+
                         // Deactivate dialogueBox, Display playerDialogueBox, and submit tone 
                     } else if (State.dialogueIndex == "root") {
                         // Sets the timer to 0 which calls Timer Action to advance the Conversation with the new responseLists
-                        Console.WriteLine("during:  dialogue index = root");
+
+                        if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0) {
+                            State.dialogueBox.printTime = 0;
+                        }
+
                         if (State.getGameTimer("game").getCountDown() != 0.0) {
                             State.getGameTimer("game").setCountDown(0);
+                            State.dialogueBox.active = false;
+                            State.playerDialogueBox.active = false;
                         }
                         // Activate dialogueBox to display and be responsive, or switch to Root dialogue
                     } else if (State.dialogueIndex == "AI") {
-                        Console.WriteLine("during: dialogue index = ai");
+                        //Console.WriteLine("during: dialogue index = ai");
 
-                        State.advanceConversation(speaker, responseList, null);
+                        State.advanceConversation(speaker, responseList, responseListNPC);
+                    } else if (State.dialogueIndex == "interject") {
+                        if (State.dialogueBox.getAwaitInput() == true) {
+                            //if (State.dialogueBox.checkNext())
+                            //{
+                            responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid2);
+
+                            if (responseListNPC[0].speaker != "") {
+                                speaker = responseListNPC[0].speaker;
+                                Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~ Speaker:" + speaker);
+
+                            }
+                            int temp1 = Int32.Parse(ncurrid2);
+                            temp1++;
+                            ncurrid2 = temp1.ToString();
+
+                            State.advanceConversation(speaker, responseList, responseListNPC);
+                            //}
+                        } else if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0) {
+                            State.dialogueBox.printTime = 0;
+                        }
                     }
+
+                    //Console.WriteLine("~~~~~~~~~~~~~~~~~~~~ INDEX RIGHT AFTER ADVANCE CONVERSATION IN TIMERACTION: " + State.dialogueIndex);
 
                 }
 
@@ -172,6 +202,8 @@ namespace Test {
 
         string pcurrid = "1";
         string ncurrid = "1";
+        string ncurrid2 = "1";
+
 
         //after timer runs out update the current stuff
         private void updateCurrents() {
@@ -195,10 +227,6 @@ namespace Test {
 
         #region load dialogue new
         public void loadDialogues() {
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //Console.WriteLine("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" + Load.newplayerp.r.Dialogues.ElementAt(0).plotpoint);
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
             if (currentTone != tone.Root) {
                 // Load playerDialogueBox with the new content from responseList
                 State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
@@ -213,14 +241,18 @@ namespace Test {
                 } else {
                     Load.NPCDialogueObj = Load.dadt;
                     var rnd = new Random();
-                    Console.WriteLine("por que: " + ncurrid);
+                    //Console.WriteLine("por que: " + ncurrid);
                     //responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, (double)(rnd.Next(0, 2)), ncurrid);
-                    responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid);
+                    responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid2);
+                    int temp1 = Int32.Parse(ncurrid2);
+                    temp1++;
+                    ncurrid2 = temp1.ToString();
+
                 }
 
                 if (responseListNPC[0].speaker != "") {
                     speaker = responseListNPC[0].speaker;
-                    State.dialogueIndex = "player";
+
                 }
 
                 State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
@@ -397,7 +429,6 @@ namespace Test {
 
         }
         //Ensures that AI dialogue doesnt get loaded more than once per timer done
-        bool loadedAIDialogueOnce = false;
 
         bool playerChoice = false;
 
@@ -432,7 +463,7 @@ namespace Test {
                 var buttons = ui_man.getButtons();
 
                 if (!State.dialogueBox.active) {
-                    if (State.dialogueIndex != "player") window.Draw(textBackground); // Account for fixed height of player dialogue box (makes sure there isnt a gap below the PDB)
+                    window.Draw(textBackground); // Account for fixed height of player dialogue box (makes sure there isnt a gap below the PDB)
                     window.Draw(State.playerDialogueBox);
                 }
                 if (!State.playerDialogueBox.active) {
@@ -469,7 +500,7 @@ namespace Test {
                 }
 
                 if (debugInfo) {
-                    Text AI_DB = new Text("LoadAIOnce: " + loadedAIDialogueOnce + "\n" +
+                    Text AI_DB = new Text("LoadAIOnce: "  + "\n" +
                                           "AI_DB - animStart: " + State.dialogueBox.getAnimationStart() + "\n" +
                                           "        awaitInput: " + State.dialogueBox.getAwaitInput() + "\n" +
                                           "        dialoguePanesLength: " + State.dialogueBox.dialoguePanes.Count + "\n" +

@@ -131,9 +131,10 @@ namespace Test
 
             //determine size and position
             xpos = (float)(SCREEN_WIDTH*.79);
-            ypos = (float)(SCREEN_HEIGHT*0.28);
-            xscale = SCREEN_WIDTH / 1920;
-            yscale = SCREEN_HEIGHT / 1080;
+            ypos = (float)(SCREEN_HEIGHT*0.29);
+            xscale = (float)((SCREEN_WIDTH / 1920) * 0.9);
+            yscale = (float)((SCREEN_HEIGHT / 1080) * 0.9);
+
 
             for (int i = 0; i < (361 * 7); i += 361)
             {

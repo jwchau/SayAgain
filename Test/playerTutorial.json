@@ -1,0 +1,10 @@
+{
+  "Dialogues": [
+    {
+      "content": "Awaiting npc dialogue",
+      "tone": "Root",
+      "id": "1",
+      "next": "2"
+    }
+  ]
+}
