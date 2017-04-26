@@ -14,6 +14,23 @@ namespace Test {
 
     class SA : Game {
 
+        public Character getMom()
+        {
+            return Mom;
+        }
+
+        public Character getDad()
+        {
+            return Dad;
+        }
+
+        public Character getAlexis()
+        {
+            return Alexis;
+        }
+
+
+
         public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?") {
             window.KeyPressed += onKeyPressed;
             window.KeyReleased += onKeyReleased;
@@ -189,6 +206,11 @@ namespace Test {
         }
         #endregion
 
+        public string getSpeaker()
+        {
+            return speaker;
+        }
+
         public void updateTargetFNC() {
 
             //load tonal matrix
@@ -233,7 +255,7 @@ namespace Test {
 
                 // Update response Lists with the recently used tone
                 responseList = s.ChooseDialog(Load.playerexpo, pcurrid, currentTone.ToString());
-                if (sman.testPlotPoint(sman.getDialogueType())) {
+                if (true/*sman.testPlotPoint(sman.getDialogueType())*/) {
                     //Console.WriteLine("hello babby");
                     Load.NPCDialogueObj = Load.dadp;
                     responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid);
@@ -272,11 +294,12 @@ namespace Test {
         #endregion
 
 
-        StoryManager sman = new StoryManager();
+
 
         protected override void Initialize() {
+            sman = new StoryManager();
             ///sneaky deeky/
-            
+
             ///
 
             backwall = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/backwall.png"));

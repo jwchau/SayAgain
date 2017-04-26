@@ -79,6 +79,7 @@ namespace Test
         protected RectangleShape textBackground;
         ContextSettings settings;
         protected Character Mom, Alexis, Dad, Arm;
+        protected StoryManager sman;
         /////////////////////////////////////////////////////////////////////////////////////////////
 
         public static UInt32 getW()
@@ -109,6 +110,7 @@ namespace Test
         public void Run()
         {
             Initialize();
+            sman.findNextPossibleNodes();
 
             /***********************************************/
             /*                                             */

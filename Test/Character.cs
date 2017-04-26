@@ -16,7 +16,7 @@ using System.Drawing;
 namespace Test {
 
     abstract class Character : Drawable {
-        protected double[] FNCSpectrum = new double[3];
+        protected double[] FNCRange = new double[10]; //HF-MF-LF-LN-MN-HN-LC-MC-HC
         protected double currentFNC;
 
 
@@ -77,9 +77,11 @@ namespace Test {
         public abstract Vector2f getArmPosition();
 
         public abstract void setArmPosition(Vector2f position);
+        
 
-        public double[] getSpectrum() {
-            return FNCSpectrum;
+        public double[] getFNCRange()
+        {
+            return FNCRange;
         }
 
         public double getCurrentFNC() {

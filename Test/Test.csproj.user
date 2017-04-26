@@ -14,7 +14,7 @@
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartWorkingDirectory>C:\Users\misimpso\Desktop\SayAgain-Mikey %281%29\lol\Test\bin\Debug\</StartWorkingDirectory>
+    <StartWorkingDirectory>C:\Users\jy\Desktop\testy\SayAgain\Test\bin\Debug\</StartWorkingDirectory>
     <RemoteDebugEnabled>false</RemoteDebugEnabled>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">

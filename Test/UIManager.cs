@@ -221,7 +221,13 @@ namespace Test {
                                 playerDialogues[k].setAffected(true);
                                 playerDialogues[k].setTone(buttons[i].getTone());
                                 //Console.WriteLine("MY TONE IS: " + playerDialogues[0].getTone());
-
+                                
+                                //IF THE PLAYER DRAGGED IN BLUNT
+                                //HAVE THE TARGET CHARS REACT ANGRILY
+                                if (playerDialogues[0].getTone() == tone.Blunt)
+                                {
+                                    applyReactionToBlunt("mom");
+                                }
                             }
                             break;
                         }
@@ -233,6 +239,23 @@ namespace Test {
             }
         }
         #endregion
+
+        public virtual void applyReactionToBlunt(String c)
+        {
+            if (string.Equals(c, "mom", StringComparison.OrdinalIgnoreCase))
+            {
+                Program.getGame().getMom().setSpriteEmotion(Character.spriteEmotion.angry);
+            }
+            else if (string.Equals(c, "dad", StringComparison.OrdinalIgnoreCase))
+            {
+                Program.getGame().getDad().setSpriteEmotion(Character.spriteEmotion.angry);
+            }
+            else if (string.Equals(c, "alex", StringComparison.OrdinalIgnoreCase))
+            {
+                Program.getGame().getAlexis().setSpriteEmotion(Character.spriteEmotion.angry);
+            }
+        }
+
 
         public void applyToneShortcut(UIButton button) {
             for (int i = 0; i < playerDialogues.Count; i++) {
