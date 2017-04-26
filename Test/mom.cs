@@ -130,6 +130,7 @@ namespace Test
             xscale = (float)((SCREEN_WIDTH / 1920) * 0.9);
             yscale = (float)((SCREEN_HEIGHT / 1080) * 0.9);
 
+
             for (int i = 0; i < (361 * 7); i += 361)
             {
                 sprites["angry"].Add(new Sprite(t, new IntRect(i, 0, 361, 465))); //btw might get extra sprite if sizes no precise
