@@ -42,7 +42,7 @@ namespace Test {
         static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
         static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
 
-        int buttonOrder = 2;
+        int buttonOrder = 0;
 
         string[] dialogueArray;
 

@@ -52,20 +52,6 @@ namespace Test
 
         Font speechFont = new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf");
 
-        //public void acknowledge()
-        //{
-        //    if (awaitInput)
-        //    {
-        //        if (tag == "AI")
-        //        {
-        //            state.startTimer("game");
-        //        }
-        //        active = false;
-        //        awaitInput = false;
-        //        init = false;
-        //    }
-        //}
-
         public void setInit(bool b)
         {
             init = b;
@@ -75,15 +61,6 @@ namespace Test
         {
             return awaitInput;
         }
-
-        //public void forward()
-        //{
-        //    if (currentTask == null || currentTask.IsCompleted)
-        //    {
-        //        getNext();
-        //        checkEnd();
-        //    }
-        //}
 
         public void setPrintTime(int i)
         {
@@ -131,41 +108,34 @@ namespace Test
 
         public void loadNewDialogue(string speaker, string content)
         {
-            if (speaker == "alex")
-            {
+            if (speaker == "alex") {
                 dialogueBoxSprite = spriteDict["right"];
                 dialogueBoxSprite.Position = new Vector2f(SCREEN_WIDTH / 2 - (dialogueBoxSprite.GetGlobalBounds().Width / 2), SCREEN_HEIGHT / 5);
 
                 name = new Text(speaker.ToUpper(), speechFont, nameFontSize);
                 name.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + ((118 * scale.X) - name.GetGlobalBounds().Width / 2), dialogueBoxSprite.GetGlobalBounds().Top + ((22 * scale.Y) - name.GetGlobalBounds().Height));
                 dialogue = new Text(content, speechFont, dialogueFontSize);
-                dialogue.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + (uint)(SCREEN_WIDTH * 0.004), dialogueBoxSprite.GetGlobalBounds().Top + (uint)(SCREEN_HEIGHT * 0.046));
+                dialogue.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + (uint)(SCREEN_WIDTH * 0.004), dialogueBoxSprite.GetGlobalBounds().Top + (uint)(SCREEN_HEIGHT * 0.04));
 
-            }
-            else if (speaker == "dad")
-            {
+            } else if (speaker == "dad") {
                 dialogueBoxSprite = spriteDict["left"];
                 dialogueBoxSprite.Position = new Vector2f((float)(SCREEN_WIDTH * 0.21) - (dialogueBoxSprite.GetGlobalBounds().Width / 2), (float)(SCREEN_HEIGHT * 0.19) - (dialogueBoxSprite.GetGlobalBounds().Height / 2));
 
                 name = new Text(speaker.ToUpper(), speechFont, nameFontSize);
                 name.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + ((118 * scale.X) - name.GetGlobalBounds().Width / 2), dialogueBoxSprite.GetGlobalBounds().Top + ((22 * scale.Y) - name.GetGlobalBounds().Height));
                 dialogue = new Text(content, speechFont, dialogueFontSize);
-                dialogue.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + (uint)(SCREEN_WIDTH * 0.004), dialogueBoxSprite.GetGlobalBounds().Top + (uint)(SCREEN_HEIGHT * 0.046));
+                dialogue.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + (uint)(SCREEN_WIDTH * 0.004), dialogueBoxSprite.GetGlobalBounds().Top + (uint)(SCREEN_HEIGHT * 0.04));
 
-            }
-            else if (speaker == "mom")
-            {
+            } else if (speaker == "mom") {
                 dialogueBoxSprite = spriteDict["right"];
                 dialogueBoxSprite.Position = new Vector2f(3 * SCREEN_WIDTH / 4 - (dialogueBoxSprite.GetGlobalBounds().Width / 2), SCREEN_HEIGHT / 5);
 
                 name = new Text(speaker.ToUpper(), speechFont, nameFontSize);
                 name.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + ((118 * scale.X) - name.GetGlobalBounds().Width / 2), dialogueBoxSprite.GetGlobalBounds().Top + ((22 * scale.Y) - name.GetGlobalBounds().Height));
                 dialogue = new Text(content, speechFont, dialogueFontSize);
-                dialogue.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + (uint)(SCREEN_WIDTH * 0.004), dialogueBoxSprite.GetGlobalBounds().Top + (uint)(SCREEN_HEIGHT * 0.046));
+                dialogue.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + (uint)(SCREEN_WIDTH * 0.004), dialogueBoxSprite.GetGlobalBounds().Top + (uint)(SCREEN_HEIGHT * 0.04));
 
-            }
-            else if (speaker == "player")
-            {
+            } else if (speaker == "player") {
                 dialogueBoxSprite = spriteDict["player"];
                 dialogueBoxSprite.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * 0.74));
 
@@ -208,7 +178,7 @@ namespace Test
         public void renderDialogue(String s)
         {
             dialoguePanes.Clear();
-            Console.WriteLine("\n---------- RENDER DIALOGUE");
+            //Console.WriteLine("\n---------- RENDER DIALOGUE");
             if (cts != null)
             {
                 cts.Cancel();
@@ -222,61 +192,86 @@ namespace Test
                 await animateText(cts.Token); //await pauses thread until animateText() is completed
 
             }, cts.Token);
-            Console.WriteLine("\n---------- END OF RENDER DIALOGUE");
+            //Console.WriteLine("\n---------- END OF RENDER DIALOGUE");
         }
 
-        public List<Text> createStrings()
-        {
-            
+        public List<Text> createStrings() {
+
+            // Fields for max width and height of dialogue box, and current width/height of the chopped dialogue
             float maxw;
             float maxh;
-            if (tag == "AI")
-            {
-                maxw = dialogueBoxSprite.GetGlobalBounds().Width - cursor.GetGlobalBounds().Width;
-                maxh = (float)(dialogueBoxSprite.GetGlobalBounds().Height * 0.8);
+            float currw = 0;
+            float currh = 0;
+
+            // The chopped dialogue that fits in one pane
+            string line = "";
+
+            // Boolean to handle when to end 
+            bool end = false;
+
+            Text.Styles style = Text.Styles.Regular;
+            Color color = Color.White;
+            Color thoughtColor = new Color(172, 172, 172);
+
+            List<Text> panes = new List<Text>();
+
+            string[] words = dialogue.DisplayedString.Split(' ');
+
+            if (tag == "AI") {
+                maxw = cursor.GetGlobalBounds().Left - dialogueBoxSprite.GetGlobalBounds().Left;
+                maxh = (float)(dialogueBoxSprite.GetGlobalBounds().Height * 0.4);
+            } else {
+                maxw = cursor.GetGlobalBounds().Left - dialogueBoxSprite.GetGlobalBounds().Left;
+                maxh = (float)(dialogueBoxSprite.GetGlobalBounds().Height * 0.7);
             }
-            else
-            {
-                maxw = dialogueBoxSprite.GetGlobalBounds().Width - cursor.GetGlobalBounds().Width;
-                maxh = SCREEN_HEIGHT - dialogue.GetGlobalBounds().Top;
-            }
 
-            Text line = dialogue;
-            List<Text> list = new List<Text>();
-            
-            // split dialogue into words
-            string[] s = line.DisplayedString.Split(' ');
-
-            Text newline = new Text("", speechFont, dialogueFontSize);
-            
-            float currentLineWidth = 0;
-            foreach (string word in s)
-            {
-                Text t = new Text(word + " ", speechFont, dialogueFontSize);
-                float wordSizeWithSpace = t.GetGlobalBounds().Width;
-                if (currentLineWidth + wordSizeWithSpace > maxw)
-                {
-
-                    newline.DisplayedString += "\n";
-                    currentLineWidth = 0;
-                    if (newline.GetGlobalBounds().Height * 1.5 > maxh)
-                    {
-                        list.Add(newline);
-                        newline = new Text("", speechFont, dialogueFontSize);
-                    }
+            for (int i = 0; i < words.Count(); i++) {
+                string currWord = words[i];
+                if (currWord.Contains("<")) {
+                    style = Text.Styles.Italic;
+                    color = thoughtColor;
+                    currWord = currWord.Replace("<", "");
+                }
+                if (currWord.Contains(">")) {
+                    currWord = currWord.Replace(">", "");
+                    end = true;
                 }
 
-                newline.DisplayedString += (t.DisplayedString);
-                currentLineWidth += wordSizeWithSpace;
+                Text temp = new Text(currWord + " ", speechFont, dialogueFontSize);
+
+                if (currh == 0) currh += (float)(temp.GetGlobalBounds().Height * 1.5);
+
+                if (temp.GetGlobalBounds().Width + currw <= maxw) {
+                    line += currWord + " ";
+                    currw += temp.GetGlobalBounds().Width;
+                } else if ((temp.GetGlobalBounds().Height * 1.5) + currh <= maxh) {
+                    line += "\n" + currWord + " ";
+                    currh += (float)(temp.GetGlobalBounds().Height * 1.5);
+                    currw = temp.GetGlobalBounds().Width;
+                } else {
+                    end = true;
+                }
+
+                if (!end && i == words.Count() - 1) end = true;
+
+                if (end) {
+                    Text pane = new Text(line, speechFont, dialogueFontSize);
+                    pane.Style = style;
+                    pane.Color = color;
+                    panes.Add(pane);
+                    end = false;
+                    line = "";
+                    currw = 0;
+                    currh = 0;
+                }
+                if (words[i].Contains(">") && style == Text.Styles.Italic) {
+                    style = Text.Styles.Regular;
+                    color = Color.White;
+                }
+
             }
 
-            // Add the last one
-            if (newline.DisplayedString != "")
-            {
-                list.Add(newline);
-            }
-
-            return list;
+            return panes;
 
         }
 
@@ -291,13 +286,13 @@ namespace Test
         {
             Text line = dialoguePanes[elementIndex];
 
-            Console.WriteLine("ANIMATE TEXT: " + line.DisplayedString);
-
             animationStart = true;
             awaitInput = false;
 
             state.resetTimer("game");
             dialogue.DisplayedString = "";
+            dialogue.Style = line.Style;
+            dialogue.Color = line.Color;
 
             int i = 0;
             while (i < line.DisplayedString.Length)
