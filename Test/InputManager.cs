@@ -113,11 +113,9 @@ namespace Test {
         #region SA_GamePlay
         public void GamePlay(GameState s, List<UIButton> b, int x, int y, double sx, double sy) {
             if (s.GetState() == "game") {
-                //Console.WriteLine(screenSize.Item1 + " " + screenSize.Item2);
                 for (var i = 0; i < b.Count; i++) {
                     if (b[i].Contains((int)(x*sx), (int)(y*sy))) {
                         var bounds = b[i].getRectBounds();
-                        //Console.WriteLine(x + " " + y);
                         s.sound_man.playSFX("button");
                         b[i].SetMouseOffset((int)(x - bounds.Left), (int)(y - bounds.Top));
                         b[i].SetSelected(true);

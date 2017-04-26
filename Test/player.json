@@ -7,7 +7,7 @@
       "next": ""
     },
     {
-      "content": "I'm only here because you told me to be.",
+      "content": " <You smell something fishy.> I'm only here because you told me to be.",
       "tone": "Blunt",
       "id": "2",
       "next": "128"
@@ -31,121 +31,121 @@
       "next": ""
     },
     {
-      "content": "Maybe",
+      "content": "No I get it from you dad.",
       "tone": "Root",
       "id": "128",
       "next": ""
     },
     {
-      "content": "What do you think?",
+      "content": "And that mustache makes me want to inject acid into my anus.",
       "tone": "Blunt",
       "id": "129",
       "next": "3"
     },
     {
-      "content": "Eh.",
+      "content": "God why.",
       "tone": "Indifferent",
       "id": "129",
       "next": "3"
     },
     {
-      "content": "Gosh! I was just acting, Dad.",
+      "content": "Gosh! I love getting berated by my own father!",
       "tone": "Compassionate",
       "id": "129",
       "next": "5"
     },
     {
-      "content": "Er, possibly?",
+      "content": "Er, kys?",
       "tone": "Hesitant",
       "id": "129",
       "next": "3"
     },
     {
-      "content": "Yes",
+      "content": "Yeah and your fat",
       "tone": "Root",
       "id": "3",
       "next": ""
     },
     {
-      "content": "School is FINE, okay?!",
+      "content": "Yeah and your fat gut still makes it so that you can't see your dick.",
       "tone": "Blunt",
       "id": "4",
       "next": ""
     },
     {
-      "content": "It's fine.",
+      "content": "Jesus why.",
       "tone": "Indifferent",
       "id": "4",
       "next": ""
     },
     {
-      "content": "You don''t have to worry about me. School is peach keen!",
+      "content": "Oh there is that humor that makes me want to kill myself.",
       "tone": "Compassionate",
       "id": "4",
       "next": ""
     },
     {
-      "content": "I mean, I guess.",
+      "content": "umm.. how do I say this .. um .. kys?",
       "tone": "Hesitant",
       "id": "4",
       "next": ""
     },
     {
-      "content": "Game Design",
+      "content": "What is wrong with yall?",
       "tone": "Root",
       "id": "5",
       "next": ""
     },
     {
-      "content": "It's Game Design! How do you not remember?",
+      "content": "Y'all fucking neanderthals wtf.",
       "tone": "Blunt",
       "id": "6",
       "next": ""
     },
     {
-      "content": "Game Design or something like that.",
+      "content": "Buddha why?",
       "tone": "Indifferent",
       "id": "6",
       "next": ""
     },
     {
-      "content": "Game Design! You are so silly for not remembering.",
+      "content": "Oh boy can't wait to eat this food and kill myself!",
       "tone": "Compassionate",
       "id": "6",
       "next": ""
     },
     {
-      "content": "Er.. Oh! Game Design?",
+      "content": "Umm..??? kys?",
       "tone": "Hesitant",
       "id": "6",
       "next": ""
     },
     {
-      "content": "You okay Dad?",
+      "content": "Dad you are a fucking monkey.",
       "tone": "Root",
       "id": "7",
       "next": ""
     },
     {
-      "content": "Still laying around like the lazy ass that you are?",
+      "content": "Yeah cheesecake is a pie, the same way I am your daughter. Only technically.",
       "tone": "Blunt",
       "id": "8",
       "next": ""
     },
     {
-      "content": "So.. are you doing okay, Dad?",
+      "content": "Krishna why",
       "tone": "Indifferent",
       "id": "8",
       "next": ""
     },
     {
-      "content": "I hope you are doing well dad!",
+      "content": "Oh baby I hope it is a poisonous cheesecake cuz I sure do wanna die?",
       "tone": "Compassionate",
       "id": "8",
       "next": ""
     },
     {
-      "content": "So..um.. everything okay with you right?",
+      "content": "Is it okay if you kys?",
       "tone": "Hesitant",
       "id": "8",
       "next": ""

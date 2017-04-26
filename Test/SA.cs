@@ -58,6 +58,7 @@ namespace Test {
 
         private void onMouseButtonReleased(object sender, MouseButtonEventArgs e) {
 
+
             ManagerOfInput.onMouseButtonReleased();
 
             if (playerChoice) {
@@ -106,30 +107,59 @@ namespace Test {
                 State.getGameTimer("game").setCountDown(0);
             }
         }
-
         private void onKeyReleased(object sender, KeyEventArgs e) {
         }
 
         private void onKeyPressed(object sender, KeyEventArgs e) {
             if (State.GetState() == "game") {
                 if (e.Code == Keyboard.Key.Space) {
+
+
                     // Activate playerDialogueBox to display and be responsive, or switch to AI dialogue
                     if (State.dialogueIndex == "player") {
-                        Console.WriteLine("during: dialogue index = player");
                         State.advanceConversation(speaker, null, responseListNPC);
+
                         // Deactivate dialogueBox, Display playerDialogueBox, and submit tone 
                     } else if (State.dialogueIndex == "root") {
                         // Sets the timer to 0 which calls Timer Action to advance the Conversation with the new responseLists
-                        Console.WriteLine("during:  dialogue index = root");
+
+                        if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0) {
+                            State.dialogueBox.printTime = 0;
+                        }
+
                         if (State.getGameTimer("game").getCountDown() != 0.0) {
                             State.getGameTimer("game").setCountDown(0);
+                            State.dialogueBox.active = false;
+                            State.playerDialogueBox.active = false;
                         }
                         // Activate dialogueBox to display and be responsive, or switch to Root dialogue
                     } else if (State.dialogueIndex == "AI") {
-                        Console.WriteLine("during: dialogue index = ai");
+                        //Console.WriteLine("during: dialogue index = ai");
 
-                        State.advanceConversation(speaker, responseList, null);
+                        State.advanceConversation(speaker, responseList, responseListNPC);
+                    } else if (State.dialogueIndex == "interject") {
+                        if (State.dialogueBox.getAwaitInput() == true) {
+                            //if (State.dialogueBox.checkNext())
+                            //{
+                            responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid2);
+
+                            if (responseListNPC[0].speaker != "") {
+                                speaker = responseListNPC[0].speaker;
+                                Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~ Speaker:" + speaker);
+
+                            }
+                            int temp1 = Int32.Parse(ncurrid2);
+                            temp1++;
+                            ncurrid2 = temp1.ToString();
+
+                            State.advanceConversation(speaker, responseList, responseListNPC);
+                            //}
+                        } else if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0) {
+                            State.dialogueBox.printTime = 0;
+                        }
                     }
+
+                    //Console.WriteLine("~~~~~~~~~~~~~~~~~~~~ INDEX RIGHT AFTER ADVANCE CONVERSATION IN TIMERACTION: " + State.dialogueIndex);
 
                 }
 
@@ -172,6 +202,8 @@ namespace Test {
 
         string pcurrid = "1";
         string ncurrid = "1";
+        string ncurrid2 = "1";
+
 
         //after timer runs out update the current stuff
         private void updateCurrents() {
@@ -195,16 +227,13 @@ namespace Test {
 
         #region load dialogue new
         public void loadDialogues() {
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //Console.WriteLine("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" + Load.newplayerp.r.Dialogues.ElementAt(0).plotpoint);
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
             if (currentTone != tone.Root) {
                 // Load playerDialogueBox with the new content from responseList
                 State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
 
                 // Update response Lists with the recently used tone
                 responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, currentTone.ToString());
+
                 if (sman.testPlotPoint(sman.getDialogueType())) {
                     //Console.WriteLine("hello babby");
                     Load.NPCDialogueObj = Load.dadp;
@@ -213,14 +242,19 @@ namespace Test {
                 } else {
                     Load.NPCDialogueObj = Load.dadt;
                     var rnd = new Random();
-                    Console.WriteLine("por que: " + ncurrid);
+                    //Console.WriteLine("por que: " + ncurrid);
                     //responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, (double)(rnd.Next(0, 2)), ncurrid);
-                    responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid);
+                    responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid2);
+                    int temp1 = Int32.Parse(ncurrid2);
+                    temp1++;
+                    ncurrid2 = temp1.ToString();
+
                 }
 
                 if (responseListNPC[0].speaker != "") {
                     speaker = responseListNPC[0].speaker;
-                    State.dialogueIndex = "player";
+                    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~ Speaker:" + speaker);
+
                 }
 
                 State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
@@ -241,6 +275,7 @@ namespace Test {
 
 
         StoryManager sman = new StoryManager();
+
 
         protected override void Initialize() {
             backwall = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/backwall.png"));
@@ -326,80 +361,80 @@ namespace Test {
             screenHelper();
 
             State.sound_man.soundUpdate(settingsMenu.getSoundToggle());
+
             if (State.GetState() == "game") {
 
                 if (playerChoice && State.getGameTimer("game").getStart()) {
-                    State.getGameTimer("game").stopTimer();
-                } //jank fix
+                        State.getGameTimer("game").stopTimer();
+                    } //jank fix
 
-                // Update the game timerz
-                State.updateTimerz();
+                    // Update the game timerz
+                    State.updateTimerz();
 
-                // Get the current UI Textboxes from the UI Manager
-                var playerDialogues = ui_man.getPlayerDialogues();
+                    // Get the current UI Textboxes from the UI Manager
+                    var playerDialogues = ui_man.getPlayerDialogues();
 
-                // Get the mouse coordinates from Input Manager
-                var MouseCoord = ManagerOfInput.GetMousePos();
+                    // Get the mouse coordinates from Input Manager
+                    var MouseCoord = ManagerOfInput.GetMousePos();
 
-                // If the mouse is currently dragging
-                if (ManagerOfInput.GetMouseDown()) {
+                    // If the mouse is currently dragging
+                    if (ManagerOfInput.GetMouseDown()) {
 
-                    // Loop through buttons
-                    for (var i = 0; i < buttons.Count; i++) {
-                        // Find button currently being interacted with
-                        if (buttons[i].GetSelected()) {
-                            // Move the button around the screen
-                            buttons[i].translate(MouseCoord[0], MouseCoord[1], window.Size.X, window.Size.Y);
+                        // Loop through buttons
+                        for (var i = 0; i < buttons.Count; i++) {
+                            // Find button currently being interacted with
+                            if (buttons[i].GetSelected()) {
+                                // Move the button around the screen
+                                buttons[i].translate(MouseCoord[0], MouseCoord[1], window.Size.X, window.Size.Y);
 
-                            // Check collision with UI Textboxes
-                            // Loop through UI Textboxes
-                            for (var j = 0; j < playerDialogues.Count; j++) {
-                                // If the mouse just came from inside a UI Textbox
-                                if (playerDialogues[j].wasMouseIn()) {
-                                    if (!playerDialogues[j].Contains(buttons[i])) {
-                                        // Mouse has now left the UI Textbox so set it to false
-                                        playerDialogues[j].setMouseWasIn(false);
-                                        // Reset the color to match its previous color
-                                        playerDialogues[j].setBoxColor(playerDialogues[j].getBoxColor("prev"));
-                                        // Update the rest of the buttons in the cluster
-                                        ui_man.updateClusterColors(playerDialogues[j], playerDialogues, playerDialogues[j].getBoxColor("prev"), false);
+                                // Check collision with UI Textboxes
+                                // Loop through UI Textboxes
+                                for (var j = 0; j < playerDialogues.Count; j++) {
+                                    // If the mouse just came from inside a UI Textbox
+                                    if (playerDialogues[j].wasMouseIn()) {
+                                        if (!playerDialogues[j].Contains(buttons[i])) {
+                                            // Mouse has now left the UI Textbox so set it to false
+                                            playerDialogues[j].setMouseWasIn(false);
+                                            // Reset the color to match its previous color
+                                            playerDialogues[j].setBoxColor(playerDialogues[j].getBoxColor("prev"));
+                                            // Update the rest of the buttons in the cluster
+                                            ui_man.updateClusterColors(playerDialogues[j], playerDialogues, playerDialogues[j].getBoxColor("prev"), false);
 
+                                        }
+
+                                        // If mouse just came from outside the UI Textbox
+                                    } else {
+                                        if (playerDialogues[j].Contains(buttons[i])) {
+                                            // Mouse is now inside a UI Textbox, so set it to true
+                                            playerDialogues[j].setMouseWasIn(true);
+                                            // Update previous color to current color of the UI Textbox
+                                            playerDialogues[j].setPrevColor(playerDialogues[j].getBoxColor("curr"));
+                                            // Update current color to selected tonal button color
+                                            playerDialogues[j].setBoxColor(buttons[i].getTonalColor());
+                                            // Update the rest of the buttons in the cluster
+                                            ui_man.updateClusterColors(playerDialogues[j], playerDialogues, buttons[i].getTonalColor(), true);
+
+
+                                        }
                                     }
 
-                                    // If mouse just came from outside the UI Textbox
-                                } else {
-                                    if (playerDialogues[j].Contains(buttons[i])) {
-                                        // Mouse is now inside a UI Textbox, so set it to true
-                                        playerDialogues[j].setMouseWasIn(true);
-                                        // Update previous color to current color of the UI Textbox
-                                        playerDialogues[j].setPrevColor(playerDialogues[j].getBoxColor("curr"));
-                                        // Update current color to selected tonal button color
-                                        playerDialogues[j].setBoxColor(buttons[i].getTonalColor());
-                                        // Update the rest of the buttons in the cluster
-                                        ui_man.updateClusterColors(playerDialogues[j], playerDialogues, buttons[i].getTonalColor(), true);
-
-
-                                    }
                                 }
 
                             }
-
                         }
+
                     }
+
+                } else if (State.GetState() == "pause") {
+                    State.getGameTimer("game").PauseTimer();
 
                 }
 
-            } else if (State.GetState() == "pause") {
-                State.getGameTimer("game").PauseTimer();
 
             }
+            //Ensures that AI dialogue doesnt get loaded more than once per timer done
 
-
-        }
-        //Ensures that AI dialogue doesnt get loaded more than once per timer done
-        bool loadedAIDialogueOnce = false;
-
-        bool playerChoice = false;
+            bool playerChoice = false;
 
         protected override void Draw() {
 
@@ -448,51 +483,56 @@ namespace Test {
                     }
                     if (State.dialogueIndex != "player") window.Draw(toneBar);
                     for (var i = 0; i < buttons.Count; i++) {
+
                         window.Draw(buttons[i]);
+                        }
+                        window.Draw(State.getGameTimer("game")); //this is the speak button
                     }
-                    window.Draw(State.getGameTimer("game")); //this is the speak button
-                }
                 if (playerChoice) {
+
                     window.Draw(D_Man);
-                }
+                        }
 
-                if (State.GetState() == "pause") {
+                        if (State.GetState() == "pause") {
 
-                    pauseMenu.DrawPauseBG(window);
-                    if (State.GetMenuState() == "pause") {
-                        window.Draw(pauseMenu);
-                    } else if (State.GetMenuState() == "settings") {
-                        window.Draw(settingsMenu);
+                            pauseMenu.DrawPauseBG(window);
+                            if (State.GetMenuState() == "pause") {
+                                window.Draw(pauseMenu);
+                            } else if (State.GetMenuState() == "settings") {
+                                window.Draw(settingsMenu);
 
-                    }
+                            }
 
-                }
+                        }
+
 
                 if (debugInfo) {
-                    Text AI_DB = new Text("LoadAIOnce: " + loadedAIDialogueOnce + "\n" +
-                                          "AI_DB - animStart: " + State.dialogueBox.getAnimationStart() + "\n" +
-                                          "        awaitInput: " + State.dialogueBox.getAwaitInput() + "\n" +
-                                          "        dialoguePanesLength: " + State.dialogueBox.dialoguePanes.Count + "\n" +
-                                          "        init: " + State.dialogueBox.init + "\n" +
-                                          "        active: " + State.dialogueBox.active, new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf"), 20);
+                                Text AI_DB = new Text("AI_DB - animStart: " + State.dialogueBox.getAnimationStart() + "\n" +
+                                                      "        awaitInput: " + State.dialogueBox.getAwaitInput() + "\n" +
+                                                      "        dialoguePanesLength: " + State.dialogueBox.elementIndex + ":" + State.dialogueBox.dialoguePanes.Count + "\n" +
+            
+                                                      "        init: " + State.dialogueBox.init + "\n" +
+                                                      "        active: " + State.dialogueBox.active + "\n" +
+                                                      "        dialogue: " + State.dialogueBox.getDialogueText(), new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf"), 20);
 
-                    Text P_DB = new Text("P_DB - animStart: " + State.playerDialogueBox.getAnimationStart() + "\n" +
-                                          "        awaitInput: " + State.playerDialogueBox.getAwaitInput() + "\n" +
-                                          "        dialoguePanesLength: " + State.playerDialogueBox.dialoguePanes.Count + "\n" +
-                                          "        init: " + State.playerDialogueBox.init + "\n" +
-                                          "        active: " + State.playerDialogueBox.active, new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf"), 20);
-                    AI_DB.Position = new Vector2f(SCREEN_WIDTH - (AI_DB.GetGlobalBounds().Width + 50), 50);
-                    P_DB.Position = new Vector2f(SCREEN_WIDTH - (P_DB.GetGlobalBounds().Width + 50), 200);
-                    AI_DB.Color = Color.White;
-                    P_DB.Color = Color.White;
-                    window.Draw(AI_DB);
-                    window.Draw(P_DB);
+                                Text P_DB = new Text("P_DB - animStart: " + State.playerDialogueBox.getAnimationStart() + "\n" +
+                                                      "        awaitInput: " + State.playerDialogueBox.getAwaitInput() + "\n" +
+                                                      "        dialoguePanesLength: " + State.playerDialogueBox.elementIndex + ":" + State.playerDialogueBox.dialoguePanes.Count + "\n" +
+                                                      "        init: " + State.playerDialogueBox.init + "\n" +
+                                                      "        active: " + State.playerDialogueBox.active + "\n" +
+                                                      "        dialogue: " + State.playerDialogueBox.getDialogueText(), new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf"), 20);
+                                AI_DB.Position = new Vector2f(SCREEN_WIDTH - (AI_DB.GetGlobalBounds().Width + 50), 50);
+                                P_DB.Position = new Vector2f(SCREEN_WIDTH - (P_DB.GetGlobalBounds().Width + 50), P_DB.GetGlobalBounds().Top + AI_DB.GetGlobalBounds().Height + 50);
+                                AI_DB.Color = Color.White;
+                                P_DB.Color = Color.White;
+                                window.Draw(AI_DB);
+                                window.Draw(P_DB);
+                            }
+                        }
+
+
+                    }
+
+
                 }
             }
-
-
-        }
-
-
-    }
-}
