@@ -232,7 +232,7 @@ namespace Test {
                 State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
 
                 // Update response Lists with the recently used tone
-                responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, currentTone.ToString());
+                responseList = s.ChooseDialog(Load.playerexpo, pcurrid, currentTone.ToString());
                 if (sman.testPlotPoint(sman.getDialogueType())) {
                     //Console.WriteLine("hello babby");
                     Load.NPCDialogueObj = Load.dadp;
@@ -260,7 +260,7 @@ namespace Test {
 
                 updateCurrents();
 
-                responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, tone.Root.ToString());
+                responseList = s.ChooseDialog(Load.playerexpo, pcurrid, tone.Root.ToString());
 
                 ui_man.reset(responseList);
             } else {
@@ -276,7 +276,6 @@ namespace Test {
 
         protected override void Initialize() {
             ///sneaky deeky/
-            Load.playerDialogueObj1 = Load.playerexpo;
             
             ///
 
@@ -311,7 +310,7 @@ namespace Test {
             //Originally in LoadContent/////////////////////////////////////////////////////////////////////////////////
             // Create Character states
 
-            responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, currentTone.ToString());
+            responseList = s.ChooseDialog(Load.playerexpo, pcurrid, currentTone.ToString());
             responseListNPC = s.ChooseDialog(Load.NPCDialogueObj, ncurrid, currentTone.ToString());
 
             ui_man.produceTextBoxes(responseList[0].content);
