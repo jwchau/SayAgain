@@ -265,7 +265,7 @@ namespace Test {
 
                 // Update response Lists with the recently used tone
                 responseList = s.ChooseDialog(Load.playerexpo, pcurrid, currentTone.ToString());
-                if (/*sman.testPlotPoint(sman.getDialogueType())*/) {
+                if (sman.testPlotPoint(sman.getDialogueType())) {
                     //Console.WriteLine("hello babby");
                     Load.NPCDialogueObj = Load.dadp;
                     responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid);
@@ -279,6 +279,7 @@ namespace Test {
                     int temp1 = Int32.Parse(ncurrid2);
                     temp1++;
                     ncurrid2 = temp1.ToString();
+                    
 
                 }
 
