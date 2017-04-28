@@ -111,9 +111,8 @@ namespace Test {
         }
 
         private void onKeyPressed(object sender, KeyEventArgs e) {
-            if (State.GetState() == "game") {
-                if (e.Code == Keyboard.Key.Space) {
-
+            if (e.Code == Keyboard.Key.Space) {
+                if (State.GetState() == "game") {
 
                     // Activate playerDialogueBox to display and be responsive, or switch to AI dialogue
                     if (State.dialogueIndex == "player") {
@@ -170,20 +169,94 @@ namespace Test {
 
                     //Console.WriteLine("~~~~~~~~~~~~~~~~~~~~ INDEX RIGHT AFTER ADVANCE CONVERSATION IN TIMERACTION: " + State.dialogueIndex);
 
-                }
+                } else if (State.GetState() == "tutorial"){
+                    if (State.dialogueIndex == "player") {
+                        if (State.playerDialogueBox.getAwaitInput() == false && State.playerDialogueBox.printTime != 0) {
+                            State.playerDialogueBox.printTime = 0;
+                        } else {
+                            Console.WriteLine("~~~~~~~~~~~~~~~~~ STEP: Entered spacebar PLAYER");
 
-                #region button to apply tones
+                            // State.advanceConversation("", null, null);
+
+                            if (responseListExpo[0].tone == "Default") {
+                                Console.WriteLine("~~~~~~~~~~~~~~~~~ STEP: TONE IS DEFAULT");
+                                int temp = Int32.Parse(pcurrid);
+                                temp++;
+                                pcurrid = temp.ToString();
+                                responseListExpo = s.ChooseDialog(Load.playerexpo, pcurrid, "Root");
+
+                                Console.WriteLine("~~~~~~~~~~~~~~~~~ STEP: AFTER TONE IS DEFAULT AND PRE WHILE LOOP CONTENT IS:  " + responseListExpo[0].content);
+
+                                while (responseListExpo[0].skip == "true") {
+                                    Console.WriteLine("~~~~~~~~~~~~~~~~~ STEP: RESPONSE LIST SKIP WAS TRUE");
+                                    temp = Int32.Parse(pcurrid);
+                                    temp++;
+                                    pcurrid = temp.ToString();
+
+                                    responseListExpo = s.ChooseDialog(Load.playerexpo, pcurrid, "Default");
+                                    //State.setResponseList("player", responseListExpo);
+                                }
+
+                                Console.WriteLine("~~~~~~~~~~~~~~~~~ STEP: POST WHILE LOOP RESPONSELIST CONTENT: " + responseListExpo[0].content);
+                                Console.WriteLine("~~~~~~~~~~~~~~~~~ STEP: POST WHILE LOOP DIALOGUE INDEX IS: " + State.dialogueIndex);
+                                State.setResponseList("player", responseListExpo);
+                                State.advanceConversation("", null, null);
+                            } else if (responseListExpo[0].tone == "Root") {
+                                if (responseListNPCExpo[0].inext == "") {
+                                    Console.WriteLine("~~~~~~~~~~~~~~~~~ STEP: TONE IS ROOT");
+                                    Console.WriteLine("~~~~~~~~~~~~~~~~~ STEP: ROOT CONTENT IS: " + responseListExpo[0].content);
+                                    Console.WriteLine("?????????????????? STEP: RESPONSELIST NPC INEXT: " + responseListNPCExpo[0].inext);
+                                    State.setResponseList("AI", responseListNPCExpo);
+                                    State.dialogueIndex = "AI";
+
+                                    State.advanceConversation("", null, null);
+                                } else if (responseListNPCExpo[0].inext == "player") {
+                                    Console.WriteLine("!Y!O!U!K!N!O!W!W!H!A!T!T!I!M!E!I!T!I!S!?");
+                                    int temp = Int32.Parse(pcurrid);
+                                    temp++;
+                                    pcurrid = temp.ToString();
+
+                                    responseListExpo = s.ChooseDialog(Load.playerexpo, pcurrid, "Root");
+                                    State.setResponseList("player", responseListExpo);
+
+                                    //State.advanceConversation("", null, null);
+                                }
+
+                            }
+                        }
+                    } else if (State.dialogueIndex == "root") {
+                        if (responseListExpo[0].skip == "true") {
+                            Console.WriteLine("Crawling in my skin");
+                            int temp = Int32.Parse(pcurrid);
+                            temp++;
+                            pcurrid = temp.ToString();
+
+                            responseListExpo = s.ChooseDialog(Load.playerexpo, pcurrid, "Default");
+                        }
+                        State.advanceConversation("", null, null);
+                        
+                    } else if (State.dialogueIndex == "AI") {
+                        int temp = Int32.Parse(ncurrid);
+                        temp++;
+                        ncurrid = temp.ToString();
+                        //responseListNPCExpo = s.ChooseDialog3(Load.npcexpo, ncurrid, )
+                       State.advanceConversation("", null, null);
+                    } else if (State.dialogueIndex == "interject") {
+
+                    }
+                }
+            }
+
+            if (State.GetState() == "game") {
+                if (e.Code == Keyboard.Key.P) {
+                    // Toggles game state between game and pause
+                    State.TogglePause();
+                }
                 if (State.getGameTimer("game").getStart()) {
                     if (e.Code == Keyboard.Key.Num1) ui_man.applyToneShortcut(buttons[0]);
                     else if (e.Code == Keyboard.Key.Num2) ui_man.applyToneShortcut(buttons[1]);
                     else if (e.Code == Keyboard.Key.Num3) ui_man.applyToneShortcut(buttons[2]);
                     else if (e.Code == Keyboard.Key.Num4) ui_man.applyToneShortcut(buttons[3]);
-                }
-                #endregion
-
-                if (e.Code == Keyboard.Key.P) {
-                    // Toggles game state between game and pause
-                    State.TogglePause();
                 }
             }
         }
@@ -216,19 +289,23 @@ namespace Test {
 
         //after timer runs out update the current stuff
         private void updateCurrents() {
-            int temp2 = Int32.Parse(pcurrid);
-            int temp1 = Int32.Parse(ncurrid);
+            if (State.GetState() == "game") {
+                int temp2 = Int32.Parse(pcurrid);
+                int temp1 = Int32.Parse(ncurrid);
 
-            temp2++;
-            if (temp2 % 2 == 0 && temp2 > 2) {
-                temp1++;
+                temp2++;
+                if (temp2 % 2 == 0 && temp2 > 2) {
+                    temp1++;
+                }
+
+                ncurrid = temp1.ToString();
+                pcurrid = temp2.ToString();
+
+                if (responseList.ElementAt(0).next != "") pcurrid = responseList.ElementAt(0).next;
+                if (responseListNPC.ElementAt(0).next != "") ncurrid = responseListNPC.ElementAt(0).next;
+            } else if (State.GetState() == "tutorial"){
+
             }
-
-            ncurrid = temp1.ToString();
-            pcurrid = temp2.ToString();
-
-            if (responseList.ElementAt(0).next != "") pcurrid = responseList.ElementAt(0).next;
-            if (responseListNPC.ElementAt(0).next != "") ncurrid = responseListNPC.ElementAt(0).next;
         }
         #endregion
 
@@ -236,46 +313,79 @@ namespace Test {
 
         #region load dialogue new
         public void loadDialogues() {
-            if (currentTone != tone.Root) {
-                // Load playerDialogueBox with the new content from responseList
-                State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
+            if (State.GetState() == "game") {
+                if (currentTone != tone.Root) {
+                    // Load playerDialogueBox with the new content from responseList
+                    State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
 
-                // Update response Lists with the recently used tone
-                responseList = s.ChooseDialog(Load.playerexpo, pcurrid, currentTone.ToString());
-                if (sman.testPlotPoint(sman.getDialogueType())) {
-                    //Console.WriteLine("hello babby");
-                    Load.NPCDialogueObj = Load.dadp;
-                    responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid);
-                    if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
+                    // Update response Lists with the recently used tone
+                    responseList = s.ChooseDialog(Load.playerexpo, pcurrid, currentTone.ToString());
+                    if (sman.testPlotPoint(sman.getDialogueType())) {
+                        //Console.WriteLine("hello babby");
+                        Load.NPCDialogueObj = Load.dadp;
+                        responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid);
+                        if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
+                    } else {
+                        Load.NPCDialogueObj = Load.npcexpo;
+                        var rnd = new Random();
+                        //Console.WriteLine("por que: " + ncurrid);
+                        //responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, (double)(rnd.Next(0, 2)), ncurrid);
+                        responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid2);
+                        int temp1 = Int32.Parse(ncurrid2);
+                        temp1++;
+                        ncurrid2 = temp1.ToString();
+
+                    }
+
+                    if (responseListNPC[0].speaker != "") {
+                        speaker = responseListNPC[0].speaker;
+
+                    }
+
+                    State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
+                    State.advanceConversation(speaker, responseList, responseListNPC);
+
+                    updateCurrents();
+
+                    responseList = s.ChooseDialog(Load.playerexpo, pcurrid, tone.Root.ToString());
+
+                    ui_man.reset(responseList);
                 } else {
-                    Load.NPCDialogueObj = Load.npcexpo;
-                    var rnd = new Random();
-                    //Console.WriteLine("por que: " + ncurrid);
-                    //responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, (double)(rnd.Next(0, 2)), ncurrid);
-                    responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid2);
-                    int temp1 = Int32.Parse(ncurrid2);
+                    State.getGameTimer("game").resetTimer();
+                    State.getGameTimer("game").startTimer();
+
+                }
+            } else if (State.GetState() == "tutorial") {
+                if (currentTone != tone.Root) {
+                    // Load playerDialogueBox with the new content from responseList
+                    State.playerDialogueBox.loadNewDialogue("player", responseListExpo[0].content);
+
+                    // Update response Lists with the recently used tone
+                    responseListExpo = s.ChooseDialog(Load.playerexpo, pcurrid, currentTone.ToString());
+                    
+                    responseListNPCExpo = s.ChooseDialog3(Load.npcexpo, 1, ncurrid);
+                    int temp1 = Int32.Parse(ncurrid);
                     temp1++;
-                    ncurrid2 = temp1.ToString();
+                    ncurrid = temp1.ToString();
+
+                    if (responseListNPCExpo[0].speaker != "") {
+                        speaker = responseListNPCExpo[0].speaker;
+
+                    }
+
+                    State.playerDialogueBox.loadNewDialogue("player", responseListExpo[0].content);
+                    State.advanceConversation(speaker, responseListExpo, responseListNPCExpo);
+
+                    updateCurrents();
+
+                    responseListExpo = s.ChooseDialog(Load.playerexpo, pcurrid, tone.Root.ToString());
+
+                    ui_man.reset(responseListExpo);
+                } else {
+                    State.getGameTimer("game").resetTimer();
+                    State.getGameTimer("game").startTimer();
 
                 }
-
-                if (responseListNPC[0].speaker != "") {
-                    speaker = responseListNPC[0].speaker;
-
-                }
-
-                State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
-                State.advanceConversation(speaker, responseList, responseListNPC);
-
-                updateCurrents();
-
-                responseList = s.ChooseDialog(Load.playerexpo, pcurrid, tone.Root.ToString());
-
-                ui_man.reset(responseList);
-            } else {
-                State.getGameTimer("game").resetTimer();
-                State.getGameTimer("game").startTimer();
-
             }
         }
         #endregion
@@ -284,9 +394,6 @@ namespace Test {
         StoryManager sman = new StoryManager();
 
         protected override void Initialize() {
-            ///sneaky deeky/
-            
-            ///
 
             backwall = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/backwall.png"));
             flower = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/flowershadow.png"));
@@ -319,10 +426,22 @@ namespace Test {
             //Originally in LoadContent/////////////////////////////////////////////////////////////////////////////////
             // Create Character states
 
-            responseList = s.ChooseDialog(Load.playerexpo, pcurrid, currentTone.ToString());
+            responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, currentTone.ToString());
             responseListNPC = s.ChooseDialog(Load.NPCDialogueObj, ncurrid, currentTone.ToString());
 
+            int temp = Int32.Parse(pcurrid);
+            temp++;
+            pcurrid = temp.ToString();
+
+            responseListExpo = s.ChooseDialog(Load.playerexpo, pcurrid, currentTone.ToString());
+            responseListNPCExpo = s.ChooseDialog(Load.npcexpo, ncurrid, "");
+
+            State.setResponseList("player", responseListExpo);
+            State.setResponseList("NPC", responseListNPCExpo);
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~ NPC LOADED DIALOGUE IS: " + responseListNPCExpo[0].content);
+
             ui_man.produceTextBoxes(responseList[0].content);
+
             //timeflag
             State.addTimer("game", 10, new Action(() => { TimerAction(); }));
             State.addTimer("cursor", 1, null);
