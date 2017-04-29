@@ -135,7 +135,6 @@ namespace Test
         private void onKeyReleased(object sender, KeyEventArgs e)
         {
         }
-        string ncurrid3;
         private void onKeyPressed(object sender, KeyEventArgs e)
         {
             
@@ -200,14 +199,9 @@ namespace Test
                                     ncurrid2 = temp.ToString();
                                 }
 
-                                if (responseListNPC[0].speaker != "")
-                                {
+                                if (responseListNPC[0].speaker != "") {
                                     speaker = responseListNPC[0].speaker;
                                 }
-
-                                 int temp1 = Int32.Parse(ncurrid3);
-                                 temp1++;
-                                 ncurrid3 = temp1.ToString(); //only doing this for the one interjection dialogue mom has in dadpp.json
                                 
                                 State.advanceConversation(speaker, responseList, responseListNPC);
                             }
@@ -350,6 +344,7 @@ namespace Test
         {
 
             splash = new Sprite(new Texture("../../Art/banner2.png"));
+            alphaSplash = new Sprite(new Texture("../../Art/alpha.png"));
             momSplash = new Sprite(new Texture("../../Art/angrymom.png"));
             alexSplash = new Sprite(new Texture("../../Art/alexdemo.png"));
             dadSplash = new Sprite(new Texture("../../Art/daddemo.png"));
@@ -363,6 +358,7 @@ namespace Test
 
 
             splash.Scale = new Vector2f(.5f,.5f);
+            alphaSplash.Scale = new Vector2f(.5f, .5f);
             alexSplash.Scale = new Vector2f(.5f, .5f);
             dadSplash.Scale = new Vector2f(1.1f, 1.1f);
 
@@ -374,6 +370,7 @@ namespace Test
             wallWindow.Scale = new Vector2f(SCREEN_WIDTH / wallWindow.GetGlobalBounds().Width, SCREEN_HEIGHT / wallWindow.GetGlobalBounds().Height);
 
             splash.Position = new Vector2f(SCREEN_WIDTH/2.8f, SCREEN_HEIGHT/25);
+            alphaSplash.Position = new Vector2f(SCREEN_WIDTH / 2.3f, SCREEN_HEIGHT / 6.5f);
             momSplash.Position = new Vector2f(SCREEN_WIDTH - momSplash.GetGlobalBounds().Width, SCREEN_HEIGHT - momSplash.GetGlobalBounds().Height);
             dadSplash.Position = new Vector2f(0, SCREEN_HEIGHT - dadSplash.GetGlobalBounds().Height + 30);
             alexSplash.Position = new Vector2f(SCREEN_WIDTH/2, SCREEN_HEIGHT - alexSplash.GetGlobalBounds().Height);
@@ -431,8 +428,6 @@ namespace Test
             Arm.setArmPosition(Dad.getArmPosition());
             Arm.active(true);
 
-
-            ncurrid3 = Int32.Parse(ncurrid2).ToString();
         }
 
         private void LoadInitialPreReqs()
@@ -550,6 +545,7 @@ namespace Test
                 if (State.GetMenuState() == "start")
                 {
                     window.Draw(splash);
+                    window.Draw(alphaSplash);
                     window.Draw(momSplash);
                     window.Draw(dadSplash);
                     window.Draw(alexSplash);
