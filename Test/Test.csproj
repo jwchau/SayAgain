@@ -100,9 +100,8 @@
     <Compile Include="CharacterState.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="Alex.cs" />
-
     <Compile Include="Arm.cs" />
-    <Compile Include="Mom.cs" />
+    <Compile Include="mom.cs" />
     <Compile Include="OldSelector.cs" />
     <Compile Include="StoryManager.cs" />
     <Compile Include="Dad.cs" />
@@ -141,14 +140,12 @@
     <None Include="dad.json" />
     <None Include="dadpp.json" />
     <None Include="dadtt.json" />
-
     <None Include="dumbo.json" />
     <None Include="Fonts\Adore64.ttf" />
     <None Include="newplayerpp.json" />
     <None Include="newplayertt.json" />
     <None Include="packages.config" />
     <None Include="player.json" />
-
     <None Include="playerTutorial.json" />
     <None Include="sampleJSON.JSON" />
     <None Include="Test_TemporaryKey.pfx" />
