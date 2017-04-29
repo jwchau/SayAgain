@@ -68,7 +68,6 @@ namespace Test
         public void restartTimer()
 		{
             //timerFinished = false;
-            //Console.WriteLine("oh baby");
             start = true;
 			countDown = initTime + 1;
 			timeDiff = 0;
@@ -87,7 +86,6 @@ namespace Test
 
 		public void startTimer()
 		{
-            //Console.WriteLine("plz do not poop here");
 			start = true;
             timeDiff = 0;
             oldTimeSeconds = (DateTime.Now.Ticks / 10000000);
@@ -97,7 +95,6 @@ namespace Test
 		{
             if (start)
             {
-                //Console.WriteLine("I AM HERE");
                 pauseTime = newTimeSeconds;
                 double a = pauseTime;
                 double b = DateTime.Now.Ticks / 10000000;

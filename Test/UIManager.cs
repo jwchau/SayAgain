@@ -28,7 +28,6 @@ namespace Test {
                 }
             }
             int xPos = (int)SCREEN_WIDTH / tonez.Count;
-            //Console.WriteLine(SCREEN_HEIGHT);
             for (int i = 1; i <= tonez.Count; i++) {
                 addButton(new UIButton(xPos / 2 + (i - 1) * xPos, (float)(SCREEN_HEIGHT - SCREEN_HEIGHT * 0.26), tonez[i - 1]));
 
@@ -43,6 +42,8 @@ namespace Test {
         static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
 
         int buttonOrder = 2;
+
+        public tone appliedTone = tone.Root;
 
         string[] dialogueArray;
 
@@ -85,11 +86,6 @@ namespace Test {
         public List<UITextBox> produceTextBoxes(string Dialogue) {
             dialogueArray = Dialogue.Split(' ');
             List<string> words = new List<string>();
-            foreach (var dialogue in dialogueArray) {
-
-                //Console.WriteLine(dialogue);
-            }
-
             string tempString = dialogueArray[0];
             Font tempFont = new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf");
             uint x = 5;
@@ -103,8 +99,6 @@ namespace Test {
                 length = dialogueArray.Length;
             }
 
-            //Console.WriteLine("THE LENGTH OF THE DIALOGUE IS: " + dialogueArray.Length);
-
             if (dialogueArray.Length != 1) {
 
                 for (int word = 1; word < dialogueArray.Length; word++) {
@@ -112,7 +106,6 @@ namespace Test {
                     if (tempText.GetGlobalBounds().Width + 10 >= SCREEN_WIDTH) {
 
                         //time to go the next line
-                        //Console.WriteLine("NEXT LINE TIME!!!");
                         playerDialogues.Add(new UITextBox(x, y, tempString, cluster));
                         y += (uint)tempText.GetGlobalBounds().Height + 10;
                         tempString = dialogueArray[word];
@@ -124,10 +117,8 @@ namespace Test {
 
                     } else {
 
-                        //Console.WriteLine("tempString before adding the next word: " + tempString);
                         tempString += ' ';
                         tempString += dialogueArray[word];
-                        //Console.WriteLine("tempString after adding the next word: " + tempString);
                         if (word == dialogueArray.Length - 1) {
 
                             playerDialogues.Add(new UITextBox(x, y, tempString, cluster));
@@ -155,7 +146,6 @@ namespace Test {
 
             foreach (var dialogue in playerDialogues) {
                 if (dialogue.getAffected() && !gotTone) {
-                    //Console.WriteLine(dialogue.getTone());
 
                     Tone = dialogue.getTone();
                     gotTone = true;
@@ -220,7 +210,8 @@ namespace Test {
                                 playerDialogues[k].setBoxColor(buttons[i].getTonalColor());
                                 playerDialogues[k].setAffected(true);
                                 playerDialogues[k].setTone(buttons[i].getTone());
-                                //Console.WriteLine("MY TONE IS: " + playerDialogues[0].getTone());
+                                appliedTone = playerDialogues[0].getTone();
+                                
 
                             }
                             break;

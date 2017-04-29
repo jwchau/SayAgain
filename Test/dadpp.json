@@ -7,7 +7,8 @@
       "id": "1",
       "FNC": "0",
       "speaker": "dad",
-      "finished": "fin"
+      "finished": "fin",
+      "inext": ""
     },
     {
       "content": "tone: root; plotpoint: DadAccusesMum; id: 1; FNC: -5; fin;",
@@ -16,7 +17,8 @@
       "id": "1",
       "FNC": "-5",
       "speaker": "",
-      "finished": "fin"
+      "finished": "fin",
+      "inext": ""
     },
     {
       "content": "tone: root; plotpoint: MomBlowsUp; id: 1; FNC: 3; fin;",
@@ -25,7 +27,8 @@
       "id": "1",
       "FNC": "3",
       "speaker": "",
-      "finished": "fin"
+      "finished": "fin",
+      "inext": ""
     },
     {
       "content": "tone: root; plotpoint: BombsAfghan; id: 1; FNC: 10; fin;",
@@ -34,16 +37,58 @@
       "id": "1",
       "FNC": "10",
       "speaker": "",
-      "finished": "fin"
+      "finished": "fin",
+      "inext": ""
     },
     {
-      "content": "tone: root; plotpoint: MomTellsPlayerTalkToAlex; id: 1; FNC: 10; fin;",
-      "tone": "Root",
+      "content": "hey, the Santa Cruz beaches have really given you a tan.",
+      "tone": "Indifferent",
       "plotpoint": "MomTellsPlayerTalkToAlex",
       "id": "1",
       "FNC": "10",
       "speaker": "",
-      "finished": "fin"
+      "finished": "fin",
+      "inext": ""
+    },
+    {
+      "content": "Woah there!",
+      "tone": "Blunt",
+      "plotpoint": "MomTellsPlayerTalkToAlex",
+      "id": "1",
+      "FNC": "10",
+      "speaker": "",
+      "finished": "fin",
+      "inext": "mom"
+    },
+    {
+      "content": "Aren't you as chipper as ever!",
+      "tone": "Compassionate",
+      "plotpoint": "MomTellsPlayerTalkToAlex",
+      "id": "1",
+      "FNC": "10",
+      "speaker": "",
+      "finished": "fin",
+      "inext": ""
+    },
+    {
+      "content": "Indeed... Well.. Glad to have you back!",
+      "tone": "Hesitant",
+      "plotpoint": "MomTellsPlayerTalkToAlex",
+      "id": "1",
+      "FNC": "10",
+      "speaker": "",
+      "finished": "fin",
+      "inext": ""
+    },
+    {
+      "content": "Someone got a attitude bug",
+      "tone": "Blunt",
+      "plotpoint": "MomTellsPlayerTalkToAlex",
+      "id": "2",
+      "FNC": "10",
+      "speaker": "mom",
+      "finished": "fin",
+      "inext": ""
     }
   ]
 }

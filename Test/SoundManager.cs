@@ -53,7 +53,6 @@ namespace Test
 
         public void playMusic(string musicname)
         {
-            //Console.WriteLine(current + " " + musicname);
             if (current != musicname)
             {
                 if (current != "None" && song.Status == SoundStatus.Playing)
@@ -61,7 +60,7 @@ namespace Test
                     song.Stop();
                 }
                 song = new Music(song_dict[musicname]);
-                song.Volume = 0;
+                //song.Volume = 0;
                 song.Play();
                 song.Loop = true;
                 current = musicname;

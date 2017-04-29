@@ -98,7 +98,6 @@ namespace Test
             else
             {
                 characterRect.FillColor = this.color;
-                //Console.WriteLine("i forgot what i said");
             }
         }
 

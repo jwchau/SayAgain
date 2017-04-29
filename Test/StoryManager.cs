@@ -63,21 +63,15 @@ namespace Test {
 
         public void findNextPossibleNodes() {
             numberOfChildren = 0;
-            Console.WriteLine("Current node: " + currentNode);
-            Console.WriteLine("Possible next nodes: ");
             if (plot_dict[currentNode].Item1 != null) {
                 //the string name of each child node
                 foreach (var n in plot_dict[currentNode].Item1) //each child
                 {
                     List<String> nextPreconditions = new List<String>();
                     numberOfChildren += 1;
-                    Console.WriteLine("- " + n);
                     if (plot_dict[n].Item2 != null) {
                         foreach (var c in plot_dict[n].Item2) //the precondition of each child
                         {
-
-                            Console.WriteLine(">>> With precondition: ");
-                            Console.WriteLine(">>> " + c);
 
                             nextPreconditions.Add(c);
 
@@ -101,7 +95,6 @@ namespace Test {
             foreach (var p in nextPreconditions) {
                 //if p has a ' in it (multiple preconditions)
                 //then separate the two conitions, parse for whether FNC or plot point requirement
-                //Console.WriteLine(p);
                 if (p.Contains(",")) {
                     string tmp = p.Replace(" ", String.Empty); //get rid of whitespace
                     var array = tmp.Split(',');

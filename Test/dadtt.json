@@ -1,76 +1,220 @@
 {
   "Dialogues": [
     {
-      "content": "dad transition block 1 part 1: bucket 1, id 1",
-      "tone": "Root",
+      "content": "It's the same but your mom's cooking seems to have gotten worse by the day!",
+      "tone": "Indifferent",
       "id": "1",
       "FNC": "0",
       "speaker": "dad",
-      "bucket": "1"
+      "bucket": "1",
+      "inext": "mom"
     },
     {
-      "content": "dad transition block 1 part 2: bucket 1, id 2",
-      "tone": "Root",
+      "content": "Not as much as your mom. ",
+      "tone": "Blunt",
+      "id": "1",
+      "FNC": "0",
+      "speaker": "dad",
+      "bucket": "1",
+      "inext": "mom"
+    },
+    {
+      "content": "Yes, I have been doing well but I can't speak for your mom.",
+      "tone": "Compassionate",
+      "id": "1",
+      "FNC": "0",
+      "speaker": "dad",
+      "bucket": "1",
+      "inext": "mom"
+    },
+    {
+      "content": "Umm sure?? Right honey?",
+      "tone": "Hesitant",
+      "id": "1",
+      "FNC": "0",
+      "speaker": "dad",
+      "bucket": "1",
+      "inext": "mom"
+    },
+    {
+      "content": "I do things around the house.",
+      "tone": "Blunt",
       "id": "2",
-      "FNC": "-5",
+      "FNC": "0",
       "speaker": "mom",
-      "bucket": "1"
+      "bucket": "1",
+      "inext": "alex"
     },
     {
-      "content": "dad transition block 1 part 3: bucket 1, id 3",
-      "tone": "Root",
-      "id": "3",
-      "FNC": "6",
-      "speaker": "alex",
-      "bucket": "1"
-    },
-    {
-      "content": "dad transition block 1 part 4: bucket 1, id 4",
-      "tone": "Root",
-      "id": "4",
-      "FNC": "-99999",
-      "speaker": "",
-      "bucket": "1"
-    },
-    {
-      "content": "dad transition block 1 part 5: bucket 1, id 5",
-      "tone": "Root",
-      "id": "5",
-      "FNC": "-99999",
-      "speaker": "dad",
-      "bucket": "1"
-    },
-    {
-      "content": "dad transition block 2 part 1: bucket 2, id 1",
-      "tone": "Root",
-      "id": "1",
-      "FNC": "0",
-      "speaker": "",
-      "bucket": "2"
-    },
-    {
-      "content": "dad transition block 2 part 2: bucket 2, id 2",
-      "tone": "Root",
+      "content": "Well I need to do everything around the house, so cut me some slack will ya.",
+      "tone": "Indifferent",
       "id": "2",
       "FNC": "0",
-      "speaker": "",
-      "bucket": "2"
+      "speaker": "mom",
+      "bucket": "1",
+      "inext": "alex"
     },
     {
-      "content": "dad transition block 2 part 3: bucket 2, id 3",
-      "tone": "Root",
+      "content": "I'm doing fine. Don't know what  your dad's going on about.",
+      "tone": "Compassionate",
+      "id": "2",
+      "FNC": "0",
+      "speaker": "mom",
+      "bucket": "1",
+      "inext": "alex"
+    },
+    {
+      "content": "Sure...",
+      "tone": "Hesitant",
+      "id": "2",
+      "FNC": "0",
+      "speaker": "mom",
+      "bucket": "1",
+      "inext": "alex"
+    },
+    {
+      "content": "What the heck Dad?",
+      "tone": "Blunt",
       "id": "3",
       "FNC": "0",
-      "speaker": "",
-      "bucket": "2"
+      "speaker": "alex",
+      "bucket": "1",
+      "inext": ""
     },
     {
-      "content": "dad transition block 2 part 4: bucket 2, id 4",
-      "tone": "Root",
+      "content": "What the heck Dad?",
+      "tone": "Indifferent",
+      "id": "3",
+      "FNC": "0",
+      "speaker": "alex",
+      "bucket": "1",
+      "inext": ""
+    },
+    {
+      "content": "What the heck Dad?",
+      "tone": "Compassionate",
+      "id": "3",
+      "FNC": "0",
+      "speaker": "alex",
+      "bucket": "1",
+      "inext": ""
+    },
+    {
+      "content": "What the heck Dad?",
+      "tone": "Hesitant",
+      "id": "3",
+      "FNC": "0",
+      "speaker": "alex",
+      "bucket": "1",
+      "inext": ""
+    },
+    {
+      "content": "What are you talking about? Everything is just FINE.",
+      "tone": "Blunt",
       "id": "4",
       "FNC": "0",
-      "speaker": "",
-      "bucket": "2"
+      "speaker": "dad",
+      "bucket": "1",
+      "inext": ""
+    },
+    {
+      "content": "There is nothing to heck about. Everything is just fine.",
+      "tone": "Indifferent",
+      "id": "4",
+      "FNC": "0",
+      "speaker": "dad",
+      "bucket": "1",
+      "inext": ""
+    },
+    {
+      "content": "I hope so too ",
+      "tone": "Compassionate",
+      "id": "4",
+      "FNC": "0",
+      "speaker": "dad",
+      "bucket": "1",
+      "inext": ""
+    },
+    {
+      "content": "Nope, nothing going on AT ALL.",
+      "tone": "Hesitant",
+      "id": "4",
+      "FNC": "0",
+      "speaker": "dad",
+      "bucket": "1",
+      "inext": ""
+    },
+    {
+      "content": "Haha! Of course I am still working — still doing the same boring thing. I am not that old, yet, you know.",
+      "tone": "Blunt",
+      "id": "5",
+      "FNC": "0",
+      "speaker": "dad",
+      "bucket": "1",
+      "inext": ""
+    },
+    {
+      "content": "Work's the same old, same old. There is nothing exciting to say about it.",
+      "tone": "Indifferent",
+      "id": "5",
+      "FNC": "0",
+      "speaker": "dad",
+      "bucket": "1",
+      "inext": ""
+    },
+    {
+      "content": "Work's the same old, same old. There is nothing exciting to say about it.",
+      "tone": "Compassionate",
+      "id": "5",
+      "FNC": "0",
+      "speaker": "dad",
+      "bucket": "1",
+      "inext": ""
+    },
+    {
+      "content": "Haha! Of course I am still working — still doing the same boring thing. I am not that old, yet, you know.",
+      "tone": "Hesitant",
+      "id": "5",
+      "FNC": "0",
+      "speaker": "dad",
+      "bucket": "1",
+      "inext": ""
+    },
+    {
+      "content": "Well, I suppose there is one thing… You see these cups? They’re amazing, expensive Swarovski crystal glasses your mom brought home.",
+      "tone": "Blunt",
+      "id": "6",
+      "FNC": "0",
+      "speaker": "dad",
+      "bucket": "1",
+      "inext": ""
+    },
+    {
+      "content": "It is. There is nothing like the same droning work that keeps me motivated. But hey, enough about work, let me tell you about these expensive glasses on the table. You’re mom brought them home about a month ago. VERY nice, VERY expensive Swarovski crystal glasses.",
+      "tone": "Indifferent",
+      "id": "6",
+      "FNC": "0",
+      "speaker": "dad",
+      "bucket": "1",
+      "inext": ""
+    },
+    {
+      "content": "Well, I suppose there is one thing… You see these cups? They’re amazing, expensive Swarovski crystal glasses your mom brought home.",
+      "tone": "Compassionate",
+      "id": "6",
+      "FNC": "0",
+      "speaker": "dad",
+      "bucket": "1",
+      "inext": ""
+    },
+    {
+      "content": "New things happen all the time! Just like these month old, nice, expensive Swarovski crystal glasses your mom brought!",
+      "tone": "Hesitant",
+      "id": "6",
+      "FNC": "0",
+      "speaker": "dad",
+      "bucket": "1",
+      "inext": ""
     }
   ]
 }

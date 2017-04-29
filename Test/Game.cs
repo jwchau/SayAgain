@@ -31,7 +31,7 @@ namespace Test
         protected List<UIButton> buttons;
 
         // Debug
-        protected bool debugInfo = true;
+        protected bool debugInfo = false;
 
 
         //Menus
@@ -74,10 +74,13 @@ namespace Test
 
         #endregion
 
+        protected Sprite splash, alexSplash, momSplash, dadSplash;
         protected Sprite mom, alex, dad, toneBar, backwall, flower, lamp, pictures, table, wallWindow;
         protected RectangleShape textBackground;
         ContextSettings settings;
         protected Character Mom, Alexis, Dad, Arm;
+
+        
 
         /////////////////////////////////////////////////////////////////////////////////////////////
 
