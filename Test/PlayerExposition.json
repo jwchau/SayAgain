@@ -26,7 +26,7 @@
       "tone": "Default",
       "id": "4",
       "skip": "false",
-      "next": "NPC"
+      "next": "false"
     },
     {
       "content": "r3",
@@ -40,7 +40,7 @@
       "tone": "Default",
       "id": "6",
       "skip": "false",
-      "next": ""
+      "next": "Root"
     },
     {
       "content": "How is the family treating you?",

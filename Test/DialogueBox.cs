@@ -78,8 +78,11 @@ namespace Test {
         }
 
         public bool checkNext() {
-            if (elementIndex < dialoguePanes.Count) {
-                Console.WriteLine("\n---------- CHECK NEXT");
+            if (this.printTime != 0 && this.getAnimationStart() && !this.getAwaitInput()) {
+                printTime = 0;
+                return false;
+            } else if (elementIndex < dialoguePanes.Count) {
+                //Console.WriteLine("\n---------- CHECK NEXT");
                 if (cts != null) {
                     cts.Cancel();
                 }
@@ -88,18 +91,19 @@ namespace Test {
                     printTime = 30;
                     await animateText(cts.Token);
                 }, cts.Token);
-                Console.WriteLine("CHECKNEXT RETURN FALSE");
+                //Console.WriteLine("CHECKNEXT RETURN FALSE");
                 return false;
             } else {
-                if (tag == "AI") {
+                if (tag == "AI" || tag == "player") {
                     state.startTimer("game");
                 }
-                
+
                 awaitInput = false;
-                Console.WriteLine("CHECKNEXT RETURN TRUE");
+                //Console.WriteLine("CHECKNEXT RETURN TRUE");
                 return true;
             }
         }
+   
 
         public void loadNewDialogue(string speaker, string content) {
             if (speaker == "alex") {

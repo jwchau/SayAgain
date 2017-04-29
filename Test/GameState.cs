@@ -29,9 +29,11 @@ namespace Test {
         public string dialogueIndex;
         public bool interjection = false;
         public bool skip = false;
+        bool changeSpeaker = false;
+        public bool advancePlayer = false;
+        public bool advanceNPC = false;
         int counter = 0;
-        static List<DialogueObj> stateResponseListExpo;
-        static List<DialogueObj> stateResponseListNPCExpo;
+        List<DialogueObj> stateResponseListExpo;
 
         public void advanceConversation(string speaker, List<DialogueObj> responseList, List<DialogueObj> responseListNPC) {
             if (currentState == "tutorial") {
@@ -41,98 +43,67 @@ namespace Test {
                     dialogueIndex = "player";
 
                 } else if (dialogueIndex == "AI") {
-
-                    Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! STEP: ENTERING AI ADVANCE CONVERSATION");
-
-
-                    if (playerDialogueBox.active && !dialogueBox.active) {
-                        Console.WriteLine("~~~~~~~~~~~~~~~~~ STEP: AI INDEX SOMETHING I I WEHAT DIS");
-                        if (playerDialogueBox.printTime != 0 && playerDialogueBox.getAnimationStart() && !playerDialogueBox.getAwaitInput()) {
-                            playerDialogueBox.setPrintTime(0);
+                    Console.WriteLine("DI AI: " + responseListNPC[0].content);
+                    if (dialogueBox.checkNext()) {
+                        advanceNPC = true;
+                        if (responseListNPC[0].inext == "") changeSpeaker = true;
+                        if (changeSpeaker) {
+                            playerDialogueBox.loadNewDialogue("player", responseList[0].content);
+                            playerDialogueBox.init = true;
+                            playerDialogueBox.active = true;
+                            dialogueBox.active = false;
+                            dialogueIndex = "player";
+                            advanceNPC = false;
+                            changeSpeaker = false;
                         } else {
-                            if (playerDialogueBox.checkNext()) {
-                                playerDialogueBox.init = false;
-                                playerDialogueBox.active = false;
-                                dialogueBox.init = true;
-                                dialogueBox.active = true;
-                                Console.WriteLine("~~~~~~~~~~~~~~~~~ STEP: AI INDEX OF ADVANCE CONVERSATION");
-                                dialogueBox.loadNewDialogue(stateResponseListNPCExpo[0].speaker, stateResponseListNPCExpo[0].content);
-                                Console.WriteLine("~~~~~~~~~~~~~~~~~ STEP: PLAYER BOX ACTIVE I JUST LOADED THE NPC DIALOGUE");
-                                dialogueIndex = "root";
-                            }
+                            dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
+
                         }
-                    } else if (dialogueBox.active && !playerDialogueBox.active) {
-                        Console.WriteLine("~~~~~~~~~~~~~~~~~ STEP: AI INDEX SOMETHING ELSE");
-                        if (dialogueBox.printTime != 0 && dialogueBox.getAnimationStart() && !dialogueBox.getAwaitInput()) {
-                            dialogueBox.setPrintTime(0);
-                        } else {
-                            if (dialogueBox.checkNext()) {
-                                if (stateResponseListNPCExpo[0].inext == "") {
-                                    dialogueIndex = "player";
-                                    
-                                    dialogueBox.loadNewDialogue(stateResponseListNPCExpo[0].speaker, stateResponseListNPCExpo[0].content);
-                                    Console.WriteLine("~~~~~~~~~~~~~~~~~ STEP: DIALOGUE BOX ACTIVE I JUST LOADED THE NPC DIALOGUE");
-                                } else if (stateResponseListNPCExpo[0].inext == "player") {
-                                    dialogueIndex = "root";
-                                    Console.WriteLine(" @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ AI INDEX RESPONSE LIST CONTENT: " + stateResponseListExpo[0].content);
-                                    playerDialogueBox.init = true;
-                                    playerDialogueBox.active = true;
-                                    dialogueBox.init = false;
-                                    dialogueBox.active = false;
-                                    playerDialogueBox.loadNewDialogue("player", stateResponseListExpo[0].content);
-                                }
-                            }
-                        }
+
                     }
                 } else if (dialogueIndex == "root") {
-                    Console.WriteLine("=~=~=~=~=~=~=~=~= STEP: ROOT INDEX OF ADVANCE CONVERSATION ~=~==~=~=~=~=~=");
                     dialogueBox.init = false;
                     playerDialogueBox.init = true;
                     dialogueIndex = "player";
 
                 } else if (dialogueIndex == "player") {
-                    dialogueBox.init = false;
-                    dialogueBox.active = false;
-                    Console.WriteLine("~~~~~~~~~~~~~~~~~ STEP: PLAYER INDEX OF ADVANCE CONVERSATION");
-                    Console.WriteLine("~~~~~~~~~~~~~~~~~ STEP: PLAYER INDEX ADVANCE CONVERSATION CONTENT IS: " + stateResponseListExpo[0].content);
-                    Console.WriteLine("~~~~~~~~~~~~~~~~~ STEP: PLAYER INDEX ADVANCE CONVERSATION ANIMATION START IS: "+playerDialogueBox.animationStart);
-                    Console.WriteLine("~~~~~~~~~~~~~~~~~ STEP: PLAYER INDEX ADVANCE CONVERSATION AWAIT INPUT IS: " + playerDialogueBox.getAwaitInput());
-                    Console.WriteLine("~~~~~~~~~~~~~~~~~ STEP: PLAYER INDEX ADVANCE CONVERSATION NEXT IS: " + stateResponseListExpo[0].next);
+                    
 
-                    if (playerDialogueBox.active && !dialogueBox.active) {
-                        if (playerDialogueBox.printTime != 0 && playerDialogueBox.getAnimationStart() && !playerDialogueBox.getAwaitInput()) {
-                            playerDialogueBox.setPrintTime(0);
+                    Console.WriteLine("GS DI PLAYER RESPONSE LIST PLAYER NEXT: " + responseList[0].next);
+
+                    if (playerDialogueBox.checkNext()) {
+                        advancePlayer = true;
+                        if (changeSpeaker) {
+                            dialogueBox.loadNewDialogue(responseListNPC[0].speaker, responseListNPC[0].content);
+                            changeSpeaker = false;
+                            dialogueBox.init = true;
+                            dialogueBox.active = true;
+                            playerDialogueBox.active = false;
+                            dialogueIndex = "AI";
+                            advancePlayer = false;
                         } else {
-                            if (playerDialogueBox.checkNext()) {
-                                Console.WriteLine("adv convo player: " + stateResponseListExpo[0].content);
-                                if (stateResponseListExpo[0].next == "") {
-                                    if (stateResponseListExpo[0].skip == "true") {
-                                        dialogueIndex = "root";
-                                    } else {
-                                        // dialogueIndex = "AI";
-                                        playerDialogueBox.loadNewDialogue("player", stateResponseListExpo[0].content);
-
-                                    }
-                                } else {
-                                    Console.WriteLine("~~~~~~~~~~~~~~~~~ STEP: PLAYER INDEX ADVANCE CONVERSATION NPC CONTENT IS: " + stateResponseListNPCExpo[0].content);
-                                    dialogueBox.init = true;
-                                    playerDialogueBox.active = false;
-                                    playerDialogueBox.init = false;
-                                    dialogueBox.loadNewDialogue(stateResponseListNPCExpo[0].speaker, stateResponseListNPCExpo[0].content);
-                                    Console.WriteLine("~~~~~~~~~~~~~~~~~ STEP: AI JUST LOADED THE NPC DIALOGUE");
-                                    dialogueIndex = "AI";
-                                }
-
+                            
+                            Console.WriteLine();
+                            if (responseList[0].next == "Root") {
+                                dialogueIndex = "root";
+                                dialogueBox.active = false;
+                                playerDialogueBox.active = false;
+                                playerDialogueBox.init = false;
+                                advancePlayer = true;
+                            } else {
+                                playerDialogueBox.loadNewDialogue("player", responseList[0].content);
+                                advancePlayer = true;
                             }
+                            
+                            
                         }
+                        if (responseList[0].next == "false") changeSpeaker = true;
+
                     }
+
                 } else if (dialogueIndex == "interject") {
 
                 }
-
-
-
-
             } else if (currentState == "game") {
                 Console.WriteLine("DI: " + dialogueIndex + ", speaker: " + speaker + ", content: " + (responseList != null ? responseList[0].content : ""));
                 //counter++;
@@ -219,10 +190,9 @@ namespace Test {
             }
         }
 
+
         public void setResponseList(string tag, List<DialogueObj> rl) {
-            if (tag == "NPC") {
-                stateResponseListNPCExpo = rl;
-            } else if (tag == "player") {
+            if (tag == "player") {
                 stateResponseListExpo = rl;
             }
         }
@@ -252,7 +222,7 @@ namespace Test {
             if (currentState == "game") {
                 throw new FormatException();
             }
-            
+
         }
         public string GetMenuState() {
             return currentMenuState;
@@ -319,7 +289,7 @@ namespace Test {
             }
         }
         public void TogglePause() {
-            
+
             //if (GetState() == "pause") {
             //    SetState("game");
             //    SetMenuState("start");
