@@ -66,8 +66,8 @@ namespace Test {
 
         string[] dialogueArray;
 
-        void generateButtons() {
-            
+        public void generateButtons() {
+            buttons.Clear();
             int xPos = (int)SCREEN_WIDTH / tonez.Count;
             for (int i = 0; i < tonez.Count; i++) {
                 buttons.Add(new UIButton(xPos / 2 + i * xPos, (float)(SCREEN_HEIGHT - SCREEN_HEIGHT * 0.26), tonez[i]));
@@ -75,6 +75,7 @@ namespace Test {
                     buttons[i].setDisabled(!availTutorialButtons[tutorialButtonIndex][tonez[i].ToString()]);
                 }
             }
+            tutorialButtonIndex++;
         }
 
         //methods
@@ -194,6 +195,7 @@ namespace Test {
             playerDialogues.Clear();
 
             produceTextBoxes(responseList.ElementAt(0).content);
+            //generateButtons();
         }
 
         public tone getTone() {
@@ -262,11 +264,13 @@ namespace Test {
         #endregion
 
         public void applyToneShortcut(UIButton button) {
-            for (int i = 0; i < playerDialogues.Count; i++) {
+            if (button.getDisabled() == false) {
+                for (int i = 0; i < playerDialogues.Count; i++) {
 
-                playerDialogues[i].setPrevColor(playerDialogues[i].getBoxColor("curr"));
-                playerDialogues[i].setBoxColor(button.getTonalColor());
-                playerDialogues[i].setTone(button.getTone());
+                    playerDialogues[i].setPrevColor(playerDialogues[i].getBoxColor("curr"));
+                    playerDialogues[i].setBoxColor(button.getTonalColor());
+                    playerDialogues[i].setTone(button.getTone());
+                }
             }
         }
     }

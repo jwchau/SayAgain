@@ -29,7 +29,7 @@ namespace Test {
         public string dialogueIndex;
         public bool interjection = false;
         public bool skip = false;
-        bool changeSpeaker = false;
+        public bool changeSpeaker = false;
         public bool advancePlayer = false;
         public bool advanceNPC = false;
         int counter = 0;
@@ -48,13 +48,20 @@ namespace Test {
                         advanceNPC = true;
                         if (responseListNPC[0].inext == "") changeSpeaker = true;
                         if (changeSpeaker) {
-                            playerDialogueBox.loadNewDialogue("player", responseList[0].content);
-                            playerDialogueBox.init = true;
-                            playerDialogueBox.active = true;
-                            dialogueBox.active = false;
-                            dialogueIndex = "player";
-                            advanceNPC = false;
-                            changeSpeaker = false;
+                            if (responseList[0].tone == "Root") {
+                                dialogueIndex = "root";
+                                dialogueBox.active = false;
+                                playerDialogueBox.active = false;
+                                playerDialogueBox.init = false;
+                            } else {
+                                playerDialogueBox.loadNewDialogue("player", responseList[0].content);
+                                playerDialogueBox.init = true;
+                                playerDialogueBox.active = true;
+                                dialogueBox.active = false;
+                                dialogueIndex = "player";
+                                advanceNPC = false;
+                                changeSpeaker = false;
+                            }
                         } else {
                             dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
 
@@ -67,12 +74,14 @@ namespace Test {
                     dialogueIndex = "player";
 
                 } else if (dialogueIndex == "player") {
-                    
 
+                    Console.WriteLine("~~~~~~~~~~~~~~~ ENTERING PLAYER GS PLAYER");
                     Console.WriteLine("GS DI PLAYER RESPONSE LIST PLAYER NEXT: " + responseList[0].next);
 
                     if (playerDialogueBox.checkNext()) {
                         advancePlayer = true;
+                        Console.WriteLine("~~~~~~~~~~~~~~~~~~~~ CHANGE SPEAKER IS: " + changeSpeaker);
+
                         if (changeSpeaker) {
                             dialogueBox.loadNewDialogue(responseListNPC[0].speaker, responseListNPC[0].content);
                             changeSpeaker = false;
@@ -82,7 +91,7 @@ namespace Test {
                             dialogueIndex = "AI";
                             advancePlayer = false;
                         } else {
-                            
+
                             Console.WriteLine();
                             if (responseList[0].next == "Root") {
                                 dialogueIndex = "root";
@@ -91,11 +100,12 @@ namespace Test {
                                 playerDialogueBox.init = false;
                                 advancePlayer = true;
                             } else {
+                               
                                 playerDialogueBox.loadNewDialogue("player", responseList[0].content);
                                 advancePlayer = true;
                             }
-                            
-                            
+
+
                         }
                         if (responseList[0].next == "false") changeSpeaker = true;
 

@@ -1,4 +1,4 @@
-{
+ {
   "Dialogues": [
     {
       "content": "r1",
@@ -54,7 +54,7 @@
       "tone": "Indifferent",
       "id": "8",
       "skip": "false",
-      "next": ""
+      "next": "false"
     },
     {
       "content": "I'm Sorry",

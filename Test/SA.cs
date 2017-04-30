@@ -194,12 +194,13 @@ namespace Test {
                         if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0) {
                             State.dialogueBox.printTime = 0;
                         }
-
+                        //ui_man.generateButtons();
                         if (State.getGameTimer("game").getCountDown() != 0.0) {
                             State.getGameTimer("game").setCountDown(0);
                             State.dialogueBox.active = false;
                             State.playerDialogueBox.active = false;
                         }
+                        
 
                     } else if (State.dialogueIndex == "AI") {
                         State.advanceConversation(speaker, responseListExpo, responseListNPCExpo);
@@ -319,6 +320,10 @@ namespace Test {
                     }
 
                     State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
+
+                  
+
+
                     State.advanceConversation(speaker, responseList, responseListNPC);
 
                     updateCurrents();
@@ -336,26 +341,48 @@ namespace Test {
             } else if (State.GetState() == "tutorial") {
                 if (currentTone != tone.Root) {
                     // Load playerDialogueBox with the new content from responseList
-                    State.playerDialogueBox.loadNewDialogue("player", responseListExpo[0].content);
+                    //State.playerDialogueBox.loadNewDialogue("player", responseListExpo[0].content); //root
+
+
+
+                    //Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ 1:timerAction tutorial Speaker: " + responseListExpo[0].speaker);
+                    //Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ 1:timerAction tutorial content: " + responseListExpo[0].content);
+                    //Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ 1:timerAction tutorial id: " + responseListExpo[0].id);
 
                     // Update response Lists with the recently used tone
+
+                   // Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~ timerAction pcurrid before responseList update: " + pcurrid);
+
+                    pcurrid = incr(pcurrid); //update pcurr to look for the next affected dialogue;
+
                     responseListExpo = s.ChooseDialog(Load.playerexpo, pcurrid, currentTone.ToString());
 
+                    ncurrid = incr(ncurrid);
                     responseListNPCExpo = s.ChooseDialog3(Load.npcexpo, 1, ncurrid);
-                    int temp1 = Int32.Parse(ncurrid);
-                    temp1++;
-                    ncurrid = temp1.ToString();
 
                     if (responseListNPCExpo[0].speaker != "") {
                         speaker = responseListNPCExpo[0].speaker;
 
                     }
 
-                    State.playerDialogueBox.loadNewDialogue("player", responseListExpo[0].content);
+                    State.playerDialogueBox.loadNewDialogue("player", responseListExpo[0].content); //animated text
+
+                    if (responseListExpo[0].next == "false") {
+                        State.changeSpeaker = true;
+                    }
+
+
+                    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ 2:timerAction tutorial Speaker: " + responseListNPCExpo[0].speaker);
+                    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ 2:timerAction tutorial content: " + responseListNPCExpo[0].content);
+                    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ 2:timerAction tutorial id: " + responseListNPCExpo[0].id);
+
+
+                    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ 2:BEFORE GOING TO ADVANCE CONVO FROM LOAD DIALOGUES INDEX: " + State.dialogueIndex);
+
                     State.advanceConversation(speaker, responseListExpo, responseListNPCExpo);
 
-                    updateCurrents();
-
+                    //updateCurrents();
+                    pcurrid = incr(pcurrid); //updated id to look for the next root
                     responseListExpo = s.ChooseDialog(Load.playerexpo, pcurrid, tone.Root.ToString());
 
                     ui_man.reset(responseListExpo);
@@ -489,7 +516,7 @@ namespace Test {
                     for (var i = 0; i < buttons.Count; i++) {
                         // Find button currently being interacted with
                         //Console.WriteLine(buttons[i].getTone().ToString());
-                        if (buttons[i].GetSelected()) {
+                        if (buttons[i].GetSelected() == true && buttons[i].getDisabled() == false) {
                             Console.WriteLine(MouseCoord[0] + ", " + MouseCoord[1]);
                             // Move the button around the screen
                             Console.Write("BUTTON POS BEFORE TRANSLATE: " + buttons[i].getRectBounds().ToString() + ", ");

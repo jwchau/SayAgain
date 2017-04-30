@@ -89,6 +89,10 @@ namespace Test {
             disabled = val;
         }
 
+        public bool getDisabled() {
+            return disabled;
+        }
+
         public bool GetSelected() {
             return selected;
         }
@@ -165,7 +169,7 @@ namespace Test {
             } else
             {
                 if (disabled) {
-                    buttonSprite.Color = new Color(20, 20, 20);
+                    buttonSprite.Color = new Color(64, 64, 64);
                 } else {
                     buttonSprite.Color = new Color(255, 255, 255);
                 }
