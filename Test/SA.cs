@@ -187,7 +187,7 @@ namespace Test {
                             ui_man.reset(responseListExpo);
                             State.advancePlayer = false;
                         }
-                        
+
 
                     } else if (State.dialogueIndex == "root") {
 
@@ -199,16 +199,47 @@ namespace Test {
                             State.dialogueBox.active = false;
                             State.playerDialogueBox.active = false;
                         }
-                        
+
 
                     } else if (State.dialogueIndex == "AI") {
                         State.advanceConversation(speaker, responseListExpo, responseListNPCExpo);
                         if (State.advanceNPC) {
                             ncurrid2 = incr(ncurrid2);
+
+
+                            Console.WriteLine("~~~~~ SPACE BAR AI INDEX  " + ncurrid2);
                             responseListNPCExpo = s.ChooseDialog(Load.npcexpo, ncurrid2, currentTone.ToString());
+                            Console.WriteLine("~~~~~ SPACE BAR AI AFTER UPDATING NCURR THE CONTENT IS: " + responseListNPCExpo[0].content);
                             State.advanceNPC = false;
                             ui_man.generateButtons();
                         }
+
+                    } else if (State.dialogueIndex == "interject") {
+
+                        if (State.dialogueBox.getAwaitInput() == true) {
+                            //if (State.dialogueBox.checkNext())
+                            //{
+                            responseListNPCExpo = s.ChooseDialog3(Load.npcexpo, 1, ncurrid2);
+
+                            if (responseListNPCExpo[0].speaker != "") {
+                                speaker = responseListNPCExpo[0].speaker;
+                                //Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~ Speaker:" + speaker);
+
+                            }
+
+                            Console.WriteLine("~~~~~ SPACE BAR INTERJECT BEFORE UPDATING NCURR THE CONTENT IS: " + responseListNPCExpo[0].content);
+
+                            ncurrid2 = incr(ncurrid2);
+
+                            Console.WriteLine("~~~~~ SPACE BAR INTERJECT INDEX  " + ncurrid2);
+
+                            State.advanceConversation(speaker, responseListExpo, responseListNPCExpo);
+
+                            
+                        } else if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0) {
+                            State.dialogueBox.printTime = 0;
+                        }
+
 
                     }
                     
@@ -357,8 +388,8 @@ namespace Test {
 
                     responseListExpo = s.ChooseDialog(Load.playerexpo, pcurrid, currentTone.ToString());
 
-                    ncurrid = incr(ncurrid);
-                    responseListNPCExpo = s.ChooseDialog3(Load.npcexpo, 1, ncurrid);
+                    ncurrid2 = incr(ncurrid2);
+                    responseListNPCExpo = s.ChooseDialog3(Load.npcexpo, 1, ncurrid2);
 
                     if (responseListNPCExpo[0].speaker != "") {
                         speaker = responseListNPCExpo[0].speaker;
@@ -519,9 +550,9 @@ namespace Test {
                         if (buttons[i].GetSelected() == true && buttons[i].getDisabled() == false) {
                             Console.WriteLine(MouseCoord[0] + ", " + MouseCoord[1]);
                             // Move the button around the screen
-                            Console.Write("BUTTON POS BEFORE TRANSLATE: " + buttons[i].getRectBounds().ToString() + ", ");
+                          
                             buttons[i].translate(MouseCoord[0], MouseCoord[1], window.Size.X, window.Size.Y);
-                            Console.Write("BUTTON POS AFTER TRANSLATE: " + buttons[i].getRectBounds().ToString());
+                           
                             // Check collision with UI Textboxes
                             // Loop through UI Textboxes
                             for (var j = 0; j < playerDialogues.Count; j++) {

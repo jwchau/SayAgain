@@ -88,7 +88,11 @@ namespace Test {
                             dialogueBox.init = true;
                             dialogueBox.active = true;
                             playerDialogueBox.active = false;
-                            dialogueIndex = "AI";
+                            if (responseListNPC[0].inext == "") {
+                                dialogueIndex = "AI";
+                            } else {
+                                dialogueIndex = "interject";
+                            }
                             advancePlayer = false;
                         } else {
 
@@ -112,7 +116,7 @@ namespace Test {
                     }
 
                 } else if (dialogueIndex == "interject") {
-
+                    Console.WriteLine("~~~~~~~~~~ YOOOO SMASH THAT INERJECT BUTTON");
                 }
             } else if (currentState == "game") {
                 Console.WriteLine("DI: " + dialogueIndex + ", speaker: " + speaker + ", content: " + (responseList != null ? responseList[0].content : ""));
