@@ -208,6 +208,7 @@ namespace Test {
                             ncurrid2 = incr(ncurrid2);
                             responseListNPCExpo = s.ChooseDialog(Load.npcexpo, ncurrid2, currentTone.ToString());
                             State.advanceNPC = false;
+                            ui_man.generateButtons();
                         }
 
                     }
