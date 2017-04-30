@@ -48,7 +48,7 @@
   {
      "content":"..."
     ,"tone":"Start"
-    ,"id":"7"
+    ,"id":"6"
     ,"FNC":"0"
     ,"speaker":"mom"
     ,"bucket":"1"
@@ -57,7 +57,7 @@
   {
      "content":"Oh? Sorry... you surprised me, There's nothing new with me."
     ,"tone":"Blunt"
-    ,"id":"8"
+    ,"id":"7"
     ,"FNC":"0"
     ,"speaker":"mom"
     ,"bucket":"1"
@@ -66,7 +66,7 @@
   {
      "content":"I've had it for some time now. Thought a change would be nice."
     ,"tone":"Blunt"
-    ,"id":"9"
+    ,"id":"8"
     ,"FNC":"0"
     ,"speaker":"mom"
     ,"bucket":"1"
@@ -75,7 +75,7 @@
   {
      "content":"It's been different for quite a bit, actually"
     ,"tone":"Indifferent"
-    ,"id":"9"
+    ,"id":"8"
     ,"FNC":"0"
     ,"speaker":"mom"
     ,"bucket":"1"
@@ -84,7 +84,7 @@
   {
      "content":"I did, a while back,"
     ,"tone":"Compassionate"
-    ,"id":"9"
+    ,"id":"8"
     ,"FNC":"0"
     ,"speaker":"mom"
     ,"bucket":"1"
@@ -93,7 +93,7 @@
   {
      "content":"It does? Oh, you're referring to this old cut."
     ,"tone":"Hesitant"
-    ,"id":"9"
+    ,"id":"8"
     ,"FNC":"0"
     ,"speaker":"mom"
     ,"bucket":"1"

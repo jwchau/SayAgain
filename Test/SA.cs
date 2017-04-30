@@ -194,7 +194,6 @@ namespace Test {
                         if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0) {
                             State.dialogueBox.printTime = 0;
                         }
-                        //ui_man.generateButtons();
                         if (State.getGameTimer("game").getCountDown() != 0.0) {
                             State.getGameTimer("game").setCountDown(0);
                             State.dialogueBox.active = false;
