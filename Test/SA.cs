@@ -214,12 +214,15 @@ namespace Test {
             return speaker;
         }
 
-        public List<string> getTargets()
+        public void getTargets()
         {
+            /*Console.WriteLine("never prints this");
             targets = Load.NPCDialogueObj.r.Dialogues.ElementAt(0).target;
-            Console.WriteLine("jfkld");
             Console.WriteLine(targets[0]);
-            return targets;
+            return targets;*/
+            Console.WriteLine(Load.NPCDialogueObj.r.Dialogues.ElementAt(0).target.ToString());
+            
+            Console.WriteLine("fuck u");
         }
         public void updateTargetFNC() {
 

@@ -14,15 +14,18 @@ namespace Test
     class Dad : Character, Drawable
     {
 
+        int currentMouth = 0; //variable to keep track of mouths for drawing
         float framerate = 4f;
         int prevIndex = -1;
 
         Texture t = new Texture("../../Art/dadMasterwoArm.png");
+        Texture mouth = new Texture("../../Art/DadMouth.png");
 
         Dictionary<string, List<Sprite>> sprites = new Dictionary<string, List<Sprite>>() { { "angry", new List<Sprite>() },
                                                                                             { "happy", new List<Sprite>() },
                                                                                             { "neutral", new List<Sprite>() }
                                                                                            };
+        Sprite mouthSprite;
         string expr;
 
         public override void checkFNC()
@@ -45,11 +48,63 @@ namespace Test
             if (e.ToString() != "sad") expr = e.ToString();
         }
         
+        void returnToRestMouth()
+        {
+            mouthSprite.Position = new Vector2f(-100, -100);
+                //hide the sprite off screen, so don't have to destroy
+        }
+
         public override void Draw(RenderTarget target, RenderStates states)
         {
             rnd = r.Next(4, 14);
-
+            rnd2 = r.Next(2, 4);
             target.Draw(sprites[expr][index]);
+            target.Draw(mouthSprite);
+
+
+            if (isTalking)
+            {
+                
+                //cycle between open mouth and rest mouth
+
+                if (currentMouth == 0) //rest mouth
+                {
+
+                    Console.WriteLine("C L O S E");
+                    returnToRestMouth();
+                    framerate = (float)rnd2;
+
+                }
+
+                else if (currentMouth == 1)//open mouth
+                {
+                    Console.WriteLine("open the mouth");
+                    mouthSprite.Position = new Vector2f(xpos - 35, ypos + 123);
+                    framerate = (float) rnd;
+                    
+                }
+
+                if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
+                {
+                    time = DateTime.Now;
+                    if (currentMouth >= 1)
+                    {
+                        currentMouth = 0;
+                    } else if (currentMouth == 0)
+                    {
+                        currentMouth = 1;
+                    }
+                }
+
+                
+                
+            } if (!isTalking)
+            {
+                //stay at the default mouth
+                returnToRestMouth();
+            }
+
+            
 
             if (index == 0 && prevIndex != 0)
             {
@@ -118,6 +173,9 @@ namespace Test
                 sprites["neutral"][sprites["neutral"].Count - 1].Position = new Vector2f(xpos - sprites["neutral"][0].GetGlobalBounds().Width / 2, ypos);
 
             }
+
+            mouthSprite = new Sprite(mouth);
+
         }
     }
 }

@@ -24,13 +24,14 @@ namespace Test {
         public int index = 0;
 
         protected Random r = new Random();
-        protected int rnd;
+        protected int rnd, rnd2;
 
 
         private List<Sprite> lipsprites = new List<Sprite>();
         private List<Sprite> sprites = new List<Sprite>();
 
         public DateTime time = DateTime.Now;
+        
         protected float xpos, ypos, xscale, yscale;
         protected bool canTalk = false;
         public CharacterState state;
@@ -40,6 +41,10 @@ namespace Test {
 
         protected uint SCREEN_WIDTH = VideoMode.DesktopMode.Width;
         protected uint SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+
+
+        public bool isTalking = false;
+
 
         public void dim() {
 
@@ -64,6 +69,20 @@ namespace Test {
                 dim();
             }
         }
+
+
+        public void setTalking(bool b)
+        {
+            if (b)
+            {
+                isTalking = true;
+            }
+            else if (!b)
+            {
+                isTalking = false;
+            }
+        }
+
 
         public void setSprite(List<Sprite> s) {
             sprites = s;
