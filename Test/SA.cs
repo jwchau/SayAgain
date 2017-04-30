@@ -208,11 +208,12 @@ namespace Test {
 
 
                             Console.WriteLine("~~~~~ SPACE BAR AI INDEX  " + ncurrid2);
-                            responseListNPCExpo = s.ChooseDialog(Load.npcexpo, ncurrid2, currentTone.ToString());
+                            responseListNPCExpo = s.ChooseDialog3(Load.npcexpo,1,ncurrid2);
                             Console.WriteLine("~~~~~ SPACE BAR AI AFTER UPDATING NCURR THE CONTENT IS: " + responseListNPCExpo[0].content);
                             State.advanceNPC = false;
                             ui_man.generateButtons();
                         }
+
 
                     } else if (State.dialogueIndex == "interject") {
 
@@ -239,8 +240,6 @@ namespace Test {
                         } else if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0) {
                             State.dialogueBox.printTime = 0;
                         }
-
-
                     }
                     
                 }
