@@ -423,7 +423,6 @@ namespace Test {
             //timeflag
             State.addTimer("game", 10, new Action(() => { TimerAction(); }));
 
-
             fullScreenView = window.DefaultView;
             fullScreenView.Viewport = new FloatRect(0, 0, 1, 1);
             window.SetView(fullScreenView);
@@ -468,11 +467,7 @@ namespace Test {
             screenHelper();
             State.sound_man.soundUpdate(settingsMenu.getSoundToggle());
 
-            if (State.GetState() == "tutorial") {
-                State.updateTimerz();
-            }
-
-            if (State.GetState() == "game") {
+            if (State.GetState() == "game" || State.GetState() == "tutorial") {
 
                 if (playerChoice && State.getGameTimer("game").getStart()) {
                     State.getGameTimer("game").stopTimer();
@@ -489,14 +484,17 @@ namespace Test {
 
                 // If the mouse is currently dragging
                 if (ManagerOfInput.GetMouseDown()) {
-
+                    //Console.WriteLine("hehe");
                     // Loop through buttons
                     for (var i = 0; i < buttons.Count; i++) {
                         // Find button currently being interacted with
+                        //Console.WriteLine(buttons[i].getTone().ToString());
                         if (buttons[i].GetSelected()) {
+                            Console.WriteLine(MouseCoord[0] + ", " + MouseCoord[1]);
                             // Move the button around the screen
+                            Console.Write("BUTTON POS BEFORE TRANSLATE: " + buttons[i].getRectBounds().ToString() + ", ");
                             buttons[i].translate(MouseCoord[0], MouseCoord[1], window.Size.X, window.Size.Y);
-
+                            Console.Write("BUTTON POS AFTER TRANSLATE: " + buttons[i].getRectBounds().ToString());
                             // Check collision with UI Textboxes
                             // Loop through UI Textboxes
                             for (var j = 0; j < playerDialogues.Count; j++) {

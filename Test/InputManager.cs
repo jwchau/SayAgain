@@ -70,7 +70,7 @@ namespace Test {
         #region SA_OnMouseMoved
         //
         public void OnMouseMoved(GameState State, int x, int y) {
-            if (State.GetState() == "game") {
+            if (State.GetState() == "game" || State.GetState() == "tutorial") {
                 if (this.GetMouseDown()) {
                     this.SetMouseMove(true);
                     this.SetMousePos(x, y);
@@ -112,7 +112,7 @@ namespace Test {
 
         #region SA_GamePlay
         public void GamePlay(GameState s, List<UIButton> b, int x, int y, double sx, double sy) {
-            if (s.GetState() == "game") {
+            if (s.GetState() == "game" || s.GetState() == "tutorial") {
                 for (var i = 0; i < b.Count; i++) {
                     if (b[i].Contains((int)(x*sx), (int)(y*sy))) {
                         var bounds = b[i].getRectBounds();

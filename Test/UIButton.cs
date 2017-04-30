@@ -39,6 +39,7 @@ namespace Test {
 
         bool selected = false;
         bool hover = false;
+        bool disabled = false;
         int mouseOffsetX = 0;
         int mouseOffsetY = 0;
         Color tonalColor;
@@ -82,6 +83,10 @@ namespace Test {
 
         public void SetSelected(bool val) {
             selected = val;
+        }
+
+        public void setDisabled(bool val) {
+            disabled = val;
         }
 
         public bool GetSelected() {
@@ -145,7 +150,7 @@ namespace Test {
 
         public override void Draw(RenderTarget target, RenderStates states) {
             //target.Draw(rect);
-            if (hover)
+            if (hover && !disabled)
             {
                 // Make button transperent when dragging
                 if (selected)
@@ -159,6 +164,11 @@ namespace Test {
                 target.Draw(buttonSpriteHighlight);
             } else
             {
+                if (disabled) {
+                    buttonSprite.Color = new Color(20, 20, 20);
+                } else {
+                    buttonSprite.Color = new Color(255, 255, 255);
+                }
                 target.Draw(buttonSprite);
             }
             //target.Draw(buttonText);

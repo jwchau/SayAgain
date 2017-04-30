@@ -14,7 +14,6 @@ namespace Test {
     class UIManager {
         //constructor
         public UIManager() {
-
             /* TEMPORARY CODE REMOVE AND CLEAN LATER*/
             if (buttonOrder == 0) {
                 tonez = new List<tone>() { tone.Blunt, tone.Indifferent, tone.Compassionate, tone.Hesitant };
@@ -27,13 +26,7 @@ namespace Test {
                     }
                 }
             }
-            int xPos = (int)SCREEN_WIDTH / tonez.Count;
-            //Console.WriteLine(SCREEN_HEIGHT);
-            for (int i = 1; i <= tonez.Count; i++) {
-                addButton(new UIButton(xPos / 2 + (i - 1) * xPos, (float)(SCREEN_HEIGHT - SCREEN_HEIGHT * 0.26), tonez[i - 1]));
-
-            }
-            ////////////////////////////////////////////////
+            generateButtons();
         }
 
         public List<tone> tonez;
@@ -41,10 +34,48 @@ namespace Test {
         List<UITextBox> playerDialogues = new List<UITextBox>();
         static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
         static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+        int tutorialButtonIndex = 0;
+        List<Dictionary<string, bool>> availTutorialButtons = new List<Dictionary<string, bool>>() {
+            new Dictionary<string, bool>() {
+                { "Blunt", false },
+                { "Indifferent", true },
+                { "Compassionate", false },
+                { "Hesitant", false }
+            },
+            new Dictionary<string, bool>() {
+                { "Blunt", false },
+                { "Indifferent", false },
+                { "Compassionate", false },
+                { "Hesitant", true }
+            },
+            new Dictionary<string, bool>() {
+                { "Blunt", false },
+                { "Indifferent", false },
+                { "Compassionate", true },
+                { "Hesitant", false }
+            },
+            new Dictionary<string, bool>() {
+                { "Blunt", true },
+                { "Indifferent", false },
+                { "Compassionate", false },
+                { "Hesitant", false }
+            },
+        };
 
         int buttonOrder = 0;
 
         string[] dialogueArray;
+
+        void generateButtons() {
+            
+            int xPos = (int)SCREEN_WIDTH / tonez.Count;
+            for (int i = 0; i < tonez.Count; i++) {
+                buttons.Add(new UIButton(xPos / 2 + i * xPos, (float)(SCREEN_HEIGHT - SCREEN_HEIGHT * 0.26), tonez[i]));
+                if (tutorialButtonIndex != availTutorialButtons.Count()) {
+                    buttons[i].setDisabled(!availTutorialButtons[tutorialButtonIndex][tonez[i].ToString()]);
+                }
+            }
+        }
 
         //methods
         public List<UIButton> getButtons() {
@@ -53,10 +84,6 @@ namespace Test {
 
         public List<UITextBox> getPlayerDialogues() {
             return playerDialogues;
-        }
-
-        public void addButton(UIButton b) {
-            buttons.Add(b);
         }
 
         private List<tone> shuffleList(List<tone> inputList) {
