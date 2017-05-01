@@ -123,6 +123,34 @@ namespace Test {
                 } else if (jankList[0].id == "12") {
                     db_states('p');
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
+                } else if (jankList[0].id == "13") {
+                    
+                } else if (jankList[0].id == "14") {
+
+                } else if (jankList[0].id == "15") {
+
+                } else if (jankList[0].id == "16") {
+
+                } else if (jankList[0].id == "17") {
+
+                } else if (jankList[0].id == "18") {
+
+                } else if (jankList[0].id == "19") {
+
+                } else if (jankList[0].id == "20") {
+
+                } else if (jankList[0].id == "21") {
+
+                } else if (jankList[0].id == "22") {
+
+                } else if (jankList[0].id == "23") {
+
+                } else if (jankList[0].id == "24") {
+
+                } else if (jankList[0].id == "25") {
+
+                } else if (jankList[0].id == "26") {
+
                 }
 
             }
@@ -161,6 +189,7 @@ namespace Test {
                         playerDialogueBox.init = false;
                         dialogueBox.init = true;
                         dialogueBox.active = false;
+                        getGameTimer("game").startTimer();
                         break;
                     }
                 default: break;

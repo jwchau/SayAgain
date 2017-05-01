@@ -16,7 +16,7 @@
       "id": "3"
     },
     {
-      "content": "It'  always great to see my little sister! <She seems chipper today.>",
+      "content": "It's always great to see my little sister! <She seems chipper today.>",
       "tone": "Default",
       "id": "4"
     },
@@ -31,29 +31,29 @@
       "id": "6"
     },
     {
-      "content": "WHAT DO YOU MEAN WHATEVER YOU TWAT?",
+      "content": "Whatever?! Jeez. Could you show you care a bit?! You can't say \"everyone's good\" when you don't even know what's going on.",
       "tone": "Default",
       "id": "7"
     },
     {
-      "content": "I'm so sorry you are a huge loser.",
+      "content": "I'm Sorry",
       "tone": "Root",
       "id": "8"
     },
     {
-      "content": "S-Sorry. I guess I dont care.",
+      "content": "S-sorry. I guess I'm just tired.",
       "tone": "Hesitant",
       "id": "9"
     },
     {
-      "content": "Wot",
+      "content": "<Here comes Dad from the living room.>",
       "tone": "Default",
       "id": "10"
     },
     {
       "content": "Wot",
       "tone": "Default",
-      "id": "10"
+      "id": "11"
     }
 
   ]

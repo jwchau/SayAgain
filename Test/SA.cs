@@ -218,11 +218,13 @@ namespace Test
                             jankList = s.chooseJank(Load.Jankson, jankId, currentTone.ToString());
                             State.setResponseList(jankList);
                             jankIncr();
-
-                            Console.WriteLine("first " + jankList[0].id);
                             State.advanceConversation("", null, null);
-                            Console.WriteLine("second " + jankList[0].id);
                         }
+                        if (jankId == "5") ui_man.tutorialButtonIndex = 0;
+                        else if (jankId == "8") ui_man.tutorialButtonIndex = 1;
+                        else if (jankId == "13") ui_man.tutorialButtonIndex = 2;
+                        else if (jankId == "20") ui_man.tutorialButtonIndex = 3;
+                        else if (Int32.Parse(jankId) > 20) ui_man.tutorialButtonIndex = 4;
                         ui_man.reset(jankList);
                     } else if (State.dialogueIndex == "root"){
                         //timer action will choose jank
@@ -234,7 +236,6 @@ namespace Test
 
                         if (State.getGameTimer("game").getCountDown() != 0.0) {
                             State.getGameTimer("game").setCountDown(0);
-                        
                         }
 
                     } else if (State.dialogueIndex == "player") {
@@ -244,6 +245,11 @@ namespace Test
                             jankIncr();
                             State.advanceConversation("", null, null);
                         }
+                        if (jankId == "5") ui_man.tutorialButtonIndex = 0;
+                        else if (jankId == "8") ui_man.tutorialButtonIndex = 1;
+                        else if (jankId == "13") ui_man.tutorialButtonIndex = 2;
+                        else if (jankId == "20") ui_man.tutorialButtonIndex = 3;
+                        else if (Int32.Parse(jankId) > 20) ui_man.tutorialButtonIndex = 4;
                         ui_man.reset(jankList);
                     }
                     
@@ -361,7 +367,6 @@ namespace Test
                     updateCurrents();
 
                     responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, tone.Root.ToString());
-
                     ui_man.reset(responseList);
                 } else {
                     State.getGameTimer("game").resetTimer();

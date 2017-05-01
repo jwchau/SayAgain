@@ -34,7 +34,7 @@ namespace Test {
         List<UITextBox> playerDialogues = new List<UITextBox>();
         static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
         static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
-        int tutorialButtonIndex = 4;
+        public int tutorialButtonIndex = 0;
         List<Dictionary<string, bool>> availTutorialButtons = new List<Dictionary<string, bool>>() {
             new Dictionary<string, bool>() {
                 { "Blunt", false },
@@ -75,7 +75,7 @@ namespace Test {
                     buttons[i].setDisabled(!availTutorialButtons[tutorialButtonIndex][tonez[i].ToString()]);
                 }
             }
-            tutorialButtonIndex++;
+            //tutorialButtonIndex++;
         }
 
         //methods
@@ -195,7 +195,7 @@ namespace Test {
             playerDialogues.Clear();
 
             produceTextBoxes(responseList.ElementAt(0).content);
-            //generateButtons();
+            generateButtons();
         }
 
         public tone getTone() {
