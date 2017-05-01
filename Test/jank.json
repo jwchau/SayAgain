@@ -1,60 +1,169 @@
-{
-  "Dialogues": [
-    {
-      "content": "<Seems forever since I was home.>",
-      "tone": "Default",
-      "id": "1"
-    },
-    {
-      "content": "<Looks like dinner is getting ready.>",
-      "tone": "Default",
-      "id": "2"
-    },
-    {
-      "content": "Oh you're finally here, can we eat now?",
-      "tone": "Default",
-      "id": "3"
-    },
-    {
-      "content": "It'  always great to see my little sister! <She seems chipper today.>",
-      "tone": "Default",
-      "id": "4"
-    },
-    {
-      "content": "How is the family treating you?",
-      "tone": "Root",
-      "id": "5"
-    },
-    {
-      "content": "Everyone's good right? But you know, whatever.",
-      "tone": "Indifferent",
-      "id": "6"
-    },
-    {
-      "content": "WHAT DO YOU MEAN WHATEVER YOU TWAT?",
-      "tone": "Default",
-      "id": "7"
-    },
-    {
-      "content": "I'm so sorry you are a huge loser.",
-      "tone": "Root",
-      "id": "8"
-    },
-    {
-      "content": "S-Sorry. I guess I dont care.",
-      "tone": "Hesitant",
-      "id": "9"
-    },
-    {
-      "content": "Wot",
-      "tone": "Default",
-      "id": "10"
-    },
-    {
-      "content": "Wot",
-      "tone": "Default",
-      "id": "10"
-    }
-
-  ]
-}
+{ 
+ "Dialogues": [ 
+  {
+     "FIELD1":"content"
+    ,"FIELD2":"tone"
+    ,"FIELD3":"id"
+  },
+  {
+     "FIELD1":"<Seems forever since I was home.>"
+    ,"FIELD2":"Default"
+    ,"FIELD3":"1"
+  },
+  {
+     "FIELD1":"<Looks like dinner is getting ready.>"
+    ,"FIELD2":"Default"
+    ,"FIELD3":"2"
+  },
+  {
+     "FIELD1":"Oh you're finally here, can we eat now?"
+    ,"FIELD2":"Default"
+    ,"FIELD3":"3"
+  },
+  {
+     "FIELD1":"It'  always great to see my little sister! <She seems chipper today.>"
+    ,"FIELD2":"Default"
+    ,"FIELD3":"4"
+  },
+  {
+     "FIELD1":"How is the family treating you?"
+    ,"FIELD2":"Root"
+    ,"FIELD3":"5"
+  },
+  {
+     "FIELD1":"Everyone's good right? But you know, whatever."
+    ,"FIELD2":"Indifferent"
+    ,"FIELD3":"6"
+  },
+  {
+     "FIELD1":"WHAT DO YOU MEAN WHATEVER YOU TWAT?"
+    ,"FIELD2":"Default"
+    ,"FIELD3":"7"
+  },
+  {
+     "FIELD1":"I'm so sorry you are a huge loser."
+    ,"FIELD2":"Root"
+    ,"FIELD3":"8"
+  },
+  {
+     "FIELD1":"S-Sorry. I guess I dont care."
+    ,"FIELD2":"Hesitant"
+    ,"FIELD3":"9"
+  },
+  {
+     "FIELD1":"<Here comes Dad from the living room.>"
+    ,"FIELD2":"Default"
+    ,"FIELD3":"10"
+  },
+  {
+     "FIELD1":"Hey, kiddo! Good to see you!"
+    ,"FIELD2":"Default"
+    ,"FIELD3":"11"
+  },
+  {
+     "FIELD1":"Dad has a mustache now?"
+    ,"FIELD2":"Default"
+    ,"FIELD3":"12"
+  },
+  {
+     "FIELD1":"Hi Dad. How are you and mom doing?"
+    ,"FIELD2":"Root"
+    ,"FIELD3":"13"
+  },
+  {
+     "FIELD1":"Hey Dad, I hope you and mom have been doing really well"
+    ,"FIELD2":"Compassionate"
+    ,"FIELD3":"14"
+  },
+  {
+     "FIELD1":"Oh, how nice of you to be concerned. I know I’m doing fine, but I can’t speak for your mom."
+    ,"FIELD2":"Compassionate"
+    ,"FIELD3":"15"
+  },
+  {
+     "FIELD1":"He doesn’t know about Mom? Well, then..."
+    ,"FIELD2":"Default"
+    ,"FIELD3":"16"
+  },
+  {
+     "FIELD1":"And now Mom with the food."
+    ,"FIELD2":"Default"
+    ,"FIELD3":"17"
+  },
+  {
+     "FIELD1":"..."
+    ,"FIELD2":"Default"
+    ,"FIELD3":"18"
+  },
+  {
+     "FIELD1":"I wonder why Mom is so quiet."
+    ,"FIELD2":"Default"
+    ,"FIELD3":"19"
+  },
+  {
+     "FIELD1":"So, Mom, how are you?"
+    ,"FIELD2":"Root"
+    ,"FIELD3":"20"
+  },
+  {
+     "FIELD1":"Hey Mom. What’s up with you, huh?"
+    ,"FIELD2":"Blunt"
+    ,"FIELD3":"21"
+  },
+  {
+     "FIELD1":"Oh? Sorry… you surprised me a bit. Nothing new."
+    ,"FIELD2":"Blunt"
+    ,"FIELD3":"22"
+  },
+  {
+     "FIELD1":"You have a different hairstyle. That’s new."
+    ,"FIELD2":"Root"
+    ,"FIELD3":"23"
+  },
+  {
+     "FIELD1":"Anyone can see you have a new haircut, Mom."
+    ,"FIELD2":"Blunt"
+    ,"FIELD3":"24"
+  },
+  {
+     "FIELD1":"So, your hair’s different now?"
+    ,"FIELD2":"Indifferent"
+    ,"FIELD3":"24"
+  },
+  {
+     "FIELD1":"Ohhh. You changed your hair up too?"
+    ,"FIELD2":"Compassionate"
+    ,"FIELD3":"24"
+  },
+  {
+     "FIELD1":"I guess...your hair looks new..."
+    ,"FIELD2":"Hesitant"
+    ,"FIELD3":"24"
+  },
+  {
+     "FIELD1":"I’ve had it for some time now. Thought a change would be nice."
+    ,"FIELD2":"Blunt"
+    ,"FIELD3":"25"
+  },
+  {
+     "FIELD1":"It’s been different for quite a bit, actually."
+    ,"FIELD2":"Indifferent"
+    ,"FIELD3":"25"
+  },
+  {
+     "FIELD1":"I did, a while back."
+    ,"FIELD2":"Compassionate"
+    ,"FIELD3":"25"
+  },
+  {
+     "FIELD1":"It does? Oh, you’re referring to this old cut."
+    ,"FIELD2":"Hesitant"
+    ,"FIELD3":"25"
+  },
+  {
+     "FIELD1":"I haven’t come home in a long time, it seems."
+    ,"FIELD2":"Default"
+    ,"FIELD3":"26"
+  }
+ ] 
+ }
