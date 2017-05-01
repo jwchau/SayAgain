@@ -12,7 +12,7 @@ namespace Test {
         public GameState() {
             currentState = "menu";
             currentMenuState = "start";
-            sound_man.playMusic("Mom");
+            sound_man.init_music();
             playerDialogueBox = new DialogueBox(this, "PLAYER");
             dialogueBox = new DialogueBox(this, "AI");
             dialogueBox.animationStart = true;
