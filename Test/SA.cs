@@ -368,7 +368,7 @@ namespace Test {
             Mom.setSpriteEmotion(Character.spriteEmotion.happy);
             Mom.active(true);
             Mom.state.setMood(5f);
-            Mom.setTalking(false);
+            Mom.setTalking(true);
             //Console.WriteLine(Mom.state.getMood());
 
             Alexis = new Alex();
