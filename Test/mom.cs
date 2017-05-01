@@ -36,7 +36,7 @@ namespace Test
                                                                                            };
 
         List<Sprite> mouths = new List<Sprite>();
-
+        
         public override void checkFNC()
         {
             throw new NotImplementedException();
@@ -121,6 +121,7 @@ namespace Test
 
             if (isTalking)
             {
+
                 target.Draw(noMouthSprites[expr][index]);
                 
 
@@ -154,8 +155,7 @@ namespace Test
                         target.Draw(neutralrest);
                     }
 
-
-                    Console.WriteLine("C L O S E");
+                    
 
 
                 }
@@ -166,13 +166,12 @@ namespace Test
 
                     if (currentMouthIndex >= 1)
                     {
-                        hideMouth(currentMouthIndex - 1);
+                        //hide previous mouth
+                        //hideMouth(currentMouthIndex - 1);
                     }
-                    Console.WriteLine("open the mouth");
                     mouths[currentMouthIndex].Scale = new Vector2f(0.8f, 0.8f);
                     mouths[currentMouthIndex].Position = new Vector2f(xpos - 43, ypos + 152);
                     target.Draw(mouths[currentMouthIndex]);
-                    Console.WriteLine("draw" + currentMouthIndex);
 
                     /*
                      *   

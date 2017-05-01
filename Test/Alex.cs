@@ -22,6 +22,12 @@ namespace Test
                                                                                             { "happy", new List<Sprite>() },
                                                                                             { "neutral", new List<Sprite>() }
                                                                                            };
+
+
+        List<Sprite> mouths = new List<Sprite>();
+
+        int currentMouthIndex = -1; //variable to keep track of mouths for drawing
+
         float framerate = 4f;
         int prevIndex = -1;
 
@@ -42,6 +48,11 @@ namespace Test
         {
             expr = e.ToString();
             
+        }
+
+        void hideMouth(int i)
+        {
+            mouths[i].Position = new Vector2f(-100, -100);
         }
 
         public void pickSpecialFrame()
@@ -88,7 +99,75 @@ namespace Test
         public override void Draw(RenderTarget target, RenderStates states)
         {
             rnd = r.Next(4, 14);
-            
+            target.Draw(sprites[expr][index]);
+            if (isTalking)
+            {
+                
+
+                if (currentMouthIndex == -1) //rest mouth
+                {
+                    
+                    hideMouth(4);
+                    framerate = 1;
+                    Console.WriteLine(currentMouthIndex + "is -1");
+
+                }
+
+                else if (currentMouthIndex >= 0 && currentMouthIndex < 5)//open mouth
+                {
+                    Console.WriteLine(currentMouthIndex + "is 0-4");
+                    framerate = 7;
+
+                    if (currentMouthIndex >= 1)
+                    {
+                        //hide previous mouth
+                        //hideMouth(currentMouthIndex - 1);
+                    }
+
+
+                }
+
+                if (currentMouthIndex != -1)
+                {
+                    mouths[currentMouthIndex].Scale = new Vector2f(0.9f, 0.9f);
+                    mouths[currentMouthIndex].Position = new Vector2f(xpos - 35, ypos + 139);
+                    target.Draw(mouths[currentMouthIndex]);
+                }
+
+
+                if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
+                {
+                    time = DateTime.Now;
+                    /*if (currentMouthIndex >= -1 && currentMouthIndex <4)
+                    {
+                        currentMouthIndex += 1;
+                    }
+                    else if (currentMouthIndex == 4)
+                    {
+                        currentMouthIndex = -1;
+                    }*/
+                    if (currentMouthIndex == -1)
+                    {
+                        Console.WriteLine("i hsould be here");
+                        currentMouthIndex = r.Next(0, 5);
+                    }
+                    else
+                    {
+                        currentMouthIndex = r.Next(-1, 5);
+                    }
+
+
+                }
+                
+
+            }
+            if (!isTalking)
+            {
+                target.Draw(sprites[expr][index]);
+            }
+
+
+
             // neutral expressoin
             //dont want draw to contain any logic about which expression,
             //so have the interested index defined somewhere else
@@ -103,8 +182,7 @@ namespace Test
                 prevIndex = index - 1;
                 framerate = 4f;
             }
-
-            target.Draw(sprites[expr][index]);
+            
             if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
             {
                 time = DateTime.Now;
@@ -156,6 +234,14 @@ namespace Test
                 sprites["angry"][sprites["angry"].Count - 1].Scale = new Vector2f(xscale, yscale);
                 sprites["angry"][sprites["angry"].Count - 1].Position = new Vector2f(xpos - sprites["angry"][0].GetGlobalBounds().Width/2, ypos);
             }
+
+
+            mouths.Add(new Sprite(new Texture("../../Art/AlexMouth1.png")));
+            mouths.Add(new Sprite(new Texture("../../Art/AlexMouth2.png")));
+            mouths.Add(new Sprite(new Texture("../../Art/AlexMouth3.png")));
+            mouths.Add(new Sprite(new Texture("../../Art/AlexMouth4.png")));
+            mouths.Add(new Sprite(new Texture("../../Art/AlexMouth5.png")));
+
         }
     }
 }
