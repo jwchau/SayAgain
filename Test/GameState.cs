@@ -35,14 +35,11 @@ namespace Test {
                     playerDialogueBox.init = false;
                     playerDialogueBox.active = false;
                     dialogueBox.active = true;
-                    if (dialogueBox.active && !playerDialogueBox.active) {
-                        if (dialogueBox.printTime != 0 && dialogueBox.getAnimationStart() && !dialogueBox.getAwaitInput()) {
-                            dialogueBox.setPrintTime(0);
-                        } else if (dialogueBox.checkNext()) {
-                            dialogueIndex = "root";
-                            dialogueBox.active = false;
-                            playerDialogueBox.active = false;
-                        }
+                    if (dialogueBox.checkNext()) {
+                        Console.WriteLine("YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO: " + responseList[0].content);
+                        dialogueIndex = "root";
+                        dialogueBox.active = false;
+                        playerDialogueBox.active = false;
                     }
                 } else if (dialogueIndex == "root") {
                     dialogueBox.init = false;
@@ -115,44 +112,68 @@ namespace Test {
                     db_states('p');
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else if (jankList[0].id == "10") {
-                    db_states('p');
-                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
+                    db_states('a');
+
+                    Console.WriteLine("AT 10 MY CONTENT IS: " + jankList[0].content);
+
+                    dialogueBox.loadNewDialogue("alex", jankList[0].content);
                 } else if (jankList[0].id == "11") {
                     db_states('p');
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else if (jankList[0].id == "12") {
+                    db_states('a');
+                    dialogueBox.loadNewDialogue("dad", jankList[0].content);
+                } else if (jankList[0].id == "13") {
                     db_states('p');
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
-                } else if (jankList[0].id == "13") {
-                    
                 } else if (jankList[0].id == "14") {
-
+                    db_states('r');
                 } else if (jankList[0].id == "15") {
-
+                    db_states('p');
+                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else if (jankList[0].id == "16") {
-
+                    db_states('a');
+                    dialogueBox.loadNewDialogue("dad", jankList[0].content);
                 } else if (jankList[0].id == "17") {
-
+                    db_states('p');
+                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else if (jankList[0].id == "18") {
-
+                    db_states('p');
+                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else if (jankList[0].id == "19") {
-
+                    db_states('a');
+                    dialogueBox.loadNewDialogue("mom", jankList[0].content);
                 } else if (jankList[0].id == "20") {
-
+                    db_states('p');
+                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else if (jankList[0].id == "21") {
-
+                    Console.WriteLine("in game state, jank id 21");
+                    db_states('r');
                 } else if (jankList[0].id == "22") {
-
+                    Console.WriteLine("in game state, jank id 22");
+                    db_states('p');
+                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else if (jankList[0].id == "23") {
-
+                    Console.WriteLine("in game state, jank id 23");
+                    db_states('a');
+                    dialogueBox.loadNewDialogue("mom", jankList[0].content);
                 } else if (jankList[0].id == "24") {
-
+                    db_states('r');
                 } else if (jankList[0].id == "25") {
-
+                    db_states('p');
+                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else if (jankList[0].id == "26") {
+                    db_states('a');
+                    dialogueBox.loadNewDialogue("mom", jankList[0].content);
+                } else if (jankList[0].id == "27") {
+                    db_states('p');
+                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
+                } else {
+                    db_states('a');
+                    dialogueBox.loadNewDialogue("dad", "Hey, it's good to have you home.");
 
+                    SetState("game");
                 }
-
             }
         }
 

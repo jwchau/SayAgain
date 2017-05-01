@@ -31,7 +31,7 @@ namespace Test
         protected List<UIButton> buttons;
 
         // Debug
-        protected bool debugInfo = true;
+        protected bool debugInfo = false;
 
 
         //Menus

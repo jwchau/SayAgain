@@ -10,14 +10,11 @@ using SFML.System;
 using System.Drawing;
 using Newtonsoft.Json;
 
-namespace Test
-{
+namespace Test {
 
-    class SA : Game
-    {
+    class SA : Game {
 
-        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?")
-        {
+        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?") {
             window.KeyPressed += onKeyPressed;
             window.KeyReleased += onKeyReleased;
             window.MouseButtonPressed += onMouseButtonPressed;
@@ -27,8 +24,7 @@ namespace Test
         }
 
         #region screen resize math
-        private void screenHelper()
-        {
+        private void screenHelper() {
             var DesktopX = (double)VideoMode.DesktopMode.Width;
             var DesktopY = (double)VideoMode.DesktopMode.Height;
             var WindowX = (double)window.Size.X;
@@ -38,33 +34,21 @@ namespace Test
         }
         #endregion
 
-        private void onMouseMoved(object sender, MouseMoveEventArgs e)
-        {
+        private void onMouseMoved(object sender, MouseMoveEventArgs e) {
             ManagerOfInput.OnMouseMoved(State, e.X, e.Y);
-            if (State.GetState() == "menu")
-            {
-                if (State.GetMenuState() == "start")
-                {
+            if (State.GetState() == "menu") {
+                if (State.GetMenuState() == "start") {
                     startMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
-                }
-                else if (State.GetMenuState() == "settings")
-                {
+                } else if (State.GetMenuState() == "settings") {
                     settingsMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
                 }
 
-            }
-            else if (State.GetState() == "game")
-            {
+            } else if (State.GetState() == "game") {
                 ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
-            }
-            else if (State.GetState() == "pause")
-            {
-                if (State.GetMenuState() == "pause")
-                {
+            } else if (State.GetState() == "pause") {
+                if (State.GetMenuState() == "pause") {
                     pauseMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
-                }
-                else if (State.GetMenuState() == "settings")
-                {
+                } else if (State.GetMenuState() == "settings") {
                     settingsMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
                 }
             }
@@ -72,30 +56,23 @@ namespace Test
             ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
         }
 
-        private void onMouseButtonReleased(object sender, MouseButtonEventArgs e)
-        {
+        private void onMouseButtonReleased(object sender, MouseButtonEventArgs e) {
 
             ManagerOfInput.onMouseButtonReleased();
 
-            if (playerChoice)
-            {
+            if (playerChoice) {
                 //ManagerOfInput.checkTargets(State, D_Man);
-                if (D_Man.getAlex().Contains(e.X, e.Y) == true)
-                {
+                if (D_Man.getAlex().Contains(e.X, e.Y) == true) {
                     currentContext = nextContextDict["Alex"];
                     loadDialogues();
                     playerChoice = false;
                     //COME BACK HERE
-                }
-                else if (D_Man.getMom().Contains(e.X, e.Y) == true)
-                {
+                } else if (D_Man.getMom().Contains(e.X, e.Y) == true) {
                     currentContext = nextContextDict["Mom"];
                     loadDialogues();
                     playerChoice = false;
                     //COME BACK HERE
-                }
-                else if (D_Man.getDad().Contains(e.X, e.Y) == true)
-                {
+                } else if (D_Man.getDad().Contains(e.X, e.Y) == true) {
                     currentContext = nextContextDict["Dad"];
                     loadDialogues();
                     playerChoice = false;
@@ -116,8 +93,7 @@ namespace Test
             ui_man.applyTones((int)(e.X * scaleFactorX), (int)(e.Y * scaleFactorY));
         }
 
-        private void onMouseButtonPressed(object sender, MouseButtonEventArgs e)
-        {
+        private void onMouseButtonPressed(object sender, MouseButtonEventArgs e) {
 
             ManagerOfInput.onMouseButtonPressed(e.X, e.Y);
 
@@ -125,73 +101,59 @@ namespace Test
 
             ManagerOfInput.MenuPlay(State, menus, e.X, e.Y);
 
-            if (State.getGameTimer("game").Contains(e.X, e.Y, scaleFactorX, scaleFactorY) && State.getGameTimer("game").getStart())
-            {
+            if (State.getGameTimer("game").Contains(e.X, e.Y, scaleFactorX, scaleFactorY) && State.getGameTimer("game").getStart()) {
                 State.sound_man.playSFX("button");
                 State.getGameTimer("game").setCountDown(0);
             }
         }
 
-        private void onKeyReleased(object sender, KeyEventArgs e)
-        {
+        private void onKeyReleased(object sender, KeyEventArgs e) {
         }
-        private void onKeyPressed(object sender, KeyEventArgs e)
-        {
-            
-            if (e.Code == Keyboard.Key.Space)
-            {
-                if (State.GetState() == "game")
-                {
+
+        private void onKeyPressed(object sender, KeyEventArgs e) {
+
+            if (e.Code == Keyboard.Key.Space) {
+                if (State.GetState() == "game") {
 
                     Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ THE DIALOGUE INDEX IS: " + State.dialogueIndex);
                     // Activate playerDialogueBox to display and be responsive, or switch to AI dialogue
-                    if (State.dialogueIndex == "player")
-                    {
+                    if (State.dialogueIndex == "player") {
                         Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ INDEX PLAYER CONTENT: " + responseListNPC[0].content);
                         State.advanceConversation(speaker, null, responseListNPC);
 
                         // Deactivate dialogueBox, Display playerDialogueBox, and submit tone 
-                    }
-                    else if (State.dialogueIndex == "root")
-                    {
+                    } else if (State.dialogueIndex == "root") {
                         // Sets the timer to 0 which calls Timer Action to advance the Conversation with the new responseLists
 
-                        if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0)
-                        {
+                        if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0) {
                             State.dialogueBox.printTime = 0;
                         }
 
-                        if (State.getGameTimer("game").getCountDown() != 0.0)
-                        {
+                        if (State.getGameTimer("game").getCountDown() != 0.0) {
                             State.getGameTimer("game").setCountDown(0);
                             State.dialogueBox.active = false;
                             State.playerDialogueBox.active = false;
-                            
+
 
                         }
+
+                        //Console.WriteLine("AFTER YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO: " + responseList[0].content);
                         // Activate dialogueBox to display and be responsive, or switch to Root dialogue
-                    }
-                    else if (State.dialogueIndex == "AI")
-                    {
-
+                    } else if (State.dialogueIndex == "AI") {
+                        Console.WriteLine("SA DI AI responseList content is " + responseList[0].content);
                         State.advanceConversation(speaker, responseList, responseListNPC);
-                    }
-                    else if (State.dialogueIndex == "interject")
-                    {
-                        if (State.dialogueBox.getAwaitInput() == true)
-                        {
-                            if (State.dialogueBox.checkNext())
-                            {
 
-                                if (responseListNPC[0].FNC == 10.0)
-                                {
+                    } else if (State.dialogueIndex == "interject") {
+                        if (State.dialogueBox.getAwaitInput() == true) {
+                            if (State.dialogueBox.checkNext()) {
+
+                                if (responseListNPC[0].FNC == 10.0) {
 
                                     int temp = Int32.Parse(ncurrid);
                                     temp++;
                                     ncurrid = temp.ToString();
                                     responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid, currentTone.ToString());
-                                }
-                                else {
+                                } else {
                                     Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~  INTERJECT IF RESPONSE LIST IS NOT 10.0");
                                     responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid2, currentTone.ToString());
                                     int temp = Int32.Parse(ncurrid2);
@@ -202,31 +164,39 @@ namespace Test
                                 if (responseListNPC[0].speaker != "") {
                                     speaker = responseListNPC[0].speaker;
                                 }
-                                
+
                                 State.advanceConversation(speaker, responseList, responseListNPC);
                             }
-                        }
-                        else if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0)
-                        {
+                        } else if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0) {
                             State.dialogueBox.printTime = 0;
                         }
                     }
 
                 } else if (State.GetState() == "tutorial") {
+
+
+                    if (Int32.Parse(jankId) >= 27) {
+                        Console.WriteLine("HEY TIME FOR ME TO GET THE RESPONSE LIST SHIT BOIIII PCURRID AND SHIT : " + pcurrid);
+                        Console.WriteLine("HEY TIME FOR ME TO GET THE RESPONSE LIST SHIT BOIIII CONTENT AND SHIT : " + responseList[0].content);
+                        Console.WriteLine("HEY ITS ME PCURRID: " + pcurrid);
+                        Console.WriteLine("HEY ITS ME AS WELL : " + ncurrid);
+                        pcurrid = "1";
+                        ncurrid = "1";
+                        ui_man.tutorialButtonIndex = 4;
+                        ui_man.reset(responseList);
+
+                    }
                     if (State.dialogueIndex == "AI") {
                         if (State.dialogueBox.checkNext()) {
                             jankList = s.chooseJank(Load.Jankson, jankId, currentTone.ToString());
                             State.setResponseList(jankList);
-                            jankIncr();
+
                             State.advanceConversation("", null, null);
+                            jankIncr();
+                            limitTones();
+
                         }
-                        if (jankId == "5") ui_man.tutorialButtonIndex = 0;
-                        else if (jankId == "8") ui_man.tutorialButtonIndex = 1;
-                        else if (jankId == "13") ui_man.tutorialButtonIndex = 2;
-                        else if (jankId == "20") ui_man.tutorialButtonIndex = 3;
-                        else if (Int32.Parse(jankId) > 20) ui_man.tutorialButtonIndex = 4;
-                        ui_man.reset(jankList);
-                    } else if (State.dialogueIndex == "root"){
+                    } else if (State.dialogueIndex == "root") {
                         //timer action will choose jank
                         //timer action will set response list
                         //timer action will increment jankid
@@ -242,17 +212,14 @@ namespace Test
                         if (State.playerDialogueBox.checkNext()) {
                             jankList = s.chooseJank(Load.Jankson, jankId, currentTone.ToString());
                             State.setResponseList(jankList);
-                            jankIncr();
+
                             State.advanceConversation("", null, null);
+                            jankIncr();
+                            limitTones();
                         }
-                        if (jankId == "5") ui_man.tutorialButtonIndex = 0;
-                        else if (jankId == "8") ui_man.tutorialButtonIndex = 1;
-                        else if (jankId == "13") ui_man.tutorialButtonIndex = 2;
-                        else if (jankId == "20") ui_man.tutorialButtonIndex = 3;
-                        else if (Int32.Parse(jankId) > 20) ui_man.tutorialButtonIndex = 4;
-                        ui_man.reset(jankList);
+
                     }
-                    
+                   
                 }
             }
             if (State.GetState() == "game" || State.GetState() == "tutorial") {
@@ -272,15 +239,43 @@ namespace Test
             }
         }
 
+        private void limitTones() {
+            if (jankId == "5") {
+                ui_man.tutorialButtonIndex = 0;
+                currentTone = tone.Root;
+            } else if (jankId == "8") {
+                ui_man.tutorialButtonIndex = 1;
+                currentTone = tone.Root;
+            } else if (jankId == "14") {
+                ui_man.tutorialButtonIndex = 2;
+                currentTone = tone.Root;
+            } else if (jankId == "21") {
+                ui_man.tutorialButtonIndex = 3;
+                currentTone = tone.Root;
+            } else if (Int32.Parse(jankId) > 22) {
+                ui_man.tutorialButtonIndex = 4;
+                currentTone = tone.Root;
+            }
+
+
+            if (Int32.Parse(jankId) < 27) {
+                ui_man.reset(jankList);
+                Console.WriteLine("I SHOULD NOT BE HERE: " + jankId);
+
+            }
+        }
+
         public void jankIncr() {
             int j = Int32.Parse(jankId);
             j++;
             jankId = j.ToString();
+
+            Console.WriteLine("THE CURRENT JANKID IS: " + jankId);
+
         }
 
         #region Timer Action Placeholder
-        public void TimerAction()
-        {
+        public void TimerAction() {
             updateTargetFNC();
             //update currentmademeories, currentmilestones, currenttone, currentcontext
             currentTone = ui_man.getTone();
@@ -289,8 +284,7 @@ namespace Test
         }
         #endregion
 
-        public void updateTargetFNC()
-        {
+        public void updateTargetFNC() {
 
             //load tonal matrix
             //get targets from player
@@ -307,14 +301,12 @@ namespace Test
 
 
         //after timer runs out update the current stuff
-        private void updateCurrents()
-        {
+        private void updateCurrents() {
             int temp2 = Int32.Parse(pcurrid);
             int temp1 = Int32.Parse(ncurrid);
 
             temp2++;
-            if (temp2 % 2 == 0 && temp2 > 2)
-            {
+            if (temp2 % 2 == 0 && temp2 > 2) {
                 temp1++;
             }
 
@@ -329,8 +321,7 @@ namespace Test
         string speaker = "dad";
 
         #region load dialogue new
-        public void loadDialogues()
-        {
+        public void loadDialogues() {
             if (State.GetState() == "game") {
                 if (currentTone != tone.Root) {
                     // Load playerDialogueBox with the new content from responseList
@@ -374,16 +365,17 @@ namespace Test
 
                 }
             } else if (State.GetState() == "tutorial") {
+                Console.WriteLine("ehllo world! " + currentTone + " : " + jankId);
 
                 if (currentTone != tone.Root) {
 
                     Console.WriteLine("timer action, dialogue index " + jankId);
                     jankList = s.chooseJank(Load.Jankson, jankId, currentTone.ToString());
                     State.setResponseList(jankList);
-                    jankIncr();
-                    currentTone = tone.Root;
+
                     State.advanceConversation("", null, null);
                     State.getGameTimer("game").resetTimer();
+                    jankIncr();
                 } else {
                     State.getGameTimer("game").resetTimer();
                     State.getGameTimer("game").startTimer();
@@ -395,11 +387,10 @@ namespace Test
 
         StoryManager sman = new StoryManager();
         string jankId = "1";
-       
 
-        protected override void Initialize()
-        {
-            
+
+        protected override void Initialize() {
+
             splash = new Sprite(new Texture("../../Art/banner2.png"));
             alphaSplash = new Sprite(new Texture("../../Art/alpha.png"));
             momSplash = new Sprite(new Texture("../../Art/angrymom.png"));
@@ -414,7 +405,7 @@ namespace Test
             wallWindow = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/window.png"));
 
 
-            splash.Scale = new Vector2f(.5f,.5f);
+            splash.Scale = new Vector2f(.5f, .5f);
             alphaSplash.Scale = new Vector2f(.5f, .5f);
             alexSplash.Scale = new Vector2f(.5f, .5f);
             dadSplash.Scale = new Vector2f(1.1f, 1.1f);
@@ -426,11 +417,11 @@ namespace Test
             table.Scale = new Vector2f(SCREEN_WIDTH / table.GetGlobalBounds().Width, SCREEN_HEIGHT / table.GetGlobalBounds().Height);
             wallWindow.Scale = new Vector2f(SCREEN_WIDTH / wallWindow.GetGlobalBounds().Width, SCREEN_HEIGHT / wallWindow.GetGlobalBounds().Height);
 
-            splash.Position = new Vector2f(SCREEN_WIDTH/2.8f, SCREEN_HEIGHT/25);
+            splash.Position = new Vector2f(SCREEN_WIDTH / 2.8f, SCREEN_HEIGHT / 25);
             alphaSplash.Position = new Vector2f(SCREEN_WIDTH / 2.3f, SCREEN_HEIGHT / 6.5f);
             momSplash.Position = new Vector2f(SCREEN_WIDTH - momSplash.GetGlobalBounds().Width, SCREEN_HEIGHT - momSplash.GetGlobalBounds().Height);
             dadSplash.Position = new Vector2f(0, SCREEN_HEIGHT - dadSplash.GetGlobalBounds().Height + 30);
-            alexSplash.Position = new Vector2f(SCREEN_WIDTH/2, SCREEN_HEIGHT - alexSplash.GetGlobalBounds().Height);
+            alexSplash.Position = new Vector2f(SCREEN_WIDTH / 2, SCREEN_HEIGHT - alexSplash.GetGlobalBounds().Height);
 
             table.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * -0.15));
             flower.Position = new Vector2f((SCREEN_WIDTH / 2) - (flower.GetGlobalBounds().Width / 2), 0);
@@ -444,13 +435,13 @@ namespace Test
             textBackground.FillColor = new Color(67, 65, 69);
             textBackground.OutlineColor = Color.White;
             textBackground.OutlineThickness = 2;
-            
+
             // Create Character states
 
             responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, currentTone.ToString());
             responseListNPC = s.ChooseDialog(Load.NPCDialogueObj, ncurrid, currentTone.ToString());
 
-            
+
             jankList = s.chooseJank(Load.Jankson, jankId, currentTone.ToString());
             State.setResponseList(jankList);
             jankIncr();
@@ -488,11 +479,10 @@ namespace Test
             Arm.setArmPosition(Dad.getArmPosition());
             Arm.active(true);
 
-            
+
         }
 
-        private void LoadInitialPreReqs()
-        {
+        private void LoadInitialPreReqs() {
 
             currentMadeMemories.Add("");
 
@@ -502,16 +492,13 @@ namespace Test
 
             FNC = 0;
         }
-        protected override void Update()
-        {
+        protected override void Update() {
             screenHelper();
 
             State.sound_man.soundUpdate(settingsMenu.getSoundToggle());
-            if (State.GetState() == "game" || State.GetState() == "tutorial")
-            {
+            if (State.GetState() == "game" || State.GetState() == "tutorial") {
 
-                if (playerChoice && State.getGameTimer("game").getStart())
-                {
+                if (playerChoice && State.getGameTimer("game").getStart()) {
                     State.getGameTimer("game").stopTimer();
                 } //jank fix
 
@@ -525,27 +512,21 @@ namespace Test
                 var MouseCoord = ManagerOfInput.GetMousePos();
 
                 // If the mouse is currently dragging
-                if (ManagerOfInput.GetMouseDown())
-                {
+                if (ManagerOfInput.GetMouseDown()) {
 
                     // Loop through buttons
-                    for (var i = 0; i < buttons.Count; i++)
-                    {
+                    for (var i = 0; i < buttons.Count; i++) {
                         // Find button currently being interacted with
-                        if (buttons[i].GetSelected() && !buttons[i].getDisabled())
-                        {
+                        if (buttons[i].GetSelected() && !buttons[i].getDisabled()) {
                             // Move the button around the screen
                             buttons[i].translate(MouseCoord[0], MouseCoord[1], window.Size.X, window.Size.Y);
 
                             // Check collision with UI Textboxes
                             // Loop through UI Textboxes
-                            for (var j = 0; j < playerDialogues.Count; j++)
-                            {
+                            for (var j = 0; j < playerDialogues.Count; j++) {
                                 // If the mouse just came from inside a UI Textbox
-                                if (playerDialogues[j].wasMouseIn())
-                                {
-                                    if (!playerDialogues[j].Contains(buttons[i]))
-                                    {
+                                if (playerDialogues[j].wasMouseIn()) {
+                                    if (!playerDialogues[j].Contains(buttons[i])) {
                                         // Mouse has now left the UI Textbox so set it to false
                                         playerDialogues[j].setMouseWasIn(false);
                                         // Reset the color to match its previous color
@@ -556,11 +537,8 @@ namespace Test
                                     }
 
                                     // If mouse just came from outside the UI Textbox
-                                }
-                                else
-                                {
-                                    if (playerDialogues[j].Contains(buttons[i]))
-                                    {
+                                } else {
+                                    if (playerDialogues[j].Contains(buttons[i])) {
                                         // Mouse is now inside a UI Textbox, so set it to true
                                         playerDialogues[j].setMouseWasIn(true);
                                         // Update previous color to current color of the UI Textbox
@@ -581,9 +559,7 @@ namespace Test
 
                 }
 
-            }
-            else if (State.GetState() == "pause")
-            {
+            } else if (State.GetState() == "pause") {
                 State.getGameTimer("game").PauseTimer();
 
             }
@@ -595,30 +571,23 @@ namespace Test
 
         bool playerChoice = false;
 
-        protected override void Draw()
-        {
+        protected override void Draw() {
 
             window.Clear(clearColor);
 
             window.SetView(fullScreenView);
-            if (State.GetState() == "menu")
-            {
-                if (State.GetMenuState() == "start")
-                {
+            if (State.GetState() == "menu") {
+                if (State.GetMenuState() == "start") {
                     window.Draw(splash);
                     window.Draw(alphaSplash);
                     window.Draw(momSplash);
                     window.Draw(dadSplash);
                     window.Draw(alexSplash);
                     window.Draw(startMenu);
-                }
-                else
-                {
+                } else {
                     window.Draw(settingsMenu);
                 }
-            }
-            else
-            {
+            } else {
                 window.Draw(backwall);
 
                 window.Draw(wallWindow);
@@ -637,55 +606,44 @@ namespace Test
 
                 var buttons = ui_man.getButtons();
 
-                if (!State.dialogueBox.active)
-                {
+                if (!State.dialogueBox.active) {
                     window.Draw(textBackground); // Account for fixed height of player dialogue box (makes sure there isnt a gap below the PDB)
                     window.Draw(State.playerDialogueBox);
                 }
-                if (!State.playerDialogueBox.active)
-                {
+                if (!State.playerDialogueBox.active) {
                     window.Draw(State.dialogueBox);
                 }
 
-                if (!State.playerDialogueBox.active && !State.dialogueBox.active)
-                {
+                if (!State.playerDialogueBox.active && !State.dialogueBox.active) {
 
                     window.Draw(textBackground);
 
-                    for (var i = 0; i < dialogues.Count; i++)
-                    {
+                    for (var i = 0; i < dialogues.Count; i++) {
                         window.Draw(dialogues[i]);
                     }
                     if (State.dialogueIndex != "player") window.Draw(toneBar);
-                    for (var i = 0; i < buttons.Count; i++)
-                    {
+                    for (var i = 0; i < buttons.Count; i++) {
                         window.Draw(buttons[i]);
                     }
                     window.Draw(State.getGameTimer("game")); //this is the speak button
                 }
-                if (playerChoice)
-                {
+                if (playerChoice) {
                     window.Draw(D_Man);
                 }
 
-                if (State.GetState() == "pause")
-                {
+                if (State.GetState() == "pause") {
 
                     pauseMenu.DrawPauseBG(window);
-                    if (State.GetMenuState() == "pause")
-                    {
+                    if (State.GetMenuState() == "pause") {
                         window.Draw(pauseMenu);
-                    }
-                    else if (State.GetMenuState() == "settings")
-                    {
+                    } else if (State.GetMenuState() == "settings") {
                         window.Draw(settingsMenu);
 
                     }
 
                 }
 
-                if (debugInfo)
-                {
+                if (debugInfo) {
                     Text AI_DB = new Text("LoadAIOnce: " + loadedAIDialogueOnce + "\n" +
                                           "AI_DB - animStart: " + State.dialogueBox.getAnimationStart() + "\n" +
                                           "        awaitInput: " + State.dialogueBox.getAwaitInput() + "\n" +

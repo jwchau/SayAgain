@@ -46,7 +46,7 @@
     ,"id":"9"
   },
   {
-     "content":"<Here comes Dad from the living room.>"
+     "content":"Now you just sound like you don’t know what to say.."
     ,"tone":"Hesitant"
     ,"id":"10"
   },
@@ -61,7 +61,7 @@
     ,"id":"12"
   },
   {
-     "content":"Dad has a mustache now?"
+     "content":"<Dad has a mustache now?>"
     ,"tone":"Default"
     ,"id":"13"
   },
@@ -71,7 +71,7 @@
     ,"id":"14"
   },
   {
-     "content":"Hey Dad, I hope you and mom have been doing really well"
+     "content":"Hey Dad, I hope you and mom have been doing really well!"
     ,"tone":"Compassionate"
     ,"id":"15"
   },
@@ -81,22 +81,22 @@
     ,"id":"16"
   },
   {
-     "content":"He doesn't know about Mom? Well, then..."
+     "content":"<He doesn't know about Mom? Well, then...>"
     ,"tone":"Default"
     ,"id":"17"
   },
   {
-     "content":"And now Mom with the food."
+     "content":"<And now Mom with the food.>"
     ,"tone":"Default"
     ,"id":"18"
   },
   {
-     "content":"..."
+     "content":"hmmmm..."
     ,"tone":"Default"
     ,"id":"19"
   },
   {
-     "content":"I wonder why Mom is so quiet."
+     "content":"<I wonder why Mom is so quiet.>"
     ,"tone":"Default"
     ,"id":"20"
   },
@@ -161,7 +161,7 @@
     ,"id":"26"
   },
   {
-     "content":"I haven't come home in a long time, it seems."
+     "content":"<I haven't come home in a long time, it seems.>"
     ,"tone":"Default"
     ,"id":"27"
   }

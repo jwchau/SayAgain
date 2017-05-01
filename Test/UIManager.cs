@@ -195,6 +195,9 @@ namespace Test {
             playerDialogues.Clear();
 
             produceTextBoxes(responseList.ElementAt(0).content);
+
+            Console.WriteLine("I AM PRODUCING THE CONTENTS OF: " + responseList[0].content);
+
             generateButtons();
         }
 
