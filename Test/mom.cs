@@ -117,11 +117,7 @@ namespace Test
         public override void Draw(RenderTarget target, RenderStates states)
         {
             rnd = r.Next(4, 14);
-            
-
-
-
-
+            rnd2 = r.Next(2, 4);
 
             if (isTalking)
             {
@@ -130,7 +126,9 @@ namespace Test
 
                 if (currentMouthIndex == -1) //rest mouth
                 {
+
                     hideMouth(4);
+                    framerate = (float)rnd2;
                     if (expr == "happy")
                     {
                         happyrest.Position = (new Vector2f(xpos - 50, ypos + 155));
@@ -158,6 +156,8 @@ namespace Test
 
                 else if (currentMouthIndex >= 0 && currentMouthIndex < 5)//open mouth
                 {
+                    framerate = 7;
+
                     if (currentMouthIndex >= 1)
                     {
                         hideMouth(currentMouthIndex - 1);
@@ -167,22 +167,24 @@ namespace Test
                     mouths[currentMouthIndex].Position = new Vector2f(xpos - 45, ypos + 151);
                     target.Draw(mouths[currentMouthIndex]);
                     Console.WriteLine("draw" + currentMouthIndex);
-                    
+
+                    /*
+                     *   
                     if (currentMouthIndex == 4)
                     {
                         currentMouthIndex = -1;
                     } else
                     {
                         currentMouthIndex += 1;
-                    }
-                    
+                    }*/
+
 
                 }
 
                 if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
                 {
                     time = DateTime.Now;
-                    if (currentMouthIndex == -1)
+                    if (currentMouthIndex >= -1 && currentMouthIndex <4)
                     {
                         currentMouthIndex += 1;
                     }
@@ -315,3 +317,4 @@ namespace Test
         }
     }
 }
+ 
