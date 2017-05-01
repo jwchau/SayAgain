@@ -16,14 +16,25 @@ namespace Test
         float framerate = 4f;
         int prevIndex = -1;
         int longerframe;
+        int currentMouthIndex = 0; //variable to keep track of mouths for drawing
+
 
         Texture t = new Texture("../../Art/momsprites.png");
+        Texture t2 = new Texture("../../Art/momsprites2.png");
         string expr;
         Dictionary<string, List<Sprite>> sprites = new Dictionary<string, List<Sprite>>() { { "angry", new List<Sprite>() },
                                                                                             { "happy", new List<Sprite>() },
                                                                                             { "neutral", new List<Sprite>() },
                                                                                             { "sad", new List<Sprite>() }
                                                                                            };
+
+        Dictionary<string, List<Sprite>> noMouthSprites = new Dictionary<string, List<Sprite>>() { { "angry", new List<Sprite>() },
+                                                                                            { "happy", new List<Sprite>() },
+                                                                                            { "neutral", new List<Sprite>() },
+                                                                                            { "sad", new List<Sprite>() }
+                                                                                           };
+
+
         public override void checkFNC()
         {
             throw new NotImplementedException();
@@ -88,13 +99,65 @@ namespace Test
             throw new NotImplementedException();
         }
 
+
+        void returnToRestMouth()
+        {
+            //mouthSprite.Position = new Vector2f(-100, -100);
+            //hide the sprite off screen, so don't have to destroy
+        }
+
         public override void Draw(RenderTarget target, RenderStates states)
         {
             rnd = r.Next(4, 14);
             
 
 
-            target.Draw(sprites[expr][index]);
+
+
+
+            if (isTalking)
+            {
+                target.Draw(noMouthSprites[expr][index]);
+                //cycle between open mouth and rest mouth
+
+                if (currentMouthIndex == 0) //rest mouth
+                {
+
+                    Console.WriteLine("C L O S E");
+
+
+                }
+
+                else if (currentMouthIndex == 1)//open mouth
+                {
+                    Console.WriteLine("open the mouth");
+                    
+
+                }
+
+                if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
+                {
+                    time = DateTime.Now;
+                    if (currentMouthIndex >= 1)
+                    {
+                        currentMouthIndex = 0;
+                    }
+                    else if (currentMouthIndex == 0)
+                    {
+                        currentMouthIndex = 1;
+                    }
+                }
+
+
+
+            }
+            if (!isTalking)
+            {
+                target.Draw(sprites[expr][index]);
+                //stay at the default mouth
+                returnToRestMouth();
+            }
+
 
             if (index == longerframe && prevIndex != longerframe)
             {
@@ -114,7 +177,14 @@ namespace Test
             if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
             {
                 time = DateTime.Now;
-                if (++index >= sprites[expr].Count)
+
+                if (isTalking && ++index >= noMouthSprites[expr].Count)
+                {
+                    pickSpecialFrame();
+                    index = 0;
+                }
+
+                if (!isTalking && ++index >= sprites[expr].Count)
                 {
                     pickSpecialFrame();
                     index = 0;
@@ -148,26 +218,46 @@ namespace Test
                 sprites["angry"].Add(new Sprite(t, new IntRect(i, 0, 361, 465))); //btw might get extra sprite if sizes no precise
                 sprites["angry"][sprites["angry"].Count - 1].Scale = new Vector2f(xscale, yscale);
                 sprites["angry"][sprites["angry"].Count - 1].Position = new Vector2f(xpos - sprites["angry"][0].GetGlobalBounds().Width/2, ypos);
+
+                noMouthSprites["angry"].Add(new Sprite(t2, new IntRect(i, 0, 361, 465))); //btw might get extra sprite if sizes no precise
+                noMouthSprites["angry"][noMouthSprites["angry"].Count - 1].Scale = new Vector2f(xscale, yscale);
+                noMouthSprites["angry"][noMouthSprites["angry"].Count - 1].Position = new Vector2f(xpos - sprites["angry"][0].GetGlobalBounds().Width / 2, ypos);
+
+
             }
             for (int i = 0; i < (361 * 9); i += 361)
             {
                 sprites["happy"].Add(new Sprite(t, new IntRect(i, 465, 361, 465))); //second row of sprites; happy epression
                 sprites["happy"][sprites["happy"].Count - 1].Scale = new Vector2f(xscale, yscale);
                 sprites["happy"][sprites["happy"].Count - 1].Position = new Vector2f(xpos - sprites["happy"][0].GetGlobalBounds().Width / 2, ypos);
+
+                noMouthSprites["happy"].Add(new Sprite(t2, new IntRect(i, 465, 361, 465))); //second row of sprites; happy epression
+                noMouthSprites["happy"][noMouthSprites["happy"].Count - 1].Scale = new Vector2f(xscale, yscale);
+                noMouthSprites["happy"][noMouthSprites["happy"].Count - 1].Position = new Vector2f(xpos - sprites["happy"][0].GetGlobalBounds().Width / 2, ypos);
+
             }
             for (int i = 0; i < (361 * 4); i += 361)
             {
                 sprites["neutral"].Add(new Sprite(t, new IntRect(i, 465 * 2, 361, 465)));
                 sprites["neutral"][sprites["neutral"].Count - 1].Scale = new Vector2f(xscale, yscale);
                 sprites["neutral"][sprites["neutral"].Count - 1].Position = new Vector2f(xpos - sprites["neutral"][0].GetGlobalBounds().Width / 2, ypos);
+
+                noMouthSprites["neutral"].Add(new Sprite(t2, new IntRect(i, 465 * 2, 361, 465)));
+                noMouthSprites["neutral"][noMouthSprites["neutral"].Count - 1].Scale = new Vector2f(xscale, yscale);
+                noMouthSprites["neutral"][noMouthSprites["neutral"].Count - 1].Position = new Vector2f(xpos - sprites["neutral"][0].GetGlobalBounds().Width / 2, ypos);
             }
             for (int i = 0; i < (361 * 4); i += 361)
             {
                 sprites["sad"].Add(new Sprite(t, new IntRect(i, 465 * 3, 361, 465)));
                 sprites["sad"][sprites["sad"].Count - 1].Scale = new Vector2f(xscale, yscale);
                 sprites["sad"][sprites["sad"].Count - 1].Position = new Vector2f(xpos - sprites["sad"][0].GetGlobalBounds().Width / 2, ypos);
+
+                noMouthSprites["sad"].Add(new Sprite(t2, new IntRect(i, 465 * 3, 361, 465)));
+                noMouthSprites["sad"][noMouthSprites["sad"].Count - 1].Scale = new Vector2f(xscale, yscale);
+                noMouthSprites["sad"][noMouthSprites["sad"].Count - 1].Position = new Vector2f(xpos - sprites["sad"][0].GetGlobalBounds().Width / 2, ypos);
+
             }
-            
+
         }
     }
 }
