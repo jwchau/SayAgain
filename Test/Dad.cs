@@ -77,9 +77,9 @@ namespace Test
 
                 else if (currentMouthIndex == 1)//open mouth
                 {
-                    mouthSprite.Position = new Vector2f(xpos - 35, ypos + 123);
-                    framerate = (float) rnd;
-                    
+                    mouthSprite.Position = new Vector2f(xpos - 43, ypos + 120);
+                    framerate = 7;
+
                 }
 
                 if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
@@ -173,6 +173,7 @@ namespace Test
             }
 
             mouthSprite = new Sprite(mouth);
+            mouthSprite.Scale = new Vector2f(1.2f, 1.2f);
 
         }
     }
