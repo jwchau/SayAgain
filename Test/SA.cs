@@ -365,7 +365,7 @@ namespace Test {
 
 
             Mom = new Mom();
-            Mom.setSpriteEmotion(Character.spriteEmotion.happy);
+            Mom.setSpriteEmotion(Character.spriteEmotion.angry);
             Mom.active(true);
             Mom.state.setMood(5f);
             Mom.setTalking(true);

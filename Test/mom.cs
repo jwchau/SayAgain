@@ -137,14 +137,20 @@ namespace Test
                     }
                     else if (expr == "angry")
                     {
+                        angryrest.Position = (new Vector2f(xpos - 48, ypos + 150));
+                        angryrest.Scale = (new Vector2f(0.62f, 0.62f));
                         target.Draw(angryrest);
                     }
                     else if (expr == "sad")
                     {
+                        sadrest.Position = (new Vector2f(xpos - 45, ypos + 150));
+                        sadrest.Scale = (new Vector2f(0.62f, 0.62f));
                         target.Draw(sadrest);
                     }
                     else if (expr == "neutral")
                     {
+                        neutralrest.Position = (new Vector2f(xpos - 45, ypos + 153));
+                        neutralrest.Scale = (new Vector2f(0.62f, 0.62f));
                         target.Draw(neutralrest);
                     }
 
@@ -164,7 +170,7 @@ namespace Test
                     }
                     Console.WriteLine("open the mouth");
                     mouths[currentMouthIndex].Scale = new Vector2f(0.8f, 0.8f);
-                    mouths[currentMouthIndex].Position = new Vector2f(xpos - 45, ypos + 151);
+                    mouths[currentMouthIndex].Position = new Vector2f(xpos - 43, ypos + 152);
                     target.Draw(mouths[currentMouthIndex]);
                     Console.WriteLine("draw" + currentMouthIndex);
 
@@ -184,14 +190,15 @@ namespace Test
                 if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
                 {
                     time = DateTime.Now;
-                    if (currentMouthIndex >= -1 && currentMouthIndex <4)
+                    /*if (currentMouthIndex >= -1 && currentMouthIndex <4)
                     {
                         currentMouthIndex += 1;
                     }
                     else if (currentMouthIndex == 4)
                     {
                         currentMouthIndex = -1;
-                    }
+                    }*/
+                    currentMouthIndex = r.Next(-1, 5);
                 }
 
 
