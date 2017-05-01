@@ -138,9 +138,9 @@ namespace Test
         private void onKeyPressed(object sender, KeyEventArgs e)
         {
             
-            if (State.GetState() == "game")
+            if (e.Code == Keyboard.Key.Space)
             {
-                if (e.Code == Keyboard.Key.Space)
+                if (State.GetState() == "game")
                 {
 
                     Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ THE DIALOGUE INDEX IS: " + State.dialogueIndex);
@@ -212,11 +212,46 @@ namespace Test
                         }
                     }
 
-                }
+                } else if (State.GetState() == "tutorial") {
+                    if (State.dialogueIndex == "AI") {
+                        if (State.dialogueBox.checkNext()) {
+                            jankList = s.chooseJank(Load.Jankson, jankId, currentTone.ToString());
+                            State.setResponseList(jankList);
+                            jankIncr();
 
+                            Console.WriteLine("first " + jankList[0].id);
+                            State.advanceConversation("", null, null);
+                            Console.WriteLine("second " + jankList[0].id);
+                        }
+                        ui_man.reset(jankList);
+                    } else if (State.dialogueIndex == "root"){
+                        //timer action will choose jank
+                        //timer action will set response list
+                        //timer action will increment jankid
+                        //timer action will advance conversation
+
+                        //Console.WriteLine("in root, in sa");
+
+                        if (State.getGameTimer("game").getCountDown() != 0.0) {
+                            State.getGameTimer("game").setCountDown(0);
+                        
+                        }
+
+                    } else if (State.dialogueIndex == "player") {
+                        if (State.playerDialogueBox.checkNext()) {
+                            jankList = s.chooseJank(Load.Jankson, jankId, currentTone.ToString());
+                            State.setResponseList(jankList);
+                            jankIncr();
+                            State.advanceConversation("", null, null);
+                        }
+                        ui_man.reset(jankList);
+                    }
+                    
+                }
+            }
+            if (State.GetState() == "game" || State.GetState() == "tutorial") {
                 #region button to apply tones
-                if (State.getGameTimer("game").getStart())
-                {
+                if (State.getGameTimer("game").getStart()) {
                     if (e.Code == Keyboard.Key.Num1) ui_man.applyToneShortcut(buttons[0]);
                     else if (e.Code == Keyboard.Key.Num2) ui_man.applyToneShortcut(buttons[1]);
                     else if (e.Code == Keyboard.Key.Num3) ui_man.applyToneShortcut(buttons[2]);
@@ -224,12 +259,17 @@ namespace Test
                 }
                 #endregion
 
-                if (e.Code == Keyboard.Key.P)
-                {
+                if (e.Code == Keyboard.Key.P) {
                     // Toggles game state between game and pause
-                    State.TogglePause();
+                    //State.TogglePause();
                 }
             }
+        }
+
+        public void jankIncr() {
+            int j = Int32.Parse(jankId);
+            j++;
+            jankId = j.ToString();
         }
 
         #region Timer Action Placeholder
@@ -285,64 +325,76 @@ namespace Test
         #region load dialogue new
         public void loadDialogues()
         {
-            if (currentTone != tone.Root)
-            {
-                // Load playerDialogueBox with the new content from responseList
-                State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
+            if (State.GetState() == "game") {
+                if (currentTone != tone.Root) {
+                    // Load playerDialogueBox with the new content from responseList
+                    State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
 
-                // Update response Lists with the recently used tone
-                responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, currentTone.ToString());
-                if (sman.testPlotPoint(sman.getDialogueType()))
-                {
-                    Load.NPCDialogueObj = Load.dadp;
-                    responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid, currentTone.ToString());
-                    if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
+                    // Update response Lists with the recently used tone
+                    responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, currentTone.ToString());
+                    if (sman.testPlotPoint(sman.getDialogueType())) {
+                        Load.NPCDialogueObj = Load.dadp;
+                        responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid, currentTone.ToString());
+                        if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
+                    } else {
+
+                        Load.NPCDialogueObj = Load.dadt;
+                        var rnd = new Random();
+                        Console.WriteLine("por que: " + ncurrid2);
+                        //responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, (double)(rnd.Next(0, 2)), ncurrid);
+                        responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid2, currentTone.ToString());
+                        Console.WriteLine("~~~~~~~~~~~~~~~~ IN LOAD DIALOGUE THE DIALOGUE IS: " + responseListNPC[0].content);
+                        int temp1 = Int32.Parse(ncurrid2);
+                        temp1++;
+                        ncurrid2 = temp1.ToString();
+
+                    }
+
+                    if (responseListNPC[0].speaker != "") {
+                        speaker = responseListNPC[0].speaker;
+
+                    }
+
+                    State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
+                    State.advanceConversation(speaker, responseList, responseListNPC);
+
+                    updateCurrents();
+
+                    responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, tone.Root.ToString());
+
+                    ui_man.reset(responseList);
+                } else {
+                    State.getGameTimer("game").resetTimer();
+                    State.getGameTimer("game").startTimer();
+
                 }
-                else
-                {
+            } else if (State.GetState() == "tutorial") {
 
-                    Load.NPCDialogueObj = Load.dadt;
-                    var rnd = new Random();
-                    Console.WriteLine("por que: " + ncurrid2);
-                    //responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, (double)(rnd.Next(0, 2)), ncurrid);
-                    responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid2, currentTone.ToString());
-                    Console.WriteLine("~~~~~~~~~~~~~~~~ IN LOAD DIALOGUE THE DIALOGUE IS: " + responseListNPC[0].content);
-                    int temp1 = Int32.Parse(ncurrid2);
-                    temp1++;
-                    ncurrid2 = temp1.ToString();
+                if (currentTone != tone.Root) {
 
+                    Console.WriteLine("timer action, dialogue index " + jankId);
+                    jankList = s.chooseJank(Load.Jankson, jankId, currentTone.ToString());
+                    State.setResponseList(jankList);
+                    jankIncr();
+                    currentTone = tone.Root;
+                    State.advanceConversation("", null, null);
+                    State.getGameTimer("game").resetTimer();
+                } else {
+                    State.getGameTimer("game").resetTimer();
+                    State.getGameTimer("game").startTimer();
                 }
-
-                if (responseListNPC[0].speaker != "")
-                {
-                    speaker = responseListNPC[0].speaker;
-
-                }
-
-                State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
-                State.advanceConversation(speaker, responseList, responseListNPC);
-
-                updateCurrents();
-
-                responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, tone.Root.ToString());
-
-                ui_man.reset(responseList);
-            }
-            else
-            {
-                State.getGameTimer("game").resetTimer();
-                State.getGameTimer("game").startTimer();
-
             }
         }
         #endregion
 
 
         StoryManager sman = new StoryManager();
+        string jankId = "1";
+       
 
         protected override void Initialize()
         {
-
+            
             splash = new Sprite(new Texture("../../Art/banner2.png"));
             alphaSplash = new Sprite(new Texture("../../Art/alpha.png"));
             momSplash = new Sprite(new Texture("../../Art/angrymom.png"));
@@ -375,8 +427,6 @@ namespace Test
             dadSplash.Position = new Vector2f(0, SCREEN_HEIGHT - dadSplash.GetGlobalBounds().Height + 30);
             alexSplash.Position = new Vector2f(SCREEN_WIDTH/2, SCREEN_HEIGHT - alexSplash.GetGlobalBounds().Height);
 
-
-
             table.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * -0.15));
             flower.Position = new Vector2f((SCREEN_WIDTH / 2) - (flower.GetGlobalBounds().Width / 2), 0);
 
@@ -389,14 +439,19 @@ namespace Test
             textBackground.FillColor = new Color(67, 65, 69);
             textBackground.OutlineColor = Color.White;
             textBackground.OutlineThickness = 2;
-
-            //Originally in LoadContent/////////////////////////////////////////////////////////////////////////////////
+            
             // Create Character states
 
             responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, currentTone.ToString());
             responseListNPC = s.ChooseDialog(Load.NPCDialogueObj, ncurrid, currentTone.ToString());
 
-            ui_man.produceTextBoxes(responseList[0].content);
+            
+            jankList = s.chooseJank(Load.Jankson, jankId, currentTone.ToString());
+            State.setResponseList(jankList);
+            jankIncr();
+            jankList = s.chooseJank(Load.Jankson, jankId, currentTone.ToString());
+
+            //ui_man.produceTextBoxes(responseList[0].content);
             //timeflag
             State.addTimer("game", 10, new Action(() => { TimerAction(); }));
             State.addTimer("cursor", 1, null);
@@ -428,6 +483,7 @@ namespace Test
             Arm.setArmPosition(Dad.getArmPosition());
             Arm.active(true);
 
+            
         }
 
         private void LoadInitialPreReqs()
@@ -446,7 +502,7 @@ namespace Test
             screenHelper();
 
             State.sound_man.soundUpdate(settingsMenu.getSoundToggle());
-            if (State.GetState() == "game")
+            if (State.GetState() == "game" || State.GetState() == "tutorial")
             {
 
                 if (playerChoice && State.getGameTimer("game").getStart())
@@ -471,7 +527,7 @@ namespace Test
                     for (var i = 0; i < buttons.Count; i++)
                     {
                         // Find button currently being interacted with
-                        if (buttons[i].GetSelected())
+                        if (buttons[i].GetSelected() && !buttons[i].getDisabled())
                         {
                             // Move the button around the screen
                             buttons[i].translate(MouseCoord[0], MouseCoord[1], window.Size.X, window.Size.Y);
@@ -578,7 +634,7 @@ namespace Test
 
                 if (!State.dialogueBox.active)
                 {
-                    if (State.dialogueIndex != "player") window.Draw(textBackground); // Account for fixed height of player dialogue box (makes sure there isnt a gap below the PDB)
+                    window.Draw(textBackground); // Account for fixed height of player dialogue box (makes sure there isnt a gap below the PDB)
                     window.Draw(State.playerDialogueBox);
                 }
                 if (!State.playerDialogueBox.active)

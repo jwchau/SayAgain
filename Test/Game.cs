@@ -31,7 +31,7 @@ namespace Test
         protected List<UIButton> buttons;
 
         // Debug
-        protected bool debugInfo = false;
+        protected bool debugInfo = true;
 
 
         //Menus
@@ -62,6 +62,7 @@ namespace Test
         protected List<string> currentMadeMemories = new List<string>();
         protected List<DialogueObj> responseList = new List<DialogueObj>();
         protected List<DialogueObj> responseListNPC = new List<DialogueObj>();
+        protected List<DialogueObj> jankList = new List<DialogueObj>();
         protected List<string> currentMilestones = new List<string>();
         protected List<int> currentTargets = new List<int>();
 
@@ -71,6 +72,7 @@ namespace Test
         protected tone currentTone = tone.Root;
         protected Loader Load = new Loader();
         protected OldSelector s = new OldSelector();
+
 
         #endregion
 

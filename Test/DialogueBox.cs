@@ -76,12 +76,15 @@ namespace Test
             return animationStart;
         }
 
-        public bool checkNext()
-        {
-            if (elementIndex < dialoguePanes.Count)
-            {
-                if (cts != null)
-                {
+        
+
+        public bool checkNext() {
+            if (this.printTime != 0 && this.getAnimationStart() && !this.getAwaitInput()) {
+                printTime = 0;
+                return false;
+            } else if (elementIndex < dialoguePanes.Count) {
+                //Console.WriteLine("\n---------- CHECK NEXT");
+                if (cts != null) {
                     cts.Cancel();
                 }
                 cts = new CancellationTokenSource();
@@ -89,18 +92,15 @@ namespace Test
                     printTime = 30;
                     await animateText(cts.Token);
                 }, cts.Token);
-
+                //Console.WriteLine("CHECKNEXT RETURN FALSE");
                 return false;
-            }
-            else
-            {
-                if (tag == "AI")
-                {
+            } else {
+                if (tag == "AI" || tag == "player") {
                     state.startTimer("game");
                 }
 
                 awaitInput = false;
-
+                //Console.WriteLine("CHECKNEXT RETURN TRUE");
                 return true;
             }
         }

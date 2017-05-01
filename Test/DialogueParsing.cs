@@ -36,6 +36,10 @@ namespace Test {
         public string finished;
         public string inext;
 
+        public DialogueObj(string c, string t, string i) {
+            content = c; tone = t; id = i;
+        }
+
         public DialogueObj(string newContent, string newTonalPreReq, string id, string next) { //for linked list reading
             content = newContent; tone = newTonalPreReq; this.id = id; this.next = next; this.FNC = 2 ^ 16;
         }

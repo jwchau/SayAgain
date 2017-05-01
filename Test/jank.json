@@ -1,0 +1,60 @@
+{
+  "Dialogues": [
+    {
+      "content": "<Seems forever since I was home.>",
+      "tone": "Default",
+      "id": "1"
+    },
+    {
+      "content": "<Looks like dinner is getting ready.>",
+      "tone": "Default",
+      "id": "2"
+    },
+    {
+      "content": "Oh you're finally here, can we eat now?",
+      "tone": "Default",
+      "id": "3"
+    },
+    {
+      "content": "It'  always great to see my little sister! <She seems chipper today.>",
+      "tone": "Default",
+      "id": "4"
+    },
+    {
+      "content": "How is the family treating you?",
+      "tone": "Root",
+      "id": "5"
+    },
+    {
+      "content": "Everyone's good right? But you know, whatever.",
+      "tone": "Indifferent",
+      "id": "6"
+    },
+    {
+      "content": "WHAT DO YOU MEAN WHATEVER YOU TWAT?",
+      "tone": "Default",
+      "id": "7"
+    },
+    {
+      "content": "I'm so sorry you are a huge loser.",
+      "tone": "Root",
+      "id": "8"
+    },
+    {
+      "content": "S-Sorry. I guess I dont care.",
+      "tone": "Hesitant",
+      "id": "9"
+    },
+    {
+      "content": "Wot",
+      "tone": "Default",
+      "id": "10"
+    },
+    {
+      "content": "Wot",
+      "tone": "Default",
+      "id": "10"
+    }
+
+  ]
+}
