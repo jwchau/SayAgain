@@ -384,11 +384,8 @@ namespace Test {
         }
         #endregion
 
-
         StoryManager sman = new StoryManager();
         string jankId = "1";
-
-
         protected override void Initialize() {
 
             splash = new Sprite(new Texture("../../Art/banner2.png"));

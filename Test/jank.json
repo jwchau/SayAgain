@@ -16,7 +16,7 @@
     ,"id":"3"
   },
   {
-     "content":"It's always great to see my little sister! <She seems chipper today.>"
+     "content":"It's always great to see my little sister! <She seems chipper today.> <I should click and drag in that indifferent tone onto the gray dialogue before the time runs out and see what happens. If I'm done before that, I can press SPACEBAR to speak.>"
     ,"tone":"Default"
     ,"id":"4"
   },
@@ -31,7 +31,7 @@
     ,"id":"6"
   },
   {
-     "content":"Whatever?! Jeez. Could you show you care, even just for a little bit! You can't just say ‘everyone's good,' when you don't even know what's going on."
+     "content":"Whatever?! Jeez. Could you show you care, even just for a little bit! You can't just say everyone's good, when you don't even know what's going on. "
     ,"tone":"Default"
     ,"id":"7"
   },
@@ -61,7 +61,7 @@
     ,"id":"12"
   },
   {
-     "content":"<Dad has a mustache now?>"
+     "content":"<Dad has a mustache now?> "
     ,"tone":"Default"
     ,"id":"13"
   },
@@ -91,7 +91,7 @@
     ,"id":"18"
   },
   {
-     "content":"hmmmm..."
+     "content":"Hm..."
     ,"tone":"Default"
     ,"id":"19"
   },
