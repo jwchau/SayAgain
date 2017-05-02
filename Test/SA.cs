@@ -480,7 +480,7 @@ namespace Test {
             Alexis.setSpriteEmotion(Character.spriteEmotion.angry);
             Alexis.active(true);
             Alexis.setTalking(true);
-
+            
             Dad = new Dad();
             Dad.setSpriteEmotion(Character.spriteEmotion.happy);
             Dad.active(true);
