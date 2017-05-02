@@ -80,7 +80,6 @@ namespace Test {
                 characterRect.FillColor = Color.White;
             } else {
                 characterRect.FillColor = this.color;
-                //Console.WriteLine("i forgot what i said");
             }
         }
 

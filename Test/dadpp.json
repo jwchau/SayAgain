@@ -8,7 +8,6 @@
       "FNC": "0",
       "speaker": "dad",
       "finished": "fin",
-      "target": [ "mom", "dad", "alex" ],
       "inext": ""
     },
     {
@@ -19,7 +18,6 @@
       "FNC": "-5",
       "speaker": "",
       "finished": "fin",
-      "target": [ "mom", "dad", "alex" ],
       "inext": ""
     },
     {
@@ -30,7 +28,6 @@
       "FNC": "3",
       "speaker": "",
       "finished": "fin",
-      "target": [ "mom", "dad", "alex" ],
       "inext": ""
     },
     {
@@ -41,18 +38,56 @@
       "FNC": "10",
       "speaker": "",
       "finished": "fin",
-      "target": [ "mom", "dad", "alex" ],
       "inext": ""
     },
     {
-      "content": "Wow, the sun tan really didn't help your ugly face huh?",
-      "tone": "Root",
+      "content": "Hey, the Santa Cruz beaches have really given you a tan.",
+      "tone": "Indifferent",
       "plotpoint": "MomTellsPlayerTalkToAlex",
       "id": "1",
       "FNC": "10",
       "speaker": "",
       "finished": "fin",
-      "target": [ "mom", "dad", "alex" ],
+      "inext": ""
+    },
+    {
+      "content": "Woah there!",
+      "tone": "Blunt",
+      "plotpoint": "MomTellsPlayerTalkToAlex",
+      "id": "1",
+      "FNC": "10",
+      "speaker": "",
+      "finished": "fin",
+      "inext": "mom"
+    },
+    {
+      "content": "Aren't you as chipper as ever!",
+      "tone": "Compassionate",
+      "plotpoint": "MomTellsPlayerTalkToAlex",
+      "id": "1",
+      "FNC": "10",
+      "speaker": "",
+      "finished": "fin",
+      "inext": ""
+    },
+    {
+      "content": "Indeed... Well.. Glad to have you back!",
+      "tone": "Hesitant",
+      "plotpoint": "MomTellsPlayerTalkToAlex",
+      "id": "1",
+      "FNC": "10",
+      "speaker": "",
+      "finished": "fin",
+      "inext": ""
+    },
+    {
+      "content": "Someone got a attitude bug",
+      "tone": "Blunt",
+      "plotpoint": "MomTellsPlayerTalkToAlex",
+      "id": "2",
+      "FNC": "10",
+      "speaker": "mom",
+      "finished": "fin",
       "inext": ""
     }
   ]

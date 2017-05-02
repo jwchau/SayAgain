@@ -69,7 +69,6 @@ namespace Test
 
                 }
             }
-
             if (expr == "angry")
             {
                 int rnd = r.Next(0, 3);
@@ -80,6 +79,7 @@ namespace Test
                 }
                 else if (rnd == 1)
                 {
+
                     longerframe = 3;
 
                 }
@@ -100,7 +100,6 @@ namespace Test
         public override Vector2f getArmPosition() {
             throw new NotImplementedException();
         }
-
 
         void returnToRestMouth()
         {
@@ -223,7 +222,6 @@ namespace Test
                 framerate = 4f;
             }
 
-
             if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
             {
                 time = DateTime.Now;
@@ -261,7 +259,6 @@ namespace Test
             ypos = (float)(SCREEN_HEIGHT*0.29);
             xscale = (float)((SCREEN_WIDTH / 1920) * 0.9);
             yscale = (float)((SCREEN_HEIGHT / 1080) * 0.9);
-
 
             for (int i = 0; i < (361 * 7); i += 361)
             {

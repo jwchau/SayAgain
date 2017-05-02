@@ -34,7 +34,6 @@ namespace Test
         protected bool debugInfo = false;
 
 
-
         //Menus
         protected Menu startMenu = new Menu("start");
         protected Menu settingsMenu = new Menu("settings");
@@ -63,6 +62,7 @@ namespace Test
         protected List<string> currentMadeMemories = new List<string>();
         protected List<DialogueObj> responseList = new List<DialogueObj>();
         protected List<DialogueObj> responseListNPC = new List<DialogueObj>();
+        protected List<DialogueObj> jankList = new List<DialogueObj>();
         protected List<string> currentMilestones = new List<string>();
         protected List<int> currentTargets = new List<int>();
 
@@ -73,13 +73,16 @@ namespace Test
         protected Loader Load = new Loader();
         protected OldSelector s = new OldSelector();
 
+
         #endregion
 
+        protected Sprite splash, alphaSplash, alexSplash, momSplash, dadSplash;
         protected Sprite mom, alex, dad, toneBar, backwall, flower, lamp, pictures, table, wallWindow;
         protected RectangleShape textBackground;
         ContextSettings settings;
         protected Character Mom, Alexis, Dad, Arm;
         protected StoryManager sman;
+
         /////////////////////////////////////////////////////////////////////////////////////////////
 
         public static UInt32 getW()

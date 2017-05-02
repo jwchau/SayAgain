@@ -101,7 +101,7 @@ namespace Test
                         foreach (var c in plot_dict[n].Item2) //the precondition of each child
                         {
                             Console.WriteLine("With preconditions: " + c);
-
+                        
                             nextPreconditions.Add(c);
 
                             if (checkIfPreconSatisfied(nextPreconditions)) //if true
@@ -125,7 +125,6 @@ namespace Test
             {
                 //if p has a ' in it (multiple preconditions)
                 //then separate the two conitions, parse for whether FNC or plot point requirement
-                //Console.WriteLine(p);
                 if (p.Contains(","))
                 {
                     string tmp = p.Replace(" ", String.Empty); //get rid of whitespace

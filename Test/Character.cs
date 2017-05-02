@@ -112,16 +112,9 @@ namespace Test {
         }
         public void click() {
             if (sprites != null) {
-                /*if (Mouse.GetPosition().X >= (x * SA.getW())
-                    && Mouse.GetPosition().X <= x * (SA.getW()) + sprites[0].GetGlobalBounds().Width
-                    && Mouse.GetPosition().Y >= (y * SA.getH())
-                    && Mouse.GetPosition().Y <= (y * SA.getH()) + sprites[0].GetGlobalBounds().Height)
-                */
-
                 /////.http://stackoverflow.com/questions/23530360/how-do-you-make-a-clickable-sprite-in-sfml
                 if (sprites[0].GetGlobalBounds().Contains
                     (Mouse.GetPosition().X, Mouse.GetPosition().Y)) {
-                    //Console.WriteLine("clicked mom");
                 }
 
             }

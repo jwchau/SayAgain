@@ -26,77 +26,197 @@ namespace Test {
         //Jill's fields and variables
         public DialogueBox dialogueBox;
         public DialogueBox playerDialogueBox;
-        public string dialogueIndex;
+        public string dialogueIndex = "player";
         public bool interjection = false;
         int counter = 0;
         public void advanceConversation(string speaker, List<DialogueObj> responseList, List<DialogueObj> responseListNPC) {
-            //Console.WriteLine("ADVANCE CONVERSATION COUNTER: " + counter);
-            counter++;
-            if (dialogueIndex == null) {
-                // Inital state of conversation. Load dad inital text and "increment" index
-                dialogueBox.loadNewDialogue("dad", "Hey! It's great having you back home.");
-                dialogueIndex = "AI";
-            } else if (dialogueIndex == "AI") {
-                playerDialogueBox.init = false;
-                playerDialogueBox.active = false;
-                dialogueBox.active = true;
-                if (dialogueBox.active && !playerDialogueBox.active) {
-                    if (dialogueBox.printTime != 0 && dialogueBox.getAnimationStart() && !dialogueBox.getAwaitInput()) {
-                        dialogueBox.setPrintTime(0);
-                    } else if (dialogueBox.checkNext()) {
+            if (currentState == "game") {
+                if (dialogueIndex == "AI") {
+                    playerDialogueBox.init = false;
+                    playerDialogueBox.active = false;
+                    dialogueBox.active = true;
+                    if (dialogueBox.checkNext()) {
+                        Console.WriteLine("YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO: " + responseList[0].content);
                         dialogueIndex = "root";
                         dialogueBox.active = false;
                         playerDialogueBox.active = false;
                     }
-                }
-            } else if (dialogueIndex == "root") {
-                dialogueBox.init = false;
-                playerDialogueBox.init = true;
-                dialogueIndex = "player";
-            } else if (dialogueIndex == "player") {
-                dialogueBox.init = false;
-                dialogueBox.active = false;
-                if (playerDialogueBox.active && !dialogueBox.active) {
-                    if (playerDialogueBox.printTime != 0 && playerDialogueBox.getAnimationStart() && !playerDialogueBox.getAwaitInput()) {
-                        playerDialogueBox.setPrintTime(0);
-                    } else {
-                        if (playerDialogueBox.checkNext()) {
-                            playerDialogueBox.active = false;
-                            dialogueBox.active = true;
-                            dialogueBox.init = true;
-                            if (responseListNPC[0].inext == "") {
-                                //if there is no interjector
-                                dialogueIndex = "AI";
+                } else if (dialogueIndex == "root") {
+                    dialogueBox.init = false;
+                    playerDialogueBox.init = true;
+                    dialogueIndex = "player";
+                } else if (dialogueIndex == "player") {
+                    dialogueBox.init = false;
+                    dialogueBox.active = false;
+                    if (playerDialogueBox.active && !dialogueBox.active) {
+                        if (playerDialogueBox.printTime != 0 && playerDialogueBox.getAnimationStart() && !playerDialogueBox.getAwaitInput()) {
+                            playerDialogueBox.setPrintTime(0);
+                        } else {
+                            if (playerDialogueBox.checkNext()) {
+                                playerDialogueBox.active = false;
+                                dialogueBox.active = true;
+                                dialogueBox.init = true;
+                                if (responseListNPC[0].inext == "") {
+                                    //if there is no interjector
+                                    dialogueIndex = "AI";
 
-                                dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
-                            } else {
+                                    dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
+                                } else {
 
-                                //if there is an interjector
-                                dialogueIndex = "interject";
-                                Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ SET INTERJECT");
-                                dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
+                                    //if there is an interjector
+                                    dialogueIndex = "interject";
+                                    dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
+                                }
                             }
-                            // Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~ THE CONTENT IS ")
                         }
                     }
-                }
-            } else if (dialogueIndex == "interject") {
+                } else if (dialogueIndex == "interject") {
 
-                if (dialogueBox.checkNext()) {
+                    if (dialogueBox.checkNext()) {
 
-                    dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
-                    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ ENTERED INTERJECT");
-                    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~ INTERJECT CONTENT IS: " + responseListNPC[0].content);
+                        dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
 
-                    if (responseListNPC[0].inext == "") {
-                        dialogueIndex = "root";
-                        dialogueBox.active = false;
-                        playerDialogueBox.active = false;
+                        if (responseListNPC[0].inext == "") {
+                            dialogueIndex = "AI";
+
+                        }
+
                     }
+                }
+                // DO STUFF HERE MEGA JANK INCOMING
+            } else if (currentState == "tutorial") {
 
+                if (jankList[0].id == "1") {
+                    db_states('p');
+                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
+                } else if (jankList[0].id == "2") {
+                    db_states('p');
+                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
+                } else if (jankList[0].id == "3") {
+                    db_states('a');
+                    dialogueBox.loadNewDialogue("alex", jankList[0].content);
+                } else if (jankList[0].id == "4") {
+                    db_states('p');
+                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
+                } else if (jankList[0].id == "5") {
+                    db_states('r');
+                } else if (jankList[0].id == "6") {
+                    db_states('p');
+                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
+                } else if (jankList[0].id == "7") {
+                    db_states('a');
+                    dialogueBox.loadNewDialogue("alex", jankList[0].content);
+                } else if (jankList[0].id == "8") {
+                    db_states('r');
+                } else if (jankList[0].id == "9") {
+                    db_states('p');
+                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
+                } else if (jankList[0].id == "10") {
+                    db_states('a');
+
+                    Console.WriteLine("AT 10 MY CONTENT IS: " + jankList[0].content);
+
+                    dialogueBox.loadNewDialogue("alex", jankList[0].content);
+                } else if (jankList[0].id == "11") {
+                    db_states('p');
+                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
+                } else if (jankList[0].id == "12") {
+                    db_states('a');
+                    dialogueBox.loadNewDialogue("dad", jankList[0].content);
+                } else if (jankList[0].id == "13") {
+                    db_states('p');
+                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
+                } else if (jankList[0].id == "14") {
+                    db_states('r');
+                } else if (jankList[0].id == "15") {
+                    db_states('p');
+                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
+                } else if (jankList[0].id == "16") {
+                    db_states('a');
+                    dialogueBox.loadNewDialogue("dad", jankList[0].content);
+                } else if (jankList[0].id == "17") {
+                    db_states('p');
+                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
+                } else if (jankList[0].id == "18") {
+                    db_states('p');
+                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
+                } else if (jankList[0].id == "19") {
+                    db_states('a');
+                    dialogueBox.loadNewDialogue("mom", jankList[0].content);
+                } else if (jankList[0].id == "20") {
+                    db_states('p');
+                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
+                } else if (jankList[0].id == "21") {
+                    Console.WriteLine("in game state, jank id 21");
+                    db_states('r');
+                } else if (jankList[0].id == "22") {
+                    Console.WriteLine("in game state, jank id 22");
+                    db_states('p');
+                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
+                } else if (jankList[0].id == "23") {
+                    Console.WriteLine("in game state, jank id 23");
+                    db_states('a');
+                    dialogueBox.loadNewDialogue("mom", jankList[0].content);
+                } else if (jankList[0].id == "24") {
+                    db_states('r');
+                } else if (jankList[0].id == "25") {
+                    db_states('p');
+                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
+                } else if (jankList[0].id == "26") {
+                    db_states('a');
+                    dialogueBox.loadNewDialogue("mom", jankList[0].content);
+                } else if (jankList[0].id == "27") {
+                    db_states('p');
+                    playerDialogueBox.loadNewDialogue("player", jankList[0].content);
+                } else {
+                    db_states('a');
+                    dialogueBox.loadNewDialogue("dad", "Hey, it's good to have you home.");
+
+                    SetState("game");
                 }
             }
         }
+
+        List<DialogueObj> jankList;
+        public void setResponseList(List<DialogueObj> jankList) {
+            this.jankList = jankList;
+        }
+
+        private void die(string s) {
+            dialogueIndex = s;
+        }
+
+        public void db_states(char s) {
+            switch (s) {
+                case 'p': {
+                        die("player");
+                        playerDialogueBox.active = true;
+                        playerDialogueBox.init = true;
+                        dialogueBox.init = false;
+                        dialogueBox.active = false;
+                        break;
+                    }
+                case 'a': {
+                        die("AI");
+                        playerDialogueBox.active = false;
+                        playerDialogueBox.init = false;
+                        dialogueBox.init = true;
+                        dialogueBox.active = true;
+                        break;
+                    }
+                case 'r': {
+                        die("root");
+                        playerDialogueBox.active = false;
+                        playerDialogueBox.init = false;
+                        dialogueBox.init = true;
+                        dialogueBox.active = false;
+                        getGameTimer("game").startTimer();
+                        break;
+                    }
+                default: break;
+            }
+        }
+
         //Timer for keeping track of time given to the player
         public GameTimer getGameTimer(string tag) {
             return DictGameTimer[tag];
@@ -112,13 +232,14 @@ namespace Test {
             return currentState;
         }
         public void SetState(string state) {
-            if (state != "menu" && state != "game" && state != "pause") {
+            if (state != "menu" && state != "game" && state != "pause" && state != "tutorial") {
                 throw new FormatException();
             }
-            if (state == "game" && currentMenuState == "start") {
+            currentState = state;
+            if (state == "tutorial" && currentMenuState == "start") {
                 advanceConversation("", null, null);
             }
-            currentState = state;
+
         }
         public string GetMenuState() {
             return currentMenuState;
@@ -168,7 +289,7 @@ namespace Test {
                             // Do button action
                             mappings[j].Item3.Start();
                             // Change either game state or menu state based off of button's target state
-                            if (mappings[j].Item2 == "game") {
+                            if (mappings[j].Item2 == "tutorial") {
                                 SetState(mappings[j].Item2);
                                 //DictGameTimer["game"].startTimer();
                             } else if (mappings[j].Item2 == "menu") {

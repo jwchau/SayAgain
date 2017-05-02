@@ -10,8 +10,12 @@ namespace Test {
             List<DialogueObj> responseList = new List<DialogueObj>();
             for (int i = 0; i < r.r.Dialogues.Count; i++) {
                 var curr = r.r.Dialogues[i];
+<<<<<<< HEAD
                 if (curr.id == now && (currTone == curr.tone || curr.tone == "Default" )) {
                     //Console.WriteLine("found 1");
+=======
+                if (curr.id == now && currTone == curr.tone) {
+>>>>>>> 94a1b2b2d21ab22184ab0cd0b9a41ddf66dbae49
                     responseList.Add(curr);
                     return responseList;
                 }
@@ -26,13 +30,13 @@ namespace Test {
         }
 
         //plot point dialogue
-        public List<DialogueObj> ChooseDialog2(DialogueParsing r, string currNode, string id) {
+        public List<DialogueObj> ChooseDialog2(DialogueParsing r, string currNode, string id, string t) {
             List<DialogueObj> responseList = new List<DialogueObj>();
             var best = new DialogueObj();
             for (int i = 0; i < r.r.Dialogues.Count; i++) {
                 var curr = r.r.Dialogues[i];
-                //Console.WriteLine(currNode +" asdf " + curr.plotpoint + ": : : :" + id);
-                if (curr.plotpoint == currNode && id == curr.id) {
+                if (curr.plotpoint == currNode && id == curr.id && curr.tone == t)
+                {
                     responseList.Add(curr);
                     return responseList;
 
@@ -43,13 +47,29 @@ namespace Test {
         }
         
         //transition
-        public List<DialogueObj> ChooseDialog3(DialogueParsing r, double b, string id) {
+        public List<DialogueObj> ChooseDialog3(DialogueParsing r, double b, string id, string t) {
             List<DialogueObj> responseList = new List<DialogueObj>();
             var best = new DialogueObj();
             for (int i = 0; i < r.r.Dialogues.Count; i++) {
                 var curr = r.r.Dialogues[i];
-                if (b == curr.bucket && curr.id == id) {
+                if (b == curr.bucket && curr.id == id && (curr.tone == t || curr.tone == "Default")) {
                    
+                    responseList.Add(curr);
+                    return responseList;
+                }
+            }
+            responseList.Add(best);
+
+            return responseList;
+        }
+
+        public List<DialogueObj> chooseJank(DialogueParsing r,  string id, string t) {
+            List<DialogueObj> responseList = new List<DialogueObj>();
+            var best = new DialogueObj();
+            for (int i = 0; i < r.r.Dialogues.Count; i++) {
+                var curr = r.r.Dialogues[i];
+                if (curr.id == id && (curr.tone == t || curr.tone == "Default")) {
+
                     responseList.Add(curr);
                     return responseList;
                 }
