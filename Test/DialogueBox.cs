@@ -28,7 +28,7 @@ namespace Test {
         string tag; //AI or player
 
         public bool animationStart = false;
-        bool awaitInput = false;
+        public bool awaitInput = false;
 
         CancellationTokenSource cts;
         public List<Text> dialoguePanes = new List<Text>();
@@ -47,6 +47,7 @@ namespace Test {
         public float FcursorY;
         float iterator = 0.5f;
         public Boolean lastDialogue = false;
+        public bool spam = true;
 
         Font speechFont = new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf");
 
@@ -321,11 +322,11 @@ namespace Test {
                     if (printTime != 0) {
                         if (i == line.DisplayedString.Length - 2) {
                             printTime = 0;
-                        } else if (".!?".Contains(line.DisplayedString[i])) {
+                        } else if (".!?".Contains(line.DisplayedString[i]) && spam == false ) {
                             if (!(".!?".Contains(line.DisplayedString[i - 1]))) {
                                 printTime *= 14;
                             }
-                        } else if (",".Contains(line.DisplayedString[i])) {
+                        } else if (",".Contains(line.DisplayedString[i]) && spam == false) {
                             printTime *= 10;
                         } else {
                             printTime = 30;

@@ -127,66 +127,75 @@ namespace Test {
 
             if (e.Code == Keyboard.Key.Space) {
                 if (State.GetState() == "game") {
-
-                    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ THE DIALOGUE INDEX IS: " + State.dialogueIndex);
-                    // Activate playerDialogueBox to display and be responsive, or switch to AI dialogue
-                    if (State.dialogueIndex == "player") {
-                        Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ INDEX PLAYER CONTENT: " + responseListNPC[0].content);
-                        State.advanceConversation(speaker, null, responseListNPC);
-
-                        // Deactivate dialogueBox, Display playerDialogueBox, and submit tone 
-                    } else if (State.dialogueIndex == "root") {
-                        // Sets the timer to 0 which calls Timer Action to advance the Conversation with the new responseLists
-
-                        if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0) {
-                            State.dialogueBox.printTime = 0;
-                        }
-
-                        if (State.getGameTimer("game").getCountDown() != 0.0) {
-                            State.getGameTimer("game").setCountDown(0);
+                    if (responseListNPC[0].content == "I'm done with this") {
+                        if (State.dialogueBox.checkNext()) {
+                            State.playerDialogueBox.loadNewDialogue("player", "THANKS FOR PLAYING. SMASH THAT LIKE BUTTON. FOLLOW US ON TWITTER. SUPPORT OUR PATREON. $5 mil minimum pls");
+                            State.playerDialogueBox.active = true;
+                            State.playerDialogueBox.init = true;
                             State.dialogueBox.active = false;
-                            State.playerDialogueBox.active = false;
-
-
+                            State.dialogueBox.init = false;
+                            State.playerDialogueBox.awaitInput = false;
                         }
+                    } else {
 
-                        //Console.WriteLine("AFTER YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO: " + responseList[0].content);
-                        // Activate dialogueBox to display and be responsive, or switch to Root dialogue
-                    } else if (State.dialogueIndex == "AI") {
-                        Console.WriteLine("SA DI AI responseList content is " + responseList[0].content);
-                        State.advanceConversation(speaker, responseList, responseListNPC);
+                        Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ THE DIALOGUE INDEX IS: " + State.dialogueIndex);
+                        // Activate playerDialogueBox to display and be responsive, or switch to AI dialogue
+                        if (State.dialogueIndex == "player") {
+                            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ INDEX PLAYER CONTENT: " + responseListNPC[0].content);
+                            State.advanceConversation(speaker, null, responseListNPC);
 
-                    } else if (State.dialogueIndex == "interject") {
-                        if (State.dialogueBox.getAwaitInput() == true) {
-                            if (State.dialogueBox.checkNext()) {
+                            // Deactivate dialogueBox, Display playerDialogueBox, and submit tone 
+                        } else if (State.dialogueIndex == "root") {
+                            // Sets the timer to 0 which calls Timer Action to advance the Conversation with the new responseLists
 
-                                if (responseListNPC[0].FNC == 10.0) {
-
-                                    int temp = Int32.Parse(ncurrid);
-                                    temp++;
-                                    ncurrid = temp.ToString();
-                                    responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid, currentTone.ToString());
-                                } else {
-                                    Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~  INTERJECT IF RESPONSE LIST IS NOT 10.0");
-                                    responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid2, currentTone.ToString());
-                                    int temp = Int32.Parse(ncurrid2);
-                                    temp++;
-                                    ncurrid2 = temp.ToString();
-                                }
-
-                                if (responseListNPC[0].speaker != "") {
-                                    speaker = responseListNPC[0].speaker;
-                                }
-
-                                State.advanceConversation(speaker, responseList, responseListNPC);
+                            if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0) {
+                                State.dialogueBox.printTime = 0;
                             }
-                        } else if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0) {
-                            State.dialogueBox.printTime = 0;
+
+                            if (State.getGameTimer("game").getCountDown() != 0.0) {
+                                State.getGameTimer("game").setCountDown(0);
+                                State.dialogueBox.active = false;
+                                State.playerDialogueBox.active = false;
+
+
+                            }
+
+                            //Console.WriteLine("AFTER YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO: " + responseList[0].content);
+                            // Activate dialogueBox to display and be responsive, or switch to Root dialogue
+                        } else if (State.dialogueIndex == "AI") {
+                            Console.WriteLine("SA DI AI responseList content is " + responseList[0].content);
+                            State.advanceConversation(speaker, responseList, responseListNPC);
+
+                        } else if (State.dialogueIndex == "interject") {
+                            if (State.dialogueBox.getAwaitInput() == true) {
+                                if (State.dialogueBox.checkNext()) {
+
+                                    if (responseListNPC[0].FNC == 10.0) {
+
+                                        int temp = Int32.Parse(ncurrid);
+                                        temp++;
+                                        ncurrid = temp.ToString();
+                                        responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid, currentTone.ToString());
+                                    } else {
+                                        Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~  INTERJECT IF RESPONSE LIST IS NOT 10.0");
+                                        responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid2, currentTone.ToString());
+                                        int temp = Int32.Parse(ncurrid2);
+                                        temp++;
+                                        ncurrid2 = temp.ToString();
+                                    }
+
+                                    if (responseListNPC[0].speaker != "") {
+                                        speaker = responseListNPC[0].speaker;
+                                    }
+
+                                    State.advanceConversation(speaker, responseList, responseListNPC);
+                                }
+                            } else if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0) {
+                                State.dialogueBox.printTime = 0;
+                            }
                         }
                     }
-
                 } else if (State.GetState() == "tutorial") {
-
 
                     if (Int32.Parse(jankId) >= 27) {
                         Console.WriteLine("HEY TIME FOR ME TO GET THE RESPONSE LIST SHIT BOIIII PCURRID AND SHIT : " + pcurrid);
@@ -396,7 +405,7 @@ namespace Test {
             }
         }
         #endregion
-        string jankId = "1";
+        string jankId = "27";
 
         protected override void Initialize() {
 
