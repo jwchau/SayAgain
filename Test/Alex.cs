@@ -109,13 +109,13 @@ namespace Test
                     
                     hideMouth(4);
                     framerate = 1;
-                    Console.WriteLine(currentMouthIndex + "is -1");
+
 
                 }
 
                 else if (currentMouthIndex >= 0 && currentMouthIndex < 5)//open mouth
                 {
-                    Console.WriteLine(currentMouthIndex + "is 0-4");
+
                     framerate = 7;
 
                     if (currentMouthIndex >= 1)
@@ -148,7 +148,7 @@ namespace Test
                     }*/
                     if (currentMouthIndex == -1)
                     {
-                        Console.WriteLine("i hsould be here");
+
                         currentMouthIndex = r.Next(0, 5);
                     }
                     else
