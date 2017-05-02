@@ -151,31 +151,31 @@
     "next":""
  },
 {
-    "content":"<Mom doesn't look too happy that Dad mentioned the cups.>Mom, these cups look really great.",
+    "content":"Mom, these cups look really great.",
     "tone":"Root",
     "id":"9",
     "next":""
  },
 {
-    "content":"Jeez. Chin up, Mom. These cups do look pretty fucking awesome.",
+    "content":"<Mom doesn't look too happy that Dad mentioned the cups.>Jeez. Chin up, Mom. These cups do look pretty fucking awesome.",
     "tone":"Blunt",
     "id":"10",
     "next":""
  },
 {
-    "content":"They're just cups to me, Mom. but I guess others would say they look good.",
+    "content":"<Mom doesn't look too happy that Dad mentioned the cups.>They're just cups to me, Mom. but I guess others would say they look good.",
     "tone":"Indifferent",
     "id":"10",
     "next":""
  },
 {
-    "content":"Whoah! You picked these out, Mom! They go SOO well with the diningware.",
+    "content":"<Mom doesn't look too happy that Dad mentioned the cups.>Whoah! You picked these out, Mom! They go SOO well with the diningware.",
     "tone":"Compassionate",
     "id":"10",
     "next":""
  },
 {
-    "content":"I-uh...They look fine? No, I’m sure they look good. Right, Mom?",
+    "content":"<Mom doesn't look too happy that Dad mentioned the cups.>I-uh...They look fine? No, I’m sure they look good. Right, Mom?",
     "tone":"Hesitant",
     "id":"10",
     "next":""
