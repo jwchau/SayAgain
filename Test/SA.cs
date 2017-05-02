@@ -396,9 +396,8 @@ namespace Test {
             }
         }
         #endregion
-
-        StoryManager sman = new StoryManager();
         string jankId = "1";
+
         protected override void Initialize() {
 
             splash = new Sprite(new Texture("../../Art/banner2.png"));
@@ -475,14 +474,17 @@ namespace Test {
             Mom.setSpriteEmotion(Character.spriteEmotion.happy);
             Mom.active(true);
             Mom.state.setMood(5f);
+            Mom.setTalking(true);
 
             Alexis = new Alex();
             Alexis.setSpriteEmotion(Character.spriteEmotion.angry);
             Alexis.active(true);
+            Alexis.setTalking(true);
 
             Dad = new Dad();
             Dad.setSpriteEmotion(Character.spriteEmotion.happy);
             Dad.active(true);
+            Dad.setTalking(true);
 
             Arm = new Arm();
             Arm.setSpriteEmotion(Character.spriteEmotion.neutral);

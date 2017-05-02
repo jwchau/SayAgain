@@ -30,8 +30,7 @@ namespace Test {
             var best = new DialogueObj();
             for (int i = 0; i < r.r.Dialogues.Count; i++) {
                 var curr = r.r.Dialogues[i];
-                if (curr.plotpoint == currNode && id == curr.id && curr.tone == t)
-                {
+                if (curr.plotpoint == currNode && id == curr.id && curr.tone == t) {
                     responseList.Add(curr);
                     return responseList;
 
@@ -40,7 +39,7 @@ namespace Test {
             responseList.Add(best);
             return responseList;
         }
-        
+
         //transition
         public List<DialogueObj> ChooseDialog3(DialogueParsing r, double b, string id, string t) {
             List<DialogueObj> responseList = new List<DialogueObj>();
@@ -48,7 +47,7 @@ namespace Test {
             for (int i = 0; i < r.r.Dialogues.Count; i++) {
                 var curr = r.r.Dialogues[i];
                 if (b == curr.bucket && curr.id == id && (curr.tone == t || curr.tone == "Default")) {
-                   
+
                     responseList.Add(curr);
                     return responseList;
                 }
@@ -58,7 +57,7 @@ namespace Test {
             return responseList;
         }
 
-        public List<DialogueObj> chooseJank(DialogueParsing r,  string id, string t) {
+        public List<DialogueObj> chooseJank(DialogueParsing r, string id, string t) {
             List<DialogueObj> responseList = new List<DialogueObj>();
             var best = new DialogueObj();
             for (int i = 0; i < r.r.Dialogues.Count; i++) {

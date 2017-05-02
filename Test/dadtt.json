@@ -1,4 +1,4 @@
-{
+ï»¿{
   "Dialogues": [
 {
     "content":"It's the same but your mom's cooking seems to have gotten worse by the day!",
@@ -145,7 +145,7 @@
     "inext":""
  },
 {
-    "content":"Haha! Of course I am still working — still doing the same boring thing. I am not that old, yet, you know.",
+    "content":"Haha! Of course I am still working ï¿½ still doing the same boring thing. I am not that old, yet, you know.",
     "tone":"Blunt",
     "id":"5",
     "FNC":"0",
@@ -172,7 +172,7 @@
     "inext":""
  },
 {
-    "content":"Haha! Of course I am still working — still doing the same boring thing. I am not that old, yet, you know.",
+    "content":"Haha! Of course I am still working ï¿½ still doing the same boring thing. I am not that old, yet, you know.",
     "tone":"Hesitant",
     "id":"5",
     "FNC":"0",
@@ -181,8 +181,8 @@
     "inext":""
  },
 {
-    "content":"Well, I suppose there is one thing… You see these cups? They're amazing, expensive Swarovski crystal glasses your mom brought home.",
-    "tone":"Blunt",HE
+    "content":"Well, I suppose there is one thingï¿½ You see these cups? They're amazing, expensive Swarovski crystal glasses your mom brought home.",
+    "tone":"Blunt",
     "id":"6",
     "FNC":"0",
     "speaker":"",
@@ -199,7 +199,7 @@
     "inext":""
  },
 {
-    "content":"Well, I suppose there is one thing… You see these cups? They're amazing, expensive Swarovski crystal glasses your mom brought home.",
+    "content":"Well, I suppose there is one thingï¿½ You see these cups? They're amazing, expensive Swarovski crystal glasses your mom brought home.",
     "tone":"Compassionate",
     "id":"6",
     "FNC":"0",
@@ -361,7 +361,7 @@
     "inext":""
  },
 {
-    "content":"No! I am being reasonable! And don't say you haven't noticed yet, with—with all of this Swarovski crystal, EIGHT THIRTY dinner nonsense.",
+    "content":"No! I am being reasonable! And don't say you haven't noticed yet, withï¿½with all of this Swarovski crystal, EIGHT THIRTY dinner nonsense.",
     "tone":"Blunt",
     "id":"11",
     "FNC":"0",
@@ -370,7 +370,7 @@
     "inext":""
  },
 {
-    "content":"HOW DARE YOU! As a member of this house, it is your obligation to be aware of the changes around the house. Swarovski crystal, eight thirty dinner…",
+    "content":"HOW DARE YOU! As a member of this house, it is your obligation to be aware of the changes around the house. Swarovski crystal, eight thirty dinnerï¿½",
     "tone":"Indifferent",
     "id":"11",
     "FNC":"0",
@@ -469,7 +469,7 @@
     "inext":""
  },
 {
-    "content":"I honestly can't believe you nor Alex—especially Alex, who has been around the home—haven't been able to add up all the clues and subtleties to figure it out. Just LOOK at your mom! New hair, new clothes, coming home absolutely reeking of alcohol—It's only obvious!",
+    "content":"I honestly can't believe you nor Alexï¿½especially Alex, who has been around the homeï¿½haven't been able to add up all the clues and subtleties to figure it out. Just LOOK at your mom! New hair, new clothes, coming home absolutely reeking of alcoholï¿½It's only obvious!",
     "tone":"Blunt",
     "id":"14",
     "FNC":"0",
@@ -478,7 +478,7 @@
     "inext":"alex"
  },
 {
-    "content":"I honestly can't believe you nor Alex—especially Alex, who has been around the home—haven't been able to add up all the clues and subtleties to figure it out. Just LOOK at your mom! New hair, new clothes, coming home absolutely reeking of alcohol—It's only obvious!",
+    "content":"I honestly can't believe you nor Alexï¿½especially Alex, who has been around the homeï¿½haven't been able to add up all the clues and subtleties to figure it out. Just LOOK at your mom! New hair, new clothes, coming home absolutely reeking of alcoholï¿½It's only obvious!",
     "tone":"Indifferent",
     "id":"14",
     "FNC":"0",
@@ -487,7 +487,7 @@
     "inext":"alex"
  },
 {
-    "content":"I honestly can't believe you nor Alex—especially Alex, who has been around the home—haven't been able to add up all the clues and subtleties to figure it out. Just LOOK at your mom! New hair, new clothes, coming home absolutely reeking of alcohol—It's only obvious!",
+    "content":"I honestly can't believe you nor Alexï¿½especially Alex, who has been around the homeï¿½haven't been able to add up all the clues and subtleties to figure it out. Just LOOK at your mom! New hair, new clothes, coming home absolutely reeking of alcoholï¿½It's only obvious!",
     "tone":"Compassionate",
     "id":"14",
     "FNC":"0",
@@ -496,7 +496,7 @@
     "inext":"alex"
  },
 {
-    "content":"I honestly can't believe you nor Alex—especially Alex, who has been around the home—haven't been able to add up all the clues and subtleties to figure it out. Just LOOK at your mom! New hair, new clothes, coming home absolutely reeking of alcohol—It's only obvious!",
+    "content":"I honestly can't believe you nor Alexï¿½especially Alex, who has been around the homeï¿½haven't been able to add up all the clues and subtleties to figure it out. Just LOOK at your mom! New hair, new clothes, coming home absolutely reeking of alcoholï¿½It's only obvious!",
     "tone":"Hesitant",
     "id":"14",
     "FNC":"0",
@@ -577,7 +577,7 @@
     "inext":""
  },
 {
-    "content":"Didn't I teach you that patience is a virtue? Anyways, what I was going to say is…",
+    "content":"Didn't I teach you that patience is a virtue? Anyways, what I was going to say isï¿½",
     "tone":"Blunt",
     "id":"17",
     "FNC":"0",
@@ -586,7 +586,7 @@
     "inext":"mom"
  },
 {
-    "content":"There is no need to. I've been waiting for the most appropriate time to say this… Your Mother is cheating on me.",
+    "content":"There is no need to. I've been waiting for the most appropriate time to say thisï¿½ Your Mother is cheating on me.",
     "tone":"Indifferent",
     "id":"17",
     "FNC":"0",
@@ -829,7 +829,7 @@
     "inext":"alex"
  },
 {
-    "content":"'Cuz you're a control freak…",
+    "content":"'Cuz you're a control freakï¿½",
     "tone":"Blunt",
     "id":"24",
     "FNC":"0",
@@ -838,7 +838,7 @@
     "inext":"dad"
  },
 {
-    "content":"Cuz you're a control freak…",
+    "content":"Cuz you're a control freakï¿½",
     "tone":"Indifferent",
     "id":"24",
     "FNC":"0",
@@ -847,7 +847,7 @@
     "inext":"dad"
  },
 {
-    "content":"Cuz you're a control freak…",
+    "content":"Cuz you're a control freakï¿½",
     "tone":"Compassionate",
     "id":"24",
     "FNC":"0",
@@ -856,7 +856,7 @@
     "inext":"dad"
  },
 {
-    "content":"'Cuz you're a control freak…",
+    "content":"'Cuz you're a control freakï¿½",
     "tone":"Hesitant",
     "id":"24",
     "FNC":"0",
@@ -901,7 +901,7 @@
     "inext":""
  },
 {
-    "content":"I will talk to her however I please! You do not have the right to tell me what to do! Anyhow… Back to talking about that ungrateful woman. As the bread maker of this household, I maintain the finances, so there is no way I would let her buy these Swarovski glasses!",
+    "content":"I will talk to her however I please! You do not have the right to tell me what to do! Anyhowï¿½ Back to talking about that ungrateful woman. As the bread maker of this household, I maintain the finances, so there is no way I would let her buy these Swarovski glasses!",
     "tone":"Blunt",
     "id":"26",
     "FNC":"0",
@@ -910,7 +910,7 @@
     "inext":"mom"
  },
 {
-    "content":"Glad to see you are still able to make sensible decisions. Anyhow… Back to talking about that ungrateful woman. As the bread maker of this household, I maintain the finances, so there is no way I would let her buy these Swarovski glasses!",
+    "content":"Glad to see you are still able to make sensible decisions. Anyhowï¿½ Back to talking about that ungrateful woman. As the bread maker of this household, I maintain the finances, so there is no way I would let her buy these Swarovski glasses!",
     "tone":"Indifferent",
     "id":"26",
     "FNC":"0",
@@ -919,7 +919,7 @@
     "inext":"mom"
  },
 {
-    "content":"Glad to see you are still able to make sensible decisions. Anyhow… Back to talking about that ungrateful woman. As the bread maker of this household, I maintain the finances, so there is no way I would let her buy these Swarovski glasses!",
+    "content":"Glad to see you are still able to make sensible decisions. Anyhowï¿½ Back to talking about that ungrateful woman. As the bread maker of this household, I maintain the finances, so there is no way I would let her buy these Swarovski glasses!",
     "tone":"Compassionate",
     "id":"26",
     "FNC":"0",
@@ -928,7 +928,7 @@
     "inext":"mom"
  },
 {
-    "content":"No! Alex is just a child. She wouldn't know anything substantiable about what is going on in this house. Anyhow… Back to talking about that ungrateful woman. As the bread maker of this household, I maintain the finances, so there is no way I would let her buy these Swarovski glasses!",
+    "content":"No! Alex is just a child. She wouldn't know anything substantiable about what is going on in this house. Anyhowï¿½ Back to talking about that ungrateful woman. As the bread maker of this household, I maintain the finances, so there is no way I would let her buy these Swarovski glasses!",
     "tone":"Hesitant",
     "id":"26",
     "FNC":"0",
@@ -1107,14 +1107,14 @@
     "bucket":"1",
     "inext":""
  },
-{
-    "content":"I'm done with this",
-    "tone":"Hesitant",
-    "id":"31",
-    "FNC":"0",
-    "speaker":"mom",
-    "bucket":"1",
-    "inext":""
- }]
->>>>>>> 94a1b2b2d21ab22184ab0cd0b9a41ddf66dbae49
+    {
+      "content": "I'm done with this",
+      "tone": "Hesitant",
+      "id": "31",
+      "FNC": "0",
+      "speaker": "mom",
+      "bucket": "1",
+      "inext": ""
+    }
+  ]
 }

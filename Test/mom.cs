@@ -126,7 +126,7 @@ namespace Test
 
                 if (currentMouthIndex == -1) //rest mouth
                 {
-
+                    Console.WriteLine("mom's mouth is closed");
                     hideMouth(4);
                     framerate = (float)rnd2;
                     if (expr == "happy")
@@ -161,6 +161,7 @@ namespace Test
 
                 else if (currentMouthIndex >= 0 && currentMouthIndex < 5)//open mouth
                 {
+                    Console.WriteLine("mom's mouth is opened");
                     framerate = 7;
 
                     if (currentMouthIndex >= 1)
@@ -171,6 +172,7 @@ namespace Test
                     mouths[currentMouthIndex].Scale = new Vector2f(0.8f, 0.8f);
                     mouths[currentMouthIndex].Position = new Vector2f(xpos - 43, ypos + 152);
                     target.Draw(mouths[currentMouthIndex]);
+                
 
                     /*
                      *   

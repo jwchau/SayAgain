@@ -79,7 +79,7 @@ namespace Test {
         protected RectangleShape textBackground;
         ContextSettings settings;
         protected Character Mom, Alexis, Dad, Arm;
-        protected StoryManager sman;
+        protected StoryManager sman  = new StoryManager();
         /////////////////////////////////////////////////////////////////////////////////////////////
 
         public static UInt32 getW() {
