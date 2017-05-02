@@ -109,7 +109,7 @@ namespace Test {
         public void loadNewDialogue(string speaker, string content) {
             if (speaker == "alex") {
                 dialogueBoxSprite = spriteDict["right"];
-                dialogueBoxSprite.Position = new Vector2f(SCREEN_WIDTH / 2 - (dialogueBoxSprite.GetGlobalBounds().Width / 2), SCREEN_HEIGHT / 5);
+                dialogueBoxSprite.Position = new Vector2f((float)(SCREEN_WIDTH * 0.5) - (dialogueBoxSprite.GetGlobalBounds().Width / 2), (float)(SCREEN_HEIGHT * 0.33) - (dialogueBoxSprite.GetGlobalBounds().Height / 2));
 
                 name = new Text(speaker.ToUpper(), speechFont, nameFontSize);
                 name.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + ((118 * scale.X) - name.GetGlobalBounds().Width / 2), dialogueBoxSprite.GetGlobalBounds().Top + ((22 * scale.Y) - name.GetGlobalBounds().Height));
@@ -118,7 +118,7 @@ namespace Test {
 
             } else if (speaker == "dad") {
                 dialogueBoxSprite = spriteDict["left"];
-                dialogueBoxSprite.Position = new Vector2f((float)(SCREEN_WIDTH * 0.21) - (dialogueBoxSprite.GetGlobalBounds().Width / 2), (float)(SCREEN_HEIGHT * 0.19) - (dialogueBoxSprite.GetGlobalBounds().Height / 2));
+                dialogueBoxSprite.Position = new Vector2f((float)(SCREEN_WIDTH * 0.21) - (dialogueBoxSprite.GetGlobalBounds().Width / 2), (float)(SCREEN_HEIGHT * 0.23) - (dialogueBoxSprite.GetGlobalBounds().Height / 2));
 
                 name = new Text(speaker.ToUpper(), speechFont, nameFontSize);
                 name.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + ((118 * scale.X) - name.GetGlobalBounds().Width / 2), dialogueBoxSprite.GetGlobalBounds().Top + ((22 * scale.Y) - name.GetGlobalBounds().Height));
@@ -127,7 +127,7 @@ namespace Test {
 
             } else if (speaker == "mom") {
                 dialogueBoxSprite = spriteDict["right"];
-                dialogueBoxSprite.Position = new Vector2f(3 * SCREEN_WIDTH / 4 - (dialogueBoxSprite.GetGlobalBounds().Width / 2), SCREEN_HEIGHT / 5);
+                dialogueBoxSprite.Position = new Vector2f((float)(SCREEN_WIDTH * 0.77) - (dialogueBoxSprite.GetGlobalBounds().Width / 2), (float)(SCREEN_HEIGHT * 0.25) - (dialogueBoxSprite.GetGlobalBounds().Height / 2));
 
                 name = new Text(speaker.ToUpper(), speechFont, nameFontSize);
                 name.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + ((118 * scale.X) - name.GetGlobalBounds().Width / 2), dialogueBoxSprite.GetGlobalBounds().Top + ((22 * scale.Y) - name.GetGlobalBounds().Height));
@@ -274,7 +274,7 @@ namespace Test {
 
                 // If we have reached an end, package the current string and put it in a text object with the current style and color
                 // Reset current width, height, line, and end for the next iteration
-                if (end) {
+                if (end && line != "") {
                     Text pane = new Text(line, speechFont, dialogueFontSize);
                     pane.Style = style;
                     pane.Color = color;
