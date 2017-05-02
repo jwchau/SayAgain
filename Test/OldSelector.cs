@@ -10,12 +10,7 @@ namespace Test {
             List<DialogueObj> responseList = new List<DialogueObj>();
             for (int i = 0; i < r.r.Dialogues.Count; i++) {
                 var curr = r.r.Dialogues[i];
-<<<<<<< HEAD
-                if (curr.id == now && (currTone == curr.tone || curr.tone == "Default" )) {
-                    //Console.WriteLine("found 1");
-=======
                 if (curr.id == now && currTone == curr.tone) {
->>>>>>> 94a1b2b2d21ab22184ab0cd0b9a41ddf66dbae49
                     responseList.Add(curr);
                     return responseList;
                 }

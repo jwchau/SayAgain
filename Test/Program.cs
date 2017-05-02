@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Test
-{
-    public enum tone
-    {
+namespace Test {
+    public enum tone {
         Blunt = 0,
         Indifferent = 1,
         Compassionate = 2,
@@ -16,19 +14,17 @@ namespace Test
     }
 
 
-    class Program { 
+    class Program {
 
-    protected static SA myGame;
+        protected static SA myGame;
 
-    public static SA getGame()
-    {
-        return myGame;
-    }
+        public static SA getGame() {
+            return myGame;
+        }
 
-    
-       
-        static void Main(string[] args)
-        {
+
+
+        static void Main(string[] args) {
 
             Program.myGame = new SA();
             myGame.Run();

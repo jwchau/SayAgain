@@ -259,7 +259,7 @@ namespace Test {
                                 if (playerDialogues[0].getTone() == tone.Blunt)
                                 {
                                     //only pgets called when dragged!! keys will not work
-                                    Program.getGame().getTargets();
+                                   // Program.getGame().getTargets();
                                     Console.WriteLine("hello");
                                 
 

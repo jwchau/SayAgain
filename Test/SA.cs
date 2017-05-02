@@ -14,26 +14,6 @@ namespace Test {
 
     class SA : Game {
 
-        List<string> targets = new List<string>();
-
-
-        public Character getMom()
-        {
-            return Mom;
-        }
-
-        public Character getDad()
-        {
-            return Dad;
-        }
-
-        public Character getAlexis()
-        {
-            return Alexis;
-        }
-
-
-
         public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?") {
             window.KeyPressed += onKeyPressed;
             window.KeyReleased += onKeyReleased;
@@ -41,6 +21,19 @@ namespace Test {
             window.MouseButtonReleased += onMouseButtonReleased;
             window.MouseMoved += onMouseMoved;
 
+        }
+
+
+        public Character getMom() {
+            return Mom;
+        }
+
+        public Character getDad() {
+            return Dad;
+        }
+
+        public Character getAlexis() {
+            return Alexis;
         }
 
         #region screen resize math
@@ -153,6 +146,8 @@ namespace Test {
                             State.getGameTimer("game").setCountDown(0);
                             State.dialogueBox.active = false;
                             State.playerDialogueBox.active = false;
+
+
                         }
 
                         //Console.WriteLine("AFTER YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO: " + responseList[0].content);
@@ -189,7 +184,9 @@ namespace Test {
                             State.dialogueBox.printTime = 0;
                         }
                     }
+
                 } else if (State.GetState() == "tutorial") {
+
 
                     if (Int32.Parse(jankId) >= 27) {
                         Console.WriteLine("HEY TIME FOR ME TO GET THE RESPONSE LIST SHIT BOIIII PCURRID AND SHIT : " + pcurrid);
@@ -235,7 +232,7 @@ namespace Test {
                         }
 
                     }
-                   
+
                 }
             }
             if (State.GetState() == "game" || State.GetState() == "tutorial") {
@@ -300,21 +297,6 @@ namespace Test {
         }
         #endregion
 
-        public string getSpeaker()
-        {
-            return speaker;
-        }
-
-        public void getTargets()
-        {
-            /*Console.WriteLine("never prints this");
-            targets = Load.NPCDialogueObj.r.Dialogues.ElementAt(0).target;
-            Console.WriteLine(targets[0]);
-            return targets;*/
-            Console.WriteLine(Load.NPCDialogueObj.r.Dialogues.ElementAt(0).target.ToString());
-            
-            Console.WriteLine("fuck u");
-        }
         public void updateTargetFNC() {
 
             //load tonal matrix
@@ -414,6 +396,7 @@ namespace Test {
             }
         }
         #endregion
+
         StoryManager sman = new StoryManager();
         string jankId = "1";
         protected override void Initialize() {
@@ -465,7 +448,7 @@ namespace Test {
 
             // Create Character states
 
-            responseList = s.ChooseDialog(Load.playerexpo, pcurrid, currentTone.ToString());
+            responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, currentTone.ToString());
             responseListNPC = s.ChooseDialog(Load.NPCDialogueObj, ncurrid, currentTone.ToString());
 
 
@@ -489,21 +472,17 @@ namespace Test {
 
 
             Mom = new Mom();
-            Mom.setSpriteEmotion(Character.spriteEmotion.angry);
+            Mom.setSpriteEmotion(Character.spriteEmotion.happy);
             Mom.active(true);
             Mom.state.setMood(5f);
-            Mom.setTalking(true);
-            //Console.WriteLine(Mom.state.getMood());
 
             Alexis = new Alex();
             Alexis.setSpriteEmotion(Character.spriteEmotion.angry);
             Alexis.active(true);
-            Alexis.setTalking(true);
 
             Dad = new Dad();
-            Dad.setSpriteEmotion(Character.spriteEmotion.neutral);
+            Dad.setSpriteEmotion(Character.spriteEmotion.happy);
             Dad.active(true);
-            Dad.setTalking(true);
 
             Arm = new Arm();
             Arm.setSpriteEmotion(Character.spriteEmotion.neutral);
@@ -524,10 +503,6 @@ namespace Test {
             FNC = 0;
         }
         protected override void Update() {
-
-
-
-
             screenHelper();
 
             State.sound_man.soundUpdate(settingsMenu.getSoundToggle());
@@ -602,6 +577,7 @@ namespace Test {
 
         }
         //Ensures that AI dialogue doesnt get loaded more than once per timer done
+        bool loadedAIDialogueOnce = false;
 
         bool playerChoice = false;
 
@@ -678,7 +654,7 @@ namespace Test {
                 }
 
                 if (debugInfo) {
-                    Text AI_DB = new Text("LoadAIOnce: "  + "\n" +
+                    Text AI_DB = new Text("LoadAIOnce: " + loadedAIDialogueOnce + "\n" +
                                           "AI_DB - animStart: " + State.dialogueBox.getAnimationStart() + "\n" +
                                           "        awaitInput: " + State.dialogueBox.getAwaitInput() + "\n" +
                                           "        dialoguePanesLength: " + State.dialogueBox.dialoguePanes.Count + "\n" +
