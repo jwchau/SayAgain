@@ -14,7 +14,6 @@ namespace Test {
     class UIManager {
         //constructor
         public UIManager() {
-
             /* TEMPORARY CODE REMOVE AND CLEAN LATER*/
             if (buttonOrder == 0) {
                 tonez = new List<tone>() { tone.Blunt, tone.Indifferent, tone.Compassionate, tone.Hesitant };
@@ -27,13 +26,7 @@ namespace Test {
                     }
                 }
             }
-            int xPos = (int)SCREEN_WIDTH / tonez.Count;
-            //Console.WriteLine(SCREEN_HEIGHT);
-            for (int i = 1; i <= tonez.Count; i++) {
-                addButton(new UIButton(xPos / 2 + (i - 1) * xPos, (float)(SCREEN_HEIGHT - SCREEN_HEIGHT * 0.26), tonez[i - 1]));
-
-            }
-            ////////////////////////////////////////////////
+            generateButtons();
         }
 
         public List<tone> tonez;
@@ -41,10 +34,49 @@ namespace Test {
         List<UITextBox> playerDialogues = new List<UITextBox>();
         static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
         static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+        public int tutorialButtonIndex = 0;
+        List<Dictionary<string, bool>> availTutorialButtons = new List<Dictionary<string, bool>>() {
+            new Dictionary<string, bool>() {
+                { "Blunt", false },
+                { "Indifferent", true },
+                { "Compassionate", false },
+                { "Hesitant", false }
+            },
+            new Dictionary<string, bool>() {
+                { "Blunt", false },
+                { "Indifferent", false },
+                { "Compassionate", false },
+                { "Hesitant", true }
+            },
+            new Dictionary<string, bool>() {
+                { "Blunt", false },
+                { "Indifferent", false },
+                { "Compassionate", true },
+                { "Hesitant", false }
+            },
+            new Dictionary<string, bool>() {
+                { "Blunt", true },
+                { "Indifferent", false },
+                { "Compassionate", false },
+                { "Hesitant", false }
+            },
+        };
 
-        int buttonOrder = 2;
+        int buttonOrder = 0;
 
         string[] dialogueArray;
+
+        public void generateButtons() {
+            buttons.Clear();
+            int xPos = (int)SCREEN_WIDTH / tonez.Count;
+            for (int i = 0; i < tonez.Count; i++) {
+                buttons.Add(new UIButton(xPos / 2 + i * xPos, (float)(SCREEN_HEIGHT - SCREEN_HEIGHT * 0.26), tonez[i]));
+                if (tutorialButtonIndex < availTutorialButtons.Count()) {
+                    buttons[i].setDisabled(!availTutorialButtons[tutorialButtonIndex][tonez[i].ToString()]);
+                }
+            }
+            //tutorialButtonIndex++;
+        }
 
         //methods
         public List<UIButton> getButtons() {
@@ -53,10 +85,6 @@ namespace Test {
 
         public List<UITextBox> getPlayerDialogues() {
             return playerDialogues;
-        }
-
-        public void addButton(UIButton b) {
-            buttons.Add(b);
         }
 
         private List<tone> shuffleList(List<tone> inputList) {
@@ -167,6 +195,10 @@ namespace Test {
             playerDialogues.Clear();
 
             produceTextBoxes(responseList.ElementAt(0).content);
+
+            Console.WriteLine("I AM PRODUCING THE CONTENTS OF: " + responseList[0].content);
+
+            generateButtons();
         }
 
         public tone getTone() {
@@ -221,7 +253,19 @@ namespace Test {
                                 playerDialogues[k].setAffected(true);
                                 playerDialogues[k].setTone(buttons[i].getTone());
                                 //Console.WriteLine("MY TONE IS: " + playerDialogues[0].getTone());
+                                
+                                //IF THE PLAYER DRAGGED IN BLUNT
+                                //HAVE THE TARGET CHARS REACT ANGRILY
+                                if (playerDialogues[0].getTone() == tone.Blunt)
+                                {
+                                    //only pgets called when dragged!! keys will not work
+                                   // Program.getGame().getTargets();
+                                    Console.WriteLine("hello");
+                                
 
+
+                                    //applyReactionToBlunt(Program.getGame().getTargets());
+                                }
                             }
                             break;
                         }
@@ -234,12 +278,34 @@ namespace Test {
         }
         #endregion
 
-        public void applyToneShortcut(UIButton button) {
-            for (int i = 0; i < playerDialogues.Count; i++) {
+        public virtual void applyReactionToBlunt(List<string> t)
+        {
+            foreach (var c in t)
+            {
+                if (string.Equals(c, "mom", StringComparison.OrdinalIgnoreCase))
+                {
+                    Program.getGame().getMom().setSpriteEmotion(Character.spriteEmotion.angry);
+                }
+                else if (string.Equals(c, "dad", StringComparison.OrdinalIgnoreCase))
+                {
+                    Program.getGame().getDad().setSpriteEmotion(Character.spriteEmotion.angry);
+                }
+                else if (string.Equals(c, "alex", StringComparison.OrdinalIgnoreCase))
+                {
+                    Program.getGame().getAlexis().setSpriteEmotion(Character.spriteEmotion.angry);
+                }
+            }
+        }
 
-                playerDialogues[i].setPrevColor(playerDialogues[i].getBoxColor("curr"));
-                playerDialogues[i].setBoxColor(button.getTonalColor());
-                playerDialogues[i].setTone(button.getTone());
+
+        public void applyToneShortcut(UIButton button) {
+            if (button.getDisabled() == false) {
+                for (int i = 0; i < playerDialogues.Count; i++) {
+
+                    playerDialogues[i].setPrevColor(playerDialogues[i].getBoxColor("curr"));
+                    playerDialogues[i].setBoxColor(button.getTonalColor());
+                    playerDialogues[i].setTone(button.getTone());
+                }
             }
         }
     }
