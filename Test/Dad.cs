@@ -114,6 +114,7 @@ namespace Test
                         target.Draw(mouthSprite);
                         framerate = 15;
 
+
                     }
 
                     if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))

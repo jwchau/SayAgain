@@ -113,12 +113,13 @@ namespace Test
                         framerate = 5;
 
 
+
                     }
 
                     else if (currentMouthIndex >= 0 && currentMouthIndex < 5)//open mouth
                     {
-
                         framerate = 15;
+
 
                         if (currentMouthIndex >= 1)
                         {

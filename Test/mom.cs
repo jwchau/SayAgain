@@ -165,6 +165,7 @@ namespace Test
                     {
                         framerate = 15;
 
+
                         if (currentMouthIndex >= 1)
                         {
                             //hide previous mouth

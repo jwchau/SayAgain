@@ -48,8 +48,8 @@ namespace Test {
         float iterator = 0.5f;
         public Boolean lastDialogue = false;
         public bool spam = true;
-
         public string currSpeaker = "";
+
 
         Font speechFont = new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf");
 
@@ -109,8 +109,8 @@ namespace Test {
 
 
         public void loadNewDialogue(string speaker, string content) {
-
             currSpeaker = speaker;
+
 
             if (speaker == "alex") {
                 dialogueBoxSprite = spriteDict["right"];
@@ -120,7 +120,6 @@ namespace Test {
                 name.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + ((118 * scale.X) - name.GetGlobalBounds().Width / 2), dialogueBoxSprite.GetGlobalBounds().Top + ((22 * scale.Y) - name.GetGlobalBounds().Height));
                 dialogue = new Text(content, speechFont, dialogueFontSize);
                 dialogue.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + (uint)(SCREEN_WIDTH * 0.004), dialogueBoxSprite.GetGlobalBounds().Top + (uint)(SCREEN_HEIGHT * 0.04));
-                
             } else if (speaker == "dad") {
                 dialogueBoxSprite = spriteDict["left"];
                 dialogueBoxSprite.Position = new Vector2f((float)(SCREEN_WIDTH * 0.21) - (dialogueBoxSprite.GetGlobalBounds().Width / 2), (float)(SCREEN_HEIGHT * 0.23) - (dialogueBoxSprite.GetGlobalBounds().Height / 2));

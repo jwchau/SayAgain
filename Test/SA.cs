@@ -256,7 +256,7 @@ namespace Test {
                         }
 
                     } else if (State.dialogueIndex == "player") {
-                        
+
                         if (State.playerDialogueBox.checkNext()) {
                             jankList = s.chooseJank(Load.Jankson, jankId, currentTone.ToString());
                             State.setResponseList(jankList);
@@ -441,6 +441,7 @@ namespace Test {
             } else if (State.GetState() == "tutorial") {
                 Console.WriteLine("ehllo world! " + currentTone + " : " + jankId);
 
+
                 if (currentTone != tone.Root) {
 
                     Console.WriteLine("timer action, dialogue index " + jankId);
@@ -537,15 +538,18 @@ namespace Test {
             Mom.state.setMood(5f);
             Mom.setTalking(false);
 
+
             Alexis = new Alex();
             Alexis.setSpriteEmotion(Character.spriteEmotion.angry);
             Alexis.active(true);
             Alexis.setTalking(false);
+
             
             Dad = new Dad();
             Dad.setSpriteEmotion(Character.spriteEmotion.happy);
             Dad.active(true);
             Dad.setTalking(false);
+
 
             Arm = new Arm();
             Arm.setSpriteEmotion(Character.spriteEmotion.neutral);
@@ -593,9 +597,7 @@ namespace Test {
                 Mom.setTalking(false);
             }
 
-            if (State.GetState() == "game" || State.GetState() == "tutorial") {
-
-                
+            if (State.GetState() == "game" || State.GetState() == "tutorial") {   
 
                 if (playerChoice && State.getGameTimer("game").getStart()) {
                     State.getGameTimer("game").stopTimer();
@@ -611,10 +613,6 @@ namespace Test {
                     {
                         fadeFlag = false;
                     }
-
-
-                    
-
                 }
 
                 blackness.FillColor = new Color(0, 0, 0, (byte)alphaBlack);
