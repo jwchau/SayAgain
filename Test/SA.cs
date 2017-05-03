@@ -573,7 +573,8 @@ namespace Test {
         protected override void Update() {
             screenHelper();
 
-            State.sound_man.soundUpdate(settingsMenu.getSoundToggle());
+            //State.sound_man.soundUpdate(settingsMenu.getSoundToggle());
+            State.sound_man.update_music();
             if (State.GetState() == "game" || State.GetState() == "tutorial") {
 
                 if (playerChoice && State.getGameTimer("game").getStart()) {
