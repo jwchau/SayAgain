@@ -4,11 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
-using CSCore;
-using CSCore.SoundOut;
-using CSCore.Codecs;
-using CSCore.Streams;
-using CSCore.Streams.Effects;
+using SFML.Audio;
 
 namespace Test
 {
@@ -18,22 +14,32 @@ namespace Test
         public SoundManager()
         {
             sound_dict = new Dictionary<string, string>() { { "loop", "../../Sounds/jazz-loop.wav" },
-                                                          { "Alex", "" },
-                                                          { "chatter","../../Sounds/chatter.wav" },
                                                           { "button","../../Sounds/button.wav"} };
+            chatter_dict = new Dictionary<string, List<SoundBuffer>>() { { "dad",new List<SoundBuffer>() {new SoundBuffer( "../../Sounds/dad/dad1.wav"),
+                                                                                                 new SoundBuffer("../../Sounds/dad/dad2.wav"),
+                                                                                                new SoundBuffer( "../../Sounds/dad/dad3.wav"),
+                                                                                                 new SoundBuffer("../../Sounds/dad/dad4.wav")} },
+                                                                    {"alex",new List<SoundBuffer>() {new SoundBuffer( "../../Sounds/alex/alex1.wav"),
+                                                                                                 new SoundBuffer("../../Sounds/alex/alex2.wav"),
+                                                                                                 new SoundBuffer("../../Sounds/alex/alex3.wav"),
+                                                                                                 new SoundBuffer("../../Sounds/alex/alex4.wav")} },
+                                                                    { "mom",new List<SoundBuffer>() {new SoundBuffer( "../../Sounds/mom/mom1.wav"),
+                                                                                                 new SoundBuffer("../../Sounds/mom/mom2.wav"),
+                                                                                                new SoundBuffer( "../../Sounds/mom/mom3.wav")} }};
             Step = 1;
             next = "None";
-            musicOut = GetSoundOut();
-            soundOut2 = GetSoundOut();
         }
 
-        ISoundOut musicOut;
-        ISoundOut soundOut2;
+        Music music;
+
         private String next;
         private Dictionary<String, String> sound_dict;
         public bool soundpause = false;
         private int Step;
-        private List<IWaveSource> music_blocks;
+        private List<string> music_blocks;
+        private Dictionary<string, List<SoundBuffer>> chatter_dict;
+        private Sound chatter;
+        private Sound SFX;
 
         public bool getSoundPause()
         {
@@ -48,83 +54,35 @@ namespace Test
 
         public void playSFX(String soundName)
         {
-            IWaveSource soundSource = GetSoundSource(soundName);
-            soundOut2.Stop();
-            PlayASound(soundSource,soundOut2);
+            SoundBuffer buffer = new SoundBuffer(sound_dict[soundName]);
+            SFX = new Sound(buffer);
+            SFX.Play();
         }
 
-        public void transitionSong(String musicName)
+        public void playChatter(String person)
         {
-
+            Random r = new Random();
+            chatter = new Sound(chatter_dict[person][r.Next(chatter_dict[person].Count)]);
+            chatter.Play();
         }
 
         public void init_music()
         {
-           // music_blocks = new List<IWaveSource> { GetSoundSource("chatter"), GetSoundSource("chatter"), GetSoundSource("chatter"), GetSoundSource("chatter") };
-            //Step = 0;
-            musicOut.Stop();
-            PlayASound(GetSoundSource("loop"), musicOut);
-
+            music_blocks = new List<string> { "loop", "loop", "loop","loop" };
+            Step = 0;
+            music = new Music(sound_dict[music_blocks[Step]]);
+            music.Play();
         }
         public void update_music()
         {
-            if (musicOut.PlaybackState == PlaybackState.Stopped)
+            if (music.Status == SoundStatus.Stopped )
             {
-                //if (Step > 3) Step = 0;
-                PlayASound(GetSoundSource("loop"), musicOut);
+                if (++Step > 3) Step = 0;
+
+                music = new Music(sound_dict[music_blocks[Step]]);
+                music.Play();
             }
 
-        }
-
-        [STAThread]
-        private void PlayASound( IWaveSource soundSource, ISoundOut thisSound)
-        {
-            //Tell the SoundOut which sound it has to play
-            thisSound.Initialize(soundSource);
-            //Play the sound
-            thisSound.Play();
-            //Stop the playback
-        }
-
-        public static void ClearCurrentConsoleLine()
-        {
-            int currentLineCursor = Console.CursorTop;
-            Console.SetCursorPosition(0, Console.CursorTop);
-            for (int i = 0; i < Console.WindowWidth; i++)
-                Console.Write(" ");
-            Console.SetCursorPosition(0, currentLineCursor);
-        }
-    
-
-        private ISoundOut GetSoundOut()
-        {
-            if (WasapiOut.IsSupportedOnCurrentPlatform)
-                return new WasapiOut();
-            else
-                return new DirectSoundOut();
-        }
-
-        private IWaveSource GetSoundSource(String name)
-        {
-            //return any source ... in this example, we'll just play a mp3 file
-            return CodecFactory.Instance.GetCodec(sound_dict[name]);
-        }
-
-        private IWaveSource CreateASineSource()
-        {
-            double frequency = 80 ;
-            double amplitude = 0.5;
-            double phase = 0.0;
-            //Create a ISampleSource
-            ISampleSource sampleSource = new SineGenerator(frequency, amplitude, phase);
-
-            //Convert the ISampleSource into a IWaveSource
-            PitchShifter shifted = new PitchShifter(sampleSource);
-            shifted.PitchShiftFactor = 3;
-            IWaveSource wvsrc = shifted.ToWaveSource();
-
-
-            return wvsrc;
         }
     }
 }
