@@ -85,7 +85,7 @@ namespace Test {
                 printTime = 0;
                 return false;
             } else if (elementIndex < dialoguePanes.Count) {
-                //Console.WriteLine("\n---------- CHECK NEXT");
+                ////Console.WriteLine("\n---------- CHECK NEXT");
                 if (cts != null) {
                     cts.Cancel();
                 }
@@ -94,7 +94,7 @@ namespace Test {
                     printTime = 30;
                     await animateText(cts.Token);
                 }, cts.Token);
-                //Console.WriteLine("CHECKNEXT RETURN FALSE");
+                ////Console.WriteLine("CHECKNEXT RETURN FALSE");
                 return false;
             } else {
                 if (tag == "AI" || tag == "player") {
@@ -102,7 +102,7 @@ namespace Test {
                 }
 
                 awaitInput = false;
-                //Console.WriteLine("CHECKNEXT RETURN TRUE");
+                ////Console.WriteLine("CHECKNEXT RETURN TRUE");
                 return true;
             }
         }
@@ -177,7 +177,7 @@ namespace Test {
 
         public void renderDialogue(String s) {
             dialoguePanes.Clear();
-            //Console.WriteLine("\n---------- RENDER DIALOGUE");
+            ////Console.WriteLine("\n---------- RENDER DIALOGUE");
             if (cts != null) {
                 cts.Cancel();
             }
@@ -189,7 +189,7 @@ namespace Test {
                 await animateText(cts.Token); //await pauses thread until animateText() is completed
 
             }, cts.Token);
-            //Console.WriteLine("\n---------- END OF RENDER DIALOGUE");
+            ////Console.WriteLine("\n---------- END OF RENDER DIALOGUE");
         }
 
         public List<Text> createStrings() {
