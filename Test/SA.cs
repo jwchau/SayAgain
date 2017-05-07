@@ -138,7 +138,7 @@ namespace Test {
                             State.dialogueBox.init = false;
                             State.playerDialogueBox.awaitInput = false;
                             fadeFlag = true;
-                            fadeFloat = 0.1f;
+                            fadeFloat = 0.003f;
                             endGame = true;
                         }
                     }
@@ -228,10 +228,6 @@ namespace Test {
                 } else if (State.GetState() == "tutorial") {
 
                     if (Int32.Parse(jankId) >= 27) {
-                        //Console.WriteLine("HEY TIME FOR ME TO GET THE RESPONSE LIST SHIT BOIIII PCURRID AND SHIT : " + pcurrid);
-                        //Console.WriteLine("HEY TIME FOR ME TO GET THE RESPONSE LIST SHIT BOIIII CONTENT AND SHIT : " + responseList[0].content);
-                        //Console.WriteLine("HEY ITS ME PCURRID: " + pcurrid);
-                        //Console.WriteLine("HEY ITS ME AS WELL : " + ncurrid);
                         pcurrid = "1";
                         ncurrid = "1";
                         ui_man.tutorialButtonIndex = 4;
@@ -269,28 +265,27 @@ namespace Test {
                     }
                     if (Int32.Parse(jankId) == 4 && !fadeFlag)
                     {
-                        //Console.WriteLine(" =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ugaboogA");
                         fadeFlag = true;
-                        fadeFloat = -0.1f;
+                        fadeFloat = -0.003f;
                     } else if (Int32.Parse(jankId) == 12 && !fadeFlag)
                     {
                         fadeFlag = true;
-                        fadeFloat = 0.1f;
+                        fadeFloat = 0.003f;
                     } else if (Int32.Parse(jankId) == 13 && !fadeFlag)
                     {
                         Dad.setHide(false);
                         Arm.setHide(false);
                         fadeFlag = true;
-                        fadeFloat = -0.1f;
+                        fadeFloat = -0.003f;
                     } else if (Int32.Parse(jankId) == 18 && !fadeFlag)
                     {
                         fadeFlag = true;
-                        fadeFloat = 0.1f;
+                        fadeFloat = 0.003f;
                     } else if (Int32.Parse(jankId) == 19 && !fadeFlag)
                     {
                         Mom.setHide(false);
                         fadeFlag = true;
-                        fadeFloat = -0.1f;
+                        fadeFloat = -0.003f;
 
                     }
 
@@ -393,6 +388,7 @@ namespace Test {
         #endregion
 
         string speaker = "dad";
+        string jankId = "1";
 
         #region load dialogue new
         public void loadDialogues() {
@@ -458,7 +454,7 @@ namespace Test {
             }
         }
         #endregion
-        string jankId = "1";
+        
 
         protected override void Initialize() {
 
