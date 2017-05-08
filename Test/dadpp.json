@@ -1,4 +1,4 @@
-{
+﻿{
   "Dialogues": [
     {
       "content": "tone: root; plotpoint: greetdad; id: 1; FNC: 0; finished: fin;",
@@ -16,6 +16,16 @@
       "plotpoint": "DadAccusesMum",
       "id": "1",
       "FNC": "-5",
+      "speaker": "",
+      "finished": "fin",
+      "inext": ""
+    },
+    {
+      "content": "tone: default; plotpoint: dad greets player; id: 1; FNC: -5; fin;",
+      "tone": "Default",
+      "plotpoint": "DadGreetsPlayer",
+      "id": "1",
+      "FNC": "9999",
       "speaker": "",
       "finished": "fin",
       "inext": ""

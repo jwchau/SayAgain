@@ -5,10 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 //greetdad, settype PP, 
-namespace Test
-{
-    class StoryManager
-    {
+namespace Test {
+    class StoryManager {
         protected List<String> reachedPlotpoints;
         protected string dialogueType;
         public enum type { plotpoint, transition };
@@ -21,8 +19,7 @@ namespace Test
         List<String> next_nodes = new List<String>();
         List<String> preconditions = new List<String>();
 
-        void addNode(String s, List<String> n, List<String> p)
-        {
+        void addNode(String s, List<String> n, List<String> p) {
 
             Tuple<List<String>, List<String>> value =
                 new Tuple<List<String>, List<String>>(n, p);
@@ -31,18 +28,17 @@ namespace Test
 
         }
 
-        public void print()
-        {
+        public void print() {
             /* foreach (var kvp in plot_dict)
              {
 
-                 //Console.WriteLine(kvp.Key);
+                 Console.WriteLine(kvp.Key);
                  if (!kvp.Value.Item1[0].Equals(null))
                  {
-                     //Console.WriteLine(kvp.Value.Item1[0]);
+                     Console.WriteLine(kvp.Value.Item1[0]);
                  }
                  if (!kvp.Value.Item1[1].Equals(null)) { 
-                     //Console.WriteLine(kvp.Value.Item1[1]);
+                     Console.WriteLine(kvp.Value.Item1[1]);
                  }
 
 
@@ -50,13 +46,11 @@ namespace Test
    */
         }
 
-        public string getCurrentNode()
-        {
+        public string getCurrentNode() {
             return currentNode;
         }
 
-        void clear()
-        {
+        void clear() {
             next_nodes = null;
             next_nodes = new List<String>();
             preconditions = null;
@@ -64,107 +58,90 @@ namespace Test
         }
 
 
-        public string getDialogueType()
-        {
+        public string getDialogueType() {
             return dialogueType;
         }
 
-        public void setDialogueType(type t)
-        {
+        public void setDialogueType(type t) {
             dialogueType = t.ToString();
         }
 
-        public void setTypePlotNode()
-        {
+        public void setTypePlotNode() {
             dialogueType = type.transition.ToString();
         }
 
-        public void setTypeTransition()
-        {
+        public void setTypeTransition() {
             dialogueType = "transition";
         }
 
-        public void findNextPossibleNodes()
-        {
+        public bool findNextPossibleNodes() {
             numberOfChildren = 0;
-            //Console.WriteLine("Current node: " + currentNode);
-            if (plot_dict[currentNode].Item1 != null)
-            {
+            Console.WriteLine("Current node: " + currentNode);
+            if (plot_dict[currentNode].Item1 != null) {
+
+                Console.WriteLine("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
                 //the string name of each child node
                 foreach (var n in plot_dict[currentNode].Item1) //each child
                 {
                     List<String> nextPreconditions = new List<String>();
                     numberOfChildren += 1;
-                    //Console.WriteLine("Possible Next Node: " + n);
-                    if (plot_dict[n].Item2 != null)
-                    {
+                    Console.WriteLine("Possible Next Node: " + n);
+                    if (plot_dict[n].Item2 != null) {
                         foreach (var c in plot_dict[n].Item2) //the precondition of each child
                         {
-                            //Console.WriteLine("With preconditions: " + c);
-                        
+                            Console.WriteLine("With preconditions: " + c);
+
                             nextPreconditions.Add(c);
 
-                            if (checkIfPreconSatisfied(nextPreconditions)) //if true
-                            {
+                            if (checkIfPreconSatisfied(nextPreconditions)) {
                                 currentNode = n;//current node is set to child node 
                                 reachedPlotpoints.Add(currentNode);
+                                Console.WriteLine("currentnode inside find next possible nodes: " + currentNode);
+                                return true;
                             }
 
                         }
                     }
                 }
             }
-
+            return false;
         }
 
         //ASSUMES that children dont have overlapping preconditions
-        public bool checkIfPreconSatisfied(List<String> nextPreconditions)
-        {
+        public bool checkIfPreconSatisfied(List<String> nextPreconditions) {
 
-            foreach (var p in nextPreconditions)
-            {
+            foreach (var p in nextPreconditions) {
                 //if p has a ' in it (multiple preconditions)
                 //then separate the two conitions, parse for whether FNC or plot point requirement
-                if (p.Contains(","))
-                {
+                if (p.Contains(",")) {
                     string tmp = p.Replace(" ", String.Empty); //get rid of whitespace
                     var array = tmp.Split(',');
                     //for each thing in array satisfied, satisfied = true, else false and break
-                    foreach (var k in array)
-                    {
-                        if (!k.Contains(":"))
-                        {
+                    foreach (var k in array) {
+                        if (!k.Contains(":")) {
                             //this means its not an FNC check
                             //means its a plotpoint check
                             if (!checkPastPlotPoint(k))//if false
                             {
                                 return false;
                             }
-                        }
-                        else
-                        {
+                        } else {
                             var t = k.Replace(":", String.Empty);
-                            if (!checkCharFNC(t))
-                            {
+                            if (!checkCharFNC(t)) {
                                 return false;
                             }
                         }
                     }
-                }
-                else if (p.Contains(":"))
-                {
+                } else if (p.Contains(":")) {
                     //this means its not an FNC check
                     //means its a plotpoint check
                     if (!checkPastPlotPoint(p))//if false
                     {
                         return false;
                     }
-                }
-                else
-                {
+                } else {
                     var t = p.Replace(":", String.Empty);
-                    if (!checkCharFNC(p))
-                    {
+                    if (!checkCharFNC(p)) {
                         return false;
                     }
                 }
@@ -179,10 +156,9 @@ namespace Test
             return (s == "plotpoint");
         }
 
-        public bool checkCharFNC(string s)
-        {
-            //Console.WriteLine("checkCharFNC()");
-            //Console.WriteLine(s);
+        public bool checkCharFNC(string s) {
+            Console.WriteLine("checkCharFNC()");
+            Console.WriteLine(s);
             //MHF-LF
             //remove the M
             //if hf then = fncrange[0]
@@ -198,15 +174,13 @@ namespace Test
             double high, low;
             // mom should not be null
 
-            switch (character)
-            {
+            switch (character) {
                 case 'M':
 
                     low = determineRange(range, mom.getFNCRange())[0];
                     high = determineRange(range, mom.getFNCRange())[1];
-                    //Console.WriteLine(mom.getCurrentFNC());
-                    if (mom.getCurrentFNC() >= low && mom.getCurrentFNC() <= high)
-                    {
+                    Console.WriteLine(mom.getCurrentFNC());
+                    if (mom.getCurrentFNC() >= low && mom.getCurrentFNC() <= high) {
                         return true;
                     }
 
@@ -215,9 +189,8 @@ namespace Test
                 case 'D':
                     low = determineRange(range, dad.getFNCRange())[0];
                     high = determineRange(range, dad.getFNCRange())[1];
-                    //Console.WriteLine(dad.getCurrentFNC());
-                    if (dad.getCurrentFNC() >= low && dad.getCurrentFNC() <= high)
-                    {
+                    Console.WriteLine(dad.getCurrentFNC());
+                    if (dad.getCurrentFNC() >= low && dad.getCurrentFNC() <= high) {
                         return true;
                     }
 
@@ -226,9 +199,8 @@ namespace Test
                 case 'A':
                     low = determineRange(range, alexis.getFNCRange())[0];
                     high = determineRange(range, alexis.getFNCRange())[1];
-                    //Console.WriteLine(alexis. getCurrentFNC());
-                    if (alexis.getCurrentFNC() >= low && alexis.getCurrentFNC() <= high)
-                    {
+                    Console.WriteLine(alexis.getCurrentFNC());
+                    if (alexis.getCurrentFNC() >= low && alexis.getCurrentFNC() <= high) {
                         return true;
                     }
 
@@ -239,15 +211,13 @@ namespace Test
         }
 
 
-        public List<double> determineRange(String[] range, double[] charFNC)
-        {
+        public List<double> determineRange(String[] range, double[] charFNC) {
 
             //HF-MF-LF-LN-MN-HN-LC-MC-HC
             double low, high;
             List<double> result = new List<double>();
 
-            switch (range[0])
-            {
+            switch (range[0]) {
                 case "HF":
                     low = charFNC[0];
                     result.Add(low);
@@ -285,8 +255,7 @@ namespace Test
                     result.Add(low);
                     break;
             }
-            switch (range[1])
-            {
+            switch (range[1]) {
                 case "HF":
                     high = charFNC[0];
                     result.Add(high);
@@ -329,32 +298,28 @@ namespace Test
 
 
         }
-        public bool checkPastPlotPoint(string p)
-        {
-            //Console.WriteLine("checkPastPlotPoint()");
+        public bool checkPastPlotPoint(string p) {
+            Console.WriteLine("checkPastPlotPoint()");
             //if p exists in list of reached plotpoints
             //return true;
             //else
             //return false;
-            foreach (var plotpoint in reachedPlotpoints)
-            {
-                if (p == plotpoint)
-                {
+            foreach (var plotpoint in reachedPlotpoints) {
+                if (p == plotpoint) {
                     return true;
                 }
             }
             return false;
         }
 
-        public StoryManager()
-        {
+        public StoryManager() {
 
 
 
 
             //nextPreconditions = new List<String> ();
 
-            currentNode = "MomTellsPlayerTalkToAlex";
+            currentNode = "DadGreetsPlayer";
             setDialogueType(type.plotpoint);
             reachedPlotpoints = new List<String>();
             reachedPlotpoints.Add(currentNode);
@@ -362,6 +327,9 @@ namespace Test
 
 
             //TODO: all blow up nodes reachable from any point
+
+            next_nodes.Add("DadAccusesMom");
+            addNode("DadGreetsPlayer", next_nodes, preconditions);
 
             next_nodes.Add("MomTellsPlayerTalkToAlex");
             next_nodes.Add("MomAdmitsJob");

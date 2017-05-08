@@ -388,7 +388,7 @@ namespace Test {
         #endregion
 
         string speaker = "dad";
-        string jankId = "1";
+        string jankId = "18";
         double bucket = 1;
         List<double> pastBuckets = new List<double>();
 
@@ -409,14 +409,14 @@ namespace Test {
                         if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
                     } else {
                         Load.NPCDialogueObj = Load.dadt;
-                        if (sman.checkCharFNC(speaker)) {
+                        if (sman.findNextPossibleNodes()) {
                             sman.setTypePlotNode();
-                            //switch plot point
-                            //second pass will select dialogue
                             bucket++;
                             return;
+                            //switch plot point
+                            //second pass will select dialogue
                         }
-                        
+
 
                         responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, bucket, ncurrid2, currentTone.ToString());
                         affect(speaker);
@@ -465,9 +465,9 @@ namespace Test {
         #endregion
         
         private void affect(string s) {
-            if (s == "Mom") Mom.changeFNC(responseListNPC[0].FNC);
-            else if (s == "Dad") Dad.changeFNC(responseListNPC[0].FNC);
-            else if (s == "Alex") Alexis.changeFNC(responseListNPC[0].FNC);
+            if (s == "mom") Mom.changeFNC(responseListNPC[0].FNC);
+            else if (s == "dad") Dad.changeFNC(responseListNPC[0].FNC);
+            else if (s == "alex") Alexis.changeFNC(responseListNPC[0].FNC);
         }
 
         protected override void Initialize() {

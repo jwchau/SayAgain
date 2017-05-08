@@ -30,7 +30,7 @@ namespace Test {
             var best = new DialogueObj();
             for (int i = 0; i < r.r.Dialogues.Count; i++) {
                 var curr = r.r.Dialogues[i];
-                if (curr.plotpoint == currNode && id == curr.id && curr.tone == t) {
+                if (curr.plotpoint == currNode && id == curr.id && (curr.tone == t || curr.tone == "Default")) {
                     responseList.Add(curr);
                     return responseList;
 

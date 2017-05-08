@@ -4,7 +4,7 @@
     "content":"It's the same but your mom's cooking seems to have gotten worse by the day!",
     "tone":"Indifferent",
     "id":"1",
-    "FNC":"0",
+    "FNC":"9999",
     "speaker":"dad",
     "bucket":"1",
     "inext":"mom"
@@ -13,7 +13,7 @@
     "content":"Not as much as your mom. ",
     "tone":"Blunt",
     "id":"1",
-    "FNC":"0",
+    "FNC":"9999",
     "speaker":"dad",
     "bucket":"1",
     "inext":"mom"
@@ -22,7 +22,7 @@
     "content":"Yes, I have been doing well but I can't speak for your mom.",
     "tone":"Compassionate",
     "id":"1",
-    "FNC":"0",
+    "FNC":"9999",
     "speaker":"dad",
     "bucket":"1",
     "inext":"mom"
@@ -31,7 +31,7 @@
     "content":"Umm sure?? Right honey?",
     "tone":"Hesitant",
     "id":"1",
-    "FNC":"0",
+    "FNC":"9999",
     "speaker":"dad",
     "bucket":"1",
     "inext":"mom"
