@@ -389,6 +389,8 @@ namespace Test {
 
         string speaker = "dad";
         string jankId = "1";
+        double bucket = 1;
+        List<double> pastBuckets = new List<double>();
 
         #region load dialogue new
         public void loadDialogues() {
@@ -400,17 +402,24 @@ namespace Test {
                     // Update response Lists with the recently used tone
                     responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, currentTone.ToString());
                     if (sman.testPlotPoint(sman.getDialogueType())) {
+                        Random r = new Random();
                         Load.NPCDialogueObj = Load.dadp;
                         responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid, currentTone.ToString());
+                        ncurrid2 = "1";
                         if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
                     } else {
-
                         Load.NPCDialogueObj = Load.dadt;
-                        var rnd = new Random();
-                        //Console.WriteLine("por que: " + ncurrid2);
-                        //responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, (double)(rnd.Next(0, 2)), ncurrid);
-                        responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid2, currentTone.ToString());
-                        //Console.WriteLine("~~~~~~~~~~~~~~~~ IN LOAD DIALOGUE THE DIALOGUE IS: " + responseListNPC[0].content);
+                        if (sman.checkCharFNC(speaker)) {
+                            sman.setTypePlotNode();
+                            //switch plot point
+                            //second pass will select dialogue
+                            bucket++;
+                            return;
+                        }
+                        
+
+                        responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, bucket, ncurrid2, currentTone.ToString());
+                        affect(speaker);
                         int temp1 = Int32.Parse(ncurrid2);
                         temp1++;
                         ncurrid2 = temp1.ToString();
@@ -455,6 +464,11 @@ namespace Test {
         }
         #endregion
         
+        private void affect(string s) {
+            if (s == "Mom") Mom.changeFNC(responseListNPC[0].FNC);
+            else if (s == "Dad") Dad.changeFNC(responseListNPC[0].FNC);
+            else if (s == "Alex") Alexis.changeFNC(responseListNPC[0].FNC);
+        }
 
         protected override void Initialize() {
 
