@@ -38,6 +38,7 @@ namespace Test
 
         Sprite mouthSprite;
         string expr;
+        
 
         public override void checkFNC()
         {
@@ -73,90 +74,93 @@ namespace Test
             rnd2 = r.Next(2, 4);
 
 
-
-            if (isTalking)
+            if (!hide)
             {
-
-                target.Draw(noMouthSprites[expr][index]);
-                //cycle between open mouth and rest mouth
-                //hide previous mouth
-                mouthSprite.Position = new Vector2f(-100, -100);
-
-                if (currentMouthIndex == 0) //rest mouth
+                if (isTalking)
                 {
 
-                    if (expr == "happy")
-                    {
-                        happyrest.Position = (new Vector2f(xpos - 29, ypos + 141));
-                        happyrest.Scale = (new Vector2f(0.62f, 0.62f));
-                        target.Draw(happyrest);
-                    }
-                    else if (expr == "angry")
-                    {
-                        angryrest.Position = (new Vector2f(xpos - 25, ypos + 150));
-                        angryrest.Scale = (new Vector2f(0.55f, 0.62f));
-                        target.Draw(angryrest);
-                    }
-                   
+                    target.Draw(noMouthSprites[expr][index]);
+                    //cycle between open mouth and rest mouth
+                    //hide previous mouth
+                    mouthSprite.Position = new Vector2f(-100, -100);
 
-                    framerate = (float)rnd2;
+                    if (currentMouthIndex == 0) //rest mouth
+                    {
+
+                        if (expr == "happy")
+                        {
+                            happyrest.Position = (new Vector2f(xpos - 29, ypos + 141));
+                            happyrest.Scale = (new Vector2f(0.62f, 0.62f));
+                            target.Draw(happyrest);
+                        }
+                        else if (expr == "angry")
+                        {
+                            angryrest.Position = (new Vector2f(xpos - 25, ypos + 150));
+                            angryrest.Scale = (new Vector2f(0.55f, 0.62f));
+                            target.Draw(angryrest);
+                        }
+
+
+                        framerate = (float)rnd2;
+
+                    }
+
+                    else if (currentMouthIndex == 1)//open mouth
+                    {
+                        angryrest.Position = new Vector2f(-100, -100);
+                        happyrest.Position = new Vector2f(-100, -100);
+
+                        mouthSprite.Position = new Vector2f(xpos - 45, ypos + 118);
+                        target.Draw(mouthSprite);
+                        framerate = 7;
+
+                    }
+
+                    if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
+                    {
+                        time = DateTime.Now;
+                        if (currentMouthIndex >= 1)
+                        {
+                            currentMouthIndex = 0;
+                        }
+                        else if (currentMouthIndex == 0)
+                        {
+                            currentMouthIndex = 1;
+                        }
+                    }
+
+
 
                 }
-
-                else if (currentMouthIndex == 1)//open mouth
+                if (!isTalking)
                 {
-                    angryrest.Position = new Vector2f(-100, -100);
-                    happyrest.Position = new Vector2f(-100, -100);
 
-                    mouthSprite.Position = new Vector2f(xpos - 45, ypos + 118);
-                    target.Draw(mouthSprite);
-                    framerate = 7;
+                    target.Draw(sprites[expr][index]);
+                }
 
+
+
+                if (index == 0 && prevIndex != 0)
+                {
+                    framerate = framerate / (float)rnd;
+                    prevIndex = 0;
+                }
+
+                else if (index != 0)
+                {
+                    prevIndex = index - 1;
+                    framerate = 4f;
                 }
 
                 if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
                 {
                     time = DateTime.Now;
-                    if (currentMouthIndex >= 1)
+                    if (++index >= sprites[expr].Count)
                     {
-                        currentMouthIndex = 0;
-                    } else if (currentMouthIndex == 0)
-                    {
-                        currentMouthIndex = 1;
+                        index = 0;
                     }
                 }
-
-                
-                
-            } if (!isTalking)
-            {
-
-                target.Draw(sprites[expr][index]);
             }
-
-            
-
-            if (index == 0 && prevIndex != 0)
-            {
-                framerate = framerate/(float)rnd;
-                prevIndex = 0;
-            }
-
-            else if (index != 0)
-            {
-                prevIndex = index - 1;
-                framerate = 4f;
-            }
-
-            if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate))
-            {
-                time = DateTime.Now;
-                if (++index >= sprites[expr].Count)
-                {
-                    index = 0;
-                }
-            }
-
 
         }
 
@@ -174,9 +178,11 @@ namespace Test
             FNCRange[9] = 10;
             currentFNC = -1;
 
+            hide = true;
+
             //determine size and position
             xpos = (float)(SCREEN_WIDTH * .21);
-            ypos = (float)(SCREEN_HEIGHT * 0.28);
+            ypos = (float)(SCREEN_HEIGHT * 0.31);
 
             xscale = SCREEN_WIDTH / 1920;
             yscale = SCREEN_HEIGHT / 1080;

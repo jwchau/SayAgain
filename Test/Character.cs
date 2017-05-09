@@ -45,6 +45,17 @@ namespace Test {
 
         public bool isTalking = false;
 
+        protected bool hide = false;
+
+        public bool getHide()
+        {
+            return hide;
+        }
+
+        public void setHide(bool v)
+        {
+            hide = v;
+        }
 
         public void dim() {
 
