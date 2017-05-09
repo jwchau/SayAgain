@@ -429,7 +429,7 @@ namespace Test
             next_nodes.Add("AlexBlowsUp");
             next_nodes.Add("MomBlowsUp");
             next_nodes.Add("DadBlowsUp");
-            next_nodes.Add("MomInterjects2");
+            next_nodes.Add("MomInterjects3");
             addNode("DadInterjects2", next_nodes, preconditions);
 
             preconditions.Add("");
@@ -437,7 +437,7 @@ namespace Test
             next_nodes.Add("MomBlowsUp");
             next_nodes.Add("DadBlowsUp");
             next_nodes.Add("AlexInterjects2");
-            addNode("MomInterjects2", next_nodes, preconditions);
+            addNode("MomInterjects3", next_nodes, preconditions);
 
             preconditions.Add("");
             next_nodes.Add("AlexBlowsUp");
