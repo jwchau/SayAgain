@@ -48,8 +48,11 @@ namespace Test {
         float iterator = 0.5f;
         public Boolean lastDialogue = false;
         public bool spam = true;
+<<<<<<< HEAD
         public string currSpeaker = "";
 
+=======
+>>>>>>> 9dccff977b8f978319e19c4af1acacb42732eba5
 
         Font speechFont = new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf");
 
@@ -326,7 +329,7 @@ namespace Test {
                     if (printTime != 0) {
                         if (i == line.DisplayedString.Length - 2) {
                             printTime = 0;
-                        } else if (".!?".Contains(line.DisplayedString[i]) && spam == false) {
+                        } else if (".!?".Contains(line.DisplayedString[i]) && spam == false ) {
                             if (!(".!?".Contains(line.DisplayedString[i - 1]))) {
                                 printTime *= 14;
                             }
