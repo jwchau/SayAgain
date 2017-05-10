@@ -379,23 +379,20 @@ namespace Test {
                         responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid, currentTone.ToString());
                         ncurrid2 = "1";
                         if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
+                        else ncurrid = incr(ncurrid);
                     } else {
                         Load.NPCDialogueObj = Load.dadt;
                         if (sman.findNextPossibleNodes()) {
+                            ncurrid = "1";
                             sman.setTypePlotNode();
                             bucket++;
                             return;
-                            //switch plot point
-                            //second pass will select dialogue
                         }
-
 
                         responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, bucket, ncurrid2, currentTone.ToString());
                         affect(speaker);
-                        int temp1 = Int32.Parse(ncurrid2);
-                        temp1++;
-                        ncurrid2 = temp1.ToString();
-
+                        ncurrid2 = incr(ncurrid2);
+                        
                     }
 
                     if (responseListNPC[0].speaker != "") {
@@ -416,12 +413,7 @@ namespace Test {
 
                 }
             } else if (State.GetState() == "tutorial") {
-                //Console.WriteLine("ehllo world! " + currentTone + " : " + jankId);
-
-
                 if (currentTone != tone.Root) {
-
-                    //Console.WriteLine("timer action, dialogue index " + jankId);
                     jankList = s.chooseJank(Load.Jankson, jankId, currentTone.ToString());
                     State.setResponseList(jankList);
 
@@ -435,6 +427,12 @@ namespace Test {
             }
         }
         #endregion
+
+        private string incr(string s) {
+            int temp1 = Int32.Parse(s);
+            temp1++;
+            return temp1.ToString();
+        }
 
         private void affect(string s) {
             if (s == "mom") Mom.changeFNC(responseListNPC[0].FNC);

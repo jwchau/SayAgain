@@ -75,12 +75,9 @@ namespace Test {
         }
 
         public bool findNextPossibleNodes() {
-
             numberOfChildren = 0;
             Console.WriteLine("Current node: " + currentNode);
             if (plot_dict[currentNode].Item1 != null) {
-
-                Console.WriteLine("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
                 //the string name of each child node
                 foreach (var n in plot_dict[currentNode].Item1) //each child
                 {
@@ -97,6 +94,7 @@ namespace Test {
                             if (checkIfPreconSatisfied(nextPreconditions)) {
                                 currentNode = n;//current node is set to child node 
                                 reachedPlotpoints.Add(currentNode);
+                                Console.WriteLine("inside find next possible nodes");
                                 return true;
                             }
 
