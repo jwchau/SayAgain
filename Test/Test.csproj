@@ -105,7 +105,7 @@
     <Compile Include="Alex.cs" />
     <Compile Include="Arm.cs" />
     <Compile Include="CharacterState.cs" />
-    <Compile Include="mom.cs" />
+    <Compile Include="Mom.cs" />
     <Compile Include="OldSelector.cs" />
     <Compile Include="StoryManager.cs" />
     <Compile Include="Dad.cs" />

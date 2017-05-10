@@ -15,8 +15,8 @@ C:\Users\jwchau\Desktop\sa\Test\bin\Debug\sfmlnet-graphics-2.dll
 C:\Users\jwchau\Desktop\sa\Test\bin\Debug\sfmlnet-system-2.dll
 C:\Users\jwchau\Desktop\sa\Test\bin\Debug\sfmlnet-window-2.dll
 C:\Users\jwchau\Desktop\sa\Test\bin\Debug\Newtonsoft.Json.xml
-C:\Users\jwchau\Desktop\sa\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 C:\Users\jwchau\Desktop\sa\Test\obj\Debug\Test.Properties.Resources.resources
 C:\Users\jwchau\Desktop\sa\Test\obj\Debug\Test.csproj.GenerateResource.Cache
 C:\Users\jwchau\Desktop\sa\Test\obj\Debug\Test.exe
 C:\Users\jwchau\Desktop\sa\Test\obj\Debug\Test.pdb
+C:\Users\jwchau\Desktop\sa\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache

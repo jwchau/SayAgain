@@ -94,7 +94,7 @@ namespace Test {
                             if (checkIfPreconSatisfied(nextPreconditions)) {
                                 currentNode = n;//current node is set to child node 
                                 reachedPlotpoints.Add(currentNode);
-                                Console.WriteLine("inside find next possible nodes");
+                                
                                 return true;
                             }
 
@@ -148,11 +148,6 @@ namespace Test {
             return true;
         }
 
-
-
-        public bool testPlotPoint(string s) {
-            return (s == "plotpoint");
-        }
 
         public bool checkCharFNC(string s) {
             Console.WriteLine("checkCharFNC()");
