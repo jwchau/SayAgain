@@ -94,7 +94,7 @@ namespace Test {
 
         public Game(uint width, uint height, string title) {
             settings.AntialiasingLevel = 8;
-            window = new RenderWindow(new VideoMode(width, height), title, Styles.Fullscreen, settings);
+            window = new RenderWindow(new VideoMode(width, height), title, Styles.Default, settings);
             this.clearColor = new Color(125, 116, 132);
 
             // Set-up Events

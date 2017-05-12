@@ -90,7 +90,7 @@ namespace Test {
                             Console.WriteLine("With preconditions: " + c);
 
                             nextPreconditions.Add(c);
-
+                            Console.WriteLine("find next possible: " + nextPreconditions);
                             if (checkIfPreconSatisfied(nextPreconditions)) {
                                 currentNode = n;//current node is set to child node 
                                 reachedPlotpoints.Add(currentNode);

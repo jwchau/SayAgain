@@ -115,7 +115,7 @@ namespace Test {
             ManagerOfInput.MenuPlay(State, menus, e.X, e.Y);
 
             if (State.getGameTimer("game").Contains(e.X, e.Y, scaleFactorX, scaleFactorY) && State.getGameTimer("game").getStart()) {
-                State.sound_man.playSFX("button");
+                //State.sound_man.playSFX("button");
                 State.getGameTimer("game").setCountDown(0);
             }
         }
@@ -206,7 +206,11 @@ namespace Test {
                         ncurrid = "1";
                         ui_man.tutorialButtonIndex = 4;
                         ui_man.reset(responseList);
-
+                        fadeFlag = true;
+                        fadeFloat = -0.003f;
+                        Mom.setHide(false);
+                        Dad.setHide(false);
+                        Arm.setHide(false);
                     }
                     if (State.dialogueIndex == "AI") {
                         if (State.dialogueBox.checkNext()) {
@@ -360,7 +364,7 @@ namespace Test {
         #endregion
 
         string speaker = "dad";
-        string jankId = "18";
+        string jankId = "27";
         double bucket = 1;
         List<double> pastBuckets = new List<double>();
 
@@ -554,7 +558,7 @@ namespace Test {
             screenHelper();
 
             //State.sound_man.soundUpdate(settingsMenu.getSoundToggle());
-            State.sound_man.update_music();
+            //State.sound_man.update_music();
 
             if (State.dialogueBox.active == true) {
                 if (State.dialogueBox.currSpeaker == "alex") {
