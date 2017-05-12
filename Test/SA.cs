@@ -324,7 +324,7 @@ namespace Test {
             updateTargetFNC();
             //update currentmademeories, currentmilestones, currenttone, currentcontext
             currentTone = ui_man.getTone();
-            if (currentTone != tone.Root) updateCurrents(); //updates everything besides FNC
+            if (currentTone != tone.Root) pcurrid = incr(pcurrid); //updates everything besides FNC
             loadDialogues();
         }
         #endregion
@@ -338,12 +338,12 @@ namespace Test {
             //meth;
         }
 
-        #region update currents
-
+        
         string pcurrid = "1";
         string ncurrid = "1";
         string ncurrid2 = "1";
 
+        #region update currents
 
         //after timer runs out update the current stuff
         private void updateCurrents() {
@@ -405,7 +405,9 @@ namespace Test {
                     State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
                     State.advanceConversation(speaker, responseList, responseListNPC);
 
-                    updateCurrents();
+                    //updateCurrents();
+                    pcurrid = incr(pcurrid);
+                    if (responseList.ElementAt(0).next != "") pcurrid = responseList.ElementAt(0).next;
 
                     responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, tone.Root.ToString());
                     ui_man.reset(responseList);

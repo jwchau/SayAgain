@@ -67,7 +67,7 @@ namespace Test {
         }
 
         public void setTypePlotNode() {
-            dialogueType = type.transition.ToString();
+            dialogueType = type.plotpoint.ToString();
         }
 
         public void setTypeTransition() {

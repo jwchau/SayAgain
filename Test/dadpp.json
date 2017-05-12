@@ -12,7 +12,7 @@
     },
     {
       "content": "tone: root; plotpoint: DadAccusesMum; id: 1; FNC: 0; fin;",
-      "tone": "Root",
+      "tone": "Default",
       "plotpoint": "DadAccusesMom",
       "id": "1",
       "FNC": "0",
