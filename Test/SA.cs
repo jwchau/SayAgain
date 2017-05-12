@@ -389,14 +389,12 @@ namespace Test {
                         if (sman.findNextPossibleNodes()) {
                             ncurrid = "1";
                             sman.setTypePlotNode();
-                            bucket++;
-                            return;
+                            //bucket++;
                         }
 
                         responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, bucket, ncurrid2, currentTone.ToString());
                         affect(speaker);
                         ncurrid2 = incr(ncurrid2);
-                        
                     }
 
                     if (responseListNPC[0].speaker != "") {

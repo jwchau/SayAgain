@@ -90,7 +90,13 @@ namespace Test {
                             Console.WriteLine("With preconditions: " + c);
 
                             nextPreconditions.Add(c);
-                            Console.WriteLine("find next possible: " + nextPreconditions);
+
+                            //Console.WriteLine();
+                            //foreach (var v in nextPreconditions) {
+                            //    Console.Write("find next possible: " + v);
+                            //}
+                            //Console.WriteLine();
+
                             if (checkIfPreconSatisfied(nextPreconditions)) {
                                 currentNode = n;//current node is set to child node 
                                 reachedPlotpoints.Add(currentNode);
@@ -111,7 +117,8 @@ namespace Test {
             foreach (var p in nextPreconditions) {
                 //if p has a ' in it (multiple preconditions)
                 //then separate the two conitions, parse for whether FNC or plot point requirement
-                if (p.Contains(",")) {
+                if (p.Contains(",") || true) {
+
                     string tmp = p.Replace(" ", String.Empty); //get rid of whitespace
                     var array = tmp.Split(',');
                     //for each thing in array satisfied, satisfied = true, else false and break
@@ -172,7 +179,7 @@ namespace Test {
 
                     low = determineRange(range, mom.getFNCRange())[0];
                     high = determineRange(range, mom.getFNCRange())[1];
-                    Console.WriteLine(mom.getCurrentFNC());
+                    Console.WriteLine("mom's current fnc from sman checker" + mom.getCurrentFNC());
                     if (mom.getCurrentFNC() >= low && mom.getCurrentFNC() <= high) {
                         return true;
                     }
@@ -182,7 +189,11 @@ namespace Test {
                 case 'D':
                     low = determineRange(range, dad.getFNCRange())[0];
                     high = determineRange(range, dad.getFNCRange())[1];
-                    Console.WriteLine(dad.getCurrentFNC());
+                    Console.WriteLine();
+                    Console.WriteLine("dad's current fnc from sman checker" + dad.getCurrentFNC());
+                    Console.WriteLine("low of dad: " + low);
+                    Console.WriteLine("high of dad: " + high);
+                    Console.WriteLine();
                     if (dad.getCurrentFNC() >= low && dad.getCurrentFNC() <= high) {
                         return true;
                     }
@@ -193,7 +204,7 @@ namespace Test {
                     low = determineRange(range, alexis.getFNCRange())[0];
                     high = determineRange(range, alexis.getFNCRange())[1];
 
-                    Console.WriteLine(alexis.getCurrentFNC());
+                    Console.WriteLine("alex's current fnc from sman checker" + alexis.getCurrentFNC());
                     if (alexis.getCurrentFNC() >= low && alexis.getCurrentFNC() <= high) {
                         //add the new currentNode to the list of nodes we have been to
                         reachedPlotpoints.Add(currentNode);
@@ -226,7 +237,7 @@ namespace Test {
                     low = charFNC[2];
                     result.Add(low);
                     break;
-                case "HN":
+                case "LN":
                     low = charFNC[3];
                     result.Add(low);
                     break;
@@ -234,11 +245,11 @@ namespace Test {
                     low = charFNC[4];
                     result.Add(low);
                     break;
-                case "LN":
+                case "HN":
                     low = charFNC[5];
                     result.Add(low);
                     break;
-                case "HC":
+                case "LC":
                     low = charFNC[6];
                     result.Add(low);
                     break;
@@ -246,46 +257,46 @@ namespace Test {
                     low = charFNC[7];
                     result.Add(low);
                     break;
-                case "LC":
+                case "HC":
                     low = charFNC[8];
                     result.Add(low);
                     break;
             }
             switch (range[1]) {
                 case "HF":
-                    high = charFNC[0];
-                    result.Add(high);
-                    break;
-                case "MF":
                     high = charFNC[1];
                     result.Add(high);
                     break;
-                case "LF":
+                case "MF":
                     high = charFNC[2];
                     result.Add(high);
                     break;
-                case "HN":
+                case "LF":
                     high = charFNC[3];
                     result.Add(high);
                     break;
-                case "MN":
+                case "LN":
                     high = charFNC[4];
                     result.Add(high);
                     break;
-                case "LN":
+                case "MN":
                     high = charFNC[5];
                     result.Add(high);
                     break;
-                case "HC":
+                case "HN":
                     high = charFNC[6];
                     result.Add(high);
                     break;
-                case "MC":
+                case "LC":
                     high = charFNC[7];
                     result.Add(high);
                     break;
-                case "LC":
+                case "MC":
                     high = charFNC[8];
+                    result.Add(high);
+                    break;
+                case "HC":
+                    high = charFNC[9];
                     result.Add(high);
                     break;
             }
@@ -338,7 +349,7 @@ namespace Test {
             next_nodes.Add("DadBlowsUp");
             addNode("DadAccusesMom", next_nodes, preconditions);
 
-            preconditions.Add("");
+            preconditions.Add("A: HF-HF");
             next_nodes.Add("DadInterjects1");
             next_nodes.Add("AlexBlowsUp");
             next_nodes.Add("MomBlowsUp");

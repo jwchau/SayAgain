@@ -11,11 +11,11 @@
       "inext": ""
     },
     {
-      "content": "tone: root; plotpoint: DadAccusesMum; id: 1; FNC: -5; fin;",
+      "content": "tone: root; plotpoint: DadAccusesMum; id: 1; FNC: 0; fin;",
       "tone": "Root",
       "plotpoint": "DadAccusesMom",
       "id": "1",
-      "FNC": "-5",
+      "FNC": "0",
       "speaker": "",
       "finished": "fin",
       "inext": ""
