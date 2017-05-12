@@ -110,7 +110,7 @@ namespace Test
                     {
 
                         hideMouth(4);
-                        framerate = 5;
+                        framerate = 7;
 
 
 

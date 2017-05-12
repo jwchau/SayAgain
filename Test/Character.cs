@@ -32,7 +32,7 @@ namespace Test {
 
         public DateTime time = DateTime.Now;
         
-        protected float xpos, ypos, xscale, yscale;
+        protected float xpos, ypos, xscale, yscale, mouthPosX, mouthPosY;
         protected bool canTalk = false;
         public CharacterState state;
         public enum spriteEmotion { happy, angry, neutral, sad };
