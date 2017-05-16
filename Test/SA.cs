@@ -439,7 +439,7 @@ namespace Test {
         }
 
         private void affect(List<string> targs) {
-            foreach (string s in targs) {
+            foreach (string s in targs) { 
                 if (s == "mom") Mom.changeFNC(responseListNPC[0].FNC);
                 else if (s == "dad") Dad.changeFNC(responseListNPC[0].FNC);
                 else if (s == "alex") Alexis.changeFNC(responseListNPC[0].FNC);
