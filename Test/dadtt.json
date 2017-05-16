@@ -8,7 +8,7 @@
     "speaker":"dad",
     "bucket":"1",
     "inext": "mom",
-    "target": ["mom"]
+    "target": ["dad"]
  },
 {
     "content":"Not as much as your mom. ",
@@ -18,7 +18,7 @@
     "speaker":"dad",
     "bucket":"1",
     "inext":"mom",
-    "target": ["mom"]
+    "target": ["dad"]
  },
 {
     "content":"Yes, I have been doing well but I can't speak for your mom.",
@@ -28,7 +28,7 @@
     "speaker":"dad",
     "bucket":"1",
     "inext":"mom",
-    "target": ["mom"]
+    "target": ["dad"]
  },
 {
     "content":"Umm sure?? Right honey?",
@@ -38,7 +38,7 @@
     "speaker":"dad",
     "bucket":"1",
     "inext":"mom",
-    "target": ["mom"]
+    "target": ["dad"]
  },
 {
     "content":"I do things around the house.",
@@ -48,7 +48,7 @@
     "speaker":"mom",
     "bucket":"1",
     "inext":"alex",
-    "target": ["mom"]
+    "target": ["dad"]
  },
 {
     "content":"Well I need to do everything around the house, so cut me some slack will ya.",
@@ -58,7 +58,7 @@
     "speaker":"mom",
     "bucket":"1",
     "inext":"alex",
-    "target": ["mom"]
+    "target": ["dad"]
  },
 {
     "content":"I'm doing fine. Don't know what  your dad's going on about.",
@@ -68,7 +68,7 @@
     "speaker":"mom",
     "bucket":"1",
     "inext":"alex",
-    "target": ["mom"]
+    "target": ["dad"]
  },
 {
     "content":"Sure...",
@@ -78,7 +78,7 @@
     "speaker":"mom",
     "bucket":"1",
     "inext":"alex",
-    "target": ["mom"]
+    "target": ["dad"]
  },
 {
     "content":"What the heck Dad?",
@@ -88,7 +88,7 @@
     "speaker":"alex",
     "bucket":"1",
     "inext":"",
-    "target": ["mom"]
+    "target": ["dad"]
  },
 {
     "content":"What the heck Dad?",
@@ -98,7 +98,7 @@
     "speaker":"alex",
     "bucket":"1",
     "inext":"",
-    "target": ["mom"]
+    "target": ["dad"]
  },
 {
     "content":"What the heck Dad?",
@@ -108,7 +108,7 @@
     "speaker":"alex",
     "bucket":"1",
     "inext":"",
-    "target": ["mom"]
+    "target": ["dad"]
  },
 {
     "content":"What the heck Dad?",
@@ -118,7 +118,7 @@
     "speaker":"alex",
     "bucket":"1",
     "inext":"",
-    "target": ["mom"]
+    "target": ["dad"]
  },
 {
     "content":"What are you talking about? Everything is just FINE.",
@@ -128,7 +128,7 @@
     "speaker":"dad",
     "bucket":"1",
     "inext":"",
-    "target": ["mom"]
+    "target": ["dad"]
  },
 {
     "content":"There is nothing to heck about. Everything is just fine.",
@@ -138,7 +138,7 @@
     "speaker":"dad",
     "bucket":"1",
     "inext":"",
-    "target": ["mom"]
+    "target": ["dad"]
  },
 {
     "content":"I hope so too ",
@@ -148,7 +148,7 @@
     "speaker":"dad",
     "bucket":"1",
     "inext":"",
-    "target": ["mom"]
+    "target": ["dad"]
  },
 {
     "content":"Nope, nothing going on AT ALL.",
@@ -158,7 +158,7 @@
     "speaker":"dad",
     "bucket":"1",
     "inext":"",
-    "target": ["mom"]
+    "target": ["dad"]
  },
 {
     "content":"Haha! Of course I am still working � still doing the same boring thing. I am not that old, yet, you know.",
@@ -168,7 +168,7 @@
     "speaker":"",
     "bucket":"1",
     "inext":"",
-    "target": ["mom"]
+    "target": ["dad"]
  },
 {
     "content":"Work's the same old, same old. There is nothing exciting to say about it.",
@@ -178,7 +178,7 @@
     "speaker":"",
     "bucket":"1",
     "inext":"",
-    "target": ["mom"]
+    "target": ["dad"]
  },
 {
     "content":"Work's the same old, same old. There is nothing exciting to say about it.",
@@ -188,7 +188,7 @@
     "speaker":"",
     "bucket":"1",
     "inext":"",
-    "target": ["mom"]
+    "target": ["dad"]
  },
 {
     "content":"Haha! Of course I am still working � still doing the same boring thing. I am not that old, yet, you know.",
@@ -198,7 +198,7 @@
     "speaker":"",
     "bucket":"1",
     "inext":"",
-    "target": ["mom"]
+    "target": ["dad"]
  },
 {
     "content":"Well, I suppose there is one thing� You see these cups? They're amazing, expensive Swarovski crystal glasses your mom brought home.",
@@ -208,7 +208,7 @@
     "speaker":"",
     "bucket":"1",
     "inext":"",
-    "target": ["mom"]
+    "target": ["dad"]
  },
 {
     "content":"It is. There is nothing like the same droning work that keeps me motivated. But hey, enough about work, let me tell you about these expensive glasses on the table. You're mom brought them home about a month ago. VERY nice, VERY expensive Swarovski crystal glasses.",

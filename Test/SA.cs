@@ -393,7 +393,7 @@ namespace Test {
                         }
 
                         responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, bucket, ncurrid2, currentTone.ToString());
-                        affect(responseListNPC[0].targets);
+                        affect(responseListNPC[0].target);
                         ncurrid2 = incr(ncurrid2);
                     }
 
