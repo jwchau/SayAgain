@@ -7,7 +7,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":"mom"
+    "inext": "mom",
+    "target": ["mom"]
  },
 {
     "content":"Not as much as your mom. ",
@@ -16,7 +17,8 @@
     "FNC":"8",
     "speaker":"dad",
     "bucket":"1",
-    "inext":"mom"
+    "inext":"mom",
+    "target": ["mom"]
  },
 {
     "content":"Yes, I have been doing well but I can't speak for your mom.",
@@ -25,7 +27,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":"mom"
+    "inext":"mom",
+    "target": ["mom"]
  },
 {
     "content":"Umm sure?? Right honey?",
@@ -34,7 +37,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":"mom"
+    "inext":"mom",
+    "target": ["mom"]
  },
 {
     "content":"I do things around the house.",
@@ -43,7 +47,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":"alex"
+    "inext":"alex",
+    "target": ["mom"]
  },
 {
     "content":"Well I need to do everything around the house, so cut me some slack will ya.",
@@ -52,7 +57,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":"alex"
+    "inext":"alex",
+    "target": ["mom"]
  },
 {
     "content":"I'm doing fine. Don't know what  your dad's going on about.",
@@ -61,7 +67,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":"alex"
+    "inext":"alex",
+    "target": ["mom"]
  },
 {
     "content":"Sure...",
@@ -70,7 +77,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":"alex"
+    "inext":"alex",
+    "target": ["mom"]
  },
 {
     "content":"What the heck Dad?",
@@ -79,7 +87,8 @@
     "FNC":"0",
     "speaker":"alex",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"What the heck Dad?",
@@ -88,7 +97,8 @@
     "FNC":"0",
     "speaker":"alex",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"What the heck Dad?",
@@ -97,7 +107,8 @@
     "FNC":"0",
     "speaker":"alex",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"What the heck Dad?",
@@ -106,7 +117,8 @@
     "FNC":"0",
     "speaker":"alex",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"What are you talking about? Everything is just FINE.",
@@ -115,7 +127,8 @@
     "FNC":"-18",
     "speaker":"dad",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"There is nothing to heck about. Everything is just fine.",
@@ -124,7 +137,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"I hope so too ",
@@ -133,7 +147,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"Nope, nothing going on AT ALL.",
@@ -142,7 +157,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"Haha! Of course I am still working � still doing the same boring thing. I am not that old, yet, you know.",
@@ -151,7 +167,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"Work's the same old, same old. There is nothing exciting to say about it.",
@@ -160,7 +177,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"Work's the same old, same old. There is nothing exciting to say about it.",
@@ -169,7 +187,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"Haha! Of course I am still working � still doing the same boring thing. I am not that old, yet, you know.",
@@ -178,7 +197,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"Well, I suppose there is one thing� You see these cups? They're amazing, expensive Swarovski crystal glasses your mom brought home.",
@@ -187,7 +207,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"It is. There is nothing like the same droning work that keeps me motivated. But hey, enough about work, let me tell you about these expensive glasses on the table. You're mom brought them home about a month ago. VERY nice, VERY expensive Swarovski crystal glasses.",
@@ -196,7 +217,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"Well, I suppose there is one thing� You see these cups? They're amazing, expensive Swarovski crystal glasses your mom brought home.",
@@ -205,7 +227,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"New things happen all the time! Just like these month old, nice, expensive Swarovski crystal glasses your mom brought!",
@@ -214,7 +237,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"Thank you. I think they look just awesome, as well.",
@@ -223,7 +247,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"Thanks. That means so much to me.",
@@ -232,7 +257,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"Sure. Whatever you think.",
@@ -241,7 +267,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"Sure. Whatever you think.",
@@ -250,7 +277,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"You will know that I wish to continue to talk about these glasses!",
@@ -259,7 +287,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"You will know that I wish to continue to talk about these glasses!",
@@ -268,7 +297,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"You will know that I wish to continue to talk about these glasses!",
@@ -277,7 +307,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"You will know that I wish to continue to talk about these glasses!",
@@ -286,7 +317,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"The cups are so refined looking. What else could I say about them? They do look nice, but too bad I was unable to give MY input on whether or not these glasses should be purchased. When your Mom brought them home, I was almost shocked. Of course, this isn't a BIG DEAL, so we are just absolutely fine over this whole thing.",
@@ -295,7 +327,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"The cups are so refined looking. What else could I say about them? They do look nice, but too bad I was unable to give MY input on whether or not these glasses should be purchased. When your Mom brought them home, I was almost shocked. Of course, this isn't a BIG DEAL, so we are just absolutely fine over this whole thing.",
@@ -304,7 +337,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"The cups are so refined looking. What else could I say about them? They do look nice, but too bad I was unable to give MY input on whether or not these glasses should be purchased. When your Mom brought them home, I was almost shocked. Of course, this isn't a BIG DEAL, so we are just absolutely fine over this whole thing.",
@@ -313,7 +347,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"The cups are so refined looking. What else could I say about them? They do look nice, but too bad I was unable to give MY input on whether or not these glasses should be purchased. When your Mom brought them home, I was almost shocked. Of course, this isn't a BIG DEAL, so we are just absolutely fine over this whole thing.",
@@ -322,7 +357,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"Flustered? Hah. Like how you were back in your last year at high school? Do you even remember your high school days? With all that homework and everything, you hardly had time for anything else!",
@@ -331,7 +367,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"Flustered? Hah. Like how you were back in your last year at high school? Do you even remember your high school days? With all that homework and everything, you hardly had time for anything else!",
@@ -340,7 +377,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"Flustered? Hah. Like how you were back in your last year at high school? Do you even remember your high school days? With all that homework and everything, you hardly had time for anything else!",
@@ -349,7 +387,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"Flustered? Hah. Like how you were back in your last year at high school? Do you even remember your high school days? With all that homework and everything, you hardly had time for anything else!",
@@ -358,7 +397,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"No! I am being reasonable! And don't say you haven't noticed yet, with�with all of this Swarovski crystal, EIGHT THIRTY dinner nonsense.",
@@ -367,7 +407,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"HOW DARE YOU! As a member of this house, it is your obligation to be aware of the changes around the house. Swarovski crystal, eight thirty dinner�",
@@ -376,7 +417,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"You think so? I can't believe you haven't noticed yet.",
@@ -385,7 +427,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"The only thing 'weird' about this is the fact that you haven't noticed yet!",
@@ -394,7 +437,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"That's in interesting observation.",
@@ -403,7 +447,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"Who knows. I certainly have no idea.",
@@ -412,7 +457,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"YOU can, if you want.",
@@ -421,7 +467,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"Who knows. I certainly have no idea.",
@@ -430,7 +477,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"Excuse, me! I will not let you or your Mother ignore me. I refuse to have that woman have her way, and let me tell you why!",
@@ -439,7 +487,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"Excuse, me! I will not let you or your Mother ignore me. I refuse to have that woman have her way, and let me tell you why!",
@@ -448,7 +497,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"Excuse, me! I will not let you or your Mother ignore me. I refuse to have that woman have her way, and let me tell you why!",
@@ -457,7 +507,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"Excuse, me! I will not let you or your Mother ignore me. I refuse to have that woman have her way, and let me tell you why!",
@@ -466,7 +517,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"I honestly can't believe you nor Alex�especially Alex, who has been around the home�haven't been able to add up all the clues and subtleties to figure it out. Just LOOK at your mom! New hair, new clothes, coming home absolutely reeking of alcohol�It's only obvious!",
@@ -475,7 +527,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"alex"
+    "inext":"alex",
+    "target": ["mom"]
  },
 {
     "content":"I honestly can't believe you nor Alex�especially Alex, who has been around the home�haven't been able to add up all the clues and subtleties to figure it out. Just LOOK at your mom! New hair, new clothes, coming home absolutely reeking of alcohol�It's only obvious!",
@@ -484,7 +537,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"alex"
+    "inext":"alex",
+    "target": ["mom"]
  },
 {
     "content":"I honestly can't believe you nor Alex�especially Alex, who has been around the home�haven't been able to add up all the clues and subtleties to figure it out. Just LOOK at your mom! New hair, new clothes, coming home absolutely reeking of alcohol�It's only obvious!",
@@ -493,7 +547,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"alex"
+    "inext":"alex",
+    "target": ["mom"]
  },
 {
     "content":"I honestly can't believe you nor Alex�especially Alex, who has been around the home�haven't been able to add up all the clues and subtleties to figure it out. Just LOOK at your mom! New hair, new clothes, coming home absolutely reeking of alcohol�It's only obvious!",
@@ -502,7 +557,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"alex"
+    "inext":"alex",
+    "target": ["mom"]
  },
 {
     "content":"What the hell, Dad! Don't bring me into this shit.",
@@ -511,7 +567,8 @@
     "FNC":"0",
     "speaker":"alex",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"What the hell, Dad! Don't bring me into this shit.",
@@ -520,7 +577,8 @@
     "FNC":"0",
     "speaker":"alex",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"What the hell, Dad! Don't bring me into this shit.",
@@ -529,7 +587,8 @@
     "FNC":"0",
     "speaker":"alex",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"What the hell, Dad! Don't bring me into this shit.",
@@ -538,7 +597,8 @@
     "FNC":"0",
     "speaker":"alex",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"I'm going to ignore your choice of words, for once, because you make a good point. Why should I assume a thankless daughter like you would even care about the sanctity of the home. So about your Mom.",
@@ -547,7 +607,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"I'm going to ignore your choice of words, for once, because you make a good point. Why should I assume a thankless daughter like you would even care about the sanctity of the home. So about your Mom.",
@@ -556,7 +617,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"I'm going to ignore your choice of words, for once, because you make a good point. Why should I assume a thankless daughter like you would even care about the sanctity of the home. So about your Mom.",
@@ -565,7 +627,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"I'm going to ignore your choice of words, for once, because you make a good point. Why should I assume a thankless daughter like you would even care about the sanctity of the home. So about your Mom.",
@@ -574,7 +637,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"Didn't I teach you that patience is a virtue? Anyways, what I was going to say is�",
@@ -583,7 +647,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"mom"
+    "inext":"mom",
+    "target": ["mom"]
  },
 {
     "content":"There is no need to. I've been waiting for the most appropriate time to say this� Your Mother is cheating on me.",
@@ -592,7 +657,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"mom"
+    "inext":"mom",
+    "target": ["mom"]
  },
 {
     "content":"You know, you're right. Clearly, your mother is cheating on me.",
@@ -601,7 +667,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"mom"
+    "inext":"mom",
+    "target": ["mom"]
  },
 {
     "content":"Yes. It is time now. I've been waiting for the most appropriate time to say this...Your Mother is cheating on me.",
@@ -610,7 +677,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"mom"
+    "inext":"mom",
+    "target": ["mom"]
  },
 {
     "content":"What?...How could you think that? That's not something I would do.",
@@ -619,7 +687,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"What?...How could you think that? That's not something I would do.",
@@ -628,7 +697,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"What?...How could you think that? That's not something I would do.",
@@ -637,7 +707,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"What?...How could you think that? That's not something I would do.",
@@ -646,7 +717,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"I'm not cheating on your dad! Why would I do that?",
@@ -655,7 +727,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"No, it doesn't make any sense. Why would I do that?",
@@ -664,7 +737,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"But I am not cheating on your dad. Why would I do that?",
@@ -673,7 +747,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"What do you mean 'why'? I'm not cheating on your Dad.",
@@ -682,7 +757,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"Do not make me laugh. Of course she would say that. Only a cheater would.",
@@ -691,7 +767,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":"mom"
+    "inext":"mom",
+    "target": ["mom"]
  },
 {
     "content":"Do not make me laugh. Of course she would say that. Only a cheater would.",
@@ -700,7 +777,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":"mom"
+    "inext":"mom",
+    "target": ["mom"]
  },
 {
     "content":"Do not make me laugh. Of course she would say that. Only a cheater would.",
@@ -709,7 +787,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":"mom"
+    "inext":"mom",
+    "target": ["mom"]
  },
 {
     "content":"Do not make me laugh. Of course she would say that. Only a cheater would.",
@@ -718,7 +797,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":"mom"
+    "inext":"mom",
+    "target": ["mom"]
  },
 {
     "content":"I'm not...",
@@ -727,7 +807,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"I'm not...",
@@ -736,7 +817,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"I'm not...",
@@ -745,7 +827,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"I'm not...",
@@ -754,7 +837,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"They're not. I bought the glasses myself.",
@@ -763,7 +847,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"They're not. I bought the glasses myself.",
@@ -772,7 +857,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"No. I bought them myself.",
@@ -781,7 +867,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"They're not. I bought the glasses myself.",
@@ -790,7 +877,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"Anyone can tell that is an obvious lie! That woman has no way to get Swarovski crystal glasses by herself!",
@@ -799,7 +887,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":"alex"
+    "inext":"alex",
+    "target": ["mom"]
  },
 {
     "content":"Anyone can tell that is an obvious lie! That woman has no way to get Swarovski crystal glasses by herself!",
@@ -808,7 +897,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":"alex"
+    "inext":"alex",
+    "target": ["mom"]
  },
 {
     "content":"Anyone can tell that is an obvious lie! That woman has no way to get Swarovski crystal glasses by herself!",
@@ -817,7 +907,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":"alex"
+    "inext":"alex",
+    "target": ["mom"]
  },
 {
     "content":"Anyone can tell that is an obvious lie! That woman has no way to get Swarovski crystal glasses by herself!",
@@ -826,7 +917,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":"alex"
+    "inext":"alex",
+    "target": ["mom"]
  },
 {
     "content":"'Cuz you're a control freak�",
@@ -835,7 +927,8 @@
     "FNC":"0",
     "speaker":"alex",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"Cuz you're a control freak�",
@@ -844,7 +937,8 @@
     "FNC":"0",
     "speaker":"alex",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"Cuz you're a control freak�",
@@ -853,7 +947,8 @@
     "FNC":"0",
     "speaker":"alex",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"'Cuz you're a control freak�",
@@ -862,7 +957,8 @@
     "FNC":"0",
     "speaker":"alex",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"You will keep your mouth shut, Alex. Let the adults talk through this.",
@@ -871,7 +967,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"You will keep your mouth shut, Alex. Let the adults talk through this.",
@@ -880,7 +977,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"You will keep your mouth shut, Alex. Let the adults talk through this.",
@@ -889,7 +987,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"You will keep your mouth shut, Alex. Let the adults talk through this.",
@@ -898,7 +997,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"I will talk to her however I please! You do not have the right to tell me what to do! Anyhow� Back to talking about that ungrateful woman. As the bread maker of this household, I maintain the finances, so there is no way I would let her buy these Swarovski glasses!",
@@ -907,7 +1007,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"mom"
+    "inext":"mom",
+    "target": ["mom"]
  },
 {
     "content":"Glad to see you are still able to make sensible decisions. Anyhow� Back to talking about that ungrateful woman. As the bread maker of this household, I maintain the finances, so there is no way I would let her buy these Swarovski glasses!",
@@ -916,7 +1017,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"mom"
+    "inext":"mom",
+    "target": ["mom"]
  },
 {
     "content":"Glad to see you are still able to make sensible decisions. Anyhow� Back to talking about that ungrateful woman. As the bread maker of this household, I maintain the finances, so there is no way I would let her buy these Swarovski glasses!",
@@ -925,7 +1027,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"mom"
+    "inext":"mom",
+    "target": ["mom"]
  },
 {
     "content":"No! Alex is just a child. She wouldn't know anything substantiable about what is going on in this house. Anyhow� Back to talking about that ungrateful woman. As the bread maker of this household, I maintain the finances, so there is no way I would let her buy these Swarovski glasses!",
@@ -934,7 +1037,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"mom"
+    "inext":"mom",
+    "target": ["mom"]
  },
 {
     "content":"I bought them with my own money. I wanted something a little nice for the house...for myself.",
@@ -943,7 +1047,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"I bought them with my own money. I wanted something a little nice for the house...for myself.",
@@ -952,7 +1057,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"I bought them with my own money. I wanted something a little nice for the house...for myself.",
@@ -961,7 +1067,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"I bought them with my own money. I wanted something a little nice for the house...for myself.",
@@ -970,7 +1077,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"But I do. I...just can't say why.",
@@ -979,7 +1087,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"But I do. I...just can't say why.",
@@ -988,7 +1097,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"No. I can't say.",
@@ -997,7 +1107,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"That is not the only way...But I can't say.",
@@ -1006,7 +1117,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"There's no point in it. It's not like you will listen or give me a chance anyways.",
@@ -1015,7 +1127,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"There's no point in it. It's not like you will listen or give me a chance anyways.",
@@ -1024,7 +1137,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"There's no point in it. It's not like you will listen or give me a chance anyways.",
@@ -1033,7 +1147,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"There's no point in it. It's not like you will listen or give me a chance anyways.",
@@ -1042,7 +1157,8 @@
     "FNC":"0",
     "speaker":"",
     "bucket":"1",
-    "inext":"dad"
+    "inext":"dad",
+    "target": ["mom"]
  },
 {
     "content":"Take a look, DEAR. You have taught the kids a valuable lesson: knowing when to give up. Truly, a job well done.",
@@ -1051,7 +1167,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":"mom"
+    "inext":"mom",
+    "target": ["mom"]
  },
 {
     "content":"Take a look, DEAR. You have taught the kids a valuable lesson: knowing when to give up. Truly, a job well done.",
@@ -1060,7 +1177,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":"mom"
+    "inext":"mom",
+    "target": ["mom"]
  },
 {
     "content":"Take a look, DEAR. You have taught the kids a valuable lesson: knowing when to give up. Truly, a job well done.",
@@ -1069,7 +1187,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":"mom"
+    "inext":"mom",
+    "target": ["mom"]
  },
 {
     "content":"Take a look, DEAR. You have taught the kids a valuable lesson: knowing when to give up. Truly, a job well done.",
@@ -1078,7 +1197,8 @@
     "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
-    "inext":"mom"
+    "inext":"mom",
+    "target": ["mom"]
  },
 {
     "content":"I'm done with this",
@@ -1087,7 +1207,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"I'm done with this",
@@ -1096,7 +1217,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
 {
     "content":"I'm done with this",
@@ -1105,7 +1227,8 @@
     "FNC":"0",
     "speaker":"mom",
     "bucket":"1",
-    "inext":""
+    "inext":"",
+    "target": ["mom"]
  },
     {
       "content": "I'm done with this",
@@ -1114,7 +1237,8 @@
       "FNC": "0",
       "speaker": "mom",
       "bucket": "1",
-      "inext": ""
+      "inext": "",
+    "target": ["mom"]
     }
   ]
 }

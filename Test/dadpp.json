@@ -8,7 +8,8 @@
       "FNC": "0",
       "speaker": "dad",
       "finished": "fin",
-      "inext": ""
+      "inext": "",
+    "target": ["mom"]
     },
     {
       "content": "tone: root; plotpoint: DadAccusesMum; id: 1; FNC: 0; fin;",
@@ -18,7 +19,8 @@
       "FNC": "0",
       "speaker": "",
       "finished": "fin",
-      "inext": ""
+      "inext": "",
+    "target": ["mom"]
     },
     {
       "content": "tone: default; plotpoint: dad greets player; id: 1; FNC: -5; fin;",
@@ -28,7 +30,8 @@
       "FNC": "9999",
       "speaker": "",
       "finished": "fin",
-      "inext": ""
+      "inext": "",
+    "target": ["mom"]
     },
     {
       "content": "tone: root; plotpoint: MomBlowsUp; id: 1; FNC: 3; fin;",
@@ -38,7 +41,8 @@
       "FNC": "3",
       "speaker": "",
       "finished": "fin",
-      "inext": ""
+      "inext": "",
+    "target": ["mom"]
     },
     {
       "content": "tone: root; plotpoint: BombsAfghan; id: 1; FNC: 10; fin;",
@@ -48,7 +52,8 @@
       "FNC": "10",
       "speaker": "",
       "finished": "fin",
-      "inext": ""
+      "inext": "",
+    "target": ["mom"]
     },
     {
       "content": "Hey, the Santa Cruz beaches have really given you a tan.",
@@ -58,7 +63,8 @@
       "FNC": "10",
       "speaker": "",
       "finished": "fin",
-      "inext": ""
+      "inext": "",
+    "target": ["mom"]
     },
     {
       "content": "Woah there!",
@@ -68,7 +74,8 @@
       "FNC": "10",
       "speaker": "",
       "finished": "fin",
-      "inext": "mom"
+      "inext": "mom",
+    "target": ["mom"]
     },
     {
       "content": "Aren't you as chipper as ever!",
@@ -78,7 +85,8 @@
       "FNC": "10",
       "speaker": "",
       "finished": "fin",
-      "inext": ""
+      "inext": "",
+    "target": ["mom"]
     },
     {
       "content": "Indeed... Well.. Glad to have you back!",
@@ -88,7 +96,8 @@
       "FNC": "10",
       "speaker": "",
       "finished": "fin",
-      "inext": ""
+      "inext": "",
+    "target": ["mom"]
     },
     {
       "content": "Someone got a attitude bug",
@@ -98,7 +107,8 @@
       "FNC": "10",
       "speaker": "mom",
       "finished": "fin",
-      "inext": ""
+      "inext": "",
+    "target": ["mom"]
     }
   ]
 }

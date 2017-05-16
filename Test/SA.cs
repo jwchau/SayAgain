@@ -381,7 +381,7 @@ namespace Test {
                         Random r = new Random();
                         Load.NPCDialogueObj = Load.dadp;
                         responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid, currentTone.ToString());
-                        ncurrid2 = "1";
+                        //ncurrid2 = "1";
                         if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
                         else ncurrid = incr(ncurrid);
                     } else {
@@ -393,7 +393,7 @@ namespace Test {
                         }
 
                         responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, bucket, ncurrid2, currentTone.ToString());
-                        affect(speaker);
+                        affect(responseListNPC[0].targets);
                         ncurrid2 = incr(ncurrid2);
                     }
 
@@ -438,10 +438,12 @@ namespace Test {
             return temp1.ToString();
         }
 
-        private void affect(string s) {
-            if (s == "mom") Mom.changeFNC(responseListNPC[0].FNC);
-            else if (s == "dad") Dad.changeFNC(responseListNPC[0].FNC);
-            else if (s == "alex") Alexis.changeFNC(responseListNPC[0].FNC);
+        private void affect(List<string> targs) {
+            foreach (string s in targs) {
+                if (s == "mom") Mom.changeFNC(responseListNPC[0].FNC);
+                else if (s == "dad") Dad.changeFNC(responseListNPC[0].FNC);
+                else if (s == "alex") Alexis.changeFNC(responseListNPC[0].FNC);
+            }
         }
 
         protected override void Initialize() {

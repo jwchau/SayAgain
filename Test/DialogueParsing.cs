@@ -35,6 +35,7 @@ namespace Test {
         public string speaker;
         public string finished;
         public string inext;
+        public List<string> targets;
 
         public DialogueObj(string c, string t, string i) {
             content = c; tone = t; id = i;
@@ -44,12 +45,14 @@ namespace Test {
             content = newContent; tone = newTonalPreReq; this.id = id; this.next = next; this.FNC = 2 ^ 16;
         }
 
-        public DialogueObj(string content, string tone, string plotpoint, string id, string FNC, string finished, string speaker, string InterjectionNext) { //for plot point lines
+        public DialogueObj(string content, string tone, string plotpoint, string id, string FNC, string finished, string speaker, string InterjectionNext, List<string> targets) { //for plot point lines
             this.content = content; this.tone = tone; this.plotpoint = plotpoint; this.id = id; this.FNC = double.Parse(FNC); this.finished = finished; this.speaker = speaker; this.inext = InterjectionNext;
+            this.targets = targets;
         }
 
-        public DialogueObj(string c, string t, string id, string f, string b, string s, string ix) { //for transitino lines
+        public DialogueObj(string c, string t, string id, string f, string b, string s, string ix, List<string> targets) { //for transitino lines
             this.content = c; this.tone = t; this.id = id; this.FNC = double.Parse(f); this.bucket = double.Parse(b); this.speaker = s; this.inext = ix;
+            this.targets = targets;
         }
 
         public DialogueObj() {
@@ -61,6 +64,7 @@ namespace Test {
             finished = "";
             speaker = "";
             inext = "";
+            targets = new List<string>();
             bucket = -(2 ^ 16);
             FNC = 2 ^ 16;
         }
