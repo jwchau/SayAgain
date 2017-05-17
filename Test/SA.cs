@@ -183,6 +183,7 @@ namespace Test {
                                         responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid, currentTone.ToString());
                                     } else {
                                         responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid2, currentTone.ToString());
+                                        affect(responseListNPC[0].target);
                                         int temp = Int32.Parse(ncurrid2);
                                         temp++;
                                         ncurrid2 = temp.ToString();
@@ -380,28 +381,27 @@ namespace Test {
                     if (sman.getDialogueType() == "plotpoint") {
                         Random r = new Random();
                         Load.NPCDialogueObj = Load.dadp;
+
                         responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid, currentTone.ToString());
                         //ncurrid2 = "1";
                         if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
                         else ncurrid = incr(ncurrid);
                     } else {
                         Load.NPCDialogueObj = Load.dadt;
+
+                        responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, bucket, ncurrid2, currentTone.ToString());
+                        affect(responseListNPC[0].target);
+                        ncurrid2 = incr(ncurrid2);
+
                         if (sman.findNextPossibleNodes()) {
                             ncurrid = "1";
                             sman.setTypePlotNode();
                             //bucket++;
                         }
-
-                        responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, bucket, ncurrid2, currentTone.ToString());
-                        affect(responseListNPC[0].target);
-                        ncurrid2 = incr(ncurrid2);
                     }
 
-                    if (responseListNPC[0].speaker != "") {
-                        speaker = responseListNPC[0].speaker;
-
-                    }
-
+                    if (responseListNPC[0].speaker != "") speaker = responseListNPC[0].speaker;
+                    
                     State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
                     State.advanceConversation(speaker, responseList, responseListNPC);
 
@@ -410,6 +410,7 @@ namespace Test {
                     if (responseList.ElementAt(0).next != "") pcurrid = responseList.ElementAt(0).next;
 
                     responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, tone.Root.ToString());
+                    
                     ui_man.reset(responseList);
                 } else {
                     State.getGameTimer("game").resetTimer();

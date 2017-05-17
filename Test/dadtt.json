@@ -1,15 +1,15 @@
 ﻿{
   "Dialogues": [
-{
-    "content":"It's the same but your mom's cooking seems to have gotten worse by the day!",
-    "tone":"Indifferent",
-    "id":"1",
-    "FNC":"0",
-    "speaker":"dad",
-    "bucket":"1",
-    "inext": "mom",
-    "target": ["dad"]
- },
+    {
+      "content": "It's the same but your mom's cooking seems to have gotten worse by the day!",
+      "tone": "Indifferent",
+      "id": "1",
+      "FNC": "0",
+      "speaker": "dad",
+      "bucket": "1",
+      "inext": "mom",
+      "target": [ "dad" ]
+    },
 {
     "content":"Not as much as your mom. ",
     "tone":"Blunt",
@@ -124,7 +124,7 @@
     "content":"What are you talking about? Everything is just FINE.",
     "tone":"Blunt",
     "id":"4",
-    "FNC":"-18",
+    "FNC":"0",
     "speaker":"dad",
     "bucket":"1",
     "inext":"",
