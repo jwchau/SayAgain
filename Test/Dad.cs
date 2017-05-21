@@ -47,7 +47,7 @@ namespace Test {
         }
 
         public override Vector2f getArmPosition() {
-            return new Vector2f(sprites["neutral"][0].Position.X, sprites["neutral"][0].Position.Y + 224);
+            return new Vector2f(sprites["neutral"][0].Position.X, sprites["neutral"][0].Position.Y + (sprites["neutral"][0].GetGlobalBounds().Height * 0.49f));
         }
 
         public override void setSpriteEmotion(spriteEmotion e) {
@@ -97,8 +97,7 @@ namespace Test {
 
                         mouthSprite.Position = new Vector2f(xpos - 45, ypos + 118);
                         target.Draw(mouthSprite);
-                        framerate = 15;
-
+                        framerate = 7;
 
 
                     }
