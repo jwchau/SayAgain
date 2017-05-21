@@ -341,6 +341,7 @@ namespace Test {
 
         
         string pcurrid = "1";
+        string pcurrid2 = "1";
         string ncurrid = "1";
         string ncurrid2 = "1";
 
@@ -376,25 +377,37 @@ namespace Test {
                     // Load playerDialogueBox with the new content from responseList
                     State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
 
-                    // Update response Lists with the recently used tone
-                    responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, currentTone.ToString());
+                    
                     if (sman.getDialogueType() == "plotpoint") {
                         Random r = new Random();
-                        Load.NPCDialogueObj = Load.dadp;
+                        Load.NPCDialogueObj = Load.allp;
+
+                        //player dialogue json switch (plotpoint)
+                        Load.playerDialogueObj1 = Load.newplayerp;
+                        // Update response Lists with the recently used tone
+                        responseList = s.ChooseDialog2(Load.playerDialogueObj1, sman.getCurrentNode(), pcurrid, currentTone.ToString());
 
                         responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid, currentTone.ToString());
                         //ncurrid2 = "1";
                         if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
                         else ncurrid = incr(ncurrid);
                     } else {
-                        Load.NPCDialogueObj = Load.dadt;
+                        Load.NPCDialogueObj = Load.allt;
+
+                        //player dialogue json switch (transition)
+                        Load.playerDialogueObj1 = Load.newplayert;
+                        // Update response Lists with the recently used tone
+                        responseList = s.ChooseDialog3(Load.playerDialogueObj1, bucket, pcurrid2, currentTone.ToString());
 
                         responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, bucket, ncurrid2, currentTone.ToString());
                         affect(responseListNPC[0].target);
+
+                        pcurrid2 = incr(pcurrid2);
                         ncurrid2 = incr(ncurrid2);
 
                         if (sman.findNextPossibleNodes()) {
                             ncurrid = "1";
+                            pcurrid = "1";
                             sman.setTypePlotNode();
                             //bucket++;
                         }

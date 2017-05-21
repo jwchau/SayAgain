@@ -6,7 +6,10 @@
       "plotpoint": "GreetDad",
       "id": "1",
       "FNC": "0",
-      "finished": "fin"
+      "speaker": "",
+      "finished": "fin",
+      "inext": "",
+      "target": [ "mom" ]
     },
     {
       "content": "plot point with fnc 0. Root tone.",
@@ -14,7 +17,10 @@
       "plotpoint": "DadAccusesMum",
       "id": "1",
       "FNC": "-5",
-      "finished": "fin"
+      "speaker": "",
+      "finished": "fin",
+      "inext": "",
+      "target": [ "mom" ]
     },
     {
       "content": "plot point with fnc 0. Root tone.",
@@ -22,7 +28,10 @@
       "plotpoint": "MomBlowsUp",
       "id": "1",
       "FNC": "0",
-      "finished": "fin"
+      "speaker": "",
+      "finished": "fin",
+      "inext": "",
+      "target": [ "mom" ]
     },
     {
       "content": "plot point with fnc 0. Root tone.",
@@ -30,7 +39,10 @@
       "plotpoint": "BombsAfghan",
       "id": "1",
       "FNC": "0",
-      "finished": "fin"
+      "speaker": "",
+      "finished": "fin",
+      "inext": "",
+      "target": [ "mom" ]
     }
   ]
 }

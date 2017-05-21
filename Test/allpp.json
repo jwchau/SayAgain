@@ -17,7 +17,7 @@
       "plotpoint": "DadAccusesMom",
       "id": "1",
       "FNC": "0",
-      "speaker": "",
+      "speaker": "dad",
       "finished": "fin",
       "inext": "",
     "target": ["mom"]

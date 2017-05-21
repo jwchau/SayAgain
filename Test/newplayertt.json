@@ -1,32 +1,54 @@
 {
   "Dialogues": [
     {
+      "content": "It's the same but your mom's cooking seems to have gotten worse by the day!",
+      "tone": "Indifferent",
+      "id": "1",
+      "FNC": "0",
+      "speaker": "",
+      "bucket": "1",
+      "inext": "",
+      "target": [ "dad" ]
+    },
+    {
       "content": "plot point with fnc 0. Root tone.",
       "tone": "Root",
       "id": "1",
       "FNC": "0",
-      "bucket": "1"
+      "speaker": "",
+      "bucket": "1",
+      "inext": "",
+      "target": [ "dad" ]
     },
     {
       "content": "plot point with fnc 0. Root tone.",
       "tone": "Root",
       "id": "2",
       "FNC": "-5",
-      "bucket": "2"
+      "speaker": "",
+      "bucket": "1",
+      "inext": "",
+      "target": [ "dad" ]
     },
     {
       "content": "plot point with fnc 0. Root tone.",
       "tone": "Root",
       "id": "3",
       "FNC": "6",
-      "bucket": "3"
+      "speaker": "",
+      "bucket": "1",
+      "inext": "",
+      "target": [ "dad" ]
     },
     {
       "content": "plot point with fnc 0. Root tone.",
       "tone": "Root",
       "id": "4",
       "FNC": "-99999",
-      "bucket": "4"
+      "speaker": "",
+      "bucket": "1",
+      "inext": "",
+      "target": [ "dad" ]
     }
   ]
 }
