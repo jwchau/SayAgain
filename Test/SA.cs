@@ -354,7 +354,7 @@ namespace Test {
         string ncurrid2 = "1";
 
         string speaker = "dad";
-        string jankId = "27";
+        string jankId = "1";
         double bucket = 1;
         List<double> pastBuckets = new List<double>();
         #endregion
@@ -385,8 +385,6 @@ namespace Test {
         #endregion
 
         private void doStuff() {
-            //
-
             //// Load playerDialogueBox with the new content from responseList
             //State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
 

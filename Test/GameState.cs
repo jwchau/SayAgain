@@ -123,9 +123,6 @@ namespace Test {
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else if (jankList[0].id == "10") {
                     db_states('a');
-
-                    //Console.WriteLine("AT 10 MY CONTENT IS: " + jankList[0].content);
-
                     dialogueBox.loadNewDialogue("alex", jankList[0].content);
                     ////sound_man.playchatter("alex");
                 } else if (jankList[0].id == "11") {
@@ -161,14 +158,11 @@ namespace Test {
                     db_states('p');
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else if (jankList[0].id == "21") {
-                    //Console.WriteLine("in game state, jank id 21");
                     db_states('r');
                 } else if (jankList[0].id == "22") {
-                    //Console.WriteLine("in game state, jank id 22");
                     db_states('p');
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else if (jankList[0].id == "23") {
-                    //Console.WriteLine("in game state, jank id 23");
                     db_states('a');
                     dialogueBox.loadNewDialogue("mom", jankList[0].content);
                     //sound_man.playchatter("mom");
