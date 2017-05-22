@@ -134,7 +134,7 @@ namespace Test {
 
             if (e.Code == Keyboard.Key.Space) {
                 if (State.GetState() == "game") {
-                    if (ncurrid2 == "31" && !endGame) {
+                    if (npcPlotId == "31" && !endGame) {
                         if (State.dialogueBox.checkNext()) {
                             State.playerDialogueBox.loadNewDialogue("player", "To be continued... <Follow us on TWITTER @SayAgainGame and our WEBSITE www.sayagaingame.com>");
                             State.playerDialogueBox.active = true;
@@ -156,7 +156,7 @@ namespace Test {
                         if (State.dialogueIndex == "player") {
                             //Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ INDEX PLAYER CONTENT: " + responseListNPC[0].content);
 
-                            State.advanceConversation(speaker, null, responseListNPC);
+                            State.advanceConversation(speaker, responseList, responseListNPC);
 
                             // Deactivate dialogueBox, Display playerDialogueBox, and submit tone 
                         } else if (State.dialogueIndex == "root") {
@@ -183,20 +183,10 @@ namespace Test {
                             if (State.dialogueBox.getAwaitInput() == true) {
                                 if (State.dialogueBox.checkNext()) {
 
-                                    if (responseListNPC[0].FNC == 10.0) {
-
-                                        int temp = Int32.Parse(ncurrid);
-                                        temp++;
-                                        ncurrid = temp.ToString();
-                                        responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid, currentTone.ToString());
-                                    } else {
-
-                                        responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid2, currentTone.ToString());
-                                        affect(responseListNPC[0].target);
-                                        int temp = Int32.Parse(ncurrid2);
-                                        temp++;
-                                        ncurrid2 = temp.ToString();
-                                    }
+                                    Console.WriteLine("interjection unhandled");
+                                    //responseListNPC = s.ChooseDialogTransition(Load.NPCDialogueObj, 1, npcPlotId, currentTone.ToString());
+                                    //affect(responseListNPC[0].target);
+                                    //npcPlotId = incr(npcPlotId);
 
                                     if (responseListNPC[0].speaker != "") {
                                         speaker = responseListNPC[0].speaker;
@@ -212,8 +202,8 @@ namespace Test {
                 } else if (State.GetState() == "tutorial") {
 
                     if (Int32.Parse(jankId) >= 27) {
-                        pcurrid = "1";
-                        ncurrid = "1";
+                        resetPlotId();
+                        resetTransitionId();
                         ui_man.tutorialButtonIndex = 4;
                         ui_man.reset(responseList);
                         fadeFlag = true;
@@ -296,6 +286,15 @@ namespace Test {
             }
         }
 
+        private void resetPlotId() {
+            playerPlotId = "1";
+            npcPlotId = "1";
+        }
+        private void resetTransitionId() {
+            playerTransitionId = "1";
+            npcTransitionId = "1";
+        }
+
         private void limitTones() {
             if (jankId == "5") {
                 ui_man.tutorialButtonIndex = 0;
@@ -327,34 +326,20 @@ namespace Test {
             jankId = j.ToString();
         }
 
-        #region Timer Action Placeholder
+        //if (currentTone != tone.Root) playerPlotId = incr(playerPlotId); //updates everything besides FNC
         public void TimerAction() {
-            updateTargetFNC();
-            //update currentmademeories, currentmilestones, currenttone, currentcontext
             currentTone = ui_man.getTone();
-            if (currentTone != tone.Root) pcurrid = incr(pcurrid); //updates everything besides FNC
             loadDialogues();
         }
-        #endregion
-
-        public void updateTargetFNC() {
-
-            //load tonal matrix
-            //get targets from player
-            //get context
-            //load context matrix
-            //meth;
-        }
-
 
         #region id tracker
-        string pcurrid = "1";
-        string pcurrid2 = "1";
-        string ncurrid = "1";
-        string ncurrid2 = "1";
+        string playerPlotId = "1";
+        string playerTransitionId = "1";
+        string npcPlotId = "1";
+        string npcTransitionId = "1";
 
         string speaker = "dad";
-        string jankId = "1";
+        string jankId = "27";
         double bucket = 1;
         List<double> pastBuckets = new List<double>();
         #endregion
@@ -385,55 +370,45 @@ namespace Test {
         #endregion
 
         private void doStuff() {
-            //// Load playerDialogueBox with the new content from responseList
-            //State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
+            //Console.WriteLine("look at me, im mr meeseeks    " + playerPlotId);
 
+            if (sman.getDialogueType() == "plotpoint") {
+                responseList = s.ChooseDialogPlot(Load.newplayerp, sman.getCurrentNode(), playerPlotId, currentTone.ToString());
+                responseListNPC = s.ChooseDialogPlot(Load.allp, sman.getCurrentNode(), npcPlotId, currentTone.ToString());
+                npcPlotId = incr(npcPlotId);
+                playerPlotId = incr(playerPlotId);
+                if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
+            } else {
+                responseList = s.ChooseDialogTransition(Load.newplayert, bucket, playerTransitionId, currentTone.ToString());
+                responseListNPC = s.ChooseDialogTransition(Load.allt, bucket, npcTransitionId, currentTone.ToString());
+                npcTransitionId = incr(npcTransitionId);
+                playerTransitionId = linkId(npcTransitionId);
 
-            //if (sman.getDialogueType() == "plotpoint") {
-            //    Random r = new Random();
-            //    Load.NPCDialogueObj = Load.allp;
+                if (sman.findNextPossibleNodes()) {
+                    resetPlotId();
+                    sman.setTypePlotNode();
+                }
+            }
 
-            //    //player dialogue json switch (plotpoint)
-            //    Load.playerDialogueObj1 = Load.newplayerp;
-            //    // Update response Lists with the recently used tone
-            //    responseList = s.ChooseDialog2(Load.playerDialogueObj1, sman.getCurrentNode(), pcurrid, currentTone.ToString());
+            if (responseListNPC[0].speaker != "") speaker = responseListNPC[0].speaker;
+            affect(responseList[0].target);
+            affect(responseListNPC[0].target);
+            reRootPlayer();
+        }
 
-            //    responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid, currentTone.ToString());
-            //    //ncurrid2 = "1";
-            //    if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
-            //    else ncurrid = incr(ncurrid);
-            //} else {
-            //    Load.NPCDialogueObj = Load.allt;
+        private void reRootPlayer() {
+            State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
+            State.advanceConversation(speaker, responseList, responseListNPC);
 
-            //    //player dialogue json switch (transition)
-            //    Load.playerDialogueObj1 = Load.newplayert;
-            //    // Update response Lists with the recently used tone
-            //    responseList = s.ChooseDialog3(Load.playerDialogueObj1, bucket, pcurrid2, currentTone.ToString());
+            if (sman.getDialogueType() == "plotpoint") {
+                responseList = s.ChooseDialogPlot(Load.newplayerp, sman.getCurrentNode(), playerPlotId, currentTone.ToString());
+                playerPlotId = incr(playerPlotId);
+            } else {
+                responseList = s.ChooseDialogTransition(Load.newplayert, bucket, playerTransitionId, currentTone.ToString());
+                playerTransitionId = incr(playerTransitionId);
+            }
 
-
-            //    responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, bucket, ncurrid2, currentTone.ToString());
-            //    affect(responseListNPC[0].target);
-
-            //    pcurrid2 = incr(pcurrid2);
-            //    ncurrid2 = incr(ncurrid2);
-
-            //    if (sman.findNextPossibleNodes()) {
-            //        ncurrid = "1";
-            //        pcurrid = "1";
-            //        sman.setTypePlotNode();
-            //        //bucket++;
-            //    }
-            //}
-
-            //if (responseListNPC[0].speaker != "") speaker = responseListNPC[0].speaker;
-
-            //State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
-            //State.advanceConversation(speaker, responseList, responseListNPC);
-
-            ////updateCurrents();
-            //pcurrid = incr(ncurrid);
-            //responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, tone.Root.ToString());
-            //ui_man.reset(responseList);
+            ui_man.reset(responseList);
         }
 
         private string incr(string s) {
@@ -452,9 +427,6 @@ namespace Test {
 
         protected override void Initialize() {
             screenHelper();
-            //Console.WriteLine("SCREEN WIDTH: " + SCREEN_WIDTH + " SCREEN HEIGHT: " + SCREEN_HEIGHT);
-            //Console.WriteLine("WINDOW.SIZE.X: " + window.Size.X + " WINDOW.SIZE.Y: " + window.Size.Y);
-            //Console.WriteLine("scaleX: " + scaleFactorX + ", scaleY: " + scaleFactorY);
 
             splash = new Sprite(new Texture("../../Art/banner2.png"));
             alphaSplash = new Sprite(new Texture("../../Art/alpha.png"));
@@ -508,15 +480,20 @@ namespace Test {
             jankIncr();
             jankList = s.chooseJank(Load.Jankson, jankId, currentTone.ToString());
 
+            //jumpflag1
+            responseListNPC = s.ChooseDialogPlot(Load.allp, sman.getCurrentNode(), npcPlotId, "Default");
+            responseList = s.ChooseDialogPlot(Load.newplayerp, sman.getCurrentNode(), playerPlotId, "Root");
+            //npcPlotId = incr(npcPlotId);
+            //playerPlotId = linkId(npcPlotId);
+
+
             //ui_man.produceTextBoxes(responseList[0].content);
             //timeflag
             State.addTimer("game", 10, new Action(() => { TimerAction(); }));
             State.addTimer("cursor", 1, null);
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            //fullScreenView = window.DefaultView;
-            //fullScreenView.Viewport = new FloatRect(0, 0, 1, 1);
-            //window.SetView(fullScreenView);
+
 
             buttons = ui_man.getButtons();
             menus.Add(startMenu); menus.Add(settingsMenu); menus.Add(pauseMenu);
@@ -559,6 +536,11 @@ namespace Test {
             currentContext = "AlexTalksPlayer";
 
             FNC = 0;
+        }
+
+        private string linkId(string s) {
+            int temp = ((int.Parse(s) * 2) - 1);
+            return temp.ToString();
         }
         protected override void Update() {
             screenHelper();
