@@ -1,48 +1,40 @@
 {
   "Dialogues": [
     {
-      "content": "plot point with fnc 0. Root tone.",
+      "content": "plot point with fnc 0. Root, textbox maker.",
       "tone": "Root",
-      "plotpoint": "GreetDad",
+      "plotpoint": "DadGreetsPlayer",
       "id": "1",
       "FNC": "0",
-      "speaker": "",
-      "finished": "fin",
       "inext": "",
       "target": [ "mom" ]
     },
     {
-      "content": "plot point with fnc 0. Root tone.",
-      "tone": "Root",
-      "plotpoint": "DadAccusesMum",
-      "id": "1",
-      "FNC": "-5",
-      "speaker": "",
-      "finished": "fin",
+      "content": "displayed in dialogue box of player string.",
+      "tone": "Default",
+      "plotpoint": "DadGreetsPlayer",
+      "id": "2",
+      "FNC": "0",
       "inext": "",
       "target": [ "mom" ]
     },
     {
-      "content": "plot point with fnc 0. Root tone.",
+      "content": "plot point: DadAccusesMom with fnc 0. Root, textbox maker.",
       "tone": "Root",
-      "plotpoint": "MomBlowsUp",
+      "plotpoint": "DadAccusesMom",
       "id": "1",
       "FNC": "0",
-      "speaker": "",
-      "finished": "fin",
       "inext": "",
       "target": [ "mom" ]
     },
     {
-      "content": "plot point with fnc 0. Root tone.",
-      "tone": "Root",
-      "plotpoint": "BombsAfghan",
-      "id": "1",
+      "content": "plot point: DadAccusesMom displayed in dialogue box of player string.",
+      "tone": "Default",
+      "plotpoint": "DadAccusesMom",
+      "id": "2",
       "FNC": "0",
-      "speaker": "",
-      "finished": "fin",
       "inext": "",
       "target": [ "mom" ]
-    }
+    },
   ]
 }

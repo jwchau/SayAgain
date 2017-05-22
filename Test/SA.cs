@@ -347,98 +347,24 @@ namespace Test {
         }
 
 
+        #region id tracker
         string pcurrid = "1";
         string pcurrid2 = "1";
         string ncurrid = "1";
         string ncurrid2 = "1";
 
-        #region update currents
-
-        //after timer runs out update the current stuff
-        private void updateCurrents() {
-            int temp2 = Int32.Parse(pcurrid);
-            int temp1 = Int32.Parse(ncurrid);
-
-            temp2++;
-            if (temp2 % 2 == 0 && temp2 > 2) {
-                temp1++;
-            }
-
-            ncurrid = temp1.ToString();
-            pcurrid = temp2.ToString();
-
-            if (responseList.ElementAt(0).next != "") pcurrid = responseList.ElementAt(0).next;
-            if (responseListNPC.ElementAt(0).next != "") ncurrid = responseListNPC.ElementAt(0).next;
-        }
-        #endregion
-
         string speaker = "dad";
         string jankId = "27";
         double bucket = 1;
         List<double> pastBuckets = new List<double>();
+        #endregion
 
         #region load dialogue new
         public void loadDialogues() {
             ui_man.rootBackgroundBorder.OutlineColor = ui_man.rootBackground.FillColor;
             if (State.GetState() == "game") {
                 if (currentTone != tone.Root) {
-                    // Load playerDialogueBox with the new content from responseList
-                    State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
-
-
-                    if (sman.getDialogueType() == "plotpoint") {
-                        Random r = new Random();
-                        Load.NPCDialogueObj = Load.allp;
-
-                        //player dialogue json switch (plotpoint)
-                        Load.playerDialogueObj1 = Load.newplayerp;
-                        // Update response Lists with the recently used tone
-                        responseList = s.ChooseDialog2(Load.playerDialogueObj1, sman.getCurrentNode(), pcurrid, currentTone.ToString());
-
-                        responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid, currentTone.ToString());
-                        //ncurrid2 = "1";
-                        if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
-                        else ncurrid = incr(ncurrid);
-                    } else {
-                        Load.NPCDialogueObj = Load.allt;
-
-                        //player dialogue json switch (transition)
-                        Load.playerDialogueObj1 = Load.newplayert;
-                        // Update response Lists with the recently used tone
-                        responseList = s.ChooseDialog3(Load.playerDialogueObj1, bucket, pcurrid2, currentTone.ToString());
-
-
-                        responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, bucket, ncurrid2, currentTone.ToString());
-                        affect(responseListNPC[0].target);
-
-                        pcurrid2 = incr(pcurrid2);
-                        ncurrid2 = incr(ncurrid2);
-
-                        if (sman.findNextPossibleNodes()) {
-                            ncurrid = "1";
-                            pcurrid = "1";
-                            sman.setTypePlotNode();
-                            //bucket++;
-                        }
-                    }
-
-                    if (responseListNPC[0].speaker != "") speaker = responseListNPC[0].speaker;
-
-                    State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
-                    State.advanceConversation(speaker, responseList, responseListNPC);
-
-                    //updateCurrents();
-                    pcurrid = incr(pcurrid);
-                    if (responseList.ElementAt(0).next != "") pcurrid = responseList.ElementAt(0).next;
-
-                    responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, tone.Root.ToString());
-
-                    ui_man.reset(responseList);
-                    State.getGameTimer("game").resetTimer();
-                } else {
-                    State.getGameTimer("game").resetTimer();
-                    //State.getGameTimer("game").startTimer();
-
+                    doStuff();
                 }
             } else if (State.GetState() == "tutorial") {
 
@@ -457,6 +383,60 @@ namespace Test {
             }
         }
         #endregion
+
+        private void doStuff() {
+            //
+
+            //// Load playerDialogueBox with the new content from responseList
+            //State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
+
+
+            //if (sman.getDialogueType() == "plotpoint") {
+            //    Random r = new Random();
+            //    Load.NPCDialogueObj = Load.allp;
+
+            //    //player dialogue json switch (plotpoint)
+            //    Load.playerDialogueObj1 = Load.newplayerp;
+            //    // Update response Lists with the recently used tone
+            //    responseList = s.ChooseDialog2(Load.playerDialogueObj1, sman.getCurrentNode(), pcurrid, currentTone.ToString());
+
+            //    responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid, currentTone.ToString());
+            //    //ncurrid2 = "1";
+            //    if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
+            //    else ncurrid = incr(ncurrid);
+            //} else {
+            //    Load.NPCDialogueObj = Load.allt;
+
+            //    //player dialogue json switch (transition)
+            //    Load.playerDialogueObj1 = Load.newplayert;
+            //    // Update response Lists with the recently used tone
+            //    responseList = s.ChooseDialog3(Load.playerDialogueObj1, bucket, pcurrid2, currentTone.ToString());
+
+
+            //    responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, bucket, ncurrid2, currentTone.ToString());
+            //    affect(responseListNPC[0].target);
+
+            //    pcurrid2 = incr(pcurrid2);
+            //    ncurrid2 = incr(ncurrid2);
+
+            //    if (sman.findNextPossibleNodes()) {
+            //        ncurrid = "1";
+            //        pcurrid = "1";
+            //        sman.setTypePlotNode();
+            //        //bucket++;
+            //    }
+            //}
+
+            //if (responseListNPC[0].speaker != "") speaker = responseListNPC[0].speaker;
+
+            //State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
+            //State.advanceConversation(speaker, responseList, responseListNPC);
+
+            ////updateCurrents();
+            //pcurrid = incr(ncurrid);
+            //responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, tone.Root.ToString());
+            //ui_man.reset(responseList);
+        }
 
         private string incr(string s) {
             int temp1 = Int32.Parse(s);
@@ -524,10 +504,6 @@ namespace Test {
             textBackground.OutlineThickness = 2;
 
             // Create Character states
-
-            responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, currentTone.ToString());
-            responseListNPC = s.ChooseDialog(Load.NPCDialogueObj, ncurrid, currentTone.ToString());
-
 
             jankList = s.chooseJank(Load.Jankson, jankId, currentTone.ToString());
             State.setResponseList(jankList);
