@@ -12,9 +12,10 @@ namespace Test {
         public GameState() {
             currentState = "menu";
             currentMenuState = "start";
-            sound_man.init_music();
+            //sound_man.init_music();
             playerDialogueBox = new DialogueBox(this, "PLAYER");
             dialogueBox = new DialogueBox(this, "AI");
+            tooltip = new DialogueBox(this, "tooltip");
             dialogueBox.animationStart = true;
             dialogueBox.init = true;
         }
@@ -26,9 +27,9 @@ namespace Test {
         //Jill's fields and variables
         public DialogueBox dialogueBox;
         public DialogueBox playerDialogueBox;
+        public DialogueBox tooltip;
         public string dialogueIndex = "player";
         public bool interjection = false;
-        int counter = 0;
         public void advanceConversation(string speaker, List<DialogueObj> responseList, List<DialogueObj> responseListNPC) {
             if (currentState == "game") {
                 if (dialogueIndex == "AI") {
@@ -36,7 +37,7 @@ namespace Test {
                     playerDialogueBox.active = false;
                     dialogueBox.active = true;
                     if (dialogueBox.checkNext()) {
-                        Console.WriteLine("YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO: " + responseList[0].content);
+
                         dialogueIndex = "root";
                         dialogueBox.active = false;
                         playerDialogueBox.active = false;
@@ -61,7 +62,7 @@ namespace Test {
                                     dialogueIndex = "AI";
 
                                     dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
-                                    sound_man.playChatter(speaker);
+                                    ////sound_man.playchatter(speaker);
 
                                 } else {
 
@@ -90,26 +91,31 @@ namespace Test {
 
                 if (jankList[0].id == "1") {
                     db_states('p');
+                    tooltip.init = true;
+                    tooltip.loadNewDialogue("tooltip1", "Press Space to Advance");
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else if (jankList[0].id == "2") {
+                    tooltip.init = false;
                     db_states('p');
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else if (jankList[0].id == "3") {
                     db_states('a');
                     dialogueBox.loadNewDialogue("alex", jankList[0].content);
-                    sound_man.playChatter("alex");
+                    ////sound_man.playchatter("alex");
                 } else if (jankList[0].id == "4") {
                     db_states('p');
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else if (jankList[0].id == "5") {
                     db_states('r');
+                    tooltip.init = true;
+                    tooltip.loadNewDialogue("tooltip2", "Drag tone to your dialogue");
                 } else if (jankList[0].id == "6") {
                     db_states('p');
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else if (jankList[0].id == "7") {
                     db_states('a');
                     dialogueBox.loadNewDialogue("alex", jankList[0].content);
-                    sound_man.playChatter("alex");
+                    ////sound_man.playchatter("alex");
                 } else if (jankList[0].id == "8") {
                     db_states('r');
                 } else if (jankList[0].id == "9") {
@@ -117,18 +123,15 @@ namespace Test {
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else if (jankList[0].id == "10") {
                     db_states('a');
-
-                    Console.WriteLine("AT 10 MY CONTENT IS: " + jankList[0].content);
-
                     dialogueBox.loadNewDialogue("alex", jankList[0].content);
-                    sound_man.playChatter("alex");
+                    ////sound_man.playchatter("alex");
                 } else if (jankList[0].id == "11") {
                     db_states('p');
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else if (jankList[0].id == "12") {
                     db_states('a');
                     dialogueBox.loadNewDialogue("dad", jankList[0].content);
-                    sound_man.playChatter("dad");
+                    ////sound_man.playchatter("dad");
                 } else if (jankList[0].id == "13") {
                     db_states('p');
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
@@ -140,7 +143,7 @@ namespace Test {
                 } else if (jankList[0].id == "16") {
                     db_states('a');
                     dialogueBox.loadNewDialogue("dad", jankList[0].content);
-                    sound_man.playChatter("dad");
+                    ////sound_man.playchatter("dad");
                 } else if (jankList[0].id == "17") {
                     db_states('p');
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
@@ -150,22 +153,19 @@ namespace Test {
                 } else if (jankList[0].id == "19") {
                     db_states('a');
                     dialogueBox.loadNewDialogue("mom", jankList[0].content);
-                    sound_man.playChatter("mom");
+                    ////sound_man.playchatter("mom");
                 } else if (jankList[0].id == "20") {
                     db_states('p');
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else if (jankList[0].id == "21") {
-                    Console.WriteLine("in game state, jank id 21");
                     db_states('r');
                 } else if (jankList[0].id == "22") {
-                    Console.WriteLine("in game state, jank id 22");
                     db_states('p');
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else if (jankList[0].id == "23") {
-                    Console.WriteLine("in game state, jank id 23");
                     db_states('a');
                     dialogueBox.loadNewDialogue("mom", jankList[0].content);
-                    sound_man.playChatter("mom");
+                    //sound_man.playchatter("mom");
                 } else if (jankList[0].id == "24") {
                     db_states('r');
                 } else if (jankList[0].id == "25") {
@@ -174,14 +174,14 @@ namespace Test {
                 } else if (jankList[0].id == "26") {
                     db_states('a');
                     dialogueBox.loadNewDialogue("mom", jankList[0].content);
-                    sound_man.playChatter("mom");
+                    //sound_man.playchatter("mom");
                 } else if (jankList[0].id == "27") {
                     db_states('p');
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else {
                     db_states('a');
                     dialogueBox.loadNewDialogue("dad", "Hey, it's good to have you home.");
-                    sound_man.playChatter("dad");
+                    //sound_man.playchatter("dad");
 
                     SetState("game");
                 }
@@ -221,7 +221,7 @@ namespace Test {
                         playerDialogueBox.init = false;
                         dialogueBox.init = true;
                         dialogueBox.active = false;
-                        getGameTimer("game").startTimer();
+                        //getGameTimer("game").startTimer();
                         break;
                     }
                 default: break;
