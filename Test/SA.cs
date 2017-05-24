@@ -202,7 +202,7 @@ namespace Test {
                 } else if (State.GetState() == "tutorial") {
 
                     if (Int32.Parse(jankId) >= 27) {
-                        resetPlotId();
+                        playerPlotId = "2";
                         resetTransitionId();
                         ui_man.tutorialButtonIndex = 4;
                         ui_man.reset(responseList);
@@ -370,15 +370,20 @@ namespace Test {
         #endregion
 
         private void doStuff() {
-            //Console.WriteLine("look at me, im mr meeseeks    " + playerPlotId);
+            
 
             if (sman.getDialogueType() == "plotpoint") {
+                //Console.WriteLine("look at me, im mr meeseeks 1   " + playerPlotId);
                 responseList = s.ChooseDialogPlot(Load.newplayerp, sman.getCurrentNode(), playerPlotId, currentTone.ToString());
                 responseListNPC = s.ChooseDialogPlot(Load.allp, sman.getCurrentNode(), npcPlotId, currentTone.ToString());
                 npcPlotId = incr(npcPlotId);
                 playerPlotId = incr(playerPlotId);
+
+                //Console.WriteLine("@@@@@ " + curr.getCurrentNode());
+                //Console.WriteLine(";kasndfskdlf : " + responseList[0].content);
+                //Console.WriteLine("look at me, im mr meeseeks 2   " + playerPlotId);
                 if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
-            } else {
+            } else { 
                 responseList = s.ChooseDialogTransition(Load.newplayert, bucket, playerTransitionId, currentTone.ToString());
                 responseListNPC = s.ChooseDialogTransition(Load.allt, bucket, npcTransitionId, currentTone.ToString());
                 npcTransitionId = incr(npcTransitionId);
@@ -505,9 +510,6 @@ namespace Test {
             //jumpflag1
             responseListNPC = s.ChooseDialogPlot(Load.allp, sman.getCurrentNode(), npcPlotId, "Default");
             responseList = s.ChooseDialogPlot(Load.newplayerp, sman.getCurrentNode(), playerPlotId, "Root");
-            //npcPlotId = incr(npcPlotId);
-            //playerPlotId = linkId(npcPlotId);
-
 
             //ui_man.produceTextBoxes(responseList[0].content);
             //timeflag
