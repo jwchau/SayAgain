@@ -306,10 +306,6 @@ namespace Test {
         }
 
         public StoryManager() {
-
-
-
-
             //nextPreconditions = new List<String> ();
 
             currentNode = "DadGreetsPlayer";

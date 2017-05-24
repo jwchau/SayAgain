@@ -134,7 +134,7 @@ namespace Test {
 
             if (e.Code == Keyboard.Key.Space) {
                 if (State.GetState() == "game") {
-                    if (npcPlotId == "31" && !endGame) {
+                    if (npcPlotId == "99999" && !endGame) {
                         if (State.dialogueBox.checkNext()) {
                             State.playerDialogueBox.loadNewDialogue("player", "To be continued... <Follow us on TWITTER @SayAgainGame and our WEBSITE www.sayagaingame.com>");
                             State.playerDialogueBox.active = true;
@@ -151,16 +151,10 @@ namespace Test {
                         if (State.playerDialogueBox.checkNext()) {
                         }
                     } else {
-                        //Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ THE DIALOGUE INDEX IS: " + State.dialogueIndex);
-                        // Activate playerDialogueBox to display and be responsive, or switch to AI dialogue
                         if (State.dialogueIndex == "player") {
-                            //Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ INDEX PLAYER CONTENT: " + responseListNPC[0].content);
-
                             State.advanceConversation(speaker, responseList, responseListNPC);
-
-                            // Deactivate dialogueBox, Display playerDialogueBox, and submit tone 
                         } else if (State.dialogueIndex == "root") {
-                            // Sets the timer to 0 which calls Timer Action to advance the Conversation with the new responseLists
+                            revertEmotion(Mom); revertEmotion(Dad); revertEmotion(Alexis);
 
                             if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0) {
                                 State.dialogueBox.printTime = 0;
@@ -170,13 +164,10 @@ namespace Test {
                                 State.getGameTimer("game").setCountDown(0);
                                 State.dialogueBox.active = false;
                                 State.playerDialogueBox.active = false;
-
-
                             }
 
                             // Activate dialogueBox to display and be responsive, or switch to Root dialogue
                         } else if (State.dialogueIndex == "AI") {
-
                             State.advanceConversation(speaker, responseList, responseListNPC);
 
                         } else if (State.dialogueIndex == "interject") {
@@ -370,20 +361,16 @@ namespace Test {
         #endregion
 
         private void doStuff() {
-            
+
 
             if (sman.getDialogueType() == "plotpoint") {
-                //Console.WriteLine("look at me, im mr meeseeks 1   " + playerPlotId);
                 responseList = s.ChooseDialogPlot(Load.newplayerp, sman.getCurrentNode(), playerPlotId, currentTone.ToString());
                 responseListNPC = s.ChooseDialogPlot(Load.allp, sman.getCurrentNode(), npcPlotId, currentTone.ToString());
                 npcPlotId = incr(npcPlotId);
                 playerPlotId = incr(playerPlotId);
 
-                //Console.WriteLine("@@@@@ " + curr.getCurrentNode());
-                //Console.WriteLine(";kasndfskdlf : " + responseList[0].content);
-                //Console.WriteLine("look at me, im mr meeseeks 2   " + playerPlotId);
                 if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
-            } else { 
+            } else {
                 responseList = s.ChooseDialogTransition(Load.newplayert, bucket, playerTransitionId, currentTone.ToString());
                 responseListNPC = s.ChooseDialogTransition(Load.allt, bucket, npcTransitionId, currentTone.ToString());
                 npcTransitionId = incr(npcTransitionId);
@@ -394,7 +381,7 @@ namespace Test {
 
             if (responseListNPC[0].speaker != "") speaker = responseListNPC[0].speaker;
             affect(responseList[0].target, responseList[0].FNC);
-            affect(responseListNPC[0].target, responseList[0].FNC);
+            affect(responseListNPC[0].target, responseListNPC[0].FNC);
             reRootPlayer();
         }
 
@@ -409,7 +396,7 @@ namespace Test {
                 responseList = s.ChooseDialogTransition(Load.newplayert, bucket, playerTransitionId, currentTone.ToString());
                 playerTransitionId = incr(playerTransitionId);
             }
-
+            
             ui_man.reset(responseList);
         }
 
@@ -431,22 +418,38 @@ namespace Test {
             foreach (string s in targs) {
                 if (s == "mom") {
                     Mom.changeFNC(m); t = 1;
+                    respondEmotionally(Mom, t);
                 } else if (s == "-mom") {
                     Mom.changeFNC(-m); t = -1;
+                    respondEmotionally(Mom, t);
                 } else if (s == "dad") {
                     Dad.changeFNC(m); t = 1;
+                    respondEmotionally(Dad, t);
                 } else if (s == "-dad") {
                     Dad.changeFNC(-m); t = -1;
+                    respondEmotionally(Dad, t);
                 } else if (s == "alex") {
                     Alexis.changeFNC(m); t = 1;
+                    respondEmotionally(Alexis, t);
                 } else if (s == "-alex") {
-                    Dad.changeFNC(-m); t = -1;
+                    Alexis.changeFNC(-m); t = -1;
+                    respondEmotionally(Alexis, t);
                 }
                 if (responseListNPC[0].FNC == 0) t = 0;
 
-                Console.WriteLine(t);
-                //enqueue everytime an fnc changes
             }
+        }
+
+        private void revertEmotion(Character c) {
+            if (c.fncState() == "coop") c.setSpriteEmotion(Character.spriteEmotion.happy);
+            else if (c.fncState() == "frust") c.setSpriteEmotion(Character.spriteEmotion.angry);
+            else if (c.fncState() == "neut") c.setSpriteEmotion(Character.spriteEmotion.neutral);
+        }
+
+        private void respondEmotionally(Character c, int t) {
+                if (t == 1) c.setSpriteEmotion(Character.spriteEmotion.happy);
+                else if (t == -1) c.setSpriteEmotion(Character.spriteEmotion.angry);
+                else c.setSpriteEmotion(Character.spriteEmotion.neutral);
         }
 
 
@@ -529,18 +532,15 @@ namespace Test {
             Mom.state.setMood(5f);
             Mom.setTalking(false);
 
-
             Alexis = new Alex();
             Alexis.setSpriteEmotion(Character.spriteEmotion.angry);
             Alexis.active(true);
             Alexis.setTalking(false);
 
-
             Dad = new Dad();
             Dad.setSpriteEmotion(Character.spriteEmotion.happy);
             Dad.active(true);
             Dad.setTalking(false);
-
 
             Arm = new Arm();
             Arm.setSpriteEmotion(Character.spriteEmotion.neutral);

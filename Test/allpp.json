@@ -16,33 +16,33 @@
       "tone": "Default",
       "plotpoint": "DadGreetsPlayer",
       "id": "1",
-      "FNC": "9999",
-      "speaker": "dad",
+      "FNC": "-10",
+      "speaker": "",
       "finished": "",
       "inext": "",
-      "target": [ "mom" ]
+      "target": [ "-mom", "-dad", "-alex" ]
     },
     {
       "content": "NPC: plotpoint: dad greets player, id = 2;",
       "tone": "Default",
       "plotpoint": "DadGreetsPlayer",
       "id": "2",
-      "FNC": "9999",
-      "speaker": "",
+      "FNC": "-10",
+      "speaker": "mom",
       "finished": "",
       "inext": "",
-      "target": [ "mom" ]
+      "target": [ "-mom", "-dad", "-alex"]
     },
     {
       "content": "NPC: plotpoint: dad greets player, id = 3",
       "tone": "Default",
       "plotpoint": "DadGreetsPlayer",
       "id": "3",
-      "FNC": "9999",
+      "FNC": "-10",
       "speaker": "",
       "finished": "",
       "inext": "",
-      "target": [ "mom" ]
+      "target": [ "-alex" ]
     }
   ]
 }
