@@ -205,7 +205,6 @@ namespace Test {
 
 
         public List<double> determineRange(String[] range, double[] charFNC) {
-
             //HF-MF-LF-LN-MN-HN-LC-MC-HC
             double low, high;
             List<double> result = new List<double>();

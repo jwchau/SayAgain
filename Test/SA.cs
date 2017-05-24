@@ -382,13 +382,14 @@ namespace Test {
                 responseList = s.ChooseDialogTransition(Load.newplayert, bucket, playerTransitionId, currentTone.ToString());
                 responseListNPC = s.ChooseDialogTransition(Load.allt, bucket, npcTransitionId, currentTone.ToString());
                 npcTransitionId = incr(npcTransitionId);
-                playerTransitionId = linkId(npcTransitionId); 
+                playerTransitionId = linkId(npcTransitionId);
             }
+
             checkPlotChange();
 
             if (responseListNPC[0].speaker != "") speaker = responseListNPC[0].speaker;
-            affect(responseList[0].target);
-            affect(responseListNPC[0].target);
+            affect(responseList[0].target, responseList[0].FNC);
+            affect(responseListNPC[0].target, responseList[0].FNC);
             reRootPlayer();
         }
 
@@ -420,16 +421,31 @@ namespace Test {
             }
         }
 
-        private void affect(List<string> targs) {
+        private void affect(List<string> targs, double m) {
+            int t = 2 ^ 32;
             foreach (string s in targs) {
-                if (s == "mom") Mom.changeFNC(responseListNPC[0].FNC);
-                else if (s == "-mom") Mom.changeFNC(-(responseListNPC[0].FNC));
-                else if (s == "dad") Dad.changeFNC(responseListNPC[0].FNC);
-                else if (s == "-dad") Dad.changeFNC(-(responseListNPC[0].FNC));
-                else if (s == "alex") Alexis.changeFNC(responseListNPC[0].FNC);
-                else if (s == "-alex") Dad.changeFNC(-(responseListNPC[0].FNC));
+                if (s == "mom") {
+                    Mom.changeFNC(m); t = 1;
+                } else if (s == "-mom") {
+                    Mom.changeFNC(-m); t = -1;
+                } else if (s == "dad") {
+                    Dad.changeFNC(m); t = 1;
+                } else if (s == "-dad") {
+                    Dad.changeFNC(-m); t = -1;
+                } else if (s == "alex") {
+                    Alexis.changeFNC(m); t = 1;
+                } else if (s == "-alex") {
+                    Dad.changeFNC(-m); t = -1;
+                }
+                if (responseListNPC[0].FNC == 0) t = 0;
+
+                Console.WriteLine(t);
+                //enqueue everytime an fnc changes
             }
         }
+
+
+
 
         protected override void Initialize() {
             screenHelper();
