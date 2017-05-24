@@ -382,13 +382,9 @@ namespace Test {
                 responseList = s.ChooseDialogTransition(Load.newplayert, bucket, playerTransitionId, currentTone.ToString());
                 responseListNPC = s.ChooseDialogTransition(Load.allt, bucket, npcTransitionId, currentTone.ToString());
                 npcTransitionId = incr(npcTransitionId);
-                playerTransitionId = linkId(npcTransitionId);
-
-                if (sman.findNextPossibleNodes()) {
-                    resetPlotId();
-                    sman.setTypePlotNode();
-                }
+                playerTransitionId = linkId(npcTransitionId); 
             }
+            checkPlotChange();
 
             if (responseListNPC[0].speaker != "") speaker = responseListNPC[0].speaker;
             affect(responseList[0].target);
@@ -417,11 +413,21 @@ namespace Test {
             return temp1.ToString();
         }
 
+        private void checkPlotChange() {
+            if (sman.findNextPossibleNodes()) {
+                resetPlotId();
+                sman.setTypePlotNode();
+            }
+        }
+
         private void affect(List<string> targs) {
             foreach (string s in targs) {
                 if (s == "mom") Mom.changeFNC(responseListNPC[0].FNC);
+                else if (s == "-mom") Mom.changeFNC(-(responseListNPC[0].FNC));
                 else if (s == "dad") Dad.changeFNC(responseListNPC[0].FNC);
+                else if (s == "-dad") Dad.changeFNC(-(responseListNPC[0].FNC));
                 else if (s == "alex") Alexis.changeFNC(responseListNPC[0].FNC);
+                else if (s == "-alex") Dad.changeFNC(-(responseListNPC[0].FNC));
             }
         }
 
