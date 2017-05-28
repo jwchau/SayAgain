@@ -78,7 +78,7 @@ namespace Test {
 
             if (!hide) {
                 if (isTalking) {
-
+                    //Console.WriteLine("inside dad.cs: expr ; index " + expr + " , " + index);
                     target.Draw(noMouthSprites[expr][index]);
                     //cycle between open mouth and rest mouth
                     //hide previous mouth
@@ -121,7 +121,6 @@ namespace Test {
 
                 }
                 if (!isTalking) {
-
                     target.Draw(sprites[expr][index]);
                 }
                 if (index == 0 && prevIndex != 0) {
@@ -134,7 +133,8 @@ namespace Test {
 
                 if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate)) {
                     time = DateTime.Now;
-                    if (++index >= sprites[expr].Count) {
+
+                    if (index++ >= sprites[expr].Count-1) {
                         index = 0;
                     }
                 }

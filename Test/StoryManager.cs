@@ -66,11 +66,11 @@ namespace Test {
                 {
                     List<String> nextPreconditions = new List<String>();
                     numberOfChildren += 1;
-                    Console.WriteLine("Possible Next Node: " + n);
+                    //Console.WriteLine("Possible Next Node: " + n);
                     if (plot_dict[n].Item2 != null) {
                         foreach (var c in plot_dict[n].Item2) //the precondition of each child
                         {
-                            Console.WriteLine("With preconditions: " + c);
+                            //Console.WriteLine("With preconditions: " + c);
 
 
                             nextPreconditions.Add(c);
@@ -140,8 +140,8 @@ namespace Test {
         }
         
         public bool checkCharFNC(string s) {
-            Console.WriteLine("checkCharFNC()");
-            Console.WriteLine(s);
+            //Console.WriteLine("checkCharFNC()");
+            //Console.WriteLine(s);
 
             //MHF-LF
             //remove the M
@@ -163,7 +163,7 @@ namespace Test {
 
                     low = determineRange(range, mom.getFNCRange())[0];
                     high = determineRange(range, mom.getFNCRange())[1];
-                    Console.WriteLine("mom's current fnc from sman checker" + mom.getCurrentFNC());
+                    //Console.WriteLine("mom's current fnc from sman checker" + mom.getCurrentFNC());
                     if (mom.getCurrentFNC() >= low && mom.getCurrentFNC() <= high) {
 
                         return true;
@@ -174,11 +174,11 @@ namespace Test {
                 case 'D':
                     low = determineRange(range, dad.getFNCRange())[0];
                     high = determineRange(range, dad.getFNCRange())[1];
-                    Console.WriteLine();
-                    Console.WriteLine("dad's current fnc from sman checker" + dad.getCurrentFNC());
-                    Console.WriteLine("low of dad: " + low);
-                    Console.WriteLine("high of dad: " + high);
-                    Console.WriteLine();
+                    //Console.WriteLine();
+                    //Console.WriteLine("dad's current fnc from sman checker" + dad.getCurrentFNC());
+                    //Console.WriteLine("low of dad: " + low);
+                    //Console.WriteLine("high of dad: " + high);
+                    //Console.WriteLine();
                     if (dad.getCurrentFNC() >= low && dad.getCurrentFNC() <= high) {
 
                         return true;
@@ -189,7 +189,7 @@ namespace Test {
                 case 'A':
                     low = determineRange(range, alexis.getFNCRange())[0];
                     high = determineRange(range, alexis.getFNCRange())[1];
-                    Console.WriteLine("alex's current fnc from sman checker" + alexis.getCurrentFNC());
+                    //Console.WriteLine("alex's current fnc from sman checker" + alexis.getCurrentFNC());
                     if (alexis.getCurrentFNC() >= low && alexis.getCurrentFNC() <= high) {
                         //add the new currentNode to the list of nodes we have been to
                         reachedPlotpoints.Add(currentNode);
@@ -324,7 +324,7 @@ namespace Test {
             next_nodes.Add("MomAdmitsJob");
             addNode("GreetMom", next_nodes, preconditions);
 
-            preconditions.Add("D: MC-HC");
+            preconditions.Add("CAT");
             next_nodes.Add("MomInterjects1");
             next_nodes.Add("AlexBlowsUp");
             next_nodes.Add("MomBlowsUp");

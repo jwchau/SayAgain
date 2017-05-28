@@ -487,31 +487,32 @@ namespace Test
         }
 
         private void affect(List<string> targs, double m) {
-            int t = 2 ^ 32;
+            int t = (int)clamp(m, -1, 1);
             foreach (string s in targs) {
                 if (s == "mom") {
-                    Mom.changeFNC(m); t = 1;
+                    Mom.changeFNC(m);
                     respondEmotionally(Mom, t);
                 } else if (s == "-mom") {
-                    Mom.changeFNC(-m); t = -1;
+                    Mom.changeFNC(-m);
                     respondEmotionally(Mom, t);
                 } else if (s == "dad") {
-                    Dad.changeFNC(m); t = 1;
+                    Dad.changeFNC(m); 
                     respondEmotionally(Dad, t);
                 } else if (s == "-dad") {
-                    Dad.changeFNC(-m); t = -1;
+                    Dad.changeFNC(-m);
                     respondEmotionally(Dad, t);
                 } else if (s == "alex") {
-                    Alexis.changeFNC(m); t = 1;
+                    Alexis.changeFNC(m); 
                     respondEmotionally(Alexis, t);
                 } else if (s == "-alex") {
-                    Alexis.changeFNC(-m); t = -1;
+                    Alexis.changeFNC(-m);
                     respondEmotionally(Alexis, t);
                 }
                 if (responseListNPC[0].FNC == 0) t = 0;
 
-            } 
-            State.sound_man.loop_enqueue(targs[0], t);
+            }
+            if (targs.Count != 0 && targs[0] != "") State.sound_man.loop_enqueue(targs[0], t);
+
         }
 
         private void revertEmotion(Character c) {
@@ -624,6 +625,10 @@ namespace Test
             blackness.FillColor = Color.Black;
             blackness.Position = new Vector2f(0, 0);
             State.sound_man.init_music();
+        }
+
+        public static double clamp(double value, double min, double max) {
+            return (value < min) ? min : (value > max) ? max : value;
         }
 
         private void LoadInitialPreReqs()

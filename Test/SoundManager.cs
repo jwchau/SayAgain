@@ -38,9 +38,9 @@ namespace Test
                                                          { "dad",new List<string>()  {"../../Sounds/sax-sad.OGG" ,
                                                                                         "../../Sounds/sax-neutral.OGG"
                                                                                         , "../../Sounds/sax-happy.OGG" }},
-                                                         { "mom",new List<string>()  {"../../Sounds/sax-sad.OGG" ,
-                                                                                        "../../Sounds/sax-neutral.OGG"
-                                                                                        , "../../Sounds/sax-happy.OGG" }} };
+                                                         { "mom",new List<string>()  {"../../Sounds/key-sad.OGG" ,
+                                                                                        "../../Sounds/key-neutral.OGG"
+                                                                                        , "../../Sounds/key-happy.OGG" }} };
 
 
         }
@@ -110,7 +110,9 @@ namespace Test
         public void loop_enqueue(string speaker, int change)
         {
             if (speaker[0] == '-') speaker = speaker.Substring(1, speaker.Length-1);
-            Console.WriteLine(speaker);
+
+            Console.WriteLine("in loop enqueue: " + speaker + " ,change: " + change);
+
             if (change < 0)
                 m_queue.Enqueue(loops[speaker][0]);
             else if (change == 0 )
@@ -118,7 +120,7 @@ namespace Test
             else
                 m_queue.Enqueue(loops[speaker][2]);
 
-
+            while (m_queue.Count > 2) m_queue.Dequeue();
         }
     }
 }
