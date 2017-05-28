@@ -54,6 +54,7 @@ namespace Test {
                     longerframe = 1;
                     ////Console.WriteLine("1");
                 } else if (rnd == 1) {
+
                     longerframe = 6;
                     ////Console.WriteLine("2");
 
@@ -179,14 +180,6 @@ namespace Test {
 
                     if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate)) {
                         time = DateTime.Now;
-                        /*if (currentMouthIndex >= -1 && currentMouthIndex <4)
-                        {
-                            currentMouthIndex += 1;
-                        }
-                        else if (currentMouthIndex == 4)
-                        {
-                            currentMouthIndex = -1;
-                        }*/
                         currentMouthIndex = r.Next(-1, 5);
                     }
                 }

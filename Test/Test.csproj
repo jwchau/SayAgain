@@ -142,8 +142,8 @@
     <None Include="alexTutorial.json" />
     <None Include="App.config" />
     <None Include="dad.json" />
-    <None Include="dadpp.json" />
-    <None Include="dadtt.json" />
+    <None Include="allpp.json" />
+    <None Include="alltt.json" />
     <None Include="dumbo.json" />
     <None Include="Fonts\Adore64.ttf" />
     <None Include="jank.json" />

@@ -51,6 +51,7 @@ namespace Test
             var WindowY = (double)window.Size.Y;
             scaleFactorX = DesktopX / WindowX;
             scaleFactorY = DesktopY / WindowY;
+
         }
         #endregion
 
@@ -68,15 +69,14 @@ namespace Test
                     settingsMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
                 }
 
-            }
-            else if (State.GetState() == "game")
-            {
+
+            } else if (State.GetState() == "game" || State.GetState() == "tutorial") {
                 ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
-            }
-            else if (State.GetState() == "pause")
-            {
-                if (State.GetMenuState() == "pause")
-                {
+                if (State.tooltip.init) {
+                    State.tooltip.hover = State.tooltip.contains((int)(e.X * scaleFactorX), (int)(e.Y * scaleFactorY));
+                }
+            } else if (State.GetState() == "pause") {
+                if (State.GetMenuState() == "pause") {
                     pauseMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
                 }
                 else if (State.GetMenuState() == "settings")
@@ -85,7 +85,7 @@ namespace Test
                 }
             }
 
-            ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
+            //ui_man.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
         }
 
         private void onMouseButtonReleased(object sender, MouseButtonEventArgs e)
@@ -129,7 +129,8 @@ namespace Test
                 //}
 
             }
-            ui_man.applyTones((int)(e.X * scaleFactorX), (int)(e.Y * scaleFactorY));
+            ui_man.applyTones((int)(e.X * scaleFactorX), (int)(e.Y * scaleFactorY), State.tooltip);
+
         }
 
         private void onMouseButtonPressed(object sender, MouseButtonEventArgs e)
@@ -141,10 +142,12 @@ namespace Test
 
             ManagerOfInput.MenuPlay(State, menus, e.X, e.Y);
 
-            if (State.getGameTimer("game").Contains(e.X, e.Y, scaleFactorX, scaleFactorY) && State.getGameTimer("game").getStart())
-            {
-                State.sound_man.playSFX("button");
-                State.getGameTimer("game").setCountDown(0);
+
+
+            if (State.getGameTimer("game").Contains(e.X, e.Y, scaleFactorX, scaleFactorY)) {
+                //State.sound_man.playSFX("button");
+                TimerAction();
+                //State.getGameTimer("game").setCountDown(0);
             }
         }
 
@@ -152,17 +155,13 @@ namespace Test
         {
         }
 
-        private void onKeyPressed(object sender, KeyEventArgs e)
-        {
 
-            if (e.Code == Keyboard.Key.Space)
-            {
-                if (State.GetState() == "game")
-                {
-                    if (ncurrid2 == "31" && !endGame)
-                    {
-                        if (State.dialogueBox.checkNext())
-                        {
+        private void onKeyPressed(object sender, KeyEventArgs e) {
+
+            if (e.Code == Keyboard.Key.Space) {
+                if (State.GetState() == "game") {
+                    if (npcPlotId == "99999" && !endGame) {
+                        if (State.dialogueBox.checkNext()) {
                             State.playerDialogueBox.loadNewDialogue("player", "To be continued... <Follow us on TWITTER @SayAgainGame and our WEBSITE www.sayagaingame.com>");
                             State.playerDialogueBox.active = true;
                             State.playerDialogueBox.init = true;
@@ -180,35 +179,22 @@ namespace Test
                         if (State.playerDialogueBox.checkNext())
                         {
                         }
-                    }
-                    else
-                    {
-                        //Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ THE DIALOGUE INDEX IS: " + State.dialogueIndex);
-                        // Activate playerDialogueBox to display and be responsive, or switch to AI dialogue
-                        if (State.dialogueIndex == "player")
-                        {
-                            //Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ INDEX PLAYER CONTENT: " + responseListNPC[0].content);
 
-                            State.advanceConversation(speaker, null, responseListNPC);
-
-                            // Deactivate dialogueBox, Display playerDialogueBox, and submit tone 
-                        }
-                        else if (State.dialogueIndex == "root")
-                        {
-                            // Sets the timer to 0 which calls Timer Action to advance the Conversation with the new responseLists
+                    } else {
+                        if (State.dialogueIndex == "player") {
+                            State.advanceConversation(speaker, responseList, responseListNPC);
+                        } else if (State.dialogueIndex == "root") {
+                            revertEmotion(Mom); revertEmotion(Dad); revertEmotion(Alexis);
 
                             if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0)
                             {
                                 State.dialogueBox.printTime = 0;
                             }
+                            if (State.getGameTimer("game").getCountDown() != 0.0) {
 
-                            if (State.getGameTimer("game").getCountDown() != 0.0)
-                            {
                                 State.getGameTimer("game").setCountDown(0);
                                 State.dialogueBox.active = false;
                                 State.playerDialogueBox.active = false;
-
-
                             }
 
                             // Activate dialogueBox to display and be responsive, or switch to Root dialogue
@@ -225,22 +211,10 @@ namespace Test
                                 if (State.dialogueBox.checkNext())
                                 {
 
-                                    if (responseListNPC[0].FNC == 10.0)
-                                    {
-
-                                        int temp = Int32.Parse(ncurrid);
-                                        temp++;
-                                        ncurrid = temp.ToString();
-                                        responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid, currentTone.ToString());
-                                    }
-                                    else
-                                    {
-                                        responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, 1, ncurrid2, currentTone.ToString());
-                                        int temp = Int32.Parse(ncurrid2);
-                                        temp++;
-                                        ncurrid2 = temp.ToString();
-                                    }
-
+                                    Console.WriteLine("interjection unhandled");
+                                    //responseListNPC = s.ChooseDialogTransition(Load.NPCDialogueObj, 1, npcPlotId, currentTone.ToString());
+                                    //affect(responseListNPC[0].target);
+                                    //npcPlotId = incr(npcPlotId);
                                     if (responseListNPC[0].speaker != "")
                                     {
                                         speaker = responseListNPC[0].speaker;
@@ -259,10 +233,9 @@ namespace Test
                 else if (State.GetState() == "tutorial")
                 {
 
-                    if (Int32.Parse(jankId) >= 27)
-                    {
-                        pcurrid = "1";
-                        ncurrid = "1";
+                    if (Int32.Parse(jankId) >= 27) {
+                        playerPlotId = "2";
+                        resetTransitionId();
                         ui_man.tutorialButtonIndex = 4;
                         ui_man.reset(responseList);
                         fadeFlag = true;
@@ -288,9 +261,9 @@ namespace Test
                     else if (State.dialogueIndex == "root")
                     {
 
-                        if (State.getGameTimer("game").getCountDown() != 0.0)
-                        {
-                            State.getGameTimer("game").setCountDown(0);
+                        if (State.getGameTimer("game").getCountDown() != 0.0) {
+                            TimerAction();
+                            //State.getGameTimer("game").setCountDown(0);
                         }
 
                     }
@@ -339,6 +312,7 @@ namespace Test
                         fadeFloat = -0.003f;
 
 
+
                     }
 
                 }
@@ -346,12 +320,12 @@ namespace Test
             if (State.GetState() == "game" || State.GetState() == "tutorial")
             {
                 #region button to apply tones
-                if (State.getGameTimer("game").getStart())
-                {
-                    if (e.Code == Keyboard.Key.Num1) ui_man.applyToneShortcut(buttons[0]);
-                    else if (e.Code == Keyboard.Key.Num2) ui_man.applyToneShortcut(buttons[1]);
-                    else if (e.Code == Keyboard.Key.Num3) ui_man.applyToneShortcut(buttons[2]);
-                    else if (e.Code == Keyboard.Key.Num4) ui_man.applyToneShortcut(buttons[3]);
+
+                if (State.playerDialogueBox.active == false && State.dialogueBox.active == false) {
+                    if (e.Code == Keyboard.Key.Num1) ui_man.applyToneShortcut(buttons[0], State.tooltip);
+                    else if (e.Code == Keyboard.Key.Num2) ui_man.applyToneShortcut(buttons[1], State.tooltip);
+                    else if (e.Code == Keyboard.Key.Num3) ui_man.applyToneShortcut(buttons[2], State.tooltip);
+                    else if (e.Code == Keyboard.Key.Num4) ui_man.applyToneShortcut(buttons[3], State.tooltip);
                 }
                 #endregion
 
@@ -363,10 +337,17 @@ namespace Test
             }
         }
 
-        private void limitTones()
-        {
-            if (jankId == "5")
-            {
+        private void resetPlotId() {
+            playerPlotId = "1";
+            npcPlotId = "1";
+        }
+        private void resetTransitionId() {
+            playerTransitionId = "1";
+            npcTransitionId = "1";
+        }
+
+        private void limitTones() {
+            if (jankId == "5") {
                 ui_man.tutorialButtonIndex = 0;
                 currentTone = tone.Root;
             }
@@ -395,7 +376,6 @@ namespace Test
             if (Int32.Parse(jankId) < 27)
             {
                 ui_man.reset(jankList);
-                //Console.WriteLine("I SHOULD NOT BE HERE: " + jankId);
 
             }
         }
@@ -405,127 +385,37 @@ namespace Test
             int j = Int32.Parse(jankId);
             j++;
             jankId = j.ToString();
-
-            //Console.WriteLine("THE CURRENT JANKID IS: " + jankId);
-
         }
 
-        #region Timer Action Placeholder
-        public void TimerAction()
-        {
-            updateTargetFNC();
-            //update currentmademeories, currentmilestones, currenttone, currentcontext
+        //if (currentTone != tone.Root) playerPlotId = incr(playerPlotId); //updates everything besides FNC
+        public void TimerAction() {
             currentTone = ui_man.getTone();
-            if (currentTone != tone.Root) pcurrid = incr(pcurrid); //updates everything besides FNC
             loadDialogues();
         }
-        #endregion
 
-        public void updateTargetFNC()
-        {
-
-            //load tonal matrix
-            //get targets from player
-            //get context
-            //load context matrix
-            //meth;
-        }
-
-
-        string pcurrid = "1";
-        string ncurrid = "1";
-        string ncurrid2 = "1";
-
-        #region update currents
-
-        //after timer runs out update the current stuff
-        private void updateCurrents()
-        {
-            int temp2 = Int32.Parse(pcurrid);
-            int temp1 = Int32.Parse(ncurrid);
-
-            temp2++;
-            if (temp2 % 2 == 0 && temp2 > 2)
-            {
-                temp1++;
-            }
-
-            ncurrid = temp1.ToString();
-            pcurrid = temp2.ToString();
-
-            if (responseList.ElementAt(0).next != "") pcurrid = responseList.ElementAt(0).next;
-            if (responseListNPC.ElementAt(0).next != "") ncurrid = responseListNPC.ElementAt(0).next;
-        }
-        #endregion
+        #region id tracker
+        string playerPlotId = "1";
+        string playerTransitionId = "1";
+        string npcPlotId = "1";
+        string npcTransitionId = "1";
 
         string speaker = "dad";
         string jankId = "27";
         double bucket = 1;
         List<double> pastBuckets = new List<double>();
+        #endregion
 
         #region load dialogue new
-        public void loadDialogues()
-        {
-            if (State.GetState() == "game")
-            {
-                if (currentTone != tone.Root)
-                {
-                    // Load playerDialogueBox with the new content from responseList
-                    State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
-
-                    // Update response Lists with the recently used tone
-                    responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, currentTone.ToString());
-                    if (sman.getDialogueType() == "plotpoint")
-                    {
-                        Random r = new Random();
-                        Load.NPCDialogueObj = Load.dadp;
-                        responseListNPC = s.ChooseDialog2(Load.NPCDialogueObj, sman.getCurrentNode(), ncurrid, currentTone.ToString());
-                        ncurrid2 = "1";
-                        if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
-                        else ncurrid = incr(ncurrid);
-                    }
-                    else
-                    {
-                        Load.NPCDialogueObj = Load.dadt;
-                        if (sman.findNextPossibleNodes())
-                        {
-                            ncurrid = "1";
-                            sman.setTypePlotNode();
-                            //bucket++;
-                        }
-
-                        responseListNPC = s.ChooseDialog3(Load.NPCDialogueObj, bucket, ncurrid2, currentTone.ToString());
-                        affect(speaker);
-                        ncurrid2 = incr(ncurrid2);
-                    }
-
-                    if (responseListNPC[0].speaker != "")
-                    {
-                        speaker = responseListNPC[0].speaker;
-
-                    }
-
-                    State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
-                    State.advanceConversation(speaker, responseList, responseListNPC);
-
-                    //updateCurrents();
-                    pcurrid = incr(pcurrid);
-                    if (responseList.ElementAt(0).next != "") pcurrid = responseList.ElementAt(0).next;
-
-                    responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, tone.Root.ToString());
-                    ui_man.reset(responseList);
+        public void loadDialogues() {
+            ui_man.rootBackgroundBorder.OutlineColor = ui_man.rootBackground.FillColor;
+            if (State.GetState() == "game") {
+                if (currentTone != tone.Root) {
+                    doStuff();
                 }
-                else
-                {
-                    State.getGameTimer("game").resetTimer();
-                    State.getGameTimer("game").startTimer();
+            } else if (State.GetState() == "tutorial") {
 
-                }
-            }
-            else if (State.GetState() == "tutorial")
-            {
-                if (currentTone != tone.Root)
-                {
+                if (currentTone != tone.Root) {
+                    State.tooltip.init = false;
                     jankList = s.chooseJank(Load.Jankson, jankId, currentTone.ToString());
                     State.setResponseList(jankList);
 
@@ -536,42 +426,111 @@ namespace Test
                 else
                 {
                     State.getGameTimer("game").resetTimer();
-                    State.getGameTimer("game").startTimer();
+                    //State.getGameTimer("game").startTimer();
                 }
             }
         }
         #endregion
 
-        private string incr(string s)
-        {
+        private void doStuff() {
+
+
+            if (sman.getDialogueType() == "plotpoint") {
+                responseList = s.ChooseDialogPlot(Load.newplayerp, sman.getCurrentNode(), playerPlotId, currentTone.ToString());
+                responseListNPC = s.ChooseDialogPlot(Load.allp, sman.getCurrentNode(), npcPlotId, currentTone.ToString());
+                npcPlotId = incr(npcPlotId);
+                playerPlotId = incr(playerPlotId);
+
+                if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
+            } else {
+                responseList = s.ChooseDialogTransition(Load.newplayert, bucket, playerTransitionId, currentTone.ToString());
+                responseListNPC = s.ChooseDialogTransition(Load.allt, bucket, npcTransitionId, currentTone.ToString());
+                npcTransitionId = incr(npcTransitionId);
+                playerTransitionId = linkId(npcTransitionId);
+            }
+
+            checkPlotChange();
+
+            if (responseListNPC[0].speaker != "") speaker = responseListNPC[0].speaker;
+            affect(responseList[0].target, responseList[0].FNC);
+            affect(responseListNPC[0].target, responseListNPC[0].FNC);
+            reRootPlayer();
+        }
+
+        private void reRootPlayer() {
+            State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
+            State.advanceConversation(speaker, responseList, responseListNPC);
+
+            if (sman.getDialogueType() == "plotpoint") {
+                responseList = s.ChooseDialogPlot(Load.newplayerp, sman.getCurrentNode(), playerPlotId, currentTone.ToString());
+                playerPlotId = incr(playerPlotId);
+            } else {
+                responseList = s.ChooseDialogTransition(Load.newplayert, bucket, playerTransitionId, currentTone.ToString());
+                playerTransitionId = incr(playerTransitionId);
+            }
+            
+            ui_man.reset(responseList);
+        }
+
+        private string incr(string s) {
             int temp1 = Int32.Parse(s);
             temp1++;
             return temp1.ToString();
         }
 
-        private void affect(string s)
-        {
-            if (s == "mom")
-            {
-                Mom.changeFNC(responseListNPC[0].FNC);
-                //return a string that checks if mom went from frustrated to neutral
-                //return a string that checks if mom went from neutral to coop
-                //all else return current range
-                //loop_function(s,asdf);
+
+        private void checkPlotChange() {
+            if (sman.findNextPossibleNodes()) {
+                resetPlotId();
+                sman.setTypePlotNode();
             }
-            if (s == "dad")
-            {
-                Dad.changeFNC(responseListNPC[0].FNC);
-            }
-            if (s == "alex")
-            {
-                Alexis.changeFNC(responseListNPC[0].FNC);
-            }
-            
         }
 
-        protected override void Initialize()
-        {
+        private void affect(List<string> targs, double m) {
+            int t = 2 ^ 32;
+            foreach (string s in targs) {
+                if (s == "mom") {
+                    Mom.changeFNC(m); t = 1;
+                    respondEmotionally(Mom, t);
+                } else if (s == "-mom") {
+                    Mom.changeFNC(-m); t = -1;
+                    respondEmotionally(Mom, t);
+                } else if (s == "dad") {
+                    Dad.changeFNC(m); t = 1;
+                    respondEmotionally(Dad, t);
+                } else if (s == "-dad") {
+                    Dad.changeFNC(-m); t = -1;
+                    respondEmotionally(Dad, t);
+                } else if (s == "alex") {
+                    Alexis.changeFNC(m); t = 1;
+                    respondEmotionally(Alexis, t);
+                } else if (s == "-alex") {
+                    Alexis.changeFNC(-m); t = -1;
+                    respondEmotionally(Alexis, t);
+                }
+                if (responseListNPC[0].FNC == 0) t = 0;
+
+            } 
+            State.sound_man.loop_enqueue(targs[0], t);
+        }
+
+        private void revertEmotion(Character c) {
+            if (c.fncState() == "coop") c.setSpriteEmotion(Character.spriteEmotion.happy);
+            else if (c.fncState() == "frust") c.setSpriteEmotion(Character.spriteEmotion.angry);
+            else if (c.fncState() == "neut") c.setSpriteEmotion(Character.spriteEmotion.neutral);
+        }
+
+        private void respondEmotionally(Character c, int t) {
+                if (t == 1) c.setSpriteEmotion(Character.spriteEmotion.happy);
+                else if (t == -1) c.setSpriteEmotion(Character.spriteEmotion.angry);
+                else c.setSpriteEmotion(Character.spriteEmotion.neutral);
+        }
+
+
+
+
+        protected override void Initialize() {
+            screenHelper();
 
             splash = new Sprite(new Texture("../../Art/banner2.png"));
             alphaSplash = new Sprite(new Texture("../../Art/alpha.png"));
@@ -620,14 +579,14 @@ namespace Test
 
             // Create Character states
 
-            responseList = s.ChooseDialog(Load.playerDialogueObj1, pcurrid, currentTone.ToString());
-            responseListNPC = s.ChooseDialog(Load.NPCDialogueObj, ncurrid, currentTone.ToString());
-
-
             jankList = s.chooseJank(Load.Jankson, jankId, currentTone.ToString());
             State.setResponseList(jankList);
             jankIncr();
             jankList = s.chooseJank(Load.Jankson, jankId, currentTone.ToString());
+
+            //jumpflag1
+            responseListNPC = s.ChooseDialogPlot(Load.allp, sman.getCurrentNode(), npcPlotId, "Default");
+            responseList = s.ChooseDialogPlot(Load.newplayerp, sman.getCurrentNode(), playerPlotId, "Root");
 
             //ui_man.produceTextBoxes(responseList[0].content);
             //timeflag
@@ -635,9 +594,7 @@ namespace Test
             State.addTimer("cursor", 1, null);
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            fullScreenView = window.DefaultView;
-            fullScreenView.Viewport = new FloatRect(0, 0, 1, 1);
-            window.SetView(fullScreenView);
+
 
             buttons = ui_man.getButtons();
             menus.Add(startMenu); menus.Add(settingsMenu); menus.Add(pauseMenu);
@@ -649,18 +606,15 @@ namespace Test
             Mom.state.setMood(5f);
             Mom.setTalking(false);
 
-
             Alexis = new Alex();
             Alexis.setSpriteEmotion(Character.spriteEmotion.angry);
             Alexis.active(true);
             Alexis.setTalking(false);
 
-
             Dad = new Dad();
             Dad.setSpriteEmotion(Character.spriteEmotion.happy);
             Dad.active(true);
             Dad.setTalking(false);
-
 
             Arm = new Arm();
             Arm.setSpriteEmotion(Character.spriteEmotion.neutral);
@@ -683,8 +637,12 @@ namespace Test
 
             FNC = 0;
         }
-        protected override void Update()
-        {
+
+        private string linkId(string s) {
+            int temp = ((int.Parse(s) * 2) - 1);
+            return temp.ToString();
+        }
+        protected override void Update() {
             screenHelper();
 
             State.sound_man.update_music();
@@ -731,9 +689,8 @@ namespace Test
                     {
 
                         alphaBlack += fadeFloat;
-                    }
-                    else
-                    {
+                    } else {
+
                         fadeFlag = false;
                     }
                 }
@@ -764,41 +721,30 @@ namespace Test
 
                             // Check collision with UI Textboxes
                             // Loop through UI Textboxes
-                            for (var j = 0; j < playerDialogues.Count; j++)
-                            {
+
+                            if (ui_man.wasMouseIn) {
                                 // If the mouse just came from inside a UI Textbox
-                                if (playerDialogues[j].wasMouseIn())
-                                {
-                                    if (!playerDialogues[j].Contains(buttons[i]))
-                                    {
-                                        // Mouse has now left the UI Textbox so set it to false
-                                        playerDialogues[j].setMouseWasIn(false);
-                                        // Reset the color to match its previous color
-                                        playerDialogues[j].setBoxColor(playerDialogues[j].getBoxColor("prev"));
-                                        // Update the rest of the buttons in the cluster
-                                        ui_man.updateClusterColors(playerDialogues[j], playerDialogues, playerDialogues[j].getBoxColor("prev"), false);
-
-                                    }
-
-                                    // If mouse just came from outside the UI Textbox
+                                if (!ui_man.contains(buttons[i])) {
+                                    // Mouse has now left the UI Textbox so set it to false
+                                    ui_man.wasMouseIn = false;
+                                    // Reset the color to match its previous color
+                                    playerDialogues[0].setBoxColor(playerDialogues[0].getBoxColor("prev"));
+                                    ui_man.rootBackgroundBorder.OutlineColor = ui_man.rootBackground.FillColor;
+                                    // Update the rest of the buttons in the cluster
+                                    ui_man.updateClusterColors(playerDialogues[0], playerDialogues, playerDialogues[0].getBoxColor("prev"), false);
                                 }
-                                else
-                                {
-                                    if (playerDialogues[j].Contains(buttons[i]))
-                                    {
-                                        // Mouse is now inside a UI Textbox, so set it to true
-                                        playerDialogues[j].setMouseWasIn(true);
-                                        // Update previous color to current color of the UI Textbox
-                                        playerDialogues[j].setPrevColor(playerDialogues[j].getBoxColor("curr"));
-                                        // Update current color to selected tonal button color
-                                        playerDialogues[j].setBoxColor(buttons[i].getTonalColor());
-                                        // Update the rest of the buttons in the cluster
-                                        ui_man.updateClusterColors(playerDialogues[j], playerDialogues, buttons[i].getTonalColor(), true);
-
-
-                                    }
+                            } else {
+                                // If mouse just came from outside the UI Textbox
+                                if (ui_man.contains(buttons[i])) {
+                                    ui_man.wasMouseIn = true;
+                                    // Update previous color to current color of the UI Textbox
+                                    playerDialogues[0].setPrevColor(playerDialogues[0].getBoxColor("curr"));
+                                    // Update current color to selected tonal button color
+                                    playerDialogues[0].setBoxColor(buttons[i].getTonalColor());
+                                    ui_man.rootBackgroundBorder.OutlineColor = buttons[i].getTonalColor();
+                                    // Update the rest of the buttons in the cluster
+                                    ui_man.updateClusterColors(playerDialogues[0], playerDialogues, buttons[i].getTonalColor(), true);
                                 }
-
                             }
 
                         }
@@ -830,12 +776,9 @@ namespace Test
         {
 
             window.Clear(clearColor);
-
-            window.SetView(fullScreenView);
-            if (State.GetState() == "menu")
-            {
-                if (State.GetMenuState() == "start")
-                {
+            //window.SetView(fullScreenView);
+            if (State.GetState() == "menu") {
+                if (State.GetMenuState() == "start") {
                     window.Draw(splash);
                     window.Draw(alphaSplash);
                     window.Draw(momSplash);
@@ -875,16 +818,19 @@ namespace Test
 
                 window.Draw(blackness);
 
-                if (!State.dialogueBox.active)
-                {
-                    window.Draw(textBackground); // Account for fixed height of player dialogue box (makes sure there isnt a gap below the PDB)
+
+                if (!State.dialogueBox.active) {
+                    //window.Draw(textBackground); // Account for fixed height of player dialogue box (makes sure there isnt a gap below the PDB)
+                    window.Draw(ui_man.rootBackground);
                     window.Draw(State.playerDialogueBox);
                 }
 
                 if (!State.playerDialogueBox.active && !State.dialogueBox.active)
                 {
 
-                    window.Draw(textBackground);
+                    //window.Draw(textBackground);
+                    window.Draw(ui_man.rootBackground);
+                    window.Draw(ui_man.rootBackgroundBorder);
 
                     for (var i = 0; i < dialogues.Count; i++)
                     {
@@ -897,8 +843,10 @@ namespace Test
                     }
                     window.Draw(State.getGameTimer("game")); //this is the speak button
                 }
-                if (playerChoice)
-                {
+
+                window.Draw(State.tooltip);
+
+                if (playerChoice) {
                     window.Draw(D_Man);
                 }
 

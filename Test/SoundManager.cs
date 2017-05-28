@@ -100,6 +100,7 @@ namespace Test
             if (current.Status == SoundStatus.Stopped )
             {
 
+
                 
                current = new Music(m_queue.Dequeue());
                current.Play();
@@ -108,6 +109,8 @@ namespace Test
         }
         public void loop_enqueue(string speaker, int change)
         {
+            if (speaker[0] == '-') speaker = speaker.Substring(1, speaker.Length-1);
+            Console.WriteLine(speaker);
             if (change < 0)
                 m_queue.Enqueue(loops[speaker][0]);
             else if (change == 0 )

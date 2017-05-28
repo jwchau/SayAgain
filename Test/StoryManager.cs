@@ -28,24 +28,6 @@ namespace Test {
 
         }
 
-        public void print() {
-            /* foreach (var kvp in plot_dict)
-             {
-
-                 Console.WriteLine(kvp.Key);
-                 if (!kvp.Value.Item1[0].Equals(null))
-                 {
-                     Console.WriteLine(kvp.Value.Item1[0]);
-                 }
-                 if (!kvp.Value.Item1[1].Equals(null)) { 
-                     Console.WriteLine(kvp.Value.Item1[1]);
-                 }
-
-
-             }
-   */
-        }
-
         public string getCurrentNode() {
             return currentNode;
         }
@@ -76,8 +58,9 @@ namespace Test {
 
         public bool findNextPossibleNodes() {
             numberOfChildren = 0;
-            Console.WriteLine("Current node: " + currentNode);
-            if (plot_dict[currentNode].Item1 != null) {
+            //Console.WriteLine("Current node: " + currentNode);
+            if (plot_dict[currentNode].Item1 != null)
+            {
                 //the string name of each child node
                 foreach (var n in plot_dict[currentNode].Item1) //each child
                 {
@@ -88,6 +71,7 @@ namespace Test {
                         foreach (var c in plot_dict[n].Item2) //the precondition of each child
                         {
                             Console.WriteLine("With preconditions: " + c);
+
 
                             nextPreconditions.Add(c);
 
@@ -154,11 +138,11 @@ namespace Test {
             }
             return true;
         }
-
-
+        
         public bool checkCharFNC(string s) {
             Console.WriteLine("checkCharFNC()");
             Console.WriteLine(s);
+
             //MHF-LF
             //remove the M
             //if hf then = fncrange[0]
@@ -181,6 +165,7 @@ namespace Test {
                     high = determineRange(range, mom.getFNCRange())[1];
                     Console.WriteLine("mom's current fnc from sman checker" + mom.getCurrentFNC());
                     if (mom.getCurrentFNC() >= low && mom.getCurrentFNC() <= high) {
+
                         return true;
                     }
 
@@ -195,6 +180,7 @@ namespace Test {
                     Console.WriteLine("high of dad: " + high);
                     Console.WriteLine();
                     if (dad.getCurrentFNC() >= low && dad.getCurrentFNC() <= high) {
+
                         return true;
                     }
 
@@ -203,11 +189,11 @@ namespace Test {
                 case 'A':
                     low = determineRange(range, alexis.getFNCRange())[0];
                     high = determineRange(range, alexis.getFNCRange())[1];
-
                     Console.WriteLine("alex's current fnc from sman checker" + alexis.getCurrentFNC());
                     if (alexis.getCurrentFNC() >= low && alexis.getCurrentFNC() <= high) {
                         //add the new currentNode to the list of nodes we have been to
                         reachedPlotpoints.Add(currentNode);
+
                         return true;
                     }
 
@@ -219,7 +205,6 @@ namespace Test {
 
 
         public List<double> determineRange(String[] range, double[] charFNC) {
-
             //HF-MF-LF-LN-MN-HN-LC-MC-HC
             double low, high;
             List<double> result = new List<double>();
@@ -307,6 +292,7 @@ namespace Test {
         }
         public bool checkPastPlotPoint(string p) {
             Console.WriteLine("checkPastPlotPoint()");
+
             //if p exists in list of reached plotpoints
             //return true;
             //else
@@ -320,10 +306,6 @@ namespace Test {
         }
 
         public StoryManager() {
-
-
-
-
             //nextPreconditions = new List<String> ();
 
             currentNode = "DadGreetsPlayer";

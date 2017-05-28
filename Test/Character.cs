@@ -32,7 +32,7 @@ namespace Test {
 
         public DateTime time = DateTime.Now;
         
-        protected float xpos, ypos, xscale, yscale;
+        protected float xpos, ypos, xscale, yscale, mouthPosX, mouthPosY;
         protected bool canTalk = false;
         public CharacterState state;
         public enum spriteEmotion { happy, angry, neutral, sad };
@@ -94,6 +94,12 @@ namespace Test {
             }
         }
 
+
+        public string fncState() {
+            if (currentFNC < FNCRange[3]) return "frust";
+            else if (currentFNC > FNCRange[7]) return "coop";
+            else return "neut";
+        }
 
         public void setSprite(List<Sprite> s) {
             sprites = s;
