@@ -390,7 +390,7 @@ namespace Test {
                     if (printTime != 0) {
                         if (i == line.DisplayedString.Length - 2 || tag == "tooltip") {
                             printTime = 0;
-                        } else if (".!?".Contains(line.DisplayedString[i]) && spam == false ) {
+                        } else if (".!?".Contains(line.DisplayedString[i]) && spam == false) {
                             if (!(".!?".Contains(line.DisplayedString[i - 1]))) {
                                 printTime *= 14;
                             }

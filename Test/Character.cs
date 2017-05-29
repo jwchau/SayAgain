@@ -95,6 +95,12 @@ namespace Test {
         }
 
 
+        public string fncState() {
+            if (currentFNC < FNCRange[3]) return "frust";
+            else if (currentFNC > FNCRange[7]) return "coop";
+            else return "neut";
+        }
+
         public void setSprite(List<Sprite> s) {
             sprites = s;
         }
@@ -118,8 +124,8 @@ namespace Test {
             return currentFNC;
         }
 
-        public void changeFNC() {
-
+        public void changeFNC(double i) {
+            currentFNC += i;
         }
         public void click() {
             if (sprites != null) {

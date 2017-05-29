@@ -78,7 +78,7 @@ namespace Test {
 
             if (!hide) {
                 if (isTalking) {
-
+                    //Console.WriteLine("inside dad.cs: expr ; index " + expr + " , " + index);
                     target.Draw(noMouthSprites[expr][index]);
                     //cycle between open mouth and rest mouth
                     //hide previous mouth
@@ -96,8 +96,6 @@ namespace Test {
                             angryrest.Scale = (new Vector2f(0.55f, 0.62f));
                             target.Draw(angryrest);
                         }
-
-
                     } else if (currentMouthIndex >= 1 && currentMouthIndex < 4)//open mouth
                       {
                         framerate = 15;
@@ -112,6 +110,7 @@ namespace Test {
                         mouths[currentMouthIndex].Position = new Vector2f(xpos - 45, ypos + 119);
                         target.Draw(mouths[currentMouthIndex]);
 
+
                     }
 
                     if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate)) {
@@ -122,12 +121,8 @@ namespace Test {
 
                 }
                 if (!isTalking) {
-
                     target.Draw(sprites[expr][index]);
                 }
-
-                /***************************************/
-
                 if (index == 0 && prevIndex != 0) {
                     framerate = framerate / (float)rnd;
                     prevIndex = 0;
@@ -138,7 +133,8 @@ namespace Test {
 
                 if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate)) {
                     time = DateTime.Now;
-                    if (++index >= sprites[expr].Count) {
+
+                    if (index++ >= sprites[expr].Count-1) {
                         index = 0;
                     }
                 }
