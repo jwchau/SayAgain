@@ -307,10 +307,7 @@ namespace Test {
 
         public StoryManager() {
             //nextPreconditions = new List<String> ();
-<<<<<<< HEAD
-=======
 
->>>>>>> newsounds
             currentNode = "DadGreetsPlayer";
             setDialogueType(type.plotpoint);
             reachedPlotpoints = new List<String>();
@@ -322,28 +319,21 @@ namespace Test {
 
             next_nodes.Add("DadAccusesMom");
             addNode("DadGreetsPlayer", next_nodes, preconditions);
-<<<<<<< HEAD
 
-            preconditions.Add("D: MC-HC");
-=======
 
             next_nodes.Add("MomTellsPlayerTalkToAlex");
             next_nodes.Add("MomAdmitsJob");
             addNode("GreetMom", next_nodes, preconditions);
 
             preconditions.Add("CAT");
->>>>>>> newsounds
+
             next_nodes.Add("MomInterjects1");
             next_nodes.Add("AlexBlowsUp");
             next_nodes.Add("MomBlowsUp");
             next_nodes.Add("DadBlowsUp");
             addNode("DadAccusesMom", next_nodes, preconditions);
 
-<<<<<<< HEAD
-            preconditions.Add("");
-=======
             preconditions.Add("A: HF-HF");
->>>>>>> newsounds
             next_nodes.Add("DadInterjects1");
             next_nodes.Add("AlexBlowsUp");
             next_nodes.Add("MomBlowsUp");
