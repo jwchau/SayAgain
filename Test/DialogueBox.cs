@@ -14,8 +14,8 @@ using System.Drawing;
 namespace Test {
     class DialogueBox : Drawable {
 
-        static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
-        static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+        static UInt32 SCREEN_WIDTH = 1920;
+        static UInt32 SCREEN_HEIGHT = 1080;
         Vector2f scale = new Vector2f(SCREEN_WIDTH / 1920, SCREEN_HEIGHT / 1080);
         private Text name, dialogue;
         Task currentTask;

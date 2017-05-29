@@ -15,8 +15,8 @@ namespace Test {
 
         //////////////////////////////////////////////////////////////////////////////////////////////
         //Screen defaults
-        static protected UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
-        static protected UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+        static protected UInt32 SCREEN_WIDTH = 1920;
+        static protected UInt32 SCREEN_HEIGHT = 1080;
         protected double scaleFactorX;
         protected double scaleFactorY;
 
@@ -83,11 +83,13 @@ namespace Test {
         /////////////////////////////////////////////////////////////////////////////////////////////
 
         public static UInt32 getW() {
-            return SCREEN_WIDTH;
+            //return SCREEN_WIDTH;
+            return 1920;
         }
 
         public static UInt32 getH() {
-            return SCREEN_HEIGHT;
+            //return SCREEN_HEIGHT;
+            return 1080;
         }
 
         protected GameState State = new GameState();

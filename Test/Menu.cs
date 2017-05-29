@@ -36,8 +36,8 @@ namespace Test
             }
         }
 
-        UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
-        UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+        UInt32 SCREEN_WIDTH = 1920;
+        UInt32 SCREEN_HEIGHT = 1080;
         //string type;
         List<MenuButton> MenuButtons = new List<MenuButton>();
         Sprite pauseBG;

@@ -16,7 +16,7 @@ namespace Test
     class SA : Game
     {
 
-        public SA() : base(VideoMode.DesktopMode.Width, VideoMode.DesktopMode.Height, "Say Again?")
+        public SA() : base(1920, 1080, "Say Again?")
         {
             window.KeyPressed += onKeyPressed;
             window.KeyReleased += onKeyReleased;
@@ -45,8 +45,8 @@ namespace Test
         #region screen resize math
         private void screenHelper()
         {
-            var DesktopX = (double)VideoMode.DesktopMode.Width;
-            var DesktopY = (double)VideoMode.DesktopMode.Height;
+            var DesktopX = (double)1920;
+            var DesktopY = (double)1080;
             var WindowX = (double)window.Size.X;
             var WindowY = (double)window.Size.Y;
             scaleFactorX = DesktopX / WindowX;

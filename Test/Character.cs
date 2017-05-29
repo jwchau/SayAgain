@@ -39,8 +39,8 @@ namespace Test {
         public abstract void setSpriteEmotion(spriteEmotion e);
         public abstract void checkFNC();
 
-        protected uint SCREEN_WIDTH = VideoMode.DesktopMode.Width;
-        protected uint SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+        protected uint SCREEN_WIDTH = 1920;
+        protected uint SCREEN_HEIGHT = 1080;
 
 
         public bool isTalking = false;

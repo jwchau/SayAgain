@@ -31,8 +31,8 @@ namespace Test {
         }
 
         //fields
-        static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
-        static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+        static UInt32 SCREEN_WIDTH = 1920;
+        static UInt32 SCREEN_HEIGHT = 1080;
 
         Sprite buttonSprite;
         Sprite buttonSpriteHighlight;
@@ -140,8 +140,8 @@ namespace Test {
 
         #region screen helper
         public Tuple<double, double> screenHelper(double winx, double winy) {
-            var DesktopX = (double)VideoMode.DesktopMode.Width;
-            var DesktopY = (double)VideoMode.DesktopMode.Height;
+            var DesktopX = (double)1920;
+            var DesktopY = (double)1080;
             return new Tuple<double, double>(DesktopX / winx, DesktopY / winy);
         }
         #endregion

@@ -40,6 +40,7 @@ namespace Test {
         }
 
         public override void setSpriteEmotion(spriteEmotion e) {
+            index = 0;
             expr = e.ToString();
         }
 
@@ -202,12 +203,12 @@ namespace Test {
                 if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate)) {
                     time = DateTime.Now;
 
-                    if (isTalking && index++ >= noMouthSprites[expr].Count-1) {
+                    if (isTalking && ++index > noMouthSprites[expr].Count-1) {
                         pickSpecialFrame();
                         index = 0;
                     }
 
-                    if (!isTalking && index++ >= sprites[expr].Count-1) {
+                    if (!isTalking && ++index > sprites[expr].Count-1) {
                         pickSpecialFrame();
                         index = 0;
                     }
