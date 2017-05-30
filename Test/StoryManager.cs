@@ -58,33 +58,16 @@ namespace Test {
 
         public bool findNextPossibleNodes() {
             numberOfChildren = 0;
-            //Console.WriteLine("Current node: " + currentNode);
-            if (plot_dict[currentNode].Item1 != null)
-            {
-                //the string name of each child node
-                foreach (var n in plot_dict[currentNode].Item1) //each child
-                {
+            if (plot_dict[currentNode].Item1 != null) {
+                foreach (var n in plot_dict[currentNode].Item1) {
                     List<String> nextPreconditions = new List<String>();
                     numberOfChildren += 1;
-                    //Console.WriteLine("Possible Next Node: " + n);
                     if (plot_dict[n].Item2 != null) {
-                        foreach (var c in plot_dict[n].Item2) //the precondition of each child
-                        {
-                            //Console.WriteLine("With preconditions: " + c);
-
-
+                        foreach (var c in plot_dict[n].Item2) {
                             nextPreconditions.Add(c);
-
-                            //Console.WriteLine();
-                            //foreach (var v in nextPreconditions) {
-                            //    Console.Write("find next possible: " + v);
-                            //}
-                            //Console.WriteLine();
-
                             if (checkIfPreconSatisfied(nextPreconditions)) {
-                                currentNode = n;//current node is set to child node 
+                                currentNode = n;
                                 reachedPlotpoints.Add(currentNode);
-                                
                                 return true;
                             }
 
@@ -138,17 +121,8 @@ namespace Test {
             }
             return true;
         }
-        
-        public bool checkCharFNC(string s) {
-            //Console.WriteLine("checkCharFNC()");
-            //Console.WriteLine(s);
 
-            //MHF-LF
-            //remove the M
-            //if hf then = fncrange[0]
-            //if lf then = fncrange[3]
-            //if [0] < char.currentfnc < [3]
-            //true
+        public bool checkCharFNC(string s) {
             char character = s[0];
             Character mom = Program.getGame().getMom();
             Character dad = Program.getGame().getDad();
@@ -163,7 +137,6 @@ namespace Test {
 
                     low = determineRange(range, mom.getFNCRange())[0];
                     high = determineRange(range, mom.getFNCRange())[1];
-                    //Console.WriteLine("mom's current fnc from sman checker" + mom.getCurrentFNC());
                     if (mom.getCurrentFNC() >= low && mom.getCurrentFNC() <= high) {
 
                         return true;
@@ -174,11 +147,6 @@ namespace Test {
                 case 'D':
                     low = determineRange(range, dad.getFNCRange())[0];
                     high = determineRange(range, dad.getFNCRange())[1];
-                    //Console.WriteLine();
-                    //Console.WriteLine("dad's current fnc from sman checker" + dad.getCurrentFNC());
-                    //Console.WriteLine("low of dad: " + low);
-                    //Console.WriteLine("high of dad: " + high);
-                    //Console.WriteLine();
                     if (dad.getCurrentFNC() >= low && dad.getCurrentFNC() <= high) {
 
                         return true;
@@ -189,7 +157,6 @@ namespace Test {
                 case 'A':
                     low = determineRange(range, alexis.getFNCRange())[0];
                     high = determineRange(range, alexis.getFNCRange())[1];
-                    //Console.WriteLine("alex's current fnc from sman checker" + alexis.getCurrentFNC());
                     if (alexis.getCurrentFNC() >= low && alexis.getCurrentFNC() <= high) {
                         //add the new currentNode to the list of nodes we have been to
                         reachedPlotpoints.Add(currentNode);
@@ -291,7 +258,7 @@ namespace Test {
 
         }
         public bool checkPastPlotPoint(string p) {
-            Console.WriteLine("checkPastPlotPoint()");
+            //Console.WriteLine("checkPastPlotPoint()");
 
             //if p exists in list of reached plotpoints
             //return true;
@@ -320,13 +287,12 @@ namespace Test {
             next_nodes.Add("DadAccusesMom");
             addNode("DadGreetsPlayer", next_nodes, preconditions);
 
-
+            preconditions.Add("DOG");
             next_nodes.Add("MomTellsPlayerTalkToAlex");
             next_nodes.Add("MomAdmitsJob");
             addNode("GreetMom", next_nodes, preconditions);
 
             preconditions.Add("CAT");
-
             next_nodes.Add("MomInterjects1");
             next_nodes.Add("AlexBlowsUp");
             next_nodes.Add("MomBlowsUp");

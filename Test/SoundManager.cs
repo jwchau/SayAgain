@@ -111,8 +111,6 @@ namespace Test
         {
             if (speaker[0] == '-') speaker = speaker.Substring(1, speaker.Length-1);
 
-            Console.WriteLine("in loop enqueue: " + speaker + " ,change: " + change);
-
             if (change < 0)
                 m_queue.Enqueue(loops[speaker][0]);
             else if (change == 0 )

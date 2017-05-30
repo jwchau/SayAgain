@@ -37,8 +37,8 @@ namespace Test {
                     playerDialogueBox.active = false;
                     dialogueBox.active = true;
                     if (dialogueBox.checkNext()) {
-
                         dialogueIndex = "root";
+                        
                         dialogueBox.active = false;
                         playerDialogueBox.active = false;
                     }
@@ -60,14 +60,13 @@ namespace Test {
                                 if (responseListNPC[0].inext == "") {
                                     //if there is no interjector
                                     dialogueIndex = "AI";
-
                                     dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
-                                    ////sound_man.playchatter(speaker);
-
+                                    //sound_man.playchatter(speaker);
                                 } else {
 
                                     //if there is an interjector
                                     dialogueIndex = "interject";
+                                    
                                     dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
                                 }
                             }
@@ -76,12 +75,10 @@ namespace Test {
                 } else if (dialogueIndex == "interject") {
 
                     if (dialogueBox.checkNext()) {
-
                         dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
 
                         if (responseListNPC[0].inext == "") {
                             dialogueIndex = "AI";
-
                         }
 
                     }

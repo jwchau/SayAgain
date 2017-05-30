@@ -33,11 +33,9 @@ namespace Test
         int cluster = -1;
         tone tone = tone.Root;
         UInt32 SCREEN_WIDTH = 1920;
-        UInt32 SCREEN_HEIGHT = 1080;
 
         private uint getFontSize()
         {
-
             return (uint)((SCREEN_WIDTH / 1920) * 50);
         }
 
@@ -50,8 +48,8 @@ namespace Test
             return tone;
         }
 
-        public void setTone(tone tonez) {
-            tone = tonez;
+        public void setTone(tone t) {
+            tone = t;
         }
 
         public int getCluster()
@@ -113,12 +111,6 @@ namespace Test
 
         public bool Contains(UIButton button)
         {
-            //FloatRect bounds = getBoxBounds();
-            //if (mouseX >= bounds.Left && mouseX <= bounds.Left + bounds.Width && mouseY >= bounds.Top && mouseY <= bounds.Top + bounds.Height)
-            //{
-            //    return true;
-            //}
-            //return false;
             FloatRect rootBounds = getBoxBounds();
             FloatRect toneButton = button.getRectBounds();
 
