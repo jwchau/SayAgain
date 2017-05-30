@@ -724,7 +724,7 @@
       "content": "I know Alex has a take on this.",
       "tone": "Root",
       "plot": "PlayerSupportsDad",
-      "id": "22",
+      "id": "23",
       "FNC": "0",
       "inext": "",
       "target": [ "", "", "" ]
@@ -733,7 +733,7 @@
       "content": "Hey. Let Alex talk, Dad. Don’t tell her to keep her mouth shut.\n",
       "tone": "Blunt",
       "plot": "PlayerSupportsDad",
-      "id": "23",
+      "id": "24",
       "FNC": "0",
       "inext": "",
       "target": [ "", "", "" ]
@@ -742,7 +742,7 @@
       "content": "Yeah Alex. Just let Dad, talk. It’ll be faster.\n",
       "tone": "Indifferent",
       "plot": "PlayerSupportsDad",
-      "id": "23",
+      "id": "24",
       "FNC": "0",
       "inext": "",
       "target": [ "", "", "" ]
@@ -751,7 +751,7 @@
       "content": "Alex, let Dad explain himself. It’s rude to jump to conclusions.",
       "tone": "Compassionate",
       "plot": "PlayerSupportsDad",
-      "id": "23",
+      "id": "24",
       "FNC": "0",
       "inext": "",
       "target": [ "", "", "" ]
@@ -760,7 +760,7 @@
       "content": "Uh, Dad? Shouldn’t you let Alex talk...for a bit, at least?\n",
       "tone": "Hesitant",
       "plot": "PlayerSupportsDad",
-      "id": "23",
+      "id": "24",
       "FNC": "0",
       "inext": "",
       "target": [ "", "", "" ]
@@ -797,9 +797,9 @@
       "tone": "Compassionate",
       "plot": "PlayerSupportsDad",
       "id": "28",
-      "FNC": "30",
+      "FNC": "10",
       "inext": "",
-      "target": [ "", "", "" ]
+      "target": [ "mom", "dad", "" ]
     },
     {
       "content": "But...you would have had to get the money from Dad, right? I mean...that’s the only way.",
@@ -1038,7 +1038,7 @@
     {
       "content": "A ‘coincidence'?",
       "tone": "Root",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "19",
       "FNC": "0",
       "inext": "",
@@ -1047,7 +1047,7 @@
     {
       "content": "Come on. A coincidence? Sounds juicy.",
       "tone": "Blunt",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "UNMARKED",
       "FNC": "0",
       "inext": "",
@@ -1056,7 +1056,7 @@
     {
       "content": "Just say it already.",
       "tone": "Indifferent",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "UNMARKED",
       "FNC": "0",
       "inext": "",
@@ -1065,7 +1065,7 @@
     {
       "content": "Mom, you’ve got to stop making it sound so suspicious.",
       "tone": "Compassionate",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "UNMARKED",
       "FNC": "0",
       "inext": "",
@@ -1074,7 +1074,7 @@
     {
       "content": "Um...I think you’ve got to be a little more...y’know...specific.",
       "tone": "Hesitant",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "UNMARKED",
       "FNC": "0",
       "inext": "",
@@ -1083,7 +1083,7 @@
     {
       "content": "Let Mom explain, Dad.",
       "tone": "Root",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "29",
       "FNC": "0",
       "inext": "",
@@ -1092,7 +1092,7 @@
     {
       "content": "You’ve got to be an ass about everything, huh, Dad?",
       "tone": "Blunt",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "30",
       "FNC": "0",
       "inext": "",
@@ -1101,7 +1101,7 @@
     {
       "content": "How about being quiet for a minute so she can actually get to it, Dad.",
       "tone": "Indifferent",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "30",
       "FNC": "0",
       "inext": "",
@@ -1110,7 +1110,7 @@
     {
       "content": "Please, Dad. Let Mom talk, okay?",
       "tone": "Compassionate",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "30",
       "FNC": "0",
       "inext": "",
@@ -1119,7 +1119,7 @@
     {
       "content": "Okay, so…I think we should let Mom talk...",
       "tone": "Hesitant",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "30",
       "FNC": "0",
       "inext": "",
@@ -1128,7 +1128,7 @@
     {
       "content": "Dad, you still don’t get it.",
       "tone": "Root",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "39",
       "FNC": "0",
       "inext": "",
@@ -1137,7 +1137,7 @@
     {
       "content": "God, that’s all you can think about?",
       "tone": "Blunt",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "40",
       "FNC": "0",
       "inext": "",
@@ -1146,7 +1146,7 @@
     {
       "content": "All this nonsense you’re spewing, Dad… Ugh.",
       "tone": "Indifferent",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "40",
       "FNC": "0",
       "inext": "",
@@ -1155,7 +1155,7 @@
     {
       "content": "Dad, you really need to see the bigger picture here.",
       "tone": "Compassionate",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "40",
       "FNC": "0",
       "inext": "",
@@ -1164,7 +1164,7 @@
     {
       "content": "It’s not like that though...",
       "tone": "Hesitant",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "40",
       "FNC": "0",
       "inext": "",
@@ -1173,7 +1173,7 @@
     {
       "content": "It’s her name tag for work.",
       "tone": "Root",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "47",
       "FNC": "0",
       "inext": "",
@@ -1182,7 +1182,7 @@
     {
       "content": "It’s for her job, duh.",
       "tone": "Blunt",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "48",
       "FNC": "0",
       "inext": "",
@@ -1191,7 +1191,7 @@
     {
       "content": " Isn’t it clear yet? I mean, it’s her name tag.",
       "tone": "Indifferent",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "48",
       "FNC": "0",
       "inext": "",
@@ -1200,7 +1200,7 @@
     {
       "content": "Dad, look! It’s Mom’s name tag for her job.",
       "tone": "Compassionate",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "48",
       "FNC": "0",
       "inext": "",
@@ -1209,7 +1209,7 @@
     {
       "content": "I mean... can’t you see? It’s her name tag.",
       "tone": "Hesitant",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "48",
       "FNC": "0",
       "inext": "",
@@ -1218,8 +1218,8 @@
     {
       "content": "You’re being ignorant, Dad",
       "tone": "Root",
-      "plot": "PlayerDefendsMom",
-      "id": "1",
+      "plot": "MomAdmitsJob",
+      "id": "57",
       "FNC": "0",
       "inext": "",
       "target": [ "", "", "" ]
@@ -1227,8 +1227,8 @@
     {
       "content": "Dad, you are so beyond help.",
       "tone": "Blunt",
-      "plot": "PlayerDefendsMom2",
-      "id": "1",
+      "plot": "MomAdmitsJob",
+      "id": "58",
       "FNC": "0",
       "inext": "",
       "target": [ "", "", "" ]
@@ -1236,8 +1236,8 @@
     {
       "content": "Dad, you're being so wrong.",
       "tone": "Indifferent",
-      "plot": "PlayerDefendsMom",
-      "id": "2",
+      "plot": "MomAdmitsJob",
+      "id": "58",
       "FNC": "0",
       "inext": "",
       "target": [ "", "", "" ]
@@ -1245,8 +1245,8 @@
     {
       "content": "Dad, I think you are making a big mistake here.",
       "tone": "Compassionate",
-      "plot": "PlayerDefendsMom",
-      "id": "2",
+      "plot": "MomAdmitsJob",
+      "id": "58",
       "FNC": "0",
       "inext": "",
       "target": [ "", "", "" ]
@@ -1254,8 +1254,8 @@
     {
       "content": "Dad... I think you are making a mistake.",
       "tone": "Hesitant",
-      "plot": "PlayerDefendsMom",
-      "id": "2",
+      "plot": "MomAdmitsJob",
+      "id": "58",
       "FNC": "0",
       "inext": "",
       "target": [ "", "", "" ]
@@ -1801,15 +1801,6 @@
       "target": [ "", "", "" ]
     },
     {
-      "content": "",
-      "tone": "",
-      "plot": "",
-      "id": "",
-      "FNC": "0",
-      "inext": "",
-      "target": [ "", "", "" ]
-    },
-    {
       "content": "This is unacceptable. How long will the suspension last?",
       "tone": "Root",
       "plot": "AlexInterjects2",
@@ -2080,15 +2071,6 @@
       "target": [ "", "", "" ]
     },
     {
-      "content": "",
-      "tone": "",
-      "plot": "",
-      "id": "",
-      "FNC": "0",
-      "inext": "",
-      "target": [ "", "", "" ]
-    },
-    {
       "content": "What are you talking about?",
       "tone": "Root",
       "plot": "DadNoSeeHisFault",
@@ -2269,15 +2251,6 @@
       "target": [ "", "", "" ]
     },
     {
-      "content": "",
-      "tone": "",
-      "plot": "",
-      "id": "",
-      "FNC": "0",
-      "inext": "",
-      "target": [ "", "", "" ]
-    },
-    {
       "content": "I can help you through this. ",
       "tone": "Root",
       "plot": "AlexReconcilesPlayer",
@@ -2317,15 +2290,6 @@
       "content": "Call me naive, but I am making this about myself because that’s the only person I know well enough. I guess even though we haven’t shared similar childhoods, through my years, I think I have gained enough perspective to help you through this. You just have to be willing to listen. ",
       "tone": "Hesitant",
       "plot": "AlexReconcilesPlayer",
-      "id": "",
-      "FNC": "0",
-      "inext": "",
-      "target": [ "", "", "" ]
-    },
-    {
-      "content": "",
-      "tone": "",
-      "plot": "",
       "id": "",
       "FNC": "0",
       "inext": "",

@@ -124,6 +124,10 @@ namespace Test {
             return currentFNC;
         }
 
+        public void setCurrentFNC(double d) {
+            currentFNC = d;
+        }
+
         public void changeFNC(double i) {
             currentFNC += i;
         }

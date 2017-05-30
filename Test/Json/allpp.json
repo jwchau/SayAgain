@@ -511,7 +511,7 @@
       "tone": "Compassionate",
       "plot": "DadGreetsPlayer",
       "id": "15",
-      "FNC": "20",
+      "FNC": "-10",
       "speaker": "",
       "finished": "fin",
       "inext": "",
@@ -522,7 +522,7 @@
       "tone": "Hesitant",
       "plot": "DadGreetsPlayer",
       "id": "15",
-      "FNC": "20",
+      "FNC": "-10",
       "speaker": "",
       "finished": "fin",
       "inext": "",
@@ -830,7 +830,7 @@
       "tone": "Compassionate",
       "plot": "PlayerSupportsDad",
       "id": "14",
-      "FNC": "30",
+      "FNC": "0",
       "speaker": "mom",
       "finished": "",
       "inext": "",
@@ -874,11 +874,11 @@
       "tone": "Default",
       "plot": "PlayerSupportsDad",
       "id": "17",
-      "FNC": "0",
+      "FNC": "-10",
       "speaker": "",
       "finished": "fin",
       "inext": "",
-      "target": [ "dad", "", "" ]
+      "target": [ "mom", "", "" ]
     },
     {
       "content": "That's hard to believe. You already think I'm cheating on your dad",
@@ -962,11 +962,11 @@
       "tone": "Default",
       "plot": "PlayerSupportsDad2",
       "id": "5",
-      "FNC": "0",
+      "FNC": "10",
       "speaker": "mom",
       "finished": "fin",
       "inext": "",
-      "target": [ "dad", "alex", "" ]
+      "target": [ "mom", "alex", "" ]
     },
     {
       "content": "I honestly can't believe neither you nor Alex - especially Alex, who has been around home - haven't been able to add up all the clues and subtleties to figure it out. Just LOOK at your mom! New hair, new clothes, coming home absolutely reeking of alchohol - it's only obvious!",
@@ -1094,7 +1094,7 @@
       "tone": "Hesitant",
       "plot": "PlayerDefendsMom",
       "id": "6",
-      "FNC": "0",
+      "FNC": "10",
       "speaker": "dad",
       "finished": "",
       "inext": "mom",
@@ -1103,7 +1103,7 @@
     {
       "content": "These are all normal things I do.",
       "tone": "Default",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "7",
       "FNC": "0",
       "speaker": "",
@@ -1114,7 +1114,7 @@
     {
       "content": "Then what about the alcohol, hm? Feel free to even try and explan that one away. On specifid days you come home reeking of alcohol. You go seeing other men, grab a couple drinks, and even Dare to come home smelling like that!",
       "tone": "Default",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "8",
       "FNC": "0",
       "speaker": "",
@@ -1125,7 +1125,7 @@
     {
       "content": "I'm not doing that at all. It's just... a coincidence, that's all",
       "tone": "Default",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "9",
       "FNC": "0",
       "speaker": "",
@@ -1136,7 +1136,7 @@
     {
       "content": "Yes. Why don't we hear the whole damn story, hm?\n",
       "tone": "Default",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "10",
       "FNC": "0",
       "speaker": "dad",
@@ -1147,7 +1147,7 @@
     {
       "content": "Hey, stop being so rude to Mom!",
       "tone": "Default",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "11",
       "FNC": "0",
       "speaker": "",
@@ -1158,7 +1158,7 @@
     {
       "content": "Oh, you will see.",
       "tone": "Default",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "12",
       "FNC": "0",
       "speaker": "",
@@ -1169,7 +1169,7 @@
     {
       "content": "All you'll see is how paranoid you've become.",
       "tone": "Default",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "13",
       "FNC": "0",
       "speaker": "",
@@ -1180,7 +1180,7 @@
     {
       "content": "Hah, I bet you can't even explain away the alcohol.",
       "tone": "Default",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "14",
       "FNC": "0",
       "speaker": "",
@@ -1191,7 +1191,7 @@
     {
       "content": "My point exactly. It's all gone downhill.",
       "tone": "Blunt",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "15",
       "FNC": "0",
       "speaker": "mom",
@@ -1202,7 +1202,7 @@
     {
       "content": "Yes, I'd love to. It's all gone downhill.",
       "tone": "Indifferent",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "15",
       "FNC": "0",
       "speaker": "mom",
@@ -1213,7 +1213,7 @@
     {
       "content": "Please, thank you. It's all gone downhill.",
       "tone": "Compassionate",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "15",
       "FNC": "0",
       "speaker": "mom",
@@ -1224,7 +1224,7 @@
     {
       "content": "I was going to say... It's all gone downhill.",
       "tone": "Hesitant",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "15",
       "FNC": "0",
       "speaker": "mom",
@@ -1235,7 +1235,7 @@
     {
       "content": "I'd say.",
       "tone": "Default",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "16",
       "FNC": "0",
       "speaker": "",
@@ -1246,7 +1246,7 @@
     {
       "content": "DAD!",
       "tone": "Default",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "17",
       "FNC": "0",
       "speaker": "",
@@ -1257,7 +1257,7 @@
     {
       "content": "And it's precisely due to that attitude. You let that promotion you got last year get to your head!",
       "tone": "Default",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "18",
       "FNC": "0",
       "speaker": "",
@@ -1268,7 +1268,7 @@
     {
       "content": "And what does my hard work have to do with the smell of beer you drag home?",
       "tone": "Default",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "19",
       "FNC": "0",
       "speaker": "",
@@ -1279,7 +1279,7 @@
     {
       "content": "Again with the teaming up on me! You're all blind! Blind as bats! And you apparently can't smell either.",
       "tone": "Default",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "20",
       "FNC": "0",
       "speaker": "dad",
@@ -1290,7 +1290,7 @@
     {
       "content": "Wow, slinging names and insults now?",
       "tone": "Default",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "21",
       "FNC": "0",
       "speaker": "",
@@ -1301,7 +1301,7 @@
     {
       "content": "That's what I'm saying. Here's my work ID.",
       "tone": "Default",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "22",
       "FNC": "0",
       "speaker": "",
@@ -1312,7 +1312,7 @@
     {
       "content": "And what's that exactly.",
       "tone": "Default",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "23",
       "FNC": "0",
       "speaker": "",
@@ -1323,7 +1323,7 @@
     {
       "content": "She doesn't have a job! Who do you think you're fooling?",
       "tone": "Blunt",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "24",
       "FNC": "0",
       "speaker": "dad",
@@ -1334,7 +1334,7 @@
     {
       "content": "What's clear?",
       "tone": "Indifferent",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "24",
       "FNC": "0",
       "speaker": "dad",
@@ -1345,7 +1345,7 @@
     {
       "content": "You're joking, right?",
       "tone": "Compassionate",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "24",
       "FNC": "0",
       "speaker": "dad",
@@ -1356,7 +1356,7 @@
     {
       "content": "You're being very difficult with me.",
       "tone": "Hesitant",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "24",
       "FNC": "0",
       "speaker": "dad",
@@ -1367,7 +1367,7 @@
     {
       "content": "Yes, that's correct. This is my badge at the Scarlet Space.",
       "tone": "Default",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "25",
       "FNC": "0",
       "speaker": "",
@@ -1378,7 +1378,7 @@
     {
       "content": "Hah! How'd you even manage that? You can't even manage the household finances!",
       "tone": "Default",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "26",
       "FNC": "0",
       "speaker": "",
@@ -1389,7 +1389,7 @@
     {
       "content": "Wow. Rude much?",
       "tone": "Default",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "27",
       "FNC": "0",
       "speaker": "",
@@ -1400,7 +1400,7 @@
     {
       "content": "Alex. You are to be quiet. You had your chance to speak.",
       "tone": "Default",
-      "plot": "PlayerDefendsMom",
+      "plot": "MomAdmitsJob",
       "id": "28",
       "FNC": "0",
       "speaker": "",
@@ -1411,9 +1411,9 @@
     {
       "content": "Beyond help? How dare you! I am not beyond help! It’s all of you who need help—ganging up on me, believing everything your mom says. That nametag or whatever is fake! It’s merely a gimmick and a distraction, trying to cover up her insolence. I will be finishing my dinner elsewhere.",
       "tone": "Default",
-      "plot": "PlayerDefendsMom2",
-      "id": "1",
-      "FNC": "0",
+      "plot": "MomAdmitsJob",
+      "id": "29",
+      "FNC": "10",
       "speaker": "dad",
       "finished": "fin",
       "inext": "",
@@ -1651,11 +1651,22 @@
       "target": [ "", "", "" ]
     },
     {
+      "content": "go to dad no sees his fault",
+      "tone": "Blunt",
+      "plot": "MomReconcilesDad",
+      "id": "10",
+      "FNC": "-10",
+      "speaker": "",
+      "finished": "fin",
+      "inext": "mom",
+      "target": [ "", "", "" ]
+    },
+    {
       "content": "What are you trying to pull...",
       "tone": "Default",
       "plot": "MomReconcilesDad",
       "id": "10",
-      "FNC": "0",
+      "FNC": "10",
       "speaker": "",
       "finished": "fin",
       "inext": "mom",
@@ -1941,11 +1952,11 @@
       "tone": "Default",
       "plot": "DadSeesHisFault",
       "id": "20",
-      "FNC": "0",
+      "FNC": "10",
       "speaker": "",
       "finished": "fin",
       "inext": "",
-      "target": [ "", "", "" ]
+      "target": [ "mom", "", "" ]
     },
     {
       "content": "Another quality bombshell guys, let's change the subject before you guys start ripping each other's head off.",
@@ -1996,7 +2007,7 @@
       "tone": "Default",
       "plot": "AlexChangesSubject",
       "id": "5",
-      "FNC": "0",
+      "FNC": "10",
       "speaker": "",
       "finished": "fin",
       "inext": "",
@@ -2128,11 +2139,11 @@
       "tone": "Default",
       "plot": "AlexInterjects1",
       "id": "9",
-      "FNC": "0",
+      "FNC": "-10",
       "speaker": "alex",
       "finished": "fin",
       "inext": "",
-      "target": [ "", "", "" ]
+      "target": [ "mom", "", "" ]
     },
     {
       "content": "There you guys go again! You can't go 5 minutes without arguing!",
@@ -2278,7 +2289,7 @@
       "target": [ "mom", "", "" ]
     },
     {
-      "content": "Thanks...",
+      "content": "Okay...",
       "tone": "Default",
       "plot": "DadNoSeesHisFault",
       "id": "6",
@@ -2300,7 +2311,7 @@
       "target": [ "", "", "" ]
     },
     {
-      "content": "Yes, of course. I was going to say that all the money your dad is bringing in because of the promotion he got makes him controlling!",
+      "content": "Yes, of course. Well, the money your dad is bringing in because of the promotion has been making him so controlling.",
       "tone": "Default",
       "plot": "DadNoSeesHisFault",
       "id": "8",
@@ -2333,7 +2344,7 @@
       "target": [ "mom", "", "" ]
     },
     {
-      "content": "No your mom does not mean that because she is wrong! I never have been controlling. I do not tell your mom how she has to live her life.",
+      "content": "No she does not mean it, because she is wrong! I never have been controlling. I do not tell your mom how she has to live her life.",
       "tone": "Compassionate",
       "plot": "DadNoSeesHisFault",
       "id": "9",
@@ -2344,7 +2355,7 @@
       "target": [ "mom", "", "" ]
     },
     {
-      "content": "That’s correct. I am not controlling. How does your Mom even come up with these things… Anyways, I have never been controlling. I do not tell your mom how she has to live her life.\n",
+      "content": "That’s correct. I am not controlling. How does your mom even come up with these things… Anyways, no! I have never been controlling. I do not tell your mom how she has to live her life.\n",
       "tone": "Hesitant",
       "plot": "DadNoSeesHisFault",
       "id": "9",
@@ -2399,7 +2410,7 @@
       "target": [ "mom", "", "" ]
     },
     {
-      "content": "You mean, take the easy way out? I’ve never been taught to be lazy and find the easiest way around things, but I can make an exception, this one time.  I’ll let your Mom keep her so called job.",
+      "content": "I’ve been taught to never be lazy and find the ‘easiest’ way around things, but I can make an exception this one time.  I’ll let your Mom keep her so called job.",
       "tone": "Indifferent",
       "plot": "DadNoSeesHisFault",
       "id": "13",
@@ -2421,7 +2432,7 @@
       "target": [ "mom", "", "" ]
     },
     {
-      "content": "And your Mom was worried about you being on my side… Hmph. I could let your Mom keep her so called job, but I refuse to admit I am being controlling or change my ways because as the caretaker of this household, I know what is for the best.",
+      "content": "And your Mom was worried about you being on my side… Hmph. I could let your Mom keep her 'job,' but I refuse to admit I am being controlling or change my ways because as the caretaker of this household, I know what is for the best.",
       "tone": "Hesitant",
       "plot": "DadNoSeesHisFault",
       "id": "13",
@@ -2480,11 +2491,11 @@
       "tone": "Default",
       "plot": "DadNoSeesHisFault",
       "id": "18",
-      "FNC": "0",
+      "FNC": "10",
       "speaker": "",
       "finished": "fin",
       "inext": "",
-      "target": [ "dad", "", "" ]
+      "target": [ "mom", "", "" ]
     }
   ]
 }

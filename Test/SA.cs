@@ -141,8 +141,6 @@ namespace Test {
                             // Activate dialogueBox to display and be responsive, or switch to Root dialogue
                         } else if (State.dialogueIndex == "AI") {
                             State.advanceConversation(speaker, responseList, responseListNPC);
-                            
-
                         } else if (State.dialogueIndex == "interject") {
                             if (State.dialogueBox.getAwaitInput() == true) {
                                 if (State.dialogueBox.checkNext()) {
@@ -158,9 +156,11 @@ namespace Test {
                                         playerTransitionId = linkId(npcTransitionId);
                                     }
 
-                                    reRootPlayer();
+                                    
                                     affect(responseListNPC[0].target, responseListNPC[0].FNC);
                                     State.advanceConversation(speaker, responseList, responseListNPC);
+                                    checkPlotChange();
+                                    reRootPlayer();
                                 }
                             } else if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0) {
                                 State.dialogueBox.printTime = 0;
@@ -347,20 +347,21 @@ namespace Test {
                 updateIds(1);
             }
 
-            checkPlotChange();
-
             if (responseListNPC[0].speaker != "") speaker = responseListNPC[0].speaker;
             affect(responseList[0].target, responseList[0].FNC);
             affect(responseListNPC[0].target, responseListNPC[0].FNC);
+
             State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
             State.advanceConversation(speaker, responseList, responseListNPC);
 
+            checkPlotChange();
             reRootPlayer();
         }
 
         private void reRootPlayer() {
-            //Console.WriteLine(npcPlotId);
-            //Console.WriteLine(playerPlotId + " |||||| " + linkId(npcPlotId));
+            Console.WriteLine(npcPlotId);
+            Console.WriteLine(playerPlotId + " |||||| " + linkId(npcPlotId));
+            Console.WriteLine(sman.getCurrentNode());
             currentTone = tone.Root;
 
             if (sman.getDialogueType() == "plotpoint") {
@@ -395,12 +396,14 @@ namespace Test {
         private void checkPlotChange() {
             if (sman.findNextPossibleNodes()) {
                 resetPlotId();
+                resetCharacterFNC();
                 sman.setTypePlotNode();
             }
         }
 
         private void affect(List<string> targs, double m) {
             int t = (int)clamp(m, -1, 1);
+            m = clamp(m, -10, 10);
             foreach (string s in targs) {
                 if (s == "mom") {
                     Mom.changeFNC(m);
@@ -441,7 +444,11 @@ namespace Test {
         }
 
 
-
+        private void resetCharacterFNC() {
+            Mom.setCurrentFNC(0);
+            Dad.setCurrentFNC(0);
+            Alexis.setCurrentFNC(0);
+        }
 
         protected override void Initialize() {
             screenHelper();
