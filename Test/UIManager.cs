@@ -257,8 +257,10 @@ namespace Test {
 
             }
         }
-
-
+        //TooltipToggle(false, db box);
+        public void TooltipToggle(bool b, DialogueBox theTip) {
+            theTip.init = b;
+        }
 
         #region SA_applyTones
         public void applyTones(int x, int y, DialogueBox theTip) {
@@ -346,7 +348,6 @@ namespace Test {
 
 
                     if (theTip.init == true) {
-
                         theTip.loadNewDialogue("tooltip3", "be my baby daddy pls");
                     }
                 }

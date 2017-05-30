@@ -91,13 +91,14 @@ namespace Test {
 
 
             if (State.getGameTimer("game").Contains(e.X, e.Y, scaleFactorX, scaleFactorY)) {
-                //State.sound_man.playSFX("button");
+                State.sound_man.playSFX("button");
                 TimerAction();
                 //State.getGameTimer("game").setCountDown(0);
             }
         }
 
         private void onKeyReleased(object sender, KeyEventArgs e) {
+            if (e.Code == Keyboard.Key.LControl && State.GetState() == "menu") jankId = "27";
         }
 
 
@@ -156,7 +157,6 @@ namespace Test {
                                         playerTransitionId = linkId(npcTransitionId);
                                     }
 
-                                    
                                     affect(responseListNPC[0].target, responseListNPC[0].FNC);
                                     State.advanceConversation(speaker, responseList, responseListNPC);
                                     checkPlotChange();
@@ -176,6 +176,7 @@ namespace Test {
                         ui_man.reset(responseList);
                         fadeFlag = true;
                         fadeFloat = -0.003f;
+                        ui_man.TooltipToggle(false, State.tooltip);
                         Mom.setHide(false);
                         Dad.setHide(false);
                         Arm.setHide(false);
@@ -290,7 +291,7 @@ namespace Test {
             j++;
             jankId = j.ToString();
         }
-        
+
         public void TimerAction() {
             currentTone = ui_man.getTone();
             if (currentTone != tone.Root) pTone = currentTone.ToString();
@@ -304,7 +305,7 @@ namespace Test {
         string npcTransitionId = "1";
 
         string speaker = "dad";
-        string jankId = "27";
+        string jankId = "1";
         double bucket = 1;
         List<double> pastBuckets = new List<double>();
         string pTone = "";
