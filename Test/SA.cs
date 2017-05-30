@@ -359,10 +359,8 @@ namespace Test {
         }
 
         private void reRootPlayer() {
-            Console.WriteLine(npcPlotId);
-            Console.WriteLine(playerPlotId + " |||||| " + linkId(npcPlotId));
-
-
+            //Console.WriteLine(npcPlotId);
+            //Console.WriteLine(playerPlotId + " |||||| " + linkId(npcPlotId));
             currentTone = tone.Root;
 
             if (sman.getDialogueType() == "plotpoint") {
