@@ -113,7 +113,7 @@ namespace Test {
                             State.playerDialogueBox.init = true;
                             State.dialogueBox.active = false;
                             State.dialogueBox.init = false;
-                            State.playerDialogueBox.awaitInput = false;
+                            State.playerDialogueBox.awaitInput = false;  
                             fadeFlag = true;
                             fadeFloat = 0.003f;
 
