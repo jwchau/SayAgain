@@ -281,6 +281,7 @@ namespace Test {
 
             preconditions.Add("M: HF-HF");
             next_nodes.Add("PlayerSupportsDad2");
+            next_nodes.Add("AlexChangesSubject");
             addNode("PlayerSupportsDad", next_nodes, preconditions);
 
             preconditions.Add("M: HC-HC");
