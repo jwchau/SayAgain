@@ -460,6 +460,17 @@ namespace Test
         }
 
         private void reRootPlayer() {
+            if (responseListNPC[0].content == "returned empty string") {
+                Console.WriteLine("npc list, npcplotid, current node, current tone");
+                Console.WriteLine(npcPlotId+"  :  " + sman.getCurrentNode() + "  :  " + currentTone.ToString());
+                Console.WriteLine();
+            }
+            if (responseList[0].content == "returned empty string") {
+                Console.WriteLine("player list, playerplotid, current node, current tone");
+                Console.WriteLine(playerPlotId + "  :  " + sman.getCurrentNode() + "  :  " + currentTone.ToString());
+                Console.WriteLine();
+            }
+
             State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
             State.advanceConversation(speaker, responseList, responseListNPC);
 

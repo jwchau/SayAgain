@@ -1,11 +1,146 @@
 { 
  "Dialogues": [ 
   {
-     "content":"I know. Tell me about work?"
+     "content":"Thank you"
     ,"tone":"Root"
     ,"plot":"DadGreetsPlayer"
     ,"id":"1"
-    ,"FNC":0
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"<Something seems odd.> I'm only here because you told me to be."
+    ,"tone":"Blunt"
+    ,"plot":"DadGreetsPlayer"
+    ,"id":"2"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["dad","mom",""]
+  },
+  {
+     "content":"<Oh the formalities> Yeah.. It's great."
+    ,"tone":"Indifferent"
+    ,"plot":"DadGreetsPlayer"
+    ,"id":"2"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["dad","mom",""]
+  },
+  {
+     "content":"<It's always great to see the family.> Thanks Dad! It's so great to be back here!"
+    ,"tone":"Compassionate"
+    ,"plot":"DadGreetsPlayer"
+    ,"id":"2"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["dad","mom",""]
+  },
+  {
+     "content":"<Hmm Dad's acting odd.> Thanks? I haven't been home in a while..."
+    ,"tone":"Hesitant"
+    ,"plot":"DadGreetsPlayer"
+    ,"id":"2"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["dad","mom",""]
+  },
+  {
+     "content":"How are you?"
+    ,"tone":"Root"
+    ,"plot":"DadGreetsPlayer"
+    ,"id":"3"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["dad","mom",""]
+  },
+  {
+     "content":"Dad you still sitting around like a bum?"
+    ,"tone":"Blunt"
+    ,"plot":"DadGreetsPlayer"
+    ,"id":"4"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["dad","mom",""]
+  },
+  {
+     "content":"So how are things?"
+    ,"tone":"Indifferent"
+    ,"plot":"DadGreetsPlayer"
+    ,"id":"4"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["dad","mom",""]
+  },
+  {
+     "content":"Have you all been doing well?"
+    ,"tone":"Compassionate"
+    ,"plot":"DadGreetsPlayer"
+    ,"id":"4"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["dad","mom",""]
+  },
+  {
+     "content":"So.. you guys good.. in the hood?"
+    ,"tone":"Hesitant"
+    ,"plot":"DadGreetsPlayer"
+    ,"id":"4"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["dad","mom",""]
+  },
+  {
+     "content":"Everything okay between you two?"
+    ,"tone":"Root"
+    ,"plot":"DadGreetsPlayer"
+    ,"id":"9"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"Hey what the heck is up with you and mom?"
+    ,"tone":"Blunt"
+    ,"plot":"DadGreetsPlayer"
+    ,"id":"10"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["dad","mom",""]
+  },
+  {
+     "content":"Yea what the heck?"
+    ,"tone":"Indifferent"
+    ,"plot":"DadGreetsPlayer"
+    ,"id":"10"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["dad","mom",""]
+  },
+  {
+     "content":"I hope there is nothing wrong between you guys."
+    ,"tone":"Compassionate"
+    ,"plot":"DadGreetsPlayer"
+    ,"id":"10"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["dad","mom",""]
+  },
+  {
+     "content":"Is there anything going on or something?"
+    ,"tone":"Hesitant"
+    ,"plot":"DadGreetsPlayer"
+    ,"id":"10"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["dad","mom",""]
+  },
+  {
+     "content":"I know. Tell me about work?"
+    ,"tone":"Root"
+    ,"plot":"DadGreetsPlayer"
+    ,"id":"10"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -13,8 +148,8 @@
      "content":"Yeah, yeah. So what’s up at work? Shouldn’t you be retired by now?"
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
-    ,"id":"2"
-    ,"FNC":0
+    ,"id":"11"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -22,8 +157,8 @@
      "content":"Anyways... How’s work going?"
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
-    ,"id":"2"
-    ,"FNC":0
+    ,"id":"11"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -31,8 +166,8 @@
      "content":"I know, and that is great to hear! I also want to know how your work has been going!"
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
-    ,"id":"2"
-    ,"FNC":0
+    ,"id":"11"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -40,8 +175,8 @@
      "content":"Uh, yeah. You’re still working right? At that one place…"
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
-    ,"id":"2"
-    ,"FNC":0
+    ,"id":"11"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -50,7 +185,7 @@
     ,"tone":"Root"
     ,"plot":"DadGreetsPlayer"
     ,"id":"13"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -59,7 +194,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"14"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -68,7 +203,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"14"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -77,7 +212,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"14"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -86,7 +221,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"14"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -95,7 +230,7 @@
     ,"tone":"Root"
     ,"plot":"DadGreetsPlayer"
     ,"id":"15"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -104,7 +239,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"16"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -113,7 +248,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"16"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -122,7 +257,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"16"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -131,7 +266,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"16"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -140,7 +275,7 @@
     ,"tone":"Root"
     ,"plot":"DadGreetsPlayer"
     ,"id":"19"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -149,7 +284,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"20"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -158,7 +293,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"20"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -167,7 +302,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"20"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -176,7 +311,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"20"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -185,7 +320,7 @@
     ,"tone":"Root"
     ,"plot":"DadGreetsPlayer"
     ,"id":"21"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -194,7 +329,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"22"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -203,7 +338,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"22"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -212,7 +347,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"22"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -221,7 +356,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"22"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -230,7 +365,7 @@
     ,"tone":"Root"
     ,"plot":"DadGreetsPlayer"
     ,"id":"23"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -239,7 +374,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"24"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -248,7 +383,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"24"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -257,7 +392,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"24"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -266,7 +401,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"24"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -275,7 +410,7 @@
     ,"tone":"Root"
     ,"plot":"DadGreetsPlayer"
     ,"id":"25"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -284,7 +419,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"26"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -293,7 +428,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"26"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -302,7 +437,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"26"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -311,7 +446,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"26"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -320,7 +455,7 @@
     ,"tone":"Root"
     ,"plot":"DadGreetsPlayer"
     ,"id":"27"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -329,7 +464,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"28"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -338,7 +473,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"28"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -347,7 +482,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"28"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -356,16 +491,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"28"
-    ,"FNC":0
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":""
-    ,"tone":""
-    ,"plot":""
-    ,"id":""
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -374,7 +500,7 @@
     ,"tone":"Root"
     ,"plot":"PlayerSupportsDad"
     ,"id":"1"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -383,7 +509,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerSupportsDad"
     ,"id":"2"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -392,7 +518,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerSupportsDad"
     ,"id":"2"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -401,7 +527,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerSupportsDad"
     ,"id":"2"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -410,7 +536,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerSupportsDad"
     ,"id":"2"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -419,7 +545,7 @@
     ,"tone":"Root"
     ,"plot":"PlayerSupportsDad"
     ,"id":"7"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -428,7 +554,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerSupportsDad"
     ,"id":"8"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -437,7 +563,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerSupportsDad"
     ,"id":"8"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -446,7 +572,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerSupportsDad"
     ,"id":"8"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -455,7 +581,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerSupportsDad"
     ,"id":"8"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -464,7 +590,7 @@
     ,"tone":"Root"
     ,"plot":"PlayerSupportsDad"
     ,"id":"11"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -473,7 +599,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerSupportsDad"
     ,"id":"12"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -482,7 +608,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerSupportsDad"
     ,"id":"12"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -491,7 +617,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerSupportsDad"
     ,"id":"12"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -500,7 +626,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerSupportsDad"
     ,"id":"12"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -509,7 +635,7 @@
     ,"tone":"Root"
     ,"plot":"PlayerSupportsDad"
     ,"id":"13"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -518,7 +644,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerSupportsDad"
     ,"id":"14"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -527,7 +653,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerSupportsDad"
     ,"id":"14"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -536,7 +662,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerSupportsDad"
     ,"id":"14"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -545,7 +671,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerSupportsDad"
     ,"id":"14"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -554,7 +680,7 @@
     ,"tone":"Root"
     ,"plot":"PlayerSupportsDad"
     ,"id":"15"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -563,7 +689,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerSupportsDad"
     ,"id":"16"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -572,7 +698,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerSupportsDad"
     ,"id":"17"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -581,7 +707,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerSupportsDad"
     ,"id":"17"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -590,7 +716,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerSupportsDad"
     ,"id":"17"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -599,7 +725,7 @@
     ,"tone":"Root"
     ,"plot":"PlayerSupportsDad"
     ,"id":"22"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -608,7 +734,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerSupportsDad"
     ,"id":"23"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -617,7 +743,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerSupportsDad"
     ,"id":"23"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -626,7 +752,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerSupportsDad"
     ,"id":"23"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -635,7 +761,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerSupportsDad"
     ,"id":"23"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -644,7 +770,7 @@
     ,"tone":"Root"
     ,"plot":"PlayerSupportsDad"
     ,"id":"27"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -653,7 +779,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerSupportsDad"
     ,"id":"28"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -662,7 +788,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerSupportsDad"
     ,"id":"28"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -671,7 +797,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerSupportsDad"
     ,"id":"28"
-    ,"FNC":30
+    ,"FNC":"30"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -680,7 +806,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerSupportsDad"
     ,"id":"28"
-    ,"FNC":
+    ,"FNC":""
     ,"inext":""
     ,"target":["","",""]
   },
@@ -689,7 +815,7 @@
     ,"tone":"Root"
     ,"plot":"PlayerSupportsDad2"
     ,"id":"1"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -698,7 +824,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerSupportsDad2"
     ,"id":"2"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -707,7 +833,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerSupportsDad2"
     ,"id":"2"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -716,7 +842,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerSupportsDad2"
     ,"id":"2"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -725,7 +851,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerSupportsDad2"
     ,"id":"2"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -734,7 +860,7 @@
     ,"tone":"Root"
     ,"plot":"PlayerSupportsDad"
     ,"id":"29"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -743,7 +869,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerSupportsDad"
     ,"id":"30"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -752,7 +878,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerSupportsDad"
     ,"id":"30"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -761,7 +887,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerSupportsDad"
     ,"id":"30"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -770,16 +896,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerSupportsDad"
     ,"id":"30"
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":""
-    ,"tone":""
-    ,"plot":""
-    ,"id":""
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -788,7 +905,7 @@
     ,"tone":"Root"
     ,"plot":"PlayerDefendsMom"
     ,"id":"1"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -797,7 +914,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerDefendsMom"
     ,"id":"2"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -806,7 +923,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerDefendsMom"
     ,"id":"2"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -815,7 +932,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerDefendsMom"
     ,"id":"2"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -824,7 +941,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerDefendsMom"
     ,"id":"2"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -833,7 +950,7 @@
     ,"tone":"Root"
     ,"plot":"PlayerDefendsMom"
     ,"id":"7"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -842,7 +959,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerDefendsMom"
     ,"id":"8"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -851,7 +968,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerDefendsMom"
     ,"id":"8"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -860,7 +977,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerDefendsMom"
     ,"id":"8"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -869,7 +986,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerDefendsMom"
     ,"id":"8"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -878,7 +995,7 @@
     ,"tone":"Root"
     ,"plot":"PlayerDefendsMom"
     ,"id":"11"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -887,7 +1004,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerDefendsMom"
     ,"id":"12"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -896,7 +1013,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerDefendsMom"
     ,"id":"12"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -905,7 +1022,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerDefendsMom"
     ,"id":"12"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -914,16 +1031,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerDefendsMom"
     ,"id":"12"
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":""
-    ,"tone":""
-    ,"plot":""
-    ,"id":""
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -932,7 +1040,7 @@
     ,"tone":"Root"
     ,"plot":"PlayerDefendsMom"
     ,"id":"19"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -940,8 +1048,8 @@
      "content":"Come on. A coincidence? Sounds juicy."
     ,"tone":"Blunt"
     ,"plot":"PlayerDefendsMom"
-    ,"id":""
-    ,"FNC":
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -949,8 +1057,8 @@
      "content":"Just say it already."
     ,"tone":"Indifferent"
     ,"plot":"PlayerDefendsMom"
-    ,"id":""
-    ,"FNC":
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -958,8 +1066,8 @@
      "content":"Mom, you’ve got to stop making it sound so suspicious."
     ,"tone":"Compassionate"
     ,"plot":"PlayerDefendsMom"
-    ,"id":""
-    ,"FNC":
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -967,8 +1075,8 @@
      "content":"Um...I think you’ve got to be a little more...y’know...specific."
     ,"tone":"Hesitant"
     ,"plot":"PlayerDefendsMom"
-    ,"id":""
-    ,"FNC":
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -977,7 +1085,7 @@
     ,"tone":"Root"
     ,"plot":"PlayerDefendsMom"
     ,"id":"29"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -986,7 +1094,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerDefendsMom"
     ,"id":"30"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -995,7 +1103,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerDefendsMom"
     ,"id":"30"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1004,7 +1112,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerDefendsMom"
     ,"id":"30"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1013,7 +1121,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerDefendsMom"
     ,"id":"30"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1022,7 +1130,7 @@
     ,"tone":"Root"
     ,"plot":"PlayerDefendsMom"
     ,"id":"39"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1031,7 +1139,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerDefendsMom"
     ,"id":"40"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1040,7 +1148,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerDefendsMom"
     ,"id":"40"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1049,7 +1157,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerDefendsMom"
     ,"id":"40"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1058,7 +1166,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerDefendsMom"
     ,"id":"40"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1067,7 +1175,7 @@
     ,"tone":"Root"
     ,"plot":"PlayerDefendsMom"
     ,"id":"47"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1076,7 +1184,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerDefendsMom"
     ,"id":"48"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1085,7 +1193,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerDefendsMom"
     ,"id":"48"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1094,7 +1202,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerDefendsMom"
     ,"id":"48"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1103,7 +1211,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerDefendsMom"
     ,"id":"48"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1112,7 +1220,7 @@
     ,"tone":"Root"
     ,"plot":"PlayerDefendsMom"
     ,"id":"1"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1121,7 +1229,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerDefendsMom2"
     ,"id":"1"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1130,7 +1238,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerDefendsMom"
     ,"id":"2"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1139,7 +1247,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerDefendsMom"
     ,"id":"2"
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1148,16 +1256,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerDefendsMom"
     ,"id":"2"
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":""
-    ,"tone":""
-    ,"plot":""
-    ,"id":""
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1165,8 +1264,8 @@
      "content":"Let Mom talk."
     ,"tone":"Root"
     ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1174,8 +1273,8 @@
      "content":"Let Mom talk and you’ll know."
     ,"tone":"Blunt"
     ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1183,8 +1282,8 @@
      "content":"Let Mom talk and you’ll know."
     ,"tone":"Indifferent"
     ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1192,8 +1291,8 @@
      "content":"Let’s give Mom a chance to tell us."
     ,"tone":"Compassionate"
     ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1201,8 +1300,8 @@
      "content":"Can’t we… you know, let Mom talk?"
     ,"tone":"Hesitant"
     ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1210,8 +1309,8 @@
      "content":"What about the money?"
     ,"tone":"Root"
     ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1219,8 +1318,8 @@
      "content":"What are you talking about? It’s not like we don’t have money."
     ,"tone":"Blunt"
     ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1228,8 +1327,8 @@
      "content":"‘Because of the money…’ what? Don’t we have money because of Dad’s promotion or whatever?"
     ,"tone":"Indifferent"
     ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1237,8 +1336,8 @@
      "content":"Money? Did the family’s money make you want a job, Mom?"
     ,"tone":"Compassionate"
     ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1246,8 +1345,8 @@
      "content":"Huh? Are the finances problematic?"
     ,"tone":"Hesitant"
     ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1255,8 +1354,8 @@
      "content":"I’m trying, but not quite."
     ,"tone":"Root"
     ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1264,8 +1363,8 @@
      "content":"Hints aren’t getting us anywhere. Be explicit."
     ,"tone":"Blunt"
     ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1273,8 +1372,8 @@
      "content":"You should go into more details."
     ,"tone":"Indifferent"
     ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1282,8 +1381,8 @@
      "content":"You don’t need to hold back, Mom. You can tell us what you’re thinking, so we can all try to understand."
     ,"tone":"Compassionate"
     ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1291,8 +1390,233 @@
      "content":"I'm not really following..."
     ,"tone":"Hesitant"
     ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"You said you maintained the finances, earlier, Dad."
+    ,"tone":"Root"
+    ,"plot":"DadSeesHisFault"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"Dad you went on about how you were the man of the house and managed all the money blah blah. You’re saying that’s not financially controlling?"
+    ,"tone":"Blunt"
+    ,"plot":"DadSeesHisFault"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"You sorta mentioned managing finances of the house earlier. Does that mean something. "
+    ,"tone":"Indifferent"
+    ,"plot":"DadSeesHisFault"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"Dad, you did mention that you managed the household finances, but to me that doesn’t sound like you’re being controlling."
+    ,"tone":"Compassionate"
+    ,"plot":"DadSeesHisFault"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"You said that earlier that you did finances in the house...right Dad? "
+    ,"tone":"Hesitant"
+    ,"plot":"DadSeesHisFault"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"Why didn’t you tell Dad this?"
+    ,"tone":"Root"
+    ,"plot":"DadSeesHisFault"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"Why did you think hiding this from Dad was a good idea?"
+    ,"tone":"Blunt"
+    ,"plot":"DadSeesHisFault"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"Why did you hold this all in and not tell Dad anything."
+    ,"tone":"Indifferent"
+    ,"plot":"DadSeesHisFault"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"You should have told Dad all of this way sooner, so that he knows what you were thinking."
+    ,"tone":"Compassionate"
+    ,"plot":"DadSeesHisFault"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"...Couldn’t you have said this earlier?"
+    ,"tone":"Hesitant"
+    ,"plot":"DadSeesHisFault"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"You waited until Dad accused you of cheating on him."
+    ,"tone":"Root"
+    ,"plot":"UNMARKED"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"Is Dad accusing you of cheating on him at the damn dinner table, in front of your children, really the best time? That’s nonsensical."
+    ,"tone":"Blunt"
+    ,"plot":"UNMARKED"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"Dad accused you of cheating on him, the you tell us about this. Really appropriate timing."
+    ,"tone":"Indifferent"
+    ,"plot":"UNMARKED"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"Mom, your waiting caused a huge argument at the dinner table. I’m glad you eventually told us. But, next time…. It would be better not to wait."
+    ,"tone":"Compassionate"
+    ,"plot":"UNMARKED"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"Er, and Dad yelling at you the best time? To reveal this stuff?"
+    ,"tone":"Hesitant"
+    ,"plot":"UNMARKED"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"What about being so controlling?"
+    ,"tone":"Root"
+    ,"plot":"UNMARKED"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"nd what about being controlling, huh? Accusing mom wasn’t the only thing you did."
+    ,"tone":"UNMARKED"
+    ,"plot":"UNMARKED"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"And have you reflected on how controlling you are?"
+    ,"tone":"UNMARKED"
+    ,"plot":"UNMARKED"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"Don’t you think you should also apologize for making Mom feel like she has no freedom?"
+    ,"tone":"UNMARKED"
+    ,"plot":"UNMARKED"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"Okay... But what about not giving Mom any freedom?"
+    ,"tone":"UNMARKED"
+    ,"plot":"UNMARKED"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"Let's calm down and talk about this a later time."
+    ,"tone":"Root"
+    ,"plot":"UNMARKED"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"Okay, okay. You've both made your amends and are now actually communicating. Can we finally have dinner now, and do this some other time?"
+    ,"tone":"Blunt"
+    ,"plot":"UNMARKED"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"Ugh. You guys should talk about this some other time. Like, once dinner is done."
+    ,"tone":"Indifferent"
+    ,"plot":"UNMARKED"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"It’s great to see that you guys are communicating, but it would be nice to finish up dinner. Let's talk about this some other time."
+    ,"tone":"Compassionate"
+    ,"plot":"UNMARKED"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"...Can we take a break from this drama and finish dinner?"
+    ,"tone":"Hesitant"
+    ,"plot":"UNMARKED"
+    ,"id":"UNMARKED"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
@@ -1301,232 +1625,7 @@
     ,"tone":""
     ,"plot":""
     ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You said you maintained the finances, earlier, Dad."
-    ,"tone":"Root"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Dad you went on about how you were the man of the house and managed all the money blah blah. You’re saying that’s not financially controlling?"
-    ,"tone":"Blunt"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You sorta mentioned managing finances of the house earlier. Does that mean something. "
-    ,"tone":"Indifferent"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Dad, you did mention that you managed the household finances, but to me that doesn’t sound like you’re being controlling."
-    ,"tone":"Compassionate"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You said that earlier that you did finances in the house...right Dad? "
-    ,"tone":"Hesitant"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Why didn’t you tell Dad this?"
-    ,"tone":"Root"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Why did you think hiding this from Dad was a good idea?"
-    ,"tone":"Blunt"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Why did you hold this all in and not tell Dad anything."
-    ,"tone":"Indifferent"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You should have told Dad all of this way sooner, so that he knows what you were thinking."
-    ,"tone":"Compassionate"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"...Couldn’t you have said this earlier?"
-    ,"tone":"Hesitant"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You waited until Dad accused you of cheating on him."
-    ,"tone":"Root"
-    ,"plot":""
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Is Dad accusing you of cheating on him at the damn dinner table, in front of your children, really the best time? That’s nonsensical."
-    ,"tone":"Blunt"
-    ,"plot":""
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Dad accused you of cheating on him, the you tell us about this. Really appropriate timing."
-    ,"tone":"Indifferent"
-    ,"plot":""
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Mom, your waiting caused a huge argument at the dinner table. I’m glad you eventually told us. But, next time…. It would be better not to wait."
-    ,"tone":"Compassionate"
-    ,"plot":""
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Er, and Dad yelling at you the best time? To reveal this stuff?"
-    ,"tone":"Hesitant"
-    ,"plot":""
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"What about being so controlling?"
-    ,"tone":"Root"
-    ,"plot":""
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"nd what about being controlling, huh? Accusing mom wasn’t the only thing you did."
-    ,"tone":""
-    ,"plot":""
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"And have you reflected on how controlling you are?"
-    ,"tone":""
-    ,"plot":""
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Don’t you think you should also apologize for making Mom feel like she has no freedom?"
-    ,"tone":""
-    ,"plot":""
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Okay... But what about not giving Mom any freedom?"
-    ,"tone":""
-    ,"plot":""
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Let's calm down and talk about this a later time."
-    ,"tone":"Root"
-    ,"plot":""
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Okay, okay. You've both made your amends and are now actually communicating. Can we finally have dinner now, and do this some other time?"
-    ,"tone":"Blunt"
-    ,"plot":""
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Ugh. You guys should talk about this some other time. Like, once dinner is done."
-    ,"tone":"Indifferent"
-    ,"plot":""
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"It’s great to see that you guys are communicating, but it would be nice to finish up dinner. Let's talk about this some other time."
-    ,"tone":"Compassionate"
-    ,"plot":""
-    ,"id":""
-    ,"FNC":
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"...Can we take a break from this drama and finish dinner?"
-    ,"tone":"Hesitant"
-    ,"plot":""
-    ,"id":""
-    ,"FNC":
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   }

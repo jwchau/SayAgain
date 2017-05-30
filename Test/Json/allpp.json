@@ -5,7 +5,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"1"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -16,7 +16,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"1"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -27,7 +27,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"1"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -38,7 +38,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"1"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -49,7 +49,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"2"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -60,7 +60,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"2"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -71,7 +71,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"2"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -82,7 +82,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"2"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -93,7 +93,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"3"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"alex"
@@ -104,7 +104,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"3"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"alex"
@@ -115,7 +115,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"3"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"alex"
@@ -126,7 +126,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"3"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"alex"
@@ -137,7 +137,7 @@
     ,"tone":"Default"
     ,"plot":"DadGreetsPlayer"
     ,"id":"4"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -148,7 +148,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"5"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -159,7 +159,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"5"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -170,7 +170,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"5"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -181,7 +181,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"5"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -192,7 +192,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"6"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -203,7 +203,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"6"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -214,7 +214,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"6"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -225,7 +225,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"6"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -236,7 +236,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"7"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -247,7 +247,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"7"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -258,7 +258,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"7"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -269,7 +269,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"7"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -280,7 +280,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"8"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -291,7 +291,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"8"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -302,7 +302,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"8"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -313,7 +313,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"8"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -324,7 +324,7 @@
     ,"tone":"Default"
     ,"plot":"DadGreetsPlayer"
     ,"id":"9"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -335,7 +335,7 @@
     ,"tone":"Default"
     ,"plot":"DadGreetsPlayer"
     ,"id":"10"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -346,7 +346,7 @@
     ,"tone":"Default"
     ,"plot":"DadGreetsPlayer"
     ,"id":"11"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -357,7 +357,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"12"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -368,7 +368,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"12"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -379,7 +379,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"12"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -390,7 +390,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"12"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -401,7 +401,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"13"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":""
@@ -412,7 +412,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"13"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":""
@@ -423,7 +423,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"13"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":""
@@ -434,7 +434,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"13"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":""
@@ -445,7 +445,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"14"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -456,7 +456,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"14"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -467,7 +467,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"14"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -478,7 +478,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"14"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -489,7 +489,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"15"
-    ,"FNC":10
+    ,"FNC":"10"
     ,"speaker":""
     ,"finished":"fin"
     ,"inext":""
@@ -500,7 +500,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"15"
-    ,"FNC":10
+    ,"FNC":"10"
     ,"speaker":""
     ,"finished":"fin"
     ,"inext":""
@@ -511,7 +511,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"15"
-    ,"FNC":20
+    ,"FNC":"20"
     ,"speaker":""
     ,"finished":"fin"
     ,"inext":""
@@ -522,7 +522,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"15"
-    ,"FNC":20
+    ,"FNC":"20"
     ,"speaker":""
     ,"finished":"fin"
     ,"inext":""
@@ -533,7 +533,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerSupportsDad"
     ,"id":"1"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"alex"
@@ -544,7 +544,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerSupportsDad"
     ,"id":"2"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -555,7 +555,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerSupportsDad"
     ,"id":"3"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -566,7 +566,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerSupportsDad"
     ,"id":"4"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -577,7 +577,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerSupportsDad"
     ,"id":"4"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -588,7 +588,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerSupportsDad"
     ,"id":"4"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -599,7 +599,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerSupportsDad"
     ,"id":"4"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -610,7 +610,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerSupportsDad"
     ,"id":"5"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -621,7 +621,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerSupportsDad"
     ,"id":"6"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -632,7 +632,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerSupportsDad"
     ,"id":"6"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -643,7 +643,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerSupportsDad"
     ,"id":"6"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -654,7 +654,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerSupportsDad"
     ,"id":"6"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -665,7 +665,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerSupportsDad"
     ,"id":"7"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -676,7 +676,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerSupportsDad"
     ,"id":"8"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -687,7 +687,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerSupportsDad"
     ,"id":"8"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -698,7 +698,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerSupportsDad"
     ,"id":"8"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -709,7 +709,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerSupportsDad"
     ,"id":"8"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -720,7 +720,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerSupportsDad"
     ,"id":"9"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"alex"
@@ -731,7 +731,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerSupportsDad"
     ,"id":"10"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -742,7 +742,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerSupportsDad"
     ,"id":"11"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -753,7 +753,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerSupportsDad"
     ,"id":"12"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -764,7 +764,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerSupportsDad"
     ,"id":"12"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -775,7 +775,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerSupportsDad"
     ,"id":"12"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -786,7 +786,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerSupportsDad"
     ,"id":"12"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -797,7 +797,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerSupportsDad"
     ,"id":"13"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -808,7 +808,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerSupportsDad"
     ,"id":"14"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":""
@@ -819,7 +819,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerSupportsDad"
     ,"id":"14"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":""
@@ -830,7 +830,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerSupportsDad"
     ,"id":"14"
-    ,"FNC":30
+    ,"FNC":"30"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":""
@@ -841,7 +841,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerSupportsDad"
     ,"id":"14"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":""
@@ -852,7 +852,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerSupportsDad"
     ,"id":"15"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -863,7 +863,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerSupportsDad"
     ,"id":"16"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"mom"
@@ -874,7 +874,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerSupportsDad"
     ,"id":"17"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":"fin"
     ,"inext":""
@@ -885,7 +885,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerSupportsDad2"
     ,"id":"1"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -896,7 +896,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerSupportsDad2"
     ,"id":"1"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -907,7 +907,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerSupportsDad2"
     ,"id":"1"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -918,7 +918,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerSupportsDad2"
     ,"id":"1"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -929,7 +929,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerSupportsDad2"
     ,"id":"2"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -940,7 +940,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerSupportsDad2"
     ,"id":"3"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -951,7 +951,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerSupportsDad2"
     ,"id":"4"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -962,7 +962,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerSupportsDad2"
     ,"id":"5"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":"fin"
     ,"inext":""
@@ -973,7 +973,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"1"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"alex"
@@ -984,7 +984,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"2"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -995,7 +995,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"3"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -1006,7 +1006,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerDefendsMom"
     ,"id":"4"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -1017,7 +1017,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerDefendsMom"
     ,"id":"4"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -1028,7 +1028,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerDefendsMom"
     ,"id":"4"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -1039,7 +1039,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerDefendsMom"
     ,"id":"4"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -1050,7 +1050,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"5"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -1061,7 +1061,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerDefendsMom"
     ,"id":"6"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -1072,7 +1072,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerDefendsMom"
     ,"id":"6"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -1083,7 +1083,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerDefendsMom"
     ,"id":"6"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -1094,7 +1094,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerDefendsMom"
     ,"id":"6"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -1105,7 +1105,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"7"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -1116,7 +1116,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"8"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"mom"
@@ -1127,7 +1127,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"9"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -1138,7 +1138,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"10"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"alex"
@@ -1149,7 +1149,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"11"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -1160,7 +1160,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"12"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"mom"
@@ -1171,7 +1171,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"13"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -1182,7 +1182,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"14"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -1193,7 +1193,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerDefendsMom"
     ,"id":"15"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -1204,7 +1204,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerDefendsMom"
     ,"id":"15"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -1215,7 +1215,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerDefendsMom"
     ,"id":"15"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -1226,7 +1226,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerDefendsMom"
     ,"id":"15"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -1237,7 +1237,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"16"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"alex"
@@ -1248,7 +1248,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"17"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"mom"
@@ -1259,7 +1259,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"18"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -1270,7 +1270,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"19"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -1281,7 +1281,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"20"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"alex"
@@ -1292,7 +1292,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"21"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"mom"
@@ -1303,7 +1303,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"22"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -1314,7 +1314,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"23"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -1325,7 +1325,7 @@
     ,"tone":"Blunt"
     ,"plot":"PlayerDefendsMom"
     ,"id":"24"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -1336,7 +1336,7 @@
     ,"tone":"Indifferent"
     ,"plot":"PlayerDefendsMom"
     ,"id":"24"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -1347,7 +1347,7 @@
     ,"tone":"Compassionate"
     ,"plot":"PlayerDefendsMom"
     ,"id":"24"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -1358,7 +1358,7 @@
     ,"tone":"Hesitant"
     ,"plot":"PlayerDefendsMom"
     ,"id":"24"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -1369,7 +1369,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"25"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -1380,7 +1380,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"26"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"alex"
@@ -1391,7 +1391,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"27"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -1402,7 +1402,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom"
     ,"id":"28"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -1413,7 +1413,7 @@
     ,"tone":"Default"
     ,"plot":"PlayerDefendsMom2"
     ,"id":"1"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":"fin"
     ,"inext":""
@@ -1424,7 +1424,7 @@
     ,"tone":"Default"
     ,"plot":"MomReconcilesDad"
     ,"id":"1"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -1435,7 +1435,7 @@
     ,"tone":"Default"
     ,"plot":"MomReconcilesDad"
     ,"id":"2"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -1446,7 +1446,7 @@
     ,"tone":"Default"
     ,"plot":"MomReconcilesDad"
     ,"id":"3"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -1457,7 +1457,7 @@
     ,"tone":"Default"
     ,"plot":"MomReconcilesDad"
     ,"id":"4"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -1468,7 +1468,7 @@
     ,"tone":"Blunt"
     ,"plot":"MomReconcilesDad"
     ,"id":"5"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -1479,7 +1479,7 @@
     ,"tone":"Indifferent"
     ,"plot":"MomReconcilesDad"
     ,"id":"5"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -1490,7 +1490,7 @@
     ,"tone":"Compassionate"
     ,"plot":"MomReconcilesDad"
     ,"id":"5"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -1501,7 +1501,7 @@
     ,"tone":"Hesitant"
     ,"plot":"MomReconcilesDad"
     ,"id":"5"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -1512,7 +1512,7 @@
     ,"tone":"Blunt"
     ,"plot":"MomReconcilesDad"
     ,"id":"6"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"mom"
@@ -1523,7 +1523,7 @@
     ,"tone":"Indifferent"
     ,"plot":"MomReconcilesDad"
     ,"id":"6"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"mom"
@@ -1534,7 +1534,7 @@
     ,"tone":"Compassionate"
     ,"plot":"MomReconcilesDad"
     ,"id":"6"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"mom"
@@ -1545,7 +1545,7 @@
     ,"tone":"Hesitant"
     ,"plot":"MomReconcilesDad"
     ,"id":"6"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"mom"
@@ -1556,7 +1556,7 @@
     ,"tone":"Default"
     ,"plot":"MomReconcilesDad"
     ,"id":"7"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -1567,7 +1567,7 @@
     ,"tone":"Blunt"
     ,"plot":"MomReconcilesDad"
     ,"id":"8"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"alex"
@@ -1578,7 +1578,7 @@
     ,"tone":"Indifferent"
     ,"plot":"MomReconcilesDad"
     ,"id":"8"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":""
@@ -1589,7 +1589,7 @@
     ,"tone":"Compassionate"
     ,"plot":"MomReconcilesDad"
     ,"id":"8"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":""
@@ -1600,7 +1600,7 @@
     ,"tone":"Hesitant"
     ,"plot":"MomReconcilesDad"
     ,"id":"8"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"alex"
@@ -1611,7 +1611,7 @@
     ,"tone":"Blunt"
     ,"plot":"MomReconcilesDad"
     ,"id":"9"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -1622,7 +1622,7 @@
     ,"tone":"Indifferent"
     ,"plot":"MomReconcilesDad"
     ,"id":"9"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -1633,7 +1633,7 @@
     ,"tone":"Compassionate"
     ,"plot":"MomReconcilesDad"
     ,"id":"9"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -1644,7 +1644,7 @@
     ,"tone":"Hesitant"
     ,"plot":"MomReconcilesDad"
     ,"id":"9"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -1655,7 +1655,7 @@
     ,"tone":"Default"
     ,"plot":"MomReconcilesDad"
     ,"id":"10"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":"fin"
     ,"inext":"mom"
@@ -1666,7 +1666,7 @@
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"1"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -1677,7 +1677,7 @@
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"2"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"mom"
@@ -1688,7 +1688,7 @@
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"3"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -1699,7 +1699,7 @@
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"4"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -1710,7 +1710,7 @@
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"5"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -1721,7 +1721,7 @@
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"6"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -1732,7 +1732,7 @@
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"7"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"mom"
@@ -1743,7 +1743,7 @@
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"8"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -1754,7 +1754,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadSeesHisFault"
     ,"id":"9"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":""
@@ -1765,7 +1765,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadSeesHisFault"
     ,"id":"9"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":""
@@ -1776,7 +1776,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadSeesHisFault"
     ,"id":"9"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":""
@@ -1787,7 +1787,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadSeesHisFault"
     ,"id":"9"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":""
@@ -1798,7 +1798,7 @@
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"10"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -1809,7 +1809,7 @@
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"11"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -1820,7 +1820,7 @@
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"12"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -1831,7 +1831,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadSeesHisFault"
     ,"id":"13"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -1842,7 +1842,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadSeesHisFault"
     ,"id":"13"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -1853,7 +1853,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadSeesHisFault"
     ,"id":"13"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -1864,7 +1864,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadSeesHisFault"
     ,"id":"13"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -1875,7 +1875,7 @@
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"14"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -1886,7 +1886,7 @@
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"15"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"mom"
@@ -1897,7 +1897,7 @@
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"16"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -1908,7 +1908,7 @@
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"17"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"mom"
@@ -1919,7 +1919,7 @@
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"18"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -1930,7 +1930,7 @@
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"19"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -1941,7 +1941,7 @@
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"20"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":"fin"
     ,"inext":""
@@ -1952,7 +1952,7 @@
     ,"tone":""
     ,"plot":""
     ,"id":""
-    ,"FNC":
+    ,"FNC":""
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -1963,7 +1963,7 @@
     ,"tone":""
     ,"plot":""
     ,"id":""
-    ,"FNC":
+    ,"FNC":""
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -1974,7 +1974,7 @@
     ,"tone":""
     ,"plot":""
     ,"id":""
-    ,"FNC":
+    ,"FNC":""
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -1985,7 +1985,7 @@
     ,"tone":""
     ,"plot":""
     ,"id":""
-    ,"FNC":
+    ,"FNC":""
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -1996,7 +1996,7 @@
     ,"tone":""
     ,"plot":""
     ,"id":""
-    ,"FNC":
+    ,"FNC":""
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -2007,7 +2007,7 @@
     ,"tone":"Default"
     ,"plot":"AlexChangesSubject"
     ,"id":"1"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"alex"
     ,"finished":""
     ,"inext":""
@@ -2018,7 +2018,7 @@
     ,"tone":"Default"
     ,"plot":"AlexChangesSubject"
     ,"id":"2"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"alex"
     ,"finished":""
     ,"inext":"dad"
@@ -2029,7 +2029,7 @@
     ,"tone":"Default"
     ,"plot":"AlexChangesSubject"
     ,"id":"3"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -2040,7 +2040,7 @@
     ,"tone":"Default"
     ,"plot":"AlexChangesSubject"
     ,"id":"4"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -2051,7 +2051,7 @@
     ,"tone":"Default"
     ,"plot":"AlexChangesSubject"
     ,"id":"5"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":"fin"
     ,"inext":""
@@ -2062,7 +2062,7 @@
     ,"tone":"Default"
     ,"plot":"AlexInterjects1"
     ,"id":"1"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"alex"
     ,"finished":""
     ,"inext":"dad"
@@ -2073,7 +2073,7 @@
     ,"tone":"Default"
     ,"plot":"AlexInterjects1"
     ,"id":"2"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"alex"
@@ -2084,7 +2084,7 @@
     ,"tone":"Default"
     ,"plot":"AlexInterjects1"
     ,"id":"3"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -2095,7 +2095,7 @@
     ,"tone":"Default"
     ,"plot":"AlexInterjects1"
     ,"id":"4"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -2106,7 +2106,7 @@
     ,"tone":"Blunt"
     ,"plot":"AlexInterjects1"
     ,"id":"5"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"alex"
     ,"finished":""
     ,"inext":"dad"
@@ -2117,7 +2117,7 @@
     ,"tone":"Indifferent"
     ,"plot":"AlexInterjects1"
     ,"id":"5"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"alex"
     ,"finished":""
     ,"inext":"dad"
@@ -2128,7 +2128,7 @@
     ,"tone":"Compassionate"
     ,"plot":"AlexInterjects1"
     ,"id":"5"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"alex"
     ,"finished":""
     ,"inext":"dad"
@@ -2139,7 +2139,7 @@
     ,"tone":"Hesitant"
     ,"plot":"AlexInterjects1"
     ,"id":"5"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"alex"
     ,"finished":""
     ,"inext":"dad"
@@ -2150,7 +2150,7 @@
     ,"tone":"Default"
     ,"plot":"AlexInterjects1"
     ,"id":"6"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"alex"
@@ -2161,7 +2161,7 @@
     ,"tone":"Default"
     ,"plot":"AlexInterjects1"
     ,"id":"7"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -2172,7 +2172,7 @@
     ,"tone":"Default"
     ,"plot":"AlexInterjects1"
     ,"id":"8"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -2183,7 +2183,7 @@
     ,"tone":"Default"
     ,"plot":"AlexInterjects1"
     ,"id":"9"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"alex"
     ,"finished":"fin"
     ,"inext":""
@@ -2194,7 +2194,7 @@
     ,"tone":"Default"
     ,"plot":"AlexInterjects2"
     ,"id":"1"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"alex"
     ,"finished":""
     ,"inext":""
@@ -2205,7 +2205,7 @@
     ,"tone":"Default"
     ,"plot":"AlexInterjects2"
     ,"id":"2"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"alex"
     ,"finished":""
     ,"inext":""
@@ -2216,7 +2216,7 @@
     ,"tone":"Default"
     ,"plot":"AlexInterjects2"
     ,"id":"3"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"alex"
     ,"finished":""
     ,"inext":""
@@ -2227,7 +2227,7 @@
     ,"tone":"Blunt"
     ,"plot":"AlexInterjects2"
     ,"id":"4"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"alex"
     ,"finished":""
     ,"inext":""
@@ -2238,7 +2238,7 @@
     ,"tone":"Indifferent"
     ,"plot":"AlexInterjects2"
     ,"id":"4"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"alex"
     ,"finished":""
     ,"inext":""
@@ -2249,7 +2249,7 @@
     ,"tone":"Compassionate"
     ,"plot":"AlexInterjects2"
     ,"id":"4"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"alex"
     ,"finished":""
     ,"inext":""
@@ -2260,7 +2260,7 @@
     ,"tone":"Hesitant"
     ,"plot":"AlexInterjects2"
     ,"id":"4"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"alex"
     ,"finished":""
     ,"inext":""
@@ -2271,7 +2271,7 @@
     ,"tone":"Default"
     ,"plot":"AlexInterjects2"
     ,"id":"5"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"alex"
     ,"finished":"fin"
     ,"inext":""
@@ -2282,7 +2282,7 @@
     ,"tone":""
     ,"plot":""
     ,"id":""
-    ,"FNC":
+    ,"FNC":""
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -2293,7 +2293,7 @@
     ,"tone":""
     ,"plot":""
     ,"id":""
-    ,"FNC":
+    ,"FNC":""
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -2304,7 +2304,7 @@
     ,"tone":""
     ,"plot":""
     ,"id":""
-    ,"FNC":
+    ,"FNC":""
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -2315,7 +2315,7 @@
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"1"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":""
@@ -2326,7 +2326,7 @@
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"2"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -2337,7 +2337,7 @@
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"3"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"alex"
@@ -2348,7 +2348,7 @@
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"4"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -2359,7 +2359,7 @@
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"5"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -2370,7 +2370,7 @@
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"6"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"alex"
@@ -2381,7 +2381,7 @@
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"7"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"mom"
@@ -2392,7 +2392,7 @@
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"8"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -2403,7 +2403,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"9"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -2414,7 +2414,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"9"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -2425,7 +2425,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"9"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -2436,7 +2436,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"9"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -2447,7 +2447,7 @@
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"10"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -2458,7 +2458,7 @@
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"11"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"mom"
@@ -2469,7 +2469,7 @@
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"12"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":""
@@ -2480,7 +2480,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"13"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -2491,7 +2491,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"13"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -2502,7 +2502,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"13"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -2513,7 +2513,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"13"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -2524,7 +2524,7 @@
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"14"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -2535,7 +2535,7 @@
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"15"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"mom"
@@ -2546,7 +2546,7 @@
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"16"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"dad"
@@ -2557,7 +2557,7 @@
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"17"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
     ,"inext":"mom"
@@ -2568,7 +2568,7 @@
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"18"
-    ,"FNC":0
+    ,"FNC":"0"
     ,"speaker":""
     ,"finished":"fin"
     ,"inext":""
