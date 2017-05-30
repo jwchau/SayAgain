@@ -137,6 +137,7 @@ namespace Test {
 
                     low = determineRange(range, mom.getFNCRange())[0];
                     high = determineRange(range, mom.getFNCRange())[1];
+                    //Console.WriteLine(low + " : " + mom.getCurrentFNC() + " : " + high);
                     if (mom.getCurrentFNC() >= low && mom.getCurrentFNC() <= high) {
 
                         return true;
@@ -274,8 +275,8 @@ namespace Test {
             reachedPlotpoints = new List<String>();
             reachedPlotpoints.Add(currentNode);
 
-            next_nodes.Add("PlayerSupportsDad");
             next_nodes.Add("PlayerDefendsMom");
+            next_nodes.Add("PlayerSupportsDad");
             addNode("DadGreetsPlayer", next_nodes, preconditions);
 
             preconditions.Add("M: HF-HF");

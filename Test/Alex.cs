@@ -179,7 +179,7 @@ namespace Test {
             FNCRange[8] = 9;
             FNCRange[9] = 10;
 
-            currentFNC = -1;
+            currentFNC = 0;
 
             hide = false;
 

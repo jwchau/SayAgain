@@ -227,7 +227,7 @@ namespace Test {
             FNCRange[7] = 7.33;
             FNCRange[8] = 8.66;
             FNCRange[9] = 10;
-            currentFNC = -1;
+            currentFNC = 0;
 
             hide = true;
 
