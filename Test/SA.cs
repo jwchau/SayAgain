@@ -211,15 +211,17 @@ namespace Test
                                 if (State.dialogueBox.checkNext())
                                 {
 
-                                    Console.WriteLine("interjection unhandled");
-                                    //responseListNPC = s.ChooseDialogTransition(Load.NPCDialogueObj, 1, npcPlotId, currentTone.ToString());
-                                    //affect(responseListNPC[0].target);
-                                    //npcPlotId = incr(npcPlotId);
-                                    if (responseListNPC[0].speaker != "")
-                                    {
-                                        speaker = responseListNPC[0].speaker;
+                                    //Console.WriteLine("interjection unhandled");
+                                    if (sman.getDialogueType() == "plotpoint") {
+                                        responseListNPC = s.ChooseDialogPlot(Load.allp, sman.getCurrentNode(), npcPlotId, currentTone.ToString());
+                                        npcPlotId = incr(npcPlotId);
+                                    } else {
+                                        responseListNPC = s.ChooseDialogTransition(Load.allt, bucket, npcTransitionId, currentTone.ToString());
+                                        npcPlotId = incr(npcTransitionId);
                                     }
 
+                                    affect(responseListNPC[0].target, responseListNPC[0].FNC);
+                                    if (responseListNPC[0].speaker != "") speaker = responseListNPC[0].speaker;
                                     State.advanceConversation(speaker, responseList, responseListNPC);
                                 }
                             }
