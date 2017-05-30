@@ -1,2470 +1,2470 @@
-{ 
- "Dialogues": [ 
-  {
-     "content":"Thank you"
-    ,"tone":"Root"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"1"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"<Something seems odd.> I'm only here because you told me to be."
-    ,"tone":"Blunt"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"2"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["dad","mom",""]
-  },
-  {
-     "content":"<Oh the formalities> Yeah.. It's great."
-    ,"tone":"Indifferent"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"2"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["dad","mom",""]
-  },
-  {
-     "content":"<It's always great to see the family.> Thanks Dad! It's so great to be back here!"
-    ,"tone":"Compassionate"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"2"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["dad","mom",""]
-  },
-  {
-     "content":"<Hmm Dad's acting odd.> Thanks? I haven't been home in a while..."
-    ,"tone":"Hesitant"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"2"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["dad","mom",""]
-  },
-  {
-     "content":"How are you?"
-    ,"tone":"Root"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"3"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["dad","mom",""]
-  },
-  {
-     "content":"Dad you still sitting around like a bum?"
-    ,"tone":"Blunt"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"4"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["dad","mom",""]
-  },
-  {
-     "content":"So how are things?"
-    ,"tone":"Indifferent"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"4"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["dad","mom",""]
-  },
-  {
-     "content":"Have you all been doing well?"
-    ,"tone":"Compassionate"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"4"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["dad","mom",""]
-  },
-  {
-     "content":"So.. you guys good.. in the hood?"
-    ,"tone":"Hesitant"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"4"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["dad","mom",""]
-  },
-  {
-     "content":"Everything okay between you two?"
-    ,"tone":"Root"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"9"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Hey what the heck is up with you and mom?"
-    ,"tone":"Blunt"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"10"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["dad","mom",""]
-  },
-  {
-     "content":"Yea what the heck?"
-    ,"tone":"Indifferent"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"10"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["dad","mom",""]
-  },
-  {
-     "content":"I hope there is nothing wrong between you guys."
-    ,"tone":"Compassionate"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"10"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["dad","mom",""]
-  },
-  {
-     "content":"Is there anything going on or something?"
-    ,"tone":"Hesitant"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"10"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["dad","mom",""]
-  },
-  {
-     "content":"I know. Tell me about work?"
-    ,"tone":"Root"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"11"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Yeah, yeah. So what’s up at work? Shouldn’t you be retired by now?"
-    ,"tone":"Blunt"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"12"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Anyways... How’s work going?"
-    ,"tone":"Indifferent"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"12"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I know, and that is great to hear! I also want to know how your work has been going!"
-    ,"tone":"Compassionate"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"12"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Uh, yeah. You’re still working right? At that one place…"
-    ,"tone":"Hesitant"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"12"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Then, is there anything new going on with you?"
-    ,"tone":"Root"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"13"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Okay. Then is there anything that IS new you can tell me? <Mom doesn’t look too happy that Dad mentioned the cups.>"
-    ,"tone":"Blunt"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"14"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Oh, that’s great. <Mom doesn’t look too happy that Dad mentioned the cups.>"
-    ,"tone":"Indifferent"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"14"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I’m sure there is a new, cool something that’s going on with you! <Mom doesn’t look too happy that Dad mentioned the cups.>"
-    ,"tone":"Hesitant"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"14"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"That’s good? So there's nothing new going on? Er, I’m not sure what or how often \"new\" things happen, though... <Mom doesn’t look too happy that Dad mentioned the cups.>"
-    ,"tone":"Compassionate"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"14"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Mom, these cups look really great."
-    ,"tone":"Root"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"15"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Jeez. Chin up, Mom. These cups do look pretty fucking awesome."
-    ,"tone":"Blunt"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"16"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"They’re just cups to me. But I guess others would say they look good."
-    ,"tone":"Indifferent"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"16"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Woah! You picked these out, Mom? They go really well with the dining ware!"
-    ,"tone":"Compassionate"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"16"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I-uh...They look fine? No, I’m sure they look good. Right, Mom?"
-    ,"tone":"Hesitant"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"16"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"What about the cups?"
-    ,"tone":"Root"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"19"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"So what about a bunch of cups do you want to talk about, huh?"
-    ,"tone":"Blunt"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"20"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Yeah, sure. Go ahead, Dad."
-    ,"tone":"Indifferent"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"20"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Go ahead, Dad. I’m all ears."
-    ,"tone":"Compassionate"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"20"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"The cups? You mean, the nice ones, right? Uh… Is there something to say about them? They look normal to me…"
-    ,"tone":"Hesitant"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"20"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You seem flustered, Dad."
-    ,"tone":"Root"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"21"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Cut the crap and tell me what’s wrong! You were too flustered to say ‘It’s fine.’"
-    ,"tone":"Blunt"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"22"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Actually, you seemed a bit flustered."
-    ,"tone":"Indifferent"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"22"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"But you seemed flustered! Are you sure nothing is wrong? Don’t you worry me, now."
-    ,"tone":"Compassionate"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"22"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Er, but you were kinda flustered..."
-    ,"tone":"Hesitant"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"22"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Why are you talking about the past?"
-    ,"tone":"Root"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"23"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Why do you sound so pissed off about how Mom was a few years ago. It’s all in the past. Grow up, Dad! <Dad’s starting to mumble to himself. I’ll ask Mom what’s going on.>"
-    ,"tone":"Blunt"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"24"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I don’t really care about how Mom was whatever number of years ago. <Dad’s starting to mumble to himself. I’ll ask Mom what’s going on.>"
-    ,"tone":"Indifferent"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"24"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You sound pretty upset about this. What’s going on? <Dad’s starting to mumble to himself. I’ll ask Mom what’s going on.>"
-    ,"tone":"Compassionate"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"24"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Are you grumpy? Uh. This is kinda weird? <Dad’s starting to mumble to himself. I’ll ask Mom what’s going on.>"
-    ,"tone":"Hesitant"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"24"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Mom, do you know what Dad is talking about?"
-    ,"tone":"Root"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"25"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"What the hell is Dad going on about? He sounds insane."
-    ,"tone":"Blunt"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"26"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"So,...uh, any idea on what’s going on?"
-    ,"tone":"Indifferent"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"26"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"What’s going on with Dad, Mom? Should we be worried?"
-    ,"tone":"Compassionate"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"26"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Hey...isn’t Dad kinda being...strange?"
-    ,"tone":"Hesitant"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"26"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Are you paying attention to Dad at all?"
-    ,"tone":"Root"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"27"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Damn, Mom! It seems like you’re just ignoring Dad. That’s pretty bold."
-    ,"tone":"Blunt"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"28"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You aren’t giving Dad any attention. That’s fine."
-    ,"tone":"Indifferent"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"28"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Mom. Is there a reason you are ignoring Dad? Wouldn’t it be polite to give him our undivided attention?"
-    ,"tone":"Compassionate"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"28"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Mom, don’t you think you should give Dad some attention? I think that’ll be good..."
-    ,"tone":"Hesitant"
-    ,"plot":"DadGreetsPlayer"
-    ,"id":"28"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"What has mom done, Dad?"
-    ,"tone":"Root"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"1"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Well? Come on, Dad! Tell us what Mom did!"
-    ,"tone":"Blunt"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"2"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"So...what did mom do?"
-    ,"tone":"Indifferent"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"2"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"This sounds serious, Dad. You have to tell me what’s going on with Mom and what she’s been doing."
-    ,"tone":"Compassionate"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"2"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Well, sure, Dad. I’ll listen to what you have to say. It seems like you know what’s happening around here."
-    ,"tone":"Hesitant"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"2"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Tell us about Mom."
-    ,"tone":"Root"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"7"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Jesus, Dad. Hurry it up and say the thing about Mom!"
-    ,"tone":"Blunt"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"8"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Sure, sure. It’s fine. Take your time."
-    ,"tone":"Indifferent"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"8"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Dad, you should just say it. I know it’s hard to comprehend, but someone needs to do it."
-    ,"tone":"Compassionate"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"8"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Don’t you think you should say what is going on with Mom?"
-    ,"tone":"Hesitant"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"8"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Mom, Dad has made a compelling case."
-    ,"tone":"Root"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"11"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You know what? After thinking about everything you said, you are right. Mom IS cheating on you! Damn. What the hell is Mom thinking?"
-    ,"tone":"Blunt"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"12"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"If you look at what Dad said, I guess it makes sense. "
-    ,"tone":"Indifferent"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"12"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Everything makes sense now! I’m so sorry Dad. I can’t believe Mom would hurt you like that."
-    ,"tone":"Compassionate"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"12"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Uh, yeah! The things that Dad said...I guess that means Mom is cheating on you?"
-    ,"tone":"Hesitant"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"12"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Can you explain everything once more?"
-    ,"tone":"Root"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"13"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Hey I am still a little confused! I’m just trying to understand things better!"
-    ,"tone":"Blunt"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"14"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I just need you to explain the clues again."
-    ,"tone":"Indifferent"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"14"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I’m just trying to understand the situation completely, Dad."
-    ,"tone":"Compassionate"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"14"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I, uh. Just need to know the things...happening…"
-    ,"tone":"Hesitant"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"14"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"But what about those cups you bought, Mom?"
-    ,"tone":"Root"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"15"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Where’d you get those fancy cups from, then? Someone must have given them to you."
-    ,"tone":"Blunt"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"16"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Those cups are probably from the other guy."
-    ,"tone":"Indifferent"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"17"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Mom. Did such a person get you these cups as a gift?"
-    ,"tone":"Compassionate"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"17"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"The cups...I bet they are from the guy? The other guy, you know… Not Dad."
-    ,"tone":"Hesitant"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"17"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I know Alex has a take on this."
-    ,"tone":"Root"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"22"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Hey. Let Alex talk, Dad. Don’t tell her to keep her mouth shut.\n"
-    ,"tone":"Blunt"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"23"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Yeah Alex. Just let Dad, talk. It’ll be faster.\n"
-    ,"tone":"Indifferent"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"23"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Alex, let Dad explain himself. It’s rude to jump to conclusions."
-    ,"tone":"Compassionate"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"23"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Uh, Dad? Shouldn’t you let Alex talk...for a bit, at least?\n"
-    ,"tone":"Hesitant"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"23"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"How would you be able to buy them, Mom?"
-    ,"tone":"Root"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"27"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Your own money? Dad hasn't give you any for this purchase."
-    ,"tone":"Blunt"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"28"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You don’t even have money for that stuff."
-    ,"tone":"Indifferent"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"28"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Can you explain to us how you would have the money to buy the glasses? I am sure we are all willing to listen to you."
-    ,"tone":"Compassionate"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"28"
-    ,"FNC":"30"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"But...you would have had to get the money from Dad, right? I mean...that’s the only way."
-    ,"tone":"Hesitant"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"28"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I’m not siding with anyone."
-    ,"tone":"Root"
-    ,"plot":"PlayerSupportsDad2"
-    ,"id":"1"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"When did I ever say I was siding with Dad? I don’t take sides."
-    ,"tone":"Blunt"
-    ,"plot":"PlayerSupportsDad2"
-    ,"id":"2"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I’m not doing that."
-    ,"tone":"Indifferent"
-    ,"plot":"PlayerSupportsDad2"
-    ,"id":"2"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I’m on your side too, Mom."
-    ,"tone":"Compassionate"
-    ,"plot":"PlayerSupportsDad2"
-    ,"id":"2"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"But... I’m not. Did it seem like I was?"
-    ,"tone":"Hesitant"
-    ,"plot":"PlayerSupportsDad2"
-    ,"id":"2"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"What are you hiding?"
-    ,"tone":"Root"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"29"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"There’s no point in keeping secrets anymore. Everything’s out of the bag."
-    ,"tone":"Blunt"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"30"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Something else you’re hiding?"
-    ,"tone":"Indifferent"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"30"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Let’s not keep any more secrets, Mom. Don’t worry. You can tell us everything."
-    ,"tone":"Compassionate"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"30"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Mom, please... What is it...?"
-    ,"tone":"Hesitant"
-    ,"plot":"PlayerSupportsDad"
-    ,"id":"30"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"What has Mom done?"
-    ,"tone":"Root"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"1"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Well? Come on, Dad! Spit it out. What is the wrong that Mom did?"
-    ,"tone":"Blunt"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"2"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"So...what did Mom do?"
-    ,"tone":"Indifferent"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"2"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"This sounds serious, Dad. You have to tell me what’s going on with Mom and what she’s been doing."
-    ,"tone":"Compassionate"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"2"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Well, sure, Dad. I’ll listen to what you have to say. It seems like you know what’s happening around here..."
-    ,"tone":"Hesitant"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"2"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Tell us about Mom."
-    ,"tone":"Root"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"7"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Jesus, Dad. Hurry it up and say the thing about Mom!"
-    ,"tone":"Blunt"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"8"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Sure, sure. It’s fine. Take your time."
-    ,"tone":"Indifferent"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"8"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Dad, you should just say it. I know it’s hard to comprehend, but someone needs to do it."
-    ,"tone":"Compassionate"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"8"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Yes. It is time now. I’ve been waiting for the most appropriate time to say this...Your Mother is cheating on me."
-    ,"tone":"Hesitant"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"8"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"If you add up all the clues..."
-    ,"tone":"Root"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"11"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"What? Don’t be stupid, Dad. None of that shit adds up."
-    ,"tone":"Blunt"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"12"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Yeah, whatever, Dad. You can think that all you want."
-    ,"tone":"Indifferent"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"12"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Come on Dad! Don’t be silly. You know that Mom wouldn’t do that."
-    ,"tone":"Compassionate"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"12"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":" I...uh. I don’t really think so…"
-    ,"tone":"Hesitant"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"12"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"A ‘coincidence'?"
-    ,"tone":"Root"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"19"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Come on. A coincidence? Sounds juicy."
-    ,"tone":"Blunt"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"UNMARKED"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Just say it already."
-    ,"tone":"Indifferent"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"UNMARKED"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Mom, you’ve got to stop making it sound so suspicious."
-    ,"tone":"Compassionate"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"UNMARKED"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Um...I think you’ve got to be a little more...y’know...specific."
-    ,"tone":"Hesitant"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"UNMARKED"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Let Mom explain, Dad."
-    ,"tone":"Root"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"29"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You’ve got to be an ass about everything, huh, Dad?"
-    ,"tone":"Blunt"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"30"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"How about being quiet for a minute so she can actually get to it, Dad."
-    ,"tone":"Indifferent"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"30"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Please, Dad. Let Mom talk, okay?"
-    ,"tone":"Compassionate"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"30"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Okay, so…I think we should let Mom talk..."
-    ,"tone":"Hesitant"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"30"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Dad, you still don’t get it."
-    ,"tone":"Root"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"39"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"God, that’s all you can think about?"
-    ,"tone":"Blunt"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"40"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"All this nonsense you’re spewing, Dad… Ugh."
-    ,"tone":"Indifferent"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"40"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Dad, you really need to see the bigger picture here."
-    ,"tone":"Compassionate"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"40"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"It’s not like that though..."
-    ,"tone":"Hesitant"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"40"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"It’s her name tag for work."
-    ,"tone":"Root"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"47"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"It’s for her job, duh."
-    ,"tone":"Blunt"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"48"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":" Isn’t it clear yet? I mean, it’s her name tag."
-    ,"tone":"Indifferent"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"48"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Dad, look! It’s Mom’s name tag for her job."
-    ,"tone":"Compassionate"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"48"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I mean... can’t you see? It’s her name tag."
-    ,"tone":"Hesitant"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"48"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You’re being ignorant, Dad"
-    ,"tone":"Root"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"1"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Dad, you are so beyond help."
-    ,"tone":"Blunt"
-    ,"plot":"PlayerDefendsMom2"
-    ,"id":"1"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Dad, you're being so wrong."
-    ,"tone":"Indifferent"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"2"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Dad, I think you are making a big mistake here."
-    ,"tone":"Compassionate"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"2"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Dad... I think you are making a mistake."
-    ,"tone":"Hesitant"
-    ,"plot":"PlayerDefendsMom"
-    ,"id":"2"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Let Mom talk."
-    ,"tone":"Root"
-    ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Let Mom talk and you’ll know."
-    ,"tone":"Blunt"
-    ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Let Mom talk and you’ll know."
-    ,"tone":"Indifferent"
-    ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Let’s give Mom a chance to tell us."
-    ,"tone":"Compassionate"
-    ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Can’t we… you know, let Mom talk?"
-    ,"tone":"Hesitant"
-    ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"What about the money?"
-    ,"tone":"Root"
-    ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"What are you talking about? It’s not like we don’t have money."
-    ,"tone":"Blunt"
-    ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"‘Because of the money…’ what? Don’t we have money because of Dad’s promotion or whatever?"
-    ,"tone":"Indifferent"
-    ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Money? Did the family’s money make you want a job, Mom?"
-    ,"tone":"Compassionate"
-    ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Huh? Are the finances problematic?"
-    ,"tone":"Hesitant"
-    ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I’m trying, but not quite."
-    ,"tone":"Root"
-    ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Hints aren’t getting us anywhere. Be explicit."
-    ,"tone":"Blunt"
-    ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You should go into more details."
-    ,"tone":"Indifferent"
-    ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You don’t need to hold back, Mom. You can tell us what you’re thinking, so we can all try to understand."
-    ,"tone":"Compassionate"
-    ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I'm not really following..."
-    ,"tone":"Hesitant"
-    ,"plot":"MomReconcilesDad"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You said you maintained the finances, earlier, Dad."
-    ,"tone":"Root"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Dad you went on about how you were the man of the house and managed all the money blah blah. You’re saying that’s not financially controlling?"
-    ,"tone":"Blunt"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You sorta mentioned managing finances of the house earlier. Does that mean something. "
-    ,"tone":"Indifferent"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Dad, you did mention that you managed the household finances, but to me that doesn’t sound like you’re being controlling."
-    ,"tone":"Compassionate"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You said that earlier that you did finances in the house...right Dad? "
-    ,"tone":"Hesitant"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Why didn’t you tell Dad this?"
-    ,"tone":"Root"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Why did you think hiding this from Dad was a good idea?"
-    ,"tone":"Blunt"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Why did you hold this all in and not tell Dad anything."
-    ,"tone":"Indifferent"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You should have told Dad all of this way sooner, so that he knows what you were thinking."
-    ,"tone":"Compassionate"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"...Couldn’t you have said this earlier?"
-    ,"tone":"Hesitant"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You waited until Dad accused you of cheating on him."
-    ,"tone":"Root"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Is Dad accusing you of cheating on him at the damn dinner table, in front of your children, really the best time? That’s nonsensical."
-    ,"tone":"Blunt"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Dad accused you of cheating on him, the you tell us about this. Really appropriate timing."
-    ,"tone":"Indifferent"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Mom, your waiting caused a huge argument at the dinner table. I’m glad you eventually told us. But, next time…. It would be better not to wait."
-    ,"tone":"Compassionate"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Er, and Dad yelling at you the best time? To reveal this stuff?"
-    ,"tone":"Hesitant"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"What about being so controlling?"
-    ,"tone":"Root"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"nd what about being controlling, huh? Accusing mom wasn’t the only thing you did."
-    ,"tone":"Blunt"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"And have you reflected on how controlling you are?"
-    ,"tone":"Indifferent"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Don’t you think you should also apologize for making Mom feel like she has no freedom?"
-    ,"tone":"Compassionate"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Okay... But what about not giving Mom any freedom?"
-    ,"tone":"Hesitant"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Let's calm down and talk about this a later time."
-    ,"tone":"Root"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Okay, okay. You've both made your amends and are now actually communicating. Can we finally have dinner now, and do this some other time?"
-    ,"tone":"Blunt"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Ugh. You guys should talk about this some other time. Like, once dinner is done."
-    ,"tone":"Indifferent"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"It’s great to see that you guys are communicating, but it would be nice to finish up dinner. Let's talk about this some other time."
-    ,"tone":"Compassionate"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"...Can we take a break from this drama and finish dinner?"
-    ,"tone":"Hesitant"
-    ,"plot":"DadSeesHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Good idea, Alex. "
-    ,"tone":"Root"
-    ,"plot":"AlexChangesSubject"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I think that’s a good idea. I brought you guys some presents from the campus bookstore, they’re packed with all of my things. "
-    ,"tone":"Blunt"
-    ,"plot":"AlexChangesSubject"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Good idea, Alex. I brought you guys some presents from the campus bookstore, hopefully you like them. "
-    ,"tone":"Indifferent"
-    ,"plot":"AlexChangesSubject"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Good idea, Alex! So, I know you guys couldn’t really come out to visit me while I was at university, but I brought some presents so you can show some Banana Slug pride!"
-    ,"tone":"Compassionate"
-    ,"plot":"AlexChangesSubject"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Good idea, Alex. I thought I’d  bring back some presents to show some Banana slug pride. Um, I’m not sure if they’d fit you guys but I made my best guess."
-    ,"tone":"Hesitant"
-    ,"plot":"AlexChangesSubject"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I thought it would be nice a nice gesture."
-    ,"tone":"Root"
-    ,"plot":"AlexChangesSubject"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I thought it would be nice to get you guys something for a change."
-    ,"tone":"Blunt"
-    ,"plot":"AlexChangesSubject"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"The bookstore didn’t have a lot of variety, but I thought I would get you guys something for a change. "
-    ,"tone":"Indifferent"
-    ,"plot":"AlexChangesSubject"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I know I don't normally get you guys gifts, so I thought it would be a nice surprise since I haven’t seen you all for so long!"
-    ,"tone":"Compassionate"
-    ,"plot":"AlexChangesSubject"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I know I don't normally get you guys gifts...so I thought this would be a nice surprise. I hope you’ll like them."
-    ,"tone":"Hesitant"
-    ,"plot":"AlexChangesSubject"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Alex is hurt by your fighting."
-    ,"tone":"Root"
-    ,"plot":"AlexInterjects1"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Whatever your differences, you two should have been respectful to Alex and not made a scene. "
-    ,"tone":"Blunt"
-    ,"plot":"AlexInterjects1"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Whatever it takes for you guys to communicate, but Alex doesn’t want to be caught in the middle."
-    ,"tone":"Indifferent"
-    ,"plot":"AlexInterjects1"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"That must have been tough, Alex, but...I’m sure no one at the school had a second thought about it. I wouldn’t worry too much."
-    ,"tone":"Hesitant"
-    ,"plot":"AlexInterjects1"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I just got home, I- I don’t want to hear any of this anymore. And Alex doesn’t want to be caught in the middle either."
-    ,"tone":"Compassionate"
-    ,"plot":"AlexInterjects1"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Life will go on, Alex."
-    ,"tone":"Root"
-    ,"plot":"AlexInterjects1"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Middle school isn’t that important anyway. Just wait until high school for the real test to begin. "
-    ,"tone":"Blunt"
-    ,"plot":"AlexInterjects1"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Middle school is tough for everyone, enjoy it while it lasts."
-    ,"tone":"Indifferent"
-    ,"plot":"AlexInterjects1"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Don’t worry Alex, middle school was tough for me too. I’m sure you’ll make more friends in high school."
-    ,"tone":"Compassionate"
-    ,"plot":"AlexInterjects1"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"School can’t be that bad right? I know most people have it tough, but you just have to get used to it. "
-    ,"tone":"Hesitant"
-    ,"plot":"AlexInterjects1"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":""
-    ,"tone":""
-    ,"plot":""
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"This is unacceptable. How long will the suspension last?"
-    ,"tone":"Root"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"That boy could have been hurt even more! I’m glad his friends didn’t lash out at you for what you did! How long is the suspension for?"
-    ,"tone":"Blunt"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I’m glad his friends didn’t lash out at your for what you did. How long is the suspension gonna last? "
-    ,"tone":"Indifferent"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Alex, this is unacceptable, you should know better. When that happens you need to get help before you take matters into your own hands. How long is the suspension gonna last? "
-    ,"tone":"Compassionate"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I- I don’t know what to say other than this is unacceptable, Alex. When that happens you need to get help before you take matters into your own hands. How long is the suspension gonna last? "
-    ,"tone":"Hesitant"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"This is a lot bigger than you think."
-    ,"tone":"Root"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Seven days?! It’s the end of the semester, you’re going to miss your finals! Alex this is a lot bigger than you think!"
-    ,"tone":"Blunt"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I guess seven days is not too bad… Wait, isn’t your semester over soon? Aren’t you going to miss finals?"
-    ,"tone":"Indifferent"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Seven days?! Aren’t you at the end of your semester? Alex, you have to understand that this is big. Summer hasn’t 'come early.' You’re going to miss your finals! "
-    ,"tone":"Compassionate"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Seven days, I guess that’s not too bad… Wait, isn’t your semester over soon? Aren’t you going to miss finals? Alex this is a lot bigger than you think!"
-    ,"tone":"Hesitant"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You need to think about what you are doing to yourself."
-    ,"tone":"Root"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"<Alex is taking all of this family drama and unleashing it at school.>You need to think about the path you are paving. You are only making it harder for yourself."
-    ,"tone":"Blunt"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"<This family drama is making everything worse for Alex.>Your actions are not only hurting others, but yourself too. Think about it."
-    ,"tone":"Indifferent"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"<Maybe all of this family stress is making Alex act up at school.>Alex, I see where you are coming from, and maybe all of this family drama is helping anyone, but you need to seriously think about the path you are going down. You’re only hurting yourself in the long run."
-    ,"tone":"Compassionate"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"<I wonder if this extra family drama is causing Alex to do this?>Alex, I see where you are coming from, but… think about the path you are going down."
-    ,"tone":"Hesitant"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Mom and Dad are here to support you."
-    ,"tone":"Root"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Even though it may not seem like it, Mom and Dad have been there for you."
-    ,"tone":"Blunt"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Mom and Dad are here for you. And I didn’t ‘leave’, I went off to school."
-    ,"tone":"Indifferent"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I want to make it clear that I didn’t go to college to get away from you, Alex, or Mom and Dad. Mom and Dad supported me just like they support you."
-    ,"tone":"Compassionate"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I know Mom and Dad are going through some troubles right now, just like you are… But they’re here for you, whether you want them to be or not. "
-    ,"tone":"Hesitant"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"We’ve been close for as long as I can remember. "
-    ,"tone":"Root"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"What has gotten into you? I’ve been gone for four years and I have to come back to this? We used to be so close. No wonder Mom and Dad are having such a hard time."
-    ,"tone":"Blunt"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Whatever you think. Just remember that we’re family and me being gone doesn’t change that. "
-    ,"tone":"Indifferent"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Alex, you’re my sister. I helped take care of you when you were just a baby. I love you, and me being gone didn’t change any of that. Has it for you?"
-    ,"tone":"Compassionate"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"...You hate me?<Well, then….>"
-    ,"tone":"Hesitant"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"College is hard work."
-    ,"tone":"Root"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Suffer? Your one task right now is to pass middle school.  Come back to me when you go to college or get a job, then we’ll talk about suffering!"
-    ,"tone":"Blunt"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Getting my degree was the hardest thing I have ever accomplished. "
-    ,"tone":"Indifferent"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I know you don’t mean that. Getting into college isn’t easy and I had to work hard to get to where I am today. "
-    ,"tone":"Compassionate"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You know…I also had to work very hard in college."
-    ,"tone":"Hesitant"
-    ,"plot":"AlexInterjects2"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":""
-    ,"tone":""
-    ,"plot":""
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"What are you talking about?"
-    ,"tone":"Root"
-    ,"plot":"DadNoSeeHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"What does that even mean? What do you mean ‘care?’ Yeah, I care! Why would I not?"
-    ,"tone":"Blunt"
-    ,"plot":"DadNoSeeHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Sure, I’d care."
-    ,"tone":"Indifferent"
-    ,"plot":"DadNoSeeHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"That’s an odd thing to say, Mom. Of course I would care."
-    ,"tone":"Compassionate"
-    ,"plot":"DadNoSeeHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Er, what makes you say that… I mean, of course. I do care."
-    ,"tone":"Hesitant"
-    ,"plot":"DadNoSeeHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Dad, that was rude."
-    ,"tone":"Root"
-    ,"plot":"DadNoSeeHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Dad, what the hell are you saying? How do you expect Mom to explain what’s going on if you’re constantly being so hostile?"
-    ,"tone":"Blunt"
-    ,"plot":"DadNoSeeHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Speak for yourself, Dad."
-    ,"tone":"Indifferent"
-    ,"plot":"DadNoSeeHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Dad, you’re being really unfair. Mom, I want to know what you mean."
-    ,"tone":"Compassionate"
-    ,"plot":"DadNoSeeHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Come on, Dad… Mom please continue."
-    ,"tone":"Hesitant"
-    ,"plot":"DadNoSeeHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Have you been controlling, Dad?"
-    ,"tone":"Root"
-    ,"plot":"DadNoSeeHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"What’s going on Dad? Have you been making Mom stay at home or something? Or making her feel uncomfortable about doing certain things?"
-    ,"tone":"Blunt"
-    ,"plot":"DadNoSeeHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"That sounds pretty bad."
-    ,"tone":"Indifferent"
-    ,"plot":"DadNoSeeHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I’m sorry you’ve been feeling that way, Mom. Do you really mean it? This has got to be another misunderstanding. Dad, you couldn’t have been controlling…?"
-    ,"tone":"Compassionate"
-    ,"plot":"DadNoSeeHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Is this true? Maybe this is another misunderstanding? Dad, you’re not controlling Mom, right?"
-    ,"tone":"Hesitant"
-    ,"plot":"DadNoSeeHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Be less obsessed about the household finances, Dad."
-    ,"tone":"Root"
-    ,"plot":"DadNoSeeHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Dad, you need to calm down about how Mom spends money. And she is not even spending a lot. Give her some freedom. Then you won’t feel like you have to hide things, right Mom?"
-    ,"tone":"Blunt"
-    ,"plot":"DadNoSeeHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Let Mom do and spend as she sees fit. It’ll be easier on all of us to not obsess about finances."
-    ,"tone":"Indifferent"
-    ,"plot":"DadNoSeeHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Dad, give Mom the independence she wants. Let her have the freedom to do and spend as she sees fit. If she’s happy, we all will be."
-    ,"tone":"Compassionate"
-    ,"plot":"DadNoSeeHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Why so obsessed with the finances? Let Mom spend as she sees fit. And she’s not spending a lot anyway… Right Mom?"
-    ,"tone":"Hesitant"
-    ,"plot":"DadNoSeeHisFault"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":""
-    ,"tone":""
-    ,"plot":""
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I can help you through this. "
-    ,"tone":"Root"
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"If you don’t want my help, fine, but I am focusing on myself because that’s the only person I know well enough. I have tried to address the Alex that I left when I went to college, but she doesn’t seem to be here anymore.  That’s ok, people change, but it doesn’t mean that I can’t try and find out the new you. Even though I haven’t been through your shoes exactly, through my combined years, I have gained enough perspective to help you through this. "
-    ,"tone":"Blunt"
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I’m making this about myself because that’s only I person I know well enough. Even though I may have not been in your shoes exactly, through my years, I have gained enough perspective to help you through this."
-    ,"tone":"Indifferent"
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I’m making this about myself because that’s only I person I know well enough. I have been through life just as you are right now. I am trying to show you that you aren’t alone in this. Even though I haven’t been through your shoes exactly, through my combined years, I have gained enough perspective to help you through this. You just have to be willing to listen."
-    ,"tone":"Compassionate"
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Call me naive, but I am making this about myself because that’s the only person I know well enough. I guess even though we haven’t shared similar childhoods, through my years, I think I have gained enough perspective to help you through this. You just have to be willing to listen. "
-    ,"tone":"Hesitant"
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":""
-    ,"tone":""
-    ,"plot":""
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Yes."
-    ,"tone":"Root"
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Yes, Alex. We want what’s best for you!"
-    ,"tone":"Blunt"
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Yes, Alex. We want what’s best for you."
-    ,"tone":"Indifferent"
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Yes, Alex! We want what’s best for you!"
-    ,"tone":"Compassionate"
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Yes, Alex. We want what’s best for you."
-    ,"tone":"Hesitant"
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Thanks for being honest, Alex."
-    ,"tone":"Root"
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"I know what you did was pretty bad, but thanks for being honest about it. Keeping secrets from your family only leads to more pain. Doesn’t it feel good to have that weight off your shoulders?"
-    ,"tone":"Blunt"
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Thanks for being honest Alex. It helps us all when you're honest about your actions and your feelings. Doesn’t it feel good to have that weight off of your shoulders?"
-    ,"tone":"Indifferent"
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"Thanks for being honest back there, li’l sis! I know it wasn’t the best revelation, but being honest with each other strengthens the bonds that we need to have for one another.  Doesn't it feel good having that weight off of your shoulders? "
-    ,"tone":"Compassionate"
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"What you did wasn’t the best, but...thank you for being honest with us. I think that being honest with each other strengthens the bonds that we need to have for one another. Does it feel good having that weight off of your shoulders? "
-    ,"tone":"Hesitant"
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You're heading in the right direction.\n"
-    ,"tone":"Root"
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You’re right, the first step was being honest with yourself and admitting your faults. Just make sure that you learn from your mistake.\n"
-    ,"tone":""
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You’re right, the first step was being honest with yourself and admitting your faults.\n"
-    ,"tone":""
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You’re right, the first step was being honest with yourself and admitting your faults. There’s nothing wrong with admitting you were wrong, just make sure that you learn from your mistake. I'm proud of you, baby sis!\n"
-    ,"tone":""
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"That's the right attitude, Alex. I hope you'll keep it up."
-    ,"tone":""
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":""
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  }
- ] 
- }
+{
+  "Dialogues": [
+    {
+      "content": "Thank you",
+      "tone": "Root",
+      "plot": "DadGreetsPlayer",
+      "id": "1",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "<Something seems odd.> I'm only here because you told me to be.",
+      "tone": "Blunt",
+      "plot": "DadGreetsPlayer",
+      "id": "2",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "dad", "mom", "" ]
+    },
+    {
+      "content": "<Oh the formalities> Yeah.. It's great.",
+      "tone": "Indifferent",
+      "plot": "DadGreetsPlayer",
+      "id": "2",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "dad", "mom", "" ]
+    },
+    {
+      "content": "<It's always great to see the family.> Thanks Dad! It's so great to be back here!",
+      "tone": "Compassionate",
+      "plot": "DadGreetsPlayer",
+      "id": "2",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "dad", "mom", "" ]
+    },
+    {
+      "content": "<Hmm Dad's acting odd.> Thanks? I haven't been home in a while...",
+      "tone": "Hesitant",
+      "plot": "DadGreetsPlayer",
+      "id": "2",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "dad", "mom", "" ]
+    },
+    {
+      "content": "How are you?",
+      "tone": "Root",
+      "plot": "DadGreetsPlayer",
+      "id": "3",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "dad", "mom", "" ]
+    },
+    {
+      "content": "Dad you still sitting around like a bum?",
+      "tone": "Blunt",
+      "plot": "DadGreetsPlayer",
+      "id": "4",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "dad", "mom", "" ]
+    },
+    {
+      "content": "So how are things?",
+      "tone": "Indifferent",
+      "plot": "DadGreetsPlayer",
+      "id": "4",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "dad", "mom", "" ]
+    },
+    {
+      "content": "Have you all been doing well?",
+      "tone": "Compassionate",
+      "plot": "DadGreetsPlayer",
+      "id": "4",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "dad", "mom", "" ]
+    },
+    {
+      "content": "So.. you guys good.. in the hood?",
+      "tone": "Hesitant",
+      "plot": "DadGreetsPlayer",
+      "id": "4",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "dad", "mom", "" ]
+    },
+    {
+      "content": "Everything okay between you two?",
+      "tone": "Root",
+      "plot": "DadGreetsPlayer",
+      "id": "9",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Hey what the heck is up with you and mom?",
+      "tone": "Blunt",
+      "plot": "DadGreetsPlayer",
+      "id": "10",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "dad", "mom", "" ]
+    },
+    {
+      "content": "Yea what the heck?",
+      "tone": "Indifferent",
+      "plot": "DadGreetsPlayer",
+      "id": "10",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "dad", "mom", "" ]
+    },
+    {
+      "content": "I hope there is nothing wrong between you guys.",
+      "tone": "Compassionate",
+      "plot": "DadGreetsPlayer",
+      "id": "10",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "dad", "mom", "" ]
+    },
+    {
+      "content": "Is there anything going on or something?",
+      "tone": "Hesitant",
+      "plot": "DadGreetsPlayer",
+      "id": "10",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "dad", "mom", "" ]
+    },
+    {
+      "content": "I know. Tell me about work?",
+      "tone": "Root",
+      "plot": "DadGreetsPlayer",
+      "id": "11",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Yeah, yeah. So what’s up at work? Shouldn’t you be retired by now?",
+      "tone": "Blunt",
+      "plot": "DadGreetsPlayer",
+      "id": "12",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Anyways... How’s work going?",
+      "tone": "Indifferent",
+      "plot": "DadGreetsPlayer",
+      "id": "12",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I know, and that is great to hear! I also want to know how your work has been going!",
+      "tone": "Compassionate",
+      "plot": "DadGreetsPlayer",
+      "id": "12",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Uh, yeah. You’re still working right? At that one place…",
+      "tone": "Hesitant",
+      "plot": "DadGreetsPlayer",
+      "id": "12",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Then, is there anything new going on with you?",
+      "tone": "Root",
+      "plot": "DadGreetsPlayer",
+      "id": "13",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Okay. Then is there anything that IS new you can tell me? <Mom doesn’t look too happy that Dad mentioned the cups.>",
+      "tone": "Blunt",
+      "plot": "DadGreetsPlayer",
+      "id": "14",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Oh, that’s great. <Mom doesn’t look too happy that Dad mentioned the cups.>",
+      "tone": "Indifferent",
+      "plot": "DadGreetsPlayer",
+      "id": "14",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I’m sure there is a new, cool something that’s going on with you! <Mom doesn’t look too happy that Dad mentioned the cups.>",
+      "tone": "Hesitant",
+      "plot": "DadGreetsPlayer",
+      "id": "14",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "That’s good? So there's nothing new going on? Er, I’m not sure what or how often \"new\" things happen, though... <Mom doesn’t look too happy that Dad mentioned the cups.>",
+      "tone": "Compassionate",
+      "plot": "DadGreetsPlayer",
+      "id": "14",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Mom, these cups look really great.",
+      "tone": "Root",
+      "plot": "DadGreetsPlayer",
+      "id": "15",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Jeez. Chin up, Mom. These cups do look pretty fucking awesome.",
+      "tone": "Blunt",
+      "plot": "DadGreetsPlayer",
+      "id": "16",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "They’re just cups to me. But I guess others would say they look good.",
+      "tone": "Indifferent",
+      "plot": "DadGreetsPlayer",
+      "id": "16",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Woah! You picked these out, Mom? They go really well with the dining ware!",
+      "tone": "Compassionate",
+      "plot": "DadGreetsPlayer",
+      "id": "16",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I-uh...They look fine? No, I’m sure they look good. Right, Mom?",
+      "tone": "Hesitant",
+      "plot": "DadGreetsPlayer",
+      "id": "16",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "What about the cups?",
+      "tone": "Root",
+      "plot": "DadGreetsPlayer",
+      "id": "19",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "So what about a bunch of cups do you want to talk about, huh?",
+      "tone": "Blunt",
+      "plot": "DadGreetsPlayer",
+      "id": "20",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Yeah, sure. Go ahead, Dad.",
+      "tone": "Indifferent",
+      "plot": "DadGreetsPlayer",
+      "id": "20",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Go ahead, Dad. I’m all ears.",
+      "tone": "Compassionate",
+      "plot": "DadGreetsPlayer",
+      "id": "20",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "The cups? You mean, the nice ones, right? Uh… Is there something to say about them? They look normal to me…",
+      "tone": "Hesitant",
+      "plot": "DadGreetsPlayer",
+      "id": "20",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "You seem flustered, Dad.",
+      "tone": "Root",
+      "plot": "DadGreetsPlayer",
+      "id": "21",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Cut the crap and tell me what’s wrong! You were too flustered to say ‘It’s fine.’",
+      "tone": "Blunt",
+      "plot": "DadGreetsPlayer",
+      "id": "22",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Actually, you seemed a bit flustered.",
+      "tone": "Indifferent",
+      "plot": "DadGreetsPlayer",
+      "id": "22",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "But you seemed flustered! Are you sure nothing is wrong? Don’t you worry me, now.",
+      "tone": "Compassionate",
+      "plot": "DadGreetsPlayer",
+      "id": "22",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Er, but you were kinda flustered...",
+      "tone": "Hesitant",
+      "plot": "DadGreetsPlayer",
+      "id": "22",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Why are you talking about the past?",
+      "tone": "Root",
+      "plot": "DadGreetsPlayer",
+      "id": "23",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Why do you sound so pissed off about how Mom was a few years ago. It’s all in the past. Grow up, Dad! <Dad’s starting to mumble to himself. I’ll ask Mom what’s going on.>",
+      "tone": "Blunt",
+      "plot": "DadGreetsPlayer",
+      "id": "24",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I don’t really care about how Mom was whatever number of years ago. <Dad’s starting to mumble to himself. I’ll ask Mom what’s going on.>",
+      "tone": "Indifferent",
+      "plot": "DadGreetsPlayer",
+      "id": "24",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "You sound pretty upset about this. What’s going on? <Dad’s starting to mumble to himself. I’ll ask Mom what’s going on.>",
+      "tone": "Compassionate",
+      "plot": "DadGreetsPlayer",
+      "id": "24",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Are you grumpy? Uh. This is kinda weird? <Dad’s starting to mumble to himself. I’ll ask Mom what’s going on.>",
+      "tone": "Hesitant",
+      "plot": "DadGreetsPlayer",
+      "id": "24",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Mom, do you know what Dad is talking about?",
+      "tone": "Root",
+      "plot": "DadGreetsPlayer",
+      "id": "25",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "What the hell is Dad going on about? He sounds insane.",
+      "tone": "Blunt",
+      "plot": "DadGreetsPlayer",
+      "id": "26",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "So,...uh, any idea on what’s going on?",
+      "tone": "Indifferent",
+      "plot": "DadGreetsPlayer",
+      "id": "26",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "What’s going on with Dad, Mom? Should we be worried?",
+      "tone": "Compassionate",
+      "plot": "DadGreetsPlayer",
+      "id": "26",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Hey...isn’t Dad kinda being...strange?",
+      "tone": "Hesitant",
+      "plot": "DadGreetsPlayer",
+      "id": "26",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Are you paying attention to Dad at all?",
+      "tone": "Root",
+      "plot": "DadGreetsPlayer",
+      "id": "27",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Damn, Mom! It seems like you’re just ignoring Dad. That’s pretty bold.",
+      "tone": "Blunt",
+      "plot": "DadGreetsPlayer",
+      "id": "28",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "You aren’t giving Dad any attention. That’s fine.",
+      "tone": "Indifferent",
+      "plot": "DadGreetsPlayer",
+      "id": "28",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Mom. Is there a reason you are ignoring Dad? Wouldn’t it be polite to give him our undivided attention?",
+      "tone": "Compassionate",
+      "plot": "DadGreetsPlayer",
+      "id": "28",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Mom, don’t you think you should give Dad some attention? I think that’ll be good...",
+      "tone": "Hesitant",
+      "plot": "DadGreetsPlayer",
+      "id": "28",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "What has mom done, Dad?",
+      "tone": "Root",
+      "plot": "PlayerSupportsDad",
+      "id": "1",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Well? Come on, Dad! Tell us what Mom did!",
+      "tone": "Blunt",
+      "plot": "PlayerSupportsDad",
+      "id": "2",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "So...what did mom do?",
+      "tone": "Indifferent",
+      "plot": "PlayerSupportsDad",
+      "id": "2",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "This sounds serious, Dad. You have to tell me what’s going on with Mom and what she’s been doing.",
+      "tone": "Compassionate",
+      "plot": "PlayerSupportsDad",
+      "id": "2",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Well, sure, Dad. I’ll listen to what you have to say. It seems like you know what’s happening around here.",
+      "tone": "Hesitant",
+      "plot": "PlayerSupportsDad",
+      "id": "2",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Tell us about Mom.",
+      "tone": "Root",
+      "plot": "PlayerSupportsDad",
+      "id": "7",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Jesus, Dad. Hurry it up and say the thing about Mom!",
+      "tone": "Blunt",
+      "plot": "PlayerSupportsDad",
+      "id": "8",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Sure, sure. It’s fine. Take your time.",
+      "tone": "Indifferent",
+      "plot": "PlayerSupportsDad",
+      "id": "8",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Dad, you should just say it. I know it’s hard to comprehend, but someone needs to do it.",
+      "tone": "Compassionate",
+      "plot": "PlayerSupportsDad",
+      "id": "8",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Don’t you think you should say what is going on with Mom?",
+      "tone": "Hesitant",
+      "plot": "PlayerSupportsDad",
+      "id": "8",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Mom, Dad has made a compelling case.",
+      "tone": "Root",
+      "plot": "PlayerSupportsDad",
+      "id": "11",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "You know what? After thinking about everything you said, you are right. Mom IS cheating on you! Damn. What the hell is Mom thinking?",
+      "tone": "Blunt",
+      "plot": "PlayerSupportsDad",
+      "id": "12",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "If you look at what Dad said, I guess it makes sense. ",
+      "tone": "Indifferent",
+      "plot": "PlayerSupportsDad",
+      "id": "12",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Everything makes sense now! I’m so sorry Dad. I can’t believe Mom would hurt you like that.",
+      "tone": "Compassionate",
+      "plot": "PlayerSupportsDad",
+      "id": "12",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Uh, yeah! The things that Dad said...I guess that means Mom is cheating on you?",
+      "tone": "Hesitant",
+      "plot": "PlayerSupportsDad",
+      "id": "12",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Can you explain everything once more?",
+      "tone": "Root",
+      "plot": "PlayerSupportsDad",
+      "id": "13",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Hey I am still a little confused! I’m just trying to understand things better!",
+      "tone": "Blunt",
+      "plot": "PlayerSupportsDad",
+      "id": "14",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I just need you to explain the clues again.",
+      "tone": "Indifferent",
+      "plot": "PlayerSupportsDad",
+      "id": "14",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I’m just trying to understand the situation completely, Dad.",
+      "tone": "Compassionate",
+      "plot": "PlayerSupportsDad",
+      "id": "14",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I, uh. Just need to know the things...happening…",
+      "tone": "Hesitant",
+      "plot": "PlayerSupportsDad",
+      "id": "14",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "But what about those cups you bought, Mom?",
+      "tone": "Root",
+      "plot": "PlayerSupportsDad",
+      "id": "15",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Where’d you get those fancy cups from, then? Someone must have given them to you.",
+      "tone": "Blunt",
+      "plot": "PlayerSupportsDad",
+      "id": "16",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Those cups are probably from the other guy.",
+      "tone": "Indifferent",
+      "plot": "PlayerSupportsDad",
+      "id": "17",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Mom. Did such a person get you these cups as a gift?",
+      "tone": "Compassionate",
+      "plot": "PlayerSupportsDad",
+      "id": "17",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "The cups...I bet they are from the guy? The other guy, you know… Not Dad.",
+      "tone": "Hesitant",
+      "plot": "PlayerSupportsDad",
+      "id": "17",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I know Alex has a take on this.",
+      "tone": "Root",
+      "plot": "PlayerSupportsDad",
+      "id": "22",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Hey. Let Alex talk, Dad. Don’t tell her to keep her mouth shut.\n",
+      "tone": "Blunt",
+      "plot": "PlayerSupportsDad",
+      "id": "23",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Yeah Alex. Just let Dad, talk. It’ll be faster.\n",
+      "tone": "Indifferent",
+      "plot": "PlayerSupportsDad",
+      "id": "23",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Alex, let Dad explain himself. It’s rude to jump to conclusions.",
+      "tone": "Compassionate",
+      "plot": "PlayerSupportsDad",
+      "id": "23",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Uh, Dad? Shouldn’t you let Alex talk...for a bit, at least?\n",
+      "tone": "Hesitant",
+      "plot": "PlayerSupportsDad",
+      "id": "23",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "How would you be able to buy them, Mom?",
+      "tone": "Root",
+      "plot": "PlayerSupportsDad",
+      "id": "27",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Your own money? Dad hasn't give you any for this purchase.",
+      "tone": "Blunt",
+      "plot": "PlayerSupportsDad",
+      "id": "28",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "You don’t even have money for that stuff.",
+      "tone": "Indifferent",
+      "plot": "PlayerSupportsDad",
+      "id": "28",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Can you explain to us how you would have the money to buy the glasses? I am sure we are all willing to listen to you.",
+      "tone": "Compassionate",
+      "plot": "PlayerSupportsDad",
+      "id": "28",
+      "FNC": "30",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "But...you would have had to get the money from Dad, right? I mean...that’s the only way.",
+      "tone": "Hesitant",
+      "plot": "PlayerSupportsDad",
+      "id": "28",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I’m not siding with anyone.",
+      "tone": "Root",
+      "plot": "PlayerSupportsDad2",
+      "id": "1",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "When did I ever say I was siding with Dad? I don’t take sides.",
+      "tone": "Blunt",
+      "plot": "PlayerSupportsDad2",
+      "id": "2",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I’m not doing that.",
+      "tone": "Indifferent",
+      "plot": "PlayerSupportsDad2",
+      "id": "2",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I’m on your side too, Mom.",
+      "tone": "Compassionate",
+      "plot": "PlayerSupportsDad2",
+      "id": "2",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "But... I’m not. Did it seem like I was?",
+      "tone": "Hesitant",
+      "plot": "PlayerSupportsDad2",
+      "id": "2",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "What are you hiding?",
+      "tone": "Root",
+      "plot": "PlayerSupportsDad",
+      "id": "29",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "There’s no point in keeping secrets anymore. Everything’s out of the bag.",
+      "tone": "Blunt",
+      "plot": "PlayerSupportsDad",
+      "id": "30",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Something else you’re hiding?",
+      "tone": "Indifferent",
+      "plot": "PlayerSupportsDad",
+      "id": "30",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Let’s not keep any more secrets, Mom. Don’t worry. You can tell us everything.",
+      "tone": "Compassionate",
+      "plot": "PlayerSupportsDad",
+      "id": "30",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Mom, please... What is it...?",
+      "tone": "Hesitant",
+      "plot": "PlayerSupportsDad",
+      "id": "30",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "What has Mom done?",
+      "tone": "Root",
+      "plot": "PlayerDefendsMom",
+      "id": "1",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Well? Come on, Dad! Spit it out. What is the wrong that Mom did?",
+      "tone": "Blunt",
+      "plot": "PlayerDefendsMom",
+      "id": "2",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "So...what did Mom do?",
+      "tone": "Indifferent",
+      "plot": "PlayerDefendsMom",
+      "id": "2",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "This sounds serious, Dad. You have to tell me what’s going on with Mom and what she’s been doing.",
+      "tone": "Compassionate",
+      "plot": "PlayerDefendsMom",
+      "id": "2",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Well, sure, Dad. I’ll listen to what you have to say. It seems like you know what’s happening around here...",
+      "tone": "Hesitant",
+      "plot": "PlayerDefendsMom",
+      "id": "2",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Tell us about Mom.",
+      "tone": "Root",
+      "plot": "PlayerDefendsMom",
+      "id": "7",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Jesus, Dad. Hurry it up and say the thing about Mom!",
+      "tone": "Blunt",
+      "plot": "PlayerDefendsMom",
+      "id": "8",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Sure, sure. It’s fine. Take your time.",
+      "tone": "Indifferent",
+      "plot": "PlayerDefendsMom",
+      "id": "8",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Dad, you should just say it. I know it’s hard to comprehend, but someone needs to do it.",
+      "tone": "Compassionate",
+      "plot": "PlayerDefendsMom",
+      "id": "8",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Yes. It is time now. I’ve been waiting for the most appropriate time to say this...Your Mother is cheating on me.",
+      "tone": "Hesitant",
+      "plot": "PlayerDefendsMom",
+      "id": "8",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "If you add up all the clues...",
+      "tone": "Root",
+      "plot": "PlayerDefendsMom",
+      "id": "11",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "What? Don’t be stupid, Dad. None of that shit adds up.",
+      "tone": "Blunt",
+      "plot": "PlayerDefendsMom",
+      "id": "12",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Yeah, whatever, Dad. You can think that all you want.",
+      "tone": "Indifferent",
+      "plot": "PlayerDefendsMom",
+      "id": "12",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Come on Dad! Don’t be silly. You know that Mom wouldn’t do that.",
+      "tone": "Compassionate",
+      "plot": "PlayerDefendsMom",
+      "id": "12",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": " I...uh. I don’t really think so…",
+      "tone": "Hesitant",
+      "plot": "PlayerDefendsMom",
+      "id": "12",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "A ‘coincidence'?",
+      "tone": "Root",
+      "plot": "PlayerDefendsMom",
+      "id": "19",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Come on. A coincidence? Sounds juicy.",
+      "tone": "Blunt",
+      "plot": "PlayerDefendsMom",
+      "id": "UNMARKED",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Just say it already.",
+      "tone": "Indifferent",
+      "plot": "PlayerDefendsMom",
+      "id": "UNMARKED",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Mom, you’ve got to stop making it sound so suspicious.",
+      "tone": "Compassionate",
+      "plot": "PlayerDefendsMom",
+      "id": "UNMARKED",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Um...I think you’ve got to be a little more...y’know...specific.",
+      "tone": "Hesitant",
+      "plot": "PlayerDefendsMom",
+      "id": "UNMARKED",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Let Mom explain, Dad.",
+      "tone": "Root",
+      "plot": "PlayerDefendsMom",
+      "id": "29",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "You’ve got to be an ass about everything, huh, Dad?",
+      "tone": "Blunt",
+      "plot": "PlayerDefendsMom",
+      "id": "30",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "How about being quiet for a minute so she can actually get to it, Dad.",
+      "tone": "Indifferent",
+      "plot": "PlayerDefendsMom",
+      "id": "30",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Please, Dad. Let Mom talk, okay?",
+      "tone": "Compassionate",
+      "plot": "PlayerDefendsMom",
+      "id": "30",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Okay, so…I think we should let Mom talk...",
+      "tone": "Hesitant",
+      "plot": "PlayerDefendsMom",
+      "id": "30",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Dad, you still don’t get it.",
+      "tone": "Root",
+      "plot": "PlayerDefendsMom",
+      "id": "39",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "God, that’s all you can think about?",
+      "tone": "Blunt",
+      "plot": "PlayerDefendsMom",
+      "id": "40",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "All this nonsense you’re spewing, Dad… Ugh.",
+      "tone": "Indifferent",
+      "plot": "PlayerDefendsMom",
+      "id": "40",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Dad, you really need to see the bigger picture here.",
+      "tone": "Compassionate",
+      "plot": "PlayerDefendsMom",
+      "id": "40",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "It’s not like that though...",
+      "tone": "Hesitant",
+      "plot": "PlayerDefendsMom",
+      "id": "40",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "It’s her name tag for work.",
+      "tone": "Root",
+      "plot": "PlayerDefendsMom",
+      "id": "47",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "It’s for her job, duh.",
+      "tone": "Blunt",
+      "plot": "PlayerDefendsMom",
+      "id": "48",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": " Isn’t it clear yet? I mean, it’s her name tag.",
+      "tone": "Indifferent",
+      "plot": "PlayerDefendsMom",
+      "id": "48",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Dad, look! It’s Mom’s name tag for her job.",
+      "tone": "Compassionate",
+      "plot": "PlayerDefendsMom",
+      "id": "48",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I mean... can’t you see? It’s her name tag.",
+      "tone": "Hesitant",
+      "plot": "PlayerDefendsMom",
+      "id": "48",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "You’re being ignorant, Dad",
+      "tone": "Root",
+      "plot": "PlayerDefendsMom",
+      "id": "1",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Dad, you are so beyond help.",
+      "tone": "Blunt",
+      "plot": "PlayerDefendsMom2",
+      "id": "1",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Dad, you're being so wrong.",
+      "tone": "Indifferent",
+      "plot": "PlayerDefendsMom",
+      "id": "2",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Dad, I think you are making a big mistake here.",
+      "tone": "Compassionate",
+      "plot": "PlayerDefendsMom",
+      "id": "2",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Dad... I think you are making a mistake.",
+      "tone": "Hesitant",
+      "plot": "PlayerDefendsMom",
+      "id": "2",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Let Mom talk.",
+      "tone": "Root",
+      "plot": "MomReconcilesDad",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Let Mom talk and you’ll know.",
+      "tone": "Blunt",
+      "plot": "MomReconcilesDad",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Let Mom talk and you’ll know.",
+      "tone": "Indifferent",
+      "plot": "MomReconcilesDad",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Let’s give Mom a chance to tell us.",
+      "tone": "Compassionate",
+      "plot": "MomReconcilesDad",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Can’t we… you know, let Mom talk?",
+      "tone": "Hesitant",
+      "plot": "MomReconcilesDad",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "What about the money?",
+      "tone": "Root",
+      "plot": "MomReconcilesDad",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "What are you talking about? It’s not like we don’t have money.",
+      "tone": "Blunt",
+      "plot": "MomReconcilesDad",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "‘Because of the money…’ what? Don’t we have money because of Dad’s promotion or whatever?",
+      "tone": "Indifferent",
+      "plot": "MomReconcilesDad",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Money? Did the family’s money make you want a job, Mom?",
+      "tone": "Compassionate",
+      "plot": "MomReconcilesDad",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Huh? Are the finances problematic?",
+      "tone": "Hesitant",
+      "plot": "MomReconcilesDad",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I’m trying, but not quite.",
+      "tone": "Root",
+      "plot": "MomReconcilesDad",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Hints aren’t getting us anywhere. Be explicit.",
+      "tone": "Blunt",
+      "plot": "MomReconcilesDad",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "You should go into more details.",
+      "tone": "Indifferent",
+      "plot": "MomReconcilesDad",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "You don’t need to hold back, Mom. You can tell us what you’re thinking, so we can all try to understand.",
+      "tone": "Compassionate",
+      "plot": "MomReconcilesDad",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I'm not really following...",
+      "tone": "Hesitant",
+      "plot": "MomReconcilesDad",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "You said you maintained the finances, earlier, Dad.",
+      "tone": "Root",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Dad you went on about how you were the man of the house and managed all the money blah blah. You’re saying that’s not financially controlling?",
+      "tone": "Blunt",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "You sorta mentioned managing finances of the house earlier. Does that mean something. ",
+      "tone": "Indifferent",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Dad, you did mention that you managed the household finances, but to me that doesn’t sound like you’re being controlling.",
+      "tone": "Compassionate",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "You said that earlier that you did finances in the house...right Dad? ",
+      "tone": "Hesitant",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Why didn’t you tell Dad this?",
+      "tone": "Root",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Why did you think hiding this from Dad was a good idea?",
+      "tone": "Blunt",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Why did you hold this all in and not tell Dad anything.",
+      "tone": "Indifferent",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "You should have told Dad all of this way sooner, so that he knows what you were thinking.",
+      "tone": "Compassionate",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "...Couldn’t you have said this earlier?",
+      "tone": "Hesitant",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "You waited until Dad accused you of cheating on him.",
+      "tone": "Root",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Is Dad accusing you of cheating on him at the damn dinner table, in front of your children, really the best time? That’s nonsensical.",
+      "tone": "Blunt",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Dad accused you of cheating on him, the you tell us about this. Really appropriate timing.",
+      "tone": "Indifferent",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Mom, your waiting caused a huge argument at the dinner table. I’m glad you eventually told us. But, next time…. It would be better not to wait.",
+      "tone": "Compassionate",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Er, and Dad yelling at you the best time? To reveal this stuff?",
+      "tone": "Hesitant",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "What about being so controlling?",
+      "tone": "Root",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "nd what about being controlling, huh? Accusing mom wasn’t the only thing you did.",
+      "tone": "Blunt",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "And have you reflected on how controlling you are?",
+      "tone": "Indifferent",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Don’t you think you should also apologize for making Mom feel like she has no freedom?",
+      "tone": "Compassionate",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Okay... But what about not giving Mom any freedom?",
+      "tone": "Hesitant",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Let's calm down and talk about this a later time.",
+      "tone": "Root",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Okay, okay. You've both made your amends and are now actually communicating. Can we finally have dinner now, and do this some other time?",
+      "tone": "Blunt",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Ugh. You guys should talk about this some other time. Like, once dinner is done.",
+      "tone": "Indifferent",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "It’s great to see that you guys are communicating, but it would be nice to finish up dinner. Let's talk about this some other time.",
+      "tone": "Compassionate",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "...Can we take a break from this drama and finish dinner?",
+      "tone": "Hesitant",
+      "plot": "DadSeesHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Good idea, Alex. ",
+      "tone": "Root",
+      "plot": "AlexChangesSubject",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I think that’s a good idea. I brought you guys some presents from the campus bookstore, they’re packed with all of my things. ",
+      "tone": "Blunt",
+      "plot": "AlexChangesSubject",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Good idea, Alex. I brought you guys some presents from the campus bookstore, hopefully you like them. ",
+      "tone": "Indifferent",
+      "plot": "AlexChangesSubject",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Good idea, Alex! So, I know you guys couldn’t really come out to visit me while I was at university, but I brought some presents so you can show some Banana Slug pride!",
+      "tone": "Compassionate",
+      "plot": "AlexChangesSubject",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Good idea, Alex. I thought I’d  bring back some presents to show some Banana slug pride. Um, I’m not sure if they’d fit you guys but I made my best guess.",
+      "tone": "Hesitant",
+      "plot": "AlexChangesSubject",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I thought it would be nice a nice gesture.",
+      "tone": "Root",
+      "plot": "AlexChangesSubject",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I thought it would be nice to get you guys something for a change.",
+      "tone": "Blunt",
+      "plot": "AlexChangesSubject",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "The bookstore didn’t have a lot of variety, but I thought I would get you guys something for a change. ",
+      "tone": "Indifferent",
+      "plot": "AlexChangesSubject",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I know I don't normally get you guys gifts, so I thought it would be a nice surprise since I haven’t seen you all for so long!",
+      "tone": "Compassionate",
+      "plot": "AlexChangesSubject",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I know I don't normally get you guys gifts...so I thought this would be a nice surprise. I hope you’ll like them.",
+      "tone": "Hesitant",
+      "plot": "AlexChangesSubject",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Alex is hurt by your fighting.",
+      "tone": "Root",
+      "plot": "AlexInterjects1",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Whatever your differences, you two should have been respectful to Alex and not made a scene. ",
+      "tone": "Blunt",
+      "plot": "AlexInterjects1",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Whatever it takes for you guys to communicate, but Alex doesn’t want to be caught in the middle.",
+      "tone": "Indifferent",
+      "plot": "AlexInterjects1",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "That must have been tough, Alex, but...I’m sure no one at the school had a second thought about it. I wouldn’t worry too much.",
+      "tone": "Hesitant",
+      "plot": "AlexInterjects1",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I just got home, I- I don’t want to hear any of this anymore. And Alex doesn’t want to be caught in the middle either.",
+      "tone": "Compassionate",
+      "plot": "AlexInterjects1",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Life will go on, Alex.",
+      "tone": "Root",
+      "plot": "AlexInterjects1",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Middle school isn’t that important anyway. Just wait until high school for the real test to begin. ",
+      "tone": "Blunt",
+      "plot": "AlexInterjects1",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Middle school is tough for everyone, enjoy it while it lasts.",
+      "tone": "Indifferent",
+      "plot": "AlexInterjects1",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Don’t worry Alex, middle school was tough for me too. I’m sure you’ll make more friends in high school.",
+      "tone": "Compassionate",
+      "plot": "AlexInterjects1",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "School can’t be that bad right? I know most people have it tough, but you just have to get used to it. ",
+      "tone": "Hesitant",
+      "plot": "AlexInterjects1",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "",
+      "tone": "",
+      "plot": "",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "This is unacceptable. How long will the suspension last?",
+      "tone": "Root",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "That boy could have been hurt even more! I’m glad his friends didn’t lash out at you for what you did! How long is the suspension for?",
+      "tone": "Blunt",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I’m glad his friends didn’t lash out at your for what you did. How long is the suspension gonna last? ",
+      "tone": "Indifferent",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Alex, this is unacceptable, you should know better. When that happens you need to get help before you take matters into your own hands. How long is the suspension gonna last? ",
+      "tone": "Compassionate",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I- I don’t know what to say other than this is unacceptable, Alex. When that happens you need to get help before you take matters into your own hands. How long is the suspension gonna last? ",
+      "tone": "Hesitant",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "This is a lot bigger than you think.",
+      "tone": "Root",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Seven days?! It’s the end of the semester, you’re going to miss your finals! Alex this is a lot bigger than you think!",
+      "tone": "Blunt",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I guess seven days is not too bad… Wait, isn’t your semester over soon? Aren’t you going to miss finals?",
+      "tone": "Indifferent",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Seven days?! Aren’t you at the end of your semester? Alex, you have to understand that this is big. Summer hasn’t 'come early.' You’re going to miss your finals! ",
+      "tone": "Compassionate",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Seven days, I guess that’s not too bad… Wait, isn’t your semester over soon? Aren’t you going to miss finals? Alex this is a lot bigger than you think!",
+      "tone": "Hesitant",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "You need to think about what you are doing to yourself.",
+      "tone": "Root",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "<Alex is taking all of this family drama and unleashing it at school.>You need to think about the path you are paving. You are only making it harder for yourself.",
+      "tone": "Blunt",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "<This family drama is making everything worse for Alex.>Your actions are not only hurting others, but yourself too. Think about it.",
+      "tone": "Indifferent",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "<Maybe all of this family stress is making Alex act up at school.>Alex, I see where you are coming from, and maybe all of this family drama is helping anyone, but you need to seriously think about the path you are going down. You’re only hurting yourself in the long run.",
+      "tone": "Compassionate",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "<I wonder if this extra family drama is causing Alex to do this?>Alex, I see where you are coming from, but… think about the path you are going down.",
+      "tone": "Hesitant",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Mom and Dad are here to support you.",
+      "tone": "Root",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Even though it may not seem like it, Mom and Dad have been there for you.",
+      "tone": "Blunt",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Mom and Dad are here for you. And I didn’t ‘leave’, I went off to school.",
+      "tone": "Indifferent",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I want to make it clear that I didn’t go to college to get away from you, Alex, or Mom and Dad. Mom and Dad supported me just like they support you.",
+      "tone": "Compassionate",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I know Mom and Dad are going through some troubles right now, just like you are… But they’re here for you, whether you want them to be or not. ",
+      "tone": "Hesitant",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "We’ve been close for as long as I can remember. ",
+      "tone": "Root",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "What has gotten into you? I’ve been gone for four years and I have to come back to this? We used to be so close. No wonder Mom and Dad are having such a hard time.",
+      "tone": "Blunt",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Whatever you think. Just remember that we’re family and me being gone doesn’t change that. ",
+      "tone": "Indifferent",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Alex, you’re my sister. I helped take care of you when you were just a baby. I love you, and me being gone didn’t change any of that. Has it for you?",
+      "tone": "Compassionate",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "...You hate me?<Well, then….>",
+      "tone": "Hesitant",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "College is hard work.",
+      "tone": "Root",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Suffer? Your one task right now is to pass middle school.  Come back to me when you go to college or get a job, then we’ll talk about suffering!",
+      "tone": "Blunt",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Getting my degree was the hardest thing I have ever accomplished. ",
+      "tone": "Indifferent",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I know you don’t mean that. Getting into college isn’t easy and I had to work hard to get to where I am today. ",
+      "tone": "Compassionate",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "You know…I also had to work very hard in college.",
+      "tone": "Hesitant",
+      "plot": "AlexInterjects2",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "",
+      "tone": "",
+      "plot": "",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "What are you talking about?",
+      "tone": "Root",
+      "plot": "DadNoSeeHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "What does that even mean? What do you mean ‘care?’ Yeah, I care! Why would I not?",
+      "tone": "Blunt",
+      "plot": "DadNoSeeHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Sure, I’d care.",
+      "tone": "Indifferent",
+      "plot": "DadNoSeeHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "That’s an odd thing to say, Mom. Of course I would care.",
+      "tone": "Compassionate",
+      "plot": "DadNoSeeHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Er, what makes you say that… I mean, of course. I do care.",
+      "tone": "Hesitant",
+      "plot": "DadNoSeeHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Dad, that was rude.",
+      "tone": "Root",
+      "plot": "DadNoSeeHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Dad, what the hell are you saying? How do you expect Mom to explain what’s going on if you’re constantly being so hostile?",
+      "tone": "Blunt",
+      "plot": "DadNoSeeHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Speak for yourself, Dad.",
+      "tone": "Indifferent",
+      "plot": "DadNoSeeHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Dad, you’re being really unfair. Mom, I want to know what you mean.",
+      "tone": "Compassionate",
+      "plot": "DadNoSeeHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Come on, Dad… Mom please continue.",
+      "tone": "Hesitant",
+      "plot": "DadNoSeeHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Have you been controlling, Dad?",
+      "tone": "Root",
+      "plot": "DadNoSeeHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "What’s going on Dad? Have you been making Mom stay at home or something? Or making her feel uncomfortable about doing certain things?",
+      "tone": "Blunt",
+      "plot": "DadNoSeeHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "That sounds pretty bad.",
+      "tone": "Indifferent",
+      "plot": "DadNoSeeHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I’m sorry you’ve been feeling that way, Mom. Do you really mean it? This has got to be another misunderstanding. Dad, you couldn’t have been controlling…?",
+      "tone": "Compassionate",
+      "plot": "DadNoSeeHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Is this true? Maybe this is another misunderstanding? Dad, you’re not controlling Mom, right?",
+      "tone": "Hesitant",
+      "plot": "DadNoSeeHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Be less obsessed about the household finances, Dad.",
+      "tone": "Root",
+      "plot": "DadNoSeeHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Dad, you need to calm down about how Mom spends money. And she is not even spending a lot. Give her some freedom. Then you won’t feel like you have to hide things, right Mom?",
+      "tone": "Blunt",
+      "plot": "DadNoSeeHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Let Mom do and spend as she sees fit. It’ll be easier on all of us to not obsess about finances.",
+      "tone": "Indifferent",
+      "plot": "DadNoSeeHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Dad, give Mom the independence she wants. Let her have the freedom to do and spend as she sees fit. If she’s happy, we all will be.",
+      "tone": "Compassionate",
+      "plot": "DadNoSeeHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Why so obsessed with the finances? Let Mom spend as she sees fit. And she’s not spending a lot anyway… Right Mom?",
+      "tone": "Hesitant",
+      "plot": "DadNoSeeHisFault",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "",
+      "tone": "",
+      "plot": "",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I can help you through this. ",
+      "tone": "Root",
+      "plot": "AlexReconcilesPlayer",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "If you don’t want my help, fine, but I am focusing on myself because that’s the only person I know well enough. I have tried to address the Alex that I left when I went to college, but she doesn’t seem to be here anymore.  That’s ok, people change, but it doesn’t mean that I can’t try and find out the new you. Even though I haven’t been through your shoes exactly, through my combined years, I have gained enough perspective to help you through this. ",
+      "tone": "Blunt",
+      "plot": "AlexReconcilesPlayer",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I’m making this about myself because that’s only I person I know well enough. Even though I may have not been in your shoes exactly, through my years, I have gained enough perspective to help you through this.",
+      "tone": "Indifferent",
+      "plot": "AlexReconcilesPlayer",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I’m making this about myself because that’s only I person I know well enough. I have been through life just as you are right now. I am trying to show you that you aren’t alone in this. Even though I haven’t been through your shoes exactly, through my combined years, I have gained enough perspective to help you through this. You just have to be willing to listen.",
+      "tone": "Compassionate",
+      "plot": "AlexReconcilesPlayer",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Call me naive, but I am making this about myself because that’s the only person I know well enough. I guess even though we haven’t shared similar childhoods, through my years, I think I have gained enough perspective to help you through this. You just have to be willing to listen. ",
+      "tone": "Hesitant",
+      "plot": "AlexReconcilesPlayer",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "",
+      "tone": "",
+      "plot": "",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Yes.",
+      "tone": "Root",
+      "plot": "AlexReconcilesPlayer",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Yes, Alex. We want what’s best for you!",
+      "tone": "Blunt",
+      "plot": "AlexReconcilesPlayer",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Yes, Alex. We want what’s best for you.",
+      "tone": "Indifferent",
+      "plot": "AlexReconcilesPlayer",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Yes, Alex! We want what’s best for you!",
+      "tone": "Compassionate",
+      "plot": "AlexReconcilesPlayer",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Yes, Alex. We want what’s best for you.",
+      "tone": "Hesitant",
+      "plot": "AlexReconcilesPlayer",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Thanks for being honest, Alex.",
+      "tone": "Root",
+      "plot": "AlexReconcilesPlayer",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "I know what you did was pretty bad, but thanks for being honest about it. Keeping secrets from your family only leads to more pain. Doesn’t it feel good to have that weight off your shoulders?",
+      "tone": "Blunt",
+      "plot": "AlexReconcilesPlayer",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Thanks for being honest Alex. It helps us all when you're honest about your actions and your feelings. Doesn’t it feel good to have that weight off of your shoulders?",
+      "tone": "Indifferent",
+      "plot": "AlexReconcilesPlayer",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "Thanks for being honest back there, li’l sis! I know it wasn’t the best revelation, but being honest with each other strengthens the bonds that we need to have for one another.  Doesn't it feel good having that weight off of your shoulders? ",
+      "tone": "Compassionate",
+      "plot": "AlexReconcilesPlayer",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "What you did wasn’t the best, but...thank you for being honest with us. I think that being honest with each other strengthens the bonds that we need to have for one another. Does it feel good having that weight off of your shoulders? ",
+      "tone": "Hesitant",
+      "plot": "AlexReconcilesPlayer",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "You're heading in the right direction.\n",
+      "tone": "Root",
+      "plot": "AlexReconcilesPlayer",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "You’re right, the first step was being honest with yourself and admitting your faults. Just make sure that you learn from your mistake.\n",
+      "tone": "",
+      "plot": "AlexReconcilesPlayer",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "You’re right, the first step was being honest with yourself and admitting your faults.\n",
+      "tone": "",
+      "plot": "AlexReconcilesPlayer",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "You’re right, the first step was being honest with yourself and admitting your faults. There’s nothing wrong with admitting you were wrong, just make sure that you learn from your mistake. I'm proud of you, baby sis!\n",
+      "tone": "",
+      "plot": "AlexReconcilesPlayer",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    },
+    {
+      "content": "That's the right attitude, Alex. I hope you'll keep it up.",
+      "tone": "",
+      "plot": "AlexReconcilesPlayer",
+      "id": "",
+      "FNC": "0",
+      "inext": "",
+      "target": [ "", "", "" ]
+    }
+  ]
+}
