@@ -275,6 +275,7 @@ namespace Test {
             reachedPlotpoints = new List<String>();
             reachedPlotpoints.Add(currentNode);
 
+            //preconditions.Add("M: HF-HF, A: HF-HF, D: HF-HF");
             next_nodes.Add("PlayerDefendsMom");
             next_nodes.Add("PlayerSupportsDad");
             addNode("DadGreetsPlayer", next_nodes, preconditions);
