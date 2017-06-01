@@ -3,7 +3,7 @@
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
 
 echo Set oWS = WScript.CreateObject("WScript.Shell") >> %SCRIPT%
-echo sLinkFile = "%USERPROFILE%\Desktop\myshortcut.lnk" >> %SCRIPT%
+echo sLinkFile = "%USERPROFILE%\Desktop\SayAgainGame\SA.lnk" >> %SCRIPT%
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %SCRIPT%
 echo oLink.TargetPath = "%userprofile%\Desktop\SayAgainGame\content\bin\debug\Test.exe" >> %SCRIPT%
 echo oLink.IconLocation = "%userprofile%\Desktop\SayAgainGame\content\Art\exe_icon.ico" >> %SCRIPT%
