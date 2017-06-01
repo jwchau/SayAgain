@@ -11,8 +11,8 @@ namespace Test
 {
 	class GameTimer : Drawable
 	{
-        protected UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
-        protected UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+        protected UInt32 SCREEN_WIDTH = 1920;
+        protected UInt32 SCREEN_HEIGHT = 1080;
 
         public GameTimer(string name, double howLong, Action T)
 		{ //in seconds

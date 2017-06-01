@@ -121,7 +121,6 @@ namespace Test {
                         b[i].SetSelected(true);
                     }
                 }
-
                 this.SetMousePos(x, y);
                 this.SetMouseRelease(false);
                 this.SetMouseDown(true);
@@ -146,7 +145,7 @@ namespace Test {
                 } else if (s.GetMenuState() == "settings") //If Current Menu State is the Settings Menu
                   {
                     s.updateMenuState(this.GetMousePos(), settingsMenu.getMenuButtons(), new List<Tuple<string, string, Task>> {
-                        new Tuple<string, string, Task>("Sound", "settings", new Task(() => { settingsMenu.getMenuButtons()[0].toggleon = !settingsMenu.getMenuButtons()[0].toggleon; s.sound_man.playSFX("button"); })),
+                        new Tuple<string, string, Task>("Sound", "settings", new Task(() => { settingsMenu.getMenuButtons()[0].toggleon = !settingsMenu.getMenuButtons()[0].toggleon; s.sound_man.playSFX("button"); s.sound_man.toggleSoundPause(); })),
                         new Tuple<string, string, Task>("Back", "start", new Task(() => { s.sound_man.playSFX("button"); }))
                     });
 
@@ -160,7 +159,7 @@ namespace Test {
                     });
                 } else if (s.GetMenuState() == "settings") {
                     s.updateMenuState(this.GetMousePos(), settingsMenu.getMenuButtons(), new List<Tuple<string, string, Task>> {
-                        new Tuple<string, string, Task>("Sound", "settings", new Task(() => { settingsMenu.getMenuButtons()[0].toggleon = !settingsMenu.getMenuButtons()[0].toggleon; s.sound_man.playSFX("button"); })),
+                        new Tuple<string, string, Task>("Sound", "settings", new Task(() => { settingsMenu.getMenuButtons()[0].toggleon = !settingsMenu.getMenuButtons()[0].toggleon; s.sound_man.playSFX("button"); s.sound_man.toggleSoundPause(); })),
                         new Tuple<string, string, Task>("Back", "pause", new Task(() => { s.sound_man.playSFX("button"); }))
                     });
                 }

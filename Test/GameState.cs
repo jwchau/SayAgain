@@ -12,7 +12,7 @@ namespace Test {
         public GameState() {
             currentState = "menu";
             currentMenuState = "start";
-            //sound_man.init_music();
+            sound_man.init_music();
             playerDialogueBox = new DialogueBox(this, "PLAYER");
             dialogueBox = new DialogueBox(this, "AI");
             tooltip = new DialogueBox(this, "tooltip");
@@ -37,8 +37,8 @@ namespace Test {
                     playerDialogueBox.active = false;
                     dialogueBox.active = true;
                     if (dialogueBox.checkNext()) {
-
                         dialogueIndex = "root";
+                        
                         dialogueBox.active = false;
                         playerDialogueBox.active = false;
                     }
@@ -60,14 +60,13 @@ namespace Test {
                                 if (responseListNPC[0].inext == "") {
                                     //if there is no interjector
                                     dialogueIndex = "AI";
-
                                     dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
-                                    ////sound_man.playchatter(speaker);
-
+                                    sound_man.playChatter(speaker);
                                 } else {
 
                                     //if there is an interjector
                                     dialogueIndex = "interject";
+                                    
                                     dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
                                 }
                             }
@@ -76,12 +75,10 @@ namespace Test {
                 } else if (dialogueIndex == "interject") {
 
                     if (dialogueBox.checkNext()) {
-
                         dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
 
                         if (responseListNPC[0].inext == "") {
                             dialogueIndex = "AI";
-
                         }
 
                     }
@@ -101,7 +98,7 @@ namespace Test {
                 } else if (jankList[0].id == "3") {
                     db_states('a');
                     dialogueBox.loadNewDialogue("alex", jankList[0].content);
-                    ////sound_man.playchatter("alex");
+                    sound_man.playChatter("alex");
                 } else if (jankList[0].id == "4") {
                     db_states('p');
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
@@ -115,7 +112,7 @@ namespace Test {
                 } else if (jankList[0].id == "7") {
                     db_states('a');
                     dialogueBox.loadNewDialogue("alex", jankList[0].content);
-                    ////sound_man.playchatter("alex");
+                    sound_man.playChatter("alex");
                 } else if (jankList[0].id == "8") {
                     db_states('r');
                 } else if (jankList[0].id == "9") {
@@ -124,14 +121,14 @@ namespace Test {
                 } else if (jankList[0].id == "10") {
                     db_states('a');
                     dialogueBox.loadNewDialogue("alex", jankList[0].content);
-                    ////sound_man.playchatter("alex");
+                    sound_man.playChatter("alex");
                 } else if (jankList[0].id == "11") {
                     db_states('p');
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else if (jankList[0].id == "12") {
                     db_states('a');
                     dialogueBox.loadNewDialogue("dad", jankList[0].content);
-                    ////sound_man.playchatter("dad");
+                    sound_man.playChatter("dad");
                 } else if (jankList[0].id == "13") {
                     db_states('p');
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
@@ -143,7 +140,7 @@ namespace Test {
                 } else if (jankList[0].id == "16") {
                     db_states('a');
                     dialogueBox.loadNewDialogue("dad", jankList[0].content);
-                    ////sound_man.playchatter("dad");
+                    sound_man.playChatter("dad");
                 } else if (jankList[0].id == "17") {
                     db_states('p');
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
@@ -153,7 +150,7 @@ namespace Test {
                 } else if (jankList[0].id == "19") {
                     db_states('a');
                     dialogueBox.loadNewDialogue("mom", jankList[0].content);
-                    ////sound_man.playchatter("mom");
+                    sound_man.playChatter("mom");
                 } else if (jankList[0].id == "20") {
                     db_states('p');
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
@@ -165,7 +162,7 @@ namespace Test {
                 } else if (jankList[0].id == "23") {
                     db_states('a');
                     dialogueBox.loadNewDialogue("mom", jankList[0].content);
-                    //sound_man.playchatter("mom");
+                    sound_man.playChatter("mom");
                 } else if (jankList[0].id == "24") {
                     db_states('r');
                 } else if (jankList[0].id == "25") {
@@ -174,14 +171,14 @@ namespace Test {
                 } else if (jankList[0].id == "26") {
                     db_states('a');
                     dialogueBox.loadNewDialogue("mom", jankList[0].content);
-                    //sound_man.playchatter("mom");
+                    sound_man.playChatter("mom");
                 } else if (jankList[0].id == "27") {
                     db_states('p');
                     playerDialogueBox.loadNewDialogue("player", jankList[0].content);
                 } else {
                     db_states('a');
                     dialogueBox.loadNewDialogue("dad", "Hey, it's good to have you home.");
-                    //sound_man.playchatter("dad");
+                    sound_man.playChatter("dad");
 
                     SetState("game");
                 }
@@ -316,6 +313,7 @@ namespace Test {
                 }
             }
         }
+
         public void TogglePause() {
             if (GetState() == "pause") {
                 SetState("game");

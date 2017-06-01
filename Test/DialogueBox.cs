@@ -14,13 +14,14 @@ using System.Drawing;
 namespace Test {
     class DialogueBox : Drawable {
 
-        static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
-        static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+        static UInt32 SCREEN_WIDTH = 1920;
+        static UInt32 SCREEN_HEIGHT = 1080;
         Vector2f scale = new Vector2f(SCREEN_WIDTH / 1920, SCREEN_HEIGHT / 1080);
         private Text name, dialogue;
         Task currentTask;
         uint dialogueFontSize = 40;
         uint nameFontSize = 55;
+        Color gray = new Color(172, 172, 172);
 
         static Dictionary<string, Sprite> spriteDict = new Dictionary<string, Sprite>();
 
@@ -364,6 +365,13 @@ namespace Test {
             return false;
         }
 
+        public bool cursorContains(int mousex, int mousey) {
+            FloatRect bounds = cursor.GetGlobalBounds();
+            if (mousex >= bounds.Left && mousex <= bounds.Left + bounds.Width && mousey >= bounds.Top && mousey <= bounds.Top + bounds.Height) return true;
+
+            return false;
+        }
+
         public void AlertSoundMan() {
             //send signal to sound man
         }
@@ -424,6 +432,13 @@ namespace Test {
                     target.Draw(dialogueBoxSprite);
                     target.Draw(name);
                     target.Draw(dialogue);
+                    if (hover) {
+                        cursor.OutlineThickness = 2;
+                        cursor.FillColor = gray;
+                    } else {
+                        cursor.OutlineThickness = 0;
+                        cursor.FillColor = Color.White;
+                    }
                 } else {
                     if (hover) {
                         target.Draw(dialogueBoxSprite);

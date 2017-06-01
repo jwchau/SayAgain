@@ -58,33 +58,16 @@ namespace Test {
 
         public bool findNextPossibleNodes() {
             numberOfChildren = 0;
-            //Console.WriteLine("Current node: " + currentNode);
-            if (plot_dict[currentNode].Item1 != null)
-            {
-                //the string name of each child node
-                foreach (var n in plot_dict[currentNode].Item1) //each child
-                {
+            if (plot_dict[currentNode].Item1 != null) {
+                foreach (var n in plot_dict[currentNode].Item1) {
                     List<String> nextPreconditions = new List<String>();
                     numberOfChildren += 1;
-                    Console.WriteLine("Possible Next Node: " + n);
                     if (plot_dict[n].Item2 != null) {
-                        foreach (var c in plot_dict[n].Item2) //the precondition of each child
-                        {
-                            Console.WriteLine("With preconditions: " + c);
-
-
+                        foreach (var c in plot_dict[n].Item2) {
                             nextPreconditions.Add(c);
-
-                            //Console.WriteLine();
-                            //foreach (var v in nextPreconditions) {
-                            //    Console.Write("find next possible: " + v);
-                            //}
-                            //Console.WriteLine();
-
                             if (checkIfPreconSatisfied(nextPreconditions)) {
-                                currentNode = n;//current node is set to child node 
+                                currentNode = n;
                                 reachedPlotpoints.Add(currentNode);
-                                
                                 return true;
                             }
 
@@ -138,17 +121,8 @@ namespace Test {
             }
             return true;
         }
-        
-        public bool checkCharFNC(string s) {
-            Console.WriteLine("checkCharFNC()");
-            Console.WriteLine(s);
 
-            //MHF-LF
-            //remove the M
-            //if hf then = fncrange[0]
-            //if lf then = fncrange[3]
-            //if [0] < char.currentfnc < [3]
-            //true
+        public bool checkCharFNC(string s) {
             char character = s[0];
             Character mom = Program.getGame().getMom();
             Character dad = Program.getGame().getDad();
@@ -163,7 +137,7 @@ namespace Test {
 
                     low = determineRange(range, mom.getFNCRange())[0];
                     high = determineRange(range, mom.getFNCRange())[1];
-                    Console.WriteLine("mom's current fnc from sman checker" + mom.getCurrentFNC());
+                    //Console.WriteLine(low + " : " + mom.getCurrentFNC() + " : " + high);
                     if (mom.getCurrentFNC() >= low && mom.getCurrentFNC() <= high) {
 
                         return true;
@@ -174,11 +148,6 @@ namespace Test {
                 case 'D':
                     low = determineRange(range, dad.getFNCRange())[0];
                     high = determineRange(range, dad.getFNCRange())[1];
-                    Console.WriteLine();
-                    Console.WriteLine("dad's current fnc from sman checker" + dad.getCurrentFNC());
-                    Console.WriteLine("low of dad: " + low);
-                    Console.WriteLine("high of dad: " + high);
-                    Console.WriteLine();
                     if (dad.getCurrentFNC() >= low && dad.getCurrentFNC() <= high) {
 
                         return true;
@@ -189,7 +158,6 @@ namespace Test {
                 case 'A':
                     low = determineRange(range, alexis.getFNCRange())[0];
                     high = determineRange(range, alexis.getFNCRange())[1];
-                    Console.WriteLine("alex's current fnc from sman checker" + alexis.getCurrentFNC());
                     if (alexis.getCurrentFNC() >= low && alexis.getCurrentFNC() <= high) {
                         //add the new currentNode to the list of nodes we have been to
                         reachedPlotpoints.Add(currentNode);
@@ -205,7 +173,6 @@ namespace Test {
 
 
         public List<double> determineRange(String[] range, double[] charFNC) {
-
             //HF-MF-LF-LN-MN-HN-LC-MC-HC
             double low, high;
             List<double> result = new List<double>();
@@ -292,12 +259,6 @@ namespace Test {
 
         }
         public bool checkPastPlotPoint(string p) {
-            Console.WriteLine("checkPastPlotPoint()");
-
-            //if p exists in list of reached plotpoints
-            //return true;
-            //else
-            //return false;
             foreach (var plotpoint in reachedPlotpoints) {
                 if (p == plotpoint) {
                     return true;
@@ -307,144 +268,51 @@ namespace Test {
         }
 
         public StoryManager() {
-
-
-
-
             //nextPreconditions = new List<String> ();
 
             currentNode = "DadGreetsPlayer";
             setDialogueType(type.plotpoint);
             reachedPlotpoints = new List<String>();
             reachedPlotpoints.Add(currentNode);
-            reachedPlotpoints.Add("DadGreetsPlayer");
 
-
-            //TODO: all blow up nodes reachable from any point
-
-            next_nodes.Add("DadAccusesMom");
+            //preconditions.Add("M: HF-HF, A: HF-HF, D: HF-HF");
+            next_nodes.Add("PlayerDefendsMom");
+            next_nodes.Add("PlayerSupportsDad");
             addNode("DadGreetsPlayer", next_nodes, preconditions);
 
-            next_nodes.Add("MomTellsPlayerTalkToAlex");
+            preconditions.Add("M: HF-HF");
+            next_nodes.Add("PlayerSupportsDad2");
+            next_nodes.Add("AlexChangesSubject");
+            addNode("PlayerSupportsDad", next_nodes, preconditions);
+
+            preconditions.Add("M: HC-HC");
             next_nodes.Add("MomAdmitsJob");
-            addNode("GreetMom", next_nodes, preconditions);
+            addNode("AlexChangesSubject", next_nodes, preconditions);
 
-            preconditions.Add("D: MC-HC");
-            next_nodes.Add("MomInterjects1");
-            next_nodes.Add("AlexBlowsUp");
-            next_nodes.Add("MomBlowsUp");
-            next_nodes.Add("DadBlowsUp");
-            addNode("DadAccusesMom", next_nodes, preconditions);
+            preconditions.Add("M: HF-HF");
+            next_nodes.Add("AlexChangesSubject");
+            addNode("PlayerSupportsDad2", next_nodes, preconditions);
 
-            preconditions.Add("A: HF-HF");
-            next_nodes.Add("DadInterjects1");
-            next_nodes.Add("AlexBlowsUp");
-            next_nodes.Add("MomBlowsUp");
-            next_nodes.Add("DadBlowsUp");
-            addNode("MomInterjects1", next_nodes, preconditions);
-
-            preconditions.Add("");
-            next_nodes.Add("MomInterjects2");
-            next_nodes.Add("AlexBlowsUp");
-            next_nodes.Add("MomBlowsUp");
-            next_nodes.Add("DadBlowsUp");
-            addNode("DadInterjects1", next_nodes, preconditions);
-
-            preconditions.Add("");
+            preconditions.Add("M: HC-HC");
             next_nodes.Add("MomAdmitsJob");
-            next_nodes.Add("AlexBlowsUp");
-            next_nodes.Add("MomBlowsUp");
-            next_nodes.Add("DadBlowsUp");
-            addNode("MomInterjects2", next_nodes, preconditions);
+            addNode("PlayerDefendsMom", next_nodes, preconditions);
 
-            preconditions.Add("");
-            next_nodes.Add("DadApologizesMom");
-            next_nodes.Add("AlexBlowsUp");
-            next_nodes.Add("MomBlowsUp");
-            next_nodes.Add("DadBlowsUp");
+            preconditions.Add("M: HC-HC");
+            next_nodes.Add("MomReconcilesDad");
             addNode("MomAdmitsJob", next_nodes, preconditions);
 
-            preconditions.Add("");
-            next_nodes.Add("MomReconcilesDad");
-            next_nodes.Add("AlexBlowsUp");
-            next_nodes.Add("MomBlowsUp");
-            next_nodes.Add("DadBlowsUp");
-            addNode("DadApologizesMom", next_nodes, preconditions);
-
-            preconditions.Add("");
-            next_nodes.Add("AlexInterjects1");
-            next_nodes.Add("AlexBlowsUp");
-            next_nodes.Add("MomBlowsUp");
-            next_nodes.Add("DadBlowsUp");
+            preconditions.Add("M: HC-HC");
+            next_nodes.Add("DadSeesHisFault");
+            next_nodes.Add("DadNoSeesHisFault");
             addNode("MomReconcilesDad", next_nodes, preconditions);
 
-            preconditions.Add("");
-            next_nodes.Add("DadInterjects2");
-            next_nodes.Add("AlexBlowsUp");
-            next_nodes.Add("MomBlowsUp");
-            next_nodes.Add("DadBlowsUp");
-            addNode("AlexInterjects1", next_nodes, preconditions);
+            preconditions.Add("CAT");
+            next_nodes.Add("boooom baby boom");
+            addNode("DadNoSeesHisFault", next_nodes, preconditions);
 
-            preconditions.Add("");
-            next_nodes.Add("AlexBlowsUp");
-            next_nodes.Add("MomBlowsUp");
-            next_nodes.Add("DadBlowsUp");
-            next_nodes.Add("MomInterjects3");
-            addNode("DadInterjects2", next_nodes, preconditions);
-
-            preconditions.Add("");
-            next_nodes.Add("AlexBlowsUp");
-            next_nodes.Add("MomBlowsUp");
-            next_nodes.Add("DadBlowsUp");
-            next_nodes.Add("AlexInterjects2");
-            addNode("MomInterjects3", next_nodes, preconditions);
-
-            preconditions.Add("");
-            next_nodes.Add("AlexBlowsUp");
-            next_nodes.Add("MomBlowsUp");
-            next_nodes.Add("DadBlowsUp");
-            next_nodes.Add("AlexReconcilesPlayer");
-            addNode("AlexInterjects2", next_nodes, preconditions);
-
-            preconditions.Add("");
-            next_nodes.Add("AlexBlowsUp");
-            next_nodes.Add("MomBlowsUp");
-            next_nodes.Add("DadBlowsUp");
-            next_nodes.Add("AlexAdmitsNeglectFromParents");
-            addNode("AlexReconcilesPlayer", next_nodes, preconditions);
-
-            preconditions.Add("");
-            next_nodes.Add("AlexBlowsUp");
-            next_nodes.Add("MomBlowsUp");
-            next_nodes.Add("DadBlowsUp");
-            next_nodes.Add("MomApologizesAlex");
-            addNode("AlexAdmitsNeglectFromParents", next_nodes, preconditions);
-
-            preconditions.Add("");
-            next_nodes.Add("AlexBlowsUp");
-            next_nodes.Add("MomBlowsUp");
-            next_nodes.Add("DadBlowsUp");
-            next_nodes.Add("DadApologizesAlex");
-            addNode("MomApologizesAlex", next_nodes, preconditions);
-
-            preconditions.Add("");
-            next_nodes.Add("AlexBlowsUp");
-            next_nodes.Add("MomBlowsUp");
-            next_nodes.Add("DadBlowsUp");
-            addNode("DadApologizesAlex", next_nodes, preconditions);
-
-
-            //BLOW UP NODES
-            preconditions.Add("D: HF - HF");
-            addNode("DadBlowsUp", next_nodes, preconditions);
-
-            preconditions.Add("A: HF - HF");
-            addNode("AlexBlowsUp", next_nodes, preconditions);
-
-            preconditions.Add("M: HF - HF");
-            addNode("MomBlowsUp", next_nodes, preconditions);
-
-
+            preconditions.Add("DOG");
+            next_nodes.Add("boooom baby boom");
+            addNode("DadSeesHisFault", next_nodes, preconditions);
         }
 
     }

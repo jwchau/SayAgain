@@ -47,8 +47,8 @@ namespace Test {
         List<UIButton> buttons = new List<UIButton>(); //our tone buttons
         List<UITextBox> playerDialogues = new List<UITextBox>();
         public RectangleShape rootBackground, rootBackgroundBorder;
-        static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
-        static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+        static UInt32 SCREEN_WIDTH = 1920;
+        static UInt32 SCREEN_HEIGHT = 1080;
         public int tutorialButtonIndex = 0;
         int buttonOrder = 0;
         string[] dialogueArray;
@@ -257,8 +257,10 @@ namespace Test {
 
             }
         }
-
-
+        //TooltipToggle(false, db box);
+        public void TooltipToggle(bool b, DialogueBox theTip) {
+            theTip.init = b;
+        }
 
         #region SA_applyTones
         public void applyTones(int x, int y, DialogueBox theTip) {
@@ -346,7 +348,6 @@ namespace Test {
 
 
                     if (theTip.init == true) {
-
                         theTip.loadNewDialogue("tooltip3", "be my baby daddy pls");
                     }
                 }

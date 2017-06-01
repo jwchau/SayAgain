@@ -12,7 +12,7 @@ namespace Test {
             var best = new DialogueObj();
             for (int i = 0; i < r.r.Dialogues.Count; i++) {
                 var curr = r.r.Dialogues[i];
-                if (curr.plotpoint == currNode && id == curr.id && (curr.tone == t || curr.tone == "Default")) {
+                if (curr.plot == currNode && id == curr.id && (curr.tone == t || curr.tone == "Default")) {
                     responseList.Add(curr);
                     return responseList;
 
@@ -55,5 +55,11 @@ namespace Test {
         }
         public OldSelector() { }
         ~OldSelector() { }
+
+        //printStuff(curr,currNode,id,t);
+        private void printStuff(DialogueObj d, string c_node, string c_id, string c_tone) {
+            Console.WriteLine("current dialogue object fields: " + d.id + " , " + d.plot);
+            Console.WriteLine("current varibles to be matched: " + c_id + " , " + c_node + " , " + c_tone);
+        }
     }
 }

@@ -27,7 +27,7 @@ namespace Test {
     public class DialogueObj {
         public string content;
         public string tone;
-        public string plotpoint;
+        public string plot;
         public string id;
         public string next;
         public double FNC;
@@ -40,7 +40,7 @@ namespace Test {
 
         //for npc plot point lines/// 8 string, 1 string list (dialogue object)
         public DialogueObj(string content, string tone, string plotpoint, string id, string FNC, string finished, string speaker, string InterjectionNext, List<string> target) { 
-            this.content = content; this.tone = tone; this.plotpoint = plotpoint; this.id = id; this.FNC = double.Parse(FNC); this.finished = finished; this.speaker = speaker; this.inext = InterjectionNext;
+            this.content = content; this.tone = tone; this.plot = plotpoint; this.id = id; this.FNC = double.Parse(FNC); this.finished = finished; this.speaker = speaker; this.inext = InterjectionNext;
             this.target = target;
         }
 
@@ -52,7 +52,7 @@ namespace Test {
 
         //for player plot point lines///6 string, 1 string list (dialogue object)
         public DialogueObj(string c, string t, string p, string i, string f, string ix, List<string> target) {
-            this.content = c; this.tone = t; this.plotpoint = p; this.id = i; this.FNC = double.Parse(f); this.inext = ix; this.target = target;
+            this.content = c; this.tone = t; this.plot = p; this.id = i; this.FNC = double.Parse(f); this.inext = ix; this.target = target;
         }
 
         //for player transition lines///5 string, 1 int, 1 string list (dialogue object)
@@ -63,7 +63,7 @@ namespace Test {
         public DialogueObj() {
             content = "returned empty string";
             tone = "";
-            plotpoint = "";
+            plot = "";
             id = "";
             next = "";
             finished = "";

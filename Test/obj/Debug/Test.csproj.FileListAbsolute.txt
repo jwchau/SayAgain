@@ -1,44 +1,22 @@
-C:\Users\John\Desktop\sa\Test\bin\Debug\csfml-audio-2.dll
-C:\Users\John\Desktop\sa\Test\bin\Debug\csfml-graphics-2.dll
-C:\Users\John\Desktop\sa\Test\bin\Debug\csfml-system-2.dll
-C:\Users\John\Desktop\sa\Test\bin\Debug\csfml-window-2.dll
-C:\Users\John\Desktop\sa\Test\bin\Debug\libsndfile-1.dll
-C:\Users\John\Desktop\sa\Test\bin\Debug\openal32.dll
-C:\Users\John\Desktop\sa\Test\bin\Debug\OpenTK.Compatibility.dll
-C:\Users\John\Desktop\sa\Test\bin\Debug\OpenTK.dll
-C:\Users\John\Desktop\sa\Test\bin\Debug\Test.exe.config
-C:\Users\John\Desktop\sa\Test\bin\Debug\Test.exe
-C:\Users\John\Desktop\sa\Test\bin\Debug\Test.pdb
-C:\Users\John\Desktop\sa\Test\bin\Debug\Newtonsoft.Json.dll
-C:\Users\John\Desktop\sa\Test\bin\Debug\sfmlnet-audio-2.dll
-C:\Users\John\Desktop\sa\Test\bin\Debug\sfmlnet-graphics-2.dll
-C:\Users\John\Desktop\sa\Test\bin\Debug\sfmlnet-system-2.dll
-C:\Users\John\Desktop\sa\Test\bin\Debug\sfmlnet-window-2.dll
-C:\Users\John\Desktop\sa\Test\bin\Debug\Newtonsoft.Json.xml
-C:\Users\John\Desktop\sa\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
-C:\Users\John\Desktop\sa\Test\obj\Debug\Test.Properties.Resources.resources
-C:\Users\John\Desktop\sa\Test\obj\Debug\Test.csproj.GenerateResource.Cache
-C:\Users\John\Desktop\sa\Test\obj\Debug\Test.exe
-C:\Users\John\Desktop\sa\Test\obj\Debug\Test.pdb
-C:\Users\jwchau\Desktop\lol\Test\bin\Debug\csfml-audio-2.dll
-C:\Users\jwchau\Desktop\lol\Test\bin\Debug\csfml-graphics-2.dll
-C:\Users\jwchau\Desktop\lol\Test\bin\Debug\csfml-system-2.dll
-C:\Users\jwchau\Desktop\lol\Test\bin\Debug\csfml-window-2.dll
-C:\Users\jwchau\Desktop\lol\Test\bin\Debug\libsndfile-1.dll
-C:\Users\jwchau\Desktop\lol\Test\bin\Debug\openal32.dll
-C:\Users\jwchau\Desktop\lol\Test\bin\Debug\OpenTK.Compatibility.dll
-C:\Users\jwchau\Desktop\lol\Test\bin\Debug\OpenTK.dll
-C:\Users\jwchau\Desktop\lol\Test\bin\Debug\Test.exe.config
-C:\Users\jwchau\Desktop\lol\Test\bin\Debug\Test.exe
-C:\Users\jwchau\Desktop\lol\Test\bin\Debug\Test.pdb
-C:\Users\jwchau\Desktop\lol\Test\bin\Debug\Newtonsoft.Json.dll
-C:\Users\jwchau\Desktop\lol\Test\bin\Debug\sfmlnet-audio-2.dll
-C:\Users\jwchau\Desktop\lol\Test\bin\Debug\sfmlnet-graphics-2.dll
-C:\Users\jwchau\Desktop\lol\Test\bin\Debug\sfmlnet-system-2.dll
-C:\Users\jwchau\Desktop\lol\Test\bin\Debug\sfmlnet-window-2.dll
-C:\Users\jwchau\Desktop\lol\Test\bin\Debug\Newtonsoft.Json.xml
-C:\Users\jwchau\Desktop\lol\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
-C:\Users\jwchau\Desktop\lol\Test\obj\Debug\Test.Properties.Resources.resources
-C:\Users\jwchau\Desktop\lol\Test\obj\Debug\Test.csproj.GenerateResource.Cache
-C:\Users\jwchau\Desktop\lol\Test\obj\Debug\Test.exe
-C:\Users\jwchau\Desktop\lol\Test\obj\Debug\Test.pdb
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\bin\Debug\csfml-audio-2.dll
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\bin\Debug\csfml-graphics-2.dll
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\bin\Debug\csfml-system-2.dll
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\bin\Debug\csfml-window-2.dll
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\bin\Debug\libsndfile-1.dll
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\bin\Debug\openal32.dll
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\bin\Debug\OpenTK.Compatibility.dll
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\bin\Debug\OpenTK.dll
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\bin\Debug\Test.exe.config
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\bin\Debug\Test.exe
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\bin\Debug\Test.pdb
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\bin\Debug\sfmlnet-audio-2.dll
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\bin\Debug\sfmlnet-graphics-2.dll
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\bin\Debug\sfmlnet-system-2.dll
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\bin\Debug\sfmlnet-window-2.dll
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\obj\Debug\Test.exe
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\obj\Debug\Test.pdb
+C:\Users\Mikey\Desktop\New folder\SayAgain\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache

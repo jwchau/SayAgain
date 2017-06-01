@@ -39,8 +39,8 @@ namespace Test {
         public abstract void setSpriteEmotion(spriteEmotion e);
         public abstract void checkFNC();
 
-        protected uint SCREEN_WIDTH = VideoMode.DesktopMode.Width;
-        protected uint SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+        protected uint SCREEN_WIDTH = 1920;
+        protected uint SCREEN_HEIGHT = 1080;
 
 
         public bool isTalking = false;
@@ -95,6 +95,12 @@ namespace Test {
         }
 
 
+        public string fncState() {
+            if (currentFNC < FNCRange[3]) return "frust";
+            else if (currentFNC > FNCRange[7]) return "coop";
+            else return "neut";
+        }
+
         public void setSprite(List<Sprite> s) {
             sprites = s;
         }
@@ -116,6 +122,10 @@ namespace Test {
 
         public double getCurrentFNC() {
             return currentFNC;
+        }
+
+        public void setCurrentFNC(double d) {
+            currentFNC = d;
         }
 
         public void changeFNC(double i) {
