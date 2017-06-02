@@ -71,6 +71,7 @@ namespace Test {
         protected tone currentTone = tone.Root;
         protected Loader Load = new Loader();
         protected OldSelector s = new OldSelector();
+        protected Random rnd = new Random();
 
         #endregion
 

@@ -14,12 +14,11 @@ namespace Test {
                 var curr = r.r.Dialogues[i];
                 if (curr.plot == currNode && id == curr.id && (curr.tone == t || curr.tone == "Default")) {
                     responseList.Add(curr);
-                    return responseList;
-
                 }
             }
-            responseList.Add(best);
             return responseList;
+            //responseList.Add(best);
+            //return responseList;
         }
 
         //transition
@@ -31,11 +30,12 @@ namespace Test {
                 if (b == curr.bucket && curr.id == id && (curr.tone == t || curr.tone == "Default")) {
 
                     responseList.Add(curr);
-                    return responseList;
+                    
                 }
             }
-            responseList.Add(best);
             return responseList;
+            //responseList.Add(best);
+            //return responseList;
         }
 
         public List<DialogueObj> chooseJank(DialogueParsing r, string id, string t) {
@@ -50,7 +50,6 @@ namespace Test {
                 }
             }
             responseList.Add(best);
-
             return responseList;
         }
         public OldSelector() { }

@@ -160,6 +160,7 @@ namespace Test {
 
                                     State.advanceConversation(speaker, responseList, responseListNPC);
                                     affect(responseListNPC[0].target, responseListNPC[0].FNC);
+                                    checkFades();
                                     checkPlotChange();
                                     reRootPlayer();
 
@@ -342,7 +343,6 @@ namespace Test {
                 responseList = s.ChooseDialogPlot(Load.newplayerp, sman.getCurrentNode(), playerPlotId, currentTone.ToString());
                 responseListNPC = s.ChooseDialogPlot(Load.allp, sman.getCurrentNode(), npcPlotId, currentTone.ToString());
                 updateIds(0);
-
                 if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
             } else {
                 responseList = s.ChooseDialogTransition(Load.newplayert, bucket, playerTransitionId, currentTone.ToString());
@@ -350,14 +350,17 @@ namespace Test {
                 updateIds(1);
             }
 
-            if (responseListNPC[0].speaker != "") speaker = responseListNPC[0].speaker;
-            State.playerDialogueBox.loadNewDialogue("player", responseList[0].content);
+            int pickNPC = rnd.Next(1, responseListNPC.Count + 1);
+            int pickPlayer = rnd.Next(1, responseList.Count + 1);
+
+            if (responseListNPC[pickNPC].speaker != "") speaker = responseListNPC[pickNPC].speaker;
+            State.playerDialogueBox.loadNewDialogue("player", responseList[pickPlayer].content);
             State.advanceConversation(speaker, responseList, responseListNPC);
 
-            affect(responseList[0].target, responseList[0].FNC);
-            affect(responseListNPC[0].target, responseListNPC[0].FNC);
+            affect(responseList[pickPlayer].target, responseList[pickPlayer].FNC);
+            affect(responseListNPC[pickNPC].target, responseListNPC[pickNPC].FNC);
 
-
+            checkFades();
             checkPlotChange();
             reRootPlayer();
 
@@ -451,6 +454,11 @@ namespace Test {
             else c.setSpriteEmotion(Character.spriteEmotion.neutral);
         }
 
+        private void checkFades() {
+            if (responseListNPC[0].id == "4" && responseListNPC[0].plot == "DadInterjects2") Alexis.dim();
+            else if (responseListNPC[0].id == "12" && responseListNPC[0].plot == "MomInterjects3") Alexis.undim();
+            else if (responseListNPC[0].id == "1" && responseListNPC[0].plot == "BadEnding1") Alexis.undim();
+        }
 
         private void resetCharacterFNC() {
             Mom.setCurrentFNC(0);
