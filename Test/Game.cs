@@ -76,7 +76,7 @@ namespace SayAgain {
         #endregion
 
         protected Sprite splash;
-        protected Sprite mom, alex, dad, toneBar, backwall, flower, lamp, pictures, table, wallWindow,plates, cups;
+        protected Sprite mom, alex, dad, toneBar, backwall, flower, lamp, pictures, table, wallWindow,plates, cups,playerfood;
         protected RectangleShape textBackground;
         ContextSettings settings;
         protected Character Mom, Alexis, Dad, Arm;
