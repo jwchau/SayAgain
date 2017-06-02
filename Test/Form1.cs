@@ -21,7 +21,17 @@ namespace Test
         private void timer1_Tick(object sender, EventArgs e)
         {
             progressBar1.Increment(1);
-            if (progressBar1.Value >= 100) timer1.Stop();
+            if (progressBar1.Value == 100)
+            {
+                Console.WriteLine("It reaches end of abort");
+                timer1.Stop();
+                Application.ExitThread();
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

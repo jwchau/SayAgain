@@ -21,17 +21,18 @@ namespace Test {
     class Program {
 
         protected static SA myGame;
-
+        static Thread t = new Thread(new ThreadStart(Form1));
         public static SA getGame() {
             return myGame;
         }
 
-        public void Form1()
+        [STAThread]
+        public static void Form1()
         {
-            Thread t = new Thread(new ThreadStart(Form1));
             t.Start();
-            Thread.Sleep(500);
-            t.Abort();
+            //Thread.Sleep(5000);
+            
+            
         }
 
         static void Main(string[] args) {
@@ -41,6 +42,7 @@ namespace Test {
             Program.myGame = new SA();
             myGame.Run();
 
+            t.Abort();
         }
     }
 }
