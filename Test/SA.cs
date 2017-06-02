@@ -469,7 +469,7 @@ namespace SayAgain {
             screenHelper();
 
             splash = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/wut.png"));
-            
+            playerfood = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/playerfood.png"));
             backwall = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/backwall.png"));
             flower = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/flowershadow.png"));
             lamp = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/lamp.png"));
@@ -483,7 +483,7 @@ namespace SayAgain {
 
             splash.Scale = new Vector2f(1.755f, 1.755f);
 
-
+            playerfood.Scale = new Vector2f((float)((SCREEN_WIDTH / playerfood.GetGlobalBounds().Width) * 0.23), (float)((SCREEN_HEIGHT / playerfood.GetGlobalBounds().Height) * 0.23));
             backwall.Scale = new Vector2f(SCREEN_WIDTH / backwall.GetGlobalBounds().Width, SCREEN_HEIGHT / backwall.GetGlobalBounds().Height);
             flower.Scale = new Vector2f((float)((SCREEN_WIDTH / flower.GetGlobalBounds().Width) * 0.8), (float)((SCREEN_HEIGHT / flower.GetGlobalBounds().Height) * 0.8));
             lamp.Scale = new Vector2f(SCREEN_WIDTH / lamp.GetGlobalBounds().Width, SCREEN_HEIGHT / lamp.GetGlobalBounds().Height);
@@ -499,6 +499,7 @@ namespace SayAgain {
             table.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * -0.03));
             cups.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * -0.12));
             plates.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * -0.12));
+            playerfood.Position = new Vector2f((SCREEN_WIDTH/2)-(playerfood.GetGlobalBounds().Width/2),820);
             flower.Position = new Vector2f((SCREEN_WIDTH / 2) - (flower.GetGlobalBounds().Width / 2), (float)(SCREEN_HEIGHT / 17));
 
             toneBar = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/tonebar.png"));
@@ -718,6 +719,7 @@ namespace SayAgain {
                 window.Draw(plates);
                 window.Draw(cups);
                 window.Draw(flower);
+                window.Draw(playerfood);
 
                 //Draw text box background box
 
