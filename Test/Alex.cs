@@ -159,6 +159,7 @@ namespace SayAgain {
                 if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate)) {
                     time = DateTime.Now;
                     if (++index > sprites[expr].Count - 1) {
+
                         pickSpecialFrame();
                         index = 0;
                     }

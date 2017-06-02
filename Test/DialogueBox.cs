@@ -20,6 +20,7 @@ namespace SayAgain {
         Task currentTask;
         uint dialogueFontSize = 40;
         uint nameFontSize = 55;
+        Color gray = new Color(172, 172, 172);
 
         static Dictionary<string, Sprite> spriteDict = new Dictionary<string, Sprite>();
 
@@ -363,6 +364,13 @@ namespace SayAgain {
             return false;
         }
 
+        public bool cursorContains(int mousex, int mousey) {
+            FloatRect bounds = cursor.GetGlobalBounds();
+            if (mousex >= bounds.Left && mousex <= bounds.Left + bounds.Width && mousey >= bounds.Top && mousey <= bounds.Top + bounds.Height) return true;
+
+            return false;
+        }
+
         public void AlertSoundMan() {
             //send signal to sound man
         }
@@ -423,6 +431,13 @@ namespace SayAgain {
                     target.Draw(dialogueBoxSprite);
                     target.Draw(name);
                     target.Draw(dialogue);
+                    if (hover) {
+                        cursor.OutlineThickness = 2;
+                        cursor.FillColor = gray;
+                    } else {
+                        cursor.OutlineThickness = 0;
+                        cursor.FillColor = Color.White;
+                    }
                 } else {
                     if (hover) {
                         target.Draw(dialogueBoxSprite);

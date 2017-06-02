@@ -44,7 +44,6 @@ namespace SayAgain {
                     dialogueBox.active = true;
                     if (dialogueBox.checkNext()) {
                         dialogueIndex = "root";
-
                         dialogueBox.active = false;
                         playerDialogueBox.active = false;
                     }
@@ -67,13 +66,14 @@ namespace SayAgain {
                                     //if there is no interjector
                                     dialogueIndex = "AI";
                                     dialogueBox.loadNewDialogue(speaker, responseListNPC[pickNPC].content);
+
                                     sound_man.playChatter(speaker);
                                 } else {
 
                                     //if there is an interjector
                                     dialogueIndex = "interject";
-
                                     dialogueBox.loadNewDialogue(speaker, responseListNPC[pickNPC].content);
+
                                 }
                             }
                         }
@@ -84,6 +84,7 @@ namespace SayAgain {
                         dialogueBox.loadNewDialogue(speaker, responseListNPC[pickNPC].content);
 
                         if (responseListNPC[pickNPC].inext == "") {
+
                             dialogueIndex = "AI";
                         }
 
@@ -319,6 +320,7 @@ namespace SayAgain {
                 }
             }
         }
+
         public void TogglePause() {
             if (GetState() == "pause") {
                 SetState("game");

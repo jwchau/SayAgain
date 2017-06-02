@@ -31,8 +31,9 @@ namespace SayAgain {
         int cluster = -1;
         tone tone = tone.Root;
         UInt32 SCREEN_WIDTH = 1920;
-
+        
         private uint getFontSize() {
+
             return (uint)((SCREEN_WIDTH / 1920) * 50);
         }
 
@@ -93,8 +94,9 @@ namespace SayAgain {
         public bool wasMouseIn() {
             return mouseWasIn;
         }
-
+        
         public bool Contains(UIButton button) {
+
             FloatRect rootBounds = getBoxBounds();
             FloatRect toneButton = button.getRectBounds();
 

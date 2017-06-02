@@ -62,6 +62,12 @@ namespace SayAgain {
                 if (State.tooltip.init) {
                     State.tooltip.hover = State.tooltip.contains((int)(e.X * scaleFactorX), (int)(e.Y * scaleFactorY));
                 }
+                if (State.dialogueBox.init && State.dialogueBox.awaitInput) {
+                    State.dialogueBox.hover = State.dialogueBox.cursorContains((int)(e.X * scaleFactorX), (int)(e.Y * scaleFactorY));
+                }
+                if (State.playerDialogueBox.init && State.playerDialogueBox.awaitInput) {
+                    State.playerDialogueBox.hover = State.playerDialogueBox.cursorContains((int)(e.X * scaleFactorX), (int)(e.Y * scaleFactorY));
+                }
             } else if (State.GetState() == "pause") {
                 if (State.GetMenuState() == "pause") {
                     pauseMenu.SweepButtons(e.X, e.Y, scaleFactorX, scaleFactorY);
@@ -94,6 +100,13 @@ namespace SayAgain {
                 TimerAction();
                 //State.getGameTimer("game").setCountDown(0);
             }
+
+            if (State.dialogueBox.hover) {
+                spaceCode();
+            }
+            if (State.playerDialogueBox.hover) {
+                spaceCode();
+            }
         }
 
         private void onKeyReleased(object sender, KeyEventArgs e) {
@@ -103,139 +116,7 @@ namespace SayAgain {
 
         private void onKeyPressed(object sender, KeyEventArgs e) {
             if (e.Code == Keyboard.Key.Space) {
-                if (State.GetState() == "menu") State.SetState("tutorial");
-                else if (State.GetState() == "game") {
-                    if (npcPlotId == "99999" && !endGame) {
-                        if (State.dialogueBox.checkNext()) {
-                            State.playerDialogueBox.loadNewDialogue("player", "To be continued... <Follow us on TWITTER @SayAgainGame and our WEBSITE www.sayagaingame.com>");
-                            State.playerDialogueBox.active = true;
-                            State.playerDialogueBox.init = true;
-                            State.dialogueBox.active = false;
-                            State.dialogueBox.init = false;
-                            State.playerDialogueBox.awaitInput = false;
-                            fadeFlag = true;
-                            fadeFloat = 0.003f;
-
-                            endGame = true;
-                        }
-                    } else if (endGame) {
-                        if (State.playerDialogueBox.checkNext()) {
-                        }
-
-                    } else {
-                        if (State.dialogueIndex == "player") {
-                            State.advanceConversation(speaker, responseList, responseListNPC);
-
-                        } else if (State.dialogueIndex == "root") {
-                            revertEmotion(Mom); revertEmotion(Dad); revertEmotion(Alexis);
-
-                            if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0) {
-                                State.dialogueBox.printTime = 0;
-                            }
-                            if (State.getGameTimer("game").getCountDown() != 0.0) {
-                                State.getGameTimer("game").setCountDown(0);
-                                State.dialogueBox.active = false;
-                                State.playerDialogueBox.active = false;
-                            }
-
-                            // Activate dialogueBox to display and be responsive, or switch to Root dialogue
-                        } else if (State.dialogueIndex == "AI") {
-                            State.advanceConversation(speaker, responseList, responseListNPC);
-
-                        } else if (State.dialogueIndex == "interject") {
-                            if (State.dialogueBox.getAwaitInput() == true) {
-                                if (State.dialogueBox.checkNext()) {
-                                    if (responseListNPC[0].inext != "") speaker = responseListNPC[0].inext;
-
-                                    if (sman.getDialogueType() == "plotpoint") {
-                                        responseListNPC = s.ChooseDialogPlot(Load.allp, sman.getCurrentNode(), npcPlotId, pTone);
-                                        npcPlotId = incr(npcPlotId);
-                                        playerPlotId = linkId(npcPlotId);
-                                    } else {
-                                        responseListNPC = s.ChooseDialogTransition(Load.allt, bucket, npcTransitionId, currentTone.ToString());
-                                        npcTransitionId = incr(npcTransitionId);
-                                        playerTransitionId = linkId(npcTransitionId);
-                                    }
-
-                                    State.advanceConversation(speaker, responseList, responseListNPC);
-                                    affect(responseListNPC[0].target, responseListNPC[0].FNC);
-                                    checkFades();
-                                    checkPlotChange();
-                                    reRootPlayer();
-
-                                }
-                            } else if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0) {
-                                State.dialogueBox.printTime = 0;
-                            }
-                        }
-                    }
-                } else if (State.GetState() == "tutorial") {
-
-                    if (Int32.Parse(jankId) >= 27) {
-                        playerPlotId = "2";
-                        resetTransitionId();
-                        ui_man.tutorialButtonIndex = 4;
-                        ui_man.reset(responseList);
-                        fadeFlag = true;
-                        fadeFloat = -0.003f;
-                        ui_man.TooltipToggle(false, State.tooltip);
-                        Mom.setHide(false);
-                        Dad.setHide(false);
-                        Arm.setHide(false);
-                    }
-                    if (State.dialogueIndex == "AI") {
-                        if (State.dialogueBox.checkNext()) {
-
-                            jankList = s.chooseJank(Load.Jankson, jankId, currentTone.ToString());
-                            State.setResponseList(jankList);
-
-                            State.advanceConversation("", null, null);
-                            jankIncr();
-                            limitTones();
-
-                        }
-                    } else if (State.dialogueIndex == "root") {
-
-                        if (State.getGameTimer("game").getCountDown() != 0.0) {
-                            TimerAction();
-                            //State.getGameTimer("game").setCountDown(0);
-                        }
-
-                    } else if (State.dialogueIndex == "player") {
-
-                        if (State.playerDialogueBox.checkNext()) {
-                            jankList = s.chooseJank(Load.Jankson, jankId, currentTone.ToString());
-                            State.setResponseList(jankList);
-
-                            State.advanceConversation("", null, null);
-                            jankIncr();
-                            limitTones();
-                        }
-
-                    }
-                    if (Int32.Parse(jankId) == 4 && !fadeFlag) {
-                        fadeFlag = true;
-                        fadeFloat = -0.003f;
-                    } else if (Int32.Parse(jankId) == 12 && !fadeFlag) {
-                        fadeFlag = true;
-                        fadeFloat = 0.003f;
-
-                    } else if (Int32.Parse(jankId) == 13 && !fadeFlag) {
-                        Dad.setHide(false);
-                        Arm.setHide(false);
-                        fadeFlag = true;
-                        fadeFloat = -0.003f;
-                    } else if (Int32.Parse(jankId) == 18 && !fadeFlag) {
-                        fadeFlag = true;
-                        fadeFloat = 0.003f;
-
-                    } else if (Int32.Parse(jankId) == 19 && !fadeFlag) {
-                        Mom.setHide(false);
-                        fadeFlag = true;
-                        fadeFloat = -0.003f;
-                    }
-
-                }
+                spaceCode();
             }
             if (State.GetState() == "game" || State.GetState() == "tutorial") {
                 #region button to apply tones
@@ -248,9 +129,144 @@ namespace SayAgain {
                 #endregion
 
                 if (e.Code == Keyboard.Key.P) {
-                    // Toggles game state between game and pause
-                    //State.TogglePause();
+
                 }
+            }
+        }
+
+        private void spaceCode() {
+            if (State.GetState() == "menu") State.SetState("tutorial");
+            else if (State.GetState() == "game") {
+                if (npcPlotId == "99999" && !endGame) {
+                    if (State.dialogueBox.checkNext()) {
+                        State.playerDialogueBox.loadNewDialogue("player", "To be continued... <Follow us on TWITTER @SayAgainGame and our WEBSITE www.sayagaingame.com>");
+                        State.playerDialogueBox.active = true;
+                        State.playerDialogueBox.init = true;
+                        State.dialogueBox.active = false;
+                        State.dialogueBox.init = false;
+                        State.playerDialogueBox.awaitInput = false;
+                        fadeFlag = true;
+                        fadeFloat = 0.003f;
+
+                        endGame = true;
+                    }
+                } else if (endGame) {
+                    if (State.playerDialogueBox.checkNext()) {
+                    }
+
+                } else {
+                    if (State.dialogueIndex == "player") {
+                        State.advanceConversation(speaker, responseList, responseListNPC);
+
+                    } else if (State.dialogueIndex == "root") {
+                        revertEmotion(Mom); revertEmotion(Dad); revertEmotion(Alexis);
+
+                        if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0) {
+                            State.dialogueBox.printTime = 0;
+                        }
+                        if (State.getGameTimer("game").getCountDown() != 0.0) {
+                            State.getGameTimer("game").setCountDown(0);
+                            State.dialogueBox.active = false;
+                            State.playerDialogueBox.active = false;
+                        }
+
+                        // Activate dialogueBox to display and be responsive, or switch to Root dialogue
+                    } else if (State.dialogueIndex == "AI") {
+                        State.advanceConversation(speaker, responseList, responseListNPC);
+
+                    } else if (State.dialogueIndex == "interject") {
+                        if (State.dialogueBox.getAwaitInput() == true) {
+                            if (State.dialogueBox.checkNext()) {
+                                if (responseListNPC[0].inext != "") speaker = responseListNPC[0].inext;
+
+                                if (sman.getDialogueType() == "plotpoint") {
+                                    responseListNPC = s.ChooseDialogPlot(Load.allp, sman.getCurrentNode(), npcPlotId, pTone);
+                                    npcPlotId = incr(npcPlotId);
+                                    playerPlotId = linkId(npcPlotId);
+                                } else {
+                                    responseListNPC = s.ChooseDialogTransition(Load.allt, bucket, npcTransitionId, currentTone.ToString());
+                                    npcTransitionId = incr(npcTransitionId);
+                                    playerTransitionId = linkId(npcTransitionId);
+                                }
+
+                                State.advanceConversation(speaker, responseList, responseListNPC);
+                                affect(responseListNPC[0].target, responseListNPC[0].FNC);
+                                checkFades();
+                                checkPlotChange();
+                                reRootPlayer();
+
+                            }
+                        } else if (State.dialogueBox.getAwaitInput() == false && State.dialogueBox.printTime != 0) {
+                            State.dialogueBox.printTime = 0;
+                        }
+                    }
+                }
+            } else if (State.GetState() == "tutorial") {
+
+                if (Int32.Parse(jankId) >= 27) {
+                    playerPlotId = "2";
+                    resetTransitionId();
+                    ui_man.tutorialButtonIndex = 4;
+                    ui_man.reset(responseList);
+                    fadeFlag = true;
+                    fadeFloat = -0.003f;
+                    ui_man.TooltipToggle(false, State.tooltip);
+                    Mom.setHide(false);
+                    Dad.setHide(false);
+                    Arm.setHide(false);
+                }
+                if (State.dialogueIndex == "AI") {
+                    if (State.dialogueBox.checkNext()) {
+
+                        jankList = s.chooseJank(Load.Jankson, jankId, currentTone.ToString());
+                        State.setResponseList(jankList);
+
+                        State.advanceConversation("", null, null);
+                        jankIncr();
+                        limitTones();
+
+                    }
+                } else if (State.dialogueIndex == "root") {
+
+                    if (State.getGameTimer("game").getCountDown() != 0.0) {
+                        TimerAction();
+                        //State.getGameTimer("game").setCountDown(0);
+                    }
+
+                } else if (State.dialogueIndex == "player") {
+
+                    if (State.playerDialogueBox.checkNext()) {
+                        jankList = s.chooseJank(Load.Jankson, jankId, currentTone.ToString());
+                        State.setResponseList(jankList);
+
+                        State.advanceConversation("", null, null);
+                        jankIncr();
+                        limitTones();
+                    }
+
+                }
+                if (Int32.Parse(jankId) == 4 && !fadeFlag) {
+                    fadeFlag = true;
+                    fadeFloat = -0.003f;
+                } else if (Int32.Parse(jankId) == 12 && !fadeFlag) {
+                    fadeFlag = true;
+                    fadeFloat = 0.003f;
+
+                } else if (Int32.Parse(jankId) == 13 && !fadeFlag) {
+                    Dad.setHide(false);
+                    Arm.setHide(false);
+                    fadeFlag = true;
+                    fadeFloat = -0.003f;
+                } else if (Int32.Parse(jankId) == 18 && !fadeFlag) {
+                    fadeFlag = true;
+                    fadeFloat = 0.003f;
+
+                } else if (Int32.Parse(jankId) == 19 && !fadeFlag) {
+                    Mom.setHide(false);
+                    fadeFlag = true;
+                    fadeFloat = -0.003f;
+                }
+
             }
         }
 
@@ -342,6 +358,7 @@ namespace SayAgain {
                 responseList = s.ChooseDialogPlot(Load.newplayerp, sman.getCurrentNode(), playerPlotId, currentTone.ToString());
                 responseListNPC = s.ChooseDialogPlot(Load.allp, sman.getCurrentNode(), npcPlotId, currentTone.ToString());
                 updateIds(0);
+
                 if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
             } else {
                 responseList = s.ChooseDialogTransition(Load.newplayert, bucket, playerTransitionId, currentTone.ToString());
@@ -459,6 +476,7 @@ namespace SayAgain {
             else if (responseListNPC[0].id == "1" && responseListNPC[0].plot == "BadEnding1") Alexis.undim();
         }
 
+
         private void resetCharacterFNC() {
             Mom.setCurrentFNC(0);
             Dad.setCurrentFNC(0);
@@ -469,7 +487,7 @@ namespace SayAgain {
             screenHelper();
 
             splash = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/wut.png"));
-            
+
             backwall = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/backwall.png"));
             flower = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/flowershadow.png"));
             lamp = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/lamp.png"));
@@ -493,7 +511,7 @@ namespace SayAgain {
             table.Scale = new Vector2f(SCREEN_WIDTH / table.GetGlobalBounds().Width, SCREEN_HEIGHT / table.GetGlobalBounds().Height);
             wallWindow.Scale = new Vector2f(SCREEN_WIDTH / wallWindow.GetGlobalBounds().Width, SCREEN_HEIGHT / wallWindow.GetGlobalBounds().Height);
 
-           // splash.Position = new Vector2f(0, 0);
+            // splash.Position = new Vector2f(0, 0);
 
 
             table.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * -0.03));

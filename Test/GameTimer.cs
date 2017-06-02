@@ -13,6 +13,7 @@ namespace SayAgain {
         protected UInt32 SCREEN_HEIGHT = 1080;
 
         public GameTimer(string name, double howLong, Action T) { //in seconds
+
             timerFrame = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/speakbutton.png"));
             timerFrame.Scale = new Vector2f(SCREEN_WIDTH / 1920, SCREEN_HEIGHT / 1080);
             width = timerFrame.GetGlobalBounds().Width - 8;
