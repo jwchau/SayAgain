@@ -15,30 +15,13 @@ namespace Test
         public Form1()
         {
             InitializeComponent();
+            this.Refresh();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             progressBar1.Increment(1);
             if (progressBar1.Value >= 100) timer1.Stop();
-        }
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // Form1
-            // 
-            this.ClientSize = new System.Drawing.Size(616, 402);
-            this.Name = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.ResumeLayout(false);
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
