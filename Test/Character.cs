@@ -12,7 +12,7 @@ using SFML.System;
 
 //todo: share random
 //multiple interesting frames
-namespace Test {
+namespace SayAgain {
 
     abstract class Character : Drawable {
         protected double[] FNCRange = new double[10]; //HF-MF-LF-LN-MN-HN-LC-MC-HC
@@ -30,7 +30,7 @@ namespace Test {
         private List<Sprite> sprites = new List<Sprite>();
 
         public DateTime time = DateTime.Now;
-        
+
         protected float xpos, ypos, xscale, yscale, mouthPosX, mouthPosY;
         protected bool canTalk = false;
         public CharacterState state;
@@ -46,13 +46,11 @@ namespace Test {
 
         protected bool hide = false;
 
-        public bool getHide()
-        {
+        public bool getHide() {
             return hide;
         }
 
-        public void setHide(bool v)
-        {
+        public void setHide(bool v) {
             hide = v;
         }
 
@@ -81,14 +79,10 @@ namespace Test {
         }
 
 
-        public void setTalking(bool b)
-        {
-            if (b)
-            {
+        public void setTalking(bool b) {
+            if (b) {
                 isTalking = true;
-            }
-            else if (!b)
-            {
+            } else if (!b) {
                 isTalking = false;
             }
         }
@@ -112,10 +106,9 @@ namespace Test {
         public abstract Vector2f getArmPosition();
 
         public abstract void setArmPosition(Vector2f position);
-        
 
-        public double[] getFNCRange()
-        {
+
+        public double[] getFNCRange() {
             return FNCRange;
         }
 

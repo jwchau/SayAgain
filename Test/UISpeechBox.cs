@@ -7,10 +7,8 @@ using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
 //
-namespace Test
-{
-    class UISpeechBox
-    {
+namespace SayAgain {
+    class UISpeechBox {
         public UISpeechBox(float width, float height, float x, float y, string dialogue, string person) {
             UISpeechBoxFont = new Font("Content/ARCADECLASSIC.ttf");
             UISpeechBoxText = new Text(dialogue, UISpeechBoxFont);
@@ -31,23 +29,19 @@ namespace Test
             UINameBoxText.Color = Color.White;
         }
 
-        public RectangleShape getSpeechBox()
-        {
+        public RectangleShape getSpeechBox() {
             return SpeechBox;
         }
 
-        public Text getSpeechBoxText()
-        {
+        public Text getSpeechBoxText() {
             return UISpeechBoxText;
         }
 
-        public RectangleShape getNameBox()
-        {
+        public RectangleShape getNameBox() {
             return NameBox;
         }
 
-        public Text getNameBoxText()
-        {
+        public Text getNameBoxText() {
             return UINameBoxText;
         }
 

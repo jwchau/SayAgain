@@ -10,7 +10,7 @@ using SFML.Window;
 using SFML.System;
 //eventually make textbox into class for whole dialogue box (including name box)
 
-namespace Test {
+namespace SayAgain {
     class DialogueBox : Drawable {
 
         static UInt32 SCREEN_WIDTH = 1920;
@@ -150,7 +150,7 @@ namespace Test {
 
                 // Press Space to advance
                 dialogueBoxSprite = spriteDict["tooltiplefthover"];
-                dialogueBoxSprite.Position = new Vector2f(SCREEN_WIDTH*0.93f - dialogueBoxSprite.GetGlobalBounds().Width, SCREEN_HEIGHT*0.954f - dialogueBoxSprite.GetGlobalBounds().Height/2);
+                dialogueBoxSprite.Position = new Vector2f(SCREEN_WIDTH * 0.93f - dialogueBoxSprite.GetGlobalBounds().Width, SCREEN_HEIGHT * 0.954f - dialogueBoxSprite.GetGlobalBounds().Height / 2);
 
                 infoSprite = spriteDict["tooltipleft"];
                 infoSprite.Position = dialogueBoxSprite.Position;
@@ -168,7 +168,7 @@ namespace Test {
                 // Drag tone to your dialogue
                 int buttonxpos = (int)(SCREEN_WIDTH / 4);
                 dialogueBoxSprite = spriteDict["tooltiprighthover"];
-                dialogueBoxSprite.Position = new Vector2f(((buttonxpos / 2) + buttonxpos) - dialogueBoxSprite.GetGlobalBounds().Width/2, (float)(SCREEN_HEIGHT - SCREEN_HEIGHT * 0.315));
+                dialogueBoxSprite.Position = new Vector2f(((buttonxpos / 2) + buttonxpos) - dialogueBoxSprite.GetGlobalBounds().Width / 2, (float)(SCREEN_HEIGHT - SCREEN_HEIGHT * 0.315));
 
                 infoSprite = spriteDict["tooltipright"];
                 infoSprite.Position = dialogueBoxSprite.Position;
@@ -179,13 +179,13 @@ namespace Test {
                 // ~~~~~~~~~~~~~~~~~~~
 
                 dialogue = new Text(content, speechFont, dialogueFontSize - 3);
-                dialogue.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + (dialogueBoxSprite.GetGlobalBounds().Width*0.55f) - dialogue.GetGlobalBounds().Width/2, dialogueBoxSprite.GetGlobalBounds().Top + (dialogueBoxSprite.GetGlobalBounds().Height/2) - (dialogue.GetGlobalBounds().Height));
+                dialogue.Position = new Vector2f(dialogueBoxSprite.GetGlobalBounds().Left + (dialogueBoxSprite.GetGlobalBounds().Width * 0.55f) - dialogue.GetGlobalBounds().Width / 2, dialogueBoxSprite.GetGlobalBounds().Top + (dialogueBoxSprite.GetGlobalBounds().Height / 2) - (dialogue.GetGlobalBounds().Height));
 
             } else if (speaker == "tooltip3") {
 
                 // Click/Space to Speak
                 dialogueBoxSprite = spriteDict["tooltipsmallhover"];
-                dialogueBoxSprite.Position = new Vector2f(SCREEN_WIDTH*0.85f, SCREEN_HEIGHT*0.842f - dialogueBoxSprite.GetGlobalBounds().Height/2);
+                dialogueBoxSprite.Position = new Vector2f(SCREEN_WIDTH * 0.85f, SCREEN_HEIGHT * 0.842f - dialogueBoxSprite.GetGlobalBounds().Height / 2);
 
                 infoSprite = spriteDict["tooltipsmall"];
                 infoSprite.Position = dialogueBoxSprite.Position;
@@ -274,7 +274,7 @@ namespace Test {
             if (tag == "AI") {
                 maxw = cursor.GetGlobalBounds().Left - dialogueBoxSprite.GetGlobalBounds().Left;
                 maxh = (float)(dialogueBoxSprite.GetGlobalBounds().Height * 0.4);
-            } else if (tag == "PLAYER"){
+            } else if (tag == "PLAYER") {
                 maxw = cursor.GetGlobalBounds().Left - dialogueBoxSprite.GetGlobalBounds().Left;
                 maxh = (float)(dialogueBoxSprite.GetGlobalBounds().Height * 0.7);
             } else {
@@ -356,10 +356,10 @@ namespace Test {
 
         }
 
-        public bool contains (int mousex, int mousey) {
+        public bool contains(int mousex, int mousey) {
             FloatRect bounds = dialogueBoxSprite.GetGlobalBounds();
             if (mousex >= bounds.Left && mousex <= bounds.Left + bounds.Width && mousey >= bounds.Top && mousey <= bounds.Top + bounds.Height) return true;
-            
+
             return false;
         }
 
@@ -430,9 +430,9 @@ namespace Test {
                     } else {
                         target.Draw(infoSprite);
                     }
-                    
+
                 }
-                
+
                 if (awaitInput) {
                     if (tag != "tooltip") {
                         if (cursor.Rotation == 90) {

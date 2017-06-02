@@ -8,7 +8,7 @@ using SFML.Window;
 using SFML.Graphics;
 
 
-namespace Test {
+namespace SayAgain {
     abstract class Game {
         protected RenderWindow window;
         protected Color clearColor;

@@ -9,7 +9,7 @@ using SFML.Graphics;
 using SFML.Window;
 using SFML.System;
 
-namespace Test {
+namespace SayAgain {
     class Alex : Character {
         //private View _view;
         Texture t = new Texture("../../Art/alexMaster.png");
@@ -158,7 +158,7 @@ namespace Test {
 
                 if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate)) {
                     time = DateTime.Now;
-                    if (++index > sprites[expr].Count-1) {
+                    if (++index > sprites[expr].Count - 1) {
                         pickSpecialFrame();
                         index = 0;
                     }

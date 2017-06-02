@@ -9,7 +9,7 @@ using SFML.Window;
 using SFML.System;
 using Newtonsoft.Json;
 
-namespace Test {
+namespace SayAgain {
 
     class SA : Game {
 
@@ -349,8 +349,8 @@ namespace Test {
                 updateIds(1);
             }
 
-            int pickNPC = rnd.Next(1, responseListNPC.Count + 1);
-            int pickPlayer = rnd.Next(1, responseList.Count + 1);
+            int pickNPC = rnd.Next(0, responseListNPC.Count);
+            int pickPlayer = rnd.Next(0, responseList.Count);
 
             if (responseListNPC[pickNPC].speaker != "") speaker = responseListNPC[pickNPC].speaker;
             State.playerDialogueBox.loadNewDialogue("player", responseList[pickPlayer].content);

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SFML.Graphics;
 
-namespace Test {
+namespace SayAgain {
     class DramaManager : Drawable {
         public DramaManager() {
             Alex = new CharacterState();
@@ -18,22 +18,17 @@ namespace Test {
         private CharacterState Dad;
         static bool[] targets = { false, false, false }; // 0 = alex 1 = mom 2 = dad
 
-        public void activateCharacterChoice(string c)
-        {
-            if(c == "Alex")
-            {
+        public void activateCharacterChoice(string c) {
+            if (c == "Alex") {
                 targets[0] = true;
-            } else if(c == "Mom")
-            {
+            } else if (c == "Mom") {
                 targets[1] = true;
-            } else if(c == "Dad")
-            {
+            } else if (c == "Dad") {
                 targets[2] = true;
             }
         }
 
-        public void setTargets(string who)
-        {
+        public void setTargets(string who) {
             //targets[0] = alex; targets[1] = mom; targets[2] = dad;
             // Old - Used for clicking will, revamp to newer system
             //if (who == "alex")
@@ -53,8 +48,7 @@ namespace Test {
 
         }
 
-        public bool[] getTargets()
-        {
+        public bool[] getTargets() {
             return targets;
         }
 
@@ -71,8 +65,7 @@ namespace Test {
             return Dad;
         }
 
-        public void Draw(RenderTarget target, RenderStates states)
-        {
+        public void Draw(RenderTarget target, RenderStates states) {
         }
     }
 }

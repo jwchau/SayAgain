@@ -7,16 +7,14 @@ using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
 
-namespace Test
-{
+namespace SayAgain {
     class UITextBox : UIElement//The box where the dialogue will appear, not clickable or draggable
     {
-        public UITextBox(float x, float y, string dialogue, int cluster)
-        {
+        public UITextBox(float x, float y, string dialogue, int cluster) {
             UITextBoxText = new Text(dialogue, UITextBoxFont, getFontSize());
-            box = new RectangleShape(new Vector2f(UITextBoxText.GetGlobalBounds().Width + 30, (float)(UITextBoxText.GetGlobalBounds().Height*1.5) + 10));
+            box = new RectangleShape(new Vector2f(UITextBoxText.GetGlobalBounds().Width + 30, (float)(UITextBoxText.GetGlobalBounds().Height * 1.5) + 10));
             box.Position = new Vector2f(x, y + 17);
-            UITextBoxText.Position = new Vector2f((box.GetGlobalBounds().Width/2 - UITextBoxText.GetGlobalBounds().Width/2) + box.GetGlobalBounds().Left, (box.GetGlobalBounds().Height / 2 - (float)(UITextBoxText.GetGlobalBounds().Height / 1.1)) + box.GetGlobalBounds().Top);
+            UITextBoxText.Position = new Vector2f((box.GetGlobalBounds().Width / 2 - UITextBoxText.GetGlobalBounds().Width / 2) + box.GetGlobalBounds().Left, (box.GetGlobalBounds().Height / 2 - (float)(UITextBoxText.GetGlobalBounds().Height / 1.1)) + box.GetGlobalBounds().Top);
             box.FillColor = buttonTonalColors["Default"];
             prevColor = buttonTonalColors["Default"];
             UITextBoxText.Color = new Color(67, 65, 69);
@@ -34,13 +32,11 @@ namespace Test
         tone tone = tone.Root;
         UInt32 SCREEN_WIDTH = 1920;
 
-        private uint getFontSize()
-        {
+        private uint getFontSize() {
             return (uint)((SCREEN_WIDTH / 1920) * 50);
         }
 
-        public RectangleShape getBox()
-        {
+        public RectangleShape getBox() {
             return box;
         }
 
@@ -52,89 +48,74 @@ namespace Test
             tone = t;
         }
 
-        public int getCluster()
-        {
+        public int getCluster() {
             return cluster;
         }
 
-        public Text getBoxText()
-        {
+        public Text getBoxText() {
             return UITextBoxText;
         }
 
-        public FloatRect getBoxBounds()
-        {
+        public FloatRect getBoxBounds() {
             return box.GetGlobalBounds();
         }
 
 
-        public void changeDialogue(string newDialogue)
-        {
+        public void changeDialogue(string newDialogue) {
             UITextBoxText.DisplayedString = newDialogue;
         }
 
-        public void setBoxColor(Color color)
-        {
+        public void setBoxColor(Color color) {
             box.FillColor = color;
         }
 
-        public void setPrevColor(Color color)
-        {
+        public void setPrevColor(Color color) {
             prevColor = color;
         }
 
-        public Color getBoxColor(string s)
-        {
+        public Color getBoxColor(string s) {
             if (s == "curr") return box.FillColor;
             return prevColor;
         }
 
-        public bool getAffected()
-        {
+        public bool getAffected() {
             return affected;
         }
 
-        public void setAffected(bool b)
-        {
+        public void setAffected(bool b) {
             affected = b;
         }
 
-        public void setMouseWasIn(bool w)
-        {
+        public void setMouseWasIn(bool w) {
             mouseWasIn = w;
         }
 
-        public bool wasMouseIn()
-        {
+        public bool wasMouseIn() {
             return mouseWasIn;
         }
 
-        public bool Contains(UIButton button)
-        {
+        public bool Contains(UIButton button) {
             FloatRect rootBounds = getBoxBounds();
             FloatRect toneButton = button.getRectBounds();
 
             if (rootBounds.Left < toneButton.Left + toneButton.Width &&
    rootBounds.Left + rootBounds.Width > toneButton.Left &&
    rootBounds.Top < toneButton.Top + toneButton.Height &&
-   rootBounds.Height + rootBounds.Top > toneButton.Top)
-            {
+   rootBounds.Height + rootBounds.Top > toneButton.Top) {
                 return true;
                 // collision detected!
             }
             return false;
         }
 
-        public override void Draw(RenderTarget target, RenderStates states)
-        {
+        public override void Draw(RenderTarget target, RenderStates states) {
             target.Draw(box);
             target.Draw(UITextBoxText);
         }
 
 
 
-        public string getDialogue()
-        {
+        public string getDialogue() {
             return UITextBoxText.DisplayedString;
         }
     }

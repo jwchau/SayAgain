@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Test {
+namespace SayAgain {
     public class Loader {
         //Creates and loads Json Objects
         public DialogueParsing newplayerp = new DialogueParsing(@"../../Json/newplayerpp.json");

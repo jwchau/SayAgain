@@ -7,7 +7,7 @@ using SFML.System;
 using SFML.Window;
 using SFML.Graphics;
 
-namespace Test {
+namespace SayAgain {
     class UIButton : UIElement {
         //constructor
         public UIButton(float x, float y, tone content) {

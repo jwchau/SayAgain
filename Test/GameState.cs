@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SFML.Graphics;
 using SFML.Window;
 using SFML.System;
-namespace Test {
+namespace SayAgain {
     class GameState {
         public GameState() {
             currentState = "menu";
@@ -30,6 +30,13 @@ namespace Test {
         public string dialogueIndex = "player";
         public bool interjection = false;
         public void advanceConversation(string speaker, List<DialogueObj> responseList, List<DialogueObj> responseListNPC) {
+            int pickPlayer = 0;
+            int pickNPC = 0;
+            if (responseList != null) {
+                Random rnd = new Random();
+                pickPlayer = rnd.Next(0, responseList.Count);
+                pickNPC = rnd.Next(0, responseListNPC.Count);
+            }
             if (currentState == "game") {
                 if (dialogueIndex == "AI") {
                     playerDialogueBox.init = false;
@@ -37,7 +44,7 @@ namespace Test {
                     dialogueBox.active = true;
                     if (dialogueBox.checkNext()) {
                         dialogueIndex = "root";
-                        
+
                         dialogueBox.active = false;
                         playerDialogueBox.active = false;
                     }
@@ -56,17 +63,17 @@ namespace Test {
                                 playerDialogueBox.active = false;
                                 dialogueBox.active = true;
                                 dialogueBox.init = true;
-                                if (responseListNPC[0].inext == "") {
+                                if (responseListNPC[pickNPC].inext == "") {
                                     //if there is no interjector
                                     dialogueIndex = "AI";
-                                    dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
+                                    dialogueBox.loadNewDialogue(speaker, responseListNPC[pickNPC].content);
                                     sound_man.playChatter(speaker);
                                 } else {
 
                                     //if there is an interjector
                                     dialogueIndex = "interject";
-                                    
-                                    dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
+
+                                    dialogueBox.loadNewDialogue(speaker, responseListNPC[pickNPC].content);
                                 }
                             }
                         }
@@ -74,9 +81,9 @@ namespace Test {
                 } else if (dialogueIndex == "interject") {
 
                     if (dialogueBox.checkNext()) {
-                        dialogueBox.loadNewDialogue(speaker, responseListNPC[0].content);
+                        dialogueBox.loadNewDialogue(speaker, responseListNPC[pickNPC].content);
 
-                        if (responseListNPC[0].inext == "") {
+                        if (responseListNPC[pickNPC].inext == "") {
                             dialogueIndex = "AI";
                         }
 

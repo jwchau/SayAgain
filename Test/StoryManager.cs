@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 //greetdad, settype PP, 
-namespace Test {
+namespace SayAgain {
     class StoryManager {
         protected List<String> reachedPlotpoints;
         protected string dialogueType;

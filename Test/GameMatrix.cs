@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Test
-{
-    class GameMatrix
-    {
+namespace SayAgain {
+    class GameMatrix {
 
         protected double[,] matrix;
 
@@ -23,13 +21,13 @@ namespace Test
 
         public double[,] MatrixMult(GameMatrix a, GameMatrix b) {
 
-            double[,] final = new double[3,4];
+            double[,] final = new double[3, 4];
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 4; j++) {
                     final[i, j] = a.matrix[i, j] * b.matrix[i, j];
                 }
             }
-            return final; 
+            return final;
         }
 
 

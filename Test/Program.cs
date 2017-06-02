@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Data;
 using System.ComponentModel;
 
-namespace Test {
+namespace SayAgain {
     public enum tone {
         Blunt = 0,
         Indifferent = 1,
@@ -30,19 +30,13 @@ namespace Test {
         public static void Form1()
         {
             t.Start();
-            //Thread.Sleep(5000);
-            
-            
+            t.Abort();
         }
 
         static void Main(string[] args) {
-            //run loading screen
-            Application.Run(new Form1());
-
             Program.myGame = new SA();
+            Application.Run(new Form1());
             myGame.Run();
-
-            t.Abort();
         }
     }
 }

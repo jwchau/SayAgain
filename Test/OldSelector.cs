@@ -4,38 +4,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Test {
+namespace SayAgain {
     class OldSelector {
+        
         //plot point dialogue
         public List<DialogueObj> ChooseDialogPlot(DialogueParsing r, string currNode, string id, string t) {
+            int countdown = -1;
             List<DialogueObj> responseList = new List<DialogueObj>();
             var best = new DialogueObj();
             for (int i = 0; i < r.r.Dialogues.Count; i++) {
                 var curr = r.r.Dialogues[i];
                 if (curr.plot == currNode && id == curr.id && (curr.tone == t || curr.tone == "Default")) {
                     responseList.Add(curr);
+                    countdown = 3;
                 }
+                if (countdown-- == 0) return responseList;
             }
+
+            if (responseList.Count == 0) responseList.Add(best);
             return responseList;
-            //responseList.Add(best);
-            //return responseList;
         }
 
         //transition
         public List<DialogueObj> ChooseDialogTransition(DialogueParsing r, double b, string id, string t) {
+            int countdown = -1;
             List<DialogueObj> responseList = new List<DialogueObj>();
             var best = new DialogueObj();
             for (int i = 0; i < r.r.Dialogues.Count; i++) {
                 var curr = r.r.Dialogues[i];
                 if (b == curr.bucket && curr.id == id && (curr.tone == t || curr.tone == "Default")) {
-
                     responseList.Add(curr);
-                    
+                    countdown = 3;
                 }
+                if (countdown-- == 0) return responseList;
             }
+            if (responseList.Count == 0) responseList.Add(best);
             return responseList;
-            //responseList.Add(best);
-            //return responseList;
         }
 
         public List<DialogueObj> chooseJank(DialogueParsing r, string id, string t) {

@@ -7,18 +7,15 @@ using System.Threading;
 using SFML.Audio;
 using SFML.System;
 
-namespace Test
-{
-    class SoundManager
-    {
+namespace SayAgain {
+    class SoundManager {
         //constructor
-        public SoundManager()
-        {
+        public SoundManager() {
             m_queue = new Queue<String>();
             time_left = Time.FromSeconds(1);
 
             sound_dict = new Dictionary<string, SoundBuffer>() { { "button", new SoundBuffer("../../Sounds/button.wav") } };
- 
+
             chatter_dict = new Dictionary<string, List<SoundBuffer>>() { { "dad",new List<SoundBuffer>() {new SoundBuffer( "../../Sounds/dad/dad1.wav"),
                                                                                                  new SoundBuffer("../../Sounds/dad/dad2.wav"),
                                                                                                 new SoundBuffer( "../../Sounds/dad/dad3.wav"),
@@ -46,7 +43,7 @@ namespace Test
         }
 
         private Music current;
-        private Time time_left ;
+        private Time time_left;
         private Dictionary<String, SoundBuffer> sound_dict;
         private Queue<String> m_queue;
         public bool soundpause = false;
@@ -55,65 +52,56 @@ namespace Test
         private Sound SFX;
         private Dictionary<string, List<string>> loops;
 
-        public bool getSoundPause()
-        {
+        public bool getSoundPause() {
             return soundpause;
         }
-        public void setSoundPause(bool b)
-        {
+        public void setSoundPause(bool b) {
             soundpause = b;
         }
 
         //methods
 
-        public void playSFX(String soundName)
-        {
+        public void playSFX(String soundName) {
 
             SFX = new Sound(sound_dict[soundName]);
             SFX.Play();
         }
 
-        public void playChatter(String person)
-        {
+        public void playChatter(String person) {
             Random r = new Random();
             chatter = new Sound(chatter_dict[person][r.Next(chatter_dict[person].Count)]);
             chatter.Play();
         }
 
-        public void init_music()
-        {
-     
+        public void init_music() {
+
             current = new Music(loops["basic"][0]);
             current.Play();
         }
-        public void update_music()
-        {
+        public void update_music() {
 
-            if (current.PlayingOffset >  time_left && !m_queue.Any())
-            {
+            if (current.PlayingOffset > time_left && !m_queue.Any()) {
                 //Random r = new Random();
                 //List<string> values = Enumerable.ToList(loops.Values);
                 m_queue.Enqueue(loops["basic"][0]);
-                
+
             }
 
-            if (current.Status == SoundStatus.Stopped )
-            {
+            if (current.Status == SoundStatus.Stopped) {
 
 
-                
-               current = new Music(m_queue.Dequeue());
-               current.Play();
+
+                current = new Music(m_queue.Dequeue());
+                current.Play();
             }
 
         }
-        public void loop_enqueue(string speaker, int change)
-        {
-            if (speaker[0] == '-') speaker = speaker.Substring(1, speaker.Length-1);
+        public void loop_enqueue(string speaker, int change) {
+            if (speaker[0] == '-') speaker = speaker.Substring(1, speaker.Length - 1);
 
             if (change < 0)
                 m_queue.Enqueue(loops[speaker][0]);
-            else if (change == 0 )
+            else if (change == 0)
                 m_queue.Enqueue(loops[speaker][1]);
             else
                 m_queue.Enqueue(loops[speaker][2]);

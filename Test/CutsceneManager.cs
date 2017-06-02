@@ -8,10 +8,8 @@ using System.IO;
 using SFML.Graphics;
 using SFML.Window;
 using SFML.System;
-namespace Test
-{
-    class CutsceneManager
-    {
+namespace SayAgain {
+    class CutsceneManager {
         public Sprite momAng, momHap;
 
         public View view { get; private set; }

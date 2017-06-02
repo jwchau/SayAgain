@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using Newtonsoft.Json;
 
-namespace Test {
+namespace SayAgain {
     public class DialogueParsing {
         public RootObject r = new RootObject();
         private string filename = "";
@@ -39,13 +39,13 @@ namespace Test {
 
 
         //for npc plot point lines/// 8 string, 1 string list (dialogue object)
-        public DialogueObj(string content, string tone, string plotpoint, string id, string FNC, string finished, string speaker, string InterjectionNext, List<string> target) { 
+        public DialogueObj(string content, string tone, string plotpoint, string id, string FNC, string finished, string speaker, string InterjectionNext, List<string> target) {
             this.content = content; this.tone = tone; this.plot = plotpoint; this.id = id; this.FNC = double.Parse(FNC); this.finished = finished; this.speaker = speaker; this.inext = InterjectionNext;
             this.target = target;
         }
 
         //for npc transitino lines///6 string, 1 string list, 1 int (dialogue object)
-        public DialogueObj(string c, string t, string id, string f, int b, string s, string ix, List<string> target) { 
+        public DialogueObj(string c, string t, string id, string f, int b, string s, string ix, List<string> target) {
             this.content = c; this.tone = t; this.id = id; this.FNC = double.Parse(f); this.bucket = b; this.speaker = s; this.inext = ix;
             this.target = target;
         }

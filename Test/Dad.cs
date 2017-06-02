@@ -8,7 +8,7 @@ using System.IO;
 using SFML.Graphics;
 using SFML.Window;
 using SFML.System;
-namespace Test {
+namespace SayAgain {
     class Dad : Character, Drawable {
 
         Sprite happyrest, angryrest;
@@ -63,8 +63,7 @@ namespace Test {
         void returnToRestMouth() {
         }
 
-        void hideMouth(int i)
-        {
+        void hideMouth(int i) {
             mouths[i].Position = new Vector2f(-100, -100);
         }
 
@@ -82,7 +81,7 @@ namespace Test {
                     target.Draw(noMouthSprites[expr][index]);
                     //cycle between open mouth and rest mouth
                     //hide previous mouth
-                    
+
 
                     if (currentMouthIndex == 0) //rest mouth
                     {
@@ -101,8 +100,7 @@ namespace Test {
                         framerate = 15;
 
 
-                        if (currentMouthIndex >= 0)
-                        {
+                        if (currentMouthIndex >= 0) {
                             //hide previous mouth
                             //hideMouth(currentMouthIndex - 1);
                         }
@@ -134,7 +132,7 @@ namespace Test {
                 if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate)) {
                     time = DateTime.Now;
 
-                    if (++index > sprites[expr].Count-1) {
+                    if (++index > sprites[expr].Count - 1) {
                         index = 0;
                     }
                 }
