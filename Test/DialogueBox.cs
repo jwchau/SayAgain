@@ -8,7 +8,6 @@ using System.IO;
 using SFML.Graphics;
 using SFML.Window;
 using SFML.System;
-using System.Drawing;
 //eventually make textbox into class for whole dialogue box (including name box)
 
 namespace Test {

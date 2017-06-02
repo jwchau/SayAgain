@@ -7,7 +7,6 @@ using System.IO;
 using SFML.Graphics;
 using SFML.Window;
 using SFML.System;
-using System.Drawing;
 using Newtonsoft.Json;
 
 namespace Test {

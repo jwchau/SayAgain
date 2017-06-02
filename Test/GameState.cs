@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using SFML.Graphics;
 using SFML.Window;
 using SFML.System;
-using System.Drawing;
 namespace Test {
     class GameState {
         public GameState() {

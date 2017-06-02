@@ -8,7 +8,6 @@ using System.IO;
 using SFML.Graphics;
 using SFML.Window;
 using SFML.System;
-using System.Drawing;
 namespace Test {
     class Dad : Character, Drawable {
 
