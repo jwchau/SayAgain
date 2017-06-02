@@ -468,11 +468,8 @@ namespace Test {
         protected override void Initialize() {
             screenHelper();
 
-            splash = new Sprite(new Texture("../../Art/banner2.png"));
-            alphaSplash = new Sprite(new Texture("../../Art/alpha.png"));
-            momSplash = new Sprite(new Texture("../../Art/angrymom.png"));
-            alexSplash = new Sprite(new Texture("../../Art/alexdemo.png"));
-            dadSplash = new Sprite(new Texture("../../Art/daddemo.png"));
+            splash = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/wut.png"));
+            
             backwall = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/backwall.png"));
             flower = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/flowershadow.png"));
             lamp = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/lamp.png"));
@@ -484,10 +481,8 @@ namespace Test {
             wallWindow = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/window.png"));
 
 
-            splash.Scale = new Vector2f(.5f, .5f);
-            alphaSplash.Scale = new Vector2f(.5f, .5f);
-            alexSplash.Scale = new Vector2f(.5f, .5f);
-            dadSplash.Scale = new Vector2f(1.1f, 1.1f);
+            splash.Scale = new Vector2f(1.755f, 1.755f);
+
 
             backwall.Scale = new Vector2f(SCREEN_WIDTH / backwall.GetGlobalBounds().Width, SCREEN_HEIGHT / backwall.GetGlobalBounds().Height);
             flower.Scale = new Vector2f((float)((SCREEN_WIDTH / flower.GetGlobalBounds().Width) * 0.8), (float)((SCREEN_HEIGHT / flower.GetGlobalBounds().Height) * 0.8));
@@ -498,11 +493,8 @@ namespace Test {
             table.Scale = new Vector2f(SCREEN_WIDTH / table.GetGlobalBounds().Width, SCREEN_HEIGHT / table.GetGlobalBounds().Height);
             wallWindow.Scale = new Vector2f(SCREEN_WIDTH / wallWindow.GetGlobalBounds().Width, SCREEN_HEIGHT / wallWindow.GetGlobalBounds().Height);
 
-            splash.Position = new Vector2f(SCREEN_WIDTH / 2.8f, SCREEN_HEIGHT / 25);
-            alphaSplash.Position = new Vector2f(SCREEN_WIDTH / 2.3f, SCREEN_HEIGHT / 6.5f);
-            momSplash.Position = new Vector2f(SCREEN_WIDTH - momSplash.GetGlobalBounds().Width, SCREEN_HEIGHT - momSplash.GetGlobalBounds().Height);
-            dadSplash.Position = new Vector2f(0, SCREEN_HEIGHT - dadSplash.GetGlobalBounds().Height + 30);
-            alexSplash.Position = new Vector2f(SCREEN_WIDTH / 2, SCREEN_HEIGHT - alexSplash.GetGlobalBounds().Height);
+           // splash.Position = new Vector2f(0, 0);
+
 
             table.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * -0.03));
             cups.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * -0.12));
@@ -707,10 +699,7 @@ namespace Test {
             if (State.GetState() == "menu") {
                 if (State.GetMenuState() == "start") {
                     window.Draw(splash);
-                    window.Draw(alphaSplash);
-                    window.Draw(momSplash);
-                    window.Draw(dadSplash);
-                    window.Draw(alexSplash);
+
                     window.Draw(startMenu);
                 } else {
                     window.Draw(settingsMenu);
