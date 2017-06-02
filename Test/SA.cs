@@ -738,20 +738,18 @@ namespace SayAgain {
                 }
             } else {
                 window.Draw(backwall);
-
                 window.Draw(wallWindow);
                 window.Draw(pictures);
                 window.Draw(lamp);
                 window.Draw(Mom);
                 window.Draw(Dad);
+                if (drawAlex) window.Draw(Alexis);
                 window.Draw(table);
                 window.Draw(Arm);
                 window.Draw(plates);
                 window.Draw(cups);
                 window.Draw(flower);
                 window.Draw(playerfood);
-                if (drawAlex) window.Draw(Alexis);
-                //Draw text box background box
 
                 var dialogues = ui_man.getPlayerDialogues();
 
