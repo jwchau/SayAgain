@@ -147,7 +147,7 @@ namespace SayAgain {
                             fadeFloat = 0.003f;
                             endGame2 = false;
                         }
-                    } else { State.dialogueBox.checkNext(); return; }
+                    } else { State.playerDialogueBox.checkNext(); return; }
                 } else {
                     if (State.dialogueIndex == "player") {
                         State.advanceConversation(speaker, responseList, responseListNPC);
