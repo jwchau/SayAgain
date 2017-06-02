@@ -27,15 +27,14 @@ namespace SayAgain {
         }
 
         [STAThread]
-        public static void Form1()
-        {
+        public static void Form1() {
             t.Start();
             t.Abort();
         }
 
         static void Main(string[] args) {
-            Program.myGame = new SA();
             Application.Run(new Form1());
+            Program.myGame = new SA();
             myGame.Run();
         }
     }

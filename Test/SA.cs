@@ -137,9 +137,9 @@ namespace SayAgain {
         private void spaceCode() {
             if (State.GetState() == "menu") State.SetState("tutorial");
             else if (State.GetState() == "game") {
-                if (npcPlotId == "99999" && !endGame) {
+                if (endGame) {
                     if (State.dialogueBox.checkNext()) {
-                        State.playerDialogueBox.loadNewDialogue("player", "To be continued... <Follow us on TWITTER @SayAgainGame and our WEBSITE www.sayagaingame.com>");
+                        State.playerDialogueBox.loadNewDialogue("player", "Thanks for playing Ay Gains <hi><soo what r u still doing here><no more dialogue this way><really, its over><im being cereal><don't u have something better to do><booom goes the dynamite>");
                         State.playerDialogueBox.active = true;
                         State.playerDialogueBox.init = true;
                         State.dialogueBox.active = false;
@@ -147,13 +147,7 @@ namespace SayAgain {
                         State.playerDialogueBox.awaitInput = false;
                         fadeFlag = true;
                         fadeFloat = 0.003f;
-
-                        endGame = true;
                     }
-                } else if (endGame) {
-                    if (State.playerDialogueBox.checkNext()) {
-                    }
-
                 } else {
                     if (State.dialogueIndex == "player") {
                         State.advanceConversation(speaker, responseList, responseListNPC);
@@ -360,6 +354,7 @@ namespace SayAgain {
                 updateIds(0);
 
                 if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
+                else if (responseListNPC[0].finished == "finGame") endGame = true;
             } else {
                 responseList = s.ChooseDialogTransition(Load.newplayert, bucket, playerTransitionId, currentTone.ToString());
                 responseListNPC = s.ChooseDialogTransition(Load.allt, bucket, npcTransitionId, currentTone.ToString());
@@ -517,7 +512,7 @@ namespace SayAgain {
             table.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * -0.03));
             cups.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * -0.12));
             plates.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * -0.12));
-            playerfood.Position = new Vector2f((SCREEN_WIDTH/2)-(playerfood.GetGlobalBounds().Width/2),820);
+            playerfood.Position = new Vector2f((SCREEN_WIDTH / 2) - (playerfood.GetGlobalBounds().Width / 2), 820);
             flower.Position = new Vector2f((SCREEN_WIDTH / 2) - (flower.GetGlobalBounds().Width / 2), (float)(SCREEN_HEIGHT / 17));
 
             toneBar = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/tonebar.png"));

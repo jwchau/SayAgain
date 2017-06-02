@@ -280,12 +280,12 @@ namespace SayAgain {
             next_nodes.Add("PlayerSupportsDad");
             addNode("DadGreetsPlayer", next_nodes, preconditions);
 
-            preconditions.Add("M: HF-HF");
+            preconditions.Add("D: HC-HC");
             next_nodes.Add("PlayerSupportsDad2");
             next_nodes.Add("AlexChangesSubject");
             addNode("PlayerSupportsDad", next_nodes, preconditions);
 
-            preconditions.Add("M: HC-HC");
+            preconditions.Add("M: HC-HC, A: HC-HC");
             next_nodes.Add("MomAdmitsJob");
             addNode("AlexChangesSubject", next_nodes, preconditions);
 
@@ -310,9 +310,52 @@ namespace SayAgain {
             next_nodes.Add("boooom baby boom");
             addNode("DadNoSeesHisFault", next_nodes, preconditions);
 
-            preconditions.Add("DOG");
-            next_nodes.Add("boooom baby boom");
+            preconditions.Add("M: HC-HC, D: HC-HC");
+            next_nodes.Add("AlexInterjects1");
             addNode("DadSeesHisFault", next_nodes, preconditions);
+
+            preconditions.Add("A: HC-HC");
+            next_nodes.Add("DadInterjects2");
+            addNode("AlexInterjects1", next_nodes, preconditions);
+
+            preconditions.Add("D: HC-HC, A: HC-HC");
+            next_nodes.Add("BadEnding1");
+            next_nodes.Add("MomInterjects3");
+            addNode("DadInterjects2", next_nodes, preconditions);
+
+            preconditions.Add("A: HF-HF, M: HF-HF, D: HF-HF");
+            addNode("BadEnding1", next_nodes, preconditions);
+
+            preconditions.Add("M: HC-HC, D: HC-HC, A: HC-HC");
+            next_nodes.Add("BadEnding3");
+            next_nodes.Add("AlexInterjects2");
+            addNode("MomInterjects3", next_nodes, preconditions);
+
+            preconditions.Add("A: HF-HF, M: HF-HF, D: HF-HF");
+            addNode("BadEnding3", next_nodes, preconditions);
+
+            preconditions.Add("M: HC-HC, D: HC-HC, A: HC-HC");
+            next_nodes.Add("BadEnding4");
+            next_nodes.Add("AlexReconcilesPlayer");
+            addNode("AlexInterjects2", next_nodes, preconditions);
+
+            preconditions.Add("A: HF-HF, M: HF-HF, D: HF-HF");
+            addNode("BadEnding4", next_nodes, preconditions);
+
+            preconditions.Add("M: HC-HC, D: HC-HC, A: HC-HC");
+            next_nodes.Add("MomApologizesAlex");
+            addNode("AlexReconcilesPlayer", next_nodes, preconditions);
+
+            preconditions.Add("M: HC-HC, D: HC-HC, A: HC-HC");
+            next_nodes.Add("BadEnding2");
+            next_nodes.Add("AlexReconcilesFamily");
+            addNode("MomApologizesAlex", next_nodes, preconditions);
+
+            preconditions.Add("A: HF-HF, M: HF-HF, D: HF-HF");
+            addNode("BadEnding2", next_nodes, preconditions);
+
+            preconditions.Add("M: HC-HC, D: HC-HC, A: HC-HC");
+            addNode("AlexReconcilesFamily", next_nodes, preconditions);
         }
 
     }
