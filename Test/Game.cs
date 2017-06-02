@@ -76,7 +76,7 @@ namespace Test {
         #endregion
 
         protected Sprite splash, alphaSplash, alexSplash, momSplash, dadSplash;
-        protected Sprite mom, alex, dad, toneBar, backwall, flower, lamp, pictures, table, wallWindow;
+        protected Sprite mom, alex, dad, toneBar, backwall, flower, lamp, pictures, table, wallWindow,plates, cups;
         protected RectangleShape textBackground;
         ContextSettings settings;
         protected Character Mom, Alexis, Dad, Arm;

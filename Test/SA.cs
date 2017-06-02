@@ -479,6 +479,8 @@ namespace Test {
             pictures = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/pictures.png"));
 
             table = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/newletable.png"));
+            cups = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/cups.png"));
+            plates = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/platesfinal.png"));
             wallWindow = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/window.png"));
 
 
@@ -490,6 +492,8 @@ namespace Test {
             backwall.Scale = new Vector2f(SCREEN_WIDTH / backwall.GetGlobalBounds().Width, SCREEN_HEIGHT / backwall.GetGlobalBounds().Height);
             flower.Scale = new Vector2f((float)((SCREEN_WIDTH / flower.GetGlobalBounds().Width) * 0.8), (float)((SCREEN_HEIGHT / flower.GetGlobalBounds().Height) * 0.8));
             lamp.Scale = new Vector2f(SCREEN_WIDTH / lamp.GetGlobalBounds().Width, SCREEN_HEIGHT / lamp.GetGlobalBounds().Height);
+            cups.Scale = new Vector2f(SCREEN_WIDTH / cups.GetGlobalBounds().Width, SCREEN_HEIGHT / cups.GetGlobalBounds().Height);
+            plates.Scale = new Vector2f(SCREEN_WIDTH / plates.GetGlobalBounds().Width, SCREEN_HEIGHT / plates.GetGlobalBounds().Height);
             pictures.Scale = new Vector2f(SCREEN_WIDTH / pictures.GetGlobalBounds().Width, SCREEN_HEIGHT / pictures.GetGlobalBounds().Height);
             table.Scale = new Vector2f(SCREEN_WIDTH / table.GetGlobalBounds().Width, SCREEN_HEIGHT / table.GetGlobalBounds().Height);
             wallWindow.Scale = new Vector2f(SCREEN_WIDTH / wallWindow.GetGlobalBounds().Width, SCREEN_HEIGHT / wallWindow.GetGlobalBounds().Height);
@@ -500,8 +504,10 @@ namespace Test {
             dadSplash.Position = new Vector2f(0, SCREEN_HEIGHT - dadSplash.GetGlobalBounds().Height + 30);
             alexSplash.Position = new Vector2f(SCREEN_WIDTH / 2, SCREEN_HEIGHT - alexSplash.GetGlobalBounds().Height);
 
-            table.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * -0.15));
-            flower.Position = new Vector2f((SCREEN_WIDTH / 2) - (flower.GetGlobalBounds().Width / 2), 0);
+            table.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * -0.03));
+            cups.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * -0.12));
+            plates.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * -0.12));
+            flower.Position = new Vector2f((SCREEN_WIDTH / 2) - (flower.GetGlobalBounds().Width / 2), (float)(SCREEN_HEIGHT / 17));
 
             toneBar = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/tonebar.png"));
             toneBar.Position = new Vector2f(6, (float)(SCREEN_HEIGHT * 0.735));
@@ -720,6 +726,8 @@ namespace Test {
                 window.Draw(Dad);
                 window.Draw(table);
                 window.Draw(Arm);
+                window.Draw(plates);
+                window.Draw(cups);
                 window.Draw(flower);
 
                 //Draw text box background box
