@@ -8,8 +8,7 @@ using System.IO;
 using SFML.Graphics;
 using SFML.Window;
 using SFML.System;
-using System.Drawing;
-namespace Test {
+namespace SayAgain {
     class Arm : Character {
 
 
@@ -32,16 +31,15 @@ namespace Test {
 
         public override void Draw(RenderTarget target, RenderStates states) {
 
-            if (!hide)
-            {
+            if (!hide) {
                 if (expr == "angry") target.Draw(sprites["angry"][0]);
                 if (expr == "neutral") target.Draw(sprites["neutral"][0]);
             }
         }
 
         public override void setArmPosition(Vector2f position) {
-            foreach(var arm in sprites) {
-                foreach(var sprite in arm.Value) {
+            foreach (var arm in sprites) {
+                foreach (var sprite in arm.Value) {
                     sprite.Position = position;
                 }
             }
@@ -67,7 +65,7 @@ namespace Test {
             sprites["neutral"].Add(new Sprite(arm, new IntRect(0, 0, 320, 229)));
             sprites["angry"].Add(new Sprite(arm, new IntRect(0, 229, 320, 229)));
 
-            
+
             sprites["neutral"][0].Scale = new Vector2f(xscale, yscale);
             sprites["angry"][0].Scale = new Vector2f(xscale, yscale);
         }

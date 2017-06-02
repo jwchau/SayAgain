@@ -8,9 +8,8 @@ using System.IO;
 using SFML.Graphics;
 using SFML.Window;
 using SFML.System;
-using System.Drawing;
 
-namespace Test {
+namespace SayAgain {
     class Alex : Character {
         //private View _view;
         Texture t = new Texture("../../Art/alexMaster.png");
@@ -42,6 +41,7 @@ namespace Test {
         }
 
         public override void setSpriteEmotion(spriteEmotion e) {
+            index = 0;
             expr = e.ToString();
 
         }
@@ -81,6 +81,7 @@ namespace Test {
 
         public override void Draw(RenderTarget target, RenderStates states) {
             rnd = r.Next(4, 14);
+            //Console.WriteLine("inside alex.cs: expr ; index " + expr + " , " + index);
             target.Draw(sprites[expr][index]);
             if (!hide) {
                 if (isTalking) {
@@ -157,7 +158,8 @@ namespace Test {
 
                 if ((DateTime.Now - time).TotalMilliseconds > (1400f / framerate)) {
                     time = DateTime.Now;
-                    if (++index >= sprites[expr].Count) {
+                    if (++index > sprites[expr].Count - 1) {
+
                         pickSpecialFrame();
                         index = 0;
                     }
@@ -177,7 +179,7 @@ namespace Test {
             FNCRange[8] = 9;
             FNCRange[9] = 10;
 
-            currentFNC = -1;
+            currentFNC = 0;
 
             hide = false;
 

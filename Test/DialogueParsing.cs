@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using Newtonsoft.Json;
 
-namespace Test {
+namespace SayAgain {
     public class DialogueParsing {
         public RootObject r = new RootObject();
         private string filename = "";
@@ -27,7 +27,7 @@ namespace Test {
     public class DialogueObj {
         public string content;
         public string tone;
-        public string plotpoint;
+        public string plot;
         public string id;
         public string next;
         public double FNC;
@@ -39,20 +39,20 @@ namespace Test {
 
 
         //for npc plot point lines/// 8 string, 1 string list (dialogue object)
-        public DialogueObj(string content, string tone, string plotpoint, string id, string FNC, string finished, string speaker, string InterjectionNext, List<string> target) { 
-            this.content = content; this.tone = tone; this.plotpoint = plotpoint; this.id = id; this.FNC = double.Parse(FNC); this.finished = finished; this.speaker = speaker; this.inext = InterjectionNext;
+        public DialogueObj(string content, string tone, string plotpoint, string id, string FNC, string finished, string speaker, string InterjectionNext, List<string> target) {
+            this.content = content; this.tone = tone; this.plot = plotpoint; this.id = id; this.FNC = double.Parse(FNC); this.finished = finished; this.speaker = speaker; this.inext = InterjectionNext;
             this.target = target;
         }
 
         //for npc transitino lines///6 string, 1 string list, 1 int (dialogue object)
-        public DialogueObj(string c, string t, string id, string f, int b, string s, string ix, List<string> target) { 
+        public DialogueObj(string c, string t, string id, string f, int b, string s, string ix, List<string> target) {
             this.content = c; this.tone = t; this.id = id; this.FNC = double.Parse(f); this.bucket = b; this.speaker = s; this.inext = ix;
             this.target = target;
         }
 
         //for player plot point lines///6 string, 1 string list (dialogue object)
         public DialogueObj(string c, string t, string p, string i, string f, string ix, List<string> target) {
-            this.content = c; this.tone = t; this.plotpoint = p; this.id = i; this.FNC = double.Parse(f); this.inext = ix; this.target = target;
+            this.content = c; this.tone = t; this.plot = p; this.id = i; this.FNC = double.Parse(f); this.inext = ix; this.target = target;
         }
 
         //for player transition lines///5 string, 1 int, 1 string list (dialogue object)
@@ -61,9 +61,9 @@ namespace Test {
         }
 
         public DialogueObj() {
-            content = "returned empty string";
+            content = ". . .";
             tone = "";
-            plotpoint = "";
+            plot = "";
             id = "";
             next = "";
             finished = "";

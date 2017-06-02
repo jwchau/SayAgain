@@ -8,15 +8,15 @@ using SFML.Window;
 using SFML.Graphics;
 
 
-namespace Test {
+namespace SayAgain {
     abstract class Game {
         protected RenderWindow window;
         protected Color clearColor;
 
         //////////////////////////////////////////////////////////////////////////////////////////////
         //Screen defaults
-        static protected UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
-        static protected UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+        static protected UInt32 SCREEN_WIDTH = 1920;
+        static protected UInt32 SCREEN_HEIGHT = 1080;
         protected double scaleFactorX;
         protected double scaleFactorY;
 
@@ -71,11 +71,12 @@ namespace Test {
         protected tone currentTone = tone.Root;
         protected Loader Load = new Loader();
         protected OldSelector s = new OldSelector();
+        protected Random rnd = new Random();
 
         #endregion
 
-        protected Sprite splash, alphaSplash, alexSplash, momSplash, dadSplash;
-        protected Sprite mom, alex, dad, toneBar, backwall, flower, lamp, pictures, table, wallWindow;
+        protected Sprite splash;
+        protected Sprite mom, alex, dad, toneBar, backwall, flower, lamp, pictures, table, wallWindow,plates, cups,playerfood;
         protected RectangleShape textBackground;
         ContextSettings settings;
         protected Character Mom, Alexis, Dad, Arm;
@@ -83,11 +84,13 @@ namespace Test {
         /////////////////////////////////////////////////////////////////////////////////////////////
 
         public static UInt32 getW() {
-            return SCREEN_WIDTH;
+            //return SCREEN_WIDTH;
+            return 1920;
         }
 
         public static UInt32 getH() {
-            return SCREEN_HEIGHT;
+            //return SCREEN_HEIGHT;
+            return 1080;
         }
 
         protected GameState State = new GameState();

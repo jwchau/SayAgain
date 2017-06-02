@@ -7,12 +7,9 @@ using SFML.Window;
 using SFML.Graphics;
 using SFML.System;
 
-namespace Test
-{
-    class MenuButton : UIElement
-    {
-        public MenuButton(float x, float y, string content)
-        {
+namespace SayAgain {
+    class MenuButton : UIElement {
+        public MenuButton(float x, float y, string content) {
             this.x = x;
             this.y = y;
             this.content = content;
@@ -21,14 +18,13 @@ namespace Test
             menuButtonSprite.Scale = scale;
             menuButtonSpriteHighlight.Scale = scale;
 
-            menuButtonSprite.Position = new Vector2f(x - menuButtonSprite.GetGlobalBounds().Width/2, y - menuButtonSprite.GetGlobalBounds().Height / 2);
+            menuButtonSprite.Position = new Vector2f(x - menuButtonSprite.GetGlobalBounds().Width / 2, y - menuButtonSprite.GetGlobalBounds().Height / 2);
             menuButtonSpriteHighlight.Position = new Vector2f(x - menuButtonSprite.GetGlobalBounds().Width / 2, y - menuButtonSprite.GetGlobalBounds().Height / 2);
 
-            
 
-            
-            if (content == "Sound")
-            {
+
+
+            if (content == "Sound") {
                 menuSoundUntoggleSprite = new Sprite(new Texture(buttonSpritePaths[content][2]));
                 menuSoundUntoggleSpriteHighlight = new Sprite(new Texture(buttonSpritePaths[content][3]));
                 menuSoundUntoggleSprite.Scale = scale;
@@ -40,8 +36,8 @@ namespace Test
 
         }
 
-        static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
-        static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+        static UInt32 SCREEN_WIDTH = 1920;
+        static UInt32 SCREEN_HEIGHT = 1080;
         Vector2f scale = new Vector2f(SCREEN_WIDTH / 1920, SCREEN_HEIGHT / 1080);
         Sprite menuButtonSprite;
         Sprite menuButtonSpriteHighlight;
@@ -51,77 +47,58 @@ namespace Test
         bool hover = false;
         public bool toggleon = true;
 
-        public void setHover(int mouseX, int mouseY)
-        {
+        public void setHover(int mouseX, int mouseY) {
             hover = Contains(mouseX, mouseY);
         }
 
-        public Sprite getMenuButtonSprite()
-        {
+        public Sprite getMenuButtonSprite() {
             return menuButtonSprite;
         }
 
-        public string getMenuButtonContent()
-        {
+        public string getMenuButtonContent() {
             return content;
         }
-        
-        public FloatRect getRectBounds()
-        {
+
+        public FloatRect getRectBounds() {
             return menuButtonSprite.GetGlobalBounds();
         }
 
-        public bool Contains(int mouseX, int mouseY)
-        {
+        public bool Contains(int mouseX, int mouseY) {
             FloatRect bounds = getRectBounds();
-            if (mouseX >= bounds.Left && mouseX <= bounds.Left + (bounds.Width - 4) && mouseY >= bounds.Top && mouseY <= bounds.Top + (bounds.Height - 4))
-            {
+            if (mouseX >= bounds.Left && mouseX <= bounds.Left + (bounds.Width - 4) && mouseY >= bounds.Top && mouseY <= bounds.Top + (bounds.Height - 4)) {
                 return true;
             }
             return false;
         }
 
-        public override void Draw(RenderTarget target, RenderStates states)
-        {
+        public override void Draw(RenderTarget target, RenderStates states) {
             //target.Draw(rect);
-            if(content == "Sound")
-            {
-                if (hover)
-                {
-                    if(toggleon)
-                    {
+            if (content == "Sound") {
+                if (hover) {
+                    if (toggleon) {
                         target.Draw(menuButtonSpriteHighlight);
-                    } else
-                    {
+                    } else {
                         target.Draw(menuSoundUntoggleSpriteHighlight);
                     }
-                }
-                else
-                {
-                    if(!toggleon)
-                    {
+                } else {
+                    if (!toggleon) {
                         target.Draw(menuSoundUntoggleSprite);
-                    } else
-                    {
+                    } else {
                         target.Draw(menuButtonSprite);
                     }
-                    
+
 
                 }
-            } else
-            {
-                if (hover)
-                {
+            } else {
+                if (hover) {
                     target.Draw(menuButtonSpriteHighlight);
-                }
-                else
-                {
+                } else {
 
                     target.Draw(menuButtonSprite);
 
                 }
             }
-            
+
         }
     }
 }

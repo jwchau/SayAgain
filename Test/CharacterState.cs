@@ -8,7 +8,7 @@ using SFML.Window;
 using SFML.System;
 using SFML.Audio;
 
-namespace Test {
+namespace SayAgain {
     class CharacterState : Drawable {
         //fields
         private string who;

@@ -7,10 +7,9 @@ using SFML.Graphics;
 using SFML.System;
 using SFML.Window;
 
-namespace Test {
+namespace SayAgain {
     class InputManager {
         public InputManager() {
-
         }
 
         //fields
@@ -78,7 +77,7 @@ namespace Test {
             }
         }
         #endregion
-       
+
         #region SA_onMouseButtonReleased
         public void onMouseButtonReleased() {
             this.SetMouseMove(false);
@@ -93,7 +92,7 @@ namespace Test {
                 if (d.getAlex().Contains(MouseX, MouseY)) {
 
                 }
-                
+
                 //d.getAlex().targetCheck(MouseX, MouseY);
                 //d.getMom().targetCheck(MouseX, MouseY);
                 //d.getDad().targetCheck(MouseX, MouseY);
@@ -114,14 +113,13 @@ namespace Test {
         public void GamePlay(GameState s, List<UIButton> b, int x, int y, double sx, double sy) {
             if (s.GetState() == "game" || s.GetState() == "tutorial") {
                 for (var i = 0; i < b.Count; i++) {
-                    if (b[i].Contains((int)(x*sx), (int)(y*sy))) {
+                    if (b[i].Contains((int)(x * sx), (int)(y * sy))) {
                         var bounds = b[i].getRectBounds();
                         s.sound_man.playSFX("button");
                         b[i].SetMouseOffset((int)(x - bounds.Left), (int)(y - bounds.Top));
                         b[i].SetSelected(true);
                     }
                 }
-
                 this.SetMousePos(x, y);
                 this.SetMouseRelease(false);
                 this.SetMouseDown(true);
@@ -130,7 +128,7 @@ namespace Test {
         #endregion
 
         #region SA_MenuPlay
-        public void MenuPlay(GameState s,List<Menu> m, int x, int y) {
+        public void MenuPlay(GameState s, List<Menu> m, int x, int y) {
             var startMenu = m[0]; var settingsMenu = m[1]; var pauseMenu = m[2];
             if (s.GetState() == "menu") {
                 // Menu Traversal Logic
@@ -146,7 +144,7 @@ namespace Test {
                 } else if (s.GetMenuState() == "settings") //If Current Menu State is the Settings Menu
                   {
                     s.updateMenuState(this.GetMousePos(), settingsMenu.getMenuButtons(), new List<Tuple<string, string, Task>> {
-                        new Tuple<string, string, Task>("Sound", "settings", new Task(() => { settingsMenu.getMenuButtons()[0].toggleon = !settingsMenu.getMenuButtons()[0].toggleon; s.sound_man.playSFX("button"); })),
+                        new Tuple<string, string, Task>("Sound", "settings", new Task(() => { settingsMenu.getMenuButtons()[0].toggleon = !settingsMenu.getMenuButtons()[0].toggleon; s.sound_man.playSFX("button"); s.sound_man.toggleSoundPause(); })),
                         new Tuple<string, string, Task>("Back", "start", new Task(() => { s.sound_man.playSFX("button"); }))
                     });
 
@@ -160,7 +158,7 @@ namespace Test {
                     });
                 } else if (s.GetMenuState() == "settings") {
                     s.updateMenuState(this.GetMousePos(), settingsMenu.getMenuButtons(), new List<Tuple<string, string, Task>> {
-                        new Tuple<string, string, Task>("Sound", "settings", new Task(() => { settingsMenu.getMenuButtons()[0].toggleon = !settingsMenu.getMenuButtons()[0].toggleon; s.sound_man.playSFX("button"); })),
+                        new Tuple<string, string, Task>("Sound", "settings", new Task(() => { settingsMenu.getMenuButtons()[0].toggleon = !settingsMenu.getMenuButtons()[0].toggleon; s.sound_man.playSFX("button"); s.sound_man.toggleSoundPause(); })),
                         new Tuple<string, string, Task>("Back", "pause", new Task(() => { s.sound_man.playSFX("button"); }))
                     });
                 }

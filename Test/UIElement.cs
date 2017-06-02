@@ -7,7 +7,7 @@ using SFML.Window;
 using SFML.Graphics;
 
 //
-namespace Test {
+namespace SayAgain {
     class UIElement : Drawable {
         //constructor
         public UIElement() {

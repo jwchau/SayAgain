@@ -7,26 +7,18 @@ using SFML.Window;
 using SFML.Graphics;
 using SFML.System;
 
-namespace Test
-{
-    class Menu : UIElement
-    {
-        public Menu(string type)
-        {
+namespace SayAgain {
+    class Menu : UIElement {
+        public Menu(string type) {
             this.type = type;
-            if (type == "start")
-            {
+            if (type == "start") {
                 //Console.WriteLine("MENU START S_W: " + SCREEN_WIDTH + ", S_H: " + SCREEN_HEIGHT);
                 MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3, "Start"));
-                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3 + (float)(SCREEN_HEIGHT*.15), "Settings"));
-            }
-            else if (type == "settings")
-            {
+                MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3 + (float)(SCREEN_HEIGHT * .15), "Settings"));
+            } else if (type == "settings") {
                 MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3, "Sound"));
                 MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 3 + (float)(SCREEN_HEIGHT * .15), "Back"));
-            }
-            else if (type == "pause")
-            {
+            } else if (type == "pause") {
                 MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - (float)(SCREEN_HEIGHT * .15), "Back"));
                 MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, "Settings"));
                 MenuButtons.Add(new MenuButton(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + (float)(SCREEN_HEIGHT * .15), "Quit"));
@@ -36,42 +28,35 @@ namespace Test
             }
         }
 
-        UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
-        UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+        UInt32 SCREEN_WIDTH = 1920;
+        UInt32 SCREEN_HEIGHT = 1080;
         //string type;
         List<MenuButton> MenuButtons = new List<MenuButton>();
         Sprite pauseBG;
 
-        public void DrawPauseBG(RenderTarget target)
-        {
+        public void DrawPauseBG(RenderTarget target) {
             target.Draw(pauseBG);
         }
 
-        public override void Draw(RenderTarget target, RenderStates states)
-        {
-            foreach (var butt in MenuButtons)
-            {
+        public override void Draw(RenderTarget target, RenderStates states) {
+            foreach (var butt in MenuButtons) {
                 target.Draw(butt);
             }
 
         }
 
-        public List<MenuButton> getMenuButtons()
-        {
+        public List<MenuButton> getMenuButtons() {
             return MenuButtons;
         }
 
-        public bool getSoundToggle()
-        {
+        public bool getSoundToggle() {
             return getMenuButtons()[0].toggleon;
         }
 
-        public void SweepButtons(int x, int y, double scalex, double scaley)
-        {
+        public void SweepButtons(int x, int y, double scalex, double scaley) {
             //Console.WriteLine("MENU SWEEP BUTTONS: " + scalex + ", " + scaley);
             var buttons = getMenuButtons();
-            for (var i = 0; i < buttons.Count; i++)
-            {
+            for (var i = 0; i < buttons.Count; i++) {
                 buttons[i].setHover((int)(x * scalex), (int)(y * scaley));
             }
         }

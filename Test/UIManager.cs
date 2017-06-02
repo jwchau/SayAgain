@@ -10,7 +10,7 @@ using SFML.System;
 using System.Text.RegularExpressions;
 
 //holds UI elements such as buttons, input fields, TextBoxes, etc
-namespace Test {
+namespace SayAgain {
     class UIManager {
         //constructor
         public UIManager() {
@@ -29,13 +29,13 @@ namespace Test {
             generateButtons();
 
             rootBackground = new RectangleShape(new Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT * 0.19f));
-            rootBackground.Position = new Vector2f(0, SCREEN_HEIGHT*0.81f);
+            rootBackground.Position = new Vector2f(0, SCREEN_HEIGHT * 0.81f);
             rootBackground.FillColor = new Color(67, 65, 69);
             rootBackground.OutlineThickness = 2;
             rootBackground.OutlineColor = Color.White;
 
             rootBackgroundBorder = new RectangleShape(new Vector2f(rootBackground.GetGlobalBounds().Width - 15, rootBackground.GetGlobalBounds().Height - 15));
-            rootBackgroundBorder.Position = new Vector2f(rootBackground.GetGlobalBounds().Width/2 - rootBackgroundBorder.GetGlobalBounds().Width/2, rootBackground.GetGlobalBounds().Top + rootBackground.GetGlobalBounds().Height / 2 - rootBackgroundBorder.GetGlobalBounds().Height / 2);
+            rootBackgroundBorder.Position = new Vector2f(rootBackground.GetGlobalBounds().Width / 2 - rootBackgroundBorder.GetGlobalBounds().Width / 2, rootBackground.GetGlobalBounds().Top + rootBackground.GetGlobalBounds().Height / 2 - rootBackgroundBorder.GetGlobalBounds().Height / 2);
             rootBackgroundBorder.FillColor = new Color(67, 65, 69);
             rootBackgroundBorder.OutlineThickness = 2;
             rootBackgroundBorder.OutlineColor = rootBackground.FillColor;
@@ -47,8 +47,8 @@ namespace Test {
         List<UIButton> buttons = new List<UIButton>(); //our tone buttons
         List<UITextBox> playerDialogues = new List<UITextBox>();
         public RectangleShape rootBackground, rootBackgroundBorder;
-        static UInt32 SCREEN_WIDTH = VideoMode.DesktopMode.Width;
-        static UInt32 SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+        static UInt32 SCREEN_WIDTH = 1920;
+        static UInt32 SCREEN_HEIGHT = 1080;
         public int tutorialButtonIndex = 0;
         int buttonOrder = 0;
         string[] dialogueArray;
@@ -226,10 +226,7 @@ namespace Test {
             }
             playerDialogues.Clear();
 
-            produceTextBoxes(responseList.ElementAt(0).content);
-
-            //Console.WriteLine("I AM PRODUCING THE CONTENTS OF: " + responseList[0].content);
-
+            produceTextBoxes(responseList[0].content);
             generateButtons();
         }
 
@@ -257,8 +254,10 @@ namespace Test {
 
             }
         }
-
-
+        //TooltipToggle(false, db box);
+        public void TooltipToggle(bool b, DialogueBox theTip) {
+            theTip.init = b;
+        }
 
         #region SA_applyTones
         public void applyTones(int x, int y, DialogueBox theTip) {
@@ -291,15 +290,14 @@ namespace Test {
                                     theTip.loadNewDialogue("tooltip3", "Click/Space to Speak");
                                 }
                                 ////Console.WriteLine("MY TONE IS: " + playerDialogues[0].getTone());
-                                
+
                                 //IF THE PLAYER DRAGGED IN BLUNT
                                 //HAVE THE TARGET CHARS REACT ANGRILY
-                                if (playerDialogues[0].getTone() == tone.Blunt)
-                                {
+                                if (playerDialogues[0].getTone() == tone.Blunt) {
                                     //only pgets called when dragged!! keys will not work
-                                   // Program.getGame().getTargets();
+                                    // Program.getGame().getTargets();
                                     //Console.WriteLine("hello");
-                                
+
 
 
                                     //applyReactionToBlunt(Program.getGame().getTargets());
@@ -316,20 +314,13 @@ namespace Test {
         }
         #endregion
 
-        public virtual void applyReactionToBlunt(List<string> t)
-        {
-            foreach (var c in t)
-            {
-                if (string.Equals(c, "mom", StringComparison.OrdinalIgnoreCase))
-                {
+        public virtual void applyReactionToBlunt(List<string> t) {
+            foreach (var c in t) {
+                if (string.Equals(c, "mom", StringComparison.OrdinalIgnoreCase)) {
                     Program.getGame().getMom().setSpriteEmotion(Character.spriteEmotion.angry);
-                }
-                else if (string.Equals(c, "dad", StringComparison.OrdinalIgnoreCase))
-                {
+                } else if (string.Equals(c, "dad", StringComparison.OrdinalIgnoreCase)) {
                     Program.getGame().getDad().setSpriteEmotion(Character.spriteEmotion.angry);
-                }
-                else if (string.Equals(c, "alex", StringComparison.OrdinalIgnoreCase))
-                {
+                } else if (string.Equals(c, "alex", StringComparison.OrdinalIgnoreCase)) {
                     Program.getGame().getAlexis().setSpriteEmotion(Character.spriteEmotion.angry);
                 }
             }
@@ -346,7 +337,6 @@ namespace Test {
 
 
                     if (theTip.init == true) {
-
                         theTip.loadNewDialogue("tooltip3", "be my baby daddy pls");
                     }
                 }

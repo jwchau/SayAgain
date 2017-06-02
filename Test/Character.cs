@@ -8,12 +8,11 @@ using System.IO;
 using SFML.Graphics;
 using SFML.Window;
 using SFML.System;
-using System.Drawing;
 
 
 //todo: share random
 //multiple interesting frames
-namespace Test {
+namespace SayAgain {
 
     abstract class Character : Drawable {
         protected double[] FNCRange = new double[10]; //HF-MF-LF-LN-MN-HN-LC-MC-HC
@@ -31,7 +30,7 @@ namespace Test {
         private List<Sprite> sprites = new List<Sprite>();
 
         public DateTime time = DateTime.Now;
-        
+
         protected float xpos, ypos, xscale, yscale, mouthPosX, mouthPosY;
         protected bool canTalk = false;
         public CharacterState state;
@@ -39,21 +38,19 @@ namespace Test {
         public abstract void setSpriteEmotion(spriteEmotion e);
         public abstract void checkFNC();
 
-        protected uint SCREEN_WIDTH = VideoMode.DesktopMode.Width;
-        protected uint SCREEN_HEIGHT = VideoMode.DesktopMode.Height;
+        protected uint SCREEN_WIDTH = 1920;
+        protected uint SCREEN_HEIGHT = 1080;
 
 
         public bool isTalking = false;
 
         protected bool hide = false;
 
-        public bool getHide()
-        {
+        public bool getHide() {
             return hide;
         }
 
-        public void setHide(bool v)
-        {
+        public void setHide(bool v) {
             hide = v;
         }
 
@@ -82,18 +79,20 @@ namespace Test {
         }
 
 
-        public void setTalking(bool b)
-        {
-            if (b)
-            {
+        public void setTalking(bool b) {
+            if (b) {
                 isTalking = true;
-            }
-            else if (!b)
-            {
+            } else if (!b) {
                 isTalking = false;
             }
         }
 
+
+        public string fncState() {
+            if (currentFNC < FNCRange[3]) return "frust";
+            else if (currentFNC > FNCRange[7]) return "coop";
+            else return "neut";
+        }
 
         public void setSprite(List<Sprite> s) {
             sprites = s;
@@ -107,15 +106,18 @@ namespace Test {
         public abstract Vector2f getArmPosition();
 
         public abstract void setArmPosition(Vector2f position);
-        
 
-        public double[] getFNCRange()
-        {
+
+        public double[] getFNCRange() {
             return FNCRange;
         }
 
         public double getCurrentFNC() {
             return currentFNC;
+        }
+
+        public void setCurrentFNC(double d) {
+            currentFNC = d;
         }
 
         public void changeFNC(double i) {
