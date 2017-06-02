@@ -25,11 +25,13 @@ namespace SayAgain {
                 pauseBG = new Sprite(new Texture("../../Art/UI_Art/buttons n boxes/pausemenu.png"));
                 pauseBG.Scale = new Vector2f(SCREEN_WIDTH / 1920, SCREEN_HEIGHT / 1080);
                 pauseBG.Position = new Vector2f(SCREEN_WIDTH / 2 - pauseBG.GetGlobalBounds().Width / 2, SCREEN_HEIGHT / 2 - pauseBG.GetGlobalBounds().Height / 2);
+
             }
         }
 
         UInt32 SCREEN_WIDTH = 1920;
         UInt32 SCREEN_HEIGHT = 1080;
+
         //string type;
         List<MenuButton> MenuButtons = new List<MenuButton>();
         Sprite pauseBG;

@@ -105,6 +105,7 @@ namespace SayAgain {
 
 
                 current = new Music(m_queue.Dequeue());
+                current.Volume = (soundpause ? 0 : 100);
                 current.Play();
             }
         }

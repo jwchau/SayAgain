@@ -29,6 +29,7 @@ namespace SayAgain {
         public DialogueBox tooltip;
         public string dialogueIndex = "player";
         public bool interjection = false;
+        public Task resetGameStuff;
         public void advanceConversation(string speaker, List<DialogueObj> responseList, List<DialogueObj> responseListNPC) {
             int pickPlayer = 0;
             int pickNPC = 0;
@@ -252,6 +253,7 @@ namespace SayAgain {
             }
             currentState = state;
             if (state == "tutorial" && currentMenuState == "start") {
+                resetGameStuff.Start();
                 advanceConversation("", null, null);
             }
 
@@ -293,6 +295,7 @@ namespace SayAgain {
         }
         // Handle Menu Traversal and Game Launching
         public void updateMenuState(int[] mouseCoords, List<MenuButton> buttons, List<Tuple<string, string, Task>> mappings) {
+            Console.WriteLine("MENU STATE");
             // Loop through current menu's buttons
             for (var i = 0; i < buttons.Count; i++) {
                 // If mouse position is over current button
@@ -310,6 +313,9 @@ namespace SayAgain {
                             } else if (mappings[j].Item2 == "menu") {
                                 SetState(mappings[j].Item2);
                                 SetMenuState("start");
+                            } else if (mappings[j].Item2 == "game") {
+                                SetState(previousState);
+                                
                             } else {
                                 SetMenuState(mappings[j].Item2);
                             }
@@ -321,11 +327,19 @@ namespace SayAgain {
             }
         }
 
+        public string previousState = "";
+
         public void TogglePause() {
+            Console.WriteLine(GetState());
             if (GetState() == "pause") {
-                SetState("game");
+                SetState(previousState);
                 SetMenuState("start");
             } else if (GetState() == "game") {
+                previousState = "game";
+                SetState("pause");
+                SetMenuState("pause");
+            } else if (GetState() == "tutorial") {
+                previousState = "tutorial";
                 SetState("pause");
                 SetMenuState("pause");
             }

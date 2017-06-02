@@ -87,13 +87,16 @@ namespace SayAgain {
 
         private void onMouseButtonPressed(object sender, MouseButtonEventArgs e) {
 
+            if (State.GetMenuState() == "pause")
+            {
+                State.resetGameStuff = new Task(() => { resetCharacterFNC(); resetPlotId(); jankId = "1"; });
+            }
+
             ManagerOfInput.onMouseButtonPressed(e.X, e.Y);
 
             ManagerOfInput.GamePlay(State, buttons, e.X, e.Y, scaleFactorX, scaleFactorY);
 
             ManagerOfInput.MenuPlay(State, menus, e.X, e.Y);
-
-
 
             if (State.getGameTimer("game").Contains(e.X, e.Y, scaleFactorX, scaleFactorY)) {
                 State.sound_man.playSFX("button");
@@ -127,7 +130,10 @@ namespace SayAgain {
                 }
                 #endregion
 
-                if (e.Code == Keyboard.Key.P) return;
+                if (e.Code == Keyboard.Key.P)
+                {
+                    State.TogglePause();
+                }
             }
         }
 
@@ -556,15 +562,12 @@ namespace SayAgain {
             //ui_man.produceTextBoxes(responseList[0].content);
             //timeflag
             State.addTimer("game", 10, new Action(() => { TimerAction(); }));
-            State.addTimer("cursor", 1, null);
             /////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 
             buttons = ui_man.getButtons();
             menus.Add(startMenu); menus.Add(settingsMenu); menus.Add(pauseMenu);
 
-
+            State.resetGameStuff = new Task(() => { resetCharacterFNC(); resetPlotId(); jankId = "1";  });
             Mom = new Mom();
             Mom.setSpriteEmotion(Character.spriteEmotion.happy);
             Mom.active(true);
@@ -706,7 +709,7 @@ namespace SayAgain {
                 }
 
             } else if (State.GetState() == "pause") {
-                State.getGameTimer("game").PauseTimer();
+                //State.getGameTimer("game").PauseTimer();
 
             }
 
@@ -791,7 +794,6 @@ namespace SayAgain {
 
 
                 if (State.GetState() == "pause") {
-
                     pauseMenu.DrawPauseBG(window);
                     if (State.GetMenuState() == "pause") {
                         window.Draw(pauseMenu);
