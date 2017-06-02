@@ -306,8 +306,7 @@ namespace SayAgain {
             next_nodes.Add("DadNoSeesHisFault");
             addNode("MomReconcilesDad", next_nodes, preconditions);
 
-            preconditions.Add("CAT");
-            next_nodes.Add("boooom baby boom");
+            preconditions.Add("M: HF-HF, D: HF-HF");
             addNode("DadNoSeesHisFault", next_nodes, preconditions);
 
             preconditions.Add("M: HC-HC, D: HC-HC");

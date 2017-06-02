@@ -113,7 +113,6 @@ namespace SayAgain {
             if (e.Code == Keyboard.Key.LControl && State.GetState() == "menu") jankId = "27";
         }
 
-
         private void onKeyPressed(object sender, KeyEventArgs e) {
             if (e.Code == Keyboard.Key.Space) {
                 spaceCode();
@@ -128,9 +127,7 @@ namespace SayAgain {
                 }
                 #endregion
 
-                if (e.Code == Keyboard.Key.P) {
-
-                }
+                if (e.Code == Keyboard.Key.P) return;
             }
         }
 
@@ -138,19 +135,23 @@ namespace SayAgain {
             if (State.GetState() == "menu") State.SetState("tutorial");
             else if (State.GetState() == "game") {
                 if (endGame) {
-                    if (State.dialogueBox.checkNext()) {
-                        State.playerDialogueBox.loadNewDialogue("player", "Thanks for playing Ay Gains <hi><soo what r u still doing here><no more dialogue this way><really, its over><im being cereal><don't u have something better to do><booom goes the dynamite>");
-                        State.playerDialogueBox.active = true;
-                        State.playerDialogueBox.init = true;
-                        State.dialogueBox.active = false;
-                        State.dialogueBox.init = false;
-                        State.playerDialogueBox.awaitInput = false;
-                        fadeFlag = true;
-                        fadeFloat = 0.003f;
-                    }
+                    if (endGame2) {
+                        if (State.dialogueBox.checkNext()) {
+                            State.playerDialogueBox.loadNewDialogue("player", "Thanks for playing Ay Gains <hi> <soo what r u still doing here> <no more dialogue this way> <really, its over> <im being cereal> <don't u have something better to do> <booom goes the dynamite>");
+                            State.playerDialogueBox.active = true;
+                            State.playerDialogueBox.init = true;
+                            State.dialogueBox.active = false;
+                            State.dialogueBox.init = false;
+                            State.playerDialogueBox.awaitInput = false;
+                            fadeFlag = true;
+                            fadeFloat = 0.003f;
+                            endGame2 = false;
+                        }
+                    } else { State.dialogueBox.checkNext(); return; }
                 } else {
                     if (State.dialogueIndex == "player") {
                         State.advanceConversation(speaker, responseList, responseListNPC);
+
 
                     } else if (State.dialogueIndex == "root") {
                         revertEmotion(Mom); revertEmotion(Dad); revertEmotion(Alexis);
@@ -167,6 +168,7 @@ namespace SayAgain {
                         // Activate dialogueBox to display and be responsive, or switch to Root dialogue
                     } else if (State.dialogueIndex == "AI") {
                         State.advanceConversation(speaker, responseList, responseListNPC);
+                        if (responseListNPC[0].finished == "finGame") endGame = true;
 
                     } else if (State.dialogueIndex == "interject") {
                         if (State.dialogueBox.getAwaitInput() == true) {
@@ -182,6 +184,8 @@ namespace SayAgain {
                                     npcTransitionId = incr(npcTransitionId);
                                     playerTransitionId = linkId(npcTransitionId);
                                 }
+
+                                RES(responseListNPC);
 
                                 State.advanceConversation(speaker, responseList, responseListNPC);
                                 affect(responseListNPC[0].target, responseListNPC[0].FNC);
@@ -354,7 +358,6 @@ namespace SayAgain {
                 updateIds(0);
 
                 if (responseListNPC[0].finished == "fin") sman.setTypeTransition();
-                else if (responseListNPC[0].finished == "finGame") endGame = true;
             } else {
                 responseList = s.ChooseDialogTransition(Load.newplayert, bucket, playerTransitionId, currentTone.ToString());
                 responseListNPC = s.ChooseDialogTransition(Load.allt, bucket, npcTransitionId, currentTone.ToString());
@@ -371,10 +374,13 @@ namespace SayAgain {
             affect(responseList[pickPlayer].target, responseList[pickPlayer].FNC);
             affect(responseListNPC[pickNPC].target, responseListNPC[pickNPC].FNC);
 
+            //debug RES
+            RES(responseList);
+            RES(responseListNPC);
+
             checkFades();
             checkPlotChange();
             reRootPlayer();
-
         }
 
         private void reRootPlayer() {
@@ -403,6 +409,13 @@ namespace SayAgain {
             return temp1.ToString();
         }
 
+        private void RES(List<DialogueObj> LDO) {
+            if (LDO[0].content == "returned empty string") {
+                Console.WriteLine("playerid: " + playerPlotId);
+                Console.WriteLine("npcid: " + npcPlotId);
+                Console.WriteLine("currentnode: " + sman.getCurrentNode());
+            }
+        }
 
         private void updateIds(int t) {
             //zero for plots
@@ -464,11 +477,15 @@ namespace SayAgain {
             else if (t == -1) c.setSpriteEmotion(Character.spriteEmotion.angry);
             else c.setSpriteEmotion(Character.spriteEmotion.neutral);
         }
-
+        bool drawAlex = true;
         private void checkFades() {
-            if (responseListNPC[0].id == "4" && responseListNPC[0].plot == "DadInterjects2") Alexis.dim();
-            else if (responseListNPC[0].id == "12" && responseListNPC[0].plot == "MomInterjects3") Alexis.undim();
-            else if (responseListNPC[0].id == "1" && responseListNPC[0].plot == "BadEnding1") Alexis.undim();
+            if (responseListNPC[0].id == "5" && responseListNPC[0].plot == "DadInterjects2") {
+                drawAlex = false;
+            } else if (responseListNPC[0].id == "13" && responseListNPC[0].plot == "MomInterjects3") {
+                drawAlex = true;
+            } else if (responseListNPC[0].id == "1" && responseListNPC[0].plot == "BadEnding1") {
+                drawAlex = true;
+            }
         }
 
 
@@ -705,6 +722,7 @@ namespace SayAgain {
         bool fadeFlag = false; //0 for nothing, 1 for fade in, 2 for fade out
         float fadeFloat = 0;
         bool endGame = false;
+        bool endGame2 = true;
 
         protected override void Draw() {
 
@@ -725,7 +743,6 @@ namespace SayAgain {
                 window.Draw(pictures);
                 window.Draw(lamp);
                 window.Draw(Mom);
-                window.Draw(Alexis);
                 window.Draw(Dad);
                 window.Draw(table);
                 window.Draw(Arm);
@@ -733,7 +750,7 @@ namespace SayAgain {
                 window.Draw(cups);
                 window.Draw(flower);
                 window.Draw(playerfood);
-
+                if (drawAlex) window.Draw(Alexis);
                 //Draw text box background box
 
                 var dialogues = ui_man.getPlayerDialogues();
