@@ -526,7 +526,7 @@ namespace SayAgain {
             // splash.Position = new Vector2f(0, 0);
 
 
-            table.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * -0.03));
+            table.Position = new Vector2f(0, (float)((SCREEN_HEIGHT * -0.02)+20));
             cups.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * -0.12));
             plates.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * -0.12));
             playerfood.Position = new Vector2f((SCREEN_WIDTH / 2) - (playerfood.GetGlobalBounds().Width / 2), 820);
