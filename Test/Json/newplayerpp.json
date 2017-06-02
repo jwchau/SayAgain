@@ -2714,7 +2714,7 @@
     ,"tone":"Blunt"
     ,"plot":"MomInterjects3"
     ,"id":"30"
-    ,"FNC":"-10"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["alex","mom","dad"]
   },
@@ -2723,7 +2723,7 @@
     ,"tone":"Indifferent"
     ,"plot":"MomInterjects3"
     ,"id":"30"
-    ,"FNC":"10"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["alex","mom","dad"]
   },
@@ -2732,7 +2732,7 @@
     ,"tone":"Compassionate"
     ,"plot":"MomInterjects3"
     ,"id":"30"
-    ,"FNC":"10"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["alex","mom","dad"]
   },
@@ -2741,7 +2741,7 @@
     ,"tone":"Hesitant"
     ,"plot":"MomInterjects3"
     ,"id":"30"
-    ,"FNC":"-10"
+    ,"FNC":"0"
     ,"inext":""
     ,"target":["alex","mom","dad"]
   },

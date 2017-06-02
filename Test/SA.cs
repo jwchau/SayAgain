@@ -384,11 +384,11 @@ namespace SayAgain {
         }
 
         private void reRootPlayer() {
-            //Console.WriteLine(npcPlotId);
-            //Console.WriteLine(playerPlotId + " |||||| " + linkId(npcPlotId));
-            //Console.WriteLine(sman.getCurrentNode());
-            //Console.WriteLine(State.dialogueIndex);
-            //Console.WriteLine();
+            Console.WriteLine(npcPlotId);
+            Console.WriteLine(playerPlotId + " |||||| " + linkId(npcPlotId));
+            Console.WriteLine(sman.getCurrentNode());
+            Console.WriteLine(State.dialogueIndex);
+            Console.WriteLine();
 
             currentTone = tone.Root;
 
@@ -731,7 +731,6 @@ namespace SayAgain {
             if (State.GetState() == "menu") {
                 if (State.GetMenuState() == "start") {
                     window.Draw(splash);
-
                     window.Draw(startMenu);
                 } else {
                     window.Draw(settingsMenu);

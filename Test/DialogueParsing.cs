@@ -61,7 +61,7 @@ namespace SayAgain {
         }
 
         public DialogueObj() {
-            content = "returned empty string";
+            content = ". . .";
             tone = "";
             plot = "";
             id = "";
