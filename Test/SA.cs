@@ -143,7 +143,7 @@ namespace SayAgain {
                 if (endGame) {
                     if (endGame2) {
                         if (State.dialogueBox.checkNext()) {
-                            State.playerDialogueBox.loadNewDialogue("player", "Thanks for playing Ay Gains <hi> <soo what r u still doing here> <no more dialogue this way> <really, its over> <im being cereal> <don't u have something better to do> <booom goes the dynamite>");
+                            State.playerDialogueBox.loadNewDialogue("player", "Thanks for playing Say Again <Thank you!> <That's the end.> <No more dialogue this way.> <No easter eggs.> < > < >");
                             State.playerDialogueBox.active = true;
                             State.playerDialogueBox.init = true;
                             State.dialogueBox.active = false;
