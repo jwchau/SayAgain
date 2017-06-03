@@ -87,9 +87,8 @@ namespace SayAgain {
 
         private void onMouseButtonPressed(object sender, MouseButtonEventArgs e) {
 
-            if (State.GetMenuState() == "pause")
-            {
-                State.resetGameStuff = new Task(() => { resetCharacterFNC(); resetPlotId(); jankId = "1"; });
+            if (State.GetMenuState() == "pause") {
+                State.resetGameStuff = new Task(() => { return; });
             }
 
             ManagerOfInput.onMouseButtonPressed(e.X, e.Y);
@@ -130,8 +129,7 @@ namespace SayAgain {
                 }
                 #endregion
 
-                if (e.Code == Keyboard.Key.P)
-                {
+                if (e.Code == Keyboard.Key.P) {
                     State.TogglePause();
                 }
             }
@@ -532,7 +530,7 @@ namespace SayAgain {
             // splash.Position = new Vector2f(0, 0);
 
 
-            table.Position = new Vector2f(0, (float)((SCREEN_HEIGHT * -0.02)+20));
+            table.Position = new Vector2f(0, (float)((SCREEN_HEIGHT * -0.02) + 20));
             cups.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * -0.12));
             plates.Position = new Vector2f(0, (float)(SCREEN_HEIGHT * -0.12));
             playerfood.Position = new Vector2f((SCREEN_WIDTH / 2) - (playerfood.GetGlobalBounds().Width / 2), 820);
@@ -567,7 +565,7 @@ namespace SayAgain {
             buttons = ui_man.getButtons();
             menus.Add(startMenu); menus.Add(settingsMenu); menus.Add(pauseMenu);
 
-            State.resetGameStuff = new Task(() => { resetCharacterFNC(); resetPlotId(); jankId = "1";  });
+            State.resetGameStuff = new Task(() => { return; });
             Mom = new Mom();
             Mom.setSpriteEmotion(Character.spriteEmotion.happy);
             Mom.active(true);

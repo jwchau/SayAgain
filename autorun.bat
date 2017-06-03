@@ -8,5 +8,6 @@ robocopy .\Test\Fonts ..\SayAgainGame\content\Fonts /E
 robocopy .\Test\Sounds ..\SayAgainGame\content\Sounds /E
 robocopy .\Test\ ..\SayAgainGame\content *.json /E
 Xcopy .\installer.bat %userprofile%\Desktop\
+
 exit
 
