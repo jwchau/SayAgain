@@ -295,7 +295,7 @@ namespace SayAgain {
         }
         // Handle Menu Traversal and Game Launching
         public void updateMenuState(int[] mouseCoords, List<MenuButton> buttons, List<Tuple<string, string, Task>> mappings) {
-            Console.WriteLine("MENU STATE");
+            //Console.WriteLine("MENU STATE");
             // Loop through current menu's buttons
             for (var i = 0; i < buttons.Count; i++) {
                 // If mouse position is over current button
@@ -330,7 +330,7 @@ namespace SayAgain {
         public string previousState = "";
 
         public void TogglePause() {
-            Console.WriteLine(GetState());
+            //Console.WriteLine(GetState());
             if (GetState() == "pause") {
                 SetState(previousState);
                 SetMenuState("start");
