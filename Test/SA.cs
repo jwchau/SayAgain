@@ -143,7 +143,7 @@ namespace SayAgain {
                 if (endGame) {
                     if (endGame2) {
                         if (State.dialogueBox.checkNext()) {
-                            State.playerDialogueBox.loadNewDialogue("player", "Thanks for playing Say Again <Thank you!> <That's the end.> <No more dialogue this way.> <No easter eggs.> < > < >");
+                            State.playerDialogueBox.loadNewDialogue("player", "Thanks for playing Say Again <Credits:> <Jill Yeung - Designer, John Chau - Developer> <Leo Gomez - Producer, Raman Nakarmi - Tester> <Michael Simpson - Test Coordinator, Koosha Seyvani - Social Media Coordinator> <Yuna Choe - Artist Coordinator, Vernon Wong - Writer> <Allayne Low - Artist, Lyn Kline - Artist, Courtney Chavez - Artist>");
                             State.playerDialogueBox.active = true;
                             State.playerDialogueBox.init = true;
                             State.dialogueBox.active = false;
