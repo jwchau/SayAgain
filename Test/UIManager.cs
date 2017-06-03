@@ -337,7 +337,7 @@ namespace SayAgain {
 
 
                     if (theTip.init == true) {
-                        theTip.loadNewDialogue("tooltip3", "be my baby daddy pls");
+                        theTip.loadNewDialogue("tooltip3", "Click/space to speak");
                     }
                 }
             }

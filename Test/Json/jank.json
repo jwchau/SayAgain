@@ -1,12 +1,12 @@
 {
   "Dialogues": [
     {
-      "content": "<(Press Spacebar to proceed)> <Seems forever since I was home.>",
+      "content": "<(Press spacebar to proceed)> <Seems forever since I was home.>",
       "tone": "Default",
       "id": "1"
     },
     {
-      "content": "<Looks like dinner is getting ready.> <(1, 2, 3, 4 on keyboard selects a tone from the available tones, followed by spacebar key to proceed)>",
+      "content": "<Looks like dinner is getting ready.> <(Press 1, 2, 3, or 4 on the keyboard to select a tone, then hit spacebar to proceed.)>",
       "tone": "Default",
       "id": "2"
     },
@@ -16,7 +16,7 @@
       "id": "3"
     },
     {
-      "content": "It's always great to see my little sister! <She seems chipper today.> <(You can also click and drag tones to select them, then clicking the speak button to proceed)>",
+      "content": "It's always great to see my little sister! <She seems chipper today.> <(You can also click and drag tones onto the dialogue box, then click the speak button to proceed.)>",
       "tone": "Default",
       "id": "4"
     },
