@@ -79,7 +79,10 @@ namespace SayAgain {
         protected Sprite mom, alex, dad, toneBar, backwall, flower, lamp, pictures, table, wallWindow,plates, cups,playerfood;
         protected RectangleShape textBackground;
         ContextSettings settings;
-        protected Character Mom, Alexis, Dad, Arm;
+        protected Mom Mom;
+        protected Alex Alexis;
+        protected Dad Dad;
+        protected Arm Arm;
         protected StoryManager sman  = new StoryManager();
         /////////////////////////////////////////////////////////////////////////////////////////////
 

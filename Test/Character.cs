@@ -53,28 +53,13 @@ namespace SayAgain {
         public void setHide(bool v) {
             hide = v;
         }
-
-        public void dim() {
-
-            foreach (Sprite s in sprites) {
-                s.Color = new Color(s.Color.R, s.Color.G, s.Color.B, 180);
-            }
-        }
-
-        public void undim() {
-
-            foreach (Sprite s in sprites) {
-                s.Color = new Color(s.Color.R, s.Color.G, s.Color.B, 255);
-            }
-        }
+        
 
         public void active(bool b) {
             if (b) {
                 canTalk = true;
-                undim();
             } else if (!b) {
                 canTalk = false;
-                dim();
             }
         }
 

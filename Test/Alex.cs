@@ -46,6 +46,7 @@ namespace SayAgain {
 
         }
 
+
         void hideMouth(int i) {
             mouths[i].Position = new Vector2f(-100, -100);
         }
@@ -77,6 +78,20 @@ namespace SayAgain {
 
                 }
             }
+        }
+
+        public void dim() {
+            foreach (Sprite s in mouths) s.Color = new Color(s.Color.R, s.Color.G, s.Color.B, 180);
+            foreach (Sprite s in sprites["happy"]) s.Color = new Color(s.Color.R, s.Color.G, s.Color.B, 180);
+            foreach (Sprite s in sprites["neutral"]) s.Color = new Color(s.Color.R, s.Color.G, s.Color.B, 180);
+            foreach (Sprite s in sprites["angry"]) s.Color = new Color(s.Color.R, s.Color.G, s.Color.B, 180);
+        }
+
+        public void undim() {
+            foreach (Sprite s in mouths) s.Color = new Color(s.Color.R, s.Color.G, s.Color.B, 255);
+            foreach (Sprite s in sprites["happy"]) s.Color = new Color(s.Color.R, s.Color.G, s.Color.B, 255);
+            foreach (Sprite s in sprites["neutral"]) s.Color = new Color(s.Color.R, s.Color.G, s.Color.B, 255);
+            foreach (Sprite s in sprites["angry"]) s.Color = new Color(s.Color.R, s.Color.G, s.Color.B, 255);
         }
 
         public override void Draw(RenderTarget target, RenderStates states) {

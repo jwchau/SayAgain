@@ -11,7 +11,7 @@ namespace SayAgain {
         public GameState() {
             currentState = "menu";
             currentMenuState = "start";
-            sound_man.init_music();
+            //sound_man.init_music();
             playerDialogueBox = new DialogueBox(this, "PLAYER");
             dialogueBox = new DialogueBox(this, "AI");
             tooltip = new DialogueBox(this, "tooltip");

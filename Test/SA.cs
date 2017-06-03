@@ -111,9 +111,11 @@ namespace SayAgain {
             }
         }
 
+        bool alexDimmed = false;
         private void onKeyReleased(object sender, KeyEventArgs e) {
             if (e.Code == Keyboard.Key.LControl && State.GetState() == "menu") jankId = "27";
         }
+
 
         private void onKeyPressed(object sender, KeyEventArgs e) {
             if (e.Code == Keyboard.Key.Space) {
@@ -481,14 +483,13 @@ namespace SayAgain {
             else if (t == -1) c.setSpriteEmotion(Character.spriteEmotion.angry);
             else c.setSpriteEmotion(Character.spriteEmotion.neutral);
         }
-        bool drawAlex = true;
         private void checkFades() {
             if (responseListNPC[0].id == "5" && responseListNPC[0].plot == "DadInterjects2") {
-                drawAlex = false;
+                Alexis.dim();
             } else if (responseListNPC[0].id == "13" && responseListNPC[0].plot == "MomInterjects3") {
-                drawAlex = true;
+                Alexis.undim();
             } else if (responseListNPC[0].id == "1" && responseListNPC[0].plot == "BadEnding1") {
-                drawAlex = true;
+                Alexis.undim();
             }
         }
 
@@ -743,7 +744,7 @@ namespace SayAgain {
                 window.Draw(lamp);
                 window.Draw(Mom);
                 window.Draw(Dad);
-                if (drawAlex) window.Draw(Alexis);
+                window.Draw(Alexis);
                 window.Draw(table);
                 window.Draw(Arm);
                 window.Draw(plates);
