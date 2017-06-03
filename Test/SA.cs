@@ -143,7 +143,7 @@ namespace SayAgain {
                 if (endGame) {
                     if (endGame2) {
                         if (State.dialogueBox.checkNext()) {
-                            State.playerDialogueBox.loadNewDialogue("player", "Thanks for playing Say Again <Credits:> <Jill Yeung - Designer, John Chau - Developer> <Leo Gomez - Producer, Raman Nakarmi - Tester> <Michael Simpson - Test Coordinator, Koosha Seyvani - Social Media Coordinator> <Yuna Choe - Artist Coordinator, Vernon Wong - Writer> <Allayne Low - Artist, Lyn Kline - Artist, Courtney Chavez - Artist>");
+                            State.playerDialogueBox.loadNewDialogue("player", "Thanks for playing Say Again <Credits:> <Jill Yeung - Designer, John Chau - Developer> <Leo Gomez - Producer, Raman Nakarmi - Tester> <Michael Simpson - Test Coordinator, Koosha Seyvani - Social Media Coordinator> <Yuna Choe - Artist Coordinator, Vernon Wong - Writer> <Allayne Low - Artist, Lyn Kline - Artist, Courtney Chavez - Artist> <END>");
                             State.playerDialogueBox.active = true;
                             State.playerDialogueBox.init = true;
                             State.dialogueBox.active = false;
@@ -167,6 +167,7 @@ namespace SayAgain {
                         }
                         if (State.getGameTimer("game").getCountDown() != 0.0) {
                             State.getGameTimer("game").setCountDown(0);
+                            //TimerAction();
                             State.dialogueBox.active = false;
                             State.playerDialogueBox.active = false;
                         }

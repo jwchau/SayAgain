@@ -235,7 +235,7 @@ namespace SayAgain {
 
         //Timer for keeping track of time given to the player
         public GameTimer getGameTimer(string tag) {
-            return DictGameTimer[tag];
+              return DictGameTimer[tag];
         }
         public void addTimer(string name, double initTime, Action T) {
             if (DictGameTimer.ContainsKey(name)) {
@@ -277,6 +277,7 @@ namespace SayAgain {
                     if (pair.Value.getCountDown() == 0) {
                         //DO STUFF BEFORE RESTARTING
                         //Process Player dialogue
+                        pair.Value.setCountDown(10);
                         if (pair.Value != null) {
                             pair.Value.doTask();
                         }
