@@ -136,7 +136,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"I know. Tell me about work?"
+     "content":"I see. Tell me about work?"
     ,"tone":"Root"
     ,"plot":"DadGreetsPlayer"
     ,"id":"11"
@@ -190,7 +190,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Okay. Then is there anything that IS new you can tell me? <Mom doesn't look too happy that Dad mentioned the cups.>"
+     "content":"Okay. Then is there anything that IS new you can tell me? <Mom doesn't look too happy.>"
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"14"
