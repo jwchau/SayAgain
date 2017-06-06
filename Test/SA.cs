@@ -198,6 +198,7 @@ namespace SayAgain {
                                 affect(responseListNPC[0].target, responseListNPC[0].FNC);
                                 checkFades();
                                 checkPlotChange();
+                                resetCharacterFNC();
                                 reRootPlayer();
 
                             }
@@ -387,6 +388,7 @@ namespace SayAgain {
 
             checkFades();
             checkPlotChange();
+            resetCharacterFNC();
             reRootPlayer();
         }
 
