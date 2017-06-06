@@ -393,11 +393,11 @@ namespace SayAgain {
         }
 
         private void reRootPlayer() {
-            //Console.WriteLine(npcPlotId);
-            //Console.WriteLine(playerPlotId + " |||||| " + linkId(npcPlotId));
-            //Console.WriteLine(sman.getCurrentNode());
-            //Console.WriteLine(State.dialogueIndex);
-            //Console.WriteLine();
+            Console.WriteLine(npcPlotId);
+            Console.WriteLine(playerPlotId + " |||||| " + linkId(npcPlotId));
+            Console.WriteLine(sman.getCurrentNode());
+            Console.WriteLine(State.dialogueIndex);
+            Console.WriteLine();
 
             currentTone = tone.Root;
 
@@ -488,11 +488,11 @@ namespace SayAgain {
         }
         private void checkFades() {
             if (responseListNPC[0].id == "5" && responseListNPC[0].plot == "DadInterjects2") {
-                Alexis.dim();
+                alexDimmed = true;
             } else if (responseListNPC[0].id == "13" && responseListNPC[0].plot == "MomInterjects3") {
-                Alexis.undim();
+                alexDimmed = false;
             } else if (responseListNPC[0].id == "1" && responseListNPC[0].plot == "BadEnding1") {
-                Alexis.undim();
+                alexDimmed = false;
             }
         }
 
@@ -747,7 +747,7 @@ namespace SayAgain {
                 window.Draw(lamp);
                 window.Draw(Mom);
                 window.Draw(Dad);
-                window.Draw(Alexis);
+                if (!alexDimmed) window.Draw(Alexis);
                 window.Draw(table);
                 window.Draw(Arm);
                 window.Draw(plates);
