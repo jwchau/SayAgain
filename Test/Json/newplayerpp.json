@@ -190,7 +190,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Okay. Then is there anything that IS new you can tell me? <Mom doesn't look too happy.>"
+     "content":"Okay. Then is there anything that IS new you can tell me?"
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"14"
@@ -199,7 +199,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Oh, that's great. <Mom doesn't look too happy that Dad mentioned the cups.>"
+     "content":"Oh, that's great."
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"14"
@@ -208,7 +208,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"I'm sure there is a new, cool something that's going on with you! <Mom doesn't look too happy that Dad mentioned the cups.>"
+     "content":"I'm sure there is a new, cool something that's going on with you!"
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"14"
@@ -217,7 +217,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"That's good? So there's nothing new going on? Er, I'm not sure what or how often \"new\" things happen, though... <Mom doesn't look too happy that Dad mentioned the cups.>"
+     "content":"That's good? So there's nothing new going on? Er, I'm not sure what or how often \"new\" things happen, though..."
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"14"
@@ -730,7 +730,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Hey. Let Alex talk, Dad. Don't tell her to keep her mouth shut.\n"
+     "content":"Hey. Let Alex talk, Dad. Don't tell her to keep her mouth shut."
     ,"tone":"Blunt"
     ,"plot":"PlayerSupportsDad"
     ,"id":"24"
@@ -739,7 +739,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Yeah Alex. Just let Dad, talk. It'll be faster.\n"
+     "content":"Yeah Alex. Just let Dad, talk. It'll be faster."
     ,"tone":"Indifferent"
     ,"plot":"PlayerSupportsDad"
     ,"id":"24"
@@ -757,7 +757,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Uh, Dad? Shouldn't you let Alex talk...for a bit, at least?\n"
+     "content":"Uh, Dad? Shouldn't you let Alex talk...for a bit, at least?"
     ,"tone":"Hesitant"
     ,"plot":"PlayerSupportsDad"
     ,"id":"24"
@@ -1589,36 +1589,36 @@
     ,"tone":"Blunt"
     ,"plot":"DadSeesHisFault"
     ,"id":"40"
-    ,"FNC":"10"
+    ,"FNC":"0"
     ,"inext":""
-    ,"target":["alex","",""]
+    ,"target":["","",""]
   },
   {
      "content":"Ugh. You guys should talk about this some other time. Like, once dinner is done."
     ,"tone":"Indifferent"
     ,"plot":"DadSeesHisFault"
     ,"id":"40"
-    ,"FNC":"10"
+    ,"FNC":"0"
     ,"inext":""
-    ,"target":["alex","",""]
+    ,"target":["","",""]
   },
   {
      "content":"It's great to see that you guys are communicating, but it would be nice to finish up dinner. Let's talk about this some other time."
     ,"tone":"Compassionate"
     ,"plot":"DadSeesHisFault"
     ,"id":"40"
-    ,"FNC":"10"
+    ,"FNC":"0"
     ,"inext":""
-    ,"target":["alex","",""]
+    ,"target":["","",""]
   },
   {
      "content":"...Can we take a break from this drama and finish dinner?"
     ,"tone":"Hesitant"
     ,"plot":"DadSeesHisFault"
     ,"id":"40"
-    ,"FNC":"10"
+    ,"FNC":"0"
     ,"inext":""
-    ,"target":["alex","",""]
+    ,"target":["","",""]
   },
   {
      "content":"Good idea, Alex. "
@@ -2039,41 +2039,41 @@
     ,"tone":"Blunt"
     ,"plot":"AlexInterjects2"
     ,"id":"36"
-    ,"FNC":"10"
+    ,"FNC":"0"
     ,"inext":""
-    ,"target":["alex","mom","dad"]
+    ,"target":[" ","",""]
   },
   {
      "content":"Getting my degree was the hardest thing I have ever accomplished."
     ,"tone":"Indifferent"
     ,"plot":"AlexInterjects2"
     ,"id":"36"
-    ,"FNC":"-10"
+    ,"FNC":"0"
     ,"inext":""
-    ,"target":["alex","mom","dad"]
+    ,"target":["","",""]
   },
   {
      "content":"I know you don't mean that. Getting into college isn't easy and I had to work hard to get to where I am today."
     ,"tone":"Compassionate"
     ,"plot":"AlexInterjects2"
     ,"id":"36"
-    ,"FNC":"-10"
+    ,"FNC":"0"
     ,"inext":""
-    ,"target":["alex","mom","dad"]
+    ,"target":["","",""]
   },
   {
      "content":"You know...I also had to work very hard in college."
     ,"tone":"Hesitant"
     ,"plot":"AlexInterjects2"
     ,"id":"36"
-    ,"FNC":"10"
+    ,"FNC":"0"
     ,"inext":""
-    ,"target":["alex","mom","dad"]
+    ,"target":["","",""]
   },
   {
      "content":"What are you talking about?"
     ,"tone":"Root"
-    ,"plot":""
+    ,"plot":"DadNoSeeHisFault"
     ,"id":"3"
     ,"FNC":"0"
     ,"inext":""
@@ -2254,7 +2254,7 @@
      "content":"I can help you through this."
     ,"tone":"Root"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"3"
+    ,"id":"1"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -2263,7 +2263,7 @@
      "content":"If you don't want my help, fine, but I am focusing on myself because that's the only person I know well enough. I have tried to address the Alex that I left when I went to college, but she doesn't seem to be here anymore.  That's ok, people change, but it doesn't mean that I can't try and find out the new you. Even though I haven't been through your shoes exactly, through my combined years, I have gained enough perspective to help you through this. "
     ,"tone":"Blunt"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"4"
+    ,"id":"2"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -2272,7 +2272,7 @@
      "content":"I'm making this about myself because that's only I person I know well enough. Even though I may have not been in your shoes exactly, through my years, I have gained enough perspective to help you through this."
     ,"tone":"Indifferent"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"4"
+    ,"id":"2"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -2281,7 +2281,7 @@
      "content":"I'm making this about myself because that's only I person I know well enough. I have been through life just as you are right now. I am trying to show you that you aren't alone in this. Even though I haven't been through your shoes exactly, through my combined years, I have gained enough perspective to help you through this. You just have to be willing to listen."
     ,"tone":"Compassionate"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"4"
+    ,"id":"2"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -2290,7 +2290,7 @@
      "content":"Call me naive, but I am making this about myself because that's the only person I know well enough. I guess even though we haven't shared similar childhoods, through my years, I think I have gained enough perspective to help you through this. You just have to be willing to listen. "
     ,"tone":"Hesitant"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"4"
+    ,"id":"2"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -2299,7 +2299,7 @@
      "content":"We want what's best for you."
     ,"tone":"Root"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"5"
+    ,"id":"3"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -2308,7 +2308,7 @@
      "content":"Yes, Alex. We want what's best for you!"
     ,"tone":"Blunt"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"6"
+    ,"id":"4"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -2317,7 +2317,7 @@
      "content":"Yes, Alex. We want what's best for you."
     ,"tone":"Indifferent"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"6"
+    ,"id":"4"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -2326,7 +2326,7 @@
      "content":"Yes, Alex! We want what's best for you!"
     ,"tone":"Compassionate"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"6"
+    ,"id":"4"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -2335,7 +2335,7 @@
      "content":"Yes, Alex. We want what's best for you."
     ,"tone":"Hesitant"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"6"
+    ,"id":"4"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -2344,7 +2344,7 @@
      "content":"Thanks for being honest, Alex."
     ,"tone":"Root"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"11"
+    ,"id":"9"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -2353,7 +2353,7 @@
      "content":"I know what you did was pretty bad, but thanks for being honest about it. Keeping secrets from your family only leads to more pain. Doesn't it feel good to have that weight off your shoulders?"
     ,"tone":"Blunt"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"12"
+    ,"id":"10"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -2362,7 +2362,7 @@
      "content":"Thanks for being honest Alex. It helps us all when you're honest about your actions and your feelings. Doesn't it feel good to have that weight off of your shoulders?"
     ,"tone":"Indifferent"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"12"
+    ,"id":"10"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -2371,7 +2371,7 @@
      "content":"Thanks for being honest back there, li'l sis! I know it wasn't the best revelation, but being honest with each other strengthens the bonds that we need to have for one another.  Doesn't it feel good having that weight off of your shoulders? "
     ,"tone":"Compassionate"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"12"
+    ,"id":"10"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -2380,43 +2380,43 @@
      "content":"What you did wasn't the best, but...thank you for being honest with us. I think that being honest with each other strengthens the bonds that we need to have for one another. Does it feel good having that weight off of your shoulders? "
     ,"tone":"Hesitant"
     ,"plot":"AlexReconcilesPlayer"
+    ,"id":"10"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"You're heading in the right direction."
+    ,"tone":"Root"
+    ,"plot":"AlexReconcilesPlayer"
+    ,"id":"11"
+    ,"FNC":"0"
+    ,"inext":""
+    ,"target":["","",""]
+  },
+  {
+     "content":"You're right, the first step was being honest with yourself and admitting your faults. Just make sure that you learn from your mistake."
+    ,"tone":"Blunt"
+    ,"plot":"AlexReconcilesPlayer"
     ,"id":"12"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
   {
-     "content":"You're heading in the right direction.\n"
-    ,"tone":"Root"
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":"13"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You're right, the first step was being honest with yourself and admitting your faults. Just make sure that you learn from your mistake.\n"
-    ,"tone":"Blunt"
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":"14"
-    ,"FNC":"0"
-    ,"inext":""
-    ,"target":["","",""]
-  },
-  {
-     "content":"You're right, the first step was being honest with yourself and admitting your faults.\n"
+     "content":"You're right, the first step was being honest with yourself and admitting your faults."
     ,"tone":"Indifferent"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"14"
+    ,"id":"12"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
   {
-     "content":"You're right, the first step was being honest with yourself and admitting your faults. There's nothing wrong with admitting you were wrong, just make sure that you learn from your mistake. I'm proud of you, baby sis!\n"
+     "content":"You're right, the first step was being honest with yourself and admitting your faults. There's nothing wrong with admitting you were wrong, just make sure that you learn from your mistake. I'm proud of you, baby sis!"
     ,"tone":"Compassionate"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"14"
+    ,"id":"12"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -2425,7 +2425,7 @@
      "content":"That's the right attitude, Alex. I hope you'll keep it up."
     ,"tone":"Hesitant"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"14"
+    ,"id":"12"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -2692,7 +2692,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Oh my, this is... a lot to process. It's.... It's all my fault. My existence caused so much hardship. \n"
+     "content":"Oh my, this is... a lot to process. It's.... It's all my fault. My existence caused so much hardship. "
     ,"tone":"Hesitant"
     ,"plot":"MomInterjects3"
     ,"id":"20"
@@ -2716,7 +2716,7 @@
     ,"id":"30"
     ,"FNC":"0"
     ,"inext":""
-    ,"target":["alex","mom","dad"]
+    ,"target":["","",""]
   },
   {
      "content":"Apology accepted! I'm sure Alex will appreciate it."
@@ -2725,7 +2725,7 @@
     ,"id":"30"
     ,"FNC":"0"
     ,"inext":""
-    ,"target":["alex","mom","dad"]
+    ,"target":["","",""]
   },
   {
      "content":"hat took a lot of courage Dad. I'm proud of you. I'm sure Alex feels the same."
@@ -2734,16 +2734,16 @@
     ,"id":"30"
     ,"FNC":"0"
     ,"inext":""
-    ,"target":["alex","mom","dad"]
+    ,"target":["","",""]
   },
   {
-     "content":"<I'm not sure how sincere that was.> Thanks for bringing this up Mom!\n"
+     "content":"<I'm not sure how sincere that was.> Thanks for bringing this up Mom!"
     ,"tone":"Hesitant"
     ,"plot":"MomInterjects3"
     ,"id":"30"
     ,"FNC":"0"
     ,"inext":""
-    ,"target":["alex","mom","dad"]
+    ,"target":["","",""]
   },
   {
      "content":"I'm proud, Mom."
@@ -2836,7 +2836,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"I have to call you out for that one, Dad.\n"
+     "content":"I have to call you out for that one, Dad."
     ,"tone":"Root"
     ,"plot":"MomApologizesAlex"
     ,"id":"19"
@@ -3133,7 +3133,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Alex, what's going on? You usually have a smart retort prepared.\n"
+     "content":"Alex, what's going on? You usually have a smart retort prepared."
     ,"tone":"Compassionate"
     ,"plot":"BadEnding1"
     ,"id":"24"
@@ -3142,7 +3142,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Hey, uh, Alex? Are...are you okay? You've become awfully quiet.\n"
+     "content":"Hey, uh, Alex? Are...are you okay? You've become awfully quiet."
     ,"tone":"Hesitant"
     ,"plot":"BadEnding1"
     ,"id":"24"
@@ -3394,7 +3394,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Really, Dad?\n"
+     "content":"Really, Dad?"
     ,"tone":"Root"
     ,"plot":"BadEnding2"
     ,"id":"27"
@@ -3619,7 +3619,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"I am trying to be impartial.\n"
+     "content":"I am trying to be impartial."
     ,"tone":"Root"
     ,"plot":"BadEnding3"
     ,"id":"17"
@@ -3853,7 +3853,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"What the fuck is the matter with you people? I really can't deal with any of this anymore. I will be leaving first thing tomorrow. \n"
+     "content":"What the fuck is the matter with you people? I really can't deal with any of this anymore. I will be leaving first thing tomorrow."
     ,"tone":"Blunt"
     ,"plot":"BadEnding4"
     ,"id":"28"
@@ -3871,7 +3871,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Seriously? So I'm the villain now for trying to help? Fine, I'll just take my leave tomorrow and let you deal with your own problems. \n"
+     "content":"Seriously? So I'm the villain now for trying to help? Fine, I'll just take my leave tomorrow and let you deal with your own problems. "
     ,"tone":"Compassionate"
     ,"plot":"BadEnding4"
     ,"id":"28"

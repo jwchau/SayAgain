@@ -136,6 +136,7 @@ namespace SayAgain {
                 }
             }
         }
+        float fadeLimit = 0.003f;
 
         private void spaceCode() {
             if (State.GetState() == "menu") State.SetState("tutorial");
@@ -150,7 +151,7 @@ namespace SayAgain {
                             State.dialogueBox.init = false;
                             State.playerDialogueBox.awaitInput = false;
                             fadeFlag = true;
-                            fadeFloat = 0.003f;
+                            fadeFloat = fadeLimit;
                             endGame2 = false;
                         }
                     } else { State.playerDialogueBox.checkNext(); return; }
@@ -215,7 +216,7 @@ namespace SayAgain {
                     ui_man.tutorialButtonIndex = 4;
                     ui_man.reset(responseList);
                     fadeFlag = true;
-                    fadeFloat = -0.003f;
+                    fadeFloat = -fadeLimit;
                     ui_man.TooltipToggle(false, State.tooltip);
                     Mom.setHide(false);
                     Dad.setHide(false);
@@ -253,24 +254,24 @@ namespace SayAgain {
                 }
                 if (Int32.Parse(jankId) == 4 && !fadeFlag) {
                     fadeFlag = true;
-                    fadeFloat = -0.003f;
+                    fadeFloat = -fadeLimit;
                 } else if (Int32.Parse(jankId) == 12 && !fadeFlag) {
                     fadeFlag = true;
-                    fadeFloat = 0.003f;
+                    fadeFloat = fadeLimit;
 
                 } else if (Int32.Parse(jankId) == 13 && !fadeFlag) {
                     Dad.setHide(false);
                     Arm.setHide(false);
                     fadeFlag = true;
-                    fadeFloat = -0.003f;
+                    fadeFloat = -fadeLimit;
                 } else if (Int32.Parse(jankId) == 18 && !fadeFlag) {
                     fadeFlag = true;
-                    fadeFloat = 0.003f;
+                    fadeFloat = fadeLimit;
 
                 } else if (Int32.Parse(jankId) == 19 && !fadeFlag) {
                     Mom.setHide(false);
                     fadeFlag = true;
-                    fadeFloat = -0.003f;
+                    fadeFloat = -fadeLimit;
                 }
 
             }
@@ -340,7 +341,7 @@ namespace SayAgain {
             ui_man.rootBackgroundBorder.OutlineColor = ui_man.rootBackground.FillColor;
             if (State.GetState() == "game") {
                 if (currentTone != tone.Root) {
-                    doStuff();
+                    mainDialogueLoop();
                 }
             } else if (State.GetState() == "tutorial") {
 
@@ -359,7 +360,7 @@ namespace SayAgain {
         }
         #endregion
 
-        private void doStuff() {
+        private void mainDialogueLoop() {
             if (sman.getDialogueType() == "plotpoint") {
                 responseList = s.ChooseDialogPlot(Load.newplayerp, sman.getCurrentNode(), playerPlotId, currentTone.ToString());
                 responseListNPC = s.ChooseDialogPlot(Load.allp, sman.getCurrentNode(), npcPlotId, currentTone.ToString());
@@ -447,32 +448,35 @@ namespace SayAgain {
 
         private void affect(List<string> targs, double m) {
             int t = (int)clamp(m, -1, 1);
+            if (responseListNPC[0].FNC == 0) t = 0;
             m = clamp(m, -10, 10);
             foreach (string s in targs) {
                 if (s == "mom") {
                     Mom.changeFNC(m);
+                    State.sound_man.loop_enqueue(s, t);
                     respondEmotionally(Mom, t);
                 } else if (s == "-mom") {
                     Mom.changeFNC(-m);
+                    State.sound_man.loop_enqueue(s.Substring(1, s.Length), t);
                     respondEmotionally(Mom, t);
                 } else if (s == "dad") {
                     Dad.changeFNC(m);
+                    State.sound_man.loop_enqueue(s, t);
                     respondEmotionally(Dad, t);
                 } else if (s == "-dad") {
                     Dad.changeFNC(-m);
+                    State.sound_man.loop_enqueue(s.Substring(1, s.Length), t);
                     respondEmotionally(Dad, t);
                 } else if (s == "alex") {
                     Alexis.changeFNC(m);
+                    State.sound_man.loop_enqueue(s, t);
                     respondEmotionally(Alexis, t);
                 } else if (s == "-alex") {
                     Alexis.changeFNC(-m);
+                    State.sound_man.loop_enqueue(s.Substring(1, s.Length), t);
                     respondEmotionally(Alexis, t);
                 }
-                if (responseListNPC[0].FNC == 0) t = 0;
-
             }
-            if (targs.Count != 0 && targs[0] != "") State.sound_man.loop_enqueue(targs[0], t);
-
         }
 
         private void revertEmotion(Character c) {
@@ -642,10 +646,6 @@ namespace SayAgain {
             }
 
             if (State.GetState() == "game" || State.GetState() == "tutorial") {
-
-                if (playerChoice && State.getGameTimer("game").getStart()) {
-                    State.getGameTimer("game").stopTimer();
-                }
                 if (fadeFlag) {
                     if (alphaBlack + fadeFloat <= 255 && alphaBlack + fadeFloat >= 0) {
 
@@ -718,9 +718,8 @@ namespace SayAgain {
 
         }
         //Ensures that AI dialogue doesnt get loaded more than once per timer done
-        bool loadedAIDialogueOnce = false;
-
-        bool playerChoice = false;
+        //bool loadedAIDialogueOnce = false;
+        //bool playerChoice = false;
 
         RectangleShape blackness = new RectangleShape(new Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT));
         float alphaBlack = 255;
@@ -789,12 +788,6 @@ namespace SayAgain {
                 }
 
                 window.Draw(State.tooltip);
-
-                if (playerChoice) {
-                    window.Draw(D_Man);
-                }
-
-
                 if (State.GetState() == "pause") {
                     pauseMenu.DrawPauseBG(window);
                     if (State.GetMenuState() == "pause") {
@@ -807,7 +800,7 @@ namespace SayAgain {
                 }
 
                 if (debugInfo) {
-                    Text AI_DB = new Text("LoadAIOnce: " + loadedAIDialogueOnce + "\n" +
+                    Text AI_DB = new Text(//"LoadAIOnce: " + loadedAIDialogueOnce + "\n" +
                                           "AI_DB - animStart: " + State.dialogueBox.getAnimationStart() + "\n" +
                                           "        awaitInput: " + State.dialogueBox.getAwaitInput() + "\n" +
                                           "        dialoguePanesLength: " + State.dialogueBox.dialoguePanes.Count + "\n" +

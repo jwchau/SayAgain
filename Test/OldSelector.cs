@@ -12,11 +12,12 @@ namespace SayAgain {
             int countdown = -1;
             List<DialogueObj> responseList = new List<DialogueObj>();
             var best = new DialogueObj();
-            for (int i = 0; i < r.r.Dialogues.Count; i++) {
+            int i = int.Parse(id) - 1;
+            for (; i < r.r.Dialogues.Count; i++) {
                 var curr = r.r.Dialogues[i];
                 if (curr.plot == currNode && id == curr.id && (curr.tone == t || curr.tone == "Default")) {
                     responseList.Add(curr);
-                    countdown = 3;
+                    countdown = 1;
                 }
                 if (countdown-- == 0) return responseList;
             }
@@ -30,11 +31,12 @@ namespace SayAgain {
             int countdown = -1;
             List<DialogueObj> responseList = new List<DialogueObj>();
             var best = new DialogueObj();
-            for (int i = 0; i < r.r.Dialogues.Count; i++) {
+            int i = int.Parse(id) - 1;
+            for (; i < r.r.Dialogues.Count; i++) {
                 var curr = r.r.Dialogues[i];
                 if (b == curr.bucket && curr.id == id && (curr.tone == t || curr.tone == "Default")) {
                     responseList.Add(curr);
-                    countdown = 3;
+                    countdown = 1;
                 }
                 if (countdown-- == 0) return responseList;
             }

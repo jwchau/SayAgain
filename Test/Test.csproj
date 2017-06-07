@@ -145,18 +145,9 @@
     <Compile Include="DialogueBox.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="allpp.json" />
-    <None Include="allpp~.json" />
-    <None Include="alltt.json" />
     <None Include="App.config" />
     <None Include="Fonts\Adore64.ttf" />
-    <None Include="jank.json" />
-    <None Include="newplayerpp.json" />
-    <None Include="newplayerpp~.json" />
-    <None Include="newplayertt.json" />
-    <None Include="npc_plot_csv2json.json" />
     <None Include="packages.config" />
-    <None Include="player_plot_csv2json.json" />
     <None Include="Test_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

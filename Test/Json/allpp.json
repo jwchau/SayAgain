@@ -463,7 +463,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Is that what you reall think?"
+     "content":"Is that what you really think?"
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"14"
@@ -3290,21 +3290,10 @@
     ,"target":["mom","alex","dad"]
   },
   {
-     "content":"Why do you have to make this about yourself!"
-    ,"tone":"Default"
-    ,"plot":"AlexReconcilesPlayer"
-    ,"id":"1"
-    ,"FNC":"0"
-    ,"speaker":""
-    ,"finished":""
-    ,"inext":""
-    ,"target":["dad","mom",""]
-  },
-  {
      "content":"Even after all those things I said about you, you still want to help me?"
     ,"tone":"Default"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"2"
+    ,"id":"1"
     ,"FNC":"0"
     ,"speaker":"alex"
     ,"finished":""
@@ -3315,7 +3304,7 @@
      "content":"That’s true! We want to help you, but you block and deflect all our advice! Look, we can sit here all night and berate you about what you have done, but that won’t fix what has already happened. We need to focus on how you’re going to deal with what you have started yourself. And you, Alex, need to own up to your actions and work with us. Our advice only goes as far as you’re willing to take it."
     ,"tone":"Default"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"3"
+    ,"id":"2"
     ,"FNC":"0"
     ,"speaker":"mom"
     ,"finished":""
@@ -3326,7 +3315,7 @@
      "content":"I guess I have been pretty uncooperative with you guys. I always feel like anything I do I get in trouble for."
     ,"tone":"Default"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"4"
+    ,"id":"3"
     ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
@@ -3337,7 +3326,7 @@
      "content":"We’re here to help you, and your father and I will support you. We’re in this together we just need to see some action taken on your part."
     ,"tone":"Default"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"5"
+    ,"id":"4"
     ,"FNC":"0"
     ,"speaker":""
     ,"finished":""
@@ -3348,7 +3337,7 @@
      "content":"It does! I’m sorry for what I have done, and I want to be a better person. I guess the first step was not only being honest with you guys, but also with myself."
     ,"tone":"Default"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"6"
+    ,"id":"5"
     ,"FNC":"0"
     ,"speaker":"alex"
     ,"finished":""
@@ -3359,11 +3348,11 @@
      "content":"Thank you for believing in me! After all I have said and done, I am glad that my family is still standing beside me!"
     ,"tone":"Default"
     ,"plot":"AlexReconcilesPlayer"
-    ,"id":"7"
+    ,"id":"6"
     ,"FNC":"10"
     ,"speaker":"alex"
     ,"finished":"fin"
-    ,"inext":""
+    ,"inext":"mom"
     ,"target":["dad","mom","alex"]
   },
   {
