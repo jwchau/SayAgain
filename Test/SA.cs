@@ -384,8 +384,8 @@ namespace SayAgain {
             affect(responseListNPC[pickNPC].target, responseListNPC[pickNPC].FNC);
 
             //debug RES
-            RES(responseList);
-            RES(responseListNPC);
+            //RES(responseList);
+            //RES(responseListNPC);
 
             checkFades();
             checkPlotChange();
@@ -394,11 +394,11 @@ namespace SayAgain {
         }
 
         private void reRootPlayer() {
-            Console.WriteLine(npcPlotId);
-            Console.WriteLine(playerPlotId + " |||||| " + linkId(npcPlotId));
-            Console.WriteLine(sman.getCurrentNode());
-            Console.WriteLine(State.dialogueIndex);
-            Console.WriteLine();
+            //Console.WriteLine(npcPlotId);
+            //Console.WriteLine(playerPlotId + " |||||| " + linkId(npcPlotId));
+            //Console.WriteLine(sman.getCurrentNode());
+            //Console.WriteLine(State.dialogueIndex);
+            //Console.WriteLine();
 
             currentTone = tone.Root;
 
