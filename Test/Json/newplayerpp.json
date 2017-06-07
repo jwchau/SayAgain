@@ -1027,7 +1027,7 @@
     ,"target":["","",""]
   },
   {
-     "content":" I...uh. I don't really think so..."
+     "content":"I...uh. I don't really think so..."
     ,"tone":"Hesitant"
     ,"plot":"PlayerDefendsMom"
     ,"id":"12"
@@ -1238,27 +1238,27 @@
     ,"tone":"Indifferent"
     ,"plot":"MomAdmitsJob"
     ,"id":"46"
-    ,"FNC":"10"
+    ,"FNC":"0"
     ,"inext":""
-    ,"target":["mom","",""]
+    ,"target":["","",""]
   },
   {
      "content":"Dad, I think you are making a big mistake here."
     ,"tone":"Compassionate"
     ,"plot":"MomAdmitsJob"
     ,"id":"46"
-    ,"FNC":"10"
+    ,"FNC":"0"
     ,"inext":""
-    ,"target":["mom","",""]
+    ,"target":["","",""]
   },
   {
      "content":"Dad... I think you are making a mistake."
     ,"tone":"Hesitant"
     ,"plot":"MomAdmitsJob"
     ,"id":"46"
-    ,"FNC":"10"
+    ,"FNC":"0"
     ,"inext":""
-    ,"target":["mom","",""]
+    ,"target":["","",""]
   },
   {
      "content":"Let Mom explain why."
@@ -1324,7 +1324,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"'Because of the money...' what? Don't we have money because of Dad's promotion or whatever?"
+     "content":"Because of the money...' what? Don't we have money because of Dad's promotion or whatever?"
     ,"tone":"Indifferent"
     ,"plot":"MomReconcilesDad"
     ,"id":"6"
@@ -1414,7 +1414,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"You sorta mentioned managing finances of the house earlier. Does that mean something. "
+     "content":"You sorta mentioned managing finances of the house earlier. Does that mean something."
     ,"tone":"Indifferent"
     ,"plot":"DadSeesHisFault"
     ,"id":"10"
@@ -1432,7 +1432,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"You said that earlier that you did finances in the house...right Dad? "
+     "content":"You said that earlier that you did finances in the house...right Dad?"
     ,"tone":"Hesitant"
     ,"plot":"DadSeesHisFault"
     ,"id":"10"
@@ -1765,7 +1765,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Middle school isn't that important anyway. Just wait until high school for the real test to begin. "
+     "content":"Middle school isn't that important anyway. Just wait until high school for the real test to begin."
     ,"tone":"Blunt"
     ,"plot":"AlexInterjects1"
     ,"id":"18"
@@ -1804,7 +1804,7 @@
      "content":"This is unacceptable. How long will the suspension last?"
     ,"tone":"Root"
     ,"plot":"AlexInterjects2"
-    ,"id":"27"
+    ,"id":"25"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -1813,16 +1813,16 @@
      "content":"That boy could have been hurt even more! I'm glad his friends didn't lash out at you for what you did! How long is the suspension for?"
     ,"tone":"Blunt"
     ,"plot":"AlexInterjects2"
-    ,"id":"28"
+    ,"id":"26"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
   {
-     "content":"I'm glad his friends didn't lash out at your for what you did. How long is the suspension gonna last? "
+     "content":"I'm glad his friends didn't lash out at your for what you did. How long is the suspension gonna last?"
     ,"tone":"Indifferent"
     ,"plot":"AlexInterjects2"
-    ,"id":"28"
+    ,"id":"26"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -1831,7 +1831,7 @@
      "content":"Alex, this is unacceptable, you should know better. When that happens you need to get help before you take matters into your own hands. How long is the suspension gonna last? "
     ,"tone":"Compassionate"
     ,"plot":"AlexInterjects2"
-    ,"id":"28"
+    ,"id":"26"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -1840,7 +1840,7 @@
      "content":"I- I don't know what to say other than this is unacceptable, Alex. When that happens you need to get help before you take matters into your own hands. How long is the suspension gonna last? "
     ,"tone":"Hesitant"
     ,"plot":"AlexInterjects2"
-    ,"id":"28"
+    ,"id":"26"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -1849,7 +1849,7 @@
      "content":"This is a lot bigger than you think."
     ,"tone":"Root"
     ,"plot":"AlexInterjects2"
-    ,"id":"29"
+    ,"id":"27"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -1858,7 +1858,7 @@
      "content":"Seven days?! It's the end of the semester, you're going to miss your finals! Alex this is a lot bigger than you think!"
     ,"tone":"Blunt"
     ,"plot":"AlexInterjects2"
-    ,"id":"30"
+    ,"id":"28"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -1867,7 +1867,7 @@
      "content":"I guess seven days is not too bad... Wait, isn't your semester over soon? Aren't you going to miss finals?"
     ,"tone":"Indifferent"
     ,"plot":"AlexInterjects2"
-    ,"id":"30"
+    ,"id":"28"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -1876,7 +1876,7 @@
      "content":"Seven days?! Aren't you at the end of your semester? Alex, you have to understand that this is big. Summer hasn't 'come early.' You're going to miss your finals! "
     ,"tone":"Compassionate"
     ,"plot":"AlexInterjects2"
-    ,"id":"30"
+    ,"id":"28"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -1885,7 +1885,7 @@
      "content":"Seven days, I guess that's not too bad... Wait, isn't your semester over soon? Aren't you going to miss finals? Alex this is a lot bigger than you think!"
     ,"tone":"Hesitant"
     ,"plot":"AlexInterjects2"
-    ,"id":"30"
+    ,"id":"28"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -1894,7 +1894,7 @@
      "content":"You need to think about what you are doing to yourself."
     ,"tone":"Root"
     ,"plot":"AlexInterjects2"
-    ,"id":"31"
+    ,"id":"29"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -1903,7 +1903,7 @@
      "content":"<Alex is taking all of this family drama and unleashing it at school.>You need to think about the path you are paving. You are only making it harder for yourself."
     ,"tone":"Blunt"
     ,"plot":"AlexInterjects2"
-    ,"id":"32"
+    ,"id":"30"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -1912,7 +1912,7 @@
      "content":"<This family drama is making everything worse for Alex.>Your actions are not only hurting others, but yourself too. Think about it."
     ,"tone":"Indifferent"
     ,"plot":"AlexInterjects2"
-    ,"id":"32"
+    ,"id":"30"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -1921,7 +1921,7 @@
      "content":"<Maybe all of this family stress is making Alex act up at school.>Alex, I see where you are coming from, and maybe all of this family drama is helping anyone, but you need to seriously think about the path you are going down. You're only hurting yourself in the long run."
     ,"tone":"Compassionate"
     ,"plot":"AlexInterjects2"
-    ,"id":"32"
+    ,"id":"30"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -1930,7 +1930,7 @@
      "content":"<I wonder if this extra family drama is causing Alex to do this?>Alex, I see where you are coming from, but... think about the path you are going down."
     ,"tone":"Hesitant"
     ,"plot":"AlexInterjects2"
-    ,"id":"32"
+    ,"id":"30"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -1939,7 +1939,7 @@
      "content":"Mom and Dad are here to support you."
     ,"tone":"Root"
     ,"plot":"AlexInterjects2"
-    ,"id":"33"
+    ,"id":"31"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -1948,7 +1948,7 @@
      "content":"Even though it may not seem like it, Mom and Dad have been there for you."
     ,"tone":"Blunt"
     ,"plot":"AlexInterjects2"
-    ,"id":"34"
+    ,"id":"32"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -1957,7 +1957,7 @@
      "content":"Mom and Dad are here for you. And I didn't 'leave,' I went off to school."
     ,"tone":"Indifferent"
     ,"plot":"AlexInterjects2"
-    ,"id":"34"
+    ,"id":"32"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -1966,7 +1966,7 @@
      "content":"I want to make it clear that I didn't go to college to get away from you, Alex, or Mom and Dad. Mom and Dad supported me just like they support you."
     ,"tone":"Compassionate"
     ,"plot":"AlexInterjects2"
-    ,"id":"34"
+    ,"id":"32"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -1975,16 +1975,16 @@
      "content":"I know Mom and Dad are going through some troubles right now, just like you are... But they're here for you, whether you want them to be or not. "
     ,"tone":"Hesitant"
     ,"plot":"AlexInterjects2"
-    ,"id":"34"
+    ,"id":"32"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
   {
-     "content":"We've been close for as long as I can remember. "
+     "content":"We've been close for as long as I can remember."
     ,"tone":"Root"
     ,"plot":"AlexInterjects2"
-    ,"id":"35"
+    ,"id":"33"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -1993,16 +1993,16 @@
      "content":"What has gotten into you? I've been gone for four years and I have to come back to this? We used to be so close. No wonder Mom and Dad are having such a hard time."
     ,"tone":"Blunt"
     ,"plot":"AlexInterjects2"
-    ,"id":"36"
+    ,"id":"34"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
   },
   {
-     "content":"Whatever you think. Just remember that we're family and me being gone doesn't change that. "
+     "content":"Whatever you think. Just remember that we're family and me being gone doesn't change that."
     ,"tone":"Indifferent"
     ,"plot":"AlexInterjects2"
-    ,"id":"36"
+    ,"id":"34"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -2011,7 +2011,7 @@
      "content":"Alex, you're my sister. I helped take care of you when you were just a baby. I love you, and me being gone didn't change any of that. Has it for you?"
     ,"tone":"Compassionate"
     ,"plot":"AlexInterjects2"
-    ,"id":"36"
+    ,"id":"34"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -2020,7 +2020,7 @@
      "content":"...You hate me?<Well, then....>"
     ,"tone":"Hesitant"
     ,"plot":"AlexInterjects2"
-    ,"id":"36"
+    ,"id":"34"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -2029,7 +2029,7 @@
      "content":"College is hard work."
     ,"tone":"Root"
     ,"plot":"AlexInterjects2"
-    ,"id":"37"
+    ,"id":"35"
     ,"FNC":"0"
     ,"inext":""
     ,"target":["","",""]
@@ -2038,25 +2038,25 @@
      "content":"Suffer? Your one task right now is to pass middle school.  Come back to me when you go to college or get a job, then we'll talk about suffering!"
     ,"tone":"Blunt"
     ,"plot":"AlexInterjects2"
-    ,"id":"38"
+    ,"id":"36"
     ,"FNC":"10"
     ,"inext":""
     ,"target":["alex","mom","dad"]
   },
   {
-     "content":"Getting my degree was the hardest thing I have ever accomplished. "
+     "content":"Getting my degree was the hardest thing I have ever accomplished."
     ,"tone":"Indifferent"
     ,"plot":"AlexInterjects2"
-    ,"id":"38"
+    ,"id":"36"
     ,"FNC":"-10"
     ,"inext":""
     ,"target":["alex","mom","dad"]
   },
   {
-     "content":"I know you don't mean that. Getting into college isn't easy and I had to work hard to get to where I am today. "
+     "content":"I know you don't mean that. Getting into college isn't easy and I had to work hard to get to where I am today."
     ,"tone":"Compassionate"
     ,"plot":"AlexInterjects2"
-    ,"id":"38"
+    ,"id":"36"
     ,"FNC":"-10"
     ,"inext":""
     ,"target":["alex","mom","dad"]
@@ -2065,7 +2065,7 @@
      "content":"You know...I also had to work very hard in college."
     ,"tone":"Hesitant"
     ,"plot":"AlexInterjects2"
-    ,"id":"38"
+    ,"id":"36"
     ,"FNC":"10"
     ,"inext":""
     ,"target":["alex","mom","dad"]
@@ -2073,7 +2073,7 @@
   {
      "content":"What are you talking about?"
     ,"tone":"Root"
-    ,"plot":" "
+    ,"plot":""
     ,"id":"3"
     ,"FNC":"0"
     ,"inext":""
@@ -2251,7 +2251,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"I can help you through this. "
+     "content":"I can help you through this."
     ,"tone":"Root"
     ,"plot":"AlexReconcilesPlayer"
     ,"id":"3"
@@ -2431,7 +2431,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"She needs to calm down. "
+     "content":"She needs to calm down."
     ,"tone":"Root"
     ,"plot":"DadInterjects2"
     ,"id":"11"
@@ -2449,7 +2449,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Oh I'm sure with me being here she'll calm down quick. "
+     "content":"Oh I'm sure with me being here she'll calm down quick."
     ,"tone":"Indifferent"
     ,"plot":"DadInterjects2"
     ,"id":"12"
@@ -2629,7 +2629,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Don't change the subject Dad. Why would you do this? "
+     "content":"Don't change the subject Dad. Why would you do this?"
     ,"tone":"Indifferent"
     ,"plot":"MomInterjects3"
     ,"id":"12"
@@ -2791,7 +2791,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"I thought we got past this? "
+     "content":"I thought we got past this?"
     ,"tone":"Root"
     ,"plot":"MomApologizesAlex"
     ,"id":"13"
@@ -3817,7 +3817,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"You call this a family? Joke's on you funny guy. "
+     "content":"You call this a family? Joke's on you funny guy."
     ,"tone":"Indifferent"
     ,"plot":"BadEnding4"
     ,"id":"10"
@@ -3835,7 +3835,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"I don't understand...Why are all of you being mad at me for wanting a normal family? "
+     "content":"I don't understand...Why are all of you being mad at me for wanting a normal family?"
     ,"tone":"Hesitant"
     ,"plot":"BadEnding4"
     ,"id":"10"
@@ -3862,7 +3862,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"None of you really get it do you? I don't even care anymore. I'm leaving all of you to your misery tomorrow. "
+     "content":"None of you really get it do you? I don't even care anymore. I'm leaving all of you to your misery tomorrow."
     ,"tone":"Indifferent"
     ,"plot":"BadEnding4"
     ,"id":"28"

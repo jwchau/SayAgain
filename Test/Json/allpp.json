@@ -5,7 +5,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"1"
-    ,"FNC":"0"
+    ,"FNC":"-1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -16,7 +16,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"1"
-    ,"FNC":"0"
+    ,"FNC":"-1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -27,7 +27,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"1"
-    ,"FNC":"0"
+    ,"FNC":"1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -38,7 +38,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"1"
-    ,"FNC":"0"
+    ,"FNC":"1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -49,7 +49,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"2"
-    ,"FNC":"0"
+    ,"FNC":"-1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -60,7 +60,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"2"
-    ,"FNC":"0"
+    ,"FNC":"-1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -71,7 +71,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"2"
-    ,"FNC":"0"
+    ,"FNC":"1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -82,7 +82,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"2"
-    ,"FNC":"0"
+    ,"FNC":"1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":"mom"
@@ -93,7 +93,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"3"
-    ,"FNC":"0"
+    ,"FNC":"-1"
     ,"speaker":""
     ,"finished":""
     ,"inext":"alex"
@@ -104,7 +104,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"3"
-    ,"FNC":"0"
+    ,"FNC":"-1"
     ,"speaker":""
     ,"finished":""
     ,"inext":"alex"
@@ -115,7 +115,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"3"
-    ,"FNC":"0"
+    ,"FNC":"1"
     ,"speaker":""
     ,"finished":""
     ,"inext":"alex"
@@ -126,7 +126,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"3"
-    ,"FNC":"0"
+    ,"FNC":"1"
     ,"speaker":""
     ,"finished":""
     ,"inext":"alex"
@@ -148,7 +148,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"5"
-    ,"FNC":"0"
+    ,"FNC":"-1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -159,7 +159,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"5"
-    ,"FNC":"0"
+    ,"FNC":"-1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -170,7 +170,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"5"
-    ,"FNC":"0"
+    ,"FNC":"1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -181,7 +181,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"5"
-    ,"FNC":"0"
+    ,"FNC":"1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -192,40 +192,40 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"6"
-    ,"FNC":"0"
+    ,"FNC":"-1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
     ,"target":["","",""]
   },
   {
-     "content":"Work's the same old, same old. There's nothing exciting to say about it."
+     "content":"Work's the same' old, same old. There's nothing exciting to say about it."
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"6"
-    ,"FNC":"0"
+    ,"FNC":"-1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
     ,"target":["","",""]
   },
   {
-     "content":"Haha! Of course I'm still working - Still doing the same boring thing. I'm not that old yet, you know."
+     "content":"Haha! Of course I'm still working - Still doing the same broing thing. I'm not that old yet, you know."
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"6"
-    ,"FNC":"0"
+    ,"FNC":"1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
     ,"target":["","",""]
   },
   {
-     "content":"Work's the same old, same old. There's nothing exciting to say about it."
+     "content":"Work's the same' old, same old. There's nothing exciting to say about it."
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"6"
-    ,"FNC":"0"
+    ,"FNC":"1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -236,7 +236,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"7"
-    ,"FNC":"0"
+    ,"FNC":"-1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -247,7 +247,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"7"
-    ,"FNC":"0"
+    ,"FNC":"-1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -258,18 +258,18 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"7"
-    ,"FNC":"0"
+    ,"FNC":"1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
     ,"target":["mom","",""]
   },
   {
-     "content":"New things happen all the time! Just like these month old, nice expensive Swarovski crystal cups your mom bought!"
+     "content":"New things happen all the time! Just like these month old, nice expensive Swarovski crystal cups your mom brought!"
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"7"
-    ,"FNC":"0"
+    ,"FNC":"1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -280,7 +280,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"8"
-    ,"FNC":"0"
+    ,"FNC":"-1"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -291,7 +291,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"8"
-    ,"FNC":"0"
+    ,"FNC":"-1"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -302,7 +302,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"8"
-    ,"FNC":"0"
+    ,"FNC":"1"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -313,7 +313,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"8"
-    ,"FNC":"0"
+    ,"FNC":"1"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -353,11 +353,11 @@
     ,"target":["","",""]
   },
   {
-     "content":"No! I am being reasonable! And don't say you haven't noticed yet, with- with all of this Swarovski crystal, EIGHT THIRTY dinner nonsense."
+     "content":"No! I am being reasonable! And don't say you haven't noticed yet, with- withall of this Swarovski crystal, EIGHT THIRTY dinner nonsense."
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"12"
-    ,"FNC":"0"
+    ,"FNC":"-1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -368,7 +368,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"12"
-    ,"FNC":"0"
+    ,"FNC":"-1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -379,18 +379,18 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"12"
-    ,"FNC":"0"
+    ,"FNC":"1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
     ,"target":["mom","alex",""]
   },
   {
-     "content":"The only thing 'weird' about this is the fact that you haven't noticed yet."
+     "content":"The only thing 'weird' about this is the fact that you haven't noticed yet"
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"12"
-    ,"FNC":"0"
+    ,"FNC":"1"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -401,7 +401,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"13"
-    ,"FNC":"0"
+    ,"FNC":"-1"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":""
@@ -412,7 +412,7 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"13"
-    ,"FNC":"0"
+    ,"FNC":"-1"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":""
@@ -423,7 +423,7 @@
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"13"
-    ,"FNC":"0"
+    ,"FNC":"1"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":""
@@ -434,7 +434,7 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"13"
-    ,"FNC":"0"
+    ,"FNC":"1"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":""
@@ -445,7 +445,7 @@
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"14"
-    ,"FNC":"0"
+    ,"FNC":"-1"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -456,18 +456,18 @@
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"14"
-    ,"FNC":"0"
+    ,"FNC":"-1"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
     ,"target":["dad","",""]
   },
   {
-     "content":"Is that what you really think?"
+     "content":"Is that what you reall think?"
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"14"
-    ,"FNC":"0"
+    ,"FNC":"1"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
@@ -478,36 +478,36 @@
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"14"
-    ,"FNC":"0"
+    ,"FNC":"1"
     ,"speaker":"mom"
     ,"finished":""
     ,"inext":"dad"
     ,"target":["dad","",""]
   },
   {
-     "content":"Hey! I won't let you or your Mother ignore me. You shouldn't let that woman have her way, and let me tell you why!"
+     "content":"Hey! I won’t let you or your Mother ignore me. You shouldn’t let that woman have her way, and let me tell you why!"
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"15"
-    ,"FNC":"10"
+    ,"FNC":"-10"
     ,"speaker":"dad"
     ,"finished":"fin"
     ,"inext":""
     ,"target":["dad","",""]
   },
   {
-     "content":"Hey! I won't let you or your Mother ignore me. You shouldn't let that woman have her way, and let me tell you why!"
+     "content":"Hey! I won’t let you or your Mother ignore me. You shouldn’t let that woman have her way, and let me tell you why!"
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"15"
-    ,"FNC":"10"
+    ,"FNC":"-10"
     ,"speaker":""
     ,"finished":"fin"
     ,"inext":""
     ,"target":["dad","",""]
   },
   {
-     "content":"I knew you were a sensible person. Don't let this woman have her way. The only thing she's done for this household is wrong, and let me tell you why."
+     "content":"I knew you were a sensible person. Don’t let this woman have her way. The only thing she’s done for this household is wrong, and let me tell you why."
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"15"
@@ -518,7 +518,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"I knew you were a sensible person. Don't let this woman have her way. The only thing she's done for this household is wrong, and let me tell you why."
+     "content":"I knew you were a sensible person. Don’t let this woman have her way. The only thing she’s done for this household is wrong, and let me tell you why."
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"15"
@@ -661,7 +661,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"Very well. I guess I'll spell things out for you, once more. First off, remember those ridiculously expensive cups your mom came home with? Since I manage both of our finances, she couldn't have possibly afforded those, and even if she did, I would absolutely not let her purchase them! Obviously, someone else had to get them for her! Second, your mom never used to go out late, and with her coming home at eight-thirty saying she was at 'dinner', is way out of the norm."
+     "content":"Very well. I guess I'll spell things out for you, once more. First off, remember those ridiculously expensive cups  your Mom came home with? Since I manage both of our finances, she couldn't have possibly afforded those, and even if she did, I would absolutely not let her purchase them! Obviously, someone else had to get them for her! Second, your Mom never used to go out late, and with her coming home at eight-thirty saying she was at 'dinner', is way out of the norm."
     ,"tone":"Default"
     ,"plot":"PlayerSupportsDad"
     ,"id":"7"
@@ -672,7 +672,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"They're not. I bought the cups myself."
+     "content":"They're not. I bought the glasses myself."
     ,"tone":"Blunt"
     ,"plot":"PlayerSupportsDad"
     ,"id":"8"
@@ -683,7 +683,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"They're not. I bought the cups myself."
+     "content":"They're not. I bought the glasses myself."
     ,"tone":"Indifferent"
     ,"plot":"PlayerSupportsDad"
     ,"id":"8"
@@ -705,7 +705,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"They're not. I bought the cups myself."
+     "content":"They're not. I bought the glasses myself."
     ,"tone":"Hesitant"
     ,"plot":"PlayerSupportsDad"
     ,"id":"8"
@@ -716,7 +716,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Anyone can tell that is an obvious lie! That woman has no way to get Swarvoski crystal cups by herself!"
+     "content":"Anyone can tell that is an obvious lie! That woman has no way to get Swarvoski crystal glasses by herself!"
     ,"tone":"Default"
     ,"plot":"PlayerSupportsDad"
     ,"id":"9"
@@ -727,7 +727,7 @@
     ,"target":["mom","alex",""]
   },
   {
-     "content":"Cuz you're a control freak..."
+     "content":"Cuz  you're a control freak..."
     ,"tone":"Default"
     ,"plot":"PlayerSupportsDad"
     ,"id":"10"
@@ -749,7 +749,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"I will talk to her however I please! You do not have the right to tell me what to do! Anyhow... Back to talking about that ungrateful woman. As the bread maker of this household, I maintain the finances, so there is no way I would let her buy these Swarovski cups!"
+     "content":"I will talk to her however I please! You do not have the right to tell me what to do! Anyhow... Back to talking about that ungrateful woman. As the bread maker of this household, I maintain the finances, so there is no way I would let her buy these Swarovski glasses!"
     ,"tone":"Blunt"
     ,"plot":"PlayerSupportsDad"
     ,"id":"12"
@@ -760,7 +760,7 @@
     ,"target":["mom","alex",""]
   },
   {
-     "content":"Glad to see you are still able to make sensible decisions. Anyhow... Back to talking about that ungrateful woman. As the bread maker of this household, I maintain the finances, so there is no way I would let her buy these Swarovski cups!"
+     "content":"Glad to see you are still able to make sensible decisions. Anyhow... Back to talking about that ungrateful woman. As the bread maker of this household, I maintain the finances, so there is no way I would let her buy these Swarovski glasses!"
     ,"tone":"Indifferent"
     ,"plot":"PlayerSupportsDad"
     ,"id":"12"
@@ -771,7 +771,7 @@
     ,"target":["mom ","alex",""]
   },
   {
-     "content":"Glad to see you are still able to make sensible decisions. Anyhow... Back to talking about that ungrateful woman. As the bread maker of this household, I maintain the finances, so there is no way I would let her buy these Swarovski cups!"
+     "content":"Glad to see you are still able to make sensible decisions. Anyhow... Back to talking about that ungrateful woman. As the bread maker of this household, I maintain the finances, so there is no way I would let her buy these Swarovski glasses!"
     ,"tone":"Compassionate"
     ,"plot":"PlayerSupportsDad"
     ,"id":"12"
@@ -782,7 +782,7 @@
     ,"target":["mom","alex",""]
   },
   {
-     "content":"No! Alex is just a child. She wouldn't know anything substantiable about what is going in this house. Anyhow... Back to talking about that ungrateful woman. As the bread maker of this household, I maintain the finances, so there is no way I would let her buy these Swarovski cups!"
+     "content":"No! Alex is just a child. She wouldn't know anything substantiable about what is going in this house. Anyhow... Back to talking about that ungrateful woman. As the bread maker of this household, I maintain the finances, so there is no way I would let her buy these Swarovski glasses!"
     ,"tone":"Hesitant"
     ,"plot":"PlayerSupportsDad"
     ,"id":"12"
@@ -1101,7 +1101,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"Are you just brushing me off? New hair, late dinners, bringing home expensive dinnerware - You should care! You are being ignorant and blind to this whole situation."
+     "content":"Are you just brushing me off? New hair, late dinners, bringing home expensive dinnerware - You should care! You are being ignorant and blind to this whole situation. "
     ,"tone":"Compassionate"
     ,"plot":"PlayerDefendsMom"
     ,"id":"6"
@@ -1134,7 +1134,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Then what about the alcohol, hm? Feel free to even try and explan that one away. On specifid days you come home reeking of alcohol. You go seeing other men, grab a couple drinks, and even dare to come home smelling like that!"
+     "content":"Then what about the alcohol, hm? Feel free to even try and explan that one away. On specifid days you come home reeking of alcohol. You go seeing other men, grab a couple drinks, and even Dare to come home smelling like that!"
     ,"tone":"Default"
     ,"plot":"MomAdmitsJob"
     ,"id":"2"
@@ -1343,7 +1343,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"And what's that exactly?..."
+     "content":"And what's that exactly."
     ,"tone":"Default"
     ,"plot":"MomAdmitsJob"
     ,"id":"17"
@@ -1453,7 +1453,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"Beyond help? How dare you! I am not beyond help! It's all of you who need help — ganging up on me, believing everything your mom says. That nametag or whatever is fake! It's merely a gimmick and a distraction, trying to cover up her insolence. I'll be finishing dinner elsewhere."
+     "content":"Beyond help? How dare you! I am not beyond help! It’s all of you who need help—ganging up on me, believing everything your mom says. That nametag or whatever is fake! It’s merely a gimmick and a distraction, trying to cover up her insolence. I'll be finishing dinner elsewhere."
     ,"tone":"Blunt"
     ,"plot":"MomAdmitsJob"
     ,"id":"23"
@@ -1465,10 +1465,32 @@
   },
   {
      "content":"Fine. Let's say the work ID is real. What reason does your Mom have to work? She doesn't manage the family finances. I'm the one who got the promotion at work and brings in all the money."
-    ,"tone":"Default"
+    ,"tone":"Indifferent"
     ,"plot":"MomAdmitsJob"
     ,"id":"23"
-    ,"FNC":"0"
+    ,"FNC":"10"
+    ,"speaker":"dad"
+    ,"finished":""
+    ,"inext":""
+    ,"target":["mom","",""]
+  },
+  {
+     "content":"Fine. Let's say the work ID is real. What reason does your Mom have to work? She doesn't manage the family finances. I'm the one who got the promotion at work and brings in all the money."
+    ,"tone":"Compassionate"
+    ,"plot":"MomAdmitsJob"
+    ,"id":"23"
+    ,"FNC":"10"
+    ,"speaker":"dad"
+    ,"finished":""
+    ,"inext":""
+    ,"target":["mom","",""]
+  },
+  {
+     "content":"Fine. Let's say the work ID is real. What reason does your Mom have to work? She doesn't manage the family finances. I'm the one who got the promotion at work and brings in all the money."
+    ,"tone":"Hesitant"
+    ,"plot":"MomAdmitsJob"
+    ,"id":"23"
+    ,"FNC":"10"
     ,"speaker":"dad"
     ,"finished":""
     ,"inext":""
@@ -1508,7 +1530,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"...Why can't you just let me talk for once? The problem is because we have money!"
+     "content":"…Why can’t you just let me talk for once? The problem is because we have money!"
     ,"tone":"Blunt"
     ,"plot":"MomReconcilesDad"
     ,"id":"4"
@@ -1519,7 +1541,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"...Don't assume I'm jealous. What would I be jealous of? But Dad's promotion IS a problem."
+     "content":"…Don’t assume I’m jealous. What would I be jealous of? But Dad’s promotion IS a problem."
     ,"tone":"Indifferent"
     ,"plot":"MomReconcilesDad"
     ,"id":"4"
@@ -1541,7 +1563,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Stay quiet for once! Please. Money itself isn't causing a problem. It's because it's your Dad's money."
+     "content":"Stay quiet for once! Please. Money itself isn’t causing a problem. It’s because it’s your Dad’s money."
     ,"tone":"Hesitant"
     ,"plot":"MomReconcilesDad"
     ,"id":"4"
@@ -1574,7 +1596,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"How is my hard earned money causing problems?! My money is what puts a roof over our heads, food in our stomachs, clothes on our backs. It's a blessing that you are thankless for."
+     "content":"How is my hard earned money causing problems?! My money is what puts a roof over our heads, food in our stomachs, clothes on our backs. It’s a blessing that you are thankless for."
     ,"tone":"Compassionate"
     ,"plot":"MomReconcilesDad"
     ,"id":"5"
@@ -1827,7 +1849,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Because I was waiting for a better time."
+     "content":"because I was waiting for a better time."
     ,"tone":"Blunt"
     ,"plot":"DadSeesHisFault"
     ,"id":"9"
@@ -1871,7 +1893,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"You were keeping this all to yourself, not telling me — not communicating with me, Diane! What in the Sam Hill were you thinking! We could have avoided so many frustrations, so much time wasting..."
+     "content":"You were keeping this all to yourself, not telling me—not communicating with me, Diane! What in the Sam Hill were you thinking! We could have avoided so many frustrations, so much time wasting…"
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"10"
@@ -1882,7 +1904,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"I'm sorry, I shouldn't have done that, but I am not sorry for going out and getting a job! You probably don't understand what it felt like to find that small bit of freedom."
+     "content":"I’m sorry, I shouldn’t have done that, but I am not sorry for going out and getting a job! You probably don’t understand what it felt like to find that small bit of freedom."
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"11"
@@ -1893,7 +1915,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"That might be correct, but that's no excuse. You know what? I am sorry for accusing you of cheating on me, Diane."
+     "content":"That might be correct, but that’s no excuse. You know what? I am sorry for accusing you of cheating on me, Diane."
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"12"
@@ -1904,7 +1926,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"After hearing all this, I suppose that I may have... put rules that are a bit too strict on your Mom. Diane, I am sorry for that also — being so strict that you thought you had to hide things from me."
+     "content":"After hearing all this, I suppose that I may have… put rules that are a bit too strict on your Mom. Diane, I am sorry for that also — being so strict that you thought you had to hide things from me."
     ,"tone":"Blunt"
     ,"plot":"DadSeesHisFault"
     ,"id":"13"
@@ -1937,7 +1959,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":" Hmmm...okay. I have noticed that I may have put rules that are a bit too strict on her. Diane, I am sorry for what I did. I hope you feel that you won't need to hide things from me anymore."
+     "content":" Hmmm...okay. I have noticed that I may have put rules that are a bit too strict on her. Diane, I am sorry for what I did. I hope you feel that you won’t need to hide things from me anymore."
     ,"tone":"Hesitant"
     ,"plot":"DadSeesHisFault"
     ,"id":"13"
@@ -1948,7 +1970,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"Okay, Timothy. I accept your apology. Don't expect me to quit my job though.\n"
+     "content":"Okay, Timothy. I accept your apology. Don’t expect me to quit my job though.\n"
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"14"
@@ -1959,7 +1981,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Oh, of course. This could all have been avoided. I'm sorry for being too afraid to speak up about this sooner. Don't expect me to quit my job though."
+     "content":"Oh, of course. This could all have been avoided. I’m sorry for being too afraid to speak up about this sooner. Don’t expect me to quit my job though."
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"15"
@@ -1970,7 +1992,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"What? But you won't need to work if I become less strict!"
+     "content":"What? But you won’t need to work if I become less strict!"
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"16"
@@ -1981,7 +2003,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"I enjoy working! It's so much more better than staying home all day. It's actually somewhat relaxing."
+     "content":"I enjoy working! It’s so much more better than staying home all day. It’s actually somewhat relaxing."
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"17"
@@ -1992,7 +2014,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Isn't it better to not work?"
+     "content":"Isn’t it better to not work?"
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"18"
@@ -2003,7 +2025,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"That's coming from someone who is a complete workaholic! Why can't I work?"
+     "content":"That’s coming from someone who is a complete workaholic! Why can’t I work?"
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"19"
@@ -2014,7 +2036,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Yes, of course. We did take up a lot of time dealing with that cheating nonsense, isn't that right, Diane? We'll discuss this work situation later, at a more appropriate time and not in front of the whole family."
+     "content":"Yes, of course. We did take up a lot of time dealing with that cheating nonsense, isn’t that right, Diane? We’ll discuss this work situation later, at a more appropriate time and not in front of the whole family."
     ,"tone":"Default"
     ,"plot":"DadSeesHisFault"
     ,"id":"20"
@@ -2080,7 +2102,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Some gifts are different than expensive crystal cups, Diane. I can only guess what your intentions were, but those purchases clearly weren't meant for us. Not only cups but fancy haircuts, and dinners from our checking account, too? That doesn't make it any less incriminating.  "
+     "content":"Some gifts are different than expensive crystal glasses, Diane. I can only guess what your intentions were, but those purchases clearly weren’t meant for us. Not only glasses but fancy haircuts, and dinners from our checking account, too? That doesn’t make it any less incriminating.  "
     ,"tone":"Default"
     ,"plot":"AlexChangesSubject"
     ,"id":"5"
@@ -2168,7 +2190,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"Don't belittle this! The kids at school won't talk to me because they are scared of you guys! They are scared that they'll get caught in the crossfire of one of your infamous arguments! "
+     "content":"Don’t belittle this! The kids at school won’t talk to me because they are scared of you guys! They are scared that they’ll get caught in the crossfire of one of your infamous arguments! "
     ,"tone":"Hesitant"
     ,"plot":"AlexInterjects1"
     ,"id":"5"
@@ -2234,7 +2256,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"Well there is one thing that has been nagging at me..."
+     "content":"Well there is one thing that has been nagging at me…."
     ,"tone":"Default"
     ,"plot":"AlexInterjects2"
     ,"id":"2"
@@ -2245,7 +2267,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Anything dear, we're all ears."
+     "content":"Anything dear, we’re all ears."
     ,"tone":"Default"
     ,"plot":"AlexInterjects2"
     ,"id":"3"
@@ -2256,7 +2278,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"I've been suspended from school."
+     "content":"I’ve been suspended from school."
     ,"tone":"Default"
     ,"plot":"AlexInterjects2"
     ,"id":"4"
@@ -2300,7 +2322,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"Alex, I don't know what to say... In trouble? For what?"
+     "content":"Alex, I don’t know what to say… In trouble? For what?"
     ,"tone":"Default"
     ,"plot":"AlexInterjects2"
     ,"id":"8"
@@ -2322,7 +2344,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"Alex, I'm very disappointed in you! Haven't we told you to think before you act?"
+     "content":"Alex, I’m very disappointed in you! Haven’t we told you to think before you act?"
     ,"tone":"Default"
     ,"plot":"AlexInterjects2"
     ,"id":"10"
@@ -2333,7 +2355,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"Yes young lady, your actions have consequences! You're lucky that that boy's parents aren't suing us."
+     "content":"Yes young lady, your actions have consequences! You’re lucky that that boy’s parents are suing us."
     ,"tone":"Default"
     ,"plot":"AlexInterjects2"
     ,"id":"11"
@@ -2344,7 +2366,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"I'm sorry, ok! I didn't mean to break his arm, I just wanted them to stop!"
+     "content":"I’m sorry, ok! I didn’t mean to break his arm, I just wanted them to stop!"
     ,"tone":"Default"
     ,"plot":"AlexInterjects2"
     ,"id":"12"
@@ -2355,7 +2377,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"I would have taken them too, I don't care! He started it and I have to show that I won't be messed with! It's not my fault I did what I had to do. I only have 7 days left in my suspension, I guess summer has come early for me this year."
+     "content":"I would have taken them too, I don’t care! He started it and I have to show that I won’t be messed with! It’s not my fault I did what I had to do. I only have 7 days left in my suspension, I guess summer has come early for me this year."
     ,"tone":"Blunt"
     ,"plot":"AlexInterjects2"
     ,"id":"13"
@@ -2366,7 +2388,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"I would have taken them too, I don't care! He started it and I have to show that I won't be messed with! It's not my fault I did what I had to do. I only have 7 days left in my suspension, I guess summer has come early for me this year."
+     "content":"I would have taken them too, I don’t care! He started it and I have to show that I won’t be messed with! It’s not my fault I did what I had to do. I only have 7 days left in my suspension, I guess summer has come early for me this year."
     ,"tone":"Indifferent"
     ,"plot":"AlexInterjects2"
     ,"id":"13"
@@ -2377,7 +2399,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"I'm sorry, I felt threatened and I had to show that I couldn't be messed with. He started it, he should have known what could have happened. I only have 7 days left in my suspension, I guess summer has come early for me this year."
+     "content":"I’m sorry, I felt threatened and I had to show that I couldn’t be messed with. He started it, he should have known what could have happened. I only have 7 days left in my suspension, I guess summer has come early for me this year."
     ,"tone":"Compassionate"
     ,"plot":"AlexInterjects2"
     ,"id":"13"
@@ -2388,7 +2410,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"I'm sorry, I felt threatened and I had to show that I couldn't be messed with. He started it, he should have known what could have happened. I only have 7 days left in my suspension, I guess summer has come early for me this year."
+     "content":"I’m sorry, I felt threatened and I had to show that I couldn’t be messed with. He started it, he should have known what could have happened. I only have 7 days left in my suspension, I guess summer has come early for me this year."
     ,"tone":"Hesitant"
     ,"plot":"AlexInterjects2"
     ,"id":"13"
@@ -2399,7 +2421,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"No one ever sides with me on these things! He was instigating me and he saw it coming! So what if I miss school? They didn't want me there, they showed that through the grades they were giving me! For once I just want to go a day where I'm not the punching bag!"
+     "content":"No one ever sides with me on these things! He was instigating me and he saw it coming! So what if I miss school? They didn’t want me there, they showed that through the grades they were giving me! For once I just want to go a day where I’m not the punching bag!"
     ,"tone":"Default"
     ,"plot":"AlexInterjects2"
     ,"id":"14"
@@ -2410,7 +2432,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"I don't need this from you! And Mom and Dad don't listen to me! I tried be honest with you all, and here we are arguing again. I can't go five minutes without being the bad guy here...I'll just leave like you left."
+     "content":"I don’t need this from you! And Mom and Dad don’t listen to me! I tried be honest with you all, and here we are arguing again. I can’t go five minutes without being the bad guy here...I’ll just leave like you left."
     ,"tone":"Default"
     ,"plot":"AlexInterjects2"
     ,"id":"15"
@@ -2421,7 +2443,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"I don't care! I hate you! You always side with Mom and Dad!"
+     "content":"I don’t care! I hate you! You always side with Mom and Dad!"
     ,"tone":"Default"
     ,"plot":"AlexInterjects2"
     ,"id":"16"
@@ -2432,7 +2454,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Admit it! You're obviously the favorite child. Mom and Dad actually likes a kid who does something with their life. You got to succeed while I'm left here to suffer!"
+     "content":"Admit it! You're obviously the favorite child. Mom and Dad actually likes a kid who does something with their life. You got to succeed while I’m left here to suffer!"
     ,"tone":"Blunt"
     ,"plot":"AlexInterjects2"
     ,"id":"17"
@@ -2443,7 +2465,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"Admit it! You're obviously the favorite child. Mom and Dad actually likes a kid who does something with their life. You got to succeed while I'm left here to suffer!"
+     "content":"Admit it! You're obviously the favorite child. Mom and Dad actually likes a kid who does something with their life. You got to succeed while I’m left here to suffer!"
     ,"tone":"Indifferent"
     ,"plot":"AlexInterjects2"
     ,"id":"17"
@@ -2454,7 +2476,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"Just because I'm your sister doesn't mean I'm not the favorite. Mom and Dad actually likes a kid who does something with their life. You got to succeed while I'm left here to suffer!"
+     "content":"Just because I’m your sister doesn’t mean I’m not the favorite. Mom and Dad actually likes a kid who does something with their life. You got to succeed while I’m left here to suffer!"
     ,"tone":"Compassionate"
     ,"plot":"AlexInterjects2"
     ,"id":"17"
@@ -2465,7 +2487,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"Admit it! You're obviously the favorite child. Mom and Dad actually likes a kid who does something with their life. You got to succeed while I'm left here to suffer!"
+     "content":"Admit it! You're obviously the favorite child. Mom and Dad actually likes a kid who does something with their life. You got to succeed while I’m left here to suffer!"
     ,"tone":"Hesitant"
     ,"plot":"AlexInterjects2"
     ,"id":"17"
@@ -2531,7 +2553,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"It just seems like you're not really putting in an effort to understand Dad's mistakes."
+     "content":"it just seems like you're not really putting in an effort to understand Dad's mistakes."
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"2"
@@ -2619,7 +2641,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"That is wrong! I am not controlling! I don't tell your mom how she has to live her life."
+     "content":"That is wrong! I am not controlling! I don’t tell your mom how she has to live her life."
     ,"tone":"Indifferent"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"9"
@@ -2641,7 +2663,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"That's correct. I am not controlling. How does your mom even come up with these things... Anyways, no! I have never been controlling. I do not tell your mom how she has to live her life.\n"
+     "content":"That’s correct. I am not controlling. How does your mom even come up with these things… Anyways, no! I have never been controlling. I do not tell your mom how she has to live her life.\n"
     ,"tone":"Hesitant"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"9"
@@ -2652,7 +2674,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"Financially, I mean! You — you make me ask you for an allowance — an allowance, for your wife — and you insist on knowing how I spend every cent of it. I need to stay within your 'fun money' budget, when you go out with your friends and coworkers all the time. With you bringing down my neck all the time, so damn concerned about money, I don't have any space to have fun or get any freedom."
+     "content":"Financially, I mean! You—you make me ask you for an allowance—an allowance, for your wife—and you insist on knowing how I spend every cent of it. I need to stay within your ‘fun money’ budget, when you go out with your friends and coworkers all the time. With you bringing down my neck all the time, so damn concerned about money, I don’t have any space to have fun or get any freedom."
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"10"
@@ -2663,7 +2685,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"That's because you are limiting yourself too hard, Diane. You shouldn't see the allowance or budget as a way of me controlling you. You should see them as a way to make sure there is order in the household."
+     "content":"That’s because you are limiting yourself too hard, Diane. You shouldn’t see the allowance or budget as a way of me controlling you. You should see them as a way to make sure there is order in the household."
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"11"
@@ -2674,7 +2696,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"Order? Your 'order' made me go out and get a job and hide it from you so I could know what it felt like to have the independence I had before your stupid promotion!"
+     "content":"Order? Your ‘order’ made me go out and get a job and hide it from you so I could know what it felt like to have the independence I had before your stupid promotion!"
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"12"
@@ -2685,7 +2707,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"You know what? Have it your way. I'll let your Mom keep her job."
+     "content":"You know what? Have it your way. I’ll let your Mom keep her job."
     ,"tone":"Blunt"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"13"
@@ -2696,7 +2718,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"I've been taught to never be lazy and find the 'easiest' way around things, but I can make an exception this one time.  I'll let your Mom keep her so called job."
+     "content":"I’ve been taught to never be lazy and find the ‘easiest’ way around things, but I can make an exception this one time.  I’ll let your Mom keep her so called job."
     ,"tone":"Indifferent"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"13"
@@ -2707,7 +2729,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"Don't be an idiot. Happiness is not something to guarantee. Even with reclaimed independence, will your Mom actually be? Who knows, but I suppose I'll let her keep her job. "
+     "content":"Don’t be an idiot. Happiness is not something to guarantee. Even with reclaimed independence, will your Mom actually be? Who knows, but I suppose I’ll let her keep her job. "
     ,"tone":"Compassionate"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"13"
@@ -2718,7 +2740,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"And your Mom was worried about you being on my side... Hmph. I could let your Mom keep her 'job,' but I refuse to admit I am being controlling or change my ways because as the caretaker of this household, I know what is for the best."
+     "content":"And your Mom was worried about you being on my side… Hmph. I could let your Mom keep her 'job,' but I refuse to admit I am being controlling or change my ways because as the caretaker of this household, I know what is for the best."
     ,"tone":"Hesitant"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"13"
@@ -2729,7 +2751,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"'Let me?' Even if you didn't 'let me,' I would keep my job. Why can't you just admit your faults? Nothing gets through your thick, fat skull, Timothy."
+     "content":"‘Let me?’ Even if you didn’t ‘let me,’ I would keep my job. Why can’t you just admit your faults? Nothing gets through your thick, fat skull, Timothy."
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"14"
@@ -2740,7 +2762,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Ridiculing me is going to get you nowhere. Has your new found 'independence' make you lose your civility?"
+     "content":"Ridiculing me is going to get you nowhere. Has your new found ‘independence’ make you lose your civility?"
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"15"
@@ -2751,7 +2773,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"You know what? Thank you. Thank you for giving me the life I've always wanted, and you want me to be civil? Then I will be! I am so sorry for going behind your back and getting a job and accusing you of being controlling. You are just doing your best for the family, after all.."
+     "content":"You know what? Thank you. Thank you for giving me the life I’ve always wanted, and you want me to be civil? Then I will be! I am so sorry for going behind your back and getting a job and accusing you of being controlling. You are just doing your best for the family, after all.."
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"16"
@@ -2762,7 +2784,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Good. Well, I accept your apology, and will go ahead and forgive you. And how about we blame all that cheating nonsense on your trivial bartending job? It's probably all the stress that got to you. Right, Diane?\n"
+     "content":"Good. Well, I accept your apology, and will go ahead and forgive you. And how about we blame all that cheating nonsense on your trivial bartending job? It’s probably all the stress that got to you. Right, Diane?\n"
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"17"
@@ -2773,7 +2795,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"How — how are you blaming me for something you caused. Okay. Okay. Yes, that sounds like a great idea, Timothy."
+     "content":"How—how are you blaming me for something you caused. Okay. Okay. Yes, that sounds like a great idea, Timothy."
     ,"tone":"Default"
     ,"plot":"DadNoSeesHisFault"
     ,"id":"18"
@@ -2883,7 +2905,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"I kept her in it because it is what is right for her. She needs to learn for herself the lifestyle that will bring her success. Some stupid soccer or dancing classes won't get her into university or become an upstanding citizen."
+     "content":"I kept her in it because it is what is right for her. She needs to learn for herself the lifestyle that will bring her success. Some stupid soccer or dancing classes won’t get her into university or become an upstanding citizen."
     ,"tone":"Blunt"
     ,"plot":"DadInterjects2"
     ,"id":"10"
@@ -2894,7 +2916,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Oh boy are those samoas my achilles heel. I always gain a few pounds when cookie season comes around. She seems to get along with the other girls in her scout and I want her to learn some fundamentals behind living in the real world. She won't get that with some soccer or dancing lessons, I'll tell you that."
+     "content":"Oh boy are those samoas my achilles heel. I always gain a few pounds when cookie season comes around. She seems to get along with the other girls in her scout and I want her to learn some fundamentals behind living in the real world. She won’t get that with some soccer or dancing lessons, I’ll tell you that."
     ,"tone":"Indifferent"
     ,"plot":"DadInterjects2"
     ,"id":"10"
@@ -2905,7 +2927,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"I kept her in it because it is what is right for her. She needs to learn for herself the lifestyle that will bring her success. Some stupid soccer or dancing classes won't get her into university or become an upstanding citizen."
+     "content":"I kept her in it because it is what is right for her. She needs to learn for herself the lifestyle that will bring her success. Some stupid soccer or dancing classes won’t get her into university or become an upstanding citizen."
     ,"tone":"Compassionate"
     ,"plot":"DadInterjects2"
     ,"id":"10"
@@ -2916,7 +2938,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"I kept her in it because it is what is right for her. She needs to learn for herself the lifestyle that will bring her success. Some stupid soccer or dancing classes won't get her into university or become an upstanding citizen."
+     "content":"I kept her in it because it is what is right for her. She needs to learn for herself the lifestyle that will bring her success. Some stupid soccer or dancing classes won’t get her into university or become an upstanding citizen."
     ,"tone":"Hesitant"
     ,"plot":"DadInterjects2"
     ,"id":"10"
@@ -2938,7 +2960,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"There is no way my daughter is going in some tooty fruity acting class. She needs to grow up, put her emotions aside and hit the books. She'll grow up to be a famous scientist, or engineer one day and carry on the family's legacy. She won't get anywhere with theatre."
+     "content":"There is no way my daughter is going in some tooty fruity acting class. She needs to grow up, put her emotions aside and hit the books. She’ll grow up to be a famous scientist, or engineer one day and carry on the family’s legacy. She won’t get anywhere with theatre."
     ,"tone":"Default"
     ,"plot":"DadInterjects2"
     ,"id":"12"
@@ -2949,7 +2971,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"It isn't that easy anymore. When she applies for colleges they'll be looking at what classes she took and how well she did in them. Even is she does well in the artsy classes, the science classes are what will get her farther. Even then, it's all familiarity when it comes to science classes. The more she sees it and applies herself, the easier it will be for her in highschool and college. I can tell she isn't applying herself at all this year. I've been discovering tests that she has been trying to throw away with letting us know. She's failing both her Biology and History classes. I don't know how we didn't figure this out sooner."
+     "content":"It isn’t that easy anymore. When she applies for colleges they'll be looking at what classes she took and how well she did in them. Even is she does well in the artsy classes, the science classes are what will get her farther. Even then, it’s all familiarity when it comes to science classes. The more she sees it and applies herself, the easier it will be for her in highschool and college. I can tell she isn’t applying herself at all this year. I’ve been discovering tests that she has been trying to throw away with letting us know. She’s failing both her Biology and History classes. I don’t know how we didn’t figure this out sooner."
     ,"tone":"Default"
     ,"plot":"DadInterjects2"
     ,"id":"13"
@@ -2960,7 +2982,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"Why didn't you tell me about this? Have you been helping me with her homework?"
+     "content":"Why didn’t you tell me about this? Have you been helping me with her homework?"
     ,"tone":"Default"
     ,"plot":"DadInterjects2"
     ,"id":"14"
@@ -2971,7 +2993,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"I have tried lending her my help but everytime she says that she doesn't want it. I don't know how to reach that girl, maybe this new college grad can showoff some newly garnered expertise."
+     "content":"I have tried lending her my help but everytime she says that she doesn’t want it. I don’t know how to reach that girl, maybe this new college grad can showoff some newly garnered expertise."
     ,"tone":"Default"
     ,"plot":"DadInterjects2"
     ,"id":"15"
@@ -2982,7 +3004,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"You don't have to do that, honey. Your father just likes to take some responsibility off of himself. Tim, you need to help Alex with her homework, don't sell one of our children out to the other."
+     "content":"You don’t have to do that, honey. Your father just likes to take some responsibility off of himself. Tim, you need to help Alex with her homework, don’t sell one of our children out to the other."
     ,"tone":"Default"
     ,"plot":"DadInterjects2"
     ,"id":"16"
@@ -2993,7 +3015,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"I don't do that. I was simply acknowledging the achievement that our child has accomplished. Have you heard what I have been saying? Alex is failing school, I have tried to help her but she obviously doesn't value my help. The last time I checked their are two college educated people under this roof, one of whom is ignored by Alex. Instead of casting blame, do you want to help Alex, Diane? I'm sure you learned some things with your high school diploma."
+     "content":"I don’t do that. I was simply acknowledging the achievement that our child has accomplished. Have you heard what I have been saying? Alex is failing school, I have tried to help her but she obviously doesn’t value my help. The last time I checked their are two college educated people under this roof, one of whom is ignored by Alex. Instead of casting blame, do you want to help Alex, Diane? I’m sure you learned some things with your high school diploma."
     ,"tone":"Blunt"
     ,"plot":"DadInterjects2"
     ,"id":"17"
@@ -3004,7 +3026,7 @@
     ,"target":["mom","dad","alex"]
   },
   {
-     "content":"I don't do that. I was simply acknowledging the achievement that our child has accomplished. Have you heard what I have been saying? Alex is failing school, I have tried to help her but she obviously doesn't value my help. The last time I checked their are two college educated people under this roof, one of whom is ignored by Alex. Instead of casting blame, do you want to help Alex, Diane? I'm sure you learned some things with your high school diploma."
+     "content":"I don’t do that. I was simply acknowledging the achievement that our child has accomplished. Have you heard what I have been saying? Alex is failing school, I have tried to help her but she obviously doesn’t value my help. The last time I checked their are two college educated people under this roof, one of whom is ignored by Alex. Instead of casting blame, do you want to help Alex, Diane? I’m sure you learned some things with your high school diploma."
     ,"tone":"Indifferent"
     ,"plot":"DadInterjects2"
     ,"id":"17"
@@ -3015,7 +3037,7 @@
     ,"target":["mom","dad","alex"]
   },
   {
-     "content":"I don't do that. I was simply acknowledging the achievement that our child has accomplished. Have you heard what I have been saying? Alex is failing school, I have tried to help her but she obviously doesn't value my help. The last time I checked their are two college educated people under this roof, one of whom is ignored by Alex. Instead of casting blame, do you want to help Alex, Diane? I'm sure you learned some things with your high school diploma."
+     "content":"I don’t do that. I was simply acknowledging the achievement that our child has accomplished. Have you heard what I have been saying? Alex is failing school, I have tried to help her but she obviously doesn’t value my help. The last time I checked their are two college educated people under this roof, one of whom is ignored by Alex. Instead of casting blame, do you want to help Alex, Diane? I’m sure you learned some things with your high school diploma."
     ,"tone":"Compassionate"
     ,"plot":"DadInterjects2"
     ,"id":"17"
@@ -3026,7 +3048,7 @@
     ,"target":["mom","dad","alex"]
   },
   {
-     "content":"I don't do that. I was simply acknowledging the achievement that our child has accomplished. Have you heard what I have been saying? Alex is failing school, I have tried to help her but she obviously doesn't value my help. The last time I checked their are two college educated people under this roof, one of whom is ignored by Alex. Instead of casting blame, do you want to help Alex, Diane? I'm sure you learned some things with your high school diploma."
+     "content":"I don’t do that. I was simply acknowledging the achievement that our child has accomplished. Have you heard what I have been saying? Alex is failing school, I have tried to help her but she obviously doesn’t value my help. The last time I checked their are two college educated people under this roof, one of whom is ignored by Alex. Instead of casting blame, do you want to help Alex, Diane? I’m sure you learned some things with your high school diploma."
     ,"tone":"Hesitant"
     ,"plot":"DadInterjects2"
     ,"id":"17"
@@ -3037,7 +3059,7 @@
     ,"target":["mom","dad","alex"]
   },
   {
-     "content":"Some of us had the luxury of finishing college, while others had to take care of our children. Just because I didn't finish college, doesn't mean I didn't want to finish it."
+     "content":"Some of us had the luxury of finishing college, while others had to take care of our children. Just because I didn’t finish college, doesn’t mean I didn’t want to finish it."
     ,"tone":"Default"
     ,"plot":"MomInterjects3"
     ,"id":"1"
@@ -3048,7 +3070,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Honey it was not your fault, you and your sister were the best things to happen to me. Having kids changes your life for better, or for worse, it's just how you see it."
+     "content":"Honey it was not your fault, you and your sister were the best things to happen to me. Having kids changes your life for better, or for worse, it’s just how you see it."
     ,"tone":"Default"
     ,"plot":"MomInterjects3"
     ,"id":"2"
@@ -3059,7 +3081,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"That's right. We're both very happy that you are in our lives. Your mother had you at the end of her third year at university right when I was finishing up. Your mother tried her hardest to support you while getting through school, but it didn't work out in the end. But hey, there is always the future. You could go back to school and finish out that degree someday."
+     "content":"That’s right. We’re both very happy that you’re in our lives. Your mother had you at the end of her third year at university right when I was finishing up. Your mother tried her hardest to support you while getting through school, but it didn’t work out in the end. But hey, there’s always the future. You could go back to school and finish up that degree someday."
     ,"tone":"Default"
     ,"plot":"MomInterjects3"
     ,"id":"3"
@@ -3070,7 +3092,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Where were you again? Oh yeah that's right. While I was slaving away through school, you were off enjoying your graduation vacation with your mates. I never got the whole story of what happened that summer."
+     "content":"Where were you again? Oh yeah that’s right. While I was slaving away through school, you were off with your mates enjoying your graduation vacation. I never got the whole story of what happened that summer. "
     ,"tone":"Default"
     ,"plot":"MomInterjects3"
     ,"id":"4"
@@ -3092,7 +3114,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Don't talk to me like that! We were young and naive. I wasn't thinking clearly."
+     "content":"Don’t talk to me like that! We were young and naive. I wasn’t thinking clearly."
     ,"tone":"Blunt"
     ,"plot":"MomInterjects3"
     ,"id":"6"
@@ -3103,7 +3125,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"We were young and naive. I was carried away with just graduating college. I wasn't thinking clearly."
+     "content":"We were young and naive. I was carried away with just graduating college. I wasn’t thinking clearly."
     ,"tone":"Indifferent"
     ,"plot":"MomInterjects3"
     ,"id":"6"
@@ -3114,7 +3136,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"I'm afraid it is true, sweetie. I was carried away with graduating college, and I wanted to get away."
+     "content":"I’m afraid it is true, sweetie. I was carried away with graduating college, and I wanted to get away."
     ,"tone":"Compassionate"
     ,"plot":"MomInterjects3"
     ,"id":"6"
@@ -3125,7 +3147,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"I'm afraid it is true, sweetie. I was carried away with graduating college, and I wanted to get away."
+     "content":"I’m afraid it is true, sweetie. I was carried away with graduating college, and I wanted to get away."
     ,"tone":"Hesitant"
     ,"plot":"MomInterjects3"
     ,"id":"6"
@@ -3136,7 +3158,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"You spent half of our savings on booze and god-knows-what when you left. That money was saved for getting me through college and for the baby. You 'getting away' from it all cost us more than you realized."
+     "content":"You spent half of our savings on booze and god-knows-what when you left. That money was saved for getting me through college and for the baby. You “getting away” from it all cost us more than you realized."
     ,"tone":"Default"
     ,"plot":"MomInterjects3"
     ,"id":"7"
@@ -3147,7 +3169,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"I spent the money knowing I had a pretty cushy job lined up right when I got back. I'm sorry I put your dreams at risk with my actions but I really did it because our lives were going to change for the better. We were going to live the good life. Can't a man get away with trying to provide for his family?"
+     "content":"I spent the money knowing I had a pretty cushy job lined up right when I got back. I’m sorry I put your dreams at risk with my actions, but I did it because our lives were going to change for the better. We were going to live the good life. Can’t a man get away with trying to provide for his family?"
     ,"tone":"Default"
     ,"plot":"MomInterjects3"
     ,"id":"8"
@@ -3158,7 +3180,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"I can't believe I'm hearing this right now. I had to put my future on hold to deal with both of our problems, while you traipsed off to go forget about yours. You really think your job gave us a better life? It gave us money, sure, but did that money get used to make us any happier, or closer as a family? My dreams of not only being a part of this family but providing for the family were crushed because of that summer. Also providing for the family? It's like I'm hearing a broken record."
+     "content":"I can’t believe I’m hearing this right now. I had to put my future on hold to deal with both of our problems, while you traipsed off to go forget about yours. You really think your job gave us a better life? It gave us money, sure, but did that money get used to make us any happier, or closer as a family? My dreams of not only being a part of this family but providing for the family were crushed because of that summer. Also providing for the family? It’s like I’m hearing a broken record."
     ,"tone":"Default"
     ,"plot":"MomInterjects3"
     ,"id":"9"
@@ -3169,7 +3191,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Honey, when you're that young, you don't think about the ramifications of having a kid. You came about at an unfortunate time, but it doesn't mean we, or at least I, don't love you anymore. Like I said before, you were the best thing to happen to us, regardless of the timing. I'm just glad you didn't go down the same road that we did. You were the smart one."
+     "content":"Honey, when you’re that young, you don’t think about the ramifications of having a kid. You came about at an unfortunate time, but it doesn’t mean we, or at least I, don’t love you anymore. Like I said before, you were the best thing to happen to us, regardless of the timing. I’m just glad you didn’t go down the same road that we did. You were the smart one."
     ,"tone":"Default"
     ,"plot":"MomInterjects3"
     ,"id":"10"
@@ -3180,7 +3202,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"I'm sorry, both of you... I..."
+     "content":"I’m sorry, both of you… I…"
     ,"tone":"Default"
     ,"plot":"MomInterjects3"
     ,"id":"11"
@@ -3191,7 +3213,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"I don't need your apology, your kids need to know what you really are. Did you really think that putting your desires, over the wishes of others would lead to happiness? I have been a cog in the machine, and the kids have had to live through your control. Alex, of all people, are feeling your rule the hardest right now. If anyone needs an apology it's her. <> Alex! Can you come in here please?"
+     "content":"I don’t need your apology, your kids need to know what you really are. Did you really think that putting your desires, over the wishes of others would lead to happiness? I have been a cog in the machine, and the kids have had to live through your control. Alex, of all people, are feeling your rule the hardest right now. If anyone needs an apology it’s her. <> Alex! Can you come in here please?"
     ,"tone":"Default"
     ,"plot":"MomInterjects3"
     ,"id":"12"
@@ -3202,7 +3224,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Alex, honey, we've been doing a lot of talking, and I think your father wants to say something."
+     "content":"Alex, honey, we’ve been doing a lot of talking, and I think your father wants to say something."
     ,"tone":"Default"
     ,"plot":"MomInterjects3"
     ,"id":"13"
@@ -3213,7 +3235,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Alex, honey, I'm so sorry I've been hard on you. I was trying to do what I thought was right but got carried away and ignored what was actually happening. Since this is all on the floor now, and it's a lot to take in, I want to be frank with you. I love all of you, and I don't want to be the bad guy anymore."
+     "content":"Alex,honey, I’m so sorry I’ve been hard on you. I was trying to do what I thought was right but got carried away and ignored what was actually happening. Since this is all on the floor now, and it’s a lot to take in, I want to be frank with you. I love all of you, and I don’t want to be the bad guy anymore."
     ,"tone":"Default"
     ,"plot":"MomInterjects3"
     ,"id":"14"
@@ -3246,7 +3268,7 @@
     ,"target":["mom","alex","dad"]
   },
   {
-     "content":"Thanks Dad, I needed to hear that. I've been doing some thinking and I've decided to be more honest with you and Mom."
+     "content":"Thanks Dad, I needed to hear that. I’ve been doing some thinking and I’ve decided to be more honest with you and Mom."
     ,"tone":"Compassionate"
     ,"plot":"MomInterjects3"
     ,"id":"15"
@@ -3290,7 +3312,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"That's true! We want to help you, but you block and deflect all our advice! Look, we can sit here all night and berate you about what you have done, but that won't fix what has already happened. We need to focus on how you're going to deal with what you have started yourself. And you, Alex, need to own up to your actions and work with us. Our advice only goes as far as you're willing to take it."
+     "content":"That’s true! We want to help you, but you block and deflect all our advice! Look, we can sit here all night and berate you about what you have done, but that won’t fix what has already happened. We need to focus on how you’re going to deal with what you have started yourself. And you, Alex, need to own up to your actions and work with us. Our advice only goes as far as you’re willing to take it."
     ,"tone":"Default"
     ,"plot":"AlexReconcilesPlayer"
     ,"id":"3"
@@ -3312,7 +3334,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"We're here to help you, and your father and I will support you. We're in this together we just need to see some action taken on your part."
+     "content":"We’re here to help you, and your father and I will support you. We’re in this together we just need to see some action taken on your part."
     ,"tone":"Default"
     ,"plot":"AlexReconcilesPlayer"
     ,"id":"5"
@@ -3323,7 +3345,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"It does! I'm sorry for what I have done, and I want to be a better person. I guess the first step was not only being honest with you guys, but also with myself."
+     "content":"It does! I’m sorry for what I have done, and I want to be a better person. I guess the first step was not only being honest with you guys, but also with myself."
     ,"tone":"Default"
     ,"plot":"AlexReconcilesPlayer"
     ,"id":"6"
@@ -3345,7 +3367,7 @@
     ,"target":["dad","mom","alex"]
   },
   {
-     "content":"I'm glad to see you two coming together again! You guys keep this family together and we're stronger when we enjoy each other's company. I'm glad that you have finally taken some control over your situation. You remind me of myself when I was in college. I made some mistakes along the way, which I didn't pay too much attention to until they started piling up. Once it became too much for me to handle on my own, I had to rely on my own mother to put everything in perspective for me. Luckily, we're having this conversation soon and not waiting for the consequences to be more serious."
+     "content":"I’m glad to see you two coming together again! You guys keep this family together and we’re stronger when we enjoy each other’s company. I’m glad that you have finally taken some control over your situation. You remind me of myself when I was in college. I made some mistakes along the way, which I didn’t pay too much attention to until they started piling up. Once it became too much for me to handle on my own, I had to rely on my own mother to put everything in perspective for me. Luckily, we’re having this conversation soon and not waiting for the consequences to be more serious."
     ,"tone":"Default"
     ,"plot":"MomApologizesAlex"
     ,"id":"1"
@@ -3356,7 +3378,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"Wow Mom, I didn't know you've been through what I have been."
+     "content":"Wow Mom, I didn’t know you’ve been through what I have been."
     ,"tone":"Default"
     ,"plot":"MomApologizesAlex"
     ,"id":"2"
@@ -3367,7 +3389,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"Everyone has Alex, at different points in their life, it's just depends on how they deal with them. Even though it doesn't seem like it, you're lucky to have a family that is willing to support you through it. I'm sorry for not sticking up for you sooner. I was afraid you guys would despise me for keeping these secrets from the family, but I'm glad I don't have to worry anymore."
+     "content":"Everyone has Alex, at different points in their life, it’s just depends on how they deal with them. Even though it doesn’t seem like it, you’re lucky to have a family that is willing to support you through it. I’m sorry for not sticking up for you sooner. I was afraid you guys would despise me for keeping these secrets from the family, but I’m glad I don’t have to worry anymore."
     ,"tone":"Default"
     ,"plot":"MomApologizesAlex"
     ,"id":"3"
@@ -3378,7 +3400,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"I'm happy for you Diane, and I'm glad that my honesty brought everyone together. If it wasn't for me, we would still be all bickering."
+     "content":"I’m happy for you Diane, and I’m glad that my honesty brought everyone together. If it wasn’t for me, we would still be all bickering."
     ,"tone":"Blunt"
     ,"plot":"MomApologizesAlex"
     ,"id":"4"
@@ -3389,7 +3411,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"I agree, we have been through a lot today as a family. If it wasn't for my honesty, we would all still be bickering."
+     "content":"I agree, we have been through a lot today as a family. If it wasn’t for my honesty, we would all still be bickering."
     ,"tone":"Indifferent"
     ,"plot":"MomApologizesAlex"
     ,"id":"4"
@@ -3400,7 +3422,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"Yeah honey, I'm impressed that you had the courage to admit that. I'm glad that we are finally having this conversation and I'm sure that my honesty cleared things up as well."
+     "content":"Yeah honey, I’m impressed that you had the courage to admit that. I’m glad that we are finally having this conversation and I’m sure that my honesty cleared things up as well."
     ,"tone":"Compassionate"
     ,"plot":"MomApologizesAlex"
     ,"id":"4"
@@ -3411,7 +3433,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"Yeah honey, I'm impressed that you had the courage to admit that. I'm glad that we are finally having this conversation and I'm sure that my honesty cleared things up as well."
+     "content":"Yeah honey, I’m impressed that you had the courage to admit that. I’m glad that we are finally having this conversation and I’m sure that my honesty cleared things up as well."
     ,"tone":"Hesitant"
     ,"plot":"MomApologizesAlex"
     ,"id":"4"
@@ -3422,7 +3444,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"If I remember correctly, your 'honesty' was to criticize Alex and myself."
+     "content":"If I remember correctly, your “honesty” was to criticize Alex and myself."
     ,"tone":"Default"
     ,"plot":"MomApologizesAlex"
     ,"id":"5"
@@ -3433,7 +3455,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Right, but I did it out of love. I'm trying to do what was right for the family by being honest about your faults."
+     "content":"Right, but I did it out of love. I’m trying to do what was right for the family by being honest about your faults."
     ,"tone":"Default"
     ,"plot":"MomApologizesAlex"
     ,"id":"6"
@@ -3444,7 +3466,7 @@
     ,"target":["mom","alex",""]
   },
   {
-     "content":"I see that, I'm just saying that I wasn't the emotional one here. If I remember correctly my confession came from a place of keeping the family functional. There has to be due process right?"
+     "content":"I see that, I’m just saying that I wasn’t the emotional one here. If I remember correctly my confession came from a place of keeping the family functional. There has to be due process right?"
     ,"tone":"Blunt"
     ,"plot":"MomApologizesAlex"
     ,"id":"7"
@@ -3455,7 +3477,7 @@
     ,"target":["mom","alex",""]
   },
   {
-     "content":"I see that, I'm just saying that I wasn't the emotional one here. If I remember correctly my confession came from a place of keeping the family functional. There has to be due process right?"
+     "content":"I see that, I’m just saying that I wasn’t the emotional one here. If I remember correctly my confession came from a place of keeping the family functional. There has to be due process right?"
     ,"tone":"Indifferent"
     ,"plot":"MomApologizesAlex"
     ,"id":"7"
@@ -3466,7 +3488,7 @@
     ,"target":["mom","alex",""]
   },
   {
-     "content":"Well, I wasn't the emotional one here. There has to be due process right? If I remember correctly, my confession came from a place of keeping the family functional."
+     "content":"Well, I wasn’t the emotional one here. There has to be due process right? If I remember correctly, my confession came from a place of keeping the family functional."
     ,"tone":"Compassionate"
     ,"plot":"MomApologizesAlex"
     ,"id":"7"
@@ -3477,7 +3499,7 @@
     ,"target":["mom","alex",""]
   },
   {
-     "content":"Well, I wasn't the emotional one here. There has to be due process right? If I remember correctly, my confession came from a place of keeping the family functional."
+     "content":"Well, I wasn’t the emotional one here. There has to be due process right? If I remember correctly, my confession came from a place of keeping the family functional."
     ,"tone":"Hesitant"
     ,"plot":"MomApologizesAlex"
     ,"id":"7"
@@ -3488,7 +3510,7 @@
     ,"target":["mom","alex",""]
   },
   {
-     "content":"Honey, I know you like to keep your pride, but this isn't the fight you want to win right now."
+     "content":"Honey, I know you like to keep your pride, but this isn’t the fight you want to win right now."
     ,"tone":"Default"
     ,"plot":"MomApologizesAlex"
     ,"id":"8"
@@ -3499,7 +3521,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"I can't believe you Dad."
+     "content":"I can’t believe you Dad."
     ,"tone":"Default"
     ,"plot":"MomApologizesAlex"
     ,"id":"9"
@@ -3510,7 +3532,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"\nDon't make me laugh. It is already a well established fact that your sister is a lost cause. And instead of ridiculing me and defending your mom, learn your place. Do you really think you can walk in here with a mint condition college diploma thinking you know what's best? How sophomoric of you."
+     "content":"Don’t make me laugh. We all know your sister is a lost cause. Instead of ridiculing me and defending your mom, you should learn your place. Do you really think you can walk in here with that shiny, new diploma and decide what is best for your sister? How sophomoric of you."
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"1"
@@ -3521,7 +3543,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"The world did not get anywhere by being 'nice.' You can't take any constructive criticism? Then you are just as weak as your brainless little sister."
+     "content":"You can’t get anywhere in the world by just being ‘nice’. Can’t take any constructive criticism? You’re just as bad as your brainless little sister."
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"2"
@@ -3532,7 +3554,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"Oh, Alex. I'm glad you came to your senses and returned. Have you decided to act like a member of this family and be respectful?"
+     "content":"Really, Mom? I come back and this is how you treat me? No 'Welcome back, Alex!' or 'Are you feeling better?' "
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"3"
@@ -3543,7 +3565,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"I come back and this is how you treat me? No 'welcome back, Alex?' or 'are you feeling better?'"
+     "content":"I come back and this is how you treat me? No 'Welcome back, Alex!' or 'Are you feeling better?'"
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"4"
@@ -3554,7 +3576,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"In case you forgot, you did leave dramatically. Now you are expecting us to be accommodating?"
+     "content":"In case you forgot, you did leave dramatically. Do you really expect us to be accommodating?"
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"5"
@@ -3565,7 +3587,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"I am acting as a parent should! I can't promote such negative behavior at the dinner table! How could you put me in the same boat as your dad?"
+     "content":"I am acting as a parent should! I can’t promote such negative behavior at the dinner table! How could you put me in the same boat as your dad?"
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"6"
@@ -3576,7 +3598,7 @@
     ,"target":["dad","alex",""]
   },
   {
-     "content":"I thought you wanted me at the dinner table. I didn't come back here to deal with more of this stuff!"
+     "content":"I thought you wanted me at the dinner table. I didn’t come back here to deal with more of this BS!"
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"7"
@@ -3587,7 +3609,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"There is nothing going on! I just came to the realization that your dad is correct. There isn't going to be any progress if we are nice to each other all the time. We need to have some backbone and clean up the spots that are getting dirty."
+     "content":"There is nothing going on! I just came to the realization that what your dad said is true. There isn’t going to be any progress if we’re nice to each other all the time. It’s like cleaning-- it’s not fun, and you have to put some backbone in it to make sure the stubborn spots are scrubbed away."
     ,"tone":"Blunt"
     ,"plot":"BadEnding1"
     ,"id":"8"
@@ -3598,7 +3620,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"I may have a few minutes ago, but that was then. There's nothing going on. It is just that the conversation you had with your dad made me realize that being nice really isn't going to get this family anywhere. We need to be strict! Like with cleaning, you know? We don't leave dirty spots around, even if they can be a bit stubborn."
+     "content":"There’s nothing going on. I disagreed at the time, but I agree with your father now. Thanks to your dad, I see that being nice isn’t going to get our family anywhere. We need to be strict! It’s like cleaning, you know? We can’t leave dirty spots around, even if they can be a bit stubborn."
     ,"tone":"Indifferent"
     ,"plot":"BadEnding1"
     ,"id":"8"
@@ -3609,7 +3631,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"Alex may be having a hard time, but I don't think being nice is going to improve this situation. It's just like your Dad said. When you clean, do you leave tiny spots around just because they're a bit stubborn? No! You put in some elbow grease and scrub them out."
+     "content":"Alex may be having a hard time, but I don’t think being nice is going to improve this situation. It’s just like your Dad said. When you clean, do you leave tiny spots around just because they’re a bit stubborn? No! You put in some elbow grease and scrub them out."
     ,"tone":"Compassionate"
     ,"plot":"BadEnding1"
     ,"id":"8"
@@ -3620,7 +3642,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"I'm not being mean. I'm being stern. Your conversation with your dad made me realize that perhaps being nice isn't the way to solve this problem. You know how when you clean, you always come across a stubborn little spot? You don't ever leave it there. You scrub it out with some tough elbow grease!"
+     "content":"I’m not being mean. I’m being stern. Your conversation with your dad made me realize that perhaps being nice isn’t the way to solve this problem. You know how when you clean, you always come across a stubborn little spot? You don’t ever leave it there. You scrub it out with some tough elbow grease!"
     ,"tone":"Hesitant"
     ,"plot":"BadEnding1"
     ,"id":"8"
@@ -3631,7 +3653,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"Are you seriously comparing me to some damn spot that needs to be outed? What kind of shitty analogy is that!"
+     "content":"Are you seriously comparing me to some damn spot that needs to be scrubbed away? What kind of shitty analogy is that!"
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"9"
@@ -3642,7 +3664,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"Well, actually, it is a great analogy. Well done, Diane. Also, I take back my snarky comment about you only being a high school graduate. In that moment, I had forgotten about how bright you truly are."
+     "content":"Well, actually, it is a great analogy. Well done, Diane. I take back my snarky comment about you only being a high school graduate. In that moment, I had forgotten about how bright you truly are."
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"10"
@@ -3664,7 +3686,7 @@
     ,"target":["dad","-alex",""]
   },
   {
-     "content":"We have our senses. You should come to the realization that treating Alex the way you are isn't going to improve her behavior one bit too. Hmph. I think I'm having another realization: I think we should be more stern with you. Maybe that way you'll hurry up and find a job and stop being so soft on Alex."
+     "content":"We have our senses. You should realize the way you’re treating Alex isn’t going to help improve her behavior at all…. Hmph. With the way you’re acting now, I think we should be more stern with you too. Maybe that way you’ll hurry up and find a job and stop being so soft on Alex."
     ,"tone":"Blunt"
     ,"plot":"BadEnding1"
     ,"id":"12"
@@ -3675,7 +3697,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"Our acts are 'brushed up.' We are already treating Alex as we should, and perhaps we should treat you similarly as well. Maybe that way you'll hurry up and find a job and stop being so soft on Alex."
+     "content":"Our acts are 'brushed up.' We are already treating Alex as we should, and perhaps we should treat you similarly as well. Maybe that way you’ll hurry up and find a job and stop being so soft on Alex."
     ,"tone":"Indifferent"
     ,"plot":"BadEnding1"
     ,"id":"12"
@@ -3686,7 +3708,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"Alex WILL stay at the dinner table, whether she likes it or not, or else there will be consequences. Don't be silly. There's no need to discuss that. The way your Dad and I are treating her is the best way to help her, and I think it is the best way to help you as well. Perhaps that way, you'll hurry up and find a job and stop being so soft on Alex."
+     "content":"Don’t be silly. Alex WILL stay at the dinner table whether she likes it or not, or else there will consequences … There’s no need for further discussion. Being stern with Alex is the best way for me and your father to help her, and it looks like it might be the best way to help you too. Perhaps that way, you’ll hurry up and find a job and stop being so soft on Alex."
     ,"tone":"Compassionate"
     ,"plot":"BadEnding1"
     ,"id":"12"
@@ -3697,7 +3719,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"Figure out? Oh you silly. There isn't anything to figure out. We are treating Alex as we should and I think we should treat you the same way. Maybe that way you'll hurry up and find a job and stop being so soft on Alex."
+     "content":"Figure out? You’re so silly. There isn’t anything we need to figure out. We are treating Alex as we should and I think we should treat you the same way. Maybe that way you’ll hurry up and find a job and stop being so soft on Alex."
     ,"tone":"Hesitant"
     ,"plot":"BadEnding1"
     ,"id":"12"
@@ -3708,7 +3730,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"...Is this really happening..."
+     "content":"...is this really happening?"
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"13"
@@ -3719,7 +3741,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"I guess I'm surprised that Mom actually agrees with Dad, even after all the cheating bullshit that happened. I mean, Mom always tried to argue for me, saying that I should be able to do the stuff that I like. Now she's saying that I'm just some speck of dirt that needs to be dealt with..."
+     "content":"I guess I’m surprised that Mom actually agrees with Dad, even after all the cheating bullshit that happened. I mean, Mom always tried to argue for me, saying that I should be able to do the stuff that I like. Now she’s saying Now she’s saying I’m just some stupid speck of dust..."
     ,"tone":"Blunt"
     ,"plot":"BadEnding1"
     ,"id":"14"
@@ -3730,7 +3752,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"I don't need to you to talk! I can make my own space...but thanks, I guess. But, uh. Yeah, you're right. I'm surprised that Mom thinks being critical is the way to go, since she argued with Dad, saying I should do what I like and not be so stressed out. I can't believe she called me a piece of dirt."
+     "content":"I don’t need to you to talk! I can make my own space...but thanks, I guess. But, uh. Yeah, you’re right. It’s weird that Mom thinks being strict is the way to go since she just argued with dad about it. I can’t believe she called me a piece of dirt."
     ,"tone":"Indifferent"
     ,"plot":"BadEnding1"
     ,"id":"14"
@@ -3741,7 +3763,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"Heh, yeah. I guess I usually do... It's just that I'm surprised that Mom agrees with Dad, even after spending so many hours arguing that I should be able to do the stuff that I like and be less stressed. But now I'm just dirt that needs to be dealt with? I'm kinda...having a hard time accepting this."
+     "content":"Heh, yeah. I guess I usually do… I guess I’m just surprised Mom agrees with Dad even after spending so much time arguing about how I should do what I want. And now I’m just considered dirt to both of them? I’m kinda...having a hard time dealing with this."
     ,"tone":"Compassionate"
     ,"plot":"BadEnding1"
     ,"id":"14"
@@ -3752,7 +3774,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"Well, yeah. Mom just called be a piece of dirt... I thought she actually cared about me doing the things that I want and not being so stressed out. I mean, she and Dad argued so much, but I guess that was just some gross power play thing they were doing."
+     "content":"Well, yeah. Mom just called be a piece of dirt… I thought she actually cared about me doing the things that I want and not being so stressed out. I mean, she and Dad argued so much, but I guess that was just some gross power play thing they were doing."
     ,"tone":"Hesitant"
     ,"plot":"BadEnding1"
     ,"id":"14"
@@ -3774,7 +3796,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"No, Alex. You're wrong — Dad and I couldn't expect you to understand, but we are doing this for you. It's time for you to shape up. Don't expect us to allow you to hang out with your friends anymore, unless you learn how to be respectful and bring your grades up. As for you, our dear college grad...how dare you talk back to us! You should know that strict discipline is the only way someone is trained to become successful."
+     "content":"No, Alex. You’re wrong—Dad and I couldn’t expect you to understand, but we are doing this for you. It’s time for you to shape up. Don’t expect us to allow you to hang out with your friends anymore, unless you learn how to be respectful and bring your grades up. As for you, our dear college grad...how dare you talk back to us! You should know that strict discipline is the only way to become successful in this world."
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"16"
@@ -3785,7 +3807,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"Th-that is not Dad's fault! Don't blame him for your weakness!"
+     "content":"Th-that is not Dad’s fault! Don’t blame him for your weakness!"
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"17"
@@ -3796,7 +3818,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"How dare you speak of me that way! Perhaps if you shaped up your act, you would be employed, making money, and not home! Your Mom is correct. You are weak, pathetic — I don't even know why we invited you to move back in after your graduation."
+     "content":"How dare you! Who gave you the right to speak about me that way? If you shaped up your act, you would be out in the world making money at some shiny new job, not here lazing around at home! Your Mom is correct. You’re pathetic—I don’t even know why we invited you to move back in after graduation."
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"18"
@@ -3807,7 +3829,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"There is nothing to congratulate you on! You have accomplished nothing an adult your age should have by now. You contribute nothing to this house and are just as hopeless as Alex. You're aren't blessings to your mom and me. You are curses!"
+     "content":"You’re being ridiculous, there’s nothing to congratulate you for! You have accomplished nothing an adult your age should have by now. You contribute nothing to this house and you’re just as hopeless as Alex. You’re just a curse to this family there’s no reason we should be grateful for you being home."
     ,"tone":"Blunt"
     ,"plot":"BadEnding1"
     ,"id":"19"
@@ -3818,7 +3840,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"There is nothing to congratulate you on! You have accomplished nothing an adult your age should have by now. You contribute nothing to this house and are just as hopeless as Alex. You're aren't blessings to your mom and me. You are curses!"
+     "content":"There is nothing to congratulate you for! You’ve accomplished nothing compared to other people your age. You contribute nothing to this house and you’re just as hopeless as Alex. You’re just a curse to this family, there’s no reason we should be grateful for you being home."
     ,"tone":"Indifferent"
     ,"plot":"BadEnding1"
     ,"id":"19"
@@ -3829,7 +3851,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"Anyone can do that, but the fact that you aren't getting results proves you are talentless and useless."
+     "content":"Anyone can do that, but the fact that you aren’t getting results proves you’re talentless and useless."
     ,"tone":"Compassionate"
     ,"plot":"BadEnding1"
     ,"id":"19"
@@ -3840,7 +3862,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"Actually, yes. We wouldn't have had to deal with any problems if you hadn't shown up."
+     "content":"You’re completely right, we don’t want you here at all. We wouldn’t have had to deal with any of these problems if you hadn’t decided to show up."
     ,"tone":"Hesitant"
     ,"plot":"BadEnding1"
     ,"id":"19"
@@ -3851,7 +3873,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"Because of you two, your dad and I are like this. We are so stressed and exhausted. We already were from our jobs and now we have to deal with this?! Oh my goodness... I — I think the stress is finally getting to me. I feel light headed..."
+     "content":"Can’t you see your dad and I are like this because the two of you are hopeless? We’re exhausted. We can’t get a break-- we go to work and get stressed, and come home to deal with this nonsense. Oh my goodness… I—I think the stress is finally getting to me. I feel light headed…"
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"20"
@@ -3862,7 +3884,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"What? You said your job was therapeutic! Oh my god. Quit this bullshit Mom! You aren't fooling anyone with your acting!"
+     "content":"What the hell are you talking about, Mom? You said your job was therapeutic! Oh my god. Quit this bullshi! You aren’t fooling anyone with your stupid acting! "
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"21"
@@ -3873,7 +3895,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"Look at your poor Mother! It's okay Diane, these horrible children don't know what's coming for them."
+     "content":"Look at your poor Mother! It’s okay Diane, these pathetic children don’t know what’s coming for them."
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"22"
@@ -3884,7 +3906,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"No children of mine would cause my wife and me distress! Without you two here, the house would be much more peaceful."
+     "content":"No children of mine would cause my life so much distress! The house would be so much more peaceful without the two of you here."
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"23"
@@ -3895,7 +3917,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"YOU ARE SICK AND DISGUSTING. You don't even see us as your kids anymore? What about you Mom?!"
+     "content":"YOU ARE SICK AND DISGUSTING. You don’t even see us as your kids anymore? Mom, what about?!"
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"24"
@@ -3917,7 +3939,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"Ha! You feel uncomfortable? At least you don't feel like a hated piece of trash! Why are you so selfish. You went out and got a job and bought those stupid cups because all you thought about was yourself! You are a selfish...selfish BITCH."
+     "content":"Ha! You feel uncomfortable? At least you don’t feel like a hated piece of trash! Why are you so selfish. You went out and got a job and bought those stupid cups because all you thought about was yourself! You are a selfish...selfish BITCH."
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"26"
@@ -3928,7 +3950,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"You're not joking, are you? We're actually going to leave this house?"
+     "content":"You’re not joking, are you? We’re actually going to leave this house?"
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"27"
@@ -3939,7 +3961,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"Nonsense! You are too cowardly to do this!"
+     "content":"Nonsense! You’re too much of a coward to pull something like that!"
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"28"
@@ -3950,7 +3972,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"Yes, we don't need poison spreading to the corners of this house."
+     "content":"Good riddance!"
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"29"
@@ -3961,7 +3983,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"Yeah, YEAH. Let's go! We don't need Dad - I mean, Tim, or - or Diane! They don't know what's best for us anyways when they abandoned us long ago."
+     "content":"Yeah, YEAH. Let’s go! We don’t need Dad- I mean, Tim, or- or Diane! They don’t know what’s best for us anyways when they abandoned us long ago."
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"30"
@@ -3972,7 +3994,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"I bet you won't make it for a month before crawling back here! But by all means, go! Leave and the winter of my discontent will follow too! We don't need your kind here."
+     "content":"I bet you won’t make it for a month before crawling back here! But by all means, go! Just remember that you both left because you were weak. We don’t need your kind here."
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"31"
@@ -3983,7 +4005,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"We'll finally be able to have peace and quiet...and maybe after you leave, you'll learn to appreciate how such good parents we are."
+     "content":"We’ll finally be able to have peace and quiet...and maybe after you leave, you’ll learn to appreciate how such good parents we are."
     ,"tone":"Default"
     ,"plot":"BadEnding1"
     ,"id":"32"
@@ -3994,7 +4016,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Have you thought about the financial burden I have had to endure?! Don't forget about keeping your butt in college. You guys don't realize but you need a lot to be comfortable."
+     "content":"Have you thought about the financial burden I have had to endure?! Don’t forget about keeping your butt in college. You guys don’t realize but you need a lot to be comfortable."
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"1"
@@ -4005,7 +4027,7 @@
     ,"target":["mom","alex",""]
   },
   {
-     "content":"Well if you let me get my job then we could have shared the financial burden. I guess you don't like me being fiscally sufficient."
+     "content":"Well if you let me get my job then we could have shared the financial burden. I guess you don’t like me being fiscally sufficient."
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"2"
@@ -4016,7 +4038,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"I didn't say that. I was merely condemning your spending habits. Spending a lot of money on superfluous glassware is not something we do on a whim."
+     "content":"I didn’t say that. I was merely condemning your spending habits. Spending a lot of money on superfluous glassware is not something we do on a whim."
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"3"
@@ -4027,7 +4049,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"Oh my god! I thought we got through this argument 10 minutes ago! We're here to listen to Alex and become closer as a family! What ever happened to being honest with each other and being respectful of each other's mistakes?"
+     "content":"Oh my god! I thought we got through this argument ten minutes ago! We’re here to listen to Alex and become closer as a family! What ever happened to being honest with each other and being respectful of each other’s mistakes?"
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"4"
@@ -4038,7 +4060,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"I am trying to be honest, everyone else is admitting to their mistakes but you don't seem to be remorseful for your excessive spending habits."
+     "content":"I am trying to be honest, everyone else is admitting to their mistakes but you don’t seem to be remorseful for your excessive spending habits."
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"5"
@@ -4049,7 +4071,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"Dad, can we talk about something else..."
+     "content":"Dad, can we talk about something else…"
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"6"
@@ -4060,7 +4082,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Alex, don't get involved. This is between the adults. <> So what exactly was your job again?"
+     "content":"Alex, don’t get involved. This is between the adults. <> So what exactly was your job again?"
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"7"
@@ -4093,7 +4115,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"You really think I'm cheating on you? *snicker* <> Fine. Cashier."
+     "content":"You really think I’m cheating on you? *snicker* <> Fine. Cashier."
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"10"
@@ -4104,7 +4126,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"That's it?"
+     "content":"That’s it?"
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"11"
@@ -4126,7 +4148,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Jared, our neighbor's kid; he works there too right?"
+     "content":"Jared, our neighbor’s kid; he works there too right?"
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"13"
@@ -4159,7 +4181,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"You haven't denied it yet Diane. I'm starting to think the lack of an answer is telling me more."
+     "content":"You haven’t denied it yet Diane. I’m starting to think the lack of an answer is telling me more."
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"16"
@@ -4181,7 +4203,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Don't change the subject, Diane..."
+     "content":"Don’t change the subject, Diane…"
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"18"
@@ -4192,7 +4214,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"I don't want to be persecuted for ..."
+     "content":"I don’t want to be persecuted for …"
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"19"
@@ -4203,7 +4225,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"I just want you ..."
+     "content":"I just want you …"
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"20"
@@ -4214,7 +4236,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"... just trying to be a better ..."
+     "content":"… just trying to be a better …"
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"21"
@@ -4225,7 +4247,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"... you keep going against the family ..."
+     "content":"… you keep going against the family …"
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"22"
@@ -4236,7 +4258,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"... the kids don't deserve this ..."
+     "content":"… the kids don’t deserve this …"
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"23"
@@ -4247,7 +4269,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"... I shouldn't have to sit here and ..."
+     "content":"… I shouldn’t have to sit here and ..."
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"24"
@@ -4269,7 +4291,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":". . ."
+     "content":"…"
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"26"
@@ -4280,7 +4302,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":". . ."
+     "content":"…"
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"27"
@@ -4291,7 +4313,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"You want an answer? Children! I'm leaving."
+     "content":"You want an answer? Children! I’m leaving."
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"28"
@@ -4302,7 +4324,7 @@
     ,"target":["dad","alex",""]
   },
   {
-     "content":"I need to do some thinking. I'm going to head to my mother's house, she'll know what to do. You and Alex are welcome to come with me."
+     "content":"I need to do some thinking. I’m going to head to my mother’s house, she’ll know what to do. You and Alex are welcome to come with me."
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"29"
@@ -4324,7 +4346,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"See dear, even your own children don't want to be around you."
+     "content":"See dear, even your own children don’t want to be around you."
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"31"
@@ -4335,7 +4357,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Come on! I'm sorry for doubting you! Don't leave me! Kids?!"
+     "content":"Come on! I’m sorry for doubting you! Don’t leave me! Kids?!"
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"32"
@@ -4346,7 +4368,7 @@
     ,"target":["mom","alex",""]
   },
   {
-     "content":"It's too late. I have had enough and the kids are done, too."
+     "content":"It’s too late. I have had enough and the kids are done too."
     ,"tone":"Default"
     ,"plot":"BadEnding2"
     ,"id":"33"
@@ -4357,7 +4379,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Yeah sure. An apology is nice but it won't erase all this pain you've put me through."
+     "content":"Yeah sure. An apology is nice but it won’t erase all this pain you’ve put me through."
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"1"
@@ -4390,7 +4412,7 @@
     ,"target":["dad","-alex",""]
   },
   {
-     "content":"I've done all this for a very good reason, you know?"
+     "content":"I’ve done all this for a very good reason, you know?"
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"4"
@@ -4412,7 +4434,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"You think this is funny? Hell, what do you know about anything I've felt? You haven't even been home for two whole years and you think you can barge back in here and you want to tell me how to feel?"
+     "content":"You think this is funny? Hell, what do you know about anything I’ve felt? You haven’t even been home for two whole years and you think you can barge back in here and you want to tell me how to feel?"
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"6"
@@ -4434,7 +4456,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Yeah, and we're sitting here being oppressed by his stupid rules."
+     "content":"Yeah, and we’re sitting here being oppressed by his stupid rules."
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"8"
@@ -4456,7 +4478,7 @@
     ,"target":["mom","alex",""]
   },
   {
-     "content":"Not anymore. No more of this. Your father's had plenty of time to remedy this."
+     "content":"Not anymore. No more of this. Your father’s had plenty of time to remedy this."
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"10"
@@ -4467,7 +4489,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Diane! Listen to me, even if it's just this once!"
+     "content":"Diane! Listen to me, even if it’s just this once!"
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"11"
@@ -4478,7 +4500,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"I am done trying to accommodate for you. Everything I've spent the last year doing has been for nothing, evidently."
+     "content":"I am done trying to accommodate for you. Everything I’ve spent the last year doing has been for nothing, evidently."
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"12"
@@ -4489,7 +4511,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"You're saying I'm the problem now?"
+     "content":"You’re saying I’m the problem now?"
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"13"
@@ -4500,7 +4522,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Wow, I knew we couldn't rely on you, but now this? How idiotic do you have to be to not see what Dad's done to us?"
+     "content":"Wow, I knew we couldn’t rely on you, but now this? How idiotic do you have to be to not see what Dad’s done to us?"
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"14"
@@ -4522,7 +4544,7 @@
     ,"target":["mom","alex",""]
   },
   {
-     "content":"Why? Don't like being on the other end of the stick?"
+     "content":"Why? Don’t like being on the other end of the stick?"
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"16"
@@ -4533,7 +4555,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Timothy, you need to understand that we can't possibly be happy with these silly rules you've set up regarding how I spend my 'allowance'."
+     "content":"Timothy, you need to understand that we can’t possibly be happy with these silly rules you’ve set up regarding how I spend my ‘allowance’."
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"17"
@@ -4544,7 +4566,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"That's how we can organize our financial situation! Have you seen how untidy everything was before this?"
+     "content":"That’s how we can organize our financial situation! Have you seen how untidy everything was before this?"
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"18"
@@ -4555,7 +4577,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"And there was never a problem. I'm sick of being treated like some lesser person, relegated to sitting at home because my husband can't come to terms that I can actually work as well, do taxes, and handle money."
+     "content":"And there was never a problem. I’m sick of being treated like some lesser person, relegated to sitting at home because my husband can’t come to terms that I can actually work as well, do taxes, and handle money."
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"19"
@@ -4566,7 +4588,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"Your new cups are not helping your case."
+     "content":"Your new glasses are not helping your case."
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"20"
@@ -4577,7 +4599,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"What, we can't afford any luxury in our own home now? That's what we've come to?"
+     "content":"What, we can’t afford any luxury in our own home now? That’s what we’ve come to?"
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"21"
@@ -4588,7 +4610,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"What do you need luxury drinking cups for anyways?"
+     "content":"What do you need luxury drinking glasses for anyways?"
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"22"
@@ -4599,7 +4621,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"To improve our quality of life. For those special evenings and events, of course. What's wrong with spending for some enjoyment in life?"
+     "content":"To improve our quality of life. For those special evenings and events, of course. What’s wrong with spending for some enjoyment in life?"
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"23"
@@ -4610,7 +4632,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"I just don't see them as necessary."
+     "content":"I just don’t see them as necessary."
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"24"
@@ -4621,7 +4643,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"Hah. Good luck with that. They're at it again. Not that you'd know."
+     "content":"Hah. Good luck with that. They’re at it again. Not that you’d know."
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"25"
@@ -4643,7 +4665,7 @@
     ,"target":["mom","alex",""]
   },
   {
-     "content":"All you want to do is impose on the rest of us even more. It's like you don't even want us around."
+     "content":"All you want to do is impose on the rest of us even more. It’s like you don’t even want us around."
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"27"
@@ -4665,7 +4687,7 @@
     ,"target":["mom","alex",""]
   },
   {
-     "content":"Pretty sure it's just you confessing that you're allergic to a happy family."
+     "content":"Pretty sure it’s just you confessing that you’re allergic to a happy family."
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"29"
@@ -4676,7 +4698,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"I've done nothing to make you all unhappy. I wanted nothing but the best for this family."
+     "content":"I’ve done nothing to make you all unhappy. I wanted nothing but the best for this family."
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"30"
@@ -4698,7 +4720,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"So I'm just talking to a brick wall here."
+     "content":"So I’m just talking to a brick wall here."
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"32"
@@ -4731,7 +4753,7 @@
     ,"target":["mom","alex",""]
   },
   {
-     "content":"Yes, you're the reason we can't live our lives how we would like. There's nothing you've done that's even made us happy. It's all about how much you have in your savings account and how controlling you feel. Never about your own family."
+     "content":"Yes, you’re the reason we can’t live our lives how we would like. There’s nothing you’ve done that’s even made us happy. It’s all about how much you have in your savings account and how controlling you feel. Never about your own family."
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"35"
@@ -4742,7 +4764,7 @@
     ,"target":["dad","",""]
   },
   {
-     "content":"You really think you'll be happier without me here? Fine. If you say that that's for the best, I'll leave. Have your precious 'quality of life without me."
+     "content":"You really think you’ll be happier without me here? Fine. If you say that that’s for the best, I’ll leave. Have your precious ‘quality of life’ without me."
     ,"tone":"Default"
     ,"plot":"BadEnding3"
     ,"id":"36"
@@ -4764,7 +4786,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Well cry me a river. Do you realize how pathetic you sound now? Yeah, it's such a tragedy that you got the education you wanted while avoiding this mess. In the meantime, I've been stuck here living through the same episode from the same garbage soap opera that no one likes to watch! Go ahead and tell me more about how hard college was. Trust me, I'd rather do all the hard shit you had to do as long as I don't have to deal with this."
+     "content":"Well cry me a river. Do you realize how pathetic you sound now? Yeah, it’s such a tragedy that you got the education you wanted while avoiding this mess. In the meantime, I’ve been stuck here living through the same episode from the same garbage soap opera that no one likes to watch! Go ahead and tell me more about how hard college was. Trust me, I’d rather do all the hard shit you had to do as long as I don’t have to deal with this."
     ,"tone":"Default"
     ,"plot":"BadEnding4"
     ,"id":"1"
@@ -4775,7 +4797,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Hey! Don't you dare think you can just waltz in after years and start running your mouth all over the place. Alex is right. Living with your dad is bad as it is and we definitely don't need any more negativity."
+     "content":"Hey! Don’t you dare think you can just waltz in after years and start running your mouth all over the place. Alex is right. Living with your dad is bad as it is and we definitely don’t need any more negativity."
     ,"tone":"Blunt"
     ,"plot":"BadEnding4"
     ,"id":"2"
@@ -4786,7 +4808,7 @@
     ,"target":["alex","-dad",""]
   },
   {
-     "content":"Listen to yourself! Have you no care for anyone but yourself? We're so sorry we didn't take some time out of our peachy lives to roll out a red carpet or something."
+     "content":"Listen to yourself! Have you no care for anyone but yourself? We’re so sorry we didn’t take some time out of our peachy lives to roll out a red carpet or something."
     ,"tone":"Indifferent"
     ,"plot":"BadEnding4"
     ,"id":"2"
@@ -4797,7 +4819,7 @@
     ,"target":["alex","-dad",""]
   },
   {
-     "content":"I'm sorry honey. I know you're exhausted but, we've been dealing with a lot too. It hasn't been easy."
+     "content":"I’m sorry honey. I know you’re exhausted but, we’ve been dealing with a lot too. It hasn’t been easy."
     ,"tone":"Compassionate"
     ,"plot":"BadEnding4"
     ,"id":"2"
@@ -4808,7 +4830,7 @@
     ,"target":["alex","-dad",""]
   },
   {
-     "content":"We didn't exactly wants things to be this way either my dear, your sister and I can't really catch a break here either."
+     "content":"We didn’t exactly wants things to be this way either my dear, your sister and I can’t really catch a break here either."
     ,"tone":"Hesitant"
     ,"plot":"BadEnding4"
     ,"id":"2"
@@ -4819,7 +4841,7 @@
     ,"target":["alex","-dad",""]
   },
   {
-     "content":"You see? The world doesn't revolve entirely around you, fancy college grad. We all got our shit to take care of."
+     "content":"The world doesn’t revolve entirely around you and your fancy new degree. We’ve all got our shit to take care of. \n"
     ,"tone":"Default"
     ,"plot":"BadEnding4"
     ,"id":"3"
@@ -4830,7 +4852,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Oh no, by all means, please do let your sibling go on Alex. Apparently we got ourselves a new ruler now with a shiny college degree. No kid, That's not how it works. You're just one part of the family as long as you're under this roof and you better learn to act like it. Didn't they teach you that in university ?"
+     "content":"Oh no, by all means, please do let your role model go on Alex. Apparently we got ourselves a new ruler now with a shiny college degree. No kid, That’s not how it works. You’re just one part of the family as long as you’re under this roof and you better learn to act like it. Didn’t they teach you that in university?"
     ,"tone":"Default"
     ,"plot":"BadEnding4"
     ,"id":"4"
@@ -4841,7 +4863,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Enough! I won't allow you to disrespect me like that. Ungrateful child. I didn't bust my ass to get you through college so that you can come here and disrespect me."
+     "content":"Enough! I won’t allow you to disrespect me like that. Ungrateful child. I didn’t bust my ass to get you through college so that you can come here and disrespect me."
     ,"tone":"Blunt"
     ,"plot":"BadEnding4"
     ,"id":"5"
@@ -4863,7 +4885,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"No but you thinking we can just forget the family's problems just because you're back is quite selfish."
+     "content":"No but you thinking we can just forget the family’s problems just because you’re back is quite selfish."
     ,"tone":"Compassionate"
     ,"plot":"BadEnding4"
     ,"id":"5"
@@ -4874,7 +4896,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Well you don't always get what you want and that's that."
+     "content":"Well you don’t always get what you want and that’s that."
     ,"tone":"Hesitant"
     ,"plot":"BadEnding4"
     ,"id":"5"
@@ -4896,7 +4918,7 @@
     ,"target":["dad","alex",""]
   },
   {
-     "content":"Yeah thank's for the great dinner fam."
+     "content":"Yeah thanks for the great dinner fam."
     ,"tone":"Default"
     ,"plot":"BadEnding4"
     ,"id":"7"
@@ -4973,7 +4995,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"You can't be serious."
+     "content":"You can’t be serious."
     ,"tone":"Default"
     ,"plot":"BadEnding4"
     ,"id":"14"
@@ -4984,7 +5006,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Oh let go Diane. This circus doesn't need any more clowns running around anyways. You'll come crying back when the big bad world hurts your feelings."
+     "content":"Oh let go Diane. This circus doesn’t need any more clowns running around anyways. You’ll come crying back when the big bad world hurts your feelings."
     ,"tone":"Default"
     ,"plot":"BadEnding4"
     ,"id":"15"
@@ -4995,7 +5017,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Yeah whatever. It's not like you being here will help. He'll just have more people to start stupid arguments with if you stick around. So...bye, I guess..."
+     "content":"Yeah whatever. It’s not like you being here will help. He’ll just have more people to start stupid arguments with if you stick around. So...bye, I guess..."
     ,"tone":"Default"
     ,"plot":"BadEnding4"
     ,"id":"16"
@@ -5006,7 +5028,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Ok, that's all I'm asking for too. Thanks for hearing me out."
+     "content":"Ok, that’s all I’m asking for too. Thanks for hearing me out."
     ,"tone":"Default"
     ,"plot":"AlexReconcilesFamily"
     ,"id":"1"
@@ -5017,7 +5039,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"This is a stressful time for all of us, we can't turn on each other again."
+     "content":"This is a stressful time for all of us, we can’t turn on each other again."
     ,"tone":"Default"
     ,"plot":"AlexReconcilesFamily"
     ,"id":"2"
@@ -5028,7 +5050,7 @@
     ,"target":["dad","alex",""]
   },
   {
-     "content":"Dad, I just wanted to say that even though I haven't really showed it, I don't want to fight anymore. I see that I have been behaving pretty bad, but I have agreed to change that. Thank you for putting me in the Girl Scouts. Thank you for keeping me in Science classes. Thank you for supporting me, in your own special way, when Mom was busy and when I was getting through school. Thank you for believing in me because you saw that I could possibly do big things. If it wasn't for you, I don't think I could have gotten this far. You treat us pretty... harshly, but I now see that you only want us to succeed. I'm happy that you are my Dad and I love you!"
+     "content":"Dad, I just wanted to say that even though I haven’t really showed it, I don’t want to fight anymore. I see that I have been behaving pretty bad, but I have agreed to change that. Thank you for putting me in the Girl Scouts. Thank you for keeping me in Science classes. Thank you for supporting me, in your own special way, when Mom was busy and when I was getting through school. Thank you for believing in me because you saw that I could possibly do big things. If it wasn’t for you, I don’t think I could have gotten this far. You treat us pretty… harshly, but I now see that you only want us to succeed. I’m happy that you are my Dad and I love you!"
     ,"tone":"Default"
     ,"plot":"AlexReconcilesFamily"
     ,"id":"3"
@@ -5039,7 +5061,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"Wow, Alex... I thought I would never hear that from you. Thank you.... I love you too!"
+     "content":"Wow, Alex… I thought I would never hear that from you. Thank you…. I love you too!"
     ,"tone":"Default"
     ,"plot":"AlexReconcilesFamily"
     ,"id":"4"
@@ -5050,7 +5072,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"Now don't start the water works yet, we still have dessert to get to."
+     "content":"Now don’t start the water works yet, we still have dessert to get to."
     ,"tone":"Default"
     ,"plot":"AlexReconcilesFamily"
     ,"id":"5"
