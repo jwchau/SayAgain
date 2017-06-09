@@ -275,7 +275,7 @@ namespace SayAgain {
 
                 // Save current word
                 string currWord = words[i];
-                Console.WriteLine("currword: " + currWord);
+                //Console.WriteLine("currword: " + currWord);
                 //if (currWord == "note,") Console.WriteLine("WTFFFFFFFFFFFFFFFFFFBOOOOOOOOOOOOOOOOOOOOOOOM!@#$%^&*!@#$%^&*!@#$%^&*");
 
                 // Check for italic start condition
@@ -404,7 +404,7 @@ namespace SayAgain {
             animationStart = false; //done animating
             if (tag != "tooltip") awaitInput = true;
             elementIndex++;
-            Console.WriteLine(line.DisplayedString);
+            //Console.WriteLine(line.DisplayedString);
         }
 
         public void Draw(RenderTarget target, RenderStates states) {
