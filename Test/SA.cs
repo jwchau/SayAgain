@@ -394,11 +394,11 @@ namespace SayAgain {
         }
 
         private void reRootPlayer() {
-            Console.WriteLine(npcPlotId);
-            Console.WriteLine(playerPlotId + " |||||| " + linkId(npcPlotId));
-            Console.WriteLine(sman.getCurrentNode());
-            Console.WriteLine(State.dialogueIndex);
-            Console.WriteLine();
+            //Console.WriteLine(npcPlotId);
+            //Console.WriteLine(playerPlotId + " |||||| " + linkId(npcPlotId));
+            //Console.WriteLine(sman.getCurrentNode());
+            //Console.WriteLine(State.dialogueIndex);
+            //Console.WriteLine();
 
             currentTone = tone.Root;
 
