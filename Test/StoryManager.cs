@@ -137,7 +137,6 @@ namespace SayAgain {
 
                     low = determineRange(range, mom.getFNCRange())[0];
                     high = determineRange(range, mom.getFNCRange())[1];
-                    //Console.WriteLine(low + " : " + mom.getCurrentFNC() + " : " + high);
                     if (mom.getCurrentFNC() >= low && mom.getCurrentFNC() <= high) {
 
                         return true;

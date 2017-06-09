@@ -12,7 +12,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Hey, the Santa Cruz beaches have really given you a tan."
+     "content":"Hey, the Santa Cruz beaches have really given you a tan. Believe it, sir, I have seen him in Britain: he was then of a crescent note, expected to prove so worthy as since he hath been allowed the name of; but I could then have looked on him without the help of admiration, though the catalogue of his endowments had been tabled by his side and I to peruse him by items."
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"1"
@@ -23,7 +23,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Aren't you as chipper as ever!"
+     "content": "Aren't you as chipper as ever! Believe it, sir, I have seen him in Britain: he was then of a crescent note, expected to prove so worthy as since he hath been allowed the name of; but I could then have looked on him without the help of admiration, though the catalogue of his endowments had been tabled by his side and I to peruse him by items."
     ,"tone":"Compassionate"
     ,"plot":"DadGreetsPlayer"
     ,"id":"1"
@@ -34,7 +34,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Indeed...Well..Glad to have you back!"
+     "content":"Indeed...Well..Glad to have you back! Believe it, sir, I have seen him in Britain: he was then of a crescent note, expected to prove so worthy as since he hath been allowed the name of; but I could then have looked on him without the help of admiration, though the catalogue of his endowments had been tabled by his side and I to peruse him by items."
     ,"tone":"Hesitant"
     ,"plot":"DadGreetsPlayer"
     ,"id":"1"
@@ -45,7 +45,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"Not as much as your mom."
+     "content":"Not as much as your mom. Believe it, sir, I have seen him in Britain: he was then of a crescent note, expected to prove so worthy as since he hath been allowed the name of; but I could then have looked on him without the help of admiration, though the catalogue of his endowments had been tabled by his side and I to peruse him by items."
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"2"
@@ -56,7 +56,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"It's the same but your mom's cooking seems to have gotten worse by the day!"
+     "content":"It's the same but your mom's cooking seems to have gotten worse by the day! Believe it, sir, I have seen him in Britain: he was then of a crescent note, expected to prove so worthy as since he hath been allowed the name of; but I could then have looked on him without the help of admiration, though the catalogue of his endowments had been tabled by his side and I to peruse him by items."
     ,"tone":"Indifferent"
     ,"plot":"DadGreetsPlayer"
     ,"id":"2"
@@ -89,7 +89,7 @@
     ,"target":["mom","",""]
   },
   {
-     "content":"I do things around the house."
+     "content":"I do things around the house. Believe it, sir, I have seen him in Britain: he was then of a crescent note, expected to prove so worthy as since he hath been allowed the name of; but I could then have looked on him without the help of admiration, though the catalogue of his endowments had been tabled by his side and I to peruse him by items."
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"3"
@@ -133,7 +133,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"What the heck dad?"
+     "content":"What the heck dad? Believe it, sir, I have seen him in Britain: he was then of a crescent note, expected to prove so worthy as since he hath been allowed the name of; but I could then have looked on him without the help of admiration, though the catalogue of his endowments had been tabled by his side and I to peruse him by items."
     ,"tone":"Default"
     ,"plot":"DadGreetsPlayer"
     ,"id":"4"
@@ -144,7 +144,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"What are you talking about? Everything is just FINE."
+     "content":"What are you talking about? Everything is just FINE. Believe it, sir, I have seen him in Britain: he was then of a crescent note, expected to prove so worthy as since he hath been allowed the name of; but I could then have looked on him without the help of admiration, though the catalogue of his endowments had been tabled by his side and I to peruse him by items."
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"5"
