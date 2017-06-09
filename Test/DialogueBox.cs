@@ -49,7 +49,6 @@ namespace SayAgain {
         public float FcursorY;
         float iterator = 0.5f;
         public Boolean lastDialogue = false;
-        public bool spam = true;
         public string currSpeaker = "";
 
         Font speechFont = new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf");
@@ -73,14 +72,6 @@ namespace SayAgain {
             return animationStart;
         }
 
-        public string getPrintShit() {
-            return tag + " - animStart: " + animationStart + "\n" +
-                   "        awaitInput: " + awaitInput + "\n" +
-                   "        dialoguePanesLength: " + dialoguePanes.Count + "\n" +
-                   "        init: " + init + "\n" +
-                   "        active: " + active;
-        }
-
         public bool checkNext() {
             if (this.printTime != 0 && this.getAnimationStart() && !this.getAwaitInput()) {
                 printTime = 0;
@@ -98,12 +89,8 @@ namespace SayAgain {
 
                 return false;
             } else {
-                if (tag == "AI" || tag == "PLAYER") {
-                    //state.startTimer("game");
-                }
 
                 awaitInput = false;
-
                 return true;
             }
         }
@@ -288,16 +275,15 @@ namespace SayAgain {
 
                 // Save current word
                 string currWord = words[i];
+                Console.WriteLine("currword: " + currWord);
+                //if (currWord == "note,") Console.WriteLine("WTFFFFFFFFFFFFFFFFFFBOOOOOOOOOOOOOOOOOOOOOOOM!@#$%^&*!@#$%^&*!@#$%^&*");
 
                 // Check for italic start condition
                 if (currWord.Contains("<")) {
                     style = Text.Styles.Italic;
                     color = thoughtColor;
                     currWord = currWord.Replace("<", "");
-                }
-
-                // Check for italic end condition
-                if (currWord.Contains(">")) {
+                } else if (currWord.Contains(">")) {
                     currWord = currWord.Replace(">", "");
                     end = true;
                 }
@@ -327,6 +313,7 @@ namespace SayAgain {
 
                     // Else end that shit
                 } else {
+                    i--;
                     end = true;
                 }
 
@@ -380,6 +367,7 @@ namespace SayAgain {
         public async Task animateText(CancellationToken ct) {
             Text line = dialoguePanes[elementIndex];
 
+
             animationStart = true;
             awaitInput = false;
 
@@ -395,20 +383,14 @@ namespace SayAgain {
                 }
                 if (state.GetState() != "pause") {
                     if (printTime != 0) {
-                        if (i == line.DisplayedString.Length - 2 || tag == "tooltip") {
+                        if (i == line.DisplayedString.Length - 1 || tag == "tooltip") {
                             printTime = 0;
-                        } else if (".!?".Contains(line.DisplayedString[i]) && spam == false) {
-                            if (!(".!?".Contains(line.DisplayedString[i - 1]))) {
-                                printTime *= 14;
-                            }
-                        } else if (",".Contains(line.DisplayedString[i]) && spam == false) {
-                            printTime *= 10;
                         } else {
                             printTime = 30;
                         }
                     }
-                    dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, line.DisplayedString[i++]));
 
+                    dialogue.DisplayedString = (string.Concat(dialogue.DisplayedString, line.DisplayedString[i++]));
                     await Task.Delay(printTime); //equivalent of putting thread to sleep
                 }
             }
@@ -422,7 +404,7 @@ namespace SayAgain {
             animationStart = false; //done animating
             if (tag != "tooltip") awaitInput = true;
             elementIndex++;
-
+            Console.WriteLine(line.DisplayedString);
         }
 
         public void Draw(RenderTarget target, RenderStates states) {
