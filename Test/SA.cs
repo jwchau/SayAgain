@@ -384,8 +384,8 @@ namespace SayAgain {
             affect(responseListNPC[pickNPC].target, responseListNPC[pickNPC].FNC);
 
             //debug RES
-            RES(responseList);
-            RES(responseListNPC);
+            //RES(responseList);
+            //RES(responseListNPC);
 
             checkFades();
             checkPlotChange();
