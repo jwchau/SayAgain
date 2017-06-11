@@ -144,7 +144,7 @@ namespace SayAgain {
                 if (endGame) {
                     if (endGame2) {
                         if (State.dialogueBox.checkNext()) {
-                            State.playerDialogueBox.loadNewDialogue("player", "Thanks for playing Say Again <Credits:> <Jill Yeung - Designer, John Chau - Developer> <Leo Gomez - Producer, Raman Nakarmi - Tester> <Michael Simpson - Test Coordinator, Koosha Seyvani - Social Media Coordinator> <Yuna Choe - Artist Coordinator, Vernon Wong - Writer> <Allayne Low - Artist, Lyn Kline - Artist, Courtney Chavez - Artist> <END>");
+                            State.playerDialogueBox.loadNewDialogue("player", "Thanks for playing Say Again <Credits:> <Jill Yeung - Designer, John Chau - Developer> <Leo Gomez - Producer, Raman Nakarmi - Tester> <Michael Simpson - Test Coordinator, Koosha Seyvani - Social Media Coordinator> <Yuna Choe - Artist Coordinator, Vernon Wong - Writer> <Allayne Low - Artist, Lyn Kline - Artist, Courtney Chavez - Artist> <END> ");
                             State.playerDialogueBox.active = true;
                             State.playerDialogueBox.init = true;
                             State.dialogueBox.active = false;
@@ -420,7 +420,7 @@ namespace SayAgain {
         }
 
         private void RES(List<DialogueObj> LDO) {
-            if (LDO[0].content == "returned empty string") {
+            if (LDO[0].content == "...") {
                 Console.WriteLine("playerid: " + playerPlotId);
                 Console.WriteLine("npcid: " + npcPlotId);
                 Console.WriteLine("currentnode: " + sman.getCurrentNode());
@@ -457,7 +457,7 @@ namespace SayAgain {
                     respondEmotionally(Mom, t);
                 } else if (s == "-mom") {
                     Mom.changeFNC(-m);
-                    State.sound_man.loop_enqueue(s.Substring(1, s.Length), t);
+                    State.sound_man.loop_enqueue(s.Substring(1, s.Length-1), t);
                     respondEmotionally(Mom, t);
                 } else if (s == "dad") {
                     Dad.changeFNC(m);
@@ -465,7 +465,7 @@ namespace SayAgain {
                     respondEmotionally(Dad, t);
                 } else if (s == "-dad") {
                     Dad.changeFNC(-m);
-                    State.sound_man.loop_enqueue(s.Substring(1, s.Length), t);
+                    State.sound_man.loop_enqueue(s.Substring(1, s.Length-1), t);
                     respondEmotionally(Dad, t);
                 } else if (s == "alex") {
                     Alexis.changeFNC(m);
@@ -473,7 +473,7 @@ namespace SayAgain {
                     respondEmotionally(Alexis, t);
                 } else if (s == "-alex") {
                     Alexis.changeFNC(-m);
-                    State.sound_man.loop_enqueue(s.Substring(1, s.Length), t);
+                    State.sound_man.loop_enqueue(s.Substring(1, s.Length-1), t);
                     respondEmotionally(Alexis, t);
                 }
             }
@@ -497,9 +497,15 @@ namespace SayAgain {
                 alexDimmed = false;
             } else if (responseListNPC[0].id == "1" && responseListNPC[0].plot == "BadEnding1") {
                 alexDimmed = false;
+            } else if (responseListNPC[0].id == "23" && responseListNPC[0].plot == "MomAdmitsJob" && chance(20)) {
+                endGame = true;
             }
         }
 
+        Boolean chance(int n) {
+            Random r = new Random();
+            return (r.Next(0, n) == 0);
+        }
 
         private void resetCharacterFNC() {
             Mom.setCurrentFNC(0);
@@ -577,7 +583,6 @@ namespace SayAgain {
             Mom = new Mom();
             Mom.setSpriteEmotion(Character.spriteEmotion.happy);
             Mom.active(true);
-            Mom.state.setMood(5f);
             Mom.setTalking(false);
 
             Alexis = new Alex();

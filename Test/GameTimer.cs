@@ -99,13 +99,11 @@ namespace SayAgain {
         double currentTime = 0;
         double initTime = 0; //needed to restart
         bool start = false;
-        bool pause = false;
         RectangleShape timerBG;
         RectangleShape timerLevel;
         //bool timerFinished = false;
         Action timerEvent;
         Font adore64 = new Font("../../Art/UI_Art/fonts/ticketing/TICKETING/ticketing.ttf");
-        Text timerRead;
         Sprite timerFrame;
 
 

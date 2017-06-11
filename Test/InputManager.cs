@@ -86,21 +86,6 @@ namespace SayAgain {
         }
         #endregion
 
-        #region SA_checkTargets
-        public void checkTargets(GameState State, DramaManager d) {
-            if (State.GetState() == "game") {
-                if (d.getAlex().Contains(MouseX, MouseY)) {
-
-                }
-
-                //d.getAlex().targetCheck(MouseX, MouseY);
-                //d.getMom().targetCheck(MouseX, MouseY);
-                //d.getDad().targetCheck(MouseX, MouseY);
-
-            }
-        }
-        #endregion
-
         #region SA_onMouseButtonPressed
         public void onMouseButtonPressed(int x, int y) {
             this.SetMousePos(x, y);

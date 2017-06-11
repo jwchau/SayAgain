@@ -48,11 +48,7 @@ namespace SayAgain {
 
         //Font
         static protected Font Adore64 = new Font(new FileStream("../../Fonts/Adore64.ttf", FileMode.Open));
-
-        //Character States
-        // Deprecated: protected CharacterState Alex, Mom, Dad;
-        // Replaced with DramaManager that holds each characterstate
-        protected DramaManager D_Man = new DramaManager();
+    
 
         //protected Boolean init;
         protected View fullScreenView, scrollview;

@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace SayAgain {
     public class Loader {
         //Creates and loads Json Objects
-        public DialogueParsing newplayerp = new DialogueParsing(@"../../Json/newplayerpp.json");
+        public DialogueParsing newplayerp = new DialogueParsing(@"../../Json/playerpp.json");
         public DialogueParsing newplayert = new DialogueParsing(@"../../Json/newplayertt.json");
         public DialogueParsing allt = new DialogueParsing(@"../../Json/alltt.json");
-        public DialogueParsing allp = new DialogueParsing(@"../../Json/allpp.json");
+        public DialogueParsing allp = new DialogueParsing(@"../../Json/npcpp.json");
         public DialogueParsing Jankson = new DialogueParsing(@"../../Json/jank.json");
 
 

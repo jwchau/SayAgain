@@ -14,6 +14,7 @@ namespace SayAgain {
         protected string currentNode;
         protected int numberOfChildren;
 
+
         static Dictionary<String, Tuple<List<String>, List<String>>> plot_dict
             = new Dictionary<String, Tuple<List<String>, List<String>>>();
         List<String> next_nodes = new List<String>();
@@ -39,6 +40,10 @@ namespace SayAgain {
             preconditions = new List<String>();
         }
 
+
+        public static double clamp(double value, double min, double max) {
+            return (value < min) ? min : (value > max) ? max : value;
+        }
 
         public string getDialogueType() {
             return dialogueType;
@@ -137,6 +142,7 @@ namespace SayAgain {
 
                     low = determineRange(range, mom.getFNCRange())[0];
                     high = determineRange(range, mom.getFNCRange())[1];
+                    mom.setCurrentFNC(clamp(mom.getCurrentFNC(), -10, 10));
                     if (mom.getCurrentFNC() >= low && mom.getCurrentFNC() <= high) {
 
                         return true;
@@ -147,6 +153,7 @@ namespace SayAgain {
                 case 'D':
                     low = determineRange(range, dad.getFNCRange())[0];
                     high = determineRange(range, dad.getFNCRange())[1];
+                    dad.setCurrentFNC(clamp(dad.getCurrentFNC(), -10, 10));
                     if (dad.getCurrentFNC() >= low && dad.getCurrentFNC() <= high) {
 
                         return true;
@@ -157,6 +164,7 @@ namespace SayAgain {
                 case 'A':
                     low = determineRange(range, alexis.getFNCRange())[0];
                     high = determineRange(range, alexis.getFNCRange())[1];
+                    alexis.setCurrentFNC(clamp(alexis.getCurrentFNC(), -10, 10));
                     if (alexis.getCurrentFNC() >= low && alexis.getCurrentFNC() <= high) {
                         //add the new currentNode to the list of nodes we have been to
                         reachedPlotpoints.Add(currentNode);

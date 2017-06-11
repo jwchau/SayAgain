@@ -33,7 +33,6 @@ namespace SayAgain {
 
         protected float xpos, ypos, xscale, yscale, mouthPosX, mouthPosY;
         protected bool canTalk = false;
-        public CharacterState state;
         public enum spriteEmotion { happy, angry, neutral, sad };
         public abstract void setSpriteEmotion(spriteEmotion e);
         public abstract void checkFNC();
@@ -119,9 +118,6 @@ namespace SayAgain {
         }
 
         public Character() {
-
-            state = new CharacterState();
-
         }
     }
 }

@@ -106,7 +106,6 @@
     <Compile Include="Character.cs" />
     <Compile Include="Alex.cs" />
     <Compile Include="Arm.cs" />
-    <Compile Include="CharacterState.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,12 +114,10 @@
     <Compile Include="OldSelector.cs" />
     <Compile Include="StoryManager.cs" />
     <Compile Include="Dad.cs" />
-    <Compile Include="CutsceneManager.cs" />
     <Compile Include="ContextFilter.cs" />
     <Compile Include="GameMatrix.cs" />
     <Compile Include="GameTimer.cs" />
     <Compile Include="Loader.cs" />
-    <Compile Include="DramaManager.cs" />
     <Compile Include="DialogueParsing.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="InputManager.cs" />
