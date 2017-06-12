@@ -10,7 +10,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"<Something seems odd.>Thanks, it's good to be back."
+     "content":"<Something seems odd.> Thanks, it's good to be back."
     ,"tone":"Blunt"
     ,"plot":"DadGreetsPlayer"
     ,"id":"2"
@@ -1900,7 +1900,7 @@
     ,"target":["","",""]
   },
   {
-     "content":"<Alex is taking all of this family drama and unleashing it at school.>You need to think about the path you are paving. You are only making it harder for yourself."
+     "content":"<Alex is taking all of this family drama and unleashing it at school.> You need to think about the path you are paving. You are only making it harder for yourself."
     ,"tone":"Blunt"
     ,"plot":"AlexInterjects2"
     ,"id":"30"
@@ -1909,7 +1909,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"<This family drama is making everything worse for Alex.>Your actions are not only hurting others, but yourself too. Think about it."
+     "content":"<This family drama is making everything worse for Alex.> Your actions are not only hurting others, but yourself too. Think about it."
     ,"tone":"Indifferent"
     ,"plot":"AlexInterjects2"
     ,"id":"30"
@@ -1918,7 +1918,7 @@
     ,"target":["alex","-dad","-mom"]
   },
   {
-     "content":"<Maybe all of this family stress is making Alex act up at school.>Alex, I see where you are coming from, and maybe all of this family drama isn't helping, but you need to seriously think about the path you are going down. You’re only hurting yourself in the long run."
+     "content":"<Maybe all of this family stress is making Alex act up at school.> Alex, I see where you are coming from, and maybe all of this family drama isn't helping, but you need to seriously think about the path you are going down. You’re only hurting yourself in the long run."
     ,"tone":"Compassionate"
     ,"plot":"AlexInterjects2"
     ,"id":"30"
@@ -1927,7 +1927,7 @@
     ,"target":["dad","mom",""]
   },
   {
-     "content":"<I wonder if this extra family drama is causing Alex to do this?>Alex, I see where you are coming from, but... think about the path you are going down."
+     "content":"<I wonder if this extra family drama is causing Alex to do this?> Alex, I see where you are coming from, but... think about the path you are going down."
     ,"tone":"Hesitant"
     ,"plot":"AlexInterjects2"
     ,"id":"30"
@@ -2017,7 +2017,7 @@
     ,"target":["alex","",""]
   },
   {
-     "content":"...You hate me?<Well, then....>"
+     "content":"...You hate me? <Well, then....>"
     ,"tone":"Hesitant"
     ,"plot":"AlexInterjects2"
     ,"id":"34"
@@ -2073,7 +2073,7 @@
   {
      "content":"What are you talking about?"
     ,"tone":"Root"
-    ,"plot":"DadNoSeeHisFault"
+    ,"plot":"DadNoSeesHisFault"
     ,"id":"3"
     ,"FNC":"0"
     ,"inext":""
@@ -2082,7 +2082,7 @@
   {
      "content":"What does that even mean? What do you mean 'care'? Yeah, I care! Why would I not?"
     ,"tone":"Blunt"
-    ,"plot":"DadNoSeeHisFault"
+    ,"plot":"DadNoSeesHisFault"
     ,"id":"4"
     ,"FNC":"0"
     ,"inext":""
@@ -2091,7 +2091,7 @@
   {
      "content":"Sure, I'd care."
     ,"tone":"Indifferent"
-    ,"plot":"DadNoSeeHisFault"
+    ,"plot":"DadNoSeesHisFault"
     ,"id":"4"
     ,"FNC":"0"
     ,"inext":""
@@ -2100,7 +2100,7 @@
   {
      "content":"That's an odd thing to say, Mom. Of course I would care."
     ,"tone":"Compassionate"
-    ,"plot":"DadNoSeeHisFault"
+    ,"plot":"DadNoSeesHisFault"
     ,"id":"4"
     ,"FNC":"0"
     ,"inext":""
@@ -2109,7 +2109,7 @@
   {
      "content":"Er, what makes you say that... I mean, of course. I do care."
     ,"tone":"Hesitant"
-    ,"plot":"DadNoSeeHisFault"
+    ,"plot":"DadNoSeesHisFault"
     ,"id":"4"
     ,"FNC":"0"
     ,"inext":""
@@ -2118,7 +2118,7 @@
   {
      "content":"Dad, that was rude."
     ,"tone":"Root"
-    ,"plot":"DadNoSeeHisFault"
+    ,"plot":"DadNoSeesHisFault"
     ,"id":"9"
     ,"FNC":"0"
     ,"inext":""
@@ -2127,7 +2127,7 @@
   {
      "content":"Dad, what the hell are you saying? How do you expect Mom to explain what's going on if you're constantly being so hostile?"
     ,"tone":"Blunt"
-    ,"plot":"DadNoSeeHisFault"
+    ,"plot":"DadNoSeesHisFault"
     ,"id":"10"
     ,"FNC":"-1"
     ,"inext":""
@@ -2136,7 +2136,7 @@
   {
      "content":"Speak for yourself, Dad."
     ,"tone":"Indifferent"
-    ,"plot":"DadNoSeeHisFault"
+    ,"plot":"DadNoSeesHisFault"
     ,"id":"10"
     ,"FNC":"0"
     ,"inext":""
@@ -2145,7 +2145,7 @@
   {
      "content":"Dad, you're being really unfair. Mom, I want to know what you mean."
     ,"tone":"Compassionate"
-    ,"plot":"DadNoSeeHisFault"
+    ,"plot":"DadNoSeesHisFault"
     ,"id":"10"
     ,"FNC":"-1"
     ,"inext":""
@@ -2154,7 +2154,7 @@
   {
      "content":"Come on, Dad... Mom please continue."
     ,"tone":"Hesitant"
-    ,"plot":"DadNoSeeHisFault"
+    ,"plot":"DadNoSeesHisFault"
     ,"id":"10"
     ,"FNC":"0"
     ,"inext":""
@@ -2163,7 +2163,7 @@
   {
      "content":"Have you been controlling, Dad?"
     ,"tone":"Root"
-    ,"plot":"DadNoSeeHisFault"
+    ,"plot":"DadNoSeesHisFault"
     ,"id":"17"
     ,"FNC":"0"
     ,"inext":""
@@ -2172,7 +2172,7 @@
   {
      "content":"What's going on Dad? Have you been making Mom stay at home or something? Or making her feel uncomfortable about doing certain things?"
     ,"tone":"Blunt"
-    ,"plot":"DadNoSeeHisFault"
+    ,"plot":"DadNoSeesHisFault"
     ,"id":"18"
     ,"FNC":"-1"
     ,"inext":""
@@ -2181,7 +2181,7 @@
   {
      "content":"That sounds pretty bad."
     ,"tone":"Indifferent"
-    ,"plot":"DadNoSeeHisFault"
+    ,"plot":"DadNoSeesHisFault"
     ,"id":"18"
     ,"FNC":"0"
     ,"inext":""
@@ -2190,7 +2190,7 @@
   {
      "content":"I'm sorry you've been feeling that way, Mom. Do you really mean it? This has got to be another misunderstanding. Dad, you couldn't have been controlling...?"
     ,"tone":"Compassionate"
-    ,"plot":"DadNoSeeHisFault"
+    ,"plot":"DadNoSeesHisFault"
     ,"id":"18"
     ,"FNC":"1"
     ,"inext":""
@@ -2199,7 +2199,7 @@
   {
      "content":"Is this true? Maybe this is another misunderstanding? Dad, you're not controlling Mom, right?"
     ,"tone":"Hesitant"
-    ,"plot":"DadNoSeeHisFault"
+    ,"plot":"DadNoSeesHisFault"
     ,"id":"18"
     ,"FNC":"0"
     ,"inext":""
@@ -2208,7 +2208,7 @@
   {
      "content":"Stop being so obsessed over our household finances, Dad."
     ,"tone":"Root"
-    ,"plot":"DadNoSeeHisFault"
+    ,"plot":"DadNoSeesHisFault"
     ,"id":"25"
     ,"FNC":"0"
     ,"inext":""
@@ -2217,7 +2217,7 @@
   {
      "content":"Dad, you need to calm down about how Mom spends money. And she is not even spending a lot. Give her some freedom. Then you won't feel like you have to hide things, right Mom?"
     ,"tone":"Blunt"
-    ,"plot":"DadNoSeeHisFault"
+    ,"plot":"DadNoSeesHisFault"
     ,"id":"26"
     ,"FNC":"-1"
     ,"inext":""
@@ -2226,7 +2226,7 @@
   {
      "content":"Let Mom do and spend as she sees fit. It'll be easier on all of us to not obsess about finances."
     ,"tone":"Indifferent"
-    ,"plot":"DadNoSeeHisFault"
+    ,"plot":"DadNoSeesHisFault"
     ,"id":"26"
     ,"FNC":"0"
     ,"inext":""
@@ -2235,7 +2235,7 @@
   {
      "content":"Dad, give Mom the independence she wants. Let her have the freedom to do and spend as she sees fit. If she's happy, we're all going to be happy."
     ,"tone":"Compassionate"
-    ,"plot":"DadNoSeeHisFault"
+    ,"plot":"DadNoSeesHisFault"
     ,"id":"26"
     ,"FNC":"1"
     ,"inext":""
@@ -2244,7 +2244,7 @@
   {
      "content":"Wait, why are you so obsessed with the finances? Let Mom spend as she sees fit. And she's not spending a lot anyway... Right Mom?"
     ,"tone":"Hesitant"
-    ,"plot":"DadNoSeeHisFault"
+    ,"plot":"DadNoSeesHisFault"
     ,"id":"26"
     ,"FNC":"0"
     ,"inext":""
