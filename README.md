@@ -16,7 +16,10 @@ Simply download the project or clone this repo then run the installer file.
 ### Let's take a look
 
 ## screenshots
-![main-page](https://github.com/jwchau/)
+![ss1](https://github.com/jwchau/SayAgain/blob/master/Test/Art/ss1.png)
+![ss2](https://github.com/jwchau/SayAgain/blob/master/Test/Art/ss2.png)
+![ss3](https://github.com/jwchau/SayAgain/blob/master/Test/Art/ss3.png)
+![ss4](https://github.com/jwchau/SayAgain/blob/master/Test/Art/ss4.png)
 
 ## Challenges
 
