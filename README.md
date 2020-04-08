@@ -9,8 +9,8 @@ Simply download the project or clone this repo then run the installer file.
 
 ### Prerequisites
 
-* No prerequisites, the game is self contained.
-* Meant to be played on 1920x1080 Resolution 
+* Recommended to be played on 1920x1080 Resolution 
+* No other prerequisites, the game is self contained.
 
 
 ### Let's take a look
