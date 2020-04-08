@@ -29,16 +29,15 @@ Simply download the project or clone this repo then run the installer file.
 
 
 ## Team
-Author teambabblefish
-Genre	Visual Novel
-https://teambabblefish.itch.io/
+* Author teambabblefish
+* Genre	Visual Novel
+* https://teambabblefish.itch.io/
 
 
 ## My thoughts about the project
 
-* Overall I felt it was a great learning experience for fullstack implementation.
-* The repetition of React/Redux -> Rails pattern really help drill the frontend to backend integration pattern.
-* I felt a little slow during development and didn't get to finish as much functionality as I thought I would.
-* As I continue this project I will update my thoughts about it.
+* Overall I felt it was a great learning experience for game conception to release.
+* The repetition of Object Managers to objects really help drill the Object Oriented Design pattern.
+* I felt most of the bottlenecks in the project were creative ones limited by the technology of our time. If the team had unlimited memory space then the problem of exponentially branching storylines would only be stopped by our imagination.
 
 
