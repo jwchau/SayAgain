@@ -15,6 +15,22 @@ Simply download the project or clone this repo then run the installer file.
 
 ### Let's take a look
 
+## Code
+```
+  #region AI_FIELDS
+  protected List<string> currentMadeMemories = new List<string>();
+  protected List<DialogueObj> responseList = new List<DialogueObj>();
+  protected List<DialogueObj> responseListNPC = new List<DialogueObj>();
+  protected List<DialogueObj> jankList = new List<DialogueObj>();
+  protected List<string> currentMilestones = new List<string>();
+  protected List<int> currentTargets = new List<int>();
+```
+The objects that NPCs select from and respond to the player with. These go through a filter process to see which response is the correct one.
+
+
+
+
+
 ## screenshots
 ![ss1](https://github.com/jwchau/SayAgain/blob/master/Test/Art/ss1.png)
 ![ss2](https://github.com/jwchau/SayAgain/blob/master/Test/Art/ss2.png)
