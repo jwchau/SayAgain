@@ -28,7 +28,20 @@ Simply download the project or clone this repo then run the installer file.
 The objects that NPCs select from and respond to the player with. These go through a filter process to see which response is the correct one.
 
 
-
+```
+public virtual void applyReactionToBlunt(List<string> t) {
+    foreach (var c in t) {
+        if (string.Equals(c, "mom", StringComparison.OrdinalIgnoreCase)) {
+            Program.getGame().getMom().setSpriteEmotion(Character.spriteEmotion.angry);
+        } else if (string.Equals(c, "dad", StringComparison.OrdinalIgnoreCase)) {
+            Program.getGame().getDad().setSpriteEmotion(Character.spriteEmotion.angry);
+        } else if (string.Equals(c, "alex", StringComparison.OrdinalIgnoreCase)) {
+            Program.getGame().getAlexis().setSpriteEmotion(Character.spriteEmotion.angry);
+        }
+    }
+}
+```
+Reacts to a player choice after the program fetches the state of the NPC and how they will react.
 
 
 ## screenshots
